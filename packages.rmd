@@ -1,3 +1,7 @@
+---
+knit: quarto render
+---
+
 # Packages and Help Pages {#packages}
 
 You now have a function that simulates rolling a pair of dice. Let's make things a little more interesting by weighting the dice in your favor. The house always wins, right? Let's make the dice roll high numbers slightly more often than it rolls low numbers. 
@@ -308,7 +312,7 @@ For all of the R help list, Stack Overflow, and community.rstudio.com, you're mo
 
 ## Summary
 
-R's packages and help pages can make you a more productive programmer. You saw in [The Very Basics](#basics) that R gives you the power to write your own functions that do specific things, but often the function that you want to write will already exist in an R package. Professors, programmers, and scientists have developed over 13,000 packages for you to use, which can save you valuable programming time. To use a package, you need to install it to your computer once with `install.packages`, and then load it into each new R session with `library`.
+R's packages and help pages can make you a more productive programmer. You saw in [@Sec:basics The Very Basics] that R gives you the power to write your own functions that do specific things, but often the function that you want to write will already exist in an R package. Professors, programmers, and scientists have developed over 13,000 packages for you to use, which can save you valuable programming time. To use a package, you need to install it to your computer once with `install.packages`, and then load it into each new R session with `library`.
 
 R's help pages will help you master the functions that appear in R and its packages. Each function and data set in R has its own help page. Although help pages often contain advanced content, they also contain valuable clues and examples that can help you learn how to use a function.
 

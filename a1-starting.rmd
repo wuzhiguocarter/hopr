@@ -1,12 +1,14 @@
-# (APPENDIX) Appendix {-}
+---
+knit: quarto render
+---
 
-# Installing R and RStudio {#starting}
+# Installing R and RStudio {#sec:starting}
 
 To get started with R, you need to acquire your own copy. This appendix will show you how to download R as well as RStudio, a software application that makes R easier to use. You'll go from downloading R to opening your first R session. 
 
 Both R and RStudio are free and easy to download.
 
-## How to Download and Install R
+## How to Download and Install R2
 
 R is maintained by an international team of developers who make the language available through the web page of [The Comprehensive R Archive Network](http://cran.r-project.org). The top of the web page provides three links for downloading R. Follow the link that describes your operating system: Windows, Mac, or Linux.
 

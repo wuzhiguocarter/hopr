@@ -1,3 +1,7 @@
+---
+knit: quarto render
+---
+
 # Modifying Values {#modify}
 
 Are you ready to play some games with your virtual deck? Not so fast! The point system in your deck of cards doesn't align well with many card games. For example, in war and poker, aces are usually scored higher than kings. They'd have a point value of 14, not 1. 

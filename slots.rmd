@@ -1,4 +1,6 @@
-# (PART) Part 3 {-}
+---
+knit: quarto render
+---
 
 # Project 3: Slot Machine {-}
 

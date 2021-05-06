@@ -1,3 +1,7 @@
+---
+knit: quarto render
+---
+
 # Programs {#programs}
 
 In this chapter, you will build a real, working slot machine that you can play by running an R function. When you're finished, you'll be able to play it like this:

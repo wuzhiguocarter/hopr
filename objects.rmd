@@ -1,3 +1,7 @@
+---
+knit: quarto render
+---
+
 # R Objects
 
 In this chapter, you'll use R to assemble a deck of 52 playing cards. 

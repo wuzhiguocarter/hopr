@@ -1,3 +1,7 @@
+---
+knit: quarto render
+---
+
 # Debugging R Code {#debug}
 
 ```{block2, type = "rmdnote"}

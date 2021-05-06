@@ -1,3 +1,7 @@
+---
+knit: quarto render
+---
+
 # Environments
 
 Your deck is now ready for a game of blackjack (or hearts or war), but are your `shuffle` and `deal` functions up to snuff? Definitely not. For example, `deal` deals the same card over and over again:

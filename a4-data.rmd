@@ -1,3 +1,7 @@
+---
+knit: quarto render
+---
+
 # Loading and Saving Data in R {#dataio}
 
 This appendix will show you how to load and save data into R from plain-text files, R files, and Excel spreadsheets. It will also show you the R packages that you can use to load data from databases and other common programs, like SAS and MATLAB.

@@ -1,4 +1,8 @@
-# The Very Basics {#basics}
+---
+knit: quarto render
+---
+
+# The Very Basics {#sec:basics}
 
 This chapter provides a broad overview of the R language that will get you programming right away. In it, you will build a pair of virtual dice that you can use to generate random numbers. Don't worry if you've never programmed before; the chapter will teach you everything you need to know. 
 
@@ -24,7 +28,7 @@ The RStudio interface is simple. You type R code into the bottom line of the RSt
 
 When you type a command at the prompt and hit Enter, your computer executes the command and shows you the results. Then RStudio displays a fresh prompt for your next command. For example, if you type `1 + 1` and hit Enter, RStudio will display:
 
-```
+```r
 > 1 + 1
 [1] 2
 >

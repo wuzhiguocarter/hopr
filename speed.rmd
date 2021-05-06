@@ -1,3 +1,7 @@
+---
+knit: quarto render
+---
+
 # Speed
 
 As a data scientist, you need speed. You can work with bigger data and do more ambitious tasks when your code runs fast. This chapter will show you a specific way to write fast code in R. You will then use the method to simulate 10 million plays of your slot machine.

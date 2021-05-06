@@ -1,6 +1,8 @@
-# (PART) Part 1 {-}
+---
+knit: quarto render
+---
 
-# Project 1: Weighted Dice
+# Project 1: Weighted Dice {-}
 
 Computers let you assemble, manipulate, and visualize data sets, all at speeds that would have wowed yesterday's scientists. In short, computers give you scientific superpowers! But if you wish to use them, you'll need to pick up some programming skills.
 
@@ -38,4 +40,4 @@ In this project, you will learn how to:
 
 Don't worry if it seems like we cover a lot of ground fast. This project is designed to give you a concise overview of the R language. You will return to many of the concepts we meet here in projects 2 and 3, where you will examine the concepts in depth.
 
-You'll need to have both R and RStudio installed on your computer before you can use them. Both are free and easy to download. See [Appendix A](#starting) for complete instructions. If you are ready to begin, open RStudio on your computer and read on. 
+You'll need to have both R and RStudio installed on your computer before you can use them. Both are free and easy to download. See [Appendix -@sec:starting] for complete instructions. If you are ready to begin, open RStudio on your computer and read on. 
