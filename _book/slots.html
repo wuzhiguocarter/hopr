@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="This book will teach you how to program in R, with hands-on examples. I wrote it for non-programmers to provide a friendly introduction to the R language. You’ll learn how to load data, assemble and disassemble data objects, navigate R’s environment system, write your own functions, and use all of R’s programming tools. Throughout the book, you’ll use your newfound skills to solve practical data science problems.">
+  <title>Hands-On Programming with R – Project 3: Slot Machine</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="site_libs/quarto-nav/headroom.min.js"></script>
+  <meta name="quarto:offset" content=".">
+  <script src="site_libs/quarto-search/autocomplete.min.js"></script>
+  <script src="site_libs/quarto-search/fuse.min.js"></script>
+  <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <script src="site_libs/quarto-html/popper.min.js"></script>
+  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="site_libs/quarto-html/clipboard.min.js"></script>
+  <script src="site_libs/quarto-html/anchor.min.js"></script>
+  <script src="site_libs/quarto-html/quarto-html.js"></script>
+  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="quarto-search-results"></div>
+<header id="quarto-header" class="headroom fixed-top">
+<nav class="quarto-secondary-nav py-2 d-lg-none d-md-block" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <div class="container-fluid d-flex justify-content-between">
+    <h1 class="quarto-secondary-nav-title mb-0 fs-5 d-inline">Project 3: Slot Machine</h1>
+    <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+</nav>
+</header>
+ <!-- /navbar/sidebar -->
+<div class="container-fluid quarto-container d-flex flex-column">
+<div class="row flex-fill" id="quarto-content">
+  <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
+    <nav class="me-lg-auto py-2 docked  overflow-scroll ">
+  <div class="px-3 pt-lg-3 d-flex flex-column align-items-center">
+    <h4 class="sidebar-title text-center mt-1 mb-0 py-0">Hands-On Programming with R</h4>
+      <div class="d-block mt-1">
+    <a href="https://github.com/rstudio-education/hopr" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item" href=".//Hands-On Programming with R.pdf ">
+          Download PDF
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href=".//Hands-On Programming with R.epub ">
+          Download ePub
+          </a>
+        </li>
+    </ul>
+    <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
+        <li>
+          <a class="dropdown-item" href="http://www.twitter.com/share ">
+            <i class="bi bi-bi-twitter pe-1"></i>
+          Twitter
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php ">
+            <i class="bi bi-bi-facebook pe-1"></i>
+          Facebook
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url= ">
+            <i class="bi bi-bi-linkedin pe-1"></i>
+          LinkedIn
+          </a>
+        </li>
+    </ul>
+</div>
+  </div>
+    <div class="sidebar-search px-3 mt-4">
+    <form class="d-flex mb-0">
+  <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+    </div>
+  <div class="sidebar-menu-container"> 
+  <ul class="list-unstyled mt-3 px-3">
+      <li class="sidebar-item">
+  <a href="./index.html" class="">Welcome</a>
+</li>
+      <li class="sidebar-item">
+  <a href="./preface.html" class="">Preface</a>
+</li>
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
+        <div class="me-auto ">
+            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#part1-collapse" aria-expanded=" true">
+              <div class="me-auto  sidebar-section-item">
+                Part 1
+              </div>
+            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+            </button>
+      <div class="collapse  show" id="part1-collapse">
+        <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="./dice.html" class="">Project 1: Weighted Dice</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./basics.html" class=""><span class="chapter-number">1</span>&nbsp; The Very Basics</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./packages.html" class=""><span class="chapter-number">2</span>&nbsp; Packages and Help Pages</a>
+</li>
+        </ul>
+      </div>
+    </div></li>
+  </ul>
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
+        <div class="me-auto ">
+            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#part2-collapse" aria-expanded=" true">
+              <div class="me-auto  sidebar-section-item">
+                Part 2
+              </div>
+            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+            </button>
+      <div class="collapse  show" id="part2-collapse">
+        <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="./cards.html" class="">Project 2: Playing Cards</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./objects.html" class=""><span class="chapter-number">3</span>&nbsp; R Objects</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./notation.html" class=""><span class="chapter-number">4</span>&nbsp; R Notation</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./modifying.html" class=""><span class="chapter-number">5</span>&nbsp; Modifying Values</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./environments.html" class=""><span class="chapter-number">6</span>&nbsp; Environments</a>
+</li>
+        </ul>
+      </div>
+    </div></li>
+  </ul>
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
+        <div class="me-auto ">
+            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#part3-collapse" aria-expanded=" true">
+              <div class="me-auto  sidebar-section-item">
+                Part 3
+              </div>
+            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+            </button>
+      <div class="collapse  show" id="part3-collapse">
+        <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="./slots.html" class="active">Project 3: Slot Machine</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./programs.html" class=""><span class="chapter-number">7</span>&nbsp; Programs</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./s3.html" class=""><span class="chapter-number">8</span>&nbsp; S3</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./loops.html" class=""><span class="chapter-number">9</span>&nbsp; Loops</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./speed.html" class=""><span class="chapter-number">10</span>&nbsp; Speed</a>
+</li>
+        </ul>
+      </div>
+    </div></li>
+  </ul>
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
+        <div class="me-auto ">
+            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
+              <div class="me-auto  sidebar-section-item">
+                Appendices
+              </div>
+            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+            </button>
+      <div class="collapse  show" id="appendices-collapse">
+        <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="./a1-starting.html" class=""><span class="chapter-number">A</span>&nbsp; Installing R and RStudio</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./a2-packages.html" class=""><span class="chapter-number">B</span>&nbsp; R Packages</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./a3-updating.html" class=""><span class="chapter-number">C</span>&nbsp; Updating R and Its Packages</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./a4-data.html" class=""><span class="chapter-number">D</span>&nbsp; Loading and Saving Data in R</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./a5-debug.html" class=""><span class="chapter-number">E</span>&nbsp; Debugging R Code</a>
+</li>
+        </ul>
+      </div>
+    </div></li>
+  </ul>
+  </ul>
+  </div>
+</nav>
+  </div>
+<div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
+<main>
+<header id="title-block-header">
+<h1 class="title d-none d-lg-block display-6">Project 3: Slot Machine</h1>
+</header>
+<p>Slot machines are the most popular game in modern casinos. If you’ve never seen one, a slot machine resembles an arcade game that has a lever on its side. For a small fee you can pull the lever, and the machine will generate a random combination of three symbols. If the correct combination appears, you can win a prize, maybe even the jackpot.</p>
+<p>Slot machines make fantastic profits for casinos because they offer a very low payout rate. In many games, such as Blackjack and Roulette, the odds are only slightly stacked in the casino’s favor. In the long run, the casino pays back 97 to 98 cents in prizes of every dollar that a gambler spends on these games. With slot machines, it is typical for a casino to only pay back 90 to 95 cents—and the casino keeps the rest. If this seems underhanded, keep in mind that slot machines are one of the most popular games at a casino; few people seem to mind. And if you consider that state lotteries have payout rates that are much closer to 50 cents on the dollar, slot machines don’t look that bad.</p>
+<p>In this project, you will build a real, working slot machine modeled after some real life Video Lottery Terminals from Manitoba, Canada. The terminals were a source of scandal in the 1990s. You’ll get to the bottom of this scandal by writing a program that recreates the slot machines. You’ll then do some calculations and run some simulations that reveal the true payout rate of the machines.</p>
+<p>This project will teach you how to write programs and run simulations in R. You will also learn how to:</p>
+<ul>
+<li>Use a practical strategy to design programs</li>
+<li>Use <code>if</code> and <code>else</code> statements to tell R what to do when</li>
+<li>Create lookup tables to find values</li>
+<li>Use <code>for</code>, <code>while</code>, and <code>repeat</code> loops to automate repetitive operations</li>
+<li>Use S3 methods, R’s version of Object-Oriented Programming</li>
+<li>Measure the speed of R code</li>
+<li>Write fast, vectorized R code</li>
+</ul>
+<!-- -->
+</main>
+</div> <!-- /main column -->
+<div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
+</div> <!-- /toc column -->
+</div> <!-- /row -->
+<div class="row page-navigation page-navigation-docked">
+  <div class="nav-page nav-page-previous col">
+      <a href="./environments.html">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; Environments</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next col">
+      <a href="./programs.html">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; Programs</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</div>
+</div> <!-- /container fluid -->
+
+
+</body></html>

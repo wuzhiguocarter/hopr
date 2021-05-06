@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="This book will teach you how to program in R, with hands-on examples. I wrote it for non-programmers to provide a friendly introduction to the R language. You’ll learn how to load data, assemble and disassemble data objects, navigate R’s environment system, write your own functions, and use all of R’s programming tools. Throughout the book, you’ll use your newfound skills to solve practical data science problems.">
+  <title>Hands-On Programming with R – 3&nbsp; R Objects</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007ba5; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #007ba5; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #007ba5; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="site_libs/quarto-nav/headroom.min.js"></script>
+  <meta name="quarto:offset" content=".">
+  <script src="site_libs/quarto-search/autocomplete.min.js"></script>
+  <script src="site_libs/quarto-search/fuse.min.js"></script>
+  <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <script src="site_libs/quarto-html/popper.min.js"></script>
+  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="site_libs/quarto-html/clipboard.min.js"></script>
+  <script src="site_libs/quarto-html/anchor.min.js"></script>
+  <script src="site_libs/quarto-html/quarto-html.js"></script>
+  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
+<div id="quarto-search-results"></div>
+<header id="quarto-header" class="headroom fixed-top">
+<nav class="quarto-secondary-nav py-2 d-lg-none d-md-block" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <div class="container-fluid d-flex justify-content-between">
+    <h1 class="quarto-secondary-nav-title mb-0 fs-5 d-inline"><span class="chapter-number">3</span>&nbsp; R Objects</h1>
+    <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+</nav>
+</header>
+ <!-- /navbar/sidebar -->
+<div class="container-fluid quarto-container d-flex flex-column">
+<div class="row flex-fill" id="quarto-content">
+  <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
+    <nav class="me-lg-auto py-2 docked  overflow-scroll ">
+  <div class="px-3 pt-lg-3 d-flex flex-column align-items-center">
+    <h4 class="sidebar-title text-center mt-1 mb-0 py-0">Hands-On Programming with R</h4>
+      <div class="d-block mt-1">
+    <a href="https://github.com/rstudio-education/hopr" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item" href=".//Hands-On Programming with R.pdf ">
+          Download PDF
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href=".//Hands-On Programming with R.epub ">
+          Download ePub
+          </a>
+        </li>
+    </ul>
+    <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
+        <li>
+          <a class="dropdown-item" href="http://www.twitter.com/share ">
+            <i class="bi bi-bi-twitter pe-1"></i>
+          Twitter
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php ">
+            <i class="bi bi-bi-facebook pe-1"></i>
+          Facebook
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url= ">
+            <i class="bi bi-bi-linkedin pe-1"></i>
+          LinkedIn
+          </a>
+        </li>
+    </ul>
+</div>
+  </div>
+    <div class="sidebar-search px-3 mt-4">
+    <form class="d-flex mb-0">
+  <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+    </div>
+  <div class="sidebar-menu-container"> 
+  <ul class="list-unstyled mt-3 px-3">
+      <li class="sidebar-item">
+  <a href="./index.html" class="">Welcome</a>
+</li>
+      <li class="sidebar-item">
+  <a href="./preface.html" class="">Preface</a>
+</li>
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
+        <div class="me-auto ">
+            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#part1-collapse" aria-expanded=" true">
+              <div class="me-auto  sidebar-section-item">
+                Part 1
+              </div>
+            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+            </button>
+      <div class="collapse  show" id="part1-collapse">
+        <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="./dice.html" class="">Project 1: Weighted Dice</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./basics.html" class=""><span class="chapter-number">1</span>&nbsp; The Very Basics</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./packages.html" class=""><span class="chapter-number">2</span>&nbsp; Packages and Help Pages</a>
+</li>
+        </ul>
+      </div>
+    </div></li>
+  </ul>
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
+        <div class="me-auto ">
+            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#part2-collapse" aria-expanded=" true">
+              <div class="me-auto  sidebar-section-item">
+                Part 2
+              </div>
+            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+            </button>
+      <div class="collapse  show" id="part2-collapse">
+        <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="./cards.html" class="">Project 2: Playing Cards</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./objects.html" class="active"><span class="chapter-number">3</span>&nbsp; R Objects</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./notation.html" class=""><span class="chapter-number">4</span>&nbsp; R Notation</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./modifying.html" class=""><span class="chapter-number">5</span>&nbsp; Modifying Values</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./environments.html" class=""><span class="chapter-number">6</span>&nbsp; Environments</a>
+</li>
+        </ul>
+      </div>
+    </div></li>
+  </ul>
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
+        <div class="me-auto ">
+            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#part3-collapse" aria-expanded=" true">
+              <div class="me-auto  sidebar-section-item">
+                Part 3
+              </div>
+            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+            </button>
+      <div class="collapse  show" id="part3-collapse">
+        <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="./slots.html" class="">Project 3: Slot Machine</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./programs.html" class=""><span class="chapter-number">7</span>&nbsp; Programs</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./s3.html" class=""><span class="chapter-number">8</span>&nbsp; S3</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./loops.html" class=""><span class="chapter-number">9</span>&nbsp; Loops</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./speed.html" class=""><span class="chapter-number">10</span>&nbsp; Speed</a>
+</li>
+        </ul>
+      </div>
+    </div></li>
+  </ul>
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
+        <div class="me-auto ">
+            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
+              <div class="me-auto  sidebar-section-item">
+                Appendices
+              </div>
+            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+            </button>
+      <div class="collapse  show" id="appendices-collapse">
+        <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="./a1-starting.html" class=""><span class="chapter-number">A</span>&nbsp; Installing R and RStudio</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./a2-packages.html" class=""><span class="chapter-number">B</span>&nbsp; R Packages</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./a3-updating.html" class=""><span class="chapter-number">C</span>&nbsp; Updating R and Its Packages</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./a4-data.html" class=""><span class="chapter-number">D</span>&nbsp; Loading and Saving Data in R</a>
+</li>
+          <li class="sidebar-item">
+  <a href="./a5-debug.html" class=""><span class="chapter-number">E</span>&nbsp; Debugging R Code</a>
+</li>
+        </ul>
+      </div>
+    </div></li>
+  </ul>
+  </ul>
+  </div>
+</nav>
+  </div>
+<div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
+<main>
+<header id="title-block-header">
+<h1 class="title d-none d-lg-block display-6"><span class="chapter-number">3</span>&nbsp; R Objects</h1>
+</header>
+
+<p>In this chapter, you’ll use R to assemble a deck of 52 playing cards.</p>
+<p>You’ll start by building simple R objects that represent playing cards and then work your way up to a full-blown table of data. In short, you’ll build the equivalent of an Excel spreadsheet from scratch. When you are finished, your deck of cards will look something like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> face   suit value</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> king spades    <span class="dv">13</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>queen spades    <span class="dv">12</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a> jack spades    <span class="dv">11</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  ten spades    <span class="dv">10</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a> nine spades     <span class="dv">9</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>eight spades     <span class="dv">8</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Do you need to build a data set from scratch to use it in R? Not at all. You can load most data sets into R with one simple step, see <a href="#loading">Loading Data</a>. But this exercise will teach you how R stores data, and how you can assemble—or disassemble—your own data sets. You will also learn about the various types of objects available for you to use in R (not all R objects are the same!). Consider this exercise a rite of passage; by doing it, you will become an expert on storing data in R.</p>
+<p>We’ll start with the very basics. The most simple type of object in R is an <em>atomic vector</em>. Atomic vectors are not nuclear powered, but they are very simple and they do show up everywhere. If you look closely enough, you’ll see that most structures in R are built from atomic vectors.</p>
+<section class="level2" data-number="0.1">
+<h2 data-number="3.1" class="anchored" id="atomic-vectors"><span class="header-section-number">3.1</span> Atomic Vectors</h2>
+<p>An atomic vector is just a simple vector of data. In fact, you’ve already made an atomic vector, your <code>die</code> object from [Project 1: Weighted Dice]. You can make an atomic vector by grouping some values of data together with <code>c</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>die <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>die</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 2 3 4 5 6</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(die)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" type="rmdnote">
+
+<div class="rmdnote">
+<p><strong>is.vector</strong></p>
+<code>is.vector</code> tests whether an object is an atomic vector. It returns <code>TRUE</code> if the object is an atomic vector and <code>FALSE</code> otherwise.
+</div>
+</div>
+<p>You can also make an atomic vector with just one value. R saves single values as an atomic vector of length 1:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>five <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>five</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 5</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(five)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  TRUE</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(five)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 1</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(die)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" type="rmdnote">
+
+<div class="rmdnote">
+<p><strong>length</strong></p>
+<code>length</code> returns the length of an atomic vector.
+</div>
+</div>
+<p>Each atomic vector stores its values as a one-dimensional vector, and each atomic vector can only store one type of data. You can save different types of data in R by using different types of atomic vectors. Altogether, R recognizes six basic types of atomic vectors: <em>doubles</em>, <em>integers</em>, <em>characters</em>, <em>logicals</em>, <em>complex</em>, and <em>raw</em>.</p>
+<p>To create your card deck, you will need to use different types of atomic vectors to save different types of information (text and numbers). You can do this by using some simple conventions when you enter your data. For example, you can create an integer vector by including a capital <code>L</code> with your input. You can create a character vector by surrounding your input in quotation marks:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>int <span class="ot">&lt;-</span> 1L</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>text <span class="ot">&lt;-</span> <span class="st">"ace"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Each type of atomic vector has its own convention (described below). R will recognize the convention and use it to create an atomic vector of the appropriate type. If you’d like to make atomic vectors that have more than one element in them, you can combine an element with the <code>c</code> function from [Packages and Help Pages]. Use the same convention with each element:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>int <span class="ot">&lt;-</span> <span class="fu">c</span>(1L, 5L)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>text <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ace"</span>, <span class="st">"hearts"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You may wonder why R uses multiple types of vectors. Vector types help R behave as you would expect. For example, R will do math with atomic vectors that contain numbers, but not with atomic vectors that contain character strings:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(int)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 6</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(text)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Error in sum(text) : invalid 'type' (character) of argument</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>But we’re getting ahead of ourselves! Get ready to say hello to the six types of atomic vectors in R.</p>
+<section class="level3" data-number="0.1.1">
+<h3 data-number="3.1.1" class="anchored" id="doubles"><span class="header-section-number">3.1.1</span> Doubles</h3>
+<p>A double vector stores regular numbers. The numbers can be positive or negative, large or small, and have digits to the right of the decimal place or not. In general, R will save any number that you type in R as a double. So, for example, the die you made in [Project 1: Weighted Dice] was a double object:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>die <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>die</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 2 3 4 5 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You’ll usually know what type of object you are working with in R (it will be obvious), but you can also ask R what type of object an object is with <code>typeof</code>. For example:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(die)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  "double"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Some R functions refer to doubles as “numerics,” and I will often do the same. Double is a computer science term. It refers to the specific number of bytes your computer uses to store a number, but I find “numeric” to be much more intuitive when doing data science.</p>
+</section>
+<section class="level3" data-number="0.1.2">
+<h3 data-number="3.1.2" class="anchored" id="integers"><span class="header-section-number">3.1.2</span> Integers</h3>
+<p>Integer vectors store integers, numbers that can be written without a decimal component. As a data scientist, you won’t use the integer type very often because you can save integers as a double object.</p>
+<p>You can specifically create an integer in R by typing a number followed by an uppercase <code>L</code>. For example:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>int <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span>1L, 2L, 4L)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>int</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="do">## -1  2  4</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(int)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="do">## "integer"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that R won’t save a number as an integer unless you include the <code>L</code>. Integer numbers without the <code>L</code> will be saved as doubles. The only difference between <code>4</code> and <code>4L</code> is how R saves the number in your computer’s memory. Integers are defined more precisely in your computer’s memory than doubles (unless the integer is <em>very</em> large or small).</p>
+<p>Why would you save your data as an integer instead of a double? Sometimes a difference in precision can have surprising effects. Your computer allocates 64 bits of memory to store each double in an R program. This allows a lot of precision, but some numbers cannot be expressed exactly in 64 bits, the equivalent of a sequence of 64 ones and zeroes. For example, the number <span class="math inline">\(\pi\)</span> contains an endless sequences of digits to the right of the decimal place. Your computer must round <span class="math inline">\(\pi\)</span> to something close to, but not exactly equal to <span class="math inline">\(\pi\)</span> to store <span class="math inline">\(\pi\)</span> in its memory. Many decimal numbers share a similar fate.</p>
+<p>As a result, each double is accurate to about 16 significant digits. This introduces a little bit of error. In most cases, this rounding error will go unnoticed. However, in some situations, the rounding error can cause surprising results. For example, you may expect the result of the expression below to be zero, but it is not:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">2</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 4.440892e-16</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The square root of two cannot be expressed exactly in 16 significant digits. As a result, R has to round the quantity, and the expression resolves to something very close to—but not quite—zero.</p>
+<p>These errors are known as <em>floating-point</em> errors, and doing arithmetic in these conditions is known as <em>floating-point arithmetic</em>. Floating-point arithmetic is not a feature of R; it is a feature of computer programming. Usually floating-point errors won’t be enough to ruin your day. Just keep in mind that they may be the cause of surprising results.</p>
+<p>You can avoid floating-point errors by avoiding decimals and only using integers. However, this is not an option in most data-science situations. You cannot do much math with integers before you need a noninteger to express the result. Luckily, the errors caused by floating-point arithmetic are usually insignificant (and when they are not, they are easy to spot). As a result, you’ll generally use doubles instead of integers as a data scientist.</p>
+</section>
+<section class="level3" data-number="0.1.3">
+<h3 data-number="3.1.3" class="anchored" id="characters"><span class="header-section-number">3.1.3</span> Characters</h3>
+<p>A character vector stores small pieces of text. You can create a character vector in R by typing a character or string of characters surrounded by quotes:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>text <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Hello"</span>,  <span class="st">"World"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>text</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  "Hello"  "World"</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(text)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="do">## "character"</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="st">"Hello"</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="do">## "character"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The individual elements of a character vector are known as <em>strings</em>. Note that a string can contain more than just letters. You can assemble a character string from numbers or symbols as well.</p>
+<div class="cell" name="Character or Number?">
+<pre class="exercise cell-code"><code>Can you spot the difference between a character string and a number? Here's a test: Which of these are character strings and which are numbers? `1`, `"1"`, `"one"`.</code></pre>
+</div>
+<div class="cell">
+<pre class="solution cell-code"><code>`"1"` and `"one"` are both character strings. </code></pre>
+</div>
+<p>Character strings can contain number characters, but that doesn’t make them numeric. They’re just strings that happen to have numbers in them. You can tell strings from real numbers because strings come surrounded by quotes. In fact, anything surrounded by quotes in R will be treated as a character string—no matter what appears between the quotes.</p>
+<p>It is easy to confuse R objects with character strings. Why? Because both appear as pieces of text in R code. For example, <code>x</code> is the name of an R object named “x,” <code>"x"</code> is a character string that contains the character “x.” One is an object that contains raw data, the other is a piece of raw data itself.</p>
+<p>Expect an error whenever you forget your quotation marks; R will start looking for an object that probably does not exist.</p>
+</section>
+<section class="level3" data-number="0.1.4">
+<h3 data-number="3.1.4" class="anchored" id="logicals"><span class="header-section-number">3.1.4</span> Logicals</h3>
+<p>Logical vectors store <code>TRUE</code>s and <code>FALSE</code>s, R’s form of Boolean data. Logicals are very helpful for doing things like comparisons:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">&gt;</span> <span class="dv">4</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="do">## FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Any time you type <code>TRUE</code> or <code>FALSE</code> in capital letters (without quotation marks), R will treat your input as logical data. R also assumes that <code>T</code> and <code>F</code> are shorthand for <code>TRUE</code> and <code>FALSE</code>, unless they are defined elsewhere (e.g.&nbsp;<code>T &lt;- 500</code>). Since the meaning of <code>T</code> and <code>F</code> can change, its best to stick with <code>TRUE</code> and <code>FALSE</code>:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>logic <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>logic</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="do">##   TRUE FALSE  TRUE</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(logic)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="do">## "logical"</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(F)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="do">## "logical"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="level3" data-number="0.1.5">
+<h3 data-number="3.1.5" class="anchored" id="complex-and-raw"><span class="header-section-number">3.1.5</span> Complex and Raw</h3>
+<p>Doubles, integers, characters, and logicals are the most common types of atomic vectors in R, but R also recognizes two more types: complex and raw. It is doubtful that you will ever use these to analyze data, but here they are for the sake of thoroughness.</p>
+<p>Complex vectors store complex numbers. To create a complex vector, add an imaginary term to a number with <code>i</code>:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>comp <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span> <span class="sc">+</span> 1i, <span class="dv">1</span> <span class="sc">+</span> 2i, <span class="dv">1</span> <span class="sc">+</span> 3i)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>comp</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 1+1i 1+2i 1+3i</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(comp)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="do">## "complex"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Raw vectors store raw bytes of data. Making raw vectors gets complicated, but you can make an empty raw vector of length <em>n</em> with <code>raw(n)</code>. See the help page of <code>raw</code> for more options when working with this type of data:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">raw</span>(<span class="dv">3</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 00 00 00</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="fu">raw</span>(<span class="dv">3</span>))</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="do">## "raw"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" name="Vector of Cards">
+<pre class="exercise cell-code"><code>Create an atomic vector that stores just the face names of the cards in a royal flush, for example, the ace of spades, king of spades, queen of spades, jack of spades, and ten of spades. The face name of the ace of spades would be "ace," and "spades" is the suit.
+
+Which type of vector will you use to save the names? </code></pre>
+</div>
+<div class="cell">
+<pre class="solution cell-code"><code>A character vector is the most appropriate type of atomic vector in which to save card names. You can create one with the `c` function if you surround each name with quotation marks:</code></pre>
+</div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>hand <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ace"</span>, <span class="st">"king"</span>, <span class="st">"queen"</span>, <span class="st">"jack"</span>, <span class="st">"ten"</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>hand</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="do">## "ace"   "king"  "queen" "jack"  "ten"  </span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(hand)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="do">## "character"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This creates a one-dimensional group of card names—great job! Now let’s make a more sophisticated data structure, a two-dimensional table of card names and suits. You can build a more sophisticated object from an atomic vector by giving it some attributes and assigning it a class.</p>
+</section>
+</section>
+<section class="level2" data-number="0.2">
+<h2 data-number="3.2" class="anchored" id="attributes"><span class="header-section-number">3.2</span> Attributes</h2>
+<p>An attribute is a piece of information that you can attach to an atomic vector (or any R object). The attribute won’t affect any of the values in the object, and it will not appear when you display your object. You can think of an attribute as “metadata”; it is just a convenient place to put information associated with an object. R will normally ignore this metadata, but some R functions will check for specific attributes. These functions may use the attributes to do special things with the data.</p>
+<p>You can see which attributes an object has with <code>attributes</code>. <code>attributes</code> will return <code>NULL</code> if an object has no attributes. An atomic vector, like <code>die</code>, won’t have any attributes unless you give it some:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(die)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="do">## NULL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" type="rmdtip">
+
+<div class="rmdtip">
+<p><strong>NULL</strong></p>
+R uses <code>NULL</code> to represent the null set, an empty object. <code>NULL</code> is often returned by functions whose values are undefined. You can create a <code>NULL</code> object by typing <code>NULL</code> in capital letters.
+</div>
+</div>
+<section class="level3" data-number="0.2.1">
+<h3 data-number="3.2.1" class="anchored" id="names"><span class="header-section-number">3.2.1</span> Names</h3>
+<p>The most common attributes to give an atomic vector are names, dimensions (dim), and classes. Each of these attributes has its own helper function that you can use to give attributes to an object. You can also use the helper functions to look up the value of these attributes for objects that already have them. For example, you can look up the value of the names attribute of <code>die</code> with <code>names</code>:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(die)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="do">## NULL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>NULL</code> means that <code>die</code> does not have a names attribute. You can give one to <code>die</code> by assigning a character vector to the output of <code>names</code>. The vector should include one name for each element in <code>die</code>:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(die) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"one"</span>, <span class="st">"two"</span>, <span class="st">"three"</span>, <span class="st">"four"</span>, <span class="st">"five"</span>, <span class="st">"six"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now <code>die</code> has a names attribute:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(die)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="do">## "one"   "two"   "three" "four"  "five"  "six" </span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(die)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="do">## $names</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "one"   "two"   "three" "four"  "five"  "six"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>R will display the names above the elements of <code>die</code> whenever you look at the vector:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>die</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  one   two three  four  five   six </span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="do">##    1     2     3     4     5     6 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>However, the names won’t affect the actual values of the vector, nor will the names be affected when you manipulate the values of the vector:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>die <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  one   two three  four  five   six </span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="do">##    2     3     4     5     6     7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can also use <code>names</code> to change the names attribute or remove it all together. To change the names, assign a new set of labels to <code>names</code>:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(die) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"uno"</span>, <span class="st">"dos"</span>, <span class="st">"tres"</span>, <span class="st">"quatro"</span>, <span class="st">"cinco"</span>, <span class="st">"seis"</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>die</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="do">##   uno    dos   tres quatro  cinco   seis </span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="do">##     1      2      3      4      5      6 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To remove the names attribute, set it to <code>NULL</code>:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(die) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>die</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  1 2 3 4 5 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="level3" data-number="0.2.2">
+<h3 data-number="3.2.2" class="anchored" id="dim"><span class="header-section-number">3.2.2</span> Dim</h3>
+<p>You can transform an atomic vector into an <em>n</em>-dimensional array by giving it a dimensions attribute with <code>dim</code>. To do this, set the <code>dim</code> attribute to a numeric vector of length <em>n</em>. R will reorganize the elements of the vector into <em>n</em> dimensions. Each dimension will have as many rows (or columns, etc.) as the <em>nth</em> value of the <code>dim</code> vector. For example, you can reorganize <code>die</code> into a 2 × 3 matrix (which has 2 rows and 3 columns):</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(die) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>die</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="do">##      [,1] [,2] [,3]</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,]    1    3    5</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,]    2    4    6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>or a 3 × 2 matrix (which has 3 rows and 2 columns):</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(die) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">2</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>die</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="do">##      [,1] [,2]</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,]    1    4</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,]    2    5</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [3,]    3    6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>or a 1 × 2 × 3 hypercube (which has 1 row, 2 columns, and 3 “slices”). This is a three-dimensional structure, but R will need to show it slice by slice by slice on your two-dimensional computer screen:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(die) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>die</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="do">## , , 1</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="do">##      [,1] [,2]</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,]    1    2</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="do">## , , 2</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="do">##      [,1] [,2]</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,]    3    4</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="do">## , , 3</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="do">##      [,1] [,2]</span></span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,]    5    6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>R will always use the first value in <code>dim</code> for the number of rows and the second value for the number of columns. In general, rows always come first in R operations that deal with both rows and columns.</p>
+<p>You may notice that you don’t have much control over how R reorganizes the values into rows and columns. For example, R always fills up each matrix by columns, instead of by rows. If you’d like more control over this process, you can use one of R’s helper functions, <code>matrix</code> or <code>array</code>. They do the same thing as changing the <code>dim</code> attribute, but they provide extra arguments to customize the process.</p>
+</section>
+</section>
+<section class="level2" data-number="0.3">
+<h2 data-number="3.3" class="anchored" id="matrices"><span class="header-section-number">3.3</span> Matrices</h2>
+<p>Matrices store values in a two-dimensional array, just like a matrix from linear algebra. To create one, first give <code>matrix</code> an atomic vector to reorganize into a matrix. Then, define how many rows should be in the matrix by setting the <code>nrow</code> argument to a number. <code>matrix</code> will organize your vector of values into a matrix with the specified number of rows. Alternatively, you can set the <code>ncol</code> argument, which tells R how many columns to include in the matrix:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(die, <span class="at">nrow =</span> <span class="dv">2</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>m</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="do">##      [,1] [,2] [,3]</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,]    1    3    5</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,]    2    4    6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>matrix</code> will fill up the matrix column by column by default, but you can fill the matrix row by row if you include the argument <code>byrow = TRUE</code>:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(die, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>m</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="do">##      [,1] [,2] [,3]</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,]    1    2    3</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,]    4    5    6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>matrix</code> also has other default arguments that you can use to customize your matrix. You can read about them at <code>matrix</code>’s help page (accessible by <code>?matrix</code>).</p>
+</section>
+<section class="level2" data-number="0.4">
+<h2 data-number="3.4" class="anchored" id="arrays"><span class="header-section-number">3.4</span> Arrays</h2>
+<p>The <code>array</code> function creates an n-dimensional array. For example, you could use <code>array</code> to sort values into a cube of three dimensions or a hypercube in 4, 5, or <em>n</em> dimensions. <code>array</code> is not as customizeable as <code>matrix</code> and basically does the same thing as setting the <code>dim</code> attribute. To use <code>array</code>, provide an atomic vector as the first argument, and a vector of dimensions as the second argument, now called <code>dim</code>:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>ar <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="fu">c</span>(<span class="dv">11</span><span class="sc">:</span><span class="dv">14</span>, <span class="dv">21</span><span class="sc">:</span><span class="dv">24</span>, <span class="dv">31</span><span class="sc">:</span><span class="dv">34</span>), <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>ar</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="do">## , , 1</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="do">##      [,1] [,2]</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,]   11   13</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,]   12   14</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="do">## , , 2</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="do">##      [,1] [,2]</span></span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,]   21   23</span></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,]   22   24</span></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a><span class="do">## , , 3</span></span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a><span class="do">##      [,1] [,2]</span></span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,]   31   33</span></span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,]   32   34</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" name="Make a Matrix">
+<pre class="exercise cell-code"><code>Create the following matrix, which stores the name and suit of every card in a royal flush.</code></pre>
+</div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="do">##      [,1]    [,2]    </span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,] "ace"   "spades"</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,] "king"  "spades"</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [3,] "queen" "spades"</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [4,] "jack"  "spades"</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [5,] "ten"   "spades"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<pre class="solution cell-code"><code>There is more than one way to build this matrix, but in every case, you will need to start by making a character vector with 10 values. If you start with the following character vector, you can turn it into a matrix with any of the following three commands:</code></pre>
+</div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>hand1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ace"</span>, <span class="st">"king"</span>, <span class="st">"queen"</span>, <span class="st">"jack"</span>, <span class="st">"ten"</span>, <span class="st">"spades"</span>, <span class="st">"spades"</span>, </span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"spades"</span>, <span class="st">"spades"</span>, <span class="st">"spades"</span>)</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(hand1, <span class="at">nrow =</span> <span class="dv">5</span>)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(hand1, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(hand1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can also start with a character vector that lists the cards in a slightly different order. In this case, you will need to ask R to fill the matrix row by row instead of column by column:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>hand2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ace"</span>, <span class="st">"spades"</span>, <span class="st">"king"</span>, <span class="st">"spades"</span>, <span class="st">"queen"</span>, <span class="st">"spades"</span>, <span class="st">"jack"</span>, </span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"spades"</span>, <span class="st">"ten"</span>, <span class="st">"spades"</span>)</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(hand2, <span class="at">nrow =</span> <span class="dv">5</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(hand2, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="level2" data-number="0.5">
+<h2 data-number="3.5" class="anchored" id="class"><span class="header-section-number">3.5</span> Class</h2>
+<p>Notice that changing the dimensions of your object will not change the type of the object, but it <em>will</em> change the object’s <code>class</code> attribute:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(die) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(die)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  "double"</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(die)</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  "matrix"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A matrix is a special case of an atomic vector. For example, the <code>die</code> matrix is a special case of a double vector. Every element in the matrix is still a double, but the elements have been arranged into a new structure. R added a <code>class</code> attribute to <code>die</code> when you changed its dimensions. This class describes <code>die</code>’s new format. Many R functions will specifically look for an object’s <code>class</code> attribute, and then handle the object in a predetermined way based on the attribute.</p>
+<p>Note that an object’s <code>class</code> attribute will not always appear when you run <code>attributes</code>; you may need to specifically search for it with <code>class</code>:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(die)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="do">## $dim</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can apply <code>class</code> to objects that do not have a <code>class</code> attribute. <code>class</code> will return a value based on the object’s atomic type. Notice that the “class” of a double is “numeric,” an odd deviation, but one I am thankful for. I think that the most important property of a double vector is that it contains numbers, a property that “numeric” makes obvious:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="st">"Hello"</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  "character"</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">5</span>)</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  "numeric"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can also use <code>class</code> to set an object’s <code>class</code> attribute, but this is usually a bad idea. R will expect objects of a class to share certain traits, such as attributes, that your object may not possess. You’ll learn how to make and use your own classes in [Project 3: Slot Machine].</p>
+<section class="level3" data-number="0.5.1">
+<h3 data-number="3.5.1" class="anchored" id="dates-and-times"><span class="header-section-number">3.5.1</span> Dates and Times</h3>
+<p>The attribute system lets R represent more types of data than just doubles, integers, characters, logicals, complexes, and raws. The time looks like a character string when you display it, but its data type is actually <code>"double"</code>, and its class is <code>"POSIXct"</code> <code>"POSIXt"</code> (it has two classes):</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>now <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>now</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="do">## "2014-03-17 12:00:00 UTC"</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(now)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  "double"</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(now)</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="do">## "POSIXct" "POSIXt" </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>POSIXct is a widely used framework for representing dates and times. In the POSIXct framework, each time is represented by the number of seconds that have passed between the time and 12:00 AM January 1st 1970 (in the Universal Time Coordinated (UTC) zone). For example, the time above occurs 1,395,057,600 seconds after then. So in the POSIXct system, the time would be saved as 1395057600.</p>
+<p>R creates the time object by building a double vector with one element, <code>1395057600</code>. You can see this vector by removing the <code>class</code> attribute of <code>now</code>, or by using the <code>unclass</code> function, which does the same thing:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unclass</span>(now)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 1395057600</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>R then gives the double vector a <code>class</code> attribute that contains two classes, <code>"POSIXct"</code> and <code>"POSIXt"</code>. This attribute alerts R functions that they are dealing with a POSIXct time, so they can treat it in a special way. For example, R functions will use the POSIXct standard to convert the time into a user-friendly character string before displaying it.</p>
+<p>You can take advantage of this system by giving the <code>POSIXct</code> class to random R objects. For example, have you ever wondered what day it was a million seconds after 12:00 a.m. Jan.&nbsp;1, 1970?</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>mil <span class="ot">&lt;-</span> <span class="dv">1000000</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>mil</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 1e+06</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(mil) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"POSIXct"</span>, <span class="st">"POSIXt"</span>)</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>mil</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="do">## "1970-01-12 13:46:40 UTC"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Jan.&nbsp;12, 1970. Yikes. A million seconds goes by faster than you would think. This conversion worked well because the <code>POSIXct</code> class does not rely on any additional attributes, but in general, forcing the class of an object is a bad idea.</p>
+<p>There are many different classes of data in R and its packages, and new classes are invented every day. It would be difficult to learn about every class, but you do not have to. Most classes are only useful in specific situations. Since each class comes with its own help page, you can wait to learn about a class until you encounter it. However, there is one class of data that is so ubiquitous in R that you should learn about it alongside the atomic data types. That class is <code>factors</code>.</p>
+</section>
+<section class="level3" data-number="0.5.2">
+<h3 data-number="3.5.2" class="anchored" id="factors"><span class="header-section-number">3.5.2</span> Factors</h3>
+<p>Factors are R’s way of storing categorical information, like ethnicity or eye color. Think of a factor as something like a gender; it can only have certain values (male or female), and these values may have their own idiosyncratic order (ladies first). This arrangement makes factors very useful for recording the treatment levels of a study and other categorical variables.</p>
+<p>To make a factor, pass an atomic vector into the <code>factor</code> function. R will recode the data in the vector as integers and store the results in an integer vector. R will also add a <code>levels</code> attribute to the integer, which contains a set of labels for displaying the factor values, and a <code>class</code> attribute, which contains the class <code>factor</code>:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>))</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(gender)</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="do">## "integer"</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(gender)</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="do">## $levels</span></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "female" "male"  </span></span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="do">## $class</span></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "factor"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can see exactly how R is storing your factor with <code>unclass</code>:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unclass</span>(gender)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2 1 1 2</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="do">## attr(,"levels")</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "female" "male"  </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>R uses the levels attribute when it displays the factor, as you will see. R will display each <code>1</code> as <code>female</code>, the first label in the levels vector, and each <code>2</code> as <code>male</code>, the second label. If the factor included <code>3</code>s, they would be displayed as the third label, and so on:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>gender</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="do">## male   female female male  </span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Levels: female male</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Factors make it easy to put categorical variables into a statistical model because the variables are already coded as numbers. However, factors can be confusing since they look like character strings but behave like integers.</p>
+<p>R will often try to convert character strings to factors when you load and create data. In general, you will have a smoother experience if you do not let R make factors until you ask for them. I’ll show you how to do this when we start reading in data.</p>
+<p>You can convert a factor to a character string with the <code>as.character</code> function. R will retain the display version of the factor, not the integers stored in memory:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(gender)</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="do">## "male"   "female" "female" "male"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now that you understand the possibilities provided by R’s atomic vectors, let’s make a more complicated type of playing card.</p>
+<div class="cell" name="Write a Card">
+<pre class="exercise cell-code"><code>Many card games assign a numerical value to each card. For example, in blackjack, each face card is worth 10 points, each number card is worth between 2 and 10 points, and each ace is worth 1 or 11 points, depending on the final score.
+
+Make a virtual playing card by combining "ace," "heart," and 1 into a vector. What type of atomic vector will result? Check if you are right.</code></pre>
+</div>
+<div class="cell">
+<pre class="solution cell-code"><code>You may have guessed that this exercise would not go well. Each atomic vector can only store one type of data. As a result, R coerces all of your values to character strings:</code></pre>
+</div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>card <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ace"</span>, <span class="st">"hearts"</span>, <span class="dv">1</span>)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>card</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="do">## "ace"    "hearts" "1" </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will cause trouble if you want to do math with that point value, for example, to see who won your game of blackjack.</p>
+<div class="cell" type="rmdwarning">
+
+<div class="rmdwarning">
+<p><strong>Data types in vectors</strong></p>
+If you try to put multiple types of data into a vector, R will convert the elements to a single type of data.
+</div>
+</div>
+<p>Since matrices and arrays are special cases of atomic vectors, they suffer from the same behavior. Each can only store one type of data.</p>
+<p>This creates a couple of problems. First, many data sets contain multiple types of data. Simple programs like Excel and Numbers can save multiple types of data in the same data set, and you should hope that R can too. Don’t worry, it can.</p>
+<p>Second, coercion is a common behavior in R, so you’ll want to know how it works.</p>
+</section>
+</section>
+<section class="level2" data-number="0.6">
+<h2 data-number="3.6" class="anchored" id="coercion"><span class="header-section-number">3.6</span> Coercion</h2>
+<p>R’s coercion behavior may seem inconvenient, but it is not arbitrary. R always follows the same rules when it coerces data types. Once you are familiar with these rules, you can use R’s coercion behavior to do surprisingly useful things.</p>
+<p>So how does R coerce data types? If a character string is present in an atomic vector, R will convert everything else in the vector to character strings. If a vector only contains logicals and numbers, R will convert the logicals to numbers; every <code>TRUE</code> becomes a 1, and every <code>FALSE</code> becomes a 0, as shown in Figure @ref(fig:coercion).</p>
+<div class="cell" data-fig.alt="{}">
+<div class="cell-output-display">
+<p>images/hopr_0301.png</p>
+<p>R always uses the same rules to coerce data to a single type. If character strings are present, everything will be coerced to a character string. Otherwise, logicals are coerced to numerics.</p>
+</div>
+</div>
+<p>This arrangement preserves information. It is easy to look at a character string and tell what information it used to contain. For example, you can easily spot the origins of <code>"TRUE"</code> and <code>"5"</code>. You can also easily back-transform a vector of 1s and 0s to <code>TRUE</code>s and <code>FALSE</code>s.</p>
+<p>R uses the same coercion rules when you try to do math with logical values. So the following code:</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>will become:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This means that <code>sum</code> will count the number of <code>TRUE</code>s in a logical vector (and <code>mean</code> will calculate the proportion of <code>TRUE</code>s). Neat, huh?</p>
+<p>You can explicitly ask R to convert data from one type to another with the <code>as</code> functions. R will convert the data whenever there is a sensible way to do so:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(<span class="dv">1</span>)</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="do">## "1"</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="dv">1</span>)</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="do">## TRUE</span></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="cn">FALSE</span>)</span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You now know how R coerces data types, but this won’t help you save a playing card. To do that, you will need to avoid coercion altogether. You can do this by using a new type of object, a <em>list</em>.</p>
+<p>Before we look at lists, let’s address a question that might be on your mind.</p>
+<p>Many data sets contain multiple types of information. The inability of vectors, matrices, and arrays to store multiple data types seems like a major limitation. So why bother with them?</p>
+<p>In some cases, using only a single type of data is a huge advantage. Vectors, matrices, and arrays make it very easy to do math on large sets of numbers because R knows that it can manipulate each value the same way. Operations with vectors, matrices, and arrays also tend to be fast because the objects are so simple to store in memory.</p>
+<p>In other cases, allowing only a single type of data is not a disadvantage. Vectors are the most common data structure in R because they store variables very well. Each value in a variable measures the same property, so there’s no need to use different types of data.</p>
+</section>
+<section class="level2" data-number="0.7">
+<h2 data-number="3.7" class="anchored" id="lists"><span class="header-section-number">3.7</span> Lists</h2>
+<p>Lists are like atomic vectors because they group data into a one-dimensional set. However, lists do not group together individual values; lists group together R objects, such as atomic vectors and other lists. For example, you can make a list that contains a numeric vector of length 31 in its first element, a character vector of length 1 in its second element, and a new list of length 2 in its third element. To do this, use the <code>list</code> function.</p>
+<p><code>list</code> creates a list the same way <code>c</code> creates a vector. Separate each element in the list with a comma:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>list1 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">100</span><span class="sc">:</span><span class="dv">130</span>, <span class="st">"R"</span>, <span class="fu">list</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>))</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>list1</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 100 101 102 103 104 105 106 107 108 109 110 111 112</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [14] 113 114 115 116 117 118 119 120 121 122 123 124 125</span></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [27] 126 127 128 129 130</span></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [[2]]</span></span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "R"</span></span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [[3]]</span></span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [[3]][[1]]</span></span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
+<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [[3]][[2]]</span></span>
+<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>I left the <code>[1]</code> notation in the output so you can see how it changes for lists. The double-bracketed indexes tell you which element of the list is being displayed. The single-bracket indexes tell you which subelement of an element is being displayed. For example, <code>100</code> is the first subelement of the first element in the list. <code>"R"</code> is the first sub-element of the second element. This two-system notation arises because each element of a list can be <em>any</em> R object, including a new vector (or list) with its own indexes.</p>
+<p>Lists are a basic type of object in R, on par with atomic vectors. Like atomic vectors, they are used as building blocks to create many more spohisticated types of R objects.</p>
+<p>As you can imagine, the structure of lists can become quite complicated, but this flexibility makes lists a useful all-purpose storage tool in R: you can group together anything with a list.</p>
+<p>However, not every list needs to be complicated. You can store a playing card in a very simple list.</p>
+<div class="cell" name="Use a List to Make a Card">
+<pre class="exercise cell-code"><code>Use a list to store a single playing card, like the ace of hearts, which has a point value of one. The list should save the face of the card, the suit, and the point value in separate elements.</code></pre>
+</div>
+<div class="cell">
+<pre class="solution cell-code"><code>You can create your card like this. In the following example, the first element of the list is a character vector (of length 1). The second element is also a character vector, and the third element is a numeric vector:</code></pre>
+</div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>card <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"ace"</span>, <span class="st">"hearts"</span>, <span class="dv">1</span>)</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>card</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "ace"</span></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [[2]]</span></span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "hearts"</span></span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [[3]]</span></span>
+<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can also use a list to store a whole deck of playing cards. Since you can save a single playing card as a list, you can save a deck of playing cards as a list of 52 sublists (one for each card). But let’s not bother—there’s a much cleaner way to do the same thing. You can use a special class of list, known as a <em>data frame</em>.</p>
+</section>
+<section class="level2" data-number="0.8">
+<h2 data-number="3.8" class="anchored" id="data-frames"><span class="header-section-number">3.8</span> Data Frames</h2>
+<p>Data frames are the two-dimensional version of a list. They are far and away the most useful storage structure for data analysis, and they provide an ideal way to store an entire deck of cards. You can think of a data frame as R’s equivalent to the Excel spreadsheet because it stores data in a similar format.</p>
+<p>Data frames group vectors together into a two-dimensional table. Each vector becomes a column in the table. As a result, each column of a data frame can contain a different type of data; but within a column, every cell must be the same type of data, as in Figure @ref(fig:data-frame).</p>
+<div class="cell" data-fig.alt="{}">
+<div class="cell-output-display">
+<p>images/hopr_0302.png</p>
+<p>Data frames store data as a sequence of columns. Each column can be a different data type. Every column in a data frame must be the same length.</p>
+</div>
+</div>
+<p>Creating a data frame by hand takes a lot of typing, but you can do it (if you like) with the <code>data.frame</code> function. Give <code>data.frame</code> any number of vectors, each separated with a comma. Each vector should be set equal to a name that describes the vector. <code>data.frame</code> will turn each vector into a column of the new data frame:</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">face =</span> <span class="fu">c</span>(<span class="st">"ace"</span>, <span class="st">"two"</span>, <span class="st">"six"</span>),  </span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">suit =</span> <span class="fu">c</span>(<span class="st">"clubs"</span>, <span class="st">"clubs"</span>, <span class="st">"clubs"</span>), <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>df</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="do">## face  suit value</span></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  ace clubs     1</span></span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  two clubs     2</span></span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  six clubs     3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You’ll need to make sure that each vector is the same length (or can be made so with R’s recycling rules; see Figure @ref(fig:recycle), as data frames cannot combine columns of different lengths.</p>
+<p>In the previous code, I named the arguments in <code>data.frame</code> <code>face</code>, <code>suit</code>, and <code>value</code>, but you can name the arguments whatever you like. <code>data.frame</code> will use your argument names to label the columns of the data frame.</p>
+<div class="cell" type="rmdtip">
+
+<div class="rmdtip">
+<p><strong>Names</strong></p>
+<p>You can also give names to a list or vector when you create one of these objects. Use the same syntax as with <code>data.frame</code>:</p>
+<p><code>list(face = "ace", suit = "hearts", value = 1)</code><br>
+<code>c(face = "ace", suit = "hearts", value = "one")</code></p>
+The names will be stored in the object’s <code>names</code> attribute.
+</div>
+</div>
+<p>If you look at the type of a data frame, you will see that it is a list. In fact, each data frame is a list with class <code>data.frame</code>. You can see what types of objects are grouped together by a list (or data frame) with the <code>str</code> function:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(df)</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="do">## "list"</span></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(df)</span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a><span class="do">## "data.frame"</span></span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df)</span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 'data.frame':    3 obs. of  3 variables:</span></span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ face : Factor w/ 3 levels "ace","six","two": 1 3 2</span></span>
+<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ suit : Factor w/ 1 level "clubs": 1 1 1</span></span>
+<span id="cb61-11"><a href="#cb61-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ value: num  1 2 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Notice that R saved your character strings as factors. I told you that R likes factors! It is not a very big deal here, but you can prevent this behavior by adding the argument <code>stringsAsFactors = FALSE</code> to <code>data.frame</code>:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">face =</span> <span class="fu">c</span>(<span class="st">"ace"</span>, <span class="st">"two"</span>, <span class="st">"six"</span>),  </span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">suit =</span> <span class="fu">c</span>(<span class="st">"clubs"</span>, <span class="st">"clubs"</span>, <span class="st">"clubs"</span>), <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A data frame is a great way to build an entire deck of cards. You can make each row in the data frame a playing card, and each column a type of value—each with its own appropriate data type. The data frame would look something like this:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="do">##   face     suit value</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="do">##   king   spades    13</span></span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  queen   spades    12</span></span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="do">##   jack   spades    11</span></span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a><span class="do">##    ten   spades    10</span></span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a><span class="do">##   nine   spades     9</span></span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  eight   spades     8</span></span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  seven   spades     7</span></span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a><span class="do">##    six   spades     6</span></span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a><span class="do">##   five   spades     5</span></span>
+<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a><span class="do">##   four   spades     4</span></span>
+<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  three   spades     3</span></span>
+<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a><span class="do">##    two   spades     2</span></span>
+<span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a><span class="do">##    ace   spades     1</span></span>
+<span id="cb63-15"><a href="#cb63-15" aria-hidden="true" tabindex="-1"></a><span class="do">##   king    clubs    13</span></span>
+<span id="cb63-16"><a href="#cb63-16" aria-hidden="true" tabindex="-1"></a><span class="do">##  queen    clubs    12</span></span>
+<span id="cb63-17"><a href="#cb63-17" aria-hidden="true" tabindex="-1"></a><span class="do">##   jack    clubs    11</span></span>
+<span id="cb63-18"><a href="#cb63-18" aria-hidden="true" tabindex="-1"></a><span class="do">##    ten    clubs    10</span></span>
+<span id="cb63-19"><a href="#cb63-19" aria-hidden="true" tabindex="-1"></a><span class="do">##   ... and so on.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You could create this data frame with <code>data.frame</code>, but look at the typing involved! You need to write three vectors, each with 52 elements:</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>deck <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">face =</span> <span class="fu">c</span>(<span class="st">"king"</span>, <span class="st">"queen"</span>, <span class="st">"jack"</span>, <span class="st">"ten"</span>, <span class="st">"nine"</span>, <span class="st">"eight"</span>, <span class="st">"seven"</span>, <span class="st">"six"</span>,</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"five"</span>, <span class="st">"four"</span>, <span class="st">"three"</span>, <span class="st">"two"</span>, <span class="st">"ace"</span>, <span class="st">"king"</span>, <span class="st">"queen"</span>, <span class="st">"jack"</span>, <span class="st">"ten"</span>, </span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"nine"</span>, <span class="st">"eight"</span>, <span class="st">"seven"</span>, <span class="st">"six"</span>, <span class="st">"five"</span>, <span class="st">"four"</span>, <span class="st">"three"</span>, <span class="st">"two"</span>, <span class="st">"ace"</span>, </span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"king"</span>, <span class="st">"queen"</span>, <span class="st">"jack"</span>, <span class="st">"ten"</span>, <span class="st">"nine"</span>, <span class="st">"eight"</span>, <span class="st">"seven"</span>, <span class="st">"six"</span>, <span class="st">"five"</span>, </span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"four"</span>, <span class="st">"three"</span>, <span class="st">"two"</span>, <span class="st">"ace"</span>, <span class="st">"king"</span>, <span class="st">"queen"</span>, <span class="st">"jack"</span>, <span class="st">"ten"</span>, <span class="st">"nine"</span>, </span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"eight"</span>, <span class="st">"seven"</span>, <span class="st">"six"</span>, <span class="st">"five"</span>, <span class="st">"four"</span>, <span class="st">"three"</span>, <span class="st">"two"</span>, <span class="st">"ace"</span>),  </span>
+<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">suit =</span> <span class="fu">c</span>(<span class="st">"spades"</span>, <span class="st">"spades"</span>, <span class="st">"spades"</span>, <span class="st">"spades"</span>, <span class="st">"spades"</span>, <span class="st">"spades"</span>, </span>
+<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"spades"</span>, <span class="st">"spades"</span>, <span class="st">"spades"</span>, <span class="st">"spades"</span>, <span class="st">"spades"</span>, <span class="st">"spades"</span>, <span class="st">"spades"</span>, </span>
+<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"clubs"</span>, <span class="st">"clubs"</span>, <span class="st">"clubs"</span>, <span class="st">"clubs"</span>, <span class="st">"clubs"</span>, <span class="st">"clubs"</span>, <span class="st">"clubs"</span>, <span class="st">"clubs"</span>, </span>
+<span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"clubs"</span>, <span class="st">"clubs"</span>, <span class="st">"clubs"</span>, <span class="st">"clubs"</span>, <span class="st">"clubs"</span>, <span class="st">"diamonds"</span>, <span class="st">"diamonds"</span>, </span>
+<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"diamonds"</span>, <span class="st">"diamonds"</span>, <span class="st">"diamonds"</span>, <span class="st">"diamonds"</span>, <span class="st">"diamonds"</span>, <span class="st">"diamonds"</span>, </span>
+<span id="cb64-13"><a href="#cb64-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"diamonds"</span>, <span class="st">"diamonds"</span>, <span class="st">"diamonds"</span>, <span class="st">"diamonds"</span>, <span class="st">"diamonds"</span>, <span class="st">"hearts"</span>, </span>
+<span id="cb64-14"><a href="#cb64-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"hearts"</span>, <span class="st">"hearts"</span>, <span class="st">"hearts"</span>, <span class="st">"hearts"</span>, <span class="st">"hearts"</span>, <span class="st">"hearts"</span>, <span class="st">"hearts"</span>, </span>
+<span id="cb64-15"><a href="#cb64-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"hearts"</span>, <span class="st">"hearts"</span>, <span class="st">"hearts"</span>, <span class="st">"hearts"</span>, <span class="st">"hearts"</span>), </span>
+<span id="cb64-16"><a href="#cb64-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">13</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">13</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">9</span>, <span class="dv">8</span>, </span>
+<span id="cb64-17"><a href="#cb64-17" aria-hidden="true" tabindex="-1"></a>    <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">13</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">13</span>, <span class="dv">12</span>, <span class="dv">11</span>, </span>
+<span id="cb64-18"><a href="#cb64-18" aria-hidden="true" tabindex="-1"></a>    <span class="dv">10</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb64-19"><a href="#cb64-19" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should avoid typing large data sets in by hand whenever possible. Typing invites typos and errors, not to mention RSI. It is always better to acquire large data sets as a computer file. You can then ask R to read the file and store the contents as an object.</p>
+<p>I’ve created a file for you to load that contains a data frame of playing-card information, so don’t worry about typing in the code. Instead, turn your attention toward loading data into R.</p>
+</section>
+<section class="level2" data-number="0.9">
+<h2 data-number="3.9" class="anchored" id="loading"><span class="header-section-number">3.9</span> Loading Data</h2>
+<p>You can load the <code>deck</code> data frame from the file <a href="http://bit.ly/deck_CSV"><em>deck.csv</em></a>. Please take a moment to download the file before reading on. Visit the website, click “Download Zip,” and then unzip and open the folder that your web browser downloads. <em>deck.csv</em> will be inside.</p>
+<p><em>deck.csv</em> is a comma-separated values file, or CSV for short. CSVs are plain-text files, which means you can open them in a text editor (as well as many other programs). If you open <em>desk.csv</em>, you’ll notice that it contains a table of data that looks like the following table. Each row of the table is saved on its own line, and a comma is used to separate the cells within each row. Every CSV file shares this basic format:</p>
+<pre><code>"face","suit,"value"
+"king","spades",13
+"queen","spades,12
+"jack","spades,11
+"ten","spades,10
+"nine","spades,9
+... and so on.</code></pre>
+<p>Most data-science applications can open plain-text files and export data as plain-text files. This makes plain-text files a sort of lingua franca for data science.</p>
+<p>To load a plain-text file into R, click the Import Dataset icon in RStudio, shown in Figure @ref(fig:import). Then select “From text file.”</p>
+<div class="cell" data-fig.alt="{}">
+<div class="cell-output-display">
+<p>images/hopr_0303.png</p>
+<p>You can import data from plain-text files with RStudio’s Import Dataset.</p>
+</div>
+</div>
+<p>RStudio will ask you to select the file you want to import, then it will open a wizard to help you import the data, as in Figure @ref(fig:wizard). Use the wizard to tell RStudio what name to give the data set. You can also use the wizard to tell RStudio which character the data set uses as a separator, which character it uses to represent decimals (usually a period in the United States and a comma in Europe), and whether or not the data set comes with a row of column names (known as a <em>header</em>). To help you out, the wizard shows you what the raw file looks like, as well as what your loaded data will look like based on the input settings.</p>
+<p>You can also unclick the box “Strings as factors” in the wizard. I recommend doing this. If you do, R will load all of your character strings as character strings. If you do not, R will convert them to factors.</p>
+<div class="cell" data-fig.alt="{}">
+<div class="cell-output-display">
+<p>images/hopr_0304.png</p>
+<p>RStudio’s import wizard.</p>
+</div>
+</div>
+<p>Once everything looks right, click Import. RStudio will read in the data and save it to a data frame. RStudio will also open a data viewer, so you can see your new data in a spreadsheet format. This is a good way to check that everything came through as expected. If all worked well, your file should appear in a View tab of RStudio, like in Figure @ref(fig:view). You can examine the data frame in the console with <em><code>head(deck)</code></em>.</p>
+<div class="cell" type="rmdtip">
+
+<div class="rmdtip">
+<p><strong>Online data</strong></p>
+You can load a plain-text file straight from the Internet by clicking the “From Web URL…” option under Import Dataset. The file will need to have its own URL, and you will need to be connected.
+</div>
+</div>
+<div class="cell" data-fig.alt="{}">
+<div class="cell-output-display">
+<p>images/hopr_0305.png</p>
+<p>When you import a data set, RStudio will save the data to a data frame and then display the data frame in a View tab. You can open any data frame in a View tab at any time with the View function.</p>
+</div>
+</div>
+<p>Now it is your turn. Download <em>deck.csv</em> and import it into RStudio. Be sure to save the output to an R object called <code>deck</code>: you’ll use it in the next few chapters. If everything goes correctly, the first few lines of your data frame should look like this:</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(deck)</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  face   suit value</span></span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  king spades    13</span></span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="do">## queen spades    12</span></span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  jack spades    11</span></span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a><span class="do">##   ten spades    10</span></span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  nine spades     9</span></span>
+<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a><span class="do">## eight spades     8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" type="rmdnote">
+
+<div class="rmdnote">
+<code>head</code> and <code>tail</code> are two functions that provide an easy way to peek at large data sets. <code>head</code> will return just the first six rows of the data set, and <code>tail</code> will return just the last six rows. To see a different number of rows, give <code>head</code> or <code>tails</code> a second argument, the number of rows you would like to view, for example, <code>head(deck, 10)</code>.
+</div>
+</div>
+<p>R can open many types of files—not just CSVs. Visit [Loading and Saving Data in R] to learn how to open other common types of files in R.</p>
+</section>
+<section class="level2" data-number="0.10">
+<h2 data-number="3.10" class="anchored" id="saving-data"><span class="header-section-number">3.10</span> Saving Data</h2>
+<p>Before we go any further, let’s save a copy of <code>deck</code> as a new <em>.csv</em> file. That way you can email it to a colleague, store it on a thumb drive, or open it in a different program. You can save any data frame in R to a <em>.csv</em> file with the command <code>write.csv</code>. To save <code>deck</code>, run:</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(deck, <span class="at">file =</span> <span class="st">"cards.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>R will turn your data frame into a plain-text file with the comma-separated values format and save the file to your working directory. To see where your working directory is, run <em><code>getwd()</code></em>. To change the location of your working directory, visit Session &gt; Set Working Directory &gt; Choose Directory in the RStudio menu bar.</p>
+<p>You can customize the save process with <code>write.csv</code>’s large set of optional arguments (see <code>?write.csv</code> for details). However, there are three arguments that you should use <em>every</em> time you run <code>write.csv</code>.</p>
+<p>First, you should give <code>write.csv</code> the name of the data frame that you wish to save. Next, you should provide a file name to give your file. R will take this name quite literally, so be sure to provide an extension.</p>
+<p>Finally, you should add the argument <code>row.names = FALSE</code>. This will prevent R from adding a column of numbers at the start of your data frame. These numbers will identify your rows from 1 to 52, but it is unlikely that whatever program you open <em>cards.csv</em> in will understand the row name system. More than likely, the program will assume that the row names are the first column of data in your data frame. In fact, this is exactly what R will assume if you reopen <em>cards.csv</em>. If you save and open <em>cards.csv</em> several times in R, you’ll notice duplicate columns of row numbers forming at the start of your data frame. I can’t explain why R does this, but I can explain how to avoid it: use <code>row.names = FALSE</code> whenever you save data with <code>write.csv</code>.</p>
+<p>For more details about saving files, including how to compress saved files and how to save files in other formats, see [Loading and Saving Data in R].</p>
+<p>Good work. You now have a virtual deck of cards to work with. Take a breather, and when you come back, we’ll start writing some functions to use on your deck.</p>
+</section>
+<section class="level2" data-number="0.11">
+<h2 data-number="3.11" class="anchored" id="summary"><span class="header-section-number">3.11</span> Summary</h2>
+<p>You can save data in R with five different objects, which let you store different types of values in different types of relationships, as in Figure @ref(fig:structures). Of these objects, data frames are by far the most useful for data science. Data frames store one of the most common forms of data used in data science, tabular data.</p>
+<div class="cell" data-fig.alt="{}">
+<div class="cell-output-display">
+<p>images/hopr_0306.png</p>
+<p>R’s most common data structures are vectors, matrices, arrays, lists, and data frames.</p>
+</div>
+</div>
+<p>You can load tabular data into a data frame with RStudio’s Import Dataset button—so long as the data is saved as a plain-text file. This requirement is not as limiting as it sounds. Most software programs can export data as a plain-text file. So if you have an Excel file (for example) you can open the file in Excel and export the data as a CSV to use with R. In fact, opening a file in its original program is good practice. Excel files use metadata, like sheets and formulas, that help Excel work with the file. R can try to extract raw data from the file, but it won’t be as good at doing this as Microsoft Excel is. No program is better at converting Excel files than Excel. Similarly, no program is better at converting SAS Xport files than SAS, and so on.</p>
+<p>However, you may find yourself with a program-specific file, but not the program that created it. You wouldn’t want to buy a multi-thousand-dollar SAS license just to open a SAS file. Thankfully R <em>can</em> open many types of files, including files from other programs and databases. R even has its own program-specific formats that can help you save memory and time if you know that you will be working entirely in R. If you’d like to know more about all of your options for loading and saving data in R, see [Loading and Saving Data in R].</p>
+<p>[R Notation] will build upon the skills you learned in this chapter. Here, you learned how to store data in R. In [R Notation], you will learn how to access values once they’ve been stored. You’ll also write two functions that will let you start using your deck, a shuffle function and a deal function.</p>
+<!-- -->
+</section>
+</main>
+</div> <!-- /main column -->
+<div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#atomic-vectors" class="nav-link" data-bs-target="#atomic-vectors"><span class="toc-section-number">3.1</span> Atomic Vectors</a>
+<ul>
+<li><a href="#doubles" class="nav-link" data-bs-target="#doubles"><span class="toc-section-number">3.1.1</span> Doubles</a></li>
+<li><a href="#integers" class="nav-link" data-bs-target="#integers"><span class="toc-section-number">3.1.2</span> Integers</a></li>
+<li><a href="#characters" class="nav-link" data-bs-target="#characters"><span class="toc-section-number">3.1.3</span> Characters</a></li>
+<li><a href="#logicals" class="nav-link" data-bs-target="#logicals"><span class="toc-section-number">3.1.4</span> Logicals</a></li>
+<li><a href="#complex-and-raw" class="nav-link" data-bs-target="#complex-and-raw"><span class="toc-section-number">3.1.5</span> Complex and Raw</a></li>
+</ul></li>
+<li><a href="#attributes" class="nav-link" data-bs-target="#attributes"><span class="toc-section-number">3.2</span> Attributes</a>
+<ul>
+<li><a href="#names" class="nav-link" data-bs-target="#names"><span class="toc-section-number">3.2.1</span> Names</a></li>
+<li><a href="#dim" class="nav-link" data-bs-target="#dim"><span class="toc-section-number">3.2.2</span> Dim</a></li>
+</ul></li>
+<li><a href="#matrices" class="nav-link" data-bs-target="#matrices"><span class="toc-section-number">3.3</span> Matrices</a></li>
+<li><a href="#arrays" class="nav-link" data-bs-target="#arrays"><span class="toc-section-number">3.4</span> Arrays</a></li>
+<li><a href="#class" class="nav-link" data-bs-target="#class"><span class="toc-section-number">3.5</span> Class</a>
+<ul>
+<li><a href="#dates-and-times" class="nav-link" data-bs-target="#dates-and-times"><span class="toc-section-number">3.5.1</span> Dates and Times</a></li>
+<li><a href="#factors" class="nav-link" data-bs-target="#factors"><span class="toc-section-number">3.5.2</span> Factors</a></li>
+</ul></li>
+<li><a href="#coercion" class="nav-link" data-bs-target="#coercion"><span class="toc-section-number">3.6</span> Coercion</a></li>
+<li><a href="#lists" class="nav-link" data-bs-target="#lists"><span class="toc-section-number">3.7</span> Lists</a></li>
+<li><a href="#data-frames" class="nav-link" data-bs-target="#data-frames"><span class="toc-section-number">3.8</span> Data Frames</a></li>
+<li><a href="#loading" class="nav-link" data-bs-target="#loading"><span class="toc-section-number">3.9</span> Loading Data</a></li>
+<li><a href="#saving-data" class="nav-link" data-bs-target="#saving-data"><span class="toc-section-number">3.10</span> Saving Data</a></li>
+<li><a href="#summary" class="nav-link" data-bs-target="#summary"><span class="toc-section-number">3.11</span> Summary</a></li>
+</ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/objects.rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
+</div> <!-- /row -->
+<div class="row page-navigation page-navigation-docked">
+  <div class="nav-page nav-page-previous col">
+      <a href="./cards.html">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Project 2: Playing Cards</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next col">
+      <a href="./notation.html">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; R Notation</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</div>
+</div> <!-- /container fluid -->
+
+
+</body></html>
