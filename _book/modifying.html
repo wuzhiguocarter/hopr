@@ -96,6 +96,67 @@
   <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
   <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
   
+  <style type="text/css">
+    .quarto-layout-panel > figure > figcaption,
+    .quarto-layout-panel > .panel-caption {
+      margin-top: 10pt;
+    }
+    .quarto-layout-row {
+      display: flex;
+      align-items: flex-start;
+    }
+    .quarto-layout-valign-top {
+      align-items: flex-start;
+    }
+    .quarto-layout-valign-bottom {
+      align-items: flex-end;
+    }
+    .quarto-layout-valign-center {
+      align-items: center;
+    }
+    .quarto-layout-cell {
+      position: relative;
+      margin-right: 20px;
+    }
+    .quarto-layout-cell:last-child {
+      margin-right: 0;
+    }
+    .quarto-layout-cell figure,
+    .quarto-layout-cell > p {
+      margin: 0.2em;
+    }
+    .quarto-layout-cell img {
+      max-width: 100%;
+    }
+    .quarto-layout-cell .html-widget {
+      width: 100% !important;
+    }
+    .quarto-layout-cell div figure p {
+      margin: 0;
+    }
+    .quarto-layout-cell figure {
+      display: inline-block;
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+    }
+    .quarto-layout-cell table {
+       display: inline-table;
+    }
+    .quarto-layout-cell-subref figcaption {
+      font-size: 0.8em;
+      font-style: italic;
+    }
+    figure > p:empty {
+      display: none;
+    }
+    figure > p:first-child {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    figure > figcaption {
+      margin-top: 0.5em;
+    }
+  </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
 <div id="quarto-search-results"></div>
@@ -121,12 +182,12 @@
     <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
-          <a class="dropdown-item" href=".//Hands-On Programming with R.pdf ">
+          <a class="dropdown-item" href="./Hands-On Programming with R.pdf">
           Download PDF
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href=".//Hands-On Programming with R.epub ">
+          <a class="dropdown-item" href="./Hands-On Programming with R.epub">
           Download ePub
           </a>
         </li>
@@ -134,19 +195,19 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
         <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share ">
+          <a class="dropdown-item" href="http://www.twitter.com/share">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php ">
+          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url= ">
+          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -655,8 +716,12 @@ It is easy to forget to put a complete test on either side of a Boolean operator
 </div>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_0501.png</p>
-<p>R will evaluate the expressions on each side of a Boolean operator separately, and then combine the results into a single TRUE or FALSE. If you do not supply a complete test to each side of the operator, R will return an error.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_0501.png" class="img-fluid" width="512"></p>
+<p></p><figcaption aria-hidden="true">R will evaluate the expressions on each side of a Boolean operator separately, and then combine the results into a single TRUE or FALSE. If you do not supply a complete test to each side of the operator, R will return an error.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>When used with vectors, Boolean operators will follow the same element-wise execution as arithmetic and logical operators:</p>
@@ -844,18 +909,6 @@ It is easy to forget to put a complete test on either side of a Boolean operator
 <!-- -->
 </section>
 </main>
-</div> <!-- /main column -->
-<div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
-<nav id="TOC" role="doc-toc">
-<h2 id="toc-title">Table of contents</h2>
-<ul>
-<li><a href="#changing-values-in-place" class="nav-link" data-bs-target="#changing-values-in-place"><span class="toc-section-number">5.0.1</span> Changing Values in Place</a></li>
-<li><a href="#logical-subsetting" class="nav-link" data-bs-target="#logical-subsetting"><span class="toc-section-number">5.0.2</span> Logical Subsetting</a></li>
-<li><a href="#missing" class="nav-link" data-bs-target="#missing"><span class="toc-section-number">5.0.3</span> Missing Information</a></li>
-<li><a href="#summary" class="nav-link" data-bs-target="#summary"><span class="toc-section-number">5.0.4</span> Summary</a></li>
-</ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/modifying.rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
-</div> <!-- /row -->
 <div class="row page-navigation page-navigation-docked">
   <div class="nav-page nav-page-previous col">
       <a href="./notation.html">
@@ -868,6 +921,18 @@ It is easy to forget to put a complete test on either side of a Boolean operator
       </a>
   </div>
 </div>
+</div> <!-- /main column -->
+<div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#changing-values-in-place" class="nav-link" data-bs-target="#changing-values-in-place"><span class="toc-section-number">5.0.1</span> Changing Values in Place</a></li>
+<li><a href="#logical-subsetting" class="nav-link" data-bs-target="#logical-subsetting"><span class="toc-section-number">5.0.2</span> Logical Subsetting</a></li>
+<li><a href="#missing" class="nav-link" data-bs-target="#missing"><span class="toc-section-number">5.0.3</span> Missing Information</a></li>
+<li><a href="#summary" class="nav-link" data-bs-target="#summary"><span class="toc-section-number">5.0.4</span> Summary</a></li>
+</ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/modifying.rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
+</div> <!-- /row -->
 </div> <!-- /container fluid -->
 
 

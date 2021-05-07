@@ -72,17 +72,18 @@ new
 ## king spades    13
 ```
 
-```{block2, type = "rmdtip"}
-**Repetition**
-  
+::: {.callout-tip caption="Repetition"}
+
 If you repeat a number in your index, R will return the corresponding value(s) more than once in your "subset." This code will return the first row of `deck` twice:
   
-    deck[c(1, 1), c(1, 2, 3)]
-    ## face   suit value
-    ## king spades    13
-    ## king spades    13
-
+```r
+deck[c(1, 1), c(1, 2, 3)]
+## face   suit value
+## king spades    13
+## king spades    13
 ```
+
+:::
 
 ```{r positive, echo = FALSE, fig.cap = "R uses the _ij_ notation system of linear algebra. The commands in this figure will return the shaded values."}
 knitr::include_graphics("images/hopr_0401.png")

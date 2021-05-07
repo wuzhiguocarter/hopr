@@ -96,6 +96,67 @@
   <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
   <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
   
+  <style type="text/css">
+    .quarto-layout-panel > figure > figcaption,
+    .quarto-layout-panel > .panel-caption {
+      margin-top: 10pt;
+    }
+    .quarto-layout-row {
+      display: flex;
+      align-items: flex-start;
+    }
+    .quarto-layout-valign-top {
+      align-items: flex-start;
+    }
+    .quarto-layout-valign-bottom {
+      align-items: flex-end;
+    }
+    .quarto-layout-valign-center {
+      align-items: center;
+    }
+    .quarto-layout-cell {
+      position: relative;
+      margin-right: 20px;
+    }
+    .quarto-layout-cell:last-child {
+      margin-right: 0;
+    }
+    .quarto-layout-cell figure,
+    .quarto-layout-cell > p {
+      margin: 0.2em;
+    }
+    .quarto-layout-cell img {
+      max-width: 100%;
+    }
+    .quarto-layout-cell .html-widget {
+      width: 100% !important;
+    }
+    .quarto-layout-cell div figure p {
+      margin: 0;
+    }
+    .quarto-layout-cell figure {
+      display: inline-block;
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+    }
+    .quarto-layout-cell table {
+       display: inline-table;
+    }
+    .quarto-layout-cell-subref figcaption {
+      font-size: 0.8em;
+      font-style: italic;
+    }
+    figure > p:empty {
+      display: none;
+    }
+    figure > p:first-child {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    figure > figcaption {
+      margin-top: 0.5em;
+    }
+  </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
 <div id="quarto-search-results"></div>
@@ -121,12 +182,12 @@
     <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
-          <a class="dropdown-item" href=".//Hands-On Programming with R.pdf ">
+          <a class="dropdown-item" href="./Hands-On Programming with R.pdf">
           Download PDF
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href=".//Hands-On Programming with R.epub ">
+          <a class="dropdown-item" href="./Hands-On Programming with R.epub">
           Download ePub
           </a>
         </li>
@@ -134,19 +195,19 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
         <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share ">
+          <a class="dropdown-item" href="http://www.twitter.com/share">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php ">
+          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url= ">
+          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -336,21 +397,31 @@
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>new</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="do">## face   suit value</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="do">## king spades    13</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell" type="rmdtip">
-
-<div class="rmdtip">
-<p><strong>Repetition</strong></p>
+<div class="callout-tip callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Repetition
+</div>
+</div>
+<div class="callout-body">
 <p>If you repeat a number in your index, R will return the corresponding value(s) more than once in your “subset.” This code will return the first row of <code>deck</code> twice:</p>
-<pre><code>deck[c(1, 1), c(1, 2, 3)]
-## face   suit value
-## king spades    13
-## king spades    13</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>deck[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="do">## face   suit value</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="do">## king spades    13</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="do">## king spades    13</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_0401.png</p>
-<p>R uses the <em>ij</em> notation system of linear algebra. The commands in this figure will return the shaded values.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_0401.png" class="img-fluid" width="485"></p>
+<p></p><figcaption aria-hidden="true">R uses the <em>ij</em> notation system of linear algebra. The commands in this figure will return the shaded values.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>R’s notation system is not limited to data frames. You can use the same syntax to select values in any R object, as long as you supply one index for each dimension of the object. So, for example, you can subset a vector (which has one dimension) with a single index:</p>
@@ -428,8 +499,12 @@ This method also works for selecting a single column from a matrix or an array.
 <span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="do">## king spades    13</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_0402.png</p>
-<p>You can use vectors of TRUEs and FALSEs to tell R exactly which values you want to extract and which you do not. The command would return just the numbers 1, 6, and 5.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_0402.png" class="img-fluid" width="512"></p>
+<p></p><figcaption aria-hidden="true">You can use vectors of TRUEs and FALSEs to tell R exactly which values you want to extract and which you do not. The command would return just the numbers 1, 6, and 5.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>This system may seem odd—who wants to type so many <code>TRUE</code>s and <code>FALSE</code>s?—but it will become very powerful in [Modifying Values].</p>
@@ -593,8 +668,12 @@ This method also works for selecting a single column from a matrix or an array.
 <p>This difference is subtle but important. In the R community, there is a popular, and helpful, way to think about it, Figure @ref(fig:trains). Imagine that each list is a train and each element is a train car. When you use single brackets, R selects individual train cars and returns them as a new train. Each car keeps its contents, but those contents are still inside a train car (i.e., a list). When you use double brackets, R actually unloads the car and gives you back the contents.</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_0403.png</p>
-<p>It can be helpful to think of your list as a train. Use single brackets to select train cars, double brackets to select the contents inside of a car.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_0403.png" class="img-fluid" width="512"></p>
+<p></p><figcaption aria-hidden="true">It can be helpful to think of your list as a train. Use single brackets to select train cars, double brackets to select the contents inside of a car.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="cell" type="rmdimportant">
@@ -616,6 +695,18 @@ What does <code>attach()</code> do? On the surface, <code>attach</code> saves yo
 <!-- -->
 </section>
 </main>
+<div class="row page-navigation page-navigation-docked">
+  <div class="nav-page nav-page-previous col">
+      <a href="./objects.html">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; R Objects</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next col">
+      <a href="./modifying.html">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; Modifying Values</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</div>
 </div> <!-- /main column -->
 <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
 <nav id="TOC" role="doc-toc">
@@ -637,18 +728,6 @@ What does <code>attach()</code> do? On the surface, <code>attach</code> saves yo
 </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/notation.rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
-<div class="row page-navigation page-navigation-docked">
-  <div class="nav-page nav-page-previous col">
-      <a href="./objects.html">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; R Objects</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next col">
-      <a href="./modifying.html">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; Modifying Values</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</div>
 </div> <!-- /container fluid -->
 
 

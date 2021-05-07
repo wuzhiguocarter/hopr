@@ -4,7 +4,7 @@ knit: quarto render
 
 # R Objects
 
-In this chapter, you'll use R to assemble a deck of 52 playing cards. 
+In this chapter, you'll use R to assemble a deck of 52 playing cards.
 
 You'll start by building simple R objects that represent playing cards and then work your way up to a full-blown table of data. In short, you'll build the equivalent of an Excel spreadsheet from scratch. When you are finished, your deck of cards will look something like this:
 

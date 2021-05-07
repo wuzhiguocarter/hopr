@@ -96,6 +96,67 @@
   <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
   <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
   
+  <style type="text/css">
+    .quarto-layout-panel > figure > figcaption,
+    .quarto-layout-panel > .panel-caption {
+      margin-top: 10pt;
+    }
+    .quarto-layout-row {
+      display: flex;
+      align-items: flex-start;
+    }
+    .quarto-layout-valign-top {
+      align-items: flex-start;
+    }
+    .quarto-layout-valign-bottom {
+      align-items: flex-end;
+    }
+    .quarto-layout-valign-center {
+      align-items: center;
+    }
+    .quarto-layout-cell {
+      position: relative;
+      margin-right: 20px;
+    }
+    .quarto-layout-cell:last-child {
+      margin-right: 0;
+    }
+    .quarto-layout-cell figure,
+    .quarto-layout-cell > p {
+      margin: 0.2em;
+    }
+    .quarto-layout-cell img {
+      max-width: 100%;
+    }
+    .quarto-layout-cell .html-widget {
+      width: 100% !important;
+    }
+    .quarto-layout-cell div figure p {
+      margin: 0;
+    }
+    .quarto-layout-cell figure {
+      display: inline-block;
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+    }
+    .quarto-layout-cell table {
+       display: inline-table;
+    }
+    .quarto-layout-cell-subref figcaption {
+      font-size: 0.8em;
+      font-style: italic;
+    }
+    figure > p:empty {
+      display: none;
+    }
+    figure > p:first-child {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    figure > figcaption {
+      margin-top: 0.5em;
+    }
+  </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
 <div id="quarto-search-results"></div>
@@ -121,12 +182,12 @@
     <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
-          <a class="dropdown-item" href=".//Hands-On Programming with R.pdf ">
+          <a class="dropdown-item" href="./Hands-On Programming with R.pdf">
           Download PDF
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href=".//Hands-On Programming with R.epub ">
+          <a class="dropdown-item" href="./Hands-On Programming with R.epub">
           Download ePub
           </a>
         </li>
@@ -134,19 +195,19 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
         <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share ">
+          <a class="dropdown-item" href="http://www.twitter.com/share">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php ">
+          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url= ">
+          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -312,8 +373,12 @@
 <p>You can see your file system by opening a finder window. For example, Figure @ref(fig:folders) shows part of the file system on my computer. I have tons of folders. Inside one of them is a subfolder named <em>Documents</em>, inside of that subfolder is a sub-subfolder named <em>ggsubplot</em>, inside of that folder is a folder named <em>inst</em>, inside of that is a folder named <em>doc</em>, and inside of that is a file named <em>manual.pdf</em>.</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_0601.png</p>
-<p>Your computer arranges files into a hierarchy of folders and subfolders. To look at a file, you need to find where it is saved in the file system.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_0601.png" class="img-fluid" width="678"></p>
+<p></p><figcaption aria-hidden="true">Your computer arranges files into a hierarchy of folders and subfolders. To look at a file, you need to find where it is saved in the file system.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>R uses a similar system to save R objects. Each object is saved inside of an environment, a list-like object that resembles a folder on your computer. Each environment is connected to a <em>parent environment</em>, a higher-level environment, which creates a hierarchy of environments.</p>
@@ -336,8 +401,12 @@
 <p>It takes some imagination to interpret this output, so let’s visualize the environments as a system of folders, Figure @ref(fig:environments). You can think of the environment tree like this. The lowest-level environment is named <code>R_GlobalEnv</code> and is saved inside an environment named <code>package:pryr</code>, which is saved inside the environment named <code>0x7fff3321c388</code>, and so on, until you get to the final, highest-level environment, <code>R_EmptyEnv</code>. <code>R_EmptyEnv</code> is the only R environment that does not have a parent environment.</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_0602.png</p>
-<p>R stores R objects in an environment tree that resembles your computer’s folder system.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_0602.png" class="img-fluid" width="578"></p>
+<p></p><figcaption aria-hidden="true">R stores R objects in an environment tree that resembles your computer’s folder system.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Remember that this example is just a metaphor. R’s environments exist in your RAM memory, and not in your file system. Also, R environments aren’t technically saved inside one another. Each environment is connected to a parent environment, which makes it easy to search up R’s environment tree. But this connection is one-way: there’s no way to look at one environment and tell what its “children” are. So you cannot search down R’s environment tree. In other ways, though, R’s environment system works similar to a file system.</p>
@@ -422,8 +491,12 @@ RStudio’s environment pane displays all of the objects in your global environm
 <p>So, if you call an object at the command line, R will look for it in the global environment. If R can’t find it there, R will look in the parent of the global environment, and then the parent of the parent, and so on, working its way up the environment tree until it finds the object, as in Figure @ref(fig:path). If R cannot find the object in any environment, it will return an error that says the object is not found.</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_0603.png</p>
-<p>R will search for an object by name in the active environment, here the global environment. If R does not find the object there, it will search in the active environment’s parent, and then the parent’s parent, and so on until R finds the object or runs out of environments.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_0603.png" class="img-fluid" width="713"></p>
+<p></p><figcaption aria-hidden="true">R will search for an object by name in the active environment, here the global environment. If R does not find the object there, it will search in the active environment’s parent, and then the parent’s parent, and so on until R finds the object or runs out of environments.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="cell" type="rmdtip">
@@ -483,8 +556,12 @@ Remember that functions are a type of object in R. R will store and look up func
 <p>This time <code>show_env</code> ran in a new environment, <code>0x7ff715f49808</code>. R creates a new environment <em>each</em> time you run a function. The <code>0x7ff715f49808</code> environment looks exactly the same as <code>0x7ff711d12e28</code>. It is empty and has the same global environment as its parent.</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_0604.png</p>
-<p>R creates a new environment to run show_env in. The environment is a child of the global environment.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_0604.png" class="img-fluid" width="700"></p>
+<p></p><figcaption aria-hidden="true">R creates a new environment to run show_env in. The environment is a child of the global environment.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Now let’s consider which environment R will use as the parent of the runtime environment.</p>
@@ -560,8 +637,12 @@ Remember that functions are a type of object in R. R will store and look up func
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  king spades    13</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_0605.png</p>
-<p>R finds deck by looking in the parent of deal’s runtime environment. The parent is the global environment, deal’s origin environment. Here, R finds the copy of deck.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_0605.png" class="img-fluid" width="746"></p>
+<p></p><figcaption aria-hidden="true">R finds deck by looking in the parent of deal’s runtime environment. The parent is the global environment, deal’s origin environment. Here, R finds the copy of deck.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Now let’s fix the <code>deal</code> function to remove the cards it has dealt from <code>deck</code>. Recall that <code>deal</code> returns the top card of <code>deck</code> but does not remove the card from the deck. As a result, <code>deal</code> always returns the same card:</p>
@@ -591,8 +672,12 @@ Remember that functions are a type of object in R. R will store and look up func
 <p>This code won’t work because R will be in a runtime environment when it executes <code>deck &lt;- deck[-1, ]</code>. Instead of overwriting the global copy of <code>deck</code> with <code>deck[-1, ]</code>, <code>deal</code> will just create a slightly altered copy of <code>deck</code> in its runtime environment, as in Figure @ref(fig:second-deck).</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_0606.png</p>
-<p>The deal function looks up deck in the global environment but saves deck[-1, ] in the runtime environment as a new object named deck.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_0606.png" class="img-fluid" width="590"></p>
+<p></p><figcaption aria-hidden="true">The deal function looks up deck in the global environment but saves deck[-1, ] in the runtime environment as a new object named deck.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="cell" name="Overwrite deck">
@@ -708,8 +793,12 @@ Remember that functions are a type of object in R. R will store and look up func
 <span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>cards <span class="ot">&lt;-</span> <span class="fu">setup</span>(deck)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_0607.png</p>
-<p>Running setup will store deck and DECK in an out-of-the-way place, and create a DEAL and SHUFFLE function. Each of these objects will be stored in an environment whose parent is the global environment.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_0607.png" class="img-fluid" width="782"></p>
+<p></p><figcaption aria-hidden="true">Running setup will store deck and DECK in an out-of-the-way place, and create a DEAL and SHUFFLE function. Each of these objects will be stored in an environment whose parent is the global environment.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Then you can save each of the elements of the list to a dedicated object in the global environment:</p>
@@ -739,8 +828,12 @@ Remember that functions are a type of object in R. R will store and look up func
 <p>Why does this matter? Because now when you run <code>deal</code> or <code>shuffle</code>, R will evaluate the functions in a runtime environment that uses <code>0x7ff7169c3390</code> as its parent. <code>DECK</code> and <code>deck</code> will be in this parent environment, which means that <code>deal</code> and <code>shuffle</code> will be able to find them at runtime. <code>DECK</code> and <code>deck</code> will be in the functions’ search path but still out of the way in every other respect, as shown in Figure @ref(fig:closure2).</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_0608.png</p>
-<p>Now deal and shuffle will be run in an environment that has the protected deck and DECK in its search path.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_0608.png" class="img-fluid" width="782"></p>
+<p></p><figcaption aria-hidden="true">Now deal and shuffle will be run in an environment that has the protected deck and DECK in its search path.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>This arrangement is called a <em>closure</em>. <code>setup</code>’s runtime environment “encloses” the <code>deal</code> and <code>shuffle</code> functions. Both <code>deal</code> and <code>shuffle</code> can work closely with the objects contained in the enclosing environment, but almost nothing else can. The enclosing environment is not on the search path for any other R function or environment.</p>
@@ -767,8 +860,12 @@ Remember that functions are a type of object in R. R will store and look up func
 <span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a>shuffle <span class="ot">&lt;-</span> cards<span class="sc">$</span>shuffle</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_0609.png</p>
-<p>When you change your code, deal and shuffle will go from updating the global environment (left) to updating their parent environment (right).</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_0609.png" class="img-fluid" width="720"></p>
+<p></p><figcaption aria-hidden="true">When you change your code, deal and shuffle will go from updating the global environment (left) to updating their parent environment (right).</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>We finally have a self-contained card game. You can delete (or modify) the global copy of <code>deck</code> as much as you want and still play cards. <code>deal</code> and <code>shuffle</code> will use the pristine, protected copy of <code>deck</code>:</p>
@@ -799,6 +896,18 @@ Remember that functions are a type of object in R. R will store and look up func
 <!-- -->
 </section>
 </main>
+<div class="row page-navigation page-navigation-docked">
+  <div class="nav-page nav-page-previous col">
+      <a href="./modifying.html">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; Modifying Values</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next col">
+      <a href="./slots.html">
+        <span class="nav-page-text">Project 3: Slot Machine</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</div>
 </div> <!-- /main column -->
 <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
 <nav id="TOC" role="doc-toc">
@@ -818,18 +927,6 @@ Remember that functions are a type of object in R. R will store and look up func
 </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/environments.rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
-<div class="row page-navigation page-navigation-docked">
-  <div class="nav-page nav-page-previous col">
-      <a href="./modifying.html">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; Modifying Values</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next col">
-      <a href="./slots.html">
-        <span class="nav-page-text">Project 3: Slot Machine</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</div>
 </div> <!-- /container fluid -->
 
 

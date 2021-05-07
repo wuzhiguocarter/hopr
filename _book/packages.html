@@ -96,6 +96,67 @@
   <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
   <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
   
+  <style type="text/css">
+    .quarto-layout-panel > figure > figcaption,
+    .quarto-layout-panel > .panel-caption {
+      margin-top: 10pt;
+    }
+    .quarto-layout-row {
+      display: flex;
+      align-items: flex-start;
+    }
+    .quarto-layout-valign-top {
+      align-items: flex-start;
+    }
+    .quarto-layout-valign-bottom {
+      align-items: flex-end;
+    }
+    .quarto-layout-valign-center {
+      align-items: center;
+    }
+    .quarto-layout-cell {
+      position: relative;
+      margin-right: 20px;
+    }
+    .quarto-layout-cell:last-child {
+      margin-right: 0;
+    }
+    .quarto-layout-cell figure,
+    .quarto-layout-cell > p {
+      margin: 0.2em;
+    }
+    .quarto-layout-cell img {
+      max-width: 100%;
+    }
+    .quarto-layout-cell .html-widget {
+      width: 100% !important;
+    }
+    .quarto-layout-cell div figure p {
+      margin: 0;
+    }
+    .quarto-layout-cell figure {
+      display: inline-block;
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+    }
+    .quarto-layout-cell table {
+       display: inline-table;
+    }
+    .quarto-layout-cell-subref figcaption {
+      font-size: 0.8em;
+      font-style: italic;
+    }
+    figure > p:empty {
+      display: none;
+    }
+    figure > p:first-child {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    figure > figcaption {
+      margin-top: 0.5em;
+    }
+  </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
 <div id="quarto-search-results"></div>
@@ -121,12 +182,12 @@
     <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
-          <a class="dropdown-item" href=".//Hands-On Programming with R.pdf ">
+          <a class="dropdown-item" href="./Hands-On Programming with R.pdf">
           Download PDF
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href=".//Hands-On Programming with R.epub ">
+          <a class="dropdown-item" href="./Hands-On Programming with R.epub">
           Download ePub
           </a>
         </li>
@@ -134,19 +195,19 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
         <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share ">
+          <a class="dropdown-item" href="http://www.twitter.com/share">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php ">
+          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url= ">
+          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -336,8 +397,12 @@
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_0201.png</p>
-<p>qplot makes a scatterplot when you give it two vectors.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_0201.png" class="img-fluid" width="487"></p>
+<p></p><figcaption aria-hidden="true">qplot makes a scatterplot when you give it two vectors.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>You don’t need to name your vectors <code>x</code> and <code>y</code>. I just did that to make the example clear. As you can see in Figure @ref(fig:qplot), a scatterplot is a set of points, each plotted according to its x and y values. Together, the vectors <code>x</code> and <code>y</code> describe a set of 10 points. How did R match up the values in <code>x</code> and <code>y</code> to make these points? With element-wise execution, as we saw in Figure @ref(fig:elementwise).</p>
@@ -347,8 +412,12 @@
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(x, <span class="at">binwidth =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_0202.png</p>
-<p>qplot makes a histogram when you give it a single vector.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_0202.png" class="img-fluid" width="510"></p>
+<p></p><figcaption aria-hidden="true">qplot makes a histogram when you give it a single vector.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>This plot shows that our vector contains one value in the interval <code>[1, 2)</code> by placing a bar of height 1 above that interval. Similarly, the plot shows that the vector contains three values in the interval <code>[2, 3)</code> by placing a bar of height 3 in that interval. It shows that the vector contains two values in the interval <code>[3, 4)</code> by placing a bar of height 2 in that interval. In these intervals, the hard bracket, <code>[</code>, means that the first number is included in the interval. The parenthesis, <code>)</code>, means that the last number is <em>not</em> included.</p>
@@ -376,8 +445,12 @@
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 3  7  5  3  6  2  3  8 11  7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_0203.png</p>
-<p>Each individual dice combination should occur with the same frequency. As a result, some sums will occur more often than others. With fair dice, each sum should appear in proportion to the number of combinations that make it.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_0203.png" class="img-fluid" width="512"></p>
+<p></p><figcaption aria-hidden="true">Each individual dice combination should occur with the same frequency. As a result, some sums will occur more often than others. With fair dice, each sum should appear in proportion to the number of combinations that make it.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>A histogram of your first 10 rolls probably won’t look like the pattern shown in Figure @ref(fig:probs). Why not? There is too much randomness involved. Remember that we use dice in real life because they are effective random number generators. Patterns of long run frequencies will only appear <em>over the long run</em>. So let’s simulate 10,000 dice rolls and plot the results. Don’t worry; <code>qplot</code> and <code>replicate</code> can handle it. The results appear in Figure @ref(fig:fair):</p>
@@ -387,8 +460,12 @@
 <p>Now how can you bias these results? The previous pattern occurs because each underlying combination of dice (e.g., (3,4)) occurs with the same frequency. If you could increase the probability that a 6 is rolled on either die, then any combination with a six in it will occur more often than any combination without a six in it. The combination (6, 6) would occur most of all. This won’t make the dice add up to 12 more often than they add up to seven, but it will skew the results toward the higher numbers.</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_0204.png</p>
-<p>The behavior of our dice suggests that they are fair. Seven occurs more often than any other number, and frequencies diminish in proportion to the number of die combinations that create each number.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_0204.png" class="img-fluid" width="508"></p>
+<p></p><figcaption aria-hidden="true">The behavior of our dice suggests that they are fair. Seven occurs more often than any other number, and frequencies diminish in proportion to the number of die combinations that create each number.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>To put it another way, the probability of rolling any single number on a fair die is 1/6. I’d like you to change the probability to 1/8 for each number below six, and then increase the probability of rolling a six to 3/8:</p>
@@ -512,8 +589,12 @@ should be nonnegative and not all zero.</code></pre>
 <p>This confirms that we’ve effectively weighted the dice. High numbers occur much more often than low numbers. The remarkable thing is that this behavior will only be apparent when you examine long-term frequencies. On any single roll, the dice will appear to behave randomly. This is great news if you play Settlers of Catan (just tell your friends you lost the dice), but it should be disturbing if you analyze data, because it means that bias can easily occur without anyone noticing it in the short run.</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_0205.png</p>
-<p>The dice are now clearly biased towards high numbers, since high sums occur much more often than low sums.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_0205.png" class="img-fluid" width="510"></p>
+<p></p><figcaption aria-hidden="true">The dice are now clearly biased towards high numbers, since high sums occur much more often than low sums.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -527,7 +608,7 @@ should be nonnegative and not all zero.</code></pre>
 </section>
 <section class="level2" data-number="0.3">
 <h2 data-number="2.3" class="anchored" id="summary"><span class="header-section-number">2.3</span> Summary</h2>
-<p>R’s packages and help pages can make you a more productive programmer. You saw in <span class="quarto-unresolved-ref">?sec:basics</span> that R gives you the power to write your own functions that do specific things, but often the function that you want to write will already exist in an R package. Professors, programmers, and scientists have developed over 13,000 packages for you to use, which can save you valuable programming time. To use a package, you need to install it to your computer once with <code>install.packages</code>, and then load it into each new R session with <code>library</code>.</p>
+<p>R’s packages and help pages can make you a more productive programmer. You saw in <a href="basics.html">Sec.&nbsp;<span>1</span></a> that R gives you the power to write your own functions that do specific things, but often the function that you want to write will already exist in an R package. Professors, programmers, and scientists have developed over 13,000 packages for you to use, which can save you valuable programming time. To use a package, you need to install it to your computer once with <code>install.packages</code>, and then load it into each new R session with <code>library</code>.</p>
 <p>R’s help pages will help you master the functions that appear in R and its packages. Each function and data set in R has its own help page. Although help pages often contain advanced content, they also contain valuable clues and examples that can help you learn how to use a function.</p>
 <p>You have now seen enough of R to learn by doing, which is the best way to learn R. You can make your own R commands, run them, and get help when you need to understand something that I have not explained. I encourage you to experiment with your own ideas in R as you read through the next two projects.</p>
 </section>
@@ -541,6 +622,18 @@ should be nonnegative and not all zero.</code></pre>
 <!-- -->
 </section>
 </main>
+<div class="row page-navigation page-navigation-docked">
+  <div class="nav-page nav-page-previous col">
+      <a href="./basics.html">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; The Very Basics</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next col">
+      <a href="./cards.html">
+        <span class="nav-page-text">Project 2: Playing Cards</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</div>
 </div> <!-- /main column -->
 <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
 <nav id="TOC" role="doc-toc">
@@ -561,18 +654,6 @@ should be nonnegative and not all zero.</code></pre>
 </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/packages.rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
-<div class="row page-navigation page-navigation-docked">
-  <div class="nav-page nav-page-previous col">
-      <a href="./basics.html">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; The Very Basics</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next col">
-      <a href="./cards.html">
-        <span class="nav-page-text">Project 2: Playing Cards</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</div>
 </div> <!-- /container fluid -->
 
 

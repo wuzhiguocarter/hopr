@@ -96,6 +96,67 @@
   <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
   <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
   
+  <style type="text/css">
+    .quarto-layout-panel > figure > figcaption,
+    .quarto-layout-panel > .panel-caption {
+      margin-top: 10pt;
+    }
+    .quarto-layout-row {
+      display: flex;
+      align-items: flex-start;
+    }
+    .quarto-layout-valign-top {
+      align-items: flex-start;
+    }
+    .quarto-layout-valign-bottom {
+      align-items: flex-end;
+    }
+    .quarto-layout-valign-center {
+      align-items: center;
+    }
+    .quarto-layout-cell {
+      position: relative;
+      margin-right: 20px;
+    }
+    .quarto-layout-cell:last-child {
+      margin-right: 0;
+    }
+    .quarto-layout-cell figure,
+    .quarto-layout-cell > p {
+      margin: 0.2em;
+    }
+    .quarto-layout-cell img {
+      max-width: 100%;
+    }
+    .quarto-layout-cell .html-widget {
+      width: 100% !important;
+    }
+    .quarto-layout-cell div figure p {
+      margin: 0;
+    }
+    .quarto-layout-cell figure {
+      display: inline-block;
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+    }
+    .quarto-layout-cell table {
+       display: inline-table;
+    }
+    .quarto-layout-cell-subref figcaption {
+      font-size: 0.8em;
+      font-style: italic;
+    }
+    figure > p:empty {
+      display: none;
+    }
+    figure > p:first-child {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    figure > figcaption {
+      margin-top: 0.5em;
+    }
+  </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
 <div id="quarto-search-results"></div>
@@ -121,12 +182,12 @@
     <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
-          <a class="dropdown-item" href=".//Hands-On Programming with R.pdf ">
+          <a class="dropdown-item" href="./Hands-On Programming with R.pdf">
           Download PDF
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href=".//Hands-On Programming with R.epub ">
+          <a class="dropdown-item" href="./Hands-On Programming with R.epub">
           Download ePub
           </a>
         </li>
@@ -134,19 +195,19 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
         <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share ">
+          <a class="dropdown-item" href="http://www.twitter.com/share">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php ">
+          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url= ">
+          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -343,16 +404,24 @@ This appendix refers to environments, the topic of [Environments], and uses exam
 <p>RStudio makes it very easy to use <code>traceback</code>. You do not even need to type in the function name. Whenever an error occurs, RStudio will display it in a gray box with two options. The first is Show Traceback, shown in Figure @ref(fig:show-traceback).</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_ae01.png</p>
-<p>RStudio’s Show Traceback option.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_ae01.png" class="img-fluid" width="709"></p>
+<p></p><figcaption aria-hidden="true">RStudio’s Show Traceback option.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>If you click Show Traceback, RStudio will expand the gray box and display the <code>traceback</code> call stack, as in Figure @ref(fig:hide-traceback). The Show Traceback option will persist beside an error message in your console, even as you write new commands. This means that you can go back and look at the call stacks for all errors—not just the most recent error.</p>
 <p>Imagine that you’ve used <code>traceback</code> to pinpoint a function that you think might cause a bug. Now what should you do? You should try to figure out what the function did to cause an error while it ran (if it did anything). You can examine how the function runs with <code>browser</code>.</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_ae02.png</p>
-<p>RStudio’s Traceback display.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_ae02.png" class="img-fluid" width="782"></p>
+<p></p><figcaption aria-hidden="true">RStudio’s Traceback display.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -399,8 +468,12 @@ This appendix refers to environments, the topic of [Environments], and uses exam
 <p>Any command that you run in browser mode will be evaluated in the context of the runtime environment of the function that called <code>browser</code>. This will be the function that is highlighted in the new Traceback pane. Here, that function is <code>score</code>. So while we are in browser mode, the active environment will be <code>score</code>’s runtime environment. This lets you do two things.</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_ae03.png</p>
-<p>RStudio updates its display whenever you enter browser mode to help you navigate the mode.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_ae03.png" class="img-fluid" width="946"></p>
+<p></p><figcaption aria-hidden="true">RStudio updates its display whenever you enter browser mode to help you navigate the mode.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>First, you can inspect the objects that <code>score</code> uses. The updated Environments pane shows you which objects <code>score</code> has saved in its local environment. You can inspect any of them by typing their name at the browser prompt. This gives you a way to see the values of runtime variables that you normally would not be able to access. If a value looks clearly wrong, you may be close to finding a bug:</p>
@@ -415,8 +488,12 @@ This appendix refers to environments, the topic of [Environments], and uses exam
 <p>The third button, Stop, will exit browser mode without running any more lines of <code>score</code>.</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_ae04.png</p>
-<p>You can navigate browser mode with the three buttons at the top of the console pane.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_ae04.png" class="img-fluid" width="379"></p>
+<p></p><figcaption aria-hidden="true">You can navigate browser mode with the three buttons at the top of the console pane.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>You can do the same things by typing the commands <code>n</code>, <code>c</code>, and <code>Q</code> into the browser prompt. This creates an annoyance: what if you want to look up an object named <code>n</code>, <code>c</code>, or <code>Q</code>? Typing in the object name will not work, R will either advance, continue, or quit the browser mode. Instead you will have to look these objects up with the commands <code>get("n")</code>, <code>get("c")</code>, and <code>get("Q")</code>. <code>cont</code> is a synonym for <code>c</code> in browser mode and <code>where</code> prints the call stack, so you’ll have to look up these objects with <code>get</code> as well.</p>
@@ -429,8 +506,12 @@ This appendix refers to environments, the topic of [Environments], and uses exam
 <p>R will treat the break point like a <code>browser</code> statement, going into browser mode when it encounters it. You can remove a break point by clicking on the red dot. The dot will disappear, and the break point will be removed.</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<p>images/hopr_ae05.png</p>
-<p>Break points provide the graphical equivalent of a browser statement.</p>
+<div class="quarto-figure" style="text-align: center;">
+<figure>
+<p><img src="images/hopr_ae05.png" class="img-fluid" width="872"></p>
+<p></p><figcaption aria-hidden="true">Break points provide the graphical equivalent of a browser statement.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Break points and <code>browser</code> provide a great way to debug functions that you have defined. But what if you want to debug a function that already exists in R? You can do that with the <code>debug</code> function.</p>
@@ -498,6 +579,15 @@ This appendix refers to environments, the topic of [Environments], and uses exam
 <!-- -->
 </section>
 </main>
+<div class="row page-navigation page-navigation-docked">
+  <div class="nav-page nav-page-previous col">
+      <a href="./a4-data.html">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">D</span>&nbsp; Loading and Saving Data in R</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next col">
+  </div>
+</div>
 </div> <!-- /main column -->
 <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
 <nav id="TOC" role="doc-toc">
@@ -512,15 +602,6 @@ This appendix refers to environments, the topic of [Environments], and uses exam
 </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/a5-debug.rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
-<div class="row page-navigation page-navigation-docked">
-  <div class="nav-page nav-page-previous col">
-      <a href="./a4-data.html">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">D</span>&nbsp; Loading and Saving Data in R</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next col">
-  </div>
-</div>
 </div> <!-- /container fluid -->
 
 
