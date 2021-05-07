@@ -56,7 +56,7 @@ qplot
 
 Now that you've loaded `qplot`, let's take it for a spin. `qplot` makes "quick plots." If you give `qplot` two vectors of equal lengths, `qplot` will draw a scatterplot for you. `qplot` will use the first vector as a set of x values and the second vector as a set of y values. Look for the plot to appear in the Plots tab of the bottom-right pane in your RStudio window. 
 
-The following code will make the plot that appears in Figure \@ref(fig:qplot). Until now, we've been creating sequences of numbers with the `:` operator; but you can also create vectors of numbers with the `c` function. Give `c` all of the numbers that you want to appear in the vector, separated by a comma. `c` stands for _concatenate_, but you can think of it as "collect" or "combine":
+The following code will make the plot that appears in @fig:qplot. Until now, we've been creating sequences of numbers with the `:` operator; but you can also create vectors of numbers with the `c` function. Give `c` all of the numbers that you want to appear in the vector, separated by a comma. `c` stands for _concatenate_, but you can think of it as "collect" or "combine":
 
 ```r
 x <- c(-1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1)
@@ -71,44 +71,43 @@ y
 qplot(x, y)
 ```
 
-```{r qplot, echo = FALSE, fig.cap = "qplot makes a scatterplot when you give it two vectors."}
+```{r fig:qplot, echo = FALSE, fig.cap = "qplot makes a scatterplot when you give it two vectors."}
 knitr::include_graphics("images/hopr_0201.png")
 ```
 
-You don't need to name your vectors `x` and `y`. I just did that to make the example clear. As you can see in Figure \@ref(fig:qplot), a scatterplot is a set of points, each plotted according to its x and y values. Together, the vectors `x` and `y` describe a set of 10 points. How did R match up the values in `x` and `y` to make these points? With element-wise execution, as we saw in Figure \@ref(fig:elementwise).
+You don't need to name your vectors `x` and `y`. I just did that to make the example clear. As you can see in @fig:qplot, a scatterplot is a set of points, each plotted according to its x and y values. Together, the vectors `x` and `y` describe a set of 10 points. How did R match up the values in `x` and `y` to make these points? With element-wise execution, as we saw in @fig:elementwise.
 
 Scatterplots are useful for visualizing the relationship between two variables. However, we're going to use a different type of graph, a _histogram_. A histogram visualizes the distribution of a single variable; it displays how many data points appear at each value of x. 
 
-Let's take a look at a histogram to see if this makes sense. `qplot` will make a histogram whenever you give it only _one_ vector to plot. The following code makes the left-hand plot in Figure \@ref(fig:hist) (we'll worry about the right-hand plot in just second). To make sure our graphs look the same, use the extra argument *`binwidth = 1`*:
+Let's take a look at a histogram to see if this makes sense. `qplot` will make a histogram whenever you give it only _one_ vector to plot. The following code makes the left-hand plot in @fig:hist (we'll worry about the right-hand plot in just second). To make sure our graphs look the same, use the extra argument *`binwidth = 1`*:
 
 ```r
 x <- c(1, 2, 2, 2, 3, 3)
 qplot(x, binwidth = 1)
 ```
 
-```{r hist, echo = FALSE, fig.cap = "qplot makes a histogram when you give it a single vector."}
+```{r fig:hist, echo = FALSE, fig.cap = "qplot makes a histogram when you give it a single vector."}
 knitr::include_graphics("images/hopr_0202.png")
 ```
 
 This plot shows that our vector contains one value in the interval `[1, 2)` by placing a bar of height 1 above that interval. Similarly, the plot shows that the vector contains three values in the interval `[2, 3)` by placing a bar of height 3 in that interval. It shows that the vector contains two values in the interval `[3, 4)` by placing a bar of height 2 in that interval. In these intervals, the hard bracket, `[`, means that the first number is included in the interval. The parenthesis, `)`, means that the last number is _not_ included.
 
-Let's try another histogram. This code makes the right-hand plot in Figure \@ref(fig:hist). Notice that there are five points with a value of 1 in `x2`. The histogram displays this by plotting a bar of height 5 above the interval x2 = [1, 2):
+Let's try another histogram. This code makes the right-hand plot in @fig:hist. Notice that there are five points with a value of 1 in `x2`. The histogram displays this by plotting a bar of height 5 above the interval x2 = [1, 2):
 
 ```r
 x2 <- c(1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 4)
 qplot(x2, binwidth = 1)
 ```
 
-```{exercise, name = "Visualize a Histogram"}
+::: {#exr:histogram name="Visualize a Histogram"}
 Let `x3` be the following vector:
-```
 
 `x3 <- c(0, 1, 1, 2, 2, 2, 3, 3, 4)`
 
 Imagine what a histogram of `x3` would look like. Assume that the histogram has a bin width of 1. How many bars will the histogram have? Where will they appear? How high will each be?
 
 When you are done, plot a histogram of `x3` with `binwidth = 1`, and see if you are right.
-
+:::
 
 ```{solution}
 You can make a histogram of `x3` with `qplot(x3, binwidth = 1)`. The histogram will look like a symmetric pyramid. The middle bar will have a height of 3 and will appear above `[2, 3)`, but be sure to try it and see for yourself.
@@ -118,9 +117,9 @@ You can use a histogram to display visually how common different values of `x` a
 
 How can you use a histogram to check the accuracy of your dice? 
 
-Well, if you roll your dice many times and keep track of the results, you would expect some numbers to occur more than others. This is because there are more ways to get some numbers by adding two dice together than to get other numbers, as shown in Figure \@ref(fig:probs). 
+Well, if you roll your dice many times and keep track of the results, you would expect some numbers to occur more than others. This is because there are more ways to get some numbers by adding two dice together than to get other numbers, as shown in @fig:probs. 
 
-If you roll your dice many times and plot the results with `qplot`, the histogram will show you how often each sum appeared. The sums that occurred most often will have the highest bars. The histogram should look like the pattern in Figure \@ref(fig:probs) if the dice are fairly weighted.
+If you roll your dice many times and plot the results with `qplot`, the histogram will show you how often each sum appeared. The sums that occurred most often will have the highest bars. The histogram should look like the pattern in Figure @fig:probs if the dice are fairly weighted.
 
 This is where `replicate` comes in. `replicate` provides an easy way to repeat an R command many times. To use it, first give `replicate` the number of times you wish to repeat an R command, and then give it the command you wish to repeat. `replicate` will run the command multiple times and store the results as a vector:
 
@@ -132,11 +131,11 @@ replicate(10, roll())
 ## 3  7  5  3  6  2  3  8 11  7
 ```
 
-```{r probs, echo = FALSE, fig.cap = "Each individual dice combination should occur with the same frequency. As a result, some sums will occur more often than others. With fair dice, each sum should appear in proportion to the number of combinations that make it."}
+```{r fig:probs, echo = FALSE, fig.cap = "Each individual dice combination should occur with the same frequency. As a result, some sums will occur more often than others. With fair dice, each sum should appear in proportion to the number of combinations that make it."}
 knitr::include_graphics("images/hopr_0203.png")
 ```
 
-A histogram of your first 10 rolls probably won't look like the pattern shown in Figure \@ref(fig:probs). Why not? There is too much randomness involved. Remember that we use dice in real life because they are effective random number generators. Patterns of long run frequencies will only appear _over the long run_. So let's simulate 10,000 dice rolls and plot the results. Don't worry; `qplot` and `replicate` can handle it. The results appear in Figure \@ref(fig:fair):
+A histogram of your first 10 rolls probably won't look like the pattern shown in @fig:probs. Why not? There is too much randomness involved. Remember that we use dice in real life because they are effective random number generators. Patterns of long run frequencies will only appear _over the long run_. So let's simulate 10,000 dice rolls and plot the results. Don't worry; `qplot` and `replicate` can handle it. The results appear in @fig:fair:
 
 ```r
 rolls <- replicate(10000, roll())
@@ -147,7 +146,7 @@ The results suggest that the dice are fair. Over the long run, each number occur
 
 Now how can you bias these results? The previous pattern occurs because each underlying combination of dice (e.g., (3,4)) occurs with the same frequency. If you could increase the probability that a 6 is rolled on either die, then any combination with a six in it will occur more often than any combination without a six in it. The combination (6, 6) would occur most of all. This won't make the dice add up to 12 more often than they add up to seven, but it will skew the results toward the higher numbers.
 
-```{r fair, echo = FALSE, fig.cap = "The behavior of our dice suggests that they are fair. Seven occurs more often than any other number, and frequencies diminish in proportion to the number of die combinations that create each number."}
+```{r fig:fair, echo = FALSE, fig.cap = "The behavior of our dice suggests that they are fair. Seven occurs more often than any other number, and frequencies diminish in proportion to the number of die combinations that create each number."}
 knitr::include_graphics("images/hopr_0204.png")
 ```
 
@@ -178,9 +177,9 @@ Help pages contain useful information about what each function does. These help 
 
 Don't let this bother you—you can gain a lot from a help page by scanning it for information that makes sense and glossing over the rest. This technique will inevitably bring you to the most helpful part of each help page: the bottom. Here, almost every help page includes some example code that puts the function in action. Running this code is a great way to learn by example.
 
-```{block2, type = "rmdwarning"}
+::: {.callout-warning}
 If a function comes in an R package, R won't be able to find its help page unless the package is loaded.
-```
+:::
 
 ### Parts of a Help Page
 
@@ -216,8 +215,7 @@ First, open the help page. It will appear in the same pane in RStudio as your pl
 
 What do you see? Starting from the top:
 
-```
-
+```default
 Random Samples and Permutations
 
 Description
@@ -227,21 +225,21 @@ either with or without replacement.
 
 So far, so good. You knew all of that. The next section, Usage, has a possible clue. It mentions an argument called `prob`:
 
-```
+```default
 Usage
     sample(x, size, replace = FALSE, prob = NULL)
 ```
 
 If you scroll down to the arguments section, the description of +prob+ sounds _very_ promising:
 
-```
+```default
 A vector of probability weights for obtaining the elements of the vector being 
 sampled.
 ```
 
 The Details section confirms our suspicions. In this case, it also tells you how to proceed:
 
-```
+```default
 The optional prob argument can be used to give a vector of weights for obtaining 
 the elements of the vector being sampled. They need not sum to one, but they 
 should be nonnegative and not all zero.
@@ -251,15 +249,15 @@ Although the help page does not say it here, these weights will be matched up to
 
 Reading on:
 
-```
+```default
 If replace is true, Walker's alias method (Ripley, 1987) is used...
 ```
 
 Okay, that looks like time to start skimming. We should have enough info now to figure out how to weight our dice.
 
-```{exercise, name = "Roll a Pair of Dice"}
+::: {#exr:roll name="Roll a Pair of Dice"}
 Rewrite the `roll` function below to roll a pair of weighted dice:
-```
+:::
 
 ```r
 roll <- function() {
@@ -287,7 +285,7 @@ roll <- function() {
 
 This will cause `roll` to pick 1 through 5 with probability 1/8 and 6 with probability 3/8.
 
-Overwrite your previous version of `roll` with the new function (by running the previous code snippet in your command line). Then visualize the new long-term behavior of your dice. I've put the results in Figure \@ref(fig:weighted) next to our original results:
+Overwrite your previous version of `roll` with the new function (by running the previous code snippet in your command line). Then visualize the new long-term behavior of your dice. I've put the results in @fig:weighted next to our original results:
 
 ```r
 rolls <- replicate(10000, roll())
@@ -296,7 +294,7 @@ qplot(rolls, binwidth = 1)
 
 This confirms that we've effectively weighted the dice. High numbers occur much more often than low numbers. The remarkable thing is that this behavior will only be apparent when you examine long-term frequencies. On any single roll, the dice will appear to behave randomly. This is great news if you play Settlers of Catan (just tell your friends you lost the dice), but it should be disturbing if you analyze data, because it means that bias can easily occur without anyone noticing it in the short run.
 
-```{r weighted, echo = FALSE, fig.cap = "The dice are now clearly biased towards high numbers, since high sums occur much more often than low sums."}
+```{r fig:weighted, echo = FALSE, fig.cap = "The dice are now clearly biased towards high numbers, since high sums occur much more often than low sums."}
 knitr::include_graphics("images/hopr_0205.png")
 ```
 
@@ -312,7 +310,7 @@ For all of the R help list, Stack Overflow, and community.rstudio.com, you're mo
 
 ## Summary
 
-R's packages and help pages can make you a more productive programmer. You saw in [@Sec:basics The Very Basics] that R gives you the power to write your own functions that do specific things, but often the function that you want to write will already exist in an R package. Professors, programmers, and scientists have developed over 13,000 packages for you to use, which can save you valuable programming time. To use a package, you need to install it to your computer once with `install.packages`, and then load it into each new R session with `library`.
+R's packages and help pages can make you a more productive programmer. You saw in [The Very Basics](#sec:basics) that R gives you the power to write your own functions that do specific things, but often the function that you want to write will already exist in an R package. Professors, programmers, and scientists have developed over 13,000 packages for you to use, which can save you valuable programming time. To use a package, you need to install it to your computer once with `install.packages`, and then load it into each new R session with `library`.
 
 R's help pages will help you master the functions that appear in R and its packages. Each function and data set in R has its own help page. Although help pages often contain advanced content, they also contain valuable clues and examples that can help you learn how to use a function.
 
@@ -328,4 +326,4 @@ R shares another characteristic of human languages: you won't feel very comforta
 
 Now that you can use R, it is time to become an expert at using R to do data science. The foundation of data science is the ability to store large amounts of data and recall values on demand. From this, all else follows—manipulating data, visualizing data, modeling data, and more. However, you cannot easily store a data set in your mind by memorizing it. Nor can you easily store a data set on paper by writing it down. The only efficient way to store large amounts of data is with a computer. In fact, computers are so efficient that their development over the last three decades has completely changed the type of data we can accumulate and the methods we can use to analyze it. In short, computer data storage has driven the revolution in science that we call data science.
 
-[Project 2: Playing Cards] will make you part of this revolution by teaching you how to use R to store data sets in your computer's memory and how to retrieve and manipulate data once it's there. 
+[Project 2: Playing Cards](#project-2) will make you part of this revolution by teaching you how to use R to store data sets in your computer's memory and how to retrieve and manipulate data once it's there. 

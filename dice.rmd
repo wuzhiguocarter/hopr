@@ -40,4 +40,5 @@ In this project, you will learn how to:
 
 Don't worry if it seems like we cover a lot of ground fast. This project is designed to give you a concise overview of the R language. You will return to many of the concepts we meet here in projects 2 and 3, where you will examine the concepts in depth.
 
-You'll need to have both R and RStudio installed on your computer before you can use them. Both are free and easy to download. See [Appendix -@sec:starting] for complete instructions. If you are ready to begin, open RStudio on your computer and read on. 
+You'll need to have both R and RStudio installed on your computer before you can use them. Both are free and easy to download. See [@sec:starting] for complete instructions. If you are ready to begin, open RStudio on your computer and read on. 
+

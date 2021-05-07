@@ -108,9 +108,9 @@ That's the basic interface for executing R code in RStudio. Think you have it? I
 
 Throughout the book, I'll put exercises in chunks, like the one above. I'll follow each exercise with a model answer, like the one below. 
 
-*Solution*: You could start with the number 10, and then do the following steps:
+```{solution}
+You could start with the number 10, and then do the following steps:
 
-```r
 10 + 2
 ## 12
 
@@ -627,7 +627,7 @@ R will run whichever line of code your cursor is on. If you have a whole section
 knitr::include_graphics("images/hopr_0108.png")
 ```
 
-If you're not convinced about scripts, you soon will be. It becomes a pain to write multi-line code in the console's single-line command line. Let's avoid that headache and open your first script now before we move to the next chapter. 
+If you're not convinced about scripts, you soon will be. It becomes a pain to write multi-line code in the console's single-line command line. Let's avoid that headache and open your first script now before we move to the next chapter.
 
 ::: {.callout-tip}
 ## Extract function
