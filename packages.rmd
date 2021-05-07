@@ -2,7 +2,7 @@
 knit: quarto render
 ---
 
-# Packages and Help Pages {#packages}
+# Packages and Help Pages {#packages-and-help}
 
 You now have a function that simulates rolling a pair of dice. Let's make things a little more interesting by weighting the dice in your favor. The house always wins, right? Let's make the dice roll high numbers slightly more often than it rolls low numbers. 
 

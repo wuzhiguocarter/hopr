@@ -14,7 +14,7 @@ Let's work on saving these numbers first, and then consider a method for "rollin
 
 ## The R User Interface
 
-Before you can ask your computer to save some numbers, you'll need to know how to talk to it. That's where R and RStudio come in. RStudio gives you a way to talk to your computer. R gives you a language to speak in. To get started, open RStudio just as you would open any other application on your computer. When you do, a window should appear in your screen like the one shown in [Figure -@fig:console]. 
+Before you can ask your computer to save some numbers, you'll need to know how to talk to it. That's where R and RStudio come in. RStudio gives you a way to talk to your computer. R gives you a language to speak in. To get started, open RStudio just as you would open any other application on your computer. When you do, a window should appear in your screen like the one shown in @fig:console. 
 
 ```{r fig:console, echo = FALSE, fig.cap="Your computer does your bidding when you type R commands at the prompt in the bottom line of the console pane. Don't forget to hit the Enter key. When you first open RStudio, the console appears in the pane on your left, but you can change this with File > Preferences in the menu bar."}
 knitr::include_graphics("images/hopr_0101.png")
@@ -161,9 +161,9 @@ die
 ## 1 2 3 4 5 6
 ```
 
-When you create an object, the object will appear in the environment pane of RStudio, as shown in Figure \@ref(fig:environment). This pane will show you all of the objects you've created since opening RStudio.
+When you create an object, the object will appear in the environment pane of RStudio, as shown in @fig:environment. This pane will show you all of the objects you've created since opening RStudio.
 
-```{r, environment, echo = FALSE, fig.cap = "The RStudio environment pane keeps track of the R objects you create."}
+```{r, fig:environment, echo = FALSE, fig.cap = "The RStudio environment pane keeps track of the R objects you create."}
 knitr::include_graphics("images/hopr_0102.png")
 ```
 
@@ -178,17 +178,19 @@ You can name an object in R almost anything you want, but there are a few rules.
 |.day      | !bad
 
 
-```{block2, capitalization, type = "rmdwarning"}
-**Capitalization**
+:::{.callout-warning}
+## Capitalization
   
 R is case-sensitive, so `name` and `Name` will refer to different objects:
 
-`Name <- 1`  
-`name <- 0`  
+```r
+Name <- 1
+name <- 0  
   
-`Name + 1`  
-`## 2`  
+Name + 1  
+## 2  
 ```
+:::
 
 Finally, R will overwrite any previous information stored in an object without asking you for permission. So, it is a good idea to _not_ use names that are already taken:
 
@@ -226,13 +228,13 @@ die * die
 
 If you are a big fan of linear algebra (and who isn't?), you may notice that R does not always follow the rules of matrix multiplication. Instead, R uses _element-wise execution_. When you manipulate a set of numbers, R will apply the same operation to each element in the set. So for example, when you run *`die - 1`*, R subtracts one from each element of `die`. 
 
-When you use two or more vectors in an operation, R will line up the vectors and perform a sequence of individual operations. For example, when you run *`die * die`*, R lines up the two `die` vectors and then multiplies the first element of vector 1 by the first element of vector 2. R then multiplies the second element of vector 1 by the second element of vector 2, and so on, until every element has been multiplied. The result will be a new vector the same length as the first two, as shown in Figure \@ref(fig:elementwise).
+When you use two or more vectors in an operation, R will line up the vectors and perform a sequence of individual operations. For example, when you run *`die * die`*, R lines up the two `die` vectors and then multiplies the first element of vector 1 by the first element of vector 2. R then multiplies the second element of vector 1 by the second element of vector 2, and so on, until every element has been multiplied. The result will be a new vector the same length as the first two, as shown in @fig:elementwise.
 
-```{r elementwise, echo = FALSE, fig.cap = "When R performs element-wise execution, it matches up vectors and then manipulates each pair of elements independently."}
+```{r fig:elementwise, echo = FALSE, fig.cap = "When R performs element-wise execution, it matches up vectors and then manipulates each pair of elements independently."}
 knitr::include_graphics("images/hopr_0103.png")
 ```
 
-If you give R two vectors of unequal lengths, R will repeat the shorter vector until it is as long as the longer vector, and then do the math, as shown in Figure \@ref(fig:recycle). This isn't a permanent change--the shorter vector will be its original size after R does the math. If the length of the short vector does not divide evenly into the length of the long vector, R will return a warning message. This behavior is known as _vector recycling_, and it helps R do element-wise operations:
+If you give R two vectors of unequal lengths, R will repeat the shorter vector until it is as long as the longer vector, and then do the math, as shown in @fig:recycle. This isn't a permanent change--the shorter vector will be its original size after R does the math. If the length of the short vector does not divide evenly into the length of the long vector, R will return a warning message. This behavior is known as _vector recycling_, and it helps R do element-wise operations:
 
 ```r
 1:2
@@ -254,7 +256,7 @@ In die + 1:4 :
   longer object length is not a multiple of shorter object length
 ```
 
-```{r recycle, echo = FALSE, fig.cap = "R will repeat a short vector to do element-wise operations with two vectors of uneven lengths."}
+```{r fig:recycle, echo = FALSE, fig.cap = "R will repeat a short vector to do element-wise operations with two vectors of uneven lengths."}
 knitr::include_graphics("images/hopr_0104.png")
 ```
 
@@ -294,7 +296,7 @@ factorial(3)
 ## 6
 ```
 
-The data that you pass into the function is called the function's _argument_. The argument can be raw data, an R object, or even the results of another R function. In this last case, R will work from the innermost function to the outermost, as in Figure \@ref(fig:pemdas).
+The data that you pass into the function is called the function's _argument_. The argument can be raw data, an R object, or even the results of another R function. In this last case, R will work from the innermost function to the outermost, as in @fig:pemdas.
 
 ```r
 mean(1:6)
@@ -307,7 +309,7 @@ round(mean(die))
 ## 4
 ```
 
-```{r, pemdas, echo = FALSE, fig.cap = "When you link functions together, R will resolve them from the innermost operation to the outermost. Here R first looks up die, then calculates the mean of one through six, then rounds the mean."}
+```{r, fig:pemdas, echo = FALSE, fig.cap = "When you link functions together, R will resolve them from the innermost operation to the outermost. Here R first looks up die, then calculates the mean of one through six, then rounds the mean."}
 knitr::include_graphics("images/hopr_0105.png")
 ```
 
@@ -483,9 +485,9 @@ roll <- function() {
 }
 ```
 
-```{block2, indent, type = "rmdnote"}
+::: {.callout-note}
 Notice that I indented each line of code between the braces. This makes the code easier for you and me to read but has no impact on how the code runs. R ignores spaces and line breaks and executes one complete expression at a time.
-```
+:::
 
 Just hit the Enter key between each line after the first brace, `{`. R will wait for you to type the last brace, `}`, before it responds.
 
@@ -599,41 +601,41 @@ roll2()
 
 You can give your functions as many arguments as you like. Just list their names, separated by commas, in the parentheses that follow `function`. When the function is run, R will replace each argument name in the function body with the value that the user supplies for the argument. If the user does not supply a value, R will replace the argument name with the argument's default value (if you defined one).
 
-To summarize, `function` helps you construct your own R functions. You create a body of code for your function to run by writing code between the braces that follow `function`. You create arguments for your function to use by supplying their names in the parentheses that follow `function`. Finally, you give your function a name by saving its output to an R object, as shown in Figure \@ref(fig:functions). 
+To summarize, `function` helps you construct your own R functions. You create a body of code for your function to run by writing code between the braces that follow `function`. You create arguments for your function to use by supplying their names in the parentheses that follow `function`. Finally, you give your function a name by saving its output to an R object, as shown in @fig:functions. 
 
 Once you've created your function, R will treat it like every other function in R. Think about how useful this is. Have you ever tried to create a new Excel option and add it to Microsoft's menu bar? Or a new slide animation and add it to Powerpoint's options? When you work with a programming language, you can do these types of things. As you learn to program in R, you will be able to create new, customized, reproducible tools for yourself whenever you like. [Project 3: Slot Machine](#slots) will teach you much more about writing functions in R.
 
-```{r functions, echo = FALSE, fig.cap = "Every function in R has the same parts, and you can use function to create these parts. Assign the result to a name, so you can call the function later."}
+```{r fig:functions, echo = FALSE, fig.cap = "Every function in R has the same parts, and you can use function to create these parts. Assign the result to a name, so you can call the function later."}
 knitr::include_graphics("images/hopr_0106.png")
 ```
 
 ## Scripts
 
-What if you want to edit `roll2` again? You could go back and retype each line of code in `roll2`, but it would be so much easier if you had a draft of the code to start from. You can create a draft of your code as you go by using an R _script_. An R script is just a plain text file that you save R code in. You can open an R script in RStudio by going to `File > New File > R script` in the menu bar. RStudio will then open a fresh script above your console pane, as shown in Figure \@ref(fig:script).
+What if you want to edit `roll2` again? You could go back and retype each line of code in `roll2`, but it would be so much easier if you had a draft of the code to start from. You can create a draft of your code as you go by using an R _script_. An R script is just a plain text file that you save R code in. You can open an R script in RStudio by going to `File > New File > R script` in the menu bar. RStudio will then open a fresh script above your console pane, as shown in @fig:script.
 
 I strongly encourage you to write and edit all of your R code in a script before you run it in the console. Why? This habit creates a reproducible record of your work. When you're finished for the day, you can save your script and then use it to rerun your entire analysis the next day. Scripts are also very handy for editing and proofreading your code, and they make a nice copy of your work to share with others. To save a script, click the scripts pane, and then go to `File > Save As` in the menu bar.
 
-```{r script, echo = FALSE, fig.cap = "When you open an R Script (File > New File > R Script in the menu bar), RStudio creates a fourth pane above the console where you can write and edit your code."}
+```{r fig:script, echo = FALSE, fig.cap = "When you open an R Script (File > New File > R Script in the menu bar), RStudio creates a fourth pane above the console where you can write and edit your code."}
 knitr::include_graphics("images/hopr_0107.png")
 ```
 
-RStudio comes with many built-in features that make it easy to work with scripts. First, you can automatically execute a line of code in a script by clicking the Run button, as shown in Figure \@ref(fig:run).
+RStudio comes with many built-in features that make it easy to work with scripts. First, you can automatically execute a line of code in a script by clicking the Run button, as shown in @fig:run.
 
 R will run whichever line of code your cursor is on. If you have a whole section highlighted, R will run the highlighted code. Alternatively, you can run the entire script by clicking the Source button. Don't like clicking buttons? You can use Control + Return as a shortcut for the Run button. On Macs, that would be Command + Return.
 
-```{r run, echo = FALSE, fig.cap = "You can run a highlighted portion of code in your script if you click the Run button at the top of the scripts pane. You can run the entire script by clicking the Source button."}
+```{r fig:run, echo = FALSE, fig.cap = "You can run a highlighted portion of code in your script if you click the Run button at the top of the scripts pane. You can run the entire script by clicking the Source button."}
 knitr::include_graphics("images/hopr_0108.png")
 ```
 
 If you're not convinced about scripts, you soon will be. It becomes a pain to write multi-line code in the console's single-line command line. Let's avoid that headache and open your first script now before we move to the next chapter. 
 
-```{block2, extract, type = "rmdtip"}
-**Extract function**
+::: {.callout-tip}
+## Extract function
 
 RStudio comes with a tool that can help you build functions. To use it, highlight the lines of code in your R script that you want to turn into a function. Then click `Code > Extract Function` in the menu bar. RStudio will ask you for a function name to use and then wrap your code in a `function` call. It will scan the code for undefined variables and use these as arguments.
 
 You may want to double-check RStudio's work. It assumes that your code is correct, so if it does something surprising, you may have a problem in your code.
-```
+:::
 
 ## Summary
 
@@ -641,6 +643,6 @@ You've covered a lot of ground already. You now have a virtual die stored in you
 
 As you've seen, R is a language that you can use to talk to your computer. You write commands in R and run them at the command line for your computer to read. Your computer will sometimes talk back--for example, when you commit an error--but it usually just does what you ask and then displays the result.
 
-The two most important components of the R language are objects, which store data, and functions, which manipulate data. R also uses a host of operators like `+`, `-`, `*`, `/`, and `<-` to do basic tasks. As a data scientist, you will use R objects to store data in your computer's memory, and you will use functions to automate tasks and do complicated calculations. We will examine objects in more depth later in [Project 2: Playing Cards] and dig further into functions in [Project 3: Slot Machine]. The vocabulary you have developed here will make each of those projects easier to understand. However, we're not done with your dice yet.
+The two most important components of the R language are objects, which store data, and functions, which manipulate data. R also uses a host of operators like `+`, `-`, `*`, `/`, and `<-` to do basic tasks. As a data scientist, you will use R objects to store data in your computer's memory, and you will use functions to automate tasks and do complicated calculations. We will examine objects in more depth later in [Project 2: Playing Cards](#project-2) and dig further into functions in [Project 3: Slot Machine](#project-3). The vocabulary you have developed here will make each of those projects easier to understand. However, we're not done with your dice yet.
 
-In [Packages and Help Pages](#packages), you'll run some simulations on your dice and build your first graphs in R. You'll also look at two of the most useful components of the R language: R _packages_, which are collections of functions writted by R's talented community of developers, and R documentation, which is a collection of help pages built into R that explains every function and data set in the language.
+In [Packages and Help Pages](#packages-and-help), you'll run some simulations on your dice and build your first graphs in R. You'll also look at two of the most useful components of the R language: R _packages_, which are collections of functions writted by R's talented community of developers, and R documentation, which is a collection of help pages built into R that explains every function and data set in the language.

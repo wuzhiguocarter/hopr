@@ -2,82 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https:/rstudio-education.github.io/hopr/index.html</loc>
-    <lastmod>2021-05-07T13:51:26.061Z</lastmod>
+    <lastmod>2021-05-07T19:55:31.973Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/preface.html</loc>
-    <lastmod>2021-05-07T13:51:26.062Z</lastmod>
+    <lastmod>2021-05-07T19:55:31.975Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/dice.html</loc>
-    <lastmod>2021-05-07T13:51:26.062Z</lastmod>
+    <lastmod>2021-05-07T19:55:31.976Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/basics.html</loc>
-    <lastmod>2021-05-07T14:01:53.507Z</lastmod>
+    <lastmod>2021-05-07T20:17:41.865Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/packages.html</loc>
-    <lastmod>2021-05-07T13:51:26.067Z</lastmod>
+    <lastmod>2021-05-07T20:17:11.550Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/cards.html</loc>
-    <lastmod>2021-05-07T13:51:26.067Z</lastmod>
+    <lastmod>2021-05-07T19:55:31.987Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/objects.html</loc>
-    <lastmod>2021-05-07T13:51:26.071Z</lastmod>
+    <lastmod>2021-05-07T19:55:31.994Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/notation.html</loc>
-    <lastmod>2021-05-07T13:51:26.074Z</lastmod>
+    <lastmod>2021-05-07T19:55:31.997Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/modifying.html</loc>
-    <lastmod>2021-05-07T13:51:26.077Z</lastmod>
+    <lastmod>2021-05-07T19:55:32.002Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/environments.html</loc>
-    <lastmod>2021-05-07T13:51:26.081Z</lastmod>
+    <lastmod>2021-05-07T19:55:32.006Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/slots.html</loc>
-    <lastmod>2021-05-07T13:51:26.081Z</lastmod>
+    <lastmod>2021-05-07T20:14:43.512Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/programs.html</loc>
-    <lastmod>2021-05-07T13:51:26.089Z</lastmod>
+    <lastmod>2021-05-07T19:55:32.014Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/s3.html</loc>
-    <lastmod>2021-05-07T13:51:26.092Z</lastmod>
+    <lastmod>2021-05-07T19:55:32.021Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/loops.html</loc>
-    <lastmod>2021-05-07T13:51:26.095Z</lastmod>
+    <lastmod>2021-05-07T19:55:32.027Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/speed.html</loc>
-    <lastmod>2021-05-07T13:51:26.099Z</lastmod>
+    <lastmod>2021-05-07T19:55:32.032Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/a1-starting.html</loc>
-    <lastmod>2021-05-07T13:51:26.100Z</lastmod>
+    <lastmod>2021-05-07T19:55:32.033Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/a2-packages.html</loc>
-    <lastmod>2021-05-07T13:51:26.100Z</lastmod>
+    <lastmod>2021-05-07T19:55:32.034Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/a3-updating.html</loc>
-    <lastmod>2021-05-07T13:51:26.101Z</lastmod>
+    <lastmod>2021-05-07T19:55:32.035Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/a4-data.html</loc>
-    <lastmod>2021-05-07T13:51:26.103Z</lastmod>
+    <lastmod>2021-05-07T19:55:32.038Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/a5-debug.html</loc>
-    <lastmod>2021-05-07T13:51:26.105Z</lastmod>
+    <lastmod>2021-05-07T19:55:32.040Z</lastmod>
   </url>
 </urlset>

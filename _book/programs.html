@@ -171,11 +171,11 @@
 </nav>
 </header>
  <!-- /navbar/sidebar -->
-<div class="container-fluid quarto-container d-flex flex-column">
-<div class="row flex-fill" id="quarto-content">
+<div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
+<div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="me-lg-auto py-2 docked  overflow-scroll ">
-  <div class="px-3 pt-lg-3 d-flex flex-column align-items-center">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll ">
+  <div class="px-3 pt-lg-3 text-center">
     <h4 class="sidebar-title text-center mt-1 mb-0 py-0">Hands-On Programming with R</h4>
       <div class="d-block mt-1">
     <a href="https://github.com/rstudio-education/hopr" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
@@ -183,12 +183,14 @@
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
           <a class="dropdown-item" href="./Hands-On Programming with R.pdf">
-          Download PDF
+          D
+      ownload PDF
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="./Hands-On Programming with R.epub">
-          Download ePub
+          D
+      ownload ePub
           </a>
         </li>
     </ul>
@@ -1041,7 +1043,7 @@ To convert an <code>if</code> tree to a lookup table, identify the values to be 
 <span id="cb70-17"><a href="#cb70-17" aria-hidden="true" tabindex="-1"></a><span class="co"># adjust for diamonds</span></span>
 <span id="cb70-18"><a href="#cb70-18" aria-hidden="true" tabindex="-1"></a>diamonds <span class="ot">&lt;-</span> <span class="fu">sum</span>(symbols <span class="sc">==</span> <span class="st">"DD"</span>)</span>
 <span id="cb70-19"><a href="#cb70-19" aria-hidden="true" tabindex="-1"></a>prize <span class="sc">*</span> <span class="dv">2</span> <span class="sc">^</span> diamonds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now that each part of your code works, you can wrap it into a function with the methods you learned in <a href="#write-functions">Writing Your Own Functions</a>. Either use RStudio’s Extract Function option in the menu bar under Code, or use the <code>function</code> function. Ensure that the last line of the function returns a result (it does), and identify any arguments used by your function. Often the concrete examples that you used to test your code, like <code>symbols</code>, will become the arguments of your function. Run the following code to start using the <code>score</code> function:</p>
+<p>Now that each part of your code works, you can wrap it into a function with the methods you learned in <a href="basics.html#write-functions">Writing Your Own Functions</a>. Either use RStudio’s Extract Function option in the menu bar under Code, or use the <code>function</code> function. Ensure that the last line of the function returns a result (it does), and identify any arguments used by your function. Often the concrete examples that you used to test your code, like <code>symbols</code>, will become the arguments of your function. Run the following code to start using the <code>score</code> function:</p>
 <div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="cf">function</span> (symbols) {</span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># identify case</span></span>
 <span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>  same <span class="ot">&lt;-</span> symbols[<span class="dv">1</span>] <span class="sc">==</span> symbols[<span class="dv">2</span>] <span class="sc">&amp;&amp;</span> symbols[<span class="dv">2</span>] <span class="sc">==</span> symbols[<span class="dv">3</span>]</span>
@@ -1092,7 +1094,7 @@ To convert an <code>if</code> tree to a lookup table, identify the values to be 
 <!-- -->
 </section>
 </main>
-<div class="row page-navigation page-navigation-docked">
+<div class="row page-navigation ">
   <div class="nav-page nav-page-previous col">
       <a href="./slots.html">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Project 3: Slot Machine</span>
