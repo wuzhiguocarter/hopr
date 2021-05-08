@@ -244,7 +244,6 @@ The code will return the number 2. `x` begins as 1, and then R encounters the `i
 ::: {#exr:quiz-b name="Quiz B"}
 What will this return?
 
-
     ```r
     x <- 1
     if (TRUE) {
