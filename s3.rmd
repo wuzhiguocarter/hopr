@@ -58,9 +58,9 @@ R's S3 system is built around three components: attributes (especially the `clas
 
 ## Attributes
 
-In [Attributes](#attributes), you learned that many R objects come with attributes, pieces of extra information that are given a name and appended to the object. Attributes do not affect the values of the object, but stick to the object as a type of metadata that R can use to handle the object. For example, a data frame stores its row and column names as attributes. Data frames also store their class, `"data.frame"`, as an attribute. 
+In [Attributes](#sec:attributes), you learned that many R objects come with attributes, pieces of extra information that are given a name and appended to the object. Attributes do not affect the values of the object, but stick to the object as a type of metadata that R can use to handle the object. For example, a data frame stores its row and column names as attributes. Data frames also store their class, `"data.frame"`, as an attribute. 
 
-You can see an object's attributes with `attribute`. If you run `attribute` on the `deck` data frame that you created in [Project 2: Playing Cards], you will see:
+You can see an object's attributes with `attribute`. If you run `attribute` on the `deck` data frame that you created in [Project 2: Playing Cards](#sec:project-cards), you will see:
 
 ```r
 attributes(deck)
@@ -163,9 +163,8 @@ one_play + 1
 ```
 
 
-```{exercise, name = "Add an Attribute"}
+::: {#exr:add-attribute name="Add an Attribute"}
 Modify `play` to return a prize that contains the symbols associated with it as an attribute named `symbols`. Remove the redundant call to `print(symbols)`:
-```
 
 ```r
 play <- function() {
@@ -174,6 +173,7 @@ play <- function() {
   score(symbols)
 }
 ```
+:::
 
 ```{solution}
 You can create a new version of `play` by capturing the output of `score(symbols)` and assigning an attribute to it. `play` can then return the enhanced version of the output:
@@ -486,11 +486,11 @@ If you give `print` an object whose class or classes do not have a print method,
 
 Let's use this system to write a better print method for the slot machine output.
 
-```{exercise, name = "Make a Print Method"}
+::: {#exr:print-method name="Make a Print Method"}
 Write a new print method for the slots class. The method should call `slot_display` to return well-formatted slot-machine output.
 
 What name must you use for this method?
-```
+:::
 
 ```{solution}
 It is surprisingly easy to write a good `print.slots` method because we've already done all of the hard work when we wrote `slot_display`. For example, the following method will work. Just make sure the method is named `print.slots` so `UseMethod` can find it, and make sure that it takes the same arguments as `print` so `UseMethod` can pass those arguments to `print.slots` without any trouble: 
@@ -512,9 +512,8 @@ one_play
 
 Let's ensure that every piece of slot machine output has the `slots` class.
 
-```{exercise, name = "Add a Class"}
+::: {#exr:add-a-class name="Add a Class"}
 Modify the `play` function so it assigns `slots` to the `class` attribute of its output:
-```
 
 ```r
 play <- function() {
@@ -522,6 +521,7 @@ play <- function() {
   structure(score(symbols), symbols = symbols)
 }
 ```
+:::
 
 ```{solution}
 You can set the `class` attribute of the output at the same time that you set the +symbols+ attribute. Just add `class = "slots"` to the `structure` call:
@@ -623,7 +623,7 @@ S3 can be annoying if you are trying to understand R functions. It is difficult 
 
 ## S4 and R5
 
-R also contains two other systems that create class specific behavior. These are known as S4 and R5 (or reference classes). Each of these systems is much harder to use than S3, and perhaps as a consequence, more rare. However, they offer safeguards that S3 does not. If you'd like to learn more about these systems, including how to write and use your own generic functions, I recommend the book [_Advanced R Programming_](http://adv-r.had.co.nz/) by Hadley Wickham.
+R also contains two other systems that create class specific behavior. These are known as S4 and R5 (or reference classes). Each of these systems is much harder to use than S3, and perhaps as a consequence, more rare. However, they offer safeguards that S3 does not. If you'd like to learn more about these systems, including how to write and use your own generic functions, I recommend the book [Advanced R Programming](http://adv-r.had.co.nz/) by Hadley Wickham.
 
 ## Summary
 
@@ -631,4 +631,4 @@ Values are not the only place to store information in R, and functions are not t
 
 R's S3 system is more helpful for the tasks of computer science than the tasks of data science, but understanding S3 can help you troubleshoot your work in R as a data scientist.
 
-You now know quite a bit about how to write R code that performs custom tasks, but how could you repeat these tasks? As a data scientist, you will often repeat tasks, sometimes thousands or even millions of times. Why? Because repetition lets you simulate results and estimate probabilities. [Loops] will show you how to automate repetition with R's `for` and `while` functions. You'll use `for` to simulate various slot machine plays and to calculate the payout rate of your slot machine.
+You now know quite a bit about how to write R code that performs custom tasks, but how could you repeat these tasks? As a data scientist, you will often repeat tasks, sometimes thousands or even millions of times. Why? Because repetition lets you simulate results and estimate probabilities. [Loops](#sec:loops) will show you how to automate repetition with R's `for` and `while` functions. You'll use `for` to simulate various slot machine plays and to calculate the payout rate of your slot machine.

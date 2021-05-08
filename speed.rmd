@@ -43,9 +43,9 @@ To compare `abs_loop` and `abs_set`, first make a long vector of positive and ne
 long <- rep(c(-1, 1), 5000000)
 ```
 
-```{block2, type = "rmdnote"}
+::: {.callout-note}
 `rep` repeats a value, or vector of values, many times. To use `rep`, give it a vector of values and then the number of times to repeat the vector. R will return the results as a new, longer vector.
-```
+:::
 
 You can then use `system.time` to measure how much time it takes each function to evaluate `long`:
 
@@ -59,19 +59,19 @@ system.time(abs_sets(long))
 ##   0.529   0.063   0.592
 ```
 
-```{block2, type = "rmdimportant"}
+::: {.callout-important}
 Don't confuse `system.time` with `Sys.time`, which returns the current time.
-```
+:::
 
 The first two columns of the output of `system.time` report how many seconds your computer spent executing the call on the user side and system sides of your process, a dichotomy that will vary from OS to OS. 
 
 The last column displays how many seconds elapsed while R ran the expression. The results show that `abs_set` calculated the absolute value 30 times faster than `abs_loop` when applied to a vector of 10 million numbers. You can expect similar speed-ups whenever you write vectorized code.
 
-```{exercise, name = "How fast is abs?"}
+::: {#exr:how-fast-is-abs name="How fast is abs?"}
 Many preexisting R functions are already vectorized and have been optimized to perform quickly. You can make your code faster by relying on these functions whenever possible. For example, R comes with a built-in absolute value function, `abs`.
-```
 
 Check to see how much faster `abs` computes the absolute value of `long` than `abs_loop` and `abs_set` do.
+:::
 
 ```{solution}
 You can measure the speed of `abs` with `system.time`. It takes `abs` a lightning-fast 0.05 seconds to calculate the absolute value of 10 million numbers. This is 0.592 / 0.054 = 10.96 times faster than `abs_set` and nearly 300 times faster than `abs_loop`:
@@ -90,9 +90,9 @@ Vectorized code is easy to write in R because most R functions are already vecto
 1. Use vectorized functions to complete the sequential steps in your program.
 2. Use logical subsetting to handle parallel cases. Try to manipulate every element in a case at once. 
 
-`abs_loop` and `abs_set` illustrate these rules. The functions both handle two cases and perform one sequential step, Figure \@ref(fig:abs). If a number is positive, the functions leave it alone. If a number is negative, the functions multiply it by negative one.
+`abs_loop` and `abs_set` illustrate these rules. The functions both handle two cases and perform one sequential step, @fig:abs. If a number is positive, the functions leave it alone. If a number is negative, the functions multiply it by negative one.
 
-```{r abs, echo = FALSE, fig.cap = "abs_loop uses a for loop to sift data into one of two cases: negative numbers and nonnegative numbers."}
+```{r fig:abs, echo = FALSE, fig.cap = "`abs_loop` uses a for loop to sift data into one of two cases: negative numbers and nonnegative numbers."}
 knitr::include_graphics("images/hopr_1001.png")
 ```
 
@@ -107,22 +107,21 @@ vec[vec < 0]
 ## -2  -4  -6  -8 -10
 ```
 
-The plan in Figure \@ref(fig:abs) now requires a sequential step: you must multiply each of the negative values by negative one. All of R's arithmetic operators are vectorized, so you can use `*` to complete this step in vectorized fashion. `*` will multiply each number in `vec[vec < 0]` by negative one at the same time:
+The plan in @fig:abs now requires a sequential step: you must multiply each of the negative values by negative one. All of R's arithmetic operators are vectorized, so you can use `*` to complete this step in vectorized fashion. `*` will multiply each number in `vec[vec < 0]` by negative one at the same time:
 
 ```r
 vec[vec < 0] * -1
 ## 2  4  6  8 10
 ```
 
-Finally, you can use R's assignment operator, which is also vectorized, to save the new set over the old set in the original `vec` object. Since `<-` is vectorized, the elements of the new set will be paired up to the elements of the old set, in order, and then element-wise assignment will occur. As a result, each negative value will be replaced by its positive partner, as in Figure \@ref(fig:assignment).
+Finally, you can use R's assignment operator, which is also vectorized, to save the new set over the old set in the original `vec` object. Since `<-` is vectorized, the elements of the new set will be paired up to the elements of the old set, in order, and then element-wise assignment will occur. As a result, each negative value will be replaced by its positive partner, as in @fig:assignment.
 
-```{r assignment, echo = FALSE, fig.cap = "Use logical subsetting to modify groups of values in place. R's arithmetic and assignment operators are vectorized, which lets you manipulate and update multiple values at once."}
+```{r fig:assignment, echo = FALSE, fig.cap = "Use logical subsetting to modify groups of values in place. R's arithmetic and assignment operators are vectorized, which lets you manipulate and update multiple values at once."}
 knitr::include_graphics("images/hopr_1002.png")
 ```
 
-```{exercise, name = "Vectorize a Function"}
+::: {#exr:vectorize-a-function name="Vectorize a Function"}
 The following function converts a vector of slot symbols to a vector of new slot symbols. Can you vectorize it? How much faster does the vectorized version work?
-```
 
 ```r
 change_symbols <- function(vec){
@@ -157,6 +156,8 @@ system.time(change_symbols(many))
 ##    user  system elapsed 
 ##  30.057   0.031  30.079
 ```
+:::
+
 
 ```{solution}
 `change_symbols` uses a `for` loop to sort values into seven different cases, as demonstrated in Figure \@ref(fig:change).
@@ -187,7 +188,7 @@ vec[vec == "0"]
 ## "0"
 ```
 
-```{r change, echo = FALSE, fig.cap = "change_many does something different for each of seven cases."}
+```{r fig:change, echo = FALSE, fig.cap = "`change_many` does something different for each of seven cases."}
 knitr::include_graphics("images/hopr_1003.png")
 ```
 
@@ -245,11 +246,11 @@ When you write in languages like C and Fortran, you must compile your code befor
 
 When you write in R, however, you do not compile your code. You skip this step, which makes programming in R a more user-friendly experience. Unfortunately, this also means you do not give your loops the speed boost they would receive in C or Fortran. As a result, your loops will run slower than the other operations we have studied: logical tests, subsetting, and element-wise execution. If you can write your code with the faster operations instead of a `for` loop, you should do so. No matter which language you write in, you should try to use the features of the language that run the fastest.
 
-```{block2, type = "rmdtip"}
-**if and for**
+::: {.callout-tip}
+## `if` and `for`
   
 A good way to spot `for` loops that could be vectorized is to look for combinations of `if` and `for`. `if` can only be applied to one value at a time, which means it is often used in conjunction with a `for` loop. The `for` loop helps apply `if` to an entire vector of values. This combination can usually be replaced with logical subsetting, which will do the same thing but run much faster.
-```
+:::
 
 This doesn't mean that you should never use `for` loops in R. There are still many places in R where `for` loops make sense. `for` loops perform a basic task that you cannot always recreate with vectorized code. `for` loops are also easy to understand and run reasonably fast in R, so long as you take a few precautions. 
 
@@ -287,15 +288,15 @@ The two loops do the same thing, so what accounts for the difference? In the sec
 
 In the first case, the size of `output` never changes; R can define one `output` object in memory and use it for each run of the `for` loop.
 
-```{block2, type = "rmdtip"}
+::: {.callout-tip}
 The authors of R use low-level languages like C and Fortran to write basic R functions, many of which use `for` loops. These functions are compiled and optimized before they become a part of R, which makes them quite fast. 
 
 Whenever you see `.Primitive`, `.Internal`, or `.Call` written in a function's definition, you can be confident the function is calling code from another language. You'll get all of the speed advantages of that language by using the function.
-```
+:::
 
 ## Vectorized Code in Practice
 
-To see how vectorized code can help you as a data scientist, consider our slot machine project. In [Loops], you calculated the exact payout rate for your slot machine, but you could have estimated this payout rate with a simulation. If you played the slot machine many, many times, the average prize over all of the plays would be a good estimate of the true payout rate.
+To see how vectorized code can help you as a data scientist, consider our slot machine project. In [Loops](#sec:loops), you calculated the exact payout rate for your slot machine, but you could have estimated this payout rate with a simulation. If you played the slot machine many, many times, the average prize over all of the plays would be a good estimate of the true payout rate.
 
 This method of estimation is based on the law of large numbers and is similar to many statistical simulations. To run this simulation, you could use a `for` loop:
 
@@ -386,15 +387,15 @@ symbols
 
 Then you can run each line of `score_many` against the example and examine the results as you go.
 
-```{exercise, name = "Test Your Understanding"}
+::: {#exr:test-your-understanding name="Test Your Understanding"}
 Study the model `score_many` function until you are satisfied that you understand how it works and could write a similar function yourself.
-```
+:::
 
-```{exercise, name = "Advanced Challenge"}
+::: {#exr:advanced-challenge name="Advanced Challenge"}
 Instead of examining the model answer, write your own vectorized version of `score`. Assume that the data is stored in an _n_ &#x00D7; 3 matrix where each row of the matrix contains one combination of slots to be scored.
-```
 
 You can use the version of `score` that treats diamonds as wild or the version of `score` that doesn't. However, the model answer will use the version treating diamonds as wild. 
+:::
 
 ```{solution}
 `score_many` is a vectorized version of `score`. You can use it to run the simulation at the start of this section in a little over 20 seconds. This is 17 times faster than using a `for` loop:
@@ -497,13 +498,13 @@ This project completes the education you began in [The Very Basics]. You can now
 
 These skills solve an important logistical problem faced by every data scientist: _how can you store and manipulate data without making errors?_ However, this is not the only problem that you will face as a data scientist. The next problem will appear when you try to understand the information contained in your data. It is nearly impossible to spot insights or to discover patterns in raw data. A third problem will appear when you try to use your data set to reason about reality, which includes things not contained in your data set. What exactly does your data imply about things outside of the data set? How certain can you be?
 
-I refer to these problems as the logistical, tactical, and strategic problems of data science, as shown in Figure \@ref(fig:venn). You'll face them whenever you try to learn from data:
+I refer to these problems as the logistical, tactical, and strategic problems of data science, as shown in @fig:venn. You'll face them whenever you try to learn from data:
 
 * **A logistical problem:** - How can you store and manipulate data without making errors?
 * **A tactical problem** - How can you discover the information contained in your data?
 * **A strategic problem** - How can you use the data to draw conclusions about the world at large?
 
-```{r venn, echo = FALSE, fig.cap = "The three core skill sets of data science: computer programming, data comprehension, and scientific reasoning."}
+```{r fig:venn, echo = FALSE, fig.cap = "The three core skill sets of data science: computer programming, data comprehension, and scientific reasoning."}
 knitr::include_graphics("images/hopr_1004.png")
 ```
 

@@ -2,7 +2,7 @@
 knit: quarto render
 ---
 
-# Loops
+# Loops {#sec:loops}
 
 Loops are R's method for repeating a task, which makes them a useful tool for programming simulations. This chapter will teach you how to use R's loop tools.
 
@@ -20,7 +20,7 @@ $$
 
 You can think of the expected value as the average prize that you would observe if you played the slot machine an infinite number of times. Let's use the formula to calculate some simple expected values. Then we will apply the formula to your slot machine.
 
-Do you remember the `die` you created in [Project 1: Weighted Dice]?
+Do you remember the `die` you created in [Project 1: Weighted Dice](#sec:project-dice)?
 
 ```r
 die <- c(1, 2, 3, 4, 5, 6)
@@ -45,7 +45,7 @@ $$
 
 Hence, the expected value of rolling a fair die is 3.5. You may notice that this is also the average value of the die. The expected value will equal the average if every outcome has the same chance of occurring. 
 
-But what if each outcome has a different chance of occurring? For example, we weighted our dice in [Packages and Help Pages] so that each die rolled 1, 2, 3, 4, and 5 with probability 1/8 and 6 with probability 3/8. You can use the same formula to calculate the expected value in these conditions:
+But what if each outcome has a different chance of occurring? For example, we weighted our dice in [Packages and Help Pages](#sec:packages-and-help) so that each die rolled 1, 2, 3, 4, and 5 with probability 1/8 and 6 with probability 3/8. You can use the same formula to calculate the expected value in these conditions:
 
 $$
 \begin{array}{rl}
@@ -226,15 +226,16 @@ $$
 
 Ready to begin?
 
-```{exercise, name = "List the Combinations"}
+::: {#exr:list-the-combinations name="List the Combinations"}
 Use `expand.grid` to make a data frame that contains every possible combination of _three_ symbols from the `wheel` vector:
-```
+
 
 ```r
 wheel <- c("DD", "7", "BBB", "BB", "B", "C", "0")
 ```
 
 Be sure to add the argument `stringsAsFactors = FALSE` to your `expand.grid` call; otherwise, `expand.grid` will save the combinations as factors, an unfortunate choice that will disrupt the `score` function.
+:::
 
 ```{solution}
 To create a data frame of each combination of _three_ symbols, you need to run `expand.grid` and give it _three_ copies of `wheel`. The result will be a data frame with 343 rows, one for each unique combination of three slot symbols:
@@ -268,9 +269,9 @@ get_symbols <- function() {
 ```
 
 
-```{exercise, name = "Make a Lookup Table"}
+::: {#exr:lookup-table name="Make a Lookup Table"}
 Isolate the previous probabilities in a lookup table. What names will you use in your table?
-```
+:::
 
 
 ```{solution}
@@ -284,9 +285,9 @@ prob <- c("DD" = 0.03, "7" = 0.03, "BBB" = 0.06,
 
 Now let's look up our probabilities.
 
-```{exercise, name = "Lookup the Probabilities"}
+::: {#exr:lookup-probabilities name="Lookup the Probabilities"}
 Look up the probabilities of getting the values in `Var1`. Then add them to `combos` as a column named `prob1`. Then do the same for `Var2` (`prob2`) and `Var3` (`prob3`). 
-```
+:::
 
 
 ```{solution}
@@ -311,13 +312,15 @@ $$
 P(A \& B \& C \& ...) = P(A) \cdot P(B) \cdot P(C) \cdot ...
 $$
 
-```{exercise, name = "Calculate Probabilities for Each Combination"}
+::: {#exr:calculate-combinations name="Calculate Probabilities for Each Combination"}
 Calculate the overall probabilities for each combination. Save them as a column named `prob` in `combos`, then check your work. 
 
 You can check that the math worked by summing the probabilities. The probabilities should add up to one, because one of the combinations _must_ appear when you play the slot machine. In other words, a combination will appear, with probability of one.
-```
+:::
 
+```{solution}
 You can calculate the probabilities of every possible combination in one fell swoop with some element-wise execution: 
+```
 
 ```r
 combos$prob <- combos$prob1 * combos$prob2 * combos$prob3
@@ -408,20 +411,20 @@ for (i in c("My", "second", "for", "loop")) {
 }
 ```
 
-```{block2, type = "rmdwarning"}
-**Choose your symbols carefully**
+::: {.callout-warning}
+## Choose your symbols carefully
   
 R will run your loop in whichever environment you call it from. This is bad news if your loop uses object names that already exist in the environment. Your loop will overwrite the existing objects with the objects that it creates. This applies to the value symbol as well.
-```
+:::
 
 
-```{block2, type = "rmdtip"}
-**For loops run on sets**
+::: {.callout-tip}
+## For loops run on sets
   
 In many programming languages, `for` loops are designed to work with integers, not sets. You give the loop a starting value and an ending value, as well as an increment to advance the value by between loops. The `for` loop then runs until the loop value exceeds the ending value. 
 
 You can recreate this effect in R by having a `for` loop execute on a set of integers, but don't lose track of the fact that R's `for` loops execute on members of a set, not sequences of integers.
-```
+:::
 
 `for` loops are very useful in programming because they help you connect a piece of code with each element in a set. For example, we could use a `for` loop to run `score` once for each row in `combos`. However, R's `for` loops have a shortcoming that you'll want to know about before you start using them: `for` loops do not return output.
 
@@ -473,9 +476,9 @@ head(combos, 3)
 
 The code creates a new column named prize and fills it with `NA`s. R uses its recycling rules to populate every value of the column with `NA`. 
 
-```{exercise, name = "Build a Loop"}
+::: {#exr:build-a-loop name="Build a Loop"}
 Construct a `for` loop that will run `score` on all 343 rows of `combos`. The loop should run `score` on the first three entries of the _i_th row of `combos` and should store the results in the _i_th entry of `combos$prize`.
-```
+:::
 
 ```{solution}
 You can score the rows in `combos` with: 
@@ -513,11 +516,11 @@ The best thing about `DD`s is that their effects are cumulative. For example, co
 
 Adding this behavior to our code is a little tougher than what we have done so far, but it involves all of the same principles. You can decide that your slot machine doesn't use wilds and keep the code that we have. In that case, your slot machine will have a payout rate of about 54 percent. Or, you could rewrite your code to use wilds. If you do, you will find that your slot machine has a payout rate of 93 percent, one percent higher than the manufacturer's claim. You can calculate this rate with the same method that we used in this section.
 
-```{exercise, name = "Challenge"}
+::: {#exr:challenge name="Challenge"}
 There are many ways to modify `score` that would count `DD`s as wild. If you would like to test your skill as an R programmer, try to write your own version of `score` that correctly handles diamonds.
 
 If you would like a more modest challenge, study the following `score` code. It accounts for wild diamonds in a way that I find elegant and succinct. See if you can understand each step in the code and how it achieves its result.
-```
+:::
 
 
 ```{solution}
@@ -560,11 +563,13 @@ score <- function(symbols) {
 ```
 
 
-```{exercise, name = "Calculate the Expected Value"}
+::: {#exr:expected-value name="Calculate the Expected Value"}
 Calculate the expected value of the slot machine when it uses the new `score` function. You can use the existing `combos` data frame, but you will need to build a `for` loop to recalculate `combos$prize`.
-```
+:::
 
+```{solution}
 To update the expected value, just update `combos$prize`:
+```
 
 ```r
 for (i in 1:nrow(combos)) {
@@ -645,4 +650,4 @@ You can repeat tasks in R with `for`, `while`, and `repeat` loops. To use `for`,
 
 Repetition plays an important role in data science. It is the basis for simulation, as well as for estimates of variance and probability. Loops are not the only way to create repetition in R (consider `replicate` for example), but they are one of the most popular ways.
 
-Unfortunately, loops in R can sometimes be slower than loops in other languages. As a result, R's loops get a bad rap. This reputation is not entirely deserved, but it does highlight an important issue. Speed is essential to data analysis. When your code runs fast, you can work with bigger data and do more to it before you run out of time or computational power. [Speed] will teach you how to write fast `for` loops and fast code in general with R. There, you will learn to write vectorized code, a style of lightning-fast code that takes advantage of all of R's strengths.
+Unfortunately, loops in R can sometimes be slower than loops in other languages. As a result, R's loops get a bad rap. This reputation is not entirely deserved, but it does highlight an important issue. Speed is essential to data analysis. When your code runs fast, you can work with bigger data and do more to it before you run out of time or computational power. [Speed](#sec:speed) will teach you how to write fast `for` loops and fast code in general with R. There, you will learn to write vectorized code, a style of lightning-fast code that takes advantage of all of R's strengths.

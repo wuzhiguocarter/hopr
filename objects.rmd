@@ -245,7 +245,7 @@ typeof(hand)
 
 This creates a one-dimensional group of card names—great job! Now let's make a more sophisticated data structure, a two-dimensional table of card names and suits. You can build a more sophisticated object from an atomic vector by giving it some attributes and assigning it a class. 
 
-## Attributes {#attributes}
+## Attributes {#sec:attributes}
 
 An attribute is a piece of information that you can attach to an atomic vector (or any R object). The attribute won't affect any of the values in the object, and it will not appear when you display your object. You can think of an attribute as "metadata"; it is just a convenient place to put information associated with an object. R will normally ignore this metadata, but some R functions will check for specific attributes. These functions may use the attributes to do special things with the data.
 

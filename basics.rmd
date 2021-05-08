@@ -442,7 +442,7 @@ Nope. Each time you call `dice`, R will show you the result of that one time you
 
 However, it _would_ be convenient to have an object that can re-roll the dice whenever you call it. You can make such an object by writing your own R function.
 
-## Writing Your Own Functions {#write-functions}
+## Writing Your Own Functions {#sec:write-functions}
 
 To recap, you already have working R code that simulates rolling a pair of dice:
 
