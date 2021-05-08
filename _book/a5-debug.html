@@ -95,7 +95,6 @@
   <script src="site_libs/bootstrap/bootstrap.min.js"></script>
   <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
   <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-  
   <style type="text/css">
     .quarto-layout-panel > figure > figcaption,
     .quarto-layout-panel > .panel-caption {
@@ -183,14 +182,12 @@
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
           <a class="dropdown-item" href="./Hands-On Programming with R.pdf">
-          D
-      ownload PDF
+          Download PDF
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="./Hands-On Programming with R.epub">
-          D
-      ownload ePub
+          Download ePub
           </a>
         </li>
     </ul>
@@ -350,15 +347,18 @@
   </div>
 <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
 <main>
-
 <header id="title-block-header">
 <h1 class="title d-none d-lg-block display-6">Appendix E — Debugging R Code</h1>
 </header>
 
-<div class="cell" type="rmdnote">
-
-<div class="rmdnote">
-This appendix refers to environments, the topic of [Environments], and uses examples from [Programs] and [S3]. You should read through these chapters first to get the most out of this appendix.
+<div class="callout-note callout">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div>
+<p>This appendix refers to environments, the topic of <a href="environments.html">Environments</a>, and uses examples from <a href="#sec:programs">Programs</a> and <a href="#sec:s3">S3</a>. You should read through these chapters first to get the most out of this appendix.</p>
+</div>
 </div>
 </div>
 <p>R comes with a simple set of debugging tools that RStudio amplifies. You can use these tools to better understand code that produces an error or returns an unexpected result. Usually this will be your own code, but you can also examine the functions in R or one of its packages.</p>
@@ -376,7 +376,7 @@ This appendix refers to environments, the topic of [Environments], and uses exam
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">first</span>()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  Error in fifth() : could not find function "bug" </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The error report tells us that the error occurred when R tried to run <code>fifth</code>. It also tells us the nature of the error (there is no function called <code>bug</code>). Here, it is obvious why R calls <code>fifth</code>, but it might not be so obvious why R calls a function when an error occurs in the wild.</p>
-<p>You can see the path of functions that R called before it hit an error by typing <em><code>traceback()</code></em> at the command line. <code>traceback</code> will return a call stack, a list of the functions that R called in the order that it called them. The bottom function will be the command that you entered in the command line. The top function will be the function that caused the error:</p>
+<p>You can see the path of functions that R called before it hit an error by typing <code>traceback()</code> at the command line. <code>traceback</code> will return a call stack, a list of the functions that R called in the order that it called them. The bottom function will be the command that you entered in the command line. The top function will be the function that caused the error:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">traceback</span>()</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 5: fifth() at #1</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 4: fourth() at #1</span></span>
@@ -403,25 +403,25 @@ This appendix refers to environments, the topic of [Environments], and uses exam
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 4993: fifth() at #1</span></span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="do">## ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Notice that there are 5,000 lines of output in this <code>traceback</code>. If you are using RStudio, you will not get to see the traceback of an infinite recursion error (I used the Mac GUI to get this output). RStudio represses the traceback for infinite recursion errors to prevent the large call stacks from pushing your console history out of R’s memory buffer. With RStudio, you will have to recognize the infinite recursion error by its error message. However, you can still see the imposing <code>traceback</code> by running things in a UNIX shell or the Windows or Mac GUIs.</p>
-<p>RStudio makes it very easy to use <code>traceback</code>. You do not even need to type in the function name. Whenever an error occurs, RStudio will display it in a gray box with two options. The first is Show Traceback, shown in Figure @ref(fig:show-traceback).</p>
+<p>RStudio makes it very easy to use <code>traceback</code>. You do not even need to type in the function name. Whenever an error occurs, RStudio will display it in a gray box with two options. The first is Show Traceback, shown in <a href="#fig:show-traceback">fig.&nbsp;<span>E.1</span></a>.</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<div class="quarto-figure" style="text-align: center;">
+<div id="fig:show-traceback" class="quarto-figure" style="text-align: center;">
 <figure>
 <p><img src="images/hopr_ae01.png" class="img-fluid" width="709"></p>
-<p></p><figcaption aria-hidden="true">RStudio’s Show Traceback option.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true">Figure E.1: RStudio’s Show Traceback option.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p>If you click Show Traceback, RStudio will expand the gray box and display the <code>traceback</code> call stack, as in Figure @ref(fig:hide-traceback). The Show Traceback option will persist beside an error message in your console, even as you write new commands. This means that you can go back and look at the call stacks for all errors—not just the most recent error.</p>
+<p>If you click Show Traceback, RStudio will expand the gray box and display the <code>traceback</code> call stack, as in <a href="#fig:hide-traceback">fig.&nbsp;<span>E.2</span></a>. The Show Traceback option will persist beside an error message in your console, even as you write new commands. This means that you can go back and look at the call stacks for all errors—not just the most recent error.</p>
 <p>Imagine that you’ve used <code>traceback</code> to pinpoint a function that you think might cause a bug. Now what should you do? You should try to figure out what the function did to cause an error while it ran (if it did anything). You can examine how the function runs with <code>browser</code>.</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<div class="quarto-figure" style="text-align: center;">
+<div id="fig:hide-traceback" class="quarto-figure" style="text-align: center;">
 <figure>
 <p><img src="images/hopr_ae02.png" class="img-fluid" width="782"></p>
-<p></p><figcaption aria-hidden="true">RStudio’s Traceback display.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true">Figure E.2: RStudio’s Traceback display.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -465,15 +465,15 @@ This appendix refers to environments, the topic of [Environments], and uses exam
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  symbols <span class="ot">&lt;-</span> <span class="fu">get_symbols</span>()</span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">structure</span>(<span class="fu">score</span>(symbols), <span class="at">symbols =</span> symbols, <span class="at">class =</span> <span class="st">"slots"</span>)</span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>When you run <code>play</code>, <code>play</code> will call <code>get_symbols</code> and then <code>score</code>. As R works through <code>score</code>, it will come across the call to <code>browser</code> and run it. When R runs this call, several things will happen, as in Figure @ref(fig:browser). First, R will stop running <code>score</code>. Second, the command prompt will change to <code>browser[1]&gt;</code> and R will give me back control; I can now type new commands in at the new command prompt. Third, three buttons will appear above the console pane: Next, Continue, and Stop. Fourth, RStudio will display the source code for <code>score</code> in the scripts pane, and it will highlight the line that contains <code>browser()</code>. Fifth, the environments tab will change. Instead of revealing the objects that are saved in the global environment, it will reveal the objects that are saved in the runtime environment of <code>score</code> (see [Environments] for an explanation of R’s environment system). Sixth, RStudio will open a new Traceback pane, which shows the call stack RStudio took to get to <code>browser</code>. The most recent function, <code>score</code>, will be highlighted.</p>
+<p>When you run <code>play</code>, <code>play</code> will call <code>get_symbols</code> and then <code>score</code>. As R works through <code>score</code>, it will come across the call to <code>browser</code> and run it. When R runs this call, several things will happen, as in <a href="#fig:browser">fig.&nbsp;<span>E.3</span></a>. First, R will stop running <code>score</code>. Second, the command prompt will change to <code>browser[1]&gt;</code> and R will give me back control; I can now type new commands in at the new command prompt. Third, three buttons will appear above the console pane: Next, Continue, and Stop. Fourth, RStudio will display the source code for <code>score</code> in the scripts pane, and it will highlight the line that contains <code>browser()</code>. Fifth, the environments tab will change. Instead of revealing the objects that are saved in the global environment, it will reveal the objects that are saved in the runtime environment of <code>score</code> (see [Environments] for an explanation of R’s environment system). Sixth, RStudio will open a new Traceback pane, which shows the call stack RStudio took to get to <code>browser</code>. The most recent function, <code>score</code>, will be highlighted.</p>
 <p>I’m now in a new R mode, called <em>browser mode</em>. Browser mode is designed to help you uncover bugs, and the new display in RStudio is designed to help you navigate this mode.</p>
 <p>Any command that you run in browser mode will be evaluated in the context of the runtime environment of the function that called <code>browser</code>. This will be the function that is highlighted in the new Traceback pane. Here, that function is <code>score</code>. So while we are in browser mode, the active environment will be <code>score</code>’s runtime environment. This lets you do two things.</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<div class="quarto-figure" style="text-align: center;">
+<div id="fig:browser" class="quarto-figure" style="text-align: center;">
 <figure>
 <p><img src="images/hopr_ae03.png" class="img-fluid" width="946"></p>
-<p></p><figcaption aria-hidden="true">RStudio updates its display whenever you enter browser mode to help you navigate the mode.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true">Figure E.3: RStudio updates its display whenever you enter browser mode to help you navigate the mode.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -484,16 +484,16 @@ This appendix refers to environments, the topic of [Environments], and uses exam
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>Browse[<span class="dv">1</span>]<span class="sc">&gt;</span> same</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Second, you can run code and see the same results that <code>score</code> would see. For example, you could run the remaining lines of the <code>score</code> function and see if they do anything unusual. You could run these lines by typing them into the command prompt, or you could use the three navigation buttons that now appear above the prompt, as in Figure @ref(fig:browser-buttons).</p>
+<p>Second, you can run code and see the same results that <code>score</code> would see. For example, you could run the remaining lines of the <code>score</code> function and see if they do anything unusual. You could run these lines by typing them into the command prompt, or you could use the three navigation buttons that now appear above the prompt, as in <a href="#fig:browser-buttons">fig.&nbsp;<span>E.4</span></a>.</p>
 <p>The first button, Next, will run the next line of code in <code>score</code>. The highlighted line in the scripts pane will advance by one line to show you your new location in the <code>score</code> function. If the next line begins a code chunk, like a <code>for</code> loop or an <code>if</code> tree, R will run the whole chunk and will highlight the whole chunk in the script window.</p>
 <p>The second button, Continue, will run all of the remaining lines of <code>score</code> and then exit the browser mode.</p>
 <p>The third button, Stop, will exit browser mode without running any more lines of <code>score</code>.</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<div class="quarto-figure" style="text-align: center;">
+<div id="fig:browser-buttons" class="quarto-figure" style="text-align: center;">
 <figure>
 <p><img src="images/hopr_ae04.png" class="img-fluid" width="379"></p>
-<p></p><figcaption aria-hidden="true">You can navigate browser mode with the three buttons at the top of the console pane.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true">Figure E.4: You can navigate browser mode with the three buttons at the top of the console pane.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -504,14 +504,14 @@ This appendix refers to environments, the topic of [Environments], and uses exam
 </section>
 <section class="level2" data-number="E.3">
 <h2 data-number="5.3" class="anchored" id="break-points"><span class="header-section-number">E.3</span> Break Points</h2>
-<p>RStudio’s break points provide a graphical way to add a <code>browser</code> statement to a function. To use them, open the script where you’ve defined a function. Then click to the left of the line number of the line of code in the function body where you’d like to add the browser statement. A hollow red dot will appear to show you where the break point will occur. Then run the script by clicking the Source button at the top of the Scripts pane. The hollow dot will turn into a solid red dot to show that the function has a break point (see Figure @ref(fig:break-point)).</p>
+<p>RStudio’s break points provide a graphical way to add a <code>browser</code> statement to a function. To use them, open the script where you’ve defined a function. Then click to the left of the line number of the line of code in the function body where you’d like to add the browser statement. A hollow red dot will appear to show you where the break point will occur. Then run the script by clicking the Source button at the top of the Scripts pane. The hollow dot will turn into a solid red dot to show that the function has a break point (see <a href="#fig:break-point">fig.&nbsp;<span>E.5</span></a>).</p>
 <p>R will treat the break point like a <code>browser</code> statement, going into browser mode when it encounters it. You can remove a break point by clicking on the red dot. The dot will disappear, and the break point will be removed.</p>
 <div class="cell" data-fig.alt="{}">
 <div class="cell-output-display">
-<div class="quarto-figure" style="text-align: center;">
+<div id="fig:break-point" class="quarto-figure" style="text-align: center;">
 <figure>
 <p><img src="images/hopr_ae05.png" class="img-fluid" width="872"></p>
-<p></p><figcaption aria-hidden="true">Break points provide the graphical equivalent of a browser statement.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true">Figure E.5: Break points provide the graphical equivalent of a browser statement.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -528,7 +528,7 @@ This appendix refers to environments, the topic of [Environments], and uses exam
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">isdebugged</span>(sample)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="do">## FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If this is all too much of a hassle, you can do what I do and use <code>debugonce</code> instead of <code>debug</code>. R will enter browser mode the very next time it runs the function but will automatically undebug the function afterward. If you need to browse through the function again, you can just run <code>debugonce</code> on it a second time.</p>
-<p>You can recreate <code>debugonce</code> in RStudio whenever an error occurs. “Rerun with debug” will appear in the grey error box beneath Show Traceback (Figure @ref(fig:show-traceback)). If you click this option, RStudio will rerun the command as if you had first run <code>debugonce</code> on it. R will immediately go into browser mode, allowing you to step through the code. The browser behavior will only occur on this run of the code. You do not need to worry about calling <code>undebug</code> when you are done.</p>
+<p>You can recreate <code>debugonce</code> in RStudio whenever an error occurs. “Rerun with debug” will appear in the grey error box beneath Show Traceback (<a href="#fig:show-traceback">fig.&nbsp;<span>E.1</span></a>). If you click this option, RStudio will rerun the command as if you had first run <code>debugonce</code> on it. R will immediately go into browser mode, allowing you to step through the code. The browser behavior will only occur on this run of the code. You do not need to worry about calling <code>undebug</code> when you are done.</p>
 </section>
 <section class="level2" data-number="E.5">
 <h2 data-number="5.5" class="anchored" id="trace"><span class="header-section-number">E.5</span> trace</h2>
@@ -605,7 +605,6 @@ This appendix refers to environments, the topic of [Environments], and uses exam
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/a5-debug.rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
-
 
 
 </body></html>

@@ -344,7 +344,7 @@
 </section>
 <section class="level4" data-number="D.3.1.3">
 <h4 data-number="4.3.1.3" class="anchored" id="na.strings"><span class="header-section-number">D.3.1.3</span> na.strings</h4>
-<p>Oftentimes data sets will use special symbols to represent missing information. If you know that your data uses a certain symbol to represent missing entries, you can tell <code>read.table</code> (and the preceding functions) what the symbol is with the <code>na.strings</code> argument. <code>read.table</code> will convert all instances of the missing information symbol to <code>NA</code>, which is R’s missing information symbol (see <a href="modifying.html#missing">Missing Information</a>).</p>
+<p>Oftentimes data sets will use special symbols to represent missing information. If you know that your data uses a certain symbol to represent missing entries, you can tell <code>read.table</code> (and the preceding functions) what the symbol is with the <code>na.strings</code> argument. <code>read.table</code> will convert all instances of the missing information symbol to <code>NA</code>, which is R’s missing information symbol (see <a href="modifying.html#sec:missing">Missing Information</a>).</p>
 <p>For example, your poker data set contained missing values stored as a <code>.</code>, like this:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## "card","suit","value"</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="do">## "ace"," spades"," 14"</span></span>
@@ -399,9 +399,10 @@
 </section>
 <section class="level3" data-number="D.3.2">
 <h3 data-number="4.3.2" class="anchored" id="the-read-family"><span class="header-section-number">D.3.2</span> The read Family</h3>
-<p>R also comes with some prepackaged short cuts for <code>read.table</code>, shown in Table @ref(tab:shortcuts).</p>
+<p>R also comes with some prepackaged short cuts for <code>read.table</code>, shown in <a href="#tbl:shortcuts">tbl.&nbsp;<span>D.1</span></a>.</p>
+<div id="tbl:shortcuts">
 <table class="table">
-<caption>(#tab:shortcuts) R’s read functions. You can overwrite any of the default arguments as necessary.</caption>
+<caption>Table D.1: R’s read functions. You can overwrite any of the default arguments as necessary. </caption>
 <colgroup>
 <col style="width: 42%">
 <col style="width: 42%">
@@ -442,15 +443,22 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>The first shortcut, <code>read.csv</code>, behaves just like <code>read.table</code> but automatically sets <code>sep = ","</code> and <code>header = TRUE</code>, which can save you some typing:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>poker <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"poker.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>read.delim</code> automatically sets <code>sep</code> to the tab character, which is very handy for reading tab delimited files. These are files where each cell is separated by a tab. <code>read.delim</code> also sets <code>header = TRUE</code> by default.</p>
 <p><code>read.delim2</code> and <code>read.csv2</code> exist for European R users. These functions tell R that the data uses a comma instead of a period to denote decimal places. (If you’re wondering how this works with CSV files, CSV2 files usually separate cells with a semicolon, not a comma.)</p>
-<div class="cell" type="rmdtip">
-
-<div class="rmdtip">
-<p><strong>Import Dataset</strong></p>
-You can also load plain text files with RStudio’s Import Dataset button, as described in <a href="objects.html#loading">Loading Data</a>. Import Dataset provides a GUI version of <code>read.table</code>.
+<div class="callout-tip callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Import Dataset
+</div>
+</div>
+<div class="callout-body">
+<p>You can also load plain text files with RStudio’s Import Dataset button, as described in <a href="#loading">Loading Data</a>. Import Dataset provides a GUI version of <code>read.table</code>.</p>
 </div>
 </div>
 </section>
@@ -458,13 +466,12 @@ You can also load plain text files with RStudio’s Import Dataset button, as de
 <h3 data-number="4.3.3" class="anchored" id="read.fwf"><span class="header-section-number">D.3.3</span> read.fwf</h3>
 <p>One type of plain-text file defies the pattern by using its layout to separate data cells. Each row is placed in its own line (as with other plain-text files), and then each column begins at a specific number of characters from the lefthand side of the document. To achieve this, an arbitrary number of character spaces is added to the end of each entry to correctly position the next entry. These documents are known as <em>fixed-width files</em> and usually end with the extension <em>.fwf</em>.</p>
 <p>Here’s one way the royal flush data set could look as a fixed-width file. In each row, the suit entry begins exactly 10 characters from the start of the line. It doesn’t matter how many characters appeared in the first cell of each row:</p>
-<pre><code>
-card      suit       value
-ace       spades     14
-king      spades     13  
-queen     spades     12  
-jack      spades     11  
-10        spades     10</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>card      suit       value</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>ace       spades     14</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>king      spades     13  </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>queen     spades     12  </span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>jack      spades     11  </span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>10        spades     10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Fixed-width files look nice to human eyes (but no better than a tab-delimited file); however, they can be difficult to work with. Perhaps because of this, R comes with a function for reading fixed-width files, but no function for saving them. Unfortunately, US government agencies seem to like fixed-width files, and you’ll likely encounter one or more during your career.</p>
 <p>You can read fixed-width files into R with the function <code>read.fwf</code>. The function takes the same arguments as <code>read.table</code> but requires an additional argument, <code>widths</code>, which should be a vector of numbers. Each _i_th entry of the <code>widths</code> vector should state the width (in characters) of the _i_th column of the data set.</p>
 <p>If the aforementioned fixed-width royal flush data was saved as <em>poker.fwf</em> in your working directory, you could read it with:</p>
@@ -481,9 +488,10 @@ jack      spades     11
 </section>
 <section class="level3" data-number="D.3.5">
 <h3 data-number="4.3.5" class="anchored" id="saving-plain-text-files"><span class="header-section-number">D.3.5</span> Saving Plain-Text Files</h3>
-<p>Once your data is in R, you can save it to any file format that R supports. If you’d like to save it as a plain-text file, you can use the +write+ family of functions. The three basic write functions appear in Table @ref(tab:write). Use <code>write.csv</code> to save your data as a <em>.csv</em> file and <code>write.table</code> to save your data as a tab delimited document or a document with more exotic separators.</p>
+<p>Once your data is in R, you can save it to any file format that R supports. If you’d like to save it as a plain-text file, you can use the +write+ family of functions. The three basic write functions appear in <a href="#tbl:write">tbl.&nbsp;<span>D.2</span></a>. Use <code>write.csv</code> to save your data as a <em>.csv</em> file and <code>write.table</code> to save your data as a tab delimited document or a document with more exotic separators.</p>
+<div id="tbl:write">
 <table class="table">
-<caption>(#tab:write) R saves data sets to plain-text files with the write family of functions</caption>
+<caption>Table D.2: R saves data sets to plain-text files with the write family of functions </caption>
 <colgroup>
 <col style="width: 35%">
 <col style="width: 64%">
@@ -509,6 +517,7 @@ jack      spades     11
 </tr>
 </tbody>
 </table>
+</div>
 <p>The first argument of each function is the R object that contains your data set. The <code>file</code> argument is the file name (including extension) that you wish to give the saved data. By default, each function will save your data into your working directory. However, you can supply a file path to the file argument. R will oblige by saving the file at the end of the file path. If the file path does not begin with your root directory, R will append it to the end of the file path that leads to your working directory.</p>
 <p>For example, you can save the (hypothetical) poker data frame to a subdirectory named <em>data</em> within your working directory with the command:</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(poker, <span class="st">"data/poker.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -527,9 +536,10 @@ jack      spades     11
 <h3 data-number="4.3.6" class="anchored" id="compressing-files"><span class="header-section-number">D.3.6</span> Compressing Files</h3>
 <p>To compress a plain-text file, surround the file name or file path with the function <code>bzfile</code>, <code>gzfile</code>, or <code>xzfile</code>. For example:</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(poker, <span class="at">file =</span> <span class="fu">bzfile</span>(<span class="st">"data/poker.csv.bz2"</span>), <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Each of these functions will compress the output with a different type of compression format, shown in Table @ref(tab:compression).</p>
+<p>Each of these functions will compress the output with a different type of compression format, shown in <a href="#tbl:compression">tbl.&nbsp;<span>D.3</span></a>.</p>
+<div id="tbl:compression">
 <table class="table">
-<caption>(#tab:compression) R comes with three helper functions for compressing files</caption>
+<caption>Table D.3: R comes with three helper functions for compressing files </caption>
 <thead>
 <tr class="header">
 <th>Function</th>
@@ -551,6 +561,7 @@ jack      spades     11
 </tr>
 </tbody>
 </table>
+</div>
 <p>It is a good idea to adjust your file’s extension to reflect the compression. R’s <code>read</code> functions will open plain-text files compressed in any of these formats. For example, you could read a compressed file named <em>poker.csv.bz2</em> with:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read.csv</span>(<span class="st">"poker.csv.bz2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>or:</p>
@@ -643,9 +654,10 @@ jack      spades     11
 <section class="level2" data-number="D.6">
 <h2 data-number="4.6" class="anchored" id="loading-files-from-other-programs"><span class="header-section-number">D.6</span> Loading Files from Other Programs</h2>
 <p>You should follow the same advice I gave you for Excel files whenever you wish to work with file formats native to other programs: open the file in the original program and export the data as a plain-text file, usually a CSV. This will ensure the most faithful transcription of the data in the file, and it will usually give you the most options for customizing how the data is transcribed.</p>
-<p>Sometimes, however, you may acquire a file but not the program it came from. As a result, you won’t be able to open the file in its native program and export it as a text file. In this case, you can use one of the functions in Table @ref(tab:others) to open the file. These functions mostly come in R’s <code>foreign</code> package. Each attempts to read in a different file format with as few hiccups as possible.</p>
+<p>Sometimes, however, you may acquire a file but not the program it came from. As a result, you won’t be able to open the file in its native program and export it as a text file. In this case, you can use one of the functions in <a href="#tbl:others">tbl.&nbsp;<span>D.4</span></a> to open the file. These functions mostly come in R’s <code>foreign</code> package. Each attempts to read in a different file format with as few hiccups as possible.</p>
+<div id="tbl:others">
 <table class="table">
-<caption>(#tab:others) A number of functions will attempt to read the file types of other data-analysis programs</caption>
+<caption>Table D.4: A number of functions will attempt to read the file types of other data-analysis programs </caption>
 <thead>
 <tr class="header">
 <th>File format</th>
@@ -696,6 +708,7 @@ jack      spades     11
 </tr>
 </tbody>
 </table>
+</div>
 <section class="level3" data-number="D.6.13">
 <h3 data-number="4.6.13" class="anchored" id="connecting-to-databases"><span class="header-section-number">D.6.13</span> Connecting to Databases</h3>
 <p>You can also use R to connect to a database and read in data.</p>

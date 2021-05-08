@@ -4,9 +4,9 @@ knit: quarto render
 
 # Debugging R Code {#sec:appendix-debug}
 
-```{block2, type = "rmdnote"}
-This appendix refers to environments, the topic of [Environments], and uses examples from [Programs] and [S3]. You should read through these chapters first to get the most out of this appendix.
-```
+::: {.callout-note}
+This appendix refers to environments, the topic of [Environments](#sec:environments), and uses examples from [Programs](#sec:programs) and [S3](#sec:s3). You should read through these chapters first to get the most out of this appendix.
+:::
 
 R comes with a simple set of debugging tools that RStudio amplifies. You can use these tools to better understand code that produces an error or returns an unexpected result. Usually this will be your own code, but you can also examine the functions in R or one of its packages. 
 
@@ -35,7 +35,7 @@ first()
 
 The error report tells us that the error occurred when R tried to run `fifth`. It also tells us the nature of the error (there is no function called `bug`). Here, it is obvious why R calls `fifth`, but it might not be so obvious why R calls a function when an error occurs in the wild. 
 
-You can see the path of functions that R called before it hit an error by typing *`traceback()`* at the command line. `traceback` will return a call stack, a list of the functions that R called in the order that it called them. The bottom function will be the command that you entered in the command line. The top function will be the function that caused the error:
+You can see the path of functions that R called before it hit an error by typing `traceback()` at the command line. `traceback` will return a call stack, a list of the functions that R called in the order that it called them. The bottom function will be the command that you entered in the command line. The top function will be the function that caused the error:
 
 ```r
 traceback()
@@ -78,17 +78,17 @@ traceback()
 
 Notice that there are 5,000 lines of output in this `traceback`. If you are using RStudio, you will not get to see the traceback of an infinite recursion error (I used the Mac GUI to get this output). RStudio represses the traceback for infinite recursion errors to prevent the large call stacks from pushing your console history out of R's memory buffer. With RStudio, you will have to recognize the infinite recursion error by its error message. However, you can still see the imposing `traceback` by running things in a UNIX shell or the Windows or Mac GUIs.
 
-RStudio makes it very easy to use `traceback`. You do not even need to type in the function name. Whenever an error occurs, RStudio will display it in a gray box with two options. The first is Show Traceback, shown in Figure \@ref(fig:show-traceback). 
+RStudio makes it very easy to use `traceback`. You do not even need to type in the function name. Whenever an error occurs, RStudio will display it in a gray box with two options. The first is Show Traceback, shown in @fig:show-traceback. 
 
-```{r show-traceback, echo = FALSE, fig.cap = "RStudio's Show Traceback option."}
+```{r fig:show-traceback, echo = FALSE, fig.cap = "RStudio's Show Traceback option."}
 knitr::include_graphics("images/hopr_ae01.png")
 ```
 
-If you click Show Traceback, RStudio will expand the gray box and display the `traceback` call stack, as in Figure \@ref(fig:hide-traceback). The Show Traceback option will persist beside an error message in your console, even as you write new commands. This means that you can go back and look at the call stacks for all errors—not just the most recent error.
+If you click Show Traceback, RStudio will expand the gray box and display the `traceback` call stack, as in @fig:hide-traceback. The Show Traceback option will persist beside an error message in your console, even as you write new commands. This means that you can go back and look at the call stacks for all errors—not just the most recent error.
 
 Imagine that you've used `traceback` to pinpoint a function that you think might cause a bug. Now what should you do? You should try to figure out what the function did to cause an error while it ran (if it did anything). You can examine how the function runs with `browser`.
 
-```{r hide-traceback, echo = FALSE, fig.cap = "RStudio's Traceback display."}
+```{r fig:hide-traceback, echo = FALSE, fig.cap = "RStudio's Traceback display."}
 knitr::include_graphics("images/hopr_ae02.png")
 ```
 
@@ -139,13 +139,13 @@ play <- function() {
 }
 ```
 
-When you run `play`, `play` will call `get_symbols` and then `score`. As R works through `score`, it will come across the call to `browser` and run it. When R runs this call, several things will happen, as in Figure \@ref(fig:browser). First, R will stop running `score`. Second, the command prompt will change to `browser[1]>` and R will give me back control; I can now type new commands in at the new command prompt. Third, three buttons will appear above the console pane: Next, Continue, and Stop. Fourth, RStudio will display the source code for `score` in the scripts pane, and it will highlight the line that contains `browser()`. Fifth, the environments tab will change. Instead of revealing the objects that are saved in the global environment, it will reveal the objects that are saved in the runtime environment of `score` (see [Environments] for an explanation of R's environment system). Sixth, RStudio will open a new Traceback pane, which shows the call stack RStudio took to get to `browser`. The most recent function, `score`, will be highlighted.
+When you run `play`, `play` will call `get_symbols` and then `score`. As R works through `score`, it will come across the call to `browser` and run it. When R runs this call, several things will happen, as in @fig:browser. First, R will stop running `score`. Second, the command prompt will change to `browser[1]>` and R will give me back control; I can now type new commands in at the new command prompt. Third, three buttons will appear above the console pane: Next, Continue, and Stop. Fourth, RStudio will display the source code for `score` in the scripts pane, and it will highlight the line that contains `browser()`. Fifth, the environments tab will change. Instead of revealing the objects that are saved in the global environment, it will reveal the objects that are saved in the runtime environment of `score` (see [Environments] for an explanation of R's environment system). Sixth, RStudio will open a new Traceback pane, which shows the call stack RStudio took to get to `browser`. The most recent function, `score`, will be highlighted.
 
 I'm now in a new R mode, called _browser mode_. Browser mode is designed to help you uncover bugs, and the new display in RStudio is designed to help you navigate this mode. 
 
 Any command that you run in browser mode will be evaluated in the context of the runtime environment of the function that called `browser`. This will be the function that is highlighted in the new Traceback pane. Here, that function is `score`. So while we are in browser mode, the active environment will be `score`'s runtime environment. This lets you do two things.
 
-```{r browser, echo = FALSE, fig.cap = "RStudio updates its display whenever you enter browser mode to help you navigate the mode."}
+```{r fig:browser, echo = FALSE, fig.cap = "RStudio updates its display whenever you enter browser mode to help you navigate the mode."}
 knitr::include_graphics("images/hopr_ae03.png")
 ```
 
@@ -159,7 +159,7 @@ Browse[1]> same
 ## [1] FALSE
 ```
 
-Second, you can run code and see the same results that `score` would see. For example, you could run the remaining lines of the `score` function and see if they do anything unusual. You could run these lines by typing them into the command prompt, or you could use the three navigation buttons that now appear above the prompt, as in Figure \@ref(fig:browser-buttons).
+Second, you can run code and see the same results that `score` would see. For example, you could run the remaining lines of the `score` function and see if they do anything unusual. You could run these lines by typing them into the command prompt, or you could use the three navigation buttons that now appear above the prompt, as in @fig:browser-buttons.
 
 The first button, Next, will run the next line of code in `score`. The highlighted line in the scripts pane will advance by one line to show you your new location in the `score` function. If the next line begins a code chunk, like a `for` loop or an `if` tree, R will run the whole chunk and will highlight the whole chunk in the script window. 
 
@@ -167,7 +167,7 @@ The second button, Continue, will run all of the remaining lines of `score` and 
 
 The third button, Stop, will exit browser mode without running any more lines of `score`.
 
-```{r browser-buttons, echo = FALSE, fig.cap = "You can navigate browser mode with the three buttons at the top of the console pane."}
+```{r fig:browser-buttons, echo = FALSE, fig.cap = "You can navigate browser mode with the three buttons at the top of the console pane."}
 knitr::include_graphics("images/hopr_ae04.png")
 ```
 
@@ -179,11 +179,11 @@ Once you fix the bug, you should resave your function a third time—this time w
 
 ## Break Points
 
-RStudio's break points provide a graphical way to add a `browser` statement to a function. To use them, open the script where you've defined a function. Then click to the left of the line number of the line of code in the function body where you'd like to add the browser statement. A hollow red dot will appear to show you where the break point will occur. Then run the script by clicking the Source button at the top of the Scripts pane. The hollow dot will turn into a solid red dot to show that the function has a break point (see Figure \@ref(fig:break-point)).
+RStudio's break points provide a graphical way to add a `browser` statement to a function. To use them, open the script where you've defined a function. Then click to the left of the line number of the line of code in the function body where you'd like to add the browser statement. A hollow red dot will appear to show you where the break point will occur. Then run the script by clicking the Source button at the top of the Scripts pane. The hollow dot will turn into a solid red dot to show that the function has a break point (see @fig:break-point).
 
 R will treat the break point like a `browser` statement, going into browser mode when it encounters it. You can remove a break point by clicking on the red dot. The dot will disappear, and the break point will be removed.
 
-```{r break-point, echo = FALSE, fig.cap = "Break points provide the graphical equivalent of a browser statement."}
+```{r fig:break-point, echo = FALSE, fig.cap = "Break points provide the graphical equivalent of a browser statement."}
 knitr::include_graphics("images/hopr_ae05.png")
 ```
 
@@ -212,7 +212,7 @@ isdebugged(sample)
 
 If this is all too much of a hassle, you can do what I do and use `debugonce` instead of `debug`. R will enter browser mode the very next time it runs the function but will automatically undebug the function afterward. If you need to browse through the function again, you can just run `debugonce` on it a second time.
 
-You can recreate `debugonce` in RStudio whenever an error occurs. "Rerun with debug" will appear in the grey error box beneath Show Traceback (Figure \@ref(fig:show-traceback)). If you click this option, RStudio will rerun the command as if you had first run `debugonce` on it. R will immediately go into browser mode, allowing you to step through the code. The browser behavior will only occur on this run of the code. You do not need to worry about calling `undebug` when you are done.
+You can recreate `debugonce` in RStudio whenever an error occurs. "Rerun with debug" will appear in the grey error box beneath Show Traceback (@fig:show-traceback). If you click this option, RStudio will rerun the command as if you had first run `debugonce` on it. R will immediately go into browser mode, allowing you to step through the code. The browser behavior will only occur on this run of the code. You do not need to worry about calling `undebug` when you are done.
 
 
 ## trace
