@@ -376,7 +376,7 @@
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">get_symbols</span>()</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="do">## "7" "0" "B"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>get_symbols</code> uses the probabilities observed in a group of video lottery terminals from Manitoba, Canada. These slot machines became briefly controversial in the 1990s, when a reporter decided to test their payout rate. The machines appeared to pay out only 40 cents on the dollar, even though the manufacturer claimed they would pay out 92 cents on the dollar. The original data collected on the machines and a description of the controversy is available online in <a href="http://bit.ly/jse_Braun">a journal article by W. John Braun</a>. The controversy died down when additional testing showed that the manufacturer was correct.</p>
-<p>The Manitoba slot machines use the complicated payout scheme shown in Table @ref(tab:prizes). A player will win a prize if he gets:</p>
+<p>The Manitoba slot machines use the complicated payout scheme shown in <a href="#tbl:prizes">tbl.&nbsp;<span>7.1</span></a>. A player will win a prize if he gets:</p>
 <ul>
 <li>Three of the same type of symbol (except for three zeroes)</li>
 <li>Three bars (of mixed variety)</li>
@@ -471,7 +471,7 @@
 </div>
 </div>
 <p>You may notice that <code>play</code> calls a new function, <code>print</code>. This will help <code>play</code> display the three slot machine symbols, since they do not get returned by the last line of the function. The <code>print</code> command prints its output to the console window – even if R calls it from within a function.</p>
-<p>In <a href="#sec:project-1">Project 1: Weighted Dice</a>, I encouraged you to write all of your R code in an R script, a text file where you can compose and save code. That advice will become very important as you work through this chapter. Remember that you can open an R script in RStudio by going to the menu bar and clicking on File &gt; New File &gt; R Script.</p>
+<p>In <a href="dice.html">Project 1: Weighted Dice</a>, I encouraged you to write all of your R code in an R script, a text file where you can compose and save code. That advice will become very important as you work through this chapter. Remember that you can open an R script in RStudio by going to the menu bar and clicking on File &gt; New File &gt; R Script.</p>
 <section class="level2" data-number="0.1">
 <h2 data-number="7.1" class="anchored" id="strategy"><span class="header-section-number">7.1</span> Strategy</h2>
 <p>Scoring slot-machine results is a complex task that will require a complex algorithm. You can make this, and other coding tasks, easier by using a simple strategy:</p>
@@ -499,15 +499,11 @@
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">score</span>(symbols)</span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To have R execute steps in sequence, place the steps one after another in an R script or function body.</p>
-<div class="cell" data-fig.alt="{}">
-<div class="cell-output-display">
 <div id="fig:subdivide1" class="quarto-figure" style="text-align: center;">
 <figure>
-<p><img src="images/hopr_0701.png" class="img-fluid" width="458"></p>
+<p><img src="images/hopr_0701.png" class="img-fluid"></p>
 <p></p><figcaption aria-hidden="true">Figure 7.1: The play function uses a series of steps.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 </section>
 <section class="level3" data-number="0.1.2">
@@ -517,25 +513,17 @@
 <p>Diamonds complicate all of this because diamonds can be treated as wild cards. Let’s ignore that for now and focus on the simpler case where diamonds double the prize but are not wilds. <code>score</code> can double the prize as necessary after it runs one of the following algorithms, as shown in <a href="#fig:subdivide2">fig.&nbsp;<span>7.2</span></a>.</p>
 <p>Adding the <code>score</code> cases to the <code>play</code> steps reveals a strategy for the complete slot machine program, as shown in <a href="#fig:subdivide3">fig.&nbsp;<span>7.3</span></a>.</p>
 <p>We’ve already solved the first few steps in this strategy. Our program can get three slot machine symbols with the <code>get_symbols</code> function. Then it can display the symbols with the <code>print</code> function. Now let’s examine how the program can handle the parallel score cases.</p>
-<div class="cell" data-fig.alt="{}">
-<div class="cell-output-display">
 <div id="fig:subdivide2" class="quarto-figure" style="text-align: center;">
 <figure>
-<p><img src="images/hopr_0702.png" class="img-fluid" width="666"></p>
+<p><img src="images/hopr_0702.png" class="img-fluid"></p>
 <p></p><figcaption aria-hidden="true">Figure 7.2: The score function must distinguish between parallel cases.</figcaption><p></p>
 </figure>
 </div>
-</div>
-</div>
-<div class="cell" data-fig.alt="{}">
-<div class="cell-output-display">
 <div id="fig:subdivide3" class="quarto-figure" style="text-align: center;">
 <figure>
-<p><img src="images/hopr_0703.png" class="img-fluid" width="782"></p>
+<p><img src="images/hopr_0703.png" class="img-fluid"></p>
 <p></p><figcaption aria-hidden="true">Figure 7.3: The complete slot machine simulation will involve subtasks that are arranged both in series and in parallel.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -683,7 +671,7 @@ x</code></pre>
 <span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="do">## "Tie."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>R will work through the <code>if</code> conditions until one evaluates to <code>TRUE</code>, then R will ignore any remaining <code>if</code> and <code>else</code> clauses in the tree. If no conditions evaluate to <code>TRUE</code>, R will run the final <code>else</code> statement.</p>
 <p>If two <code>if</code> statements describe mutually exclusive events, it is better to join the <code>if</code> statements with an <code>else if</code> than to list them separately. This lets R ignore the second <code>if</code> statement whenever the first returns a <code>TRUE</code>, which saves work.</p>
-<p>You can use <code>if</code> and <code>else</code> to link the subtasks in your slot-machine function. Open a fresh R script, and copy this code into it. The code will be the skeleton of our final <code>score</code> function. Compare it to the flow chart for <code>score</code> in Figure @ref(fig:subdivide2):</p>
+<p>You can use <code>if</code> and <code>else</code> to link the subtasks in your slot-machine function. Open a fresh R script, and copy this code into it. The code will be the skeleton of our final <code>score</code> function. Compare it to the flow chart for <code>score</code> in <a href="#fig:subdivide2">fig.&nbsp;<span>7.2</span></a>:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> ( <span class="co"># Case 1: all the same &lt;1&gt;) {</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  prize <span class="ot">&lt;-</span> <span class="co"># look up the prize &lt;3&gt;</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="er">}</span> <span class="cf">else</span> <span class="cf">if</span> ( <span class="co"># Case 2: all bars &lt;2&gt; ) {</span></span>
@@ -705,15 +693,11 @@ x</code></pre>
 <strong>&lt;7&gt;</strong> - Calculate a prize based on the number of cherries.<br>
 <strong>&lt;8&gt;</strong> - Adjust the prize for diamonds.</p>
 <p>If you like, you can reorganize your flow chart around these tasks, as in <a href="#fig:subdivide4">fig.&nbsp;<span>7.4</span></a>. The chart will describe the same strategy, but in a more precise way. I’ll use a diamond shape to symbolize an <code>if else</code> decision.</p>
-<div class="cell" data-fig.alt="{}">
-<div class="cell-output-display">
 <div id="fig:subdivide4" class="quarto-figure" style="text-align: center;">
 <figure>
-<p><img src="images/hopr_0704.png" class="img-fluid" width="782"></p>
+<p><img src="images/hopr_0704.png" class="img-fluid"></p>
 <p></p><figcaption aria-hidden="true">Figure 7.4: score can navigate three cases with two if else decisions. We can also break some of our tasks into two steps.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <p>Now we can work through the subtasks one at a time, adding R code to the <code>if</code> tree as we go. Each subtask will be easy to solve if you set up a concrete example to work with and try to describe a solution in English before coding in R.</p>
 <p>The first subtask asks you to test whether the symbols are three of a kind. How should you begin writing the code for this subtask?</p>
@@ -1071,7 +1055,7 @@ Lookup Tables Versus if Trees
 <span id="cb63-17"><a href="#cb63-17" aria-hidden="true" tabindex="-1"></a><span class="co"># adjust for diamonds</span></span>
 <span id="cb63-18"><a href="#cb63-18" aria-hidden="true" tabindex="-1"></a>diamonds <span class="ot">&lt;-</span> <span class="fu">sum</span>(symbols <span class="sc">==</span> <span class="st">"DD"</span>)</span>
 <span id="cb63-19"><a href="#cb63-19" aria-hidden="true" tabindex="-1"></a>prize <span class="sc">*</span> <span class="dv">2</span> <span class="sc">^</span> diamonds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now that each part of your code works, you can wrap it into a function with the methods you learned in <a href="#sec:write-functions">Writing Your Own Functions</a>. Either use RStudio’s Extract Function option in the menu bar under Code, or use the <code>function</code> function. Ensure that the last line of the function returns a result (it does), and identify any arguments used by your function. Often the concrete examples that you used to test your code, like <code>symbols</code>, will become the arguments of your function. Run the following code to start using the <code>score</code> function:</p>
+<p>Now that each part of your code works, you can wrap it into a function with the methods you learned in <a href="basics.html#sec:write-functions">Writing Your Own Functions</a>. Either use RStudio’s Extract Function option in the menu bar under Code, or use the <code>function</code> function. Ensure that the last line of the function returns a result (it does), and identify any arguments used by your function. Often the concrete examples that you used to test your code, like <code>symbols</code>, will become the arguments of your function. Run the following code to start using the <code>score</code> function:</p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="cf">function</span> (symbols) {</span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># identify case</span></span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>  same <span class="ot">&lt;-</span> symbols[<span class="dv">1</span>] <span class="sc">==</span> symbols[<span class="dv">2</span>] <span class="sc">&amp;&amp;</span> symbols[<span class="dv">2</span>] <span class="sc">==</span> symbols[<span class="dv">3</span>]</span>
@@ -1118,7 +1102,7 @@ Lookup Tables Versus if Trees
 <p>As a programmer, you are more likely to be fooled in the opposite way. A program may seem impossible to write when you know that it must do something impressive. Do not panic in these situations. Divide the job before you into simple tasks, and then divide the tasks again. You can visualize the relationship between tasks with a flow chart if it helps. Then work on the subtasks one at a time. Describe solutions in English, then convert them to R code. Test each solution against concrete examples as you go. Once each of your subtasks works, combine your code into a function that you can share and reuse.</p>
 <p>R provides tools that can help you do this. You can manage cases with <code>if</code> and <code>else</code> statements. You can create a lookup table with objects and subsetting. You can add code comments with <code>#</code>. And you can save your programs as a function with <code>function</code>.</p>
 <p>Things often go wrong when people write programs. It will be up to you to find the source of any errors that occur and to fix them. It should be easy to find the source of your errors if you use a stepwise approach to writing functions, writing—and then testing—one bit at a time. However, if the source of an error eludes you, or you find yourself working with large chunks of untested code, consider using R’s built in debugging tools, described in <a href="a5-debug.html">Debugging R Code</a>.</p>
-<p>The next two chapters will teach you more tools that you can use in your programs. As you master these tools, you will find it easier to write R programs that let you do whatever you wish to your data. In <a href="#sec:s3">S3</a>, you will learn how to use R’s S3 system, an invisible hand that shapes many parts of R. You will use the system to build a custom class for your slot machine output, and you will tell R how to display objects that have your class.</p>
+<p>The next two chapters will teach you more tools that you can use in your programs. As you master these tools, you will find it easier to write R programs that let you do whatever you wish to your data. In <a href="s3.html">S3</a>, you will learn how to use R’s S3 system, an invisible hand that shapes many parts of R. You will use the system to build a custom class for your slot machine output, and you will tell R how to display objects that have your class.</p>
 <!-- -->
 </section>
 </main>

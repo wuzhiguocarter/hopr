@@ -356,7 +356,7 @@
 <p>We will repeat our dice rolls with a function called <code>replicate</code>, and we will visualize our rolls with a function called <code>qplot</code>. <code>qplot</code> does not come with R when you download it; <code>qplot</code> comes in a standalone R package. Many of the most useful R tools come in R packages, so let’s take a moment to look at what R packages are and how you can use them.</p>
 <section class="level2" data-number="0.1">
 <h2 data-number="2.1" class="anchored" id="packages"><span class="header-section-number">2.1</span> Packages</h2>
-<p>You’re not the only person writing your own functions with R. Many professors, programmers, and statisticians use R to design tools that can help people analyze data. They then make these tools free for anyone to use. To use these tools, you just have to download them. They come as preassembled collections of functions and objects called packages. <a href="#packages2">Appendix 2: R Packages</a> contains detailed instructions for downloading and updating R packages, but we’ll look at the basics here.</p>
+<p>You’re not the only person writing your own functions with R. Many professors, programmers, and statisticians use R to design tools that can help people analyze data. They then make these tools free for anyone to use. To use these tools, you just have to download them. They come as preassembled collections of functions and objects called packages. <a href="a2-packages.html">Appendix B: R Packages</a> contains detailed instructions for downloading and updating R packages, but we’ll look at the basics here.</p>
 <p>We’re going to use the <code>qplot</code> function to make some quick plots. <code>qplot</code> comes in the <em>ggplot2</em> package, a popular package for making graphs. Before you can use <code>qplot</code>, or anything else in the ggplot2 package, you need to download and install it.</p>
 <section class="level3" data-number="0.1.1">
 <h3 data-number="2.1.1" class="anchored" id="install.packages"><span class="header-section-number">2.1.1</span> install.packages</h3>
@@ -380,7 +380,7 @@
 <p>Now if you ask to see <code>qplot</code>, R will show you quite a bit of code (<code>qplot</code> is a long function):</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>qplot</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">## (quite a bit of code)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#packages2">Appendix 2: R Packages</a> contains many more details about acquiring and using packages. I recommend that you read it if you are unfamiliar with R’s package system. The main thing to remember is that you only need to install a package once, but you need to load it with <code>library</code> each time you wish to use it in a new R session. R will unload all of its packages each time you close RStudio.</p>
+<p><a href="a2-packages.html">Appendix B: R Packages</a> contains many more details about acquiring and using packages. I recommend that you read it if you are unfamiliar with R’s package system. The main thing to remember is that you only need to install a package once, but you need to load it with <code>library</code> each time you wish to use it in a new R session. R will unload all of its packages each time you close RStudio.</p>
 <p>Now that you’ve loaded <code>qplot</code>, let’s take it for a spin. <code>qplot</code> makes “quick plots.” If you give <code>qplot</code> two vectors of equal lengths, <code>qplot</code> will draw a scatterplot for you. <code>qplot</code> will use the first vector as a set of x values and the second vector as a set of y values. Look for the plot to appear in the Plots tab of the bottom-right pane in your RStudio window.</p>
 <p>The following code will make the plot that appears in <a href="#fig:qplot">fig.&nbsp;<span>2.1</span></a>. Until now, we’ve been creating sequences of numbers with the <code>:</code> operator; but you can also create vectors of numbers with the <code>c</code> function. Give <code>c</code> all of the numbers that you want to appear in the vector, separated by a comma. <code>c</code> stands for <em>concatenate</em>, but you can think of it as “collect” or “combine”:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="fl">0.8</span>, <span class="sc">-</span><span class="fl">0.6</span>, <span class="sc">-</span><span class="fl">0.4</span>, <span class="sc">-</span><span class="fl">0.2</span>, <span class="dv">0</span>, <span class="fl">0.2</span>, <span class="fl">0.4</span>, <span class="fl">0.6</span>, <span class="fl">0.8</span>, <span class="dv">1</span>)</span>
@@ -393,30 +393,22 @@
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  0.064  0.216  0.512  1.000</span></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell" data-fig.alt="{}">
-<div class="cell-output-display">
 <div id="fig:qplot" class="quarto-figure" style="text-align: center;">
 <figure>
-<p><img src="images/hopr_0201.png" class="img-fluid" width="487"></p>
-<p></p><figcaption aria-hidden="true">Figure 2.1: qplot makes a scatterplot when you give it two vectors.</figcaption><p></p>
+<p><img src="images/hopr_0201.png" class="img-fluid"></p>
+<p></p><figcaption aria-hidden="true">Figure 2.1: <code>qplot</code> makes a scatterplot when you give it two vectors.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <p>You don’t need to name your vectors <code>x</code> and <code>y</code>. I just did that to make the example clear. As you can see in <a href="#fig:qplot">fig.&nbsp;<span>2.1</span></a>, a scatterplot is a set of points, each plotted according to its x and y values. Together, the vectors <code>x</code> and <code>y</code> describe a set of 10 points. How did R match up the values in <code>x</code> and <code>y</code> to make these points? With element-wise execution, as we saw in <a href="basics.html#fig:elementwise">fig.&nbsp;<span>1.3</span></a>.</p>
 <p>Scatterplots are useful for visualizing the relationship between two variables. However, we’re going to use a different type of graph, a <em>histogram</em>. A histogram visualizes the distribution of a single variable; it displays how many data points appear at each value of x.</p>
 <p>Let’s take a look at a histogram to see if this makes sense. <code>qplot</code> will make a histogram whenever you give it only <em>one</em> vector to plot. The following code makes the left-hand plot in <a href="#fig:hist">fig.&nbsp;<span>2.2</span></a> (we’ll worry about the right-hand plot in just second). To make sure our graphs look the same, use the extra argument <em><code>binwidth = 1</code></em>:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(x, <span class="at">binwidth =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell" data-fig.alt="{}">
-<div class="cell-output-display">
 <div id="fig:hist" class="quarto-figure" style="text-align: center;">
 <figure>
-<p><img src="images/hopr_0202.png" class="img-fluid" width="510"></p>
-<p></p><figcaption aria-hidden="true">Figure 2.2: qplot makes a histogram when you give it a single vector.</figcaption><p></p>
+<p><img src="images/hopr_0202.png" class="img-fluid"></p>
+<p></p><figcaption aria-hidden="true">Figure 2.2: <code>qplot</code> makes a histogram when you give it a single vector.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <p>This plot shows that our vector contains one value in the interval <code>[1, 2)</code> by placing a bar of height 1 above that interval. Similarly, the plot shows that the vector contains three values in the interval <code>[2, 3)</code> by placing a bar of height 3 in that interval. It shows that the vector contains two values in the interval <code>[3, 4)</code> by placing a bar of height 2 in that interval. In these intervals, the hard bracket, <code>[</code>, means that the first number is included in the interval. The parenthesis, <code>)</code>, means that the last number is <em>not</em> included.</p>
 <p>Let’s try another histogram. This code makes the right-hand plot in <a href="#fig:hist">fig.&nbsp;<span>2.2</span></a>. Notice that there are five points with a value of 1 in <code>x2</code>. The histogram displays this by plotting a bar of height 5 above the interval x2 = [1, 2):</p>
@@ -441,30 +433,22 @@
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">replicate</span>(<span class="dv">10</span>, <span class="fu">roll</span>())</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 3  7  5  3  6  2  3  8 11  7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell" data-fig.alt="{}">
-<div class="cell-output-display">
 <div id="fig:probs" class="quarto-figure" style="text-align: center;">
 <figure>
-<p><img src="images/hopr_0203.png" class="img-fluid" width="512"></p>
+<p><img src="images/hopr_0203.png" class="img-fluid"></p>
 <p></p><figcaption aria-hidden="true">Figure 2.3: Each individual dice combination should occur with the same frequency. As a result, some sums will occur more often than others. With fair dice, each sum should appear in proportion to the number of combinations that make it.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <p>A histogram of your first 10 rolls probably won’t look like the pattern shown in <a href="#fig:probs">fig.&nbsp;<span>2.3</span></a>. Why not? There is too much randomness involved. Remember that we use dice in real life because they are effective random number generators. Patterns of long run frequencies will only appear <em>over the long run</em>. So let’s simulate 10,000 dice rolls and plot the results. Don’t worry; <code>qplot</code> and <code>replicate</code> can handle it. The results appear in <a href="#fig:fair">fig.&nbsp;<span>2.4</span></a>:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>rolls <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">roll</span>())</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(rolls, <span class="at">binwidth =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The results suggest that the dice are fair. Over the long run, each number occurs in proportion to the number of combinations that generate it.</p>
 <p>Now how can you bias these results? The previous pattern occurs because each underlying combination of dice (e.g., (3,4)) occurs with the same frequency. If you could increase the probability that a 6 is rolled on either die, then any combination with a six in it will occur more often than any combination without a six in it. The combination (6, 6) would occur most of all. This won’t make the dice add up to 12 more often than they add up to seven, but it will skew the results toward the higher numbers.</p>
-<div class="cell" data-fig.alt="{}">
-<div class="cell-output-display">
 <div id="fig:fair" class="quarto-figure" style="text-align: center;">
 <figure>
-<p><img src="images/hopr_0204.png" class="img-fluid" width="508"></p>
+<p><img src="images/hopr_0204.png" class="img-fluid"></p>
 <p></p><figcaption aria-hidden="true">Figure 2.4: The behavior of our dice suggests that they are fair. Seven occurs more often than any other number, and frequencies diminish in proportion to the number of die combinations that create each number.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <p>To put it another way, the probability of rolling any single number on a fair die is 1/6. I’d like you to change the probability to 1/8 for each number below six, and then increase the probability of rolling a six to 3/8:</p>
 <table class="table">
@@ -588,15 +572,11 @@
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>rolls <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">roll</span>())</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(rolls, <span class="at">binwidth =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This confirms that we’ve effectively weighted the dice. High numbers occur much more often than low numbers. The remarkable thing is that this behavior will only be apparent when you examine long-term frequencies. On any single roll, the dice will appear to behave randomly. This is great news if you play Settlers of Catan (just tell your friends you lost the dice), but it should be disturbing if you analyze data, because it means that bias can easily occur without anyone noticing it in the short run.</p>
-<div class="cell" data-fig.alt="{}">
-<div class="cell-output-display">
 <div id="fig:weighted" class="quarto-figure" style="text-align: center;">
 <figure>
-<p><img src="images/hopr_0205.png" class="img-fluid" width="510"></p>
+<p><img src="images/hopr_0205.png" class="img-fluid"></p>
 <p></p><figcaption aria-hidden="true">Figure 2.5: The dice are now clearly biased towards high numbers, since high sums occur much more often than low sums.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 </section>
 <section class="level3" data-number="0.2.2">
@@ -619,7 +599,7 @@
 <p>You’ve met the nouns of the R language, objects. And hopefully you guessed that functions are the verbs (I suppose function arguments would be the adverbs). When you combine functions and objects, you express a complete thought. By stringing thoughts together in a logical sequence, you can build eloquent, even artistic statements. In that respect, R is not that different than any other language.</p>
 <p>R shares another characteristic of human languages: you won’t feel very comfortable speaking R until you build up a vocabulary of R commands to use. Fortunately, you don’t have to be bashful. Your computer will be the only one to “hear” you speak R. Your computer is not very forgiving, but it also doesn’t judge. Not that you need to worry; you’ll broaden your R vocabulary tremendously between here and the end of the book.</p>
 <p>Now that you can use R, it is time to become an expert at using R to do data science. The foundation of data science is the ability to store large amounts of data and recall values on demand. From this, all else follows—manipulating data, visualizing data, modeling data, and more. However, you cannot easily store a data set in your mind by memorizing it. Nor can you easily store a data set on paper by writing it down. The only efficient way to store large amounts of data is with a computer. In fact, computers are so efficient that their development over the last three decades has completely changed the type of data we can accumulate and the methods we can use to analyze it. In short, computer data storage has driven the revolution in science that we call data science.</p>
-<p><a href="#project-2">Project 2: Playing Cards</a> will make you part of this revolution by teaching you how to use R to store data sets in your computer’s memory and how to retrieve and manipulate data once it’s there.</p>
+<p><a href="cards.html">Project 2: Playing Cards</a> will make you part of this revolution by teaching you how to use R to store data sets in your computer’s memory and how to retrieve and manipulate data once it’s there.</p>
 <!-- -->
 </section>
 </main>

@@ -454,7 +454,7 @@
 </section>
 <section class="level2" data-number="0.2">
 <h2 data-number="5.2" class="anchored" id="logical-subsetting"><span class="header-section-number">5.2</span> Logical Subsetting</h2>
-<p>Do you remember R’s logical index system, <a href="#sec:logicals">logicals</a>? To recap, you can select values with a vector of <code>TRUE</code>s and <code>FALSE</code>s. The vector must be the same length as the dimension that you wish to subset. R will return every element that matches a TRUE:</p>
+<p>Do you remember R’s logical index system, <a href="objects.html#sec:logicals">logicals</a>? To recap, you can select values with a vector of <code>TRUE</code>s and <code>FALSE</code>s. The vector must be the same length as the dimension that you wish to subset. R will return every element that matches a TRUE:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>vec</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 0 1 1 2 1 0</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -598,7 +598,7 @@
 <span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="do">## queen diamonds    12</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To summarize, you can use a logical test to select values within an object.</p>
 <p>Logical subsetting is a powerful technique because it lets you quickly identify, extract, and modify individual values in your data set. When you work with logical subsetting, you do not need to know <em>where</em> in your data set a value exists. You only need to know how to describe the value with a logical test.</p>
-<p>Logical subsetting is one of the things R does best. In fact, logical subsetting is a key component of vectorized programming, a coding style that lets you write fast and efficient R code, which we will study in <a href="#sec:speed">Speed</a>.</p>
+<p>Logical subsetting is one of the things R does best. In fact, logical subsetting is a key component of vectorized programming, a coding style that lets you write fast and efficient R code, which we will study in <a href="speed.html">Speed</a>.</p>
 <p>Let’s put logical subsetting to use with a new game: hearts. In hearts, every card has a value of zero:</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>deck4 <span class="ot">&lt;-</span> deck</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>deck4<span class="sc">$</span>value <span class="ot">&lt;-</span> <span class="dv">0</span></span>
@@ -725,18 +725,14 @@ The most common mistake with Boolean operators
 </div>
 </div>
 <div class="callout-body">
-<p>It is easy to forget to put a complete test on either side of a Boolean operator. In English, it is efficient to say “Is <em>x</em> greater than two and less than nine?” But in R, you need to write the equivalent of “Is <em>x</em> greater than two and <em>is x</em> less than nine?” This is shown in Figure @ref(fig:boolean).</p>
+<p>It is easy to forget to put a complete test on either side of a Boolean operator. In English, it is efficient to say “Is <em>x</em> greater than two and less than nine?” But in R, you need to write the equivalent of “Is <em>x</em> greater than two and <em>is x</em> less than nine?” This is shown in <a href="#fig:boolean">fig.&nbsp;<span>5.1</span></a>.</p>
 </div>
 </div>
-<div class="cell" data-fig.alt="{}">
-<div class="cell-output-display">
 <div id="fig:boolean" class="quarto-figure" style="text-align: center;">
 <figure>
-<p><img src="images/hopr_0501.png" class="img-fluid" width="512"></p>
+<p><img src="images/hopr_0501.png" class="img-fluid"></p>
 <p></p><figcaption aria-hidden="true">Figure 5.1: R will evaluate the expressions on each side of a Boolean operator separately, and then combine the results into a single TRUE or FALSE. If you do not supply a complete test to each side of the operator, R will return an error.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <p>When used with vectors, Boolean operators will follow the same element-wise execution as arithmetic and logical operators:</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
@@ -920,7 +916,7 @@ The most common mistake with Boolean operators
 <h2 data-number="5.4" class="anchored" id="summary"><span class="header-section-number">5.4</span> Summary</h2>
 <p>You can modify values in place inside an R object when you combine R’s notation syntax with the assignment operator, <code>&lt;-</code>. This lets you update your data and clean your data sets</p>
 <p>When you work with large data sets, modifying and retrieving values creates a logistical problem of its own. How can you search through the data to find the values that you want to modify or retrieve? As an R user, you can do this with logical subsetting. Create a logical test with logical and Boolean operators and then use the test as an index in R’s bracket notation. R will return the values that you are looking for, even if you do not know where they are.</p>
-<p>Retrieving individual values will not be your only concern as an R programmer. You’ll also need to retrieve entire data sets themselves; for example, you may call one in a function. <a href="#sec:environments">Environments</a> will teach you how R looks up and saves data sets and other R objects in its environment system. You’ll then use this knowledge to fix the <code>deal</code> and <code>shuffle</code> functions.</p>
+<p>Retrieving individual values will not be your only concern as an R programmer. You’ll also need to retrieve entire data sets themselves; for example, you may call one in a function. <a href="environments.html">Environments</a> will teach you how R looks up and saves data sets and other R objects in its environment system. You’ll then use this knowledge to fix the <code>deal</code> and <code>shuffle</code> functions.</p>
 <!-- -->
 </section>
 </main>

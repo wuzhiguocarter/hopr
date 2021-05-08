@@ -92,9 +92,8 @@ Vectorized code is easy to write in R because most R functions are already vecto
 
 `abs_loop` and `abs_set` illustrate these rules. The functions both handle two cases and perform one sequential step, @fig:abs. If a number is positive, the functions leave it alone. If a number is negative, the functions multiply it by negative one.
 
-```{r fig:abs, echo = FALSE, fig.cap = "`abs_loop` uses a for loop to sift data into one of two cases: negative numbers and nonnegative numbers."}
-knitr::include_graphics("images/hopr_1001.png")
-```
+![`abs_loop` uses a for loop to sift data into one of two cases: negative numbers and nonnegative numbers.](images/hopr_1001.png){#fig:abs}
+
 
 You can identify all of the elements of a vector that fall into a case with a logical test. R will execute the test in element-wise fashion and return a `TRUE` for every element that belongs in the case. For example, `vec < 0` identifies every value of `vec` that belongs to the negative case. You can use the same logical test to extract the set of negative values with logical subsetting:
 
@@ -116,9 +115,7 @@ vec[vec < 0] * -1
 
 Finally, you can use R's assignment operator, which is also vectorized, to save the new set over the old set in the original `vec` object. Since `<-` is vectorized, the elements of the new set will be paired up to the elements of the old set, in order, and then element-wise assignment will occur. As a result, each negative value will be replaced by its positive partner, as in @fig:assignment.
 
-```{r fig:assignment, echo = FALSE, fig.cap = "Use logical subsetting to modify groups of values in place. R's arithmetic and assignment operators are vectorized, which lets you manipulate and update multiple values at once."}
-knitr::include_graphics("images/hopr_1002.png")
-```
+![Use logical subsetting to modify groups of values in place. R's arithmetic and assignment operators are vectorized, which lets you manipulate and update multiple values at once.](images/hopr_1002.png){#fig:assignment}
 
 ::: {#exr:vectorize-a-function name="Vectorize a Function"}
 The following function converts a vector of slot symbols to a vector of new slot symbols. Can you vectorize it? How much faster does the vectorized version work?
@@ -160,7 +157,7 @@ system.time(change_symbols(many))
 
 
 ```{solution}
-`change_symbols` uses a `for` loop to sort values into seven different cases, as demonstrated in Figure \@ref(fig:change).
+`change_symbols` uses a `for` loop to sort values into seven different cases, as demonstrated in @fig:change.
 ```
 
 To vectorize `change_symbols`, create a logical test that can identify each case:
@@ -188,9 +185,8 @@ vec[vec == "0"]
 ## "0"
 ```
 
-```{r fig:change, echo = FALSE, fig.cap = "`change_many` does something different for each of seven cases."}
-knitr::include_graphics("images/hopr_1003.png")
-```
+![`change_many` does something different for each of seven cases.](images/hopr_1003.png){#fig:change}
+
 
 Then write code that can change the symbols for each case:
 
@@ -504,9 +500,8 @@ I refer to these problems as the logistical, tactical, and strategic problems of
 * **A tactical problem** - How can you discover the information contained in your data?
 * **A strategic problem** - How can you use the data to draw conclusions about the world at large?
 
-```{r fig:venn, echo = FALSE, fig.cap = "The three core skill sets of data science: computer programming, data comprehension, and scientific reasoning."}
-knitr::include_graphics("images/hopr_1004.png")
-```
+![The three core skill sets of data science: computer programming, data comprehension, and scientific reasoning.](images/hopr_1004.png){#fig:venn}
+
 
 A well-rounded data scientist will need to be able to solve each of these problems in many different situations. By learning to program in R, you have mastered the logistical problem, which is a prerequisite for solving the tactical and strategic problems.
 

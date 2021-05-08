@@ -86,9 +86,7 @@ deck[c(1, 1), c(1, 2, 3)]
 
 :::
 
-```{r fig:positive, echo = FALSE, fig.cap = "R uses the _ij_ notation system of linear algebra. The commands in this figure will return the shaded values."}
-knitr::include_graphics("images/hopr_0401.png")
-```
+![R uses the _ij_ notation system of linear algebra. The commands in this figure will return the shaded values.](images/hopr_0401.png){#fig:positive}
 
 R's notation system is not limited to data frames. You can use the same syntax to select values in any R object, as long as you supply one index for each dimension of the object. So, for example, you can subset a vector (which has one dimension) with a single index:
 
@@ -198,9 +196,8 @@ deck[rows, ]
 ## king spades    13
 ```
 
-```{r fig:logicals, echo = FALSE, fig.cap = "You can use vectors of TRUEs and FALSEs to tell R exactly which values you want to extract and which you do not. The command would return just the numbers 1, 6, and 5."}
-knitr::include_graphics("images/hopr_0402.png")
-``` 
+![You can use vectors of TRUEs and FALSEs to tell R exactly which values you want to extract and which you do not. The command would return just the numbers 1, 6, and 5.](images/hopr_0402.png){#fig:logicals}
+
 
 This system may seem odd—who wants to type so many `TRUE`s and `FALSE`s?—but it will become very powerful in [Modifying Values](#sec:modifying-values).
 
@@ -441,9 +438,8 @@ lst[["numbers"]]
 
 This difference is subtle but important. In the R community, there is a popular, and helpful, way to think about it, @fig:trains. Imagine that each list is a train and each element is a train car. When you use single brackets, R selects individual train cars and returns them as a new train. Each car keeps its contents, but those contents are still inside a train car (i.e., a list). When you use double brackets, R actually unloads the car and gives you back the contents.
 
-```{r fig:trains, echo = FALSE, fig.cap = "It can be helpful to think of your list as a train. Use single brackets to select train cars, double brackets to select the contents inside of a car."}
-knitr::include_graphics("images/hopr_0403.png")
-```
+![It can be helpful to think of your list as a train. Use single brackets to select train cars, double brackets to select the contents inside of a car.](images/hopr_0403.png){#fig:trains}
+
 
 ::: {.callout-important}
 ## Never attach

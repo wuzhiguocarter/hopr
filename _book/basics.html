@@ -182,14 +182,12 @@
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
         <li>
           <a class="dropdown-item" href="./Hands-On Programming with R.pdf">
-          D
-      ownload PDF
+          Download PDF
           </a>
         </li>
         <li>
           <a class="dropdown-item" href="./Hands-On Programming with R.epub">
-          D
-      ownload ePub
+          Download ePub
           </a>
         </li>
     </ul>
@@ -360,15 +358,11 @@
 <section class="level2" data-number="0.1">
 <h2 data-number="1.1" class="anchored" id="the-r-user-interface"><span class="header-section-number">1.1</span> The R User Interface</h2>
 <p>Before you can ask your computer to save some numbers, you’ll need to know how to talk to it. That’s where R and RStudio come in. RStudio gives you a way to talk to your computer. R gives you a language to speak in. To get started, open RStudio just as you would open any other application on your computer. When you do, a window should appear in your screen like the one shown in <a href="#fig:console">fig.&nbsp;<span>1.1</span></a>.</p>
-<div class="cell" data-fig.alt="{}">
-<div class="cell-output-display">
 <div id="fig:console" class="quarto-figure" style="text-align: center;">
 <figure>
-<p><img src="images/hopr_0101.png" class="img-fluid" width="463"></p>
+<p><img src="images/hopr_0101.png" class="img-fluid"></p>
 <p></p><figcaption aria-hidden="true">Figure 1.1: Your computer does your bidding when you type R commands at the prompt in the bottom line of the console pane. Don’t forget to hit the Enter key. When you first open RStudio, the console appears in the pane on your left, but you can change this with File &gt; Preferences in the menu bar.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <div class="callout-note callout">
 <div class="callout-body d-flex">
@@ -462,18 +456,21 @@
 </ol>
 </div>
 <p>Throughout the book, I’ll put exercises in chunks, like the one above. I’ll follow each exercise with a model answer, like the one below.</p>
-<p><em>Solution</em>: You could start with the number 10, and then do the following steps:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 12</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span> <span class="sc">*</span> <span class="dv">3</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 36</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="dv">36</span> <span class="sc">-</span> <span class="dv">6</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 30</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="dv">30</span> <span class="sc">/</span> <span class="dv">3</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<pre class="solution cell-code"><code>You could start with the number 10, and then do the following steps:
+
+10 + 2
+## 12
+
+12 * 3
+## 36
+
+36 - 6
+## 30
+
+30 / 3
+## 10</code></pre>
+</div>
 </section>
 <section class="level2" data-number="0.2">
 <h2 data-number="1.2" class="anchored" id="objects"><span class="header-section-number">1.2</span> Objects</h2>
@@ -508,15 +505,11 @@
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>die</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 2 3 4 5 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>When you create an object, the object will appear in the environment pane of RStudio, as shown in <a href="#fig:environment">fig.&nbsp;<span>1.2</span></a>. This pane will show you all of the objects you’ve created since opening RStudio.</p>
-<div class="cell" data-fig.alt="{}">
-<div class="cell-output-display">
 <div id="fig:environment" class="quarto-figure" style="text-align: center;">
 <figure>
-<p><img src="images/hopr_0102.png" class="img-fluid" width="499"></p>
+<p><img src="images/hopr_0102.png" class="img-fluid"></p>
 <p></p><figcaption aria-hidden="true">Figure 1.2: The RStudio environment pane keeps track of the R objects you create.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <p>You can name an object in R almost anything you want, but there are a few rules. First, a name cannot start with a number. Second, a name cannot use some special symbols, like <code>^</code>, <code>!</code>, <code>$</code>, <code>@</code>, <code>+</code>, <code>-</code>, <code>/</code>, or <code>*</code>:</p>
 <table class="table">
@@ -590,15 +583,11 @@ Capitalization
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 1  4  9 16 25 36</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If you are a big fan of linear algebra (and who isn’t?), you may notice that R does not always follow the rules of matrix multiplication. Instead, R uses <em>element-wise execution</em>. When you manipulate a set of numbers, R will apply the same operation to each element in the set. So for example, when you run <em><code>die - 1</code></em>, R subtracts one from each element of <code>die</code>.</p>
 <p>When you use two or more vectors in an operation, R will line up the vectors and perform a sequence of individual operations. For example, when you run <em><code>die * die</code></em>, R lines up the two <code>die</code> vectors and then multiplies the first element of vector 1 by the first element of vector 2. R then multiplies the second element of vector 1 by the second element of vector 2, and so on, until every element has been multiplied. The result will be a new vector the same length as the first two, as shown in <a href="#fig:elementwise">fig.&nbsp;<span>1.3</span></a>.</p>
-<div class="cell" data-fig.alt="{}">
-<div class="cell-output-display">
 <div id="fig:elementwise" class="quarto-figure" style="text-align: center;">
 <figure>
-<p><img src="images/hopr_0103.png" class="img-fluid" width="782"></p>
+<p><img src="images/hopr_0103.png" class="img-fluid"></p>
 <p></p><figcaption aria-hidden="true">Figure 1.3: When R performs element-wise execution, it matches up vectors and then manipulates each pair of elements independently.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <p>If you give R two vectors of unequal lengths, R will repeat the shorter vector until it is as long as the longer vector, and then do the math, as shown in <a href="#fig:recycle">fig.&nbsp;<span>1.4</span></a>. This isn’t a permanent change–the shorter vector will be its original size after R does the math. If the length of the short vector does not divide evenly into the length of the long vector, R will return a warning message. This behavior is known as <em>vector recycling</em>, and it helps R do element-wise operations:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span></span>
@@ -618,15 +607,11 @@ Capitalization
 <span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>Warning message<span class="sc">:</span></span>
 <span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>In die <span class="sc">+</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span> <span class="sc">:</span></span>
 <span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>  longer object length is not a multiple of shorter object length</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell" data-fig.alt="{}">
-<div class="cell-output-display">
 <div id="fig:recycle" class="quarto-figure" style="text-align: center;">
 <figure>
-<p><img src="images/hopr_0104.png" class="img-fluid" width="782"></p>
+<p><img src="images/hopr_0104.png" class="img-fluid"></p>
 <p></p><figcaption aria-hidden="true">Figure 1.4: R will repeat a short vector to do element-wise operations with two vectors of uneven lengths.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <p>Element-wise operations are a very useful feature in R because they manipulate groups of values in an orderly way. When you start working with data sets, element-wise operations will ensure that values from one observation or case are only paired with values from the same observation or case. Element-wise operations also make it easier to write your own programs and functions in R.</p>
 <p>But don’t think that R has given up on traditional matrix multiplication. You just have to ask for it when you want it. You can do inner multiplication with the <code>%*%</code> operator and outer multiplication with the <code>%o%</code> operator:</p>
@@ -662,15 +647,11 @@ Capitalization
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(die))</span>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell" data-fig.alt="{}">
-<div class="cell-output-display">
 <div id="fig:pemdas" class="quarto-figure" style="text-align: center;">
 <figure>
-<p><img src="images/hopr_0105.png" class="img-fluid" width="782"></p>
+<p><img src="images/hopr_0105.png" class="img-fluid"></p>
 <p></p><figcaption aria-hidden="true">Figure 1.5: When you link functions together, R will resolve them from the innermost operation to the outermost. Here R first looks up die, then calculates the mean of one through six, then rounds the mean.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <p>Lucky for us, there is an R function that can help “roll” the die. You can simulate a roll of the die with R’s <code>sample</code> function. <code>sample</code> takes <em>two</em> arguments: a vector named <code>x</code> and a number named <code>size</code>. <code>sample</code> will return <code>size</code> elements from the vector:</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">size =</span> <span class="dv">2</span>)</span>
@@ -744,7 +725,7 @@ Capitalization
 </section>
 </section>
 <section class="level2" data-number="0.4">
-<h2 data-number="1.4" class="anchored" id="write-functions"><span class="header-section-number">1.4</span> Writing Your Own Functions</h2>
+<h2 data-number="1.4" class="anchored" id="sec:write-functions"><span class="header-section-number">1.4</span> Writing Your Own Functions</h2>
 <p>To recap, you already have working R code that simulates rolling a pair of dice:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>die <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>dice <span class="ot">&lt;-</span> <span class="fu">sample</span>(die, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
@@ -846,42 +827,30 @@ Capitalization
 <p>You can give your functions as many arguments as you like. Just list their names, separated by commas, in the parentheses that follow <code>function</code>. When the function is run, R will replace each argument name in the function body with the value that the user supplies for the argument. If the user does not supply a value, R will replace the argument name with the argument’s default value (if you defined one).</p>
 <p>To summarize, <code>function</code> helps you construct your own R functions. You create a body of code for your function to run by writing code between the braces that follow <code>function</code>. You create arguments for your function to use by supplying their names in the parentheses that follow <code>function</code>. Finally, you give your function a name by saving its output to an R object, as shown in <a href="#fig:functions">fig.&nbsp;<span>1.6</span></a>.</p>
 <p>Once you’ve created your function, R will treat it like every other function in R. Think about how useful this is. Have you ever tried to create a new Excel option and add it to Microsoft’s menu bar? Or a new slide animation and add it to Powerpoint’s options? When you work with a programming language, you can do these types of things. As you learn to program in R, you will be able to create new, customized, reproducible tools for yourself whenever you like. <a href="#slots">Project 3: Slot Machine</a> will teach you much more about writing functions in R.</p>
-<div class="cell" data-fig.alt="{}">
-<div class="cell-output-display">
 <div id="fig:functions" class="quarto-figure" style="text-align: center;">
 <figure>
-<p><img src="images/hopr_0106.png" class="img-fluid" width="878"></p>
+<p><img src="images/hopr_0106.png" class="img-fluid"></p>
 <p></p><figcaption aria-hidden="true">Figure 1.6: Every function in R has the same parts, and you can use function to create these parts. Assign the result to a name, so you can call the function later.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 </section>
 <section class="level2" data-number="0.6">
 <h2 data-number="1.6" class="anchored" id="scripts"><span class="header-section-number">1.6</span> Scripts</h2>
 <p>What if you want to edit <code>roll2</code> again? You could go back and retype each line of code in <code>roll2</code>, but it would be so much easier if you had a draft of the code to start from. You can create a draft of your code as you go by using an R <em>script</em>. An R script is just a plain text file that you save R code in. You can open an R script in RStudio by going to <code>File &gt; New File &gt; R script</code> in the menu bar. RStudio will then open a fresh script above your console pane, as shown in <a href="#fig:script">fig.&nbsp;<span>1.7</span></a>.</p>
 <p>I strongly encourage you to write and edit all of your R code in a script before you run it in the console. Why? This habit creates a reproducible record of your work. When you’re finished for the day, you can save your script and then use it to rerun your entire analysis the next day. Scripts are also very handy for editing and proofreading your code, and they make a nice copy of your work to share with others. To save a script, click the scripts pane, and then go to <code>File &gt; Save As</code> in the menu bar.</p>
-<div class="cell" data-fig.alt="{}">
-<div class="cell-output-display">
 <div id="fig:script" class="quarto-figure" style="text-align: center;">
 <figure>
-<p><img src="images/hopr_0107.png" class="img-fluid" width="454"></p>
+<p><img src="images/hopr_0107.png" class="img-fluid"></p>
 <p></p><figcaption aria-hidden="true">Figure 1.7: When you open an R Script (File &gt; New File &gt; R Script in the menu bar), RStudio creates a fourth pane above the console where you can write and edit your code.</figcaption><p></p>
 </figure>
 </div>
-</div>
-</div>
 <p>RStudio comes with many built-in features that make it easy to work with scripts. First, you can automatically execute a line of code in a script by clicking the Run button, as shown in <a href="#fig:run">fig.&nbsp;<span>1.8</span></a>.</p>
 <p>R will run whichever line of code your cursor is on. If you have a whole section highlighted, R will run the highlighted code. Alternatively, you can run the entire script by clicking the Source button. Don’t like clicking buttons? You can use Control + Return as a shortcut for the Run button. On Macs, that would be Command + Return.</p>
-<div class="cell" data-fig.alt="{}">
-<div class="cell-output-display">
 <div id="fig:run" class="quarto-figure" style="text-align: center;">
 <figure>
-<p><img src="images/hopr_0108.png" class="img-fluid" width="510"></p>
+<p><img src="images/hopr_0108.png" class="img-fluid"></p>
 <p></p><figcaption aria-hidden="true">Figure 1.8: You can run a highlighted portion of code in your script if you click the Run button at the top of the scripts pane. You can run the entire script by clicking the Source button.</figcaption><p></p>
 </figure>
-</div>
-</div>
 </div>
 <p>If you’re not convinced about scripts, you soon will be. It becomes a pain to write multi-line code in the console’s single-line command line. Let’s avoid that headache and open your first script now before we move to the next chapter.</p>
 <div class="callout-tip callout callout-captioned">
@@ -903,7 +872,7 @@ Extract function
 <h2 data-number="1.7" class="anchored" id="summary"><span class="header-section-number">1.7</span> Summary</h2>
 <p>You’ve covered a lot of ground already. You now have a virtual die stored in your computer’s memory, as well as your own R function that rolls a pair of dice. You’ve also begun speaking the R language.</p>
 <p>As you’ve seen, R is a language that you can use to talk to your computer. You write commands in R and run them at the command line for your computer to read. Your computer will sometimes talk back–for example, when you commit an error–but it usually just does what you ask and then displays the result.</p>
-<p>The two most important components of the R language are objects, which store data, and functions, which manipulate data. R also uses a host of operators like <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, and <code>&lt;-</code> to do basic tasks. As a data scientist, you will use R objects to store data in your computer’s memory, and you will use functions to automate tasks and do complicated calculations. We will examine objects in more depth later in <a href="#project-2">Project 2: Playing Cards</a> and dig further into functions in <a href="slots.html">Project 3: Slot Machine</a>. The vocabulary you have developed here will make each of those projects easier to understand. However, we’re not done with your dice yet.</p>
+<p>The two most important components of the R language are objects, which store data, and functions, which manipulate data. R also uses a host of operators like <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, and <code>&lt;-</code> to do basic tasks. As a data scientist, you will use R objects to store data in your computer’s memory, and you will use functions to automate tasks and do complicated calculations. We will examine objects in more depth later in <a href="cards.html">Project 2: Playing Cards</a> and dig further into functions in <a href="slots.html">Project 3: Slot Machine</a>. The vocabulary you have developed here will make each of those projects easier to understand. However, we’re not done with your dice yet.</p>
 <p>In <a href="packages.html">Packages and Help Pages</a>, you’ll run some simulations on your dice and build your first graphs in R. You’ll also look at two of the most useful components of the R language: R <em>packages</em>, which are collections of functions writted by R’s talented community of developers, and R documentation, which is a collection of help pages built into R that explains every function and data set in the language.</p>
 <!-- -->
 </section>
@@ -931,7 +900,7 @@ Extract function
 <ul>
 <li><a href="#sample-with-replacement" class="nav-link" data-bs-target="#sample-with-replacement"><span class="toc-section-number">1.3.1</span> Sample with Replacement</a></li>
 </ul></li>
-<li><a href="#write-functions" class="nav-link" data-bs-target="#write-functions"><span class="toc-section-number">1.4</span> Writing Your Own Functions</a>
+<li><a href="#sec:write-functions" class="nav-link" data-bs-target="#sec\:write-functions"><span class="toc-section-number">1.4</span> Writing Your Own Functions</a>
 <ul>
 <li><a href="#the-function-constructor" class="nav-link" data-bs-target="#the-function-constructor"><span class="toc-section-number">1.4.1</span> The Function Constructor</a></li>
 </ul></li>

@@ -80,17 +80,14 @@ Notice that there are 5,000 lines of output in this `traceback`. If you are usin
 
 RStudio makes it very easy to use `traceback`. You do not even need to type in the function name. Whenever an error occurs, RStudio will display it in a gray box with two options. The first is Show Traceback, shown in @fig:show-traceback. 
 
-```{r fig:show-traceback, echo = FALSE, fig.cap = "RStudio's Show Traceback option."}
-knitr::include_graphics("images/hopr_ae01.png")
-```
+![RStudio's Show Traceback option.](images/hopr_ae01.png){#fig:show-traceback width=80%}
+
 
 If you click Show Traceback, RStudio will expand the gray box and display the `traceback` call stack, as in @fig:hide-traceback. The Show Traceback option will persist beside an error message in your console, even as you write new commands. This means that you can go back and look at the call stacks for all errors—not just the most recent error.
 
 Imagine that you've used `traceback` to pinpoint a function that you think might cause a bug. Now what should you do? You should try to figure out what the function did to cause an error while it ran (if it did anything). You can examine how the function runs with `browser`.
 
-```{r fig:hide-traceback, echo = FALSE, fig.cap = "RStudio's Traceback display."}
-knitr::include_graphics("images/hopr_ae02.png")
-```
+![RStudio's Traceback display.](images/hopr_ae02.png){#fig:hide-traceback}
 
 ## browser
 
@@ -145,9 +142,7 @@ I'm now in a new R mode, called _browser mode_. Browser mode is designed to help
 
 Any command that you run in browser mode will be evaluated in the context of the runtime environment of the function that called `browser`. This will be the function that is highlighted in the new Traceback pane. Here, that function is `score`. So while we are in browser mode, the active environment will be `score`'s runtime environment. This lets you do two things.
 
-```{r fig:browser, echo = FALSE, fig.cap = "RStudio updates its display whenever you enter browser mode to help you navigate the mode."}
-knitr::include_graphics("images/hopr_ae03.png")
-```
+![RStudio updates its display whenever you enter browser mode to help you navigate the mode.](images/hopr_ae03.png){#fig:browser}
 
 First, you can inspect the objects that `score` uses. The updated Environments pane shows you which objects `score` has saved in its local environment. You can inspect any of them by typing their name at the browser prompt. This gives you a way to see the values of runtime variables that you normally would not be able to access. If a value looks clearly wrong, you may be close to finding a bug:
 
@@ -167,9 +162,8 @@ The second button, Continue, will run all of the remaining lines of `score` and 
 
 The third button, Stop, will exit browser mode without running any more lines of `score`.
 
-```{r fig:browser-buttons, echo = FALSE, fig.cap = "You can navigate browser mode with the three buttons at the top of the console pane."}
-knitr::include_graphics("images/hopr_ae04.png")
-```
+![You can navigate browser mode with the three buttons at the top of the console pane.](images/hopr_ae04.png){#fig:browser-buttons width=80%}
+
 
 You can do the same things by typing the commands `n`, `c`, and `Q` into the browser prompt. This creates an annoyance: what if you want to look up an object named `n`, `c`, or `Q`? Typing in the object name will not work, R will either advance, continue, or quit the browser mode. Instead you will have to look these objects up with the commands `get("n")`, `get("c")`, and `get("Q")`. `cont` is a synonym for `c` in browser mode and `where` prints the call stack, so you'll have to look up these objects with `get` as well.
 
@@ -183,9 +177,8 @@ RStudio's break points provide a graphical way to add a `browser` statement to a
 
 R will treat the break point like a `browser` statement, going into browser mode when it encounters it. You can remove a break point by clicking on the red dot. The dot will disappear, and the break point will be removed.
 
-```{r fig:break-point, echo = FALSE, fig.cap = "Break points provide the graphical equivalent of a browser statement."}
-knitr::include_graphics("images/hopr_ae05.png")
-```
+![Break points provide the graphical equivalent of a browser statement.](images/hopr_ae05.png){#fig:break-point}
+
 
 Break points and `browser` provide a great way to debug functions that you have defined. But what if you want to debug a function that already exists in R? You can do that with the `debug` function.
 

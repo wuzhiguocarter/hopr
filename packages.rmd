@@ -71,9 +71,8 @@ y
 qplot(x, y)
 ```
 
-```{r fig:qplot, echo = FALSE, fig.cap = "qplot makes a scatterplot when you give it two vectors."}
-knitr::include_graphics("images/hopr_0201.png")
-```
+![`qplot` makes a scatterplot when you give it two vectors.](images/hopr_0201.png){#fig:qplot}
+
 
 You don't need to name your vectors `x` and `y`. I just did that to make the example clear. As you can see in @fig:qplot, a scatterplot is a set of points, each plotted according to its x and y values. Together, the vectors `x` and `y` describe a set of 10 points. How did R match up the values in `x` and `y` to make these points? With element-wise execution, as we saw in @fig:elementwise.
 
@@ -86,9 +85,8 @@ x <- c(1, 2, 2, 2, 3, 3)
 qplot(x, binwidth = 1)
 ```
 
-```{r fig:hist, echo = FALSE, fig.cap = "qplot makes a histogram when you give it a single vector."}
-knitr::include_graphics("images/hopr_0202.png")
-```
+![`qplot` makes a histogram when you give it a single vector.](images/hopr_0202.png){#fig:hist}
+
 
 This plot shows that our vector contains one value in the interval `[1, 2)` by placing a bar of height 1 above that interval. Similarly, the plot shows that the vector contains three values in the interval `[2, 3)` by placing a bar of height 3 in that interval. It shows that the vector contains two values in the interval `[3, 4)` by placing a bar of height 2 in that interval. In these intervals, the hard bracket, `[`, means that the first number is included in the interval. The parenthesis, `)`, means that the last number is _not_ included.
 
@@ -131,9 +129,8 @@ replicate(10, roll())
 ## 3  7  5  3  6  2  3  8 11  7
 ```
 
-```{r fig:probs, echo = FALSE, fig.cap = "Each individual dice combination should occur with the same frequency. As a result, some sums will occur more often than others. With fair dice, each sum should appear in proportion to the number of combinations that make it."}
-knitr::include_graphics("images/hopr_0203.png")
-```
+![Each individual dice combination should occur with the same frequency. As a result, some sums will occur more often than others. With fair dice, each sum should appear in proportion to the number of combinations that make it.](images/hopr_0203.png){#fig:probs}
+
 
 A histogram of your first 10 rolls probably won't look like the pattern shown in @fig:probs. Why not? There is too much randomness involved. Remember that we use dice in real life because they are effective random number generators. Patterns of long run frequencies will only appear _over the long run_. So let's simulate 10,000 dice rolls and plot the results. Don't worry; `qplot` and `replicate` can handle it. The results appear in @fig:fair:
 
@@ -146,9 +143,7 @@ The results suggest that the dice are fair. Over the long run, each number occur
 
 Now how can you bias these results? The previous pattern occurs because each underlying combination of dice (e.g., (3,4)) occurs with the same frequency. If you could increase the probability that a 6 is rolled on either die, then any combination with a six in it will occur more often than any combination without a six in it. The combination (6, 6) would occur most of all. This won't make the dice add up to 12 more often than they add up to seven, but it will skew the results toward the higher numbers.
 
-```{r fig:fair, echo = FALSE, fig.cap = "The behavior of our dice suggests that they are fair. Seven occurs more often than any other number, and frequencies diminish in proportion to the number of die combinations that create each number."}
-knitr::include_graphics("images/hopr_0204.png")
-```
+![The behavior of our dice suggests that they are fair. Seven occurs more often than any other number, and frequencies diminish in proportion to the number of die combinations that create each number.](images/hopr_0204.png){#fig:fair}
 
 To put it another way, the probability of rolling any single number on a fair die is 1/6. I'd like you to change the probability to 1/8 for each number below six, and then increase the probability of rolling a six to 3/8:
 
@@ -294,9 +289,7 @@ qplot(rolls, binwidth = 1)
 
 This confirms that we've effectively weighted the dice. High numbers occur much more often than low numbers. The remarkable thing is that this behavior will only be apparent when you examine long-term frequencies. On any single roll, the dice will appear to behave randomly. This is great news if you play Settlers of Catan (just tell your friends you lost the dice), but it should be disturbing if you analyze data, because it means that bias can easily occur without anyone noticing it in the short run.
 
-```{r fig:weighted, echo = FALSE, fig.cap = "The dice are now clearly biased towards high numbers, since high sums occur much more often than low sums."}
-knitr::include_graphics("images/hopr_0205.png")
-```
+![The dice are now clearly biased towards high numbers, since high sums occur much more often than low sums.](images/hopr_0205.png){#fig:weighted}
 
 ### Getting More Help
 

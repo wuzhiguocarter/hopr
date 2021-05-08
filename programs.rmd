@@ -43,7 +43,7 @@ get_symbols()
 
 `get_symbols` uses the probabilities observed in a group of video lottery terminals from Manitoba, Canada. These slot machines became briefly controversial in the 1990s, when a reporter decided to test their payout rate. The machines appeared to pay out only 40 cents on the dollar, even though the manufacturer claimed they would pay out 92 cents on the dollar. The original data collected on the machines and a description of the controversy is available online in [a journal article by W. John Braun](http://bit.ly/jse_Braun). The controversy died down when additional testing showed that the manufacturer was correct.
 
-The Manitoba slot machines use the complicated payout scheme shown in Table \@ref(tab:prizes). A player will win a prize if he gets:
+The Manitoba slot machines use the complicated payout scheme shown in @tbl:prizes. A player will win a prize if he gets:
 
 * Three of the same type of symbol (except for three zeroes)
 * Three bars (of mixed variety)
@@ -136,9 +136,7 @@ play <- function() {
 
 To have R execute steps in sequence, place the steps one after another in an R script or function body. 
 
-```{r fig:subdivide1, echo = FALSE, fig.cap = "The play function uses a series of steps."}
-knitr::include_graphics("images/hopr_0701.png")
-```
+![The play function uses a series of steps.](images/hopr_0701.png){#fig:subdivide1}
 
 ### Parallel Cases
 
@@ -152,13 +150,9 @@ Adding the `score` cases to the `play` steps reveals a strategy for the complete
 
 We've already solved the first few steps in this strategy. Our program can get three slot machine symbols with the `get_symbols` function. Then it can display the symbols with the `print` function. Now let's examine how the program can handle the parallel score cases.
 
-```{r fig:subdivide2, echo = FALSE, fig.cap = "The score function must distinguish between parallel cases."}
-knitr::include_graphics("images/hopr_0702.png")
-```
+![The score function must distinguish between parallel cases.](images/hopr_0702.png){#fig:subdivide2}
 
-```{r fig:subdivide3, echo = FALSE, fig.cap = "The complete slot machine simulation will involve subtasks that are arranged both in series and in parallel."}
-knitr::include_graphics("images/hopr_0703.png")
-```
+![The complete slot machine simulation will involve subtasks that are arranged both in series and in parallel.](images/hopr_0703.png){#fig:subdivide3}
 
 ## if Statements
 
@@ -353,7 +347,7 @@ R will work through the `if` conditions until one evaluates to `TRUE`, then R wi
 
 If two `if` statements describe mutually exclusive events, it is better to join the `if` statements with an `else if` than to list them separately. This lets R ignore the second `if` statement whenever the first returns a `TRUE`, which saves work.
 
-You can use `if` and `else` to link the subtasks in your slot-machine function. Open a fresh R script, and copy this code into it. The code will be the skeleton of our final `score` function. Compare it to the flow chart for `score` in Figure \@ref(fig:subdivide2):
+You can use `if` and `else` to link the subtasks in your slot-machine function. Open a fresh R script, and copy this code into it. The code will be the skeleton of our final `score` function. Compare it to the flow chart for `score` in @fig:subdivide2:
 
 ```r
 if ( # Case 1: all the same <1>) {
@@ -382,9 +376,7 @@ Our skeleton is rather incomplete; there are many sections that are just code co
 
 If you like, you can reorganize your flow chart around these tasks, as in @fig:subdivide4. The chart will describe the same strategy, but in a more precise way. I'll use a diamond shape to symbolize an `if else` decision.
 
-```{r fig:subdivide4, echo = FALSE, fig.cap = "score can navigate three cases with two if else decisions. We can also break some of our tasks into two steps."}
-knitr::include_graphics("images/hopr_0704.png")
-```
+![score can navigate three cases with two if else decisions. We can also break some of our tasks into two steps.](images/hopr_0704.png){#fig:subdivide4}
 
 Now we can work through the subtasks one at a time, adding R code to the `if` tree as we go. Each subtask will be easy to solve if you set up a concrete example to work with and try to describe a solution in English before coding in R.
 

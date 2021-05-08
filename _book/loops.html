@@ -301,7 +301,7 @@
 E(x) = \sum_{i = 1}^{n}\left( x_{i} \cdot P(x_{i}) \right)
 \]</span></p>
 <p>You can think of the expected value as the average prize that you would observe if you played the slot machine an infinite number of times. Let’s use the formula to calculate some simple expected values. Then we will apply the formula to your slot machine.</p>
-<p>Do you remember the <code>die</code> you created in <a href="#sec:project-dice">Project 1: Weighted Dice</a>?</p>
+<p>Do you remember the <code>die</code> you created in <a href="dice.html">Project 1: Weighted Dice</a>?</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>die <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Each time you roll the die, it returns a value selected at random (one through six). You can find the expected value of rolling the die with the formula:</p>
 <p><span class="math display">\[
@@ -316,7 +316,7 @@ E(\text{die}) &amp; = \sum_{i = 1}^{n}\left( \text{die}_{i} \cdot P(\text{die}_{
 \end{array}
 \]</span></p>
 <p>Hence, the expected value of rolling a fair die is 3.5. You may notice that this is also the average value of the die. The expected value will equal the average if every outcome has the same chance of occurring.</p>
-<p>But what if each outcome has a different chance of occurring? For example, we weighted our dice in <a href="#sec:packages-and-help">Packages and Help Pages</a> so that each die rolled 1, 2, 3, 4, and 5 with probability 1/8 and 6 with probability 3/8. You can use the same formula to calculate the expected value in these conditions:</p>
+<p>But what if each outcome has a different chance of occurring? For example, we weighted our dice in <a href="packages.html">Packages and Help Pages</a> so that each die rolled 1, 2, 3, 4, and 5 with probability 1/8 and 6 with probability 3/8. You can use the same formula to calculate the expected value in these conditions:</p>
 <p><span class="math display">\[
 \begin{array}{rl}
   E(die) &amp; = 1 \cdot \frac{1}{8} +  2 \cdot \frac{1}{8} + 3 \cdot \frac{1}{8} + 4 \cdot \frac{1}{8} + 5 \cdot \frac{1}{8} + 6 \cdot \frac{3}{8}\\
@@ -739,7 +739,7 @@ For loops run on sets
 <h2 data-number="9.6" class="anchored" id="summary"><span class="header-section-number">9.6</span> Summary</h2>
 <p>You can repeat tasks in R with <code>for</code>, <code>while</code>, and <code>repeat</code> loops. To use <code>for</code>, give it a chunk of code to run and a set of objects to loop through. <code>for</code> will run the code chunk once for each object. If you wish to save the output of your loop, you can assign it to an object that exists outside of the loop.</p>
 <p>Repetition plays an important role in data science. It is the basis for simulation, as well as for estimates of variance and probability. Loops are not the only way to create repetition in R (consider <code>replicate</code> for example), but they are one of the most popular ways.</p>
-<p>Unfortunately, loops in R can sometimes be slower than loops in other languages. As a result, R’s loops get a bad rap. This reputation is not entirely deserved, but it does highlight an important issue. Speed is essential to data analysis. When your code runs fast, you can work with bigger data and do more to it before you run out of time or computational power. <a href="#sec:speed">Speed</a> will teach you how to write fast <code>for</code> loops and fast code in general with R. There, you will learn to write vectorized code, a style of lightning-fast code that takes advantage of all of R’s strengths.</p>
+<p>Unfortunately, loops in R can sometimes be slower than loops in other languages. As a result, R’s loops get a bad rap. This reputation is not entirely deserved, but it does highlight an important issue. Speed is essential to data analysis. When your code runs fast, you can work with bigger data and do more to it before you run out of time or computational power. <a href="speed.html">Speed</a> will teach you how to write fast <code>for</code> loops and fast code in general with R. There, you will learn to write vectorized code, a style of lightning-fast code that takes advantage of all of R’s strengths.</p>
 <!-- -->
 </section>
 </main>

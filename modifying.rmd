@@ -429,12 +429,10 @@ To use a Boolean operator, place it between two _complete_ logical tests. R will
 ::: {.callout-warning}
 ## The most common mistake with Boolean operators
   
-It is easy to forget to put a complete test on either side of a Boolean operator. In English, it is efficient to say "Is _x_ greater than two and less than nine?" But in R, you need to write the equivalent of "Is _x_ greater than two and _is x_ less than nine?" This is shown in Figure \@ref(fig:boolean).
+It is easy to forget to put a complete test on either side of a Boolean operator. In English, it is efficient to say "Is _x_ greater than two and less than nine?" But in R, you need to write the equivalent of "Is _x_ greater than two and _is x_ less than nine?" This is shown in @fig:boolean.
 :::
 
-```{r fig:boolean, echo = FALSE, fig.cap = "R will evaluate the expressions on each side of a Boolean operator separately, and then combine the results into a single TRUE or FALSE. If you do not supply a complete test to each side of the operator, R will return an error."}
-knitr::include_graphics("images/hopr_0501.png")
-```
+![R will evaluate the expressions on each side of a Boolean operator separately, and then combine the results into a single TRUE or FALSE. If you do not supply a complete test to each side of the operator, R will return an error.](images/hopr_0501.png){#fig:boolean}
 
 When used with vectors, Boolean operators will follow the same element-wise execution as arithmetic and logical operators:
 

@@ -30,9 +30,7 @@ Consider for a moment how your computer stores files. Every file is saved in a f
 
 You can see your file system by opening a finder window. For example, @fig:folders shows part of the file system on my computer. I have tons of folders. Inside one of them is a subfolder named _Documents_, inside of that subfolder is a sub-subfolder named _ggsubplot_, inside of that folder is a folder named _inst_, inside of that is a folder named _doc_, and inside of that is a file named _manual.pdf_.
 
-```{r fig:folders, echo = FALSE, fig.cap = "Your computer arranges files into a hierarchy of folders and subfolders. To look at a file, you need to find where it is saved in the file system."}
-knitr::include_graphics("images/hopr_0601.png")
-```
+![Your computer arranges files into a hierarchy of folders and subfolders. To look at a file, you need to find where it is saved in the file system.](images/hopr_0601.png){#fig:folders}
 
 R uses a similar system to save R objects. Each object is saved inside of an environment, a list-like object that resembles a folder on your computer. Each environment is connected to a _parent environment_, a higher-level environment, which creates a hierarchy of environments. 
 
@@ -58,9 +56,7 @@ parenvs(all = TRUE)
 
 It takes some imagination to interpret this output, so let's visualize the environments as a system of folders, @fig:environments. You can think of the environment tree like this. The lowest-level environment is named `R_GlobalEnv` and is saved inside an environment named `package:pryr`, which is saved inside the environment named `0x7fff3321c388`, and so on, until you get to the final, highest-level environment, `R_EmptyEnv`. `R_EmptyEnv` is the only R environment that does not have a parent environment. 
 
-```{r fig:environments, echo = FALSE, fig.cap = "R stores R objects in an environment tree that resembles your computer's folder system."}
-knitr::include_graphics("images/hopr_0602.png")
-```
+![R stores R objects in an environment tree that resembles your computer's folder system.](images/hopr_0602.png){#fig:environments}
 
 Remember that this example is just a metaphor. R's environments exist in your RAM memory, and not in your file system. Also, R environments aren't technically saved inside one another. Each environment is connected to a parent environment, which makes it easy to search up R's environment tree. But this connection is one-way: there's no way to look at one environment and tell what its "children" are. So you cannot search down R's environment tree. In other ways, though, R's environment system works similar to a file system.
 
@@ -178,9 +174,7 @@ Here is a third rule that explains how R finds objects that are not in the activ
 
 So, if you call an object at the command line, R will look for it in the global environment. If R can't find it there, R will look in the parent of the global environment, and then the parent of the parent, and so on, working its way up the environment tree until it finds the object, as in @fig:path. If R cannot find the object in any environment, it will return an error that says the object is not found.
 
-```{r fig:path, echo = FALSE, fig.cap = "R will search for an object by name in the active environment, here the global environment. If R does not find the object there, it will search in the active environment's parent, and then the parent's parent, and so on until R finds the object or runs out of environments."}
-knitr::include_graphics("images/hopr_0603.png")
-```
+![R will search for an object by name in the active environment, here the global environment. If R does not find the object there, it will search in the active environment's parent, and then the parent's parent, and so on until R finds the object or runs out of environments.](images/hopr_0603.png){#fig:path}
 
 ::: {.callout-tip}
 Remember that functions are a type of object in R. R will store and look up functions the same way it stores and looks up other objects, by searching for them by name in the environment tree.
@@ -262,9 +256,7 @@ show_env()
 
 This time `show_env` ran in a new environment, `0x7ff715f49808`.  R creates a new environment _each_ time you run a function. The `0x7ff715f49808` environment looks exactly the same as `0x7ff711d12e28`. It is empty and has the same global environment as its parent.
 
-```{r fig:tree, echo = FALSE, fig.cap = "R creates a new environment to run show_env in. The environment is a child of the global environment."}
-knitr::include_graphics("images/hopr_0604.png")
-```
+![R creates a new environment to run show_env in. The environment is a child of the global environment.](images/hopr_0604.png){#fig:tree}
 
 Now let's consider which environment R will use as the parent of the runtime environment. 
 
@@ -381,9 +373,8 @@ deal()
 ##  king spades    13
 ```
 
-```{r fig:deal, echo = FALSE, fig.cap = "R finds deck by looking in the parent of deal's runtime environment. The parent is the global environment, deal's origin environment. Here, R finds the copy of deck."}
-knitr::include_graphics("images/hopr_0605.png")
-```
+![R finds `deck` by looking in the parent of deal's runtime environment. The parent is the global environment, deal's origin environment. Here, R finds the copy of `deck`.](images/hopr_0605.png){#fig:deal}
+
 
 Now let's fix the `deal` function to remove the cards it has dealt from `deck`. Recall that `deal` returns the top card of `deck` but does not remove the card from the deck. As a result, `deal` always returns the same card:
 
@@ -423,9 +414,7 @@ deal <- function() {
 
 This code won't work because R will be in a runtime environment when it executes `deck <- deck[-1, ]`. Instead of overwriting the global copy of `deck` with `deck[-1, ]`, `deal` will just create a slightly altered copy of `deck` in its runtime environment, as in @fig:second-deck.
 
-```{r fig:second-deck, echo = FALSE, fig.cap = "The deal function looks up deck in the global environment but saves deck[-1, ] in the runtime environment as a new object named deck. "}
-knitr::include_graphics("images/hopr_0606.png")
-```
+![The deal function looks up deck in the global environment but saves `deck[-1, ]` in the runtime environment as a new object named deck.](images/hopr_0606.png){#fig:second-deck}
 
 ::: {#exr:overwrite-deck name="Overwrite deck"}
 Rewrite the `deck <- deck[-1, ]` line of `deal` to _assign_ `deck[-1, ]` to an object named `deck` in the global environment. Hint: consider the `assign` function.
@@ -578,10 +567,8 @@ setup <- function(deck) {
 cards <- setup(deck)
 ```
 
+![Running setup will store deck and DECK in an out-of-the-way place, and create a DEAL and SHUFFLE function. Each of these objects will be stored in an environment whose parent is the global environment.](images/hopr_0607.png){#fig:closure1}
 
-```{r fig:closure1, echo = FALSE, fig.cap = "Running setup will store deck and DECK in an out-of-the-way place, and create a DEAL and SHUFFLE function. Each of these objects will be stored in an environment whose parent is the global environment."}
-knitr::include_graphics("images/hopr_0607.png")
-```
 
 Then you can save each of the elements of the list to a dedicated object in the global environment:
 
@@ -621,9 +608,8 @@ environment(shuffle)
 
 Why does this matter? Because now when you run `deal` or `shuffle`, R will evaluate the functions in a runtime environment that uses `0x7ff7169c3390` as its parent. `DECK` and `deck` will be in this parent environment, which means that `deal` and `shuffle` will be able to find them at runtime. `DECK` and `deck` will be in the functions' search path but still out of the way in every other respect, as shown in @fig:closure2.
 
-```{r fig:closure2, echo = FALSE, fig.cap = "Now deal and shuffle will be run in an environment that has the protected deck and DECK in its search path."}
-knitr::include_graphics("images/hopr_0608.png")
-```
+![Now deal and shuffle will be run in an environment that has the protected deck and DECK in its search path.](images/hopr_0608.png){#fig:closure2}
+
 
 This arrangement is called a _closure_. `setup`'s runtime environment "encloses" the `deal` and `shuffle` functions. Both `deal` and `shuffle` can work closely with the objects contained in the enclosing environment, but almost nothing else can. The enclosing environment is not on the search path for any other R function or environment.
 
@@ -652,10 +638,7 @@ deal <- cards$deal
 shuffle <- cards$shuffle
 ```
 
-
-```{r fig:closure3, echo = FALSE, fig.cap = "When you change your code, deal and shuffle will go from updating the global environment (left) to updating their parent environment (right)."}
-knitr::include_graphics("images/hopr_0609.png")
-```
+![When you change your code, deal and shuffle will go from updating the global environment (left) to updating their parent environment (right).](images/hopr_0609.png){#fig:closure3}
 
 We finally have a self-contained card game. You can delete (or modify) the global copy of `deck` as much as you want and still play cards. `deal` and `shuffle` will use the pristine, protected copy of `deck`:
 
