@@ -44,9 +44,7 @@ book:
     - a3-updating.rmd
     - a4-data.rmd
     - a5-debug.rmd 
-    
-freeze: auto
-    
+
 format:
   html: 
     theme: cosmo
