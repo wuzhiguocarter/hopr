@@ -237,7 +237,7 @@ You can compare any two R objects with a logical operator; however, logical oper
 Extract the `face` column of `deck2` and test whether each value is equal to `ace`. As a challenge, use R to quickly count how many cards are equal to `ace`.
 :::
   
-```{solution}
+```solution
 You can extract the `face` column with R's `$` notation:
 ```
 
@@ -340,7 +340,7 @@ except cards in the suit of hearts and the queen of spades. Each card in the sui
 Assign a value of `1` to every card in `deck4` that has a suit of hearts.
 :::
 
-```{solution}
+```solution
 To do this, first write a test that identifies cards in the `hearts` suit:
 ```
 
@@ -510,7 +510,7 @@ y <- "February"
 z <- c("Monday", "Tuesday", "Friday")
 ```
 
-```{solution}
+```solution
 Here are some model answers. If you got stuck, be sure to re-read how R evaluates logical tests that use Boolean values:
 ```
 

@@ -231,7 +231,7 @@ deal <- function(cards) {
 ```
 :::
 
-```{solution}
+```solution
 You can use any of the systems that return the first row of your data frame to write a `deal` function. I'll use positive integers and blanks because I think they are easy to understand:
 ```
 
@@ -322,7 +322,7 @@ Use the preceding ideas to write a `shuffle` function. `shuffle` should take a d
 :::
 
 
-```{solution}
+```solution
 Your `shuffle` function will look like the one that follows:
 ```
 

@@ -237,7 +237,7 @@ x
 ```
 :::
 
-```{solution}
+```solution
 The code will return the number 2. `x` begins as 1, and then R encounters the `if` statement. Since the condition evaluates to `TRUE`, R will run `x <- 2`, changing the value of `x`.
 ```
 
@@ -254,7 +254,7 @@ x
 ```
 :::
 
-```{solution}
+```solution
 This code will also return the number 2. It works the same as the code in Quiz A, except the condition in this statement is already `TRUE`. R doesn't even need to evaluate it. As a result, the code inside the `if` statement will be run, and `x` will be set to 2. 
 ```
 
@@ -273,7 +273,7 @@ x
 ```
 :::
 
-```{solution}
+```solution
 Once again, the code will return the number 2. `x` starts out as 1, and the condition of the first `if` statement will evaluate to `TRUE`, which causes R to run the code in the body of the `if` statement. First, R sets `x` equal to 2, then R evaluates the second `if` statement, which is in the body of the first. This time `x == 1` will evaluate to `FALSE` because `x` now equals 2. As a result, R ignores `x <- 3` and exits both `if` statements. 
 ```
 
@@ -421,7 +421,7 @@ Turn the preceding statement into a logical test written in R. Use your knowledg
 :::
 
 
-```{solution}
+```solution
 Here are a couple of ways to test that `symbols` contains three of the same symbol. The first method parallels the English suggestion above, but there are other ways to do the same test. There is no right or wrong answer, so long as your solution works, which is easy to check because you've created a vector named `symbols`:
 ```
 
@@ -481,7 +481,7 @@ Use R's logical and Boolean operators to write a test that will determine whethe
 
 
 
-```{solution}
+```solution
 As with many things in R, there are multiple ways to test whether `symbols` contains all bars. For example, you could write a very long test that uses multiple Boolean operators, like this:
 ```
 
@@ -668,7 +668,7 @@ How might you count the number of `C`s in a vector named `symbols`? Remember R's
 
 
 
-```{solution}
+```solution
 As always, let's work with a real example:
 ```
 
@@ -835,7 +835,7 @@ Can you think of an easy way to handle this? How about something similar to thes
 Write a method for adjusting `prize` based on `diamonds`. Describe a solution in English first, and then write your code. 
 :::
 
-```{solution}
+```solution
 Here is a concise solution inspired by the previous pattern. The adjusted prize will equal:
 ```
 

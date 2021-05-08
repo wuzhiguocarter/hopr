@@ -237,7 +237,7 @@ wheel <- c("DD", "7", "BBB", "BB", "B", "C", "0")
 Be sure to add the argument `stringsAsFactors = FALSE` to your `expand.grid` call; otherwise, `expand.grid` will save the combinations as factors, an unfortunate choice that will disrupt the `score` function.
 :::
 
-```{solution}
+```solution
 To create a data frame of each combination of _three_ symbols, you need to run `expand.grid` and give it _three_ copies of `wheel`. The result will be a data frame with 343 rows, one for each unique combination of three slot symbols:
 ```
 
@@ -274,7 +274,7 @@ Isolate the previous probabilities in a lookup table. What names will you use in
 :::
 
 
-```{solution}
+```solution
 Your names should match the input that you want to look up. In this case, the input will be the character strings that appear in `Var1`, `Var2`, and `Var3`. So your lookup table should look like this:
 ```
 
@@ -290,7 +290,7 @@ Look up the probabilities of getting the values in `Var1`. Then add them to `com
 :::
 
 
-```{solution}
+```solution
 Remember that you use R's selection notation to look up values in a lookup table. The values that result will be keyed to the index that you use:
 ```
 
@@ -318,7 +318,7 @@ Calculate the overall probabilities for each combination. Save them as a column 
 You can check that the math worked by summing the probabilities. The probabilities should add up to one, because one of the combinations _must_ appear when you play the slot machine. In other words, a combination will appear, with probability of one.
 :::
 
-```{solution}
+```solution
 You can calculate the probabilities of every possible combination in one fell swoop with some element-wise execution: 
 ```
 
@@ -480,7 +480,7 @@ The code creates a new column named prize and fills it with `NA`s. R uses its re
 Construct a `for` loop that will run `score` on all 343 rows of `combos`. The loop should run `score` on the first three entries of the _i_th row of `combos` and should store the results in the _i_th entry of `combos$prize`.
 :::
 
-```{solution}
+```solution
 You can score the rows in `combos` with: 
 ```
 
@@ -523,7 +523,7 @@ If you would like a more modest challenge, study the following `score` code. It 
 :::
 
 
-```{solution}
+```solution
 Here is a version of score that handles wild diamonds:
 ```
 
@@ -567,7 +567,7 @@ score <- function(symbols) {
 Calculate the expected value of the slot machine when it uses the new `score` function. You can use the existing `combos` data frame, but you will need to build a `for` loop to recalculate `combos$prize`.
 :::
 
-```{solution}
+```solution
 To update the expected value, just update `combos$prize`:
 ```
 

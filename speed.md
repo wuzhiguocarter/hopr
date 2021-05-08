@@ -73,7 +73,7 @@ Many preexisting R functions are already vectorized and have been optimized to p
 Check to see how much faster `abs` computes the absolute value of `long` than `abs_loop` and `abs_set` do.
 :::
 
-```{solution}
+```solution
 You can measure the speed of `abs` with `system.time`. It takes `abs` a lightning-fast 0.05 seconds to calculate the absolute value of 10 million numbers. This is 0.592 / 0.054 = 10.96 times faster than `abs_set` and nearly 300 times faster than `abs_loop`:
 ```
 
@@ -156,7 +156,7 @@ system.time(change_symbols(many))
 :::
 
 
-```{solution}
+```solution
 `change_symbols` uses a `for` loop to sort values into seven different cases, as demonstrated in @fig:change.
 ```
 
@@ -393,7 +393,7 @@ Instead of examining the model answer, write your own vectorized version of `sco
 You can use the version of `score` that treats diamonds as wild or the version of `score` that doesn't. However, the model answer will use the version treating diamonds as wild. 
 :::
 
-```{solution}
+```solution
 `score_many` is a vectorized version of `score`. You can use it to run the simulation at the start of this section in a little over 20 seconds. This is 17 times faster than using a `for` loop:
 ```
 
