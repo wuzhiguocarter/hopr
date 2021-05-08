@@ -17,7 +17,6 @@ book:
   repo-url: https://github.com/rstudio-education/hopr
   repo-actions: [edit]
   sharing: [twitter, facebook, linkedin]
-  downloads: [pdf, epub]
   contents:
     - index.md
     - preface.md

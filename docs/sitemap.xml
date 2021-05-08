@@ -2,90 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https:/rstudio-education.github.io/hopr/index.html</loc>
-    <lastmod>2021-05-08T20:48:55.502Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.472Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/preface.html</loc>
-    <lastmod>2021-05-08T20:48:55.503Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.473Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/dice.html</loc>
-    <lastmod>2021-05-08T20:48:55.503Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.473Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/basics.html</loc>
-    <lastmod>2021-05-08T20:48:55.508Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.476Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/packages.html</loc>
-    <lastmod>2021-05-08T20:48:55.509Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.477Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/cards.html</loc>
-    <lastmod>2021-05-08T20:48:55.509Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.478Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/objects.html</loc>
-    <lastmod>2021-05-08T20:48:55.513Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.481Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/notation.html</loc>
-    <lastmod>2021-05-08T20:48:55.515Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.483Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/modifying.html</loc>
-    <lastmod>2021-05-08T20:48:55.518Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.487Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/environments.html</loc>
-    <lastmod>2021-05-08T20:48:55.520Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.489Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/slots.html</loc>
-    <lastmod>2021-05-08T20:48:55.521Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.490Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/programs.html</loc>
-    <lastmod>2021-05-08T20:48:55.525Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.495Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/s3.html</loc>
-    <lastmod>2021-05-08T20:48:55.529Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.497Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/loops.html</loc>
-    <lastmod>2021-05-08T20:48:55.532Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.500Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/speed.html</loc>
-    <lastmod>2021-05-08T20:48:55.534Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.503Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/a1-starting.html</loc>
-    <lastmod>2021-05-08T20:48:55.535Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.503Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/a2-packages.html</loc>
-    <lastmod>2021-05-08T20:48:55.536Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.504Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/a3-updating.html</loc>
-    <lastmod>2021-05-08T20:48:55.537Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.505Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/a4-data.html</loc>
-    <lastmod>2021-05-08T20:48:55.540Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.506Z</lastmod>
   </url>
   <url>
     <loc>https:/rstudio-education.github.io/hopr/a5-debug.html</loc>
-    <lastmod>2021-05-08T20:48:55.541Z</lastmod>
-  </url>
-  <url>
-    <loc>https:/rstudio-education.github.io/hopr/Hands-On Programming with R.pdf</loc>
-    <lastmod>2021-05-08T20:48:46.920Z</lastmod>
-  </url>
-  <url>
-    <loc>https:/rstudio-education.github.io/hopr/Hands-On Programming with R.epub</loc>
-    <lastmod>2021-05-08T20:48:54.949Z</lastmod>
+    <lastmod>2021-05-08T21:52:36.508Z</lastmod>
   </url>
 </urlset>
