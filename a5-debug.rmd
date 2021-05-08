@@ -2,7 +2,7 @@
 knit: quarto render
 ---
 
-# Debugging R Code {#debug}
+# Debugging R Code {#sec:appendix-debug}
 
 ```{block2, type = "rmdnote"}
 This appendix refers to environments, the topic of [Environments], and uses examples from [Programs] and [S3]. You should read through these chapters first to get the most out of this appendix.

@@ -2,7 +2,7 @@
 knit: quarto render
 ---
 
-# Loading and Saving Data in R {#dataio}
+# Loading and Saving Data in R {#sec:appendix-dataio}
 
 This appendix will show you how to load and save data into R from plain-text files, R files, and Excel spreadsheets. It will also show you the R packages that you can use to load data from databases and other common programs, like SAS and MATLAB.
 
@@ -91,7 +91,7 @@ Use `header` to tell `read.table` whether the first line of the file contains va
 
 #### na.strings
 
-Oftentimes data sets will use special symbols to represent missing information. If you know that your data uses a certain symbol to represent missing entries, you can tell `read.table` (and the preceding functions) what the symbol is with the `na.strings` argument. `read.table` will convert all instances of the missing information symbol to `NA`, which is R's missing information symbol (see [Missing Information](#missing)).
+Oftentimes data sets will use special symbols to represent missing information. If you know that your data uses a certain symbol to represent missing entries, you can tell `read.table` (and the preceding functions) what the symbol is with the `na.strings` argument. `read.table` will convert all instances of the missing information symbol to `NA`, which is R's missing information symbol (see [Missing Information](#sec:missing)).
 
 For example, your poker data set contained missing values stored as a `.`, like this:
 

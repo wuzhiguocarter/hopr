@@ -2,7 +2,7 @@
 knit: quarto render
 ---
 
-# R Objects
+# R Objects {#sec:r-objects}
 
 In this chapter, you'll use R to assemble a deck of 52 playing cards.
 
@@ -19,13 +19,13 @@ eight spades     8
 ...
 ```
 
-Do you need to build a data set from scratch to use it in R? Not at all. You can load most data sets into R with one simple step, see [Loading Data]. But this exercise will teach you how R stores data, and how you can assemble—or disassemble—your own data sets. You will also learn about the various types of objects available for you to use in R (not all R objects are the same!). Consider this exercise a rite of passage; by doing it, you will become an expert on storing data in R.
+Do you need to build a data set from scratch to use it in R? Not at all. You can load most data sets into R with one simple step, see [Loading Data]{#sec:loading-data}. But this exercise will teach you how R stores data, and how you can assemble—or disassemble—your own data sets. You will also learn about the various types of objects available for you to use in R (not all R objects are the same!). Consider this exercise a rite of passage; by doing it, you will become an expert on storing data in R.
 
 We'll start with the very basics. The most simple type of object in R is an _atomic vector_. Atomic vectors are not nuclear powered, but they are very simple and they do show up everywhere. If you look closely enough, you'll see that most structures in R are built from atomic vectors. 
 
 ## Atomic Vectors
 
-An atomic vector is just a simple vector of data. In fact, you've already made an atomic vector, your `die` object from [Project 1: Weighted Dice]. You can make an atomic vector by grouping some values of data together with `c`:
+An atomic vector is just a simple vector of data. In fact, you've already made an atomic vector, your `die` object from [Project 1: Weighted Dice]{#sec:project-1}. You can make an atomic vector by grouping some values of data together with `c`:
 
 ```r
 die <- c(1, 2, 3, 4, 5, 6)
@@ -36,11 +36,11 @@ is.vector(die)
 ##  TRUE
 ```
 
-```{block2, type = "rmdnote"}
-**is.vector**
+:::{.callout-tip}
+## is.vector
   
 `is.vector` tests whether an object is an atomic vector. It returns `TRUE` if the object is an atomic vector and `FALSE` otherwise.
-```
+:::
 
 You can also make an atomic vector with just one value. R saves single values as an atomic vector of length 1:
 
@@ -58,11 +58,11 @@ length(die)
 ## 6
 ```
 
-```{block2, type = "rmdnote"}
-**length**
+::: {.callout-tip}
+## length
   
 `length` returns the length of an atomic vector.
-```
+:::
 
 Each atomic vector stores its values as a one-dimensional vector, and each atomic vector can only store one type of data. You can save different types of data in R by using different types of atomic vectors. Altogether, R recognizes six basic types of atomic vectors: _doubles_, _integers_, _characters_, _logicals_, _complex_, and _raw_.
 
@@ -73,7 +73,7 @@ int <- 1L
 text <- "ace"
 ```
 
-Each type of atomic vector has its own convention (described below). R will recognize the convention and use it to create an atomic vector of the appropriate type. If you'd like to make atomic vectors that have more than one element in them, you can combine an element with the `c` function from [Packages and Help Pages]. Use the same convention with each element:
+Each type of atomic vector has its own convention (described below). R will recognize the convention and use it to create an atomic vector of the appropriate type. If you'd like to make atomic vectors that have more than one element in them, you can combine an element with the `c` function. Use the same convention with each element:
 
 ```r
 int <- c(1L, 5L)
@@ -161,9 +161,9 @@ typeof("Hello")
 
 The individual elements of a character vector are known as _strings_. Note that a string can contain more than just letters. You can assemble a character string from numbers or symbols as well.
 
-```{exercise, name = "Character or Number?"}
+::: {#exr:char-or-number name="Character or Number?"}
 Can you spot the difference between a character string and a number? Here's a test: Which of these are character strings and which are numbers? `1`, `"1"`, `"one"`.
-```
+:::
   
 
 ```{solution}
@@ -176,7 +176,7 @@ It is easy to confuse R objects with character strings. Why? Because both appear
 
 Expect an error whenever you forget your quotation marks; R will start looking for an object that probably does not exist. 
 
-### Logicals
+### Logicals {#sec:logicals}
 
 Logical vectors store `TRUE`s and `FALSE`s, R's form of Boolean data. Logicals are very helpful for doing things like comparisons:
 
@@ -224,11 +224,11 @@ typeof(raw(3))
 ## "raw"
 ```
 
-```{exercise, name = "Vector of Cards"}
+::: {#exr:vector-of-cards name="Vector of Cards"}
 Create an atomic vector that stores just the face names of the cards in a royal flush, for example, the ace of spades, king of spades, queen of spades, jack of spades, and ten of spades. The face name of the ace of spades would be "ace," and "spades" is the suit.
 
 Which type of vector will you use to save the names? 
-```
+:::
 
 ```{solution}
 A character vector is the most appropriate type of atomic vector in which to save card names. You can create one with the `c` function if you surround each name with quotation marks:
@@ -262,7 +262,7 @@ attributes(die)
 R uses `NULL` to represent the null set, an empty object. `NULL` is often returned by functions whose values are undefined. You can create a `NULL` object by typing `NULL` in capital letters.
 ```
 
-### Names {#names}
+### Names {#sec:names}
 
 The most common attributes to give an atomic vector are names, dimensions (dim), and classes. Each of these attributes has its own helper function that you can use to give attributes to an object. You can also use the helper functions to look up the value of these attributes for objects that already have them. For example, you can look up the value of the names attribute of `die` with `names`:
 
@@ -420,9 +420,9 @@ ar
 ## [2,]   32   34
 ```
 
-```{exercise, name = "Make a Matrix"}
+::: {#exr:make-a-matrix name="Make a Matrix"}
 Create the following matrix, which stores the name and suit of every card in a royal flush.
-```
+:::
 
 ```r
 ##      [,1]    [,2]    
@@ -583,11 +583,11 @@ as.character(gender)
 
 Now that you understand the possibilities provided by R's atomic vectors, let's make a more complicated type of playing card.
 
-```{exercise, name = "Write a Card"}
+::: {#exr:write-a-card name="Write a Card"}
 Many card games assign a numerical value to each card. For example, in blackjack, each face card is worth 10 points, each number card is worth between 2 and 10 points, and each ace is worth 1 or 11 points, depending on the final score.
 
 Make a virtual playing card by combining "ace," "heart," and 1 into a vector. What type of atomic vector will result? Check if you are right.
-```
+:::
 
 ```{solution}
 You may have guessed that this exercise would not go well. Each atomic vector can only store one type of data. As a result, R coerces all of your values to character strings:
@@ -601,11 +601,11 @@ card
 
 This will cause trouble if you want to do math with that point value, for example, to see who won your game of blackjack. 
 
-```{block2, type = "rmdwarning"}
-**Data types in vectors**
+::: {.callout-warning}
+## Data types in vectors
 
 If you try to put multiple types of data into a vector, R will convert the elements to a single type of data. 
-```
+:::
 
 Since matrices and arrays are special cases of atomic vectors, they suffer from the same behavior. Each can only store one type of data. 
 
@@ -617,9 +617,9 @@ Second, coercion is a common behavior in R, so you'll want to know how it works.
 
 R's coercion behavior may seem inconvenient, but it is not arbitrary. R always follows the same rules when it coerces data types. Once you are familiar with these rules, you can use R's coercion behavior to do surprisingly useful things.
 
-So how does R coerce data types? If a character string is present in an atomic vector, R will convert everything else in the vector to character strings. If a vector only contains logicals and numbers, R will convert the logicals to numbers; every `TRUE` becomes a 1, and every `FALSE` becomes a 0, as shown in Figure \@ref(fig:coercion). 
+So how does R coerce data types? If a character string is present in an atomic vector, R will convert everything else in the vector to character strings. If a vector only contains logicals and numbers, R will convert the logicals to numbers; every `TRUE` becomes a 1, and every `FALSE` becomes a 0, as shown in @fig:coercion. 
 
-```{r coercion, echo = FALSE, fig.cap = "R always uses the same rules to coerce data to a single type. If character strings are present, everything will be coerced to a character string. Otherwise, logicals are coerced to numerics."}
+```{r fig:coercion, echo = FALSE, fig.cap = "R always uses the same rules to coerce data to a single type. If character strings are present, everything will be coerced to a character string. Otherwise, logicals are coerced to numerics."}
 knitr::include_graphics("images/hopr_0301.png")
 ```
 
@@ -696,9 +696,9 @@ As you can imagine, the structure of lists can become quite complicated, but thi
 
 However, not every list needs to be complicated. You can store a playing card in a very simple list. 
 
-```{exercise, name = "Use a List to Make a Card"}
+::: {#exr:list-make-card name="Use a List to Make a Card"}
 Use a list to store a single playing card, like the ace of hearts, which has a point value of one. The list should save the face of the card, the suit, and the point value in separate elements.
-```
+:::
 
 ```{solution}
 You can create your card like this. In the following example, the first element of the list is a character vector (of length 1). The second element is also a character vector, and the third element is a numeric vector:
@@ -723,9 +723,9 @@ You can also use a list to store a whole deck of playing cards. Since you can sa
 
 Data frames are the two-dimensional version of a list. They are far and away the most useful storage structure for data analysis, and they provide an ideal way to store an entire deck of cards. You can think of a data frame as R's equivalent to the Excel spreadsheet because it stores data in a similar format. 
 
-Data frames group vectors together into a two-dimensional table. Each vector becomes a column in the table. As a result, each column of a data frame can contain a different type of data; but within a column, every cell must be the same type of data, as in Figure \@ref(fig:data-frame).
+Data frames group vectors together into a two-dimensional table. Each vector becomes a column in the table. As a result, each column of a data frame can contain a different type of data; but within a column, every cell must be the same type of data, as in @fig:data-frame.
 
-```{r data-frame, echo = FALSE, fig.cap = "Data frames store data as a sequence of columns. Each column can be a different data type. Every column in a data frame must be the same length."}
+```{r fig:data-frame, echo = FALSE, fig.cap = "Data frames store data as a sequence of columns. Each column can be a different data type. Every column in a data frame must be the same length."}
 knitr::include_graphics("images/hopr_0302.png")
 ```
 
@@ -741,12 +741,12 @@ df
 ##  six clubs     3
 ```
 
-You'll need to make sure that each vector is the same length (or can be made so with R's recycling rules; see Figure \@ref(fig:recycle), as data frames cannot combine columns of different lengths.
+You'll need to make sure that each vector is the same length (or can be made so with R's recycling rules; see @fig:recycle, as data frames cannot combine columns of different lengths.
 
 In the previous code, I named the arguments in `data.frame` `face`, `suit`, and `value`, but you can name the arguments whatever you like. `data.frame` will use your argument names to label the columns of the data frame.
 
-```{block2, type = "rmdtip"}
-**Names**
+:::{.callout-tip}
+## Names
   
 You can also give names to a list or vector when you create one of these objects. Use the same syntax as with `data.frame`:
   
@@ -754,7 +754,7 @@ You can also give names to a list or vector when you create one of these objects
 `c(face = "ace", suit = "hearts", value = "one")`
 
 The names will be stored in the object's `names` attribute.
-```
+:::
 
 If you look at the type of a data frame, you will see that it is a list. In fact, each data frame is a list with class `data.frame`. You can see what types of objects are grouped together by a list (or data frame) with the `str` function:
 
@@ -832,13 +832,13 @@ You should avoid typing large data sets in by hand whenever possible. Typing inv
 
 I've created a file for you to load that contains a data frame of playing-card information, so don't worry about typing in the code. Instead, turn your attention toward loading data into R.
 
-## Loading Data {#loading}
+## Loading Data {#sec:loading-data}
 
 You can load the `deck` data frame from the file [_deck.csv_](http://bit.ly/deck_CSV). Please take a moment to download the file before reading on. Visit the website, click "Download Zip," and then unzip and open the folder that your web browser downloads. _deck.csv_ will be inside.
 
 _deck.csv_ is a comma-separated values file, or CSV for short. CSVs are plain-text files, which means you can open them in a text editor (as well as many other programs). If you open _desk.csv_, you'll notice that it contains a table of data that looks like the following table. Each row of the table is saved on its own line, and a comma is used to separate the cells within each row.  Every CSV file shares this basic format:
 
-```
+```default
 "face","suit,"value"
 "king","spades",13
 "queen","spades,12
@@ -850,29 +850,29 @@ _deck.csv_ is a comma-separated values file, or CSV for short. CSVs are plain-te
 
 Most data-science applications can open plain-text files and export data as plain-text files. This makes plain-text files a sort of lingua franca for data science. 
 
-To load a plain-text file into R, click the Import Dataset icon in RStudio, shown in Figure \@ref(fig:import). Then select "From text file."
+To load a plain-text file into R, click the Import Dataset icon in RStudio, shown in @fig:import. Then select "From text file."
 
-```{r import, echo = FALSE, fig.cap = "You can import data from plain-text files with RStudio's Import Dataset."}
+```{r fig:import, echo = FALSE, fig.cap = "You can import data from plain-text files with RStudio's Import Dataset."}
 knitr::include_graphics("images/hopr_0303.png")
 ```
 
-RStudio will ask you to select the file you want to import, then it will open a wizard to help you import the data, as in Figure \@ref(fig:wizard). Use the wizard to tell RStudio what name to give the data set.  You can also use the wizard to tell RStudio which character the data set uses as a separator, which character it uses to represent decimals (usually a period in the United States and a comma in Europe), and whether or not the data set comes with a row of column names (known as a _header_). To help you out, the wizard shows you what the raw file looks like, as well as what your loaded data will look like based on the input settings.
+RStudio will ask you to select the file you want to import, then it will open a wizard to help you import the data, as in @fig:wizard. Use the wizard to tell RStudio what name to give the data set.  You can also use the wizard to tell RStudio which character the data set uses as a separator, which character it uses to represent decimals (usually a period in the United States and a comma in Europe), and whether or not the data set comes with a row of column names (known as a _header_). To help you out, the wizard shows you what the raw file looks like, as well as what your loaded data will look like based on the input settings.
 
 You can also unclick the box "Strings as factors" in the wizard. I recommend doing this. If you do, R will load all of your character strings as character strings. If you do not, R will convert them to factors.
 
-```{r wizard, echo = FALSE, fig.cap = "RStudio's import wizard."}
+```{r fig:wizard, echo = FALSE, fig.cap = "RStudio's import wizard."}
 knitr::include_graphics("images/hopr_0304.png")
 ```
 
-Once everything looks right, click Import. RStudio will read in the data and save it to a data frame. RStudio will also open a data viewer, so you can see your new data in a spreadsheet format. This is a good way to check that everything came through as expected. If all worked well, your file should appear in a View tab of RStudio, like in Figure \@ref(fig:view). You can examine the data frame in the console with *`head(deck)`*.
+Once everything looks right, click Import. RStudio will read in the data and save it to a data frame. RStudio will also open a data viewer, so you can see your new data in a spreadsheet format. This is a good way to check that everything came through as expected. If all worked well, your file should appear in a View tab of RStudio, like in Figure \@ref(fig:view). You can examine the data frame in the console with `head(deck)`.
 
-```{block2, type = "rmdtip"}
-**Online data**
+::: {.callout-tip}
+## Online data
   
 You can load a plain-text file straight from the Internet by clicking the "From Web URL..." option under Import Dataset. The file will need to have its own URL, and you will need to be connected.
-```
+:::
 
-```{r view, echo = FALSE, fig.cap = "When you import a data set, RStudio will save the data to a data frame and then display the data frame in a View tab. You can open any data frame in a View tab at any time with the View function."}
+```{r fig:view, echo = FALSE, fig.cap = "When you import a data set, RStudio will save the data to a data frame and then display the data frame in a View tab. You can open any data frame in a View tab at any time with the View function."}
 knitr::include_graphics("images/hopr_0305.png")
 ```
 
@@ -889,9 +889,9 @@ head(deck)
 ## eight spades     8
 ```
 
-```{block2, type = "rmdnote"}
+::: {.callout-note}
 `head` and `tail` are two functions that provide an easy way to peek at large data sets. `head` will return just the first six rows of the data set, and `tail` will return just the last six rows. To see a different number of rows, give `head` or `tails` a second argument, the number of rows you would like to view, for example, `head(deck, 10)`.
-```
+:::
 
 R can open many types of files—not just CSVs. Visit [Loading and Saving Data in R] to learn how to open other common types of files in R.
 
@@ -903,7 +903,7 @@ Before we go any further, let's save a copy of `deck` as a new _.csv_ file. That
 write.csv(deck, file = "cards.csv", row.names = FALSE)
 ```
 
-R will turn your data frame into a plain-text file with the comma-separated values format and save the file to your working directory. To see where your working directory is, run *`getwd()`*. To change the location of your working directory, visit Session > Set Working Directory > Choose Directory in the RStudio menu bar. 
+R will turn your data frame into a plain-text file with the comma-separated values format and save the file to your working directory. To see where your working directory is, run `getwd()`. To change the location of your working directory, visit Session > Set Working Directory > Choose Directory in the RStudio menu bar. 
 
 You can customize the save process with `write.csv`'s large set of optional arguments (see `?write.csv` for details). However, there are three arguments that you should use _every_ time you run `write.csv`. 
 
@@ -911,20 +911,20 @@ First, you should give `write.csv` the name of the data frame that you wish to s
 
 Finally, you should add the argument `row.names = FALSE`. This will prevent R from adding a column of numbers at the start of your data frame. These numbers will identify your rows from 1 to 52, but it is unlikely that whatever program you open _cards.csv_ in will understand the row name system. More than likely, the program will assume that the row names are the first column of data in your data frame. In fact, this is exactly what R will assume if you reopen _cards.csv_. If you save and open _cards.csv_ several times in R, you'll notice duplicate columns of row numbers forming at the start of your data frame. I can't explain why R does this, but I can explain how to avoid it: use `row.names = FALSE` whenever you save data with `write.csv`.
 
-For more details about saving files, including how to compress saved files and how to save files in other formats, see [Loading and Saving Data in R].
+For more details about saving files, including how to compress saved files and how to save files in other formats, see [Loading and Saving Data in R](#sec:appendix-dataio).
 
 Good work. You now have a virtual deck of cards to work with. Take a breather, and when you come back, we'll start writing some functions to use on your deck.
 
 ## Summary
 
-You can save data in R with five different objects, which let you store different types of values in different types of relationships, as in Figure \@ref(fig:structures). Of these objects, data frames are by far the most useful for data science. Data frames store one of the most common forms of data used in data science, tabular data. 
+You can save data in R with five different objects, which let you store different types of values in different types of relationships, as in @fig:structures. Of these objects, data frames are by far the most useful for data science. Data frames store one of the most common forms of data used in data science, tabular data. 
 
-```{r structures, echo = FALSE, fig.cap = "R's most common data structures are vectors, matrices, arrays, lists, and data frames."}
+```{r fig:structures, echo = FALSE, fig.cap = "R's most common data structures are vectors, matrices, arrays, lists, and data frames."}
 knitr::include_graphics("images/hopr_0306.png")
 ```
 
 You can load tabular data into a data frame with RStudio's Import Dataset button—so long as the data is saved as a plain-text file. This requirement is not as limiting as it sounds. Most software programs can export data as a plain-text file. So if you have an Excel file (for example) you can open the file in Excel and export the data as a CSV to use with R. In fact, opening a file in its original program is good practice. Excel files use metadata, like sheets and formulas, that help Excel work with the file. R can try to extract raw data from the file, but it won't be as good at doing this as Microsoft Excel is. No program is better at converting Excel files than Excel. Similarly, no program is better at converting SAS Xport files than SAS, and so on.
 
-However, you may find yourself with a program-specific file, but not the program that created it. You wouldn't want to buy a multi-thousand-dollar SAS license just to open a SAS file. Thankfully R _can_ open many types of files, including files from other programs and databases. R even has its own program-specific formats that can help you save memory and time if you know that you will be working entirely in R. If you'd like to know more about all of your options for loading and saving data in R, see [Loading and Saving Data in R].
+However, you may find yourself with a program-specific file, but not the program that created it. You wouldn't want to buy a multi-thousand-dollar SAS license just to open a SAS file. Thankfully R _can_ open many types of files, including files from other programs and databases. R even has its own program-specific formats that can help you save memory and time if you know that you will be working entirely in R. If you'd like to know more about all of your options for loading and saving data in R, see [Loading and Saving Data in R](#sec:appendix-dataio).
 
-[R Notation] will build upon the skills you learned in this chapter. Here, you learned how to store data in R. In [R Notation], you will learn how to access values once they've been stored. You'll also write two functions that will let you start using your deck, a shuffle function and a deal function.
+[R Notation](#sec:r-notation) will build upon the skills you learned in this chapter. Here, you learned how to store data in R. In [R Notation](#sec:r-notation), you will learn how to access values once they've been stored. You'll also write two functions that will let you start using your deck, a shuffle function and a deal function.

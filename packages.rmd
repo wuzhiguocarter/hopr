@@ -2,7 +2,7 @@
 knit: quarto render
 ---
 
-# Packages and Help Pages {#packages-and-help}
+# Packages and Help Pages {#sec:packages-and-help}
 
 You now have a function that simulates rolling a pair of dice. Let's make things a little more interesting by weighting the dice in your favor. The house always wins, right? Let's make the dice roll high numbers slightly more often than it rolls low numbers. 
 
@@ -12,7 +12,7 @@ We will repeat our dice rolls with a function called `replicate`, and we will vi
 
 ## Packages
 
-You're not the only person writing your own functions with R. Many professors, programmers, and statisticians use R to design tools that can help people analyze data. They then make these tools free for anyone to use. To use these tools, you just have to download them. They come as preassembled collections of functions and objects called packages. [Appendix 2: R Packages](#packages2) contains detailed instructions for downloading and updating R packages, but we'll look at the basics here.
+You're not the only person writing your own functions with R. Many professors, programmers, and statisticians use R to design tools that can help people analyze data. They then make these tools free for anyone to use. To use these tools, you just have to download them. They come as preassembled collections of functions and objects called packages. [Appendix B: R Packages](#sec:appendix-packages) contains detailed instructions for downloading and updating R packages, but we'll look at the basics here.
 
 We're going to use the `qplot` function to make some quick plots. `qplot` comes in the _ggplot2_ package, a popular package for making graphs. Before you can use `qplot`, or anything else in the ggplot2 package, you need to download and install it.
 
@@ -52,7 +52,7 @@ qplot
 ## (quite a bit of code)
 ```
 
-[Appendix 2: R Packages](#packages2) contains many more details about acquiring and using packages. I recommend that you read it if you are unfamiliar with R's package system. The main thing to remember is that you only need to install a package once, but you need to load it with `library` each time you wish to use it in a new R session. R will unload all of its packages each time you close RStudio.
+[Appendix B: R Packages](#sec:appendix-packages) contains many more details about acquiring and using packages. I recommend that you read it if you are unfamiliar with R's package system. The main thing to remember is that you only need to install a package once, but you need to load it with `library` each time you wish to use it in a new R session. R will unload all of its packages each time you close RStudio.
 
 Now that you've loaded `qplot`, let's take it for a spin. `qplot` makes "quick plots." If you give `qplot` two vectors of equal lengths, `qplot` will draw a scatterplot for you. `qplot` will use the first vector as a set of x values and the second vector as a set of y values. Look for the plot to appear in the Plots tab of the bottom-right pane in your RStudio window. 
 
@@ -326,4 +326,4 @@ R shares another characteristic of human languages: you won't feel very comforta
 
 Now that you can use R, it is time to become an expert at using R to do data science. The foundation of data science is the ability to store large amounts of data and recall values on demand. From this, all else follows—manipulating data, visualizing data, modeling data, and more. However, you cannot easily store a data set in your mind by memorizing it. Nor can you easily store a data set on paper by writing it down. The only efficient way to store large amounts of data is with a computer. In fact, computers are so efficient that their development over the last three decades has completely changed the type of data we can accumulate and the methods we can use to analyze it. In short, computer data storage has driven the revolution in science that we call data science.
 
-[Project 2: Playing Cards](#project-2) will make you part of this revolution by teaching you how to use R to store data sets in your computer's memory and how to retrieve and manipulate data once it's there. 
+[Project 2: Playing Cards](#sec:project-cards) will make you part of this revolution by teaching you how to use R to store data sets in your computer's memory and how to retrieve and manipulate data once it's there. 

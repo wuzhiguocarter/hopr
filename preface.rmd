@@ -2,7 +2,7 @@
 knit: quarto render
 ---
 
-# Preface {-}
+# Preface {.unnumbered}
 
 This book will teach you how to program in R. You'll go from loading data to writing your own functions (which will outperform the functions of other R users). But this is not a typical introduction to R. I want to help you become a data scientist, as well as a computer scientist, so this book will focus on the programming skills that are most related to data science. 
 

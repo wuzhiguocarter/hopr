@@ -2,7 +2,7 @@
 knit: quarto render
 ---
 
-# Modifying Values {#modify}
+# Modifying Values {#sec:modifying-values}
 
 Are you ready to play some games with your virtual deck? Not so fast! The point system in your deck of cards doesn't align well with many card games. For example, in war and poker, aces are usually scored higher than kings. They'd have a point value of 14, not 1. 
 
@@ -11,7 +11,7 @@ In this task, you will change the point system of your deck three times to match
 ```r
 deck2 <- deck
 ```
-### Changing Values in Place
+## Changing Values in Place
 
 You can use R's notation system to modify values within an R object. First, describe the value (or values) you wish to modify. Then use the assignment operator `<-` to overwrite those values. R will update the selected values _in the original object_. Let's put this into action with a real example:
 
@@ -164,9 +164,9 @@ head(deck3)
 
 Why not ask R to find the aces for you? You can do this with logical subsetting. Logical subsetting provides a way to do targeted extraction and modification with R objects, a sort of search-and-destroy mission inside your own data sets. 
 
-### Logical Subsetting
+## Logical Subsetting
 
-Do you remember R's logical index system, [logicals](#logicals)? To recap, you can select values with a vector of `TRUE`s and `FALSE`s. The vector must be the same length as the dimension that you wish to subset. R will return every element that matches a TRUE:
+Do you remember R's logical index system, [logicals](#sec:logicals)? To recap, you can select values with a vector of `TRUE`s and `FALSE`s. The vector must be the same length as the dimension that you wish to subset. R will return every element that matches a TRUE:
 
 ```r
 vec
@@ -178,11 +178,11 @@ vec[c(FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, FALSE)]
 
 At first glance, this system might seem impractical. Who wants to type out long vectors of TRUEs and FALSEs? No one. But you don't have to. You can let a logical test create a vector of TRUEs and FALSEs for you.
 
-#### Logical Tests
+### Logical Tests
 
-A logical test is a comparison like "is one less than two?", `1 < 2`, or "is three greater than four?", `3 > 4`. R provides seven logical operators that you can use to make comparisons, shown in Table \@ref(tab:logop). 
+A logical test is a comparison like "is one less than two?", `1 < 2`, or "is three greater than four?", `3 > 4`. R provides seven logical operators that you can use to make comparisons, shown in @tbl:logop. 
 
-Table: (\#tab:logop) R's Logical Operators
+Table: R's Logical Operators {#tbl:logop}
 
 |Operator|Syntax|Tests
 |--------|------|-----
@@ -225,17 +225,17 @@ c(1, 2, 3, 4) %in% c(3, 4, 5)
 
 Notice that you test for equality with a double equals sign, `==`, and not a single equals sign, `=`, which is another way to write `<-`. It is easy to forget and use `a = b` to test if `a` equals `b`. Unfortunately, you'll be in for a nasty surprise. R won't return a `TRUE` or `FALSE`, because it won't have to: `a` _will_ equal `b`, because you just ran the equivalent of `a <- b`.
 
-```{block2, type = "rmdwarning"}
-**`=` is an assignment operator**
+::: {.callout-warning}
+## `=` is an assignment operator
 
 Be careful not to confuse `=` with `==`. `=` does the same thing as `<-`: it assigns a value to an object. 
-```
+:::
 
 You can compare any two R objects with a logical operator; however, logical operators make the most sense if you compare two objects of the same data type. If you compare objects of different data types, R will use its coercion rules to coerce the objects to the same type before it makes the comparison.
 
-```{exercise, name = "How many Aces?"}
+::: {#exr:how-many-aces name="How many Aces?"}
 Extract the `face` column of `deck2` and test whether each value is equal to `ace`. As a challenge, use R to quickly count how many cards are equal to `ace`.
-```
+:::
   
 ```{solution}
 You can extract the `face` column with R's `$` notation:
@@ -309,7 +309,7 @@ To summarize, you can use a logical test to select values within an object.
 
 Logical subsetting is a powerful technique because it lets you quickly identify, extract, and modify individual values in your data set. When you work with logical subsetting, you do not need to know _where_ in your data set a value exists. You only need to know how to describe the value with a logical test. 
 
-Logical subsetting is one of the things R does best. In fact, logical subsetting is a key component of vectorized programming, a coding style that lets you write fast and efficient R code, which we will study in [Speed].
+Logical subsetting is one of the things R does best. In fact, logical subsetting is a key component of vectorized programming, a coding style that lets you write fast and efficient R code, which we will study in [Speed](#sec:speed).
 
 Let's put logical subsetting to use with a new game: hearts. In hearts, every card has a value of zero:
 
@@ -336,9 +336,9 @@ head(deck4, 13)
 
 except cards in the suit of hearts and the queen of spades. Each card in the suit of hearts has a value of 1. Can you find these cards and replace their values? Give it a try.
 
-```{exercise, name = "Score the Deck for Hearts"}
+::: {#exr:score-the-deck name="Score the Deck for Hearts"}
 Assign a value of `1` to every card in `deck4` that has a suit of hearts.
-```
+:::
 
 ```{solution}
 To do this, first write a test that identifies cards in the `hearts` suit:
@@ -409,11 +409,11 @@ deck4[deck4$suit == "spades", ]
 
 But that's 12 cards too many. What you really want to find is all of the cards that have both a face value equal to queen and a suit value equal to spades. You can do that with a _Boolean operator_. Boolean operators combine multiple logical tests together into a single test.
 
-#### Boolean Operators
+### Boolean Operators
 
-Boolean operators are things like _and_ (`&`) and _or_ (`|`). They collapse the results of multiple logical tests into a single `TRUE` or `FALSE`. R has six boolean operators, shown in Table \@ref(tab:boole).
+Boolean operators are things like _and_ (`&`) and _or_ (`|`). They collapse the results of multiple logical tests into a single `TRUE` or `FALSE`. R has six boolean operators, shown in @tbl:boole.
 
-Table: (\#tab:boole) Boolean operators
+Table: Boolean operators {#tbl:boole}
 
 |Operator|Syntax|Tests
 |--------|------|-----
@@ -424,15 +424,15 @@ Table: (\#tab:boole) Boolean operators
 |`any`|`any(cond1, cond2, cond3, ...)`|Are any of the conditions true?
 |`all`|`all(cond1, cond2, cond3, ...)`|Are all of the conditions true?
 
-To use a Boolean operator, place it between two _complete_ logical tests. R will execute each logical test and then use the Boolean operator to combine the results into a single `TRUE` or `FALSE`, Figure \@ref(fig:boolean). 
+To use a Boolean operator, place it between two _complete_ logical tests. R will execute each logical test and then use the Boolean operator to combine the results into a single `TRUE` or `FALSE`, @fig:boolean. 
 
-```{block2, type = "rmdwarning"}
-**The most common mistake with Boolean operators**
+::: {.callout-warning}
+## The most common mistake with Boolean operators
   
 It is easy to forget to put a complete test on either side of a Boolean operator. In English, it is efficient to say "Is _x_ greater than two and less than nine?" But in R, you need to write the equivalent of "Is _x_ greater than two and _is x_ less than nine?" This is shown in Figure \@ref(fig:boolean).
-```
+:::
 
-```{r boolean, echo = FALSE, fig.cap = "R will evaluate the expressions on each side of a Boolean operator separately, and then combine the results into a single TRUE or FALSE. If you do not supply a complete test to each side of the operator, R will return an error."}
+```{r fig:boolean, echo = FALSE, fig.cap = "R will evaluate the expressions on each side of a Boolean operator separately, and then combine the results into a single TRUE or FALSE. If you do not supply a complete test to each side of the operator, R will return an error."}
 knitr::include_graphics("images/hopr_0501.png")
 ```
 
@@ -496,14 +496,14 @@ deck4[queenOfSpades, ]
 
 Your deck is now ready to play hearts.
 
-```{exercise, name = "Practice with Tests"}
+::: {#exr:practice-with-tests name="Practice with Tests"}
 If you think you have the hang of logical tests, try converting these sentences into tests written with R code. To help you out, I've defined some R objects after the sentences that you can use to test your answers: 
 
 * Is w positive?
 * Is x greater than 10 and less than 20?
 * Is object y the word February?
 * Is _every_ value in z a day of the week?
-```
+:::
 
 ```r
 w <- c(-1, 0, 1)
@@ -588,7 +588,7 @@ head(deck5, 13)
 
 Now you just need to fix the ace values—or do you? It is hard to decide what value to give the aces because their exact value will change from hand to hand. At the end of each hand, an ace will equal 11 if the sum of the player's cards does not exceed 21. Otherwise, the ace will equal 1. The actual value of the ace will depend on the other cards in the player's hand. This is a case of missing information. At the moment, you do not have enough information to assign a correct point value to the ace cards.
 
-### Missing Information {#missing}
+## Missing Information {#sec:missing}
 
 Missing information problems happen frequently in data science. Usually, they are more straightforward: you don't know a value because the measurement was lost, corrupted, or never taken to begin with. R has a way to help you manage these missing values.
 
@@ -610,9 +610,9 @@ NA == 1
 
 Again, your answer would be something like "I do not know if this is equal to one," that is, `NA`. Generally, `NA`s will propagate whenever you use them in an R operation or function. This can save you from making errors based on missing data. 
 
-#### na.rm
+### na.rm
 
-Missing values can help you work around holes in your data sets, but they can also create some frustrating problems. Suppose, for example, that you've collected 1,000 pass:[<phrase role="keep-together">observations</phrase>] and wish to take their average with R's `mean` function. If even one of the values is `NA`, your result will be `NA`:
+Missing values can help you work around holes in your data sets, but they can also create some frustrating problems. Suppose, for example, that you've collected 1,000 observations and wish to take their average with R's `mean` function. If even one of the values is `NA`, your result will be `NA`:
 
 ```r
 c(NA, 1:50)
@@ -631,7 +631,7 @@ mean(c(NA, 1:50), na.rm = TRUE)
 ## 25.5
 ```
 
-#### is.na
+### is.na
 
 On occasion, you may want to identify the `NA`s in your data set with a logical test, but that too creates a problem. How would you go about it? If something is a missing value, any logical test that uses it will return a missing value, even this test:
 
@@ -685,10 +685,10 @@ head(deck5, 13)
 
 Congratulations. Your deck is now ready for a game of blackjack.
 
-### Summary
+## Summary
 
 You can modify values in place inside an R object when you combine R's notation syntax with the assignment operator, `<-`. This lets you update your data and clean your data sets
 
 When you work with large data sets, modifying and retrieving values creates a logistical problem of its own. How can you search through the data to find the values that you want to modify or retrieve? As an R user, you can do this with logical subsetting. Create a logical test with logical and Boolean operators and then use the test as an index in R's bracket notation. R will return the values that you are looking for, even if you do not know where they are.
 
-Retrieving individual values will not be your only concern as an R programmer. You'll also need to retrieve entire data sets themselves; for example, you may call one in a function. [Environments] will teach you how R looks up and saves data sets and other R objects in its environment system. You'll then use this knowledge to fix the `deal` and `shuffle` functions.
+Retrieving individual values will not be your only concern as an R programmer. You'll also need to retrieve entire data sets themselves; for example, you may call one in a function. [Environments](#sec:environments) will teach you how R looks up and saves data sets and other R objects in its environment system. You'll then use this knowledge to fix the `deal` and `shuffle` functions.

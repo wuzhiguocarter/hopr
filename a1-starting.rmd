@@ -2,7 +2,7 @@
 knit: quarto render
 ---
 
-# Installing R and RStudio {#sec:starting}
+# Installing R and RStudio {#sec:appendix-starting}
 
 To get started with R, you need to acquire your own copy. This appendix will show you how to download R as well as RStudio, a software application that makes R easier to use. You'll go from downloading R to opening your first R session. 
 

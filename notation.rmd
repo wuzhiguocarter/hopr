@@ -2,7 +2,7 @@
 knit: quarto render
 ---
 
-# R Notation
+# R Notation {#sec:r-notation}
 
 Now that you have a deck of cards, you need a way to do card-like things with it. First, you'll want to reshuffle the deck from time to time. And next, you'll want to deal cards from the deck (one card at a time, whatever card is on top—we're not cheaters).
 
@@ -39,7 +39,7 @@ The simplest of these to use is positive integers.
 
 ### Positive Integers
 
-R treats positive integers just like _ij_ notation in linear algebra: `deck[i,j]` will return the value of `deck` that is in the _ith_ row and the _jth_ column, Figure \@ref(fig:positive). Notice that _i_ and _j_ only need to be integers in the mathematical sense. They can be saved as numerics in R
+R treats positive integers just like _ij_ notation in linear algebra: as illustrated in  @fig:positive, `deck[i,j]` will return the value of `deck` that is in the _ith_ row and the _jth_ column. Notice that _i_ and _j_ only need to be integers in the mathematical sense. They can be saved as numerics in R
 
 ```r
 head(deck)
@@ -72,7 +72,8 @@ new
 ## king spades    13
 ```
 
-::: {.callout-tip caption="Repetition"}
+::: {.callout-tip}
+## Repetition
 
 If you repeat a number in your index, R will return the corresponding value(s) more than once in your "subset." This code will return the first row of `deck` twice:
   
@@ -85,7 +86,7 @@ deck[c(1, 1), c(1, 2, 3)]
 
 :::
 
-```{r positive, echo = FALSE, fig.cap = "R uses the _ij_ notation system of linear algebra. The commands in this figure will return the shaded values."}
+```{r fig:positive, echo = FALSE, fig.cap = "R uses the _ij_ notation system of linear algebra. The commands in this figure will return the shaded values."}
 knitr::include_graphics("images/hopr_0401.png")
 ```
 
@@ -97,38 +98,44 @@ vec[1:3]
 ## 6 1 3
 ```
 
-```{block2, type = "rmdtip"}
-**Indexing begins at 1**
+::: {.callout-tip}
+## Indexing begins at 1
   
 In some programming languages, indexing begins with 0. This means that 0 returns the first element of a vector, 1 returns the second element, and so on. 
 
 This isn't the case with R. Indexing in R behaves just like indexing in linear algebra. The first element is always indexed by 1. Why is R different? Maybe because it was written for mathematicians. Those of us who learned indexing from a linear algebra course wonder why computers programmers start with 0. 
-```
+:::
 
-```{block2, type = "rmdtip"}
-**drop = FALSE**
+::: {.callout-tip}
+## `drop = FALSE`
   
 If you select two or more columns from a data frame, R will return a new data frame:
 
-    deck[1:2, 1:2]
-    ##  face   suit
-    ##  king spades
-    ## queen spades
+```r
+deck[1:2, 1:2]
+##  face   suit
+##  king spades
+## queen spades
+```
 
 However, if you select a single column, R will return a vector:
 
-    deck[1:2, 1]
-    ##  "king"  "queen"
+```r
+deck[1:2, 1]
+##  "king"  "queen"
+```
 
 If you would prefer a data frame instead, you can add the optional argument `drop = FALSE` between the brackets: 
 
-    deck[1:2, 1, drop = FALSE]
-    ##  face
-    ##  king
-    ## queen
+```r
+deck[1:2, 1, drop = FALSE]
+##  face
+##  king
+## queen
+```
 
 This method also works for selecting a single column from a matrix or an array.
-```
+:::
 
 ### Negative Integers
 
@@ -174,7 +181,7 @@ deck[1, ]
 
 ### Logical Values {#logic}
 
-If you supply a vector of `TRUE`s and `FALSE`s as your index, R will match each `TRUE` and `FALSE` to a row in your data frame (or a column depending on where you place the index). R will then return each row that corresponds to a `TRUE`, Figure \@ref(fig:logicals). 
+If you supply a vector of `TRUE`s and `FALSE`s as your index, R will match each `TRUE` and `FALSE` to a row in your data frame (or a column depending on where you place the index). R will then return each row that corresponds to a `TRUE`, @fig:logicals. 
 
 It may help to imagine R reading through the data frame and asking, "Should I return the _i_th row of the data structure?" and then consulting the _i_th value of the index for its answer. For this system to work, your vector must be as long as the dimension you are trying to subset: 
 
@@ -191,15 +198,15 @@ deck[rows, ]
 ## king spades    13
 ```
 
-```{r logicals, echo = FALSE, fig.cap = "You can use vectors of TRUEs and FALSEs to tell R exactly which values you want to extract and which you do not. The command would return just the numbers 1, 6, and 5."}
+```{r fig:logicals, echo = FALSE, fig.cap = "You can use vectors of TRUEs and FALSEs to tell R exactly which values you want to extract and which you do not. The command would return just the numbers 1, 6, and 5."}
 knitr::include_graphics("images/hopr_0402.png")
 ``` 
 
-This system may seem odd—who wants to type so many `TRUE`s and `FALSE`s?—but it will become very powerful in [Modifying Values].
+This system may seem odd—who wants to type so many `TRUE`s and `FALSE`s?—but it will become very powerful in [Modifying Values](#sec:modifying-values).
 
 ### Names
 
-Finally, you can ask for the elements you want by name—if your object has names (see [Names](#names)). This is a common way to extract the columns of a data frame, since columns almost always have names:
+Finally, you can ask for the elements you want by name—if your object has names (see [Names](#sec:names)). This is a common way to extract the columns of a data frame, since columns almost always have names:
 
 ```r
 deck[1, c("face", "suit", "value")]
@@ -217,15 +224,15 @@ deck[ , "value"]
 
 Now that you know the basics of R's notation system, let's put it to use. 
 
-```{exercise, name = "Deal a Card"}
+::: {#exr:deal-a-card name="Deal a Card"}
 Complete the following code to make a function that returns the first row of a data frame:
-```
 
 ```r
 deal <- function(cards) {
    # ?
 }
 ```
+:::
 
 ```{solution}
 You can use any of the systems that return the first row of your data frame to write a `deal` function. I'll use positive integers and blanks because I think they are easy to understand:
@@ -253,7 +260,7 @@ deal(deck)
 ## king spades    13
 ```
 
-`deal` always returns the king of spades because `deck` doesn't know that we've dealt the card away. Hence, the king of spades stays where it is, at the top of the deck ready to be dealt again. This is a difficult problem to solve, and we will _deal_ with it in [Environments]. In the meantime, you can fix the problem by shuffling your deck after every deal. Then a new card will always be at the top. 
+`deal` always returns the king of spades because `deck` doesn't know that we've dealt the card away. Hence, the king of spades stays where it is, at the top of the deck ready to be dealt again. This is a difficult problem to solve, and we will _deal_ with it in [Environments](#sec:environments). In the meantime, you can fix the problem by shuffling your deck after every deal. Then a new card will always be at the top. 
 
 Shuffling is a temporary compromise: the probabilities at play in your deck will not match the probabilities that occur when you play a game with a single deck of cards. For example, there will still be a probability that the king of spades appears twice in a row. However, things are not as bad as they may seem. Most casinos use five or six decks at a time in card games to prevent card counting. The probabilities that you would encounter in those situations are very close to the ones we will create here.
 
@@ -313,9 +320,9 @@ head(deck4)
 
 Now the new set is truly shuffled. You'll be finished once you wrap these steps into a function. 
 
-```{exercise, name = "Shuffle a Deck"}
+::: {#exr:shuffile-a-deck name="Shuffle a Deck"}
 Use the preceding ideas to write a `shuffle` function. `shuffle` should take a data frame and return a shuffled copy of the data frame.
-```
+:::
 
 
 ```{solution}
@@ -432,19 +439,19 @@ lst[["numbers"]]
 ## 1 2
 ```
 
-This difference is subtle but important. In the R community, there is a popular, and helpful, way to think about it, Figure \@ref(fig:trains). Imagine that each list is a train and each element is a train car. When you use single brackets, R selects individual train cars and returns them as a new train. Each car keeps its contents, but those contents are still inside a train car (i.e., a list). When you use double brackets, R actually unloads the car and gives you back the contents.
+This difference is subtle but important. In the R community, there is a popular, and helpful, way to think about it, @fig:trains. Imagine that each list is a train and each element is a train car. When you use single brackets, R selects individual train cars and returns them as a new train. Each car keeps its contents, but those contents are still inside a train car (i.e., a list). When you use double brackets, R actually unloads the car and gives you back the contents.
 
-```{r trains, echo = FALSE, fig.cap = "It can be helpful to think of your list as a train. Use single brackets to select train cars, double brackets to select the contents inside of a car."}
+```{r fig:trains, echo = FALSE, fig.cap = "It can be helpful to think of your list as a train. Use single brackets to select train cars, double brackets to select the contents inside of a car."}
 knitr::include_graphics("images/hopr_0403.png")
 ```
 
-```{block2, type = "rmdimportant"}
-**Never attach**
+::: {.callout-important}
+## Never attach
 
 In R's early days, it became popular to use `attach()` on a data set once you had it loaded. Don't do this! `attach` recreates a computing environment similar to those used in other statistics applications like Stata and SPSS, which crossover users liked. However, R is not Stata or SPSS. R is optimized to use the R computing environment, and running `attach()` can cause confusion with some R functions. 
 
 What does `attach()` do? On the surface, `attach` saves you typing. If you attach the `deck` data set, you can refer to each of its variables by name; instead of typing `deck$face`, you can just type `face`.  But typing isn't bad. It gives you a chance to be explicit, and in computer programming, explicit is good. Attaching a data set creates the possibility that R will confuse two variable names. If this occurs within a function, you're likely to get unusable results and an unhelpful error message to explain what happened.
-```
+:::
 
 Now that you are an expert at retrieving values stored in R, let's summarize what you've accomplished.
 
@@ -455,8 +462,8 @@ You have learned how to access values that have been stored in R. You can retrie
 
 In fact, you can use R's notation system to access values in any R object. To use it, write the name of an object followed by brackets and indexes. If your object is one-dimensional, like a vector, you only need to supply one index. If it is two-dimensional, like a data frame, you need to supply two indexes separated by a comma. And, if it is _n_-dimensional, you need to supply _n_ indexes, each separated by a comma. 
 
-In [Modifying Values], you'll take this system a step further and learn how to change the actual values that are stored inside your data frame. This is all adding up to something special: complete control of your data. You can now store your data in your computer, retrieve individual values at will, and use your computer to perform correct calculations with those values. 
+In [Modifying Values](#sec:modifying-values), you'll take this system a step further and learn how to change the actual values that are stored inside your data frame. This is all adding up to something special: complete control of your data. You can now store your data in your computer, retrieve individual values at will, and use your computer to perform correct calculations with those values. 
 
-Does this sound basic? It may be, but it is also powerful and essential for efficient data science. You no longer need to memorize everything in your head, nor worry about doing mental arithmetic wrong. This low-level control over your data is also a prerequisite for more efficient R programs, the subject of [Project 3: Slot Machine].
+Does this sound basic? It may be, but it is also powerful and essential for efficient data science. You no longer need to memorize everything in your head, nor worry about doing mental arithmetic wrong. This low-level control over your data is also a prerequisite for more efficient R programs, the subject of [Project 3: Slot Machine](#sec:project-slots).
 
 
