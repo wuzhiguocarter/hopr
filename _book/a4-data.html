@@ -404,9 +404,9 @@
 <table class="table">
 <caption>Table D.1: R’s read functions. You can overwrite any of the default arguments as necessary. </caption>
 <colgroup>
-<col style="width: 42%">
-<col style="width: 42%">
-<col style="width: 15%">
+<col style="width: 14%">
+<col style="width: 36%">
+<col style="width: 48%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -479,12 +479,12 @@ Import Dataset
 </section>
 <section class="level3" data-number="D.3.4">
 <h3 data-number="4.3.4" class="anchored" id="html-links"><span class="header-section-number">D.3.4</span> HTML Links</h3>
-<p>Many data files are made available on the Internet at their own web address. If you are connected to the Internet, you can open these files straight into R with <code>read.table</code>, <code>read.csv</code>, etc. You can pass a web address into the file name argument for any of R’s data-reading functions. As a result, you could read in the poker data set from a web address like <em>http://…/poker.csv</em> with:</p>
+<p>Many data files are made available on the Internet at their own web address. If you are connected to the Internet, you can open these files straight into R with <code>read.table</code>, <code>read.csv</code>, etc. You can pass a web address into the file name argument for any of R’s data-reading functions. As a result, you could read in the poker data set from a web address like <a href="http://" class="uri"><em>http://</em></a><em>…/poker.csv</em> with:</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>poker <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"http://.../poker.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>That’s obviously not a real address, but here’s something that would work—if you can manage to type it!</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>deck <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://gist.githubusercontent.com/garrettgman/9629323/raw/ee5dfc039fd581cb467cc69c226ea2524913c3d8/deck.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Just make sure that the web address links directly to the file and not to a web page that links to the file. Usually, when you visit a data file’s web address, the file will begin to download or the raw data will appear in your browser window.</p>
-<p>Note that websites that begin with <em>https://</em> are secure websites, which means R may not be able to access the data provided at these links.</p>
+<p>Note that websites that begin with _<a href="https://_" class="uri">https://_</a> are secure websites, which means R may not be able to access the data provided at these links.</p>
 </section>
 <section class="level3" data-number="D.3.5">
 <h3 data-number="4.3.5" class="anchored" id="saving-plain-text-files"><span class="header-section-number">D.3.5</span> Saving Plain-Text Files</h3>
@@ -493,8 +493,8 @@ Import Dataset
 <table class="table">
 <caption>Table D.2: R saves data sets to plain-text files with the write family of functions </caption>
 <colgroup>
-<col style="width: 35%">
-<col style="width: 64%">
+<col style="width: 37%">
+<col style="width: 62%">
 </colgroup>
 <thead>
 <tr class="header">

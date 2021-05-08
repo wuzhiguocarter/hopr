@@ -10,13 +10,13 @@ This appendix will show you how to load and save data into R from plain-text fil
 
 R comes with many data sets preloaded in the `datasets` package, which comes with base R. These data sets are not very interesting, but they give you a chance to test code or make a point without having to load a data set from outside R. You can see a list of R's data sets as well as a short description of each by running:
 
-```r
+``` {.r}
 help(package = "datasets")
 ```
 
-To use a data set, just type its name. Each data set is already presaved as an R object. For example: 
+To use a data set, just type its name. Each data set is already presaved as an R object. For example:
 
-```r
+``` {.r}
 iris
 ##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## 1          5.1         3.5          1.4         0.2  setosa
@@ -27,63 +27,59 @@ iris
 ## 6          5.4         3.9          1.7         0.4  setosa
 ```
 
-
-However, R's data sets are no substitute for your own data, which you can load into R from a wide variety of file formats. But before you load any data files into R, you'll need to determine where your _working directory_ is.
+However, R's data sets are no substitute for your own data, which you can load into R from a wide variety of file formats. But before you load any data files into R, you'll need to determine where your *working directory* is.
 
 ## Working Directory
 
 Each time you open R, it links itself to a directory on your computer, which R calls the working directory. This is where R will look for files when you attempt to load them, and it is where R will save files when you save them. The location of your working directory will vary on different computers. To determine which directory R is using as your working directory, run:
 
-```r
+``` {.r}
 getwd()
 ## "/Users/garrettgrolemund"
 ```
 
-You can place data files straight into the folder that is your working directory, or you can move your working directory to where your data files are. You can move your working directory to any folder on your computer with the function `setwd`. Just give `setwd` the file path to your new working directory. I prefer to set my working directory to a folder dedicated to whichever project I am currently working on. That way I can keep all of my data, scripts, graphs, and reports in the same place. For example: 
+You can place data files straight into the folder that is your working directory, or you can move your working directory to where your data files are. You can move your working directory to any folder on your computer with the function `setwd`. Just give `setwd` the file path to your new working directory. I prefer to set my working directory to a folder dedicated to whichever project I am currently working on. That way I can keep all of my data, scripts, graphs, and reports in the same place. For example:
 
-```r
+``` {.r}
 setwd("~/Users/garrettgrolemund/Documents/Book_Project")
 ```
 
-If the file path does not begin with your root directory, R will assume that it begins at your current working directory. 
+If the file path does not begin with your root directory, R will assume that it begins at your current working directory.
 
-You can also change your working directory by clicking on Session > Set Working Directory > Choose Directory in the RStudio menu bar. The Windows and Mac GUIs have similar options. If you start R from a UNIX command line (as on Linux machines), the working directory will be whichever directory you were in when you called R.
+You can also change your working directory by clicking on Session \> Set Working Directory \> Choose Directory in the RStudio menu bar. The Windows and Mac GUIs have similar options. If you start R from a UNIX command line (as on Linux machines), the working directory will be whichever directory you were in when you called R.
 
-You can see what files are in your working directory with `list.files()`.  If you see the file that you would like to open in your working directory, then you are ready to proceed. How you open files in your working directory will depend on which type of file you would like to open.
+You can see what files are in your working directory with `list.files()`. If you see the file that you would like to open in your working directory, then you are ready to proceed. How you open files in your working directory will depend on which type of file you would like to open.
 
 ## Plain-text Files
 
-Plain-text files are one of the most common ways to save data. They are very simple and can be read by many different computer programs—even the most basic text editors. For this reason, public data often comes as plain-text files. For example, the Census Bureau, the Social Security Administration, and the Bureau of Labor Statistics all make their data available as plain-text files.
+Plain-text files are one of the most common ways to save data. They are very simple and can be read by many different computer programs---even the most basic text editors. For this reason, public data often comes as plain-text files. For example, the Census Bureau, the Social Security Administration, and the Bureau of Labor Statistics all make their data available as plain-text files.
 
 Here's how the royal flush data set from [R Objects] would appear as a plain-text file (I've added a value column):
 
-```
-"card", "suit", "value"
-"ace", "spades", 14
-"king", "spades", 13
-"queen", "spades", 12
-"jack", "spades", 11
-"ten", "spades", 10
-```
+    "card", "suit", "value"
+    "ace", "spades", 14
+    "king", "spades", 13
+    "queen", "spades", 12
+    "jack", "spades", 11
+    "ten", "spades", 10
 
-A plain-text file stores a table of data in a text document. Each row of the table is saved on its own line, and a simple convention is used to separate the cells within a row. Often cells are separated by a comma, but they can also be separated by a tab, a pipe delimiter (i.e., `|` ), or any other character. Each file only uses one method of separating cells, which minimizes confusion. Within each cell, data appears as you'd expect to see it, as words and numbers. 
+A plain-text file stores a table of data in a text document. Each row of the table is saved on its own line, and a simple convention is used to separate the cells within a row. Often cells are separated by a comma, but they can also be separated by a tab, a pipe delimiter (i.e., `|` ), or any other character. Each file only uses one method of separating cells, which minimizes confusion. Within each cell, data appears as you'd expect to see it, as words and numbers.
 
-All plain-text files can be saved with the extension _.txt_ (for text), but sometimes a file will receive a special extension that advertises how it separates data-cell entries. Since entries in the data set mentioned earlier are separated with a comma, this file would be a _comma-separated-values_ file and would usually be saved with the extension _.csv_. 
+All plain-text files can be saved with the extension *.txt* (for text), but sometimes a file will receive a special extension that advertises how it separates data-cell entries. Since entries in the data set mentioned earlier are separated with a comma, this file would be a *comma-separated-values* file and would usually be saved with the extension *.csv*.
 
 ### read.table
 
-To load a plain-text file, use `read.table`. The first argument of `read.table` should be the name of your file (if it is in your working directory), or the file path to your file (if it is not in your working directory). If the file path does not begin with your root directory, R will append it to the end of the file path that leads to your working directory.You can give `read.table` other arguments as well. The two most important are `sep` and `header`. 
+To load a plain-text file, use `read.table`. The first argument of `read.table` should be the name of your file (if it is in your working directory), or the file path to your file (if it is not in your working directory). If the file path does not begin with your root directory, R will append it to the end of the file path that leads to your working directory.You can give `read.table` other arguments as well. The two most important are `sep` and `header`.
 
-If the royal flush data set was saved as a file named _poker.csv_ in your working directory, you could load it with:
+If the royal flush data set was saved as a file named *poker.csv* in your working directory, you could load it with:
 
-```r
+``` {.r}
 poker <- read.table("poker.csv", sep = ",", header = TRUE)
 ```
 
-
 #### sep
 
-Use `sep` to tell `read.table` what character your file uses to separate data entries. To find this out, you might have to open your file in a text editor and look at it. If you don't specify a `sep` argument, `read.table` will try to separate cells whenever it comes to white space, such as a tab or space. R won't be able to tell you if `read.table` does this correctly or not, so rely on it at your own risk. 
+Use `sep` to tell `read.table` what character your file uses to separate data entries. To find this out, you might have to open your file in a text editor and look at it. If you don't specify a `sep` argument, `read.table` will try to separate cells whenever it comes to white space, such as a tab or space. R won't be able to tell you if `read.table` does this correctly or not, so rely on it at your own risk.
 
 #### header
 
@@ -95,7 +91,7 @@ Oftentimes data sets will use special symbols to represent missing information. 
 
 For example, your poker data set contained missing values stored as a `.`, like this:
 
-```r
+``` {.r}
 ## "card","suit","value"
 ## "ace"," spades"," 14"
 ## "king"," spades"," 13"
@@ -106,13 +102,13 @@ For example, your poker data set contained missing values stored as a `.`, like 
 
 You could read the data set into R and convert the missing values into NAs as you go with the command:
 
-```r
+``` {.r}
 poker <- read.table("poker.csv", sep = ",", header = TRUE, na.string = ".")
 ```
 
 R would save a version of `poker` that looks like this:
 
-```r
+``` {.r}
 ##  card    suit value
 ##   ace  spades    14
 ##  king  spades    13
@@ -123,11 +119,11 @@ R would save a version of `poker` that looks like this:
 
 #### skip and nrow
 
-Sometimes a plain-text file will come with introductory text that is not part of the data set. Or, you may decide that you only wish to read in part of a data set. You can do these things with the `skip` and `nrow` arguments. Use `skip` to tell R to skip a specific number of lines before it starts reading in values from the file. Use `nrow` to tell R to stop reading in values after it has read in a certain number of lines. 
+Sometimes a plain-text file will come with introductory text that is not part of the data set. Or, you may decide that you only wish to read in part of a data set. You can do these things with the `skip` and `nrow` arguments. Use `skip` to tell R to skip a specific number of lines before it starts reading in values from the file. Use `nrow` to tell R to stop reading in values after it has read in a certain number of lines.
 
 For example, imagine that the complete royal flush file looks like this:
 
-```r
+``` {.r}
 This data was collected by the National Poker Institute. 
 We accidentally repeated the last row of data.
 
@@ -142,7 +138,7 @@ We accidentally repeated the last row of data.
 
 You can read just the six lines that you want (five rows plus a header) with:
 
-```r
+``` {.r}
 read.table("poker.csv", sep = ",", header = TRUE, skip = 3, nrow = 5)
 ##    card    suit value
 ## 1   ace  spades    14
@@ -160,44 +156,43 @@ R reads in numbers just as you'd expect, but when R comes across character strin
 
 Setting the argument `stringsAsFactors` to `FALSE` will ensure that R saves any character strings in your data set as character strings, not factors. To use `stringsAsFactors`, you'd write:
 
-```r
+``` {.r}
 read.table("poker.csv", sep = ",", header = TRUE, stringsAsFactors = FALSE)
 ```
 
 If you will be loading more than one data file, you can change the default factoring behavior at the global level with:
 
-```r
+``` {.r}
 options(stringsAsFactors = FALSE)
 ```
 
 This will ensure that all strings will be read as strings, not as factors, until you end your R session, or rechange the global default by running:
 
-```r
+``` {.r}
 options(stringsAsFactors = TRUE)
 ```
 
-
 ### The read Family
 
-R also comes with some prepackaged short cuts for `read.table`, shown in @tbl:shortcuts. 
+R also comes with some prepackaged short cuts for `read.table`, shown in @tbl:shortcuts.
 
-Table: R's read functions. You can overwrite any of the default arguments as necessary. {#tbl:shortcuts}
+| Function      | Defaults                             | Use                                              |
+|---------------|--------------------------------------|--------------------------------------------------|
+| `read.table`  | sep = " ", header = FALSE            | General-purpose read function                    |
+| `read.csv`    | sep = ",", header = TRUE             | Comma-separated-variable (CSV) files             |
+| `read.delim`  | sep = "\t", header = TRUE            | Tab-delimited files                              |
+| `read.csv2`   | sep = ";", header = TRUE, dec = ","  | CSV files with European decimal format           |
+| `read.delim2` | sep = "\t", header = TRUE, dec = "," | Tab-delimited files with European decimal format |
 
-|Function|Defaults|Use
-|--------|--------|---
-|`read.table`|sep = " ", header = FALSE| General-purpose read function
-|`read.csv`|sep = ",", header = TRUE|Comma-separated-variable (CSV) files
-|`read.delim`|sep = "\t", header = TRUE|Tab-delimited files
-|`read.csv2`|sep = ";", header = TRUE, dec = ","| CSV files with European decimal format
-|`read.delim2`|sep = "\t", header = TRUE, dec = ","| Tab-delimited files with European decimal format
+: R's read functions. You can overwrite any of the default arguments as necessary. {\#tbl:shortcuts}
 
 The first shortcut, `read.csv`, behaves just like `read.table` but automatically sets `sep = ","` and `header = TRUE`, which can save you some typing:
 
-```r
+``` {.r}
 poker <- read.csv("poker.csv")
 ```
 
-`read.delim` automatically sets `sep` to the tab character, which is very handy for reading tab delimited files. These are files where each cell is separated by a tab. `read.delim` also sets `header = TRUE` by default. 
+`read.delim` automatically sets `sep` to the tab character, which is very handy for reading tab delimited files. These are files where each cell is separated by a tab. `read.delim` also sets `header = TRUE` by default.
 
 `read.delim2` and `read.csv2` exist for European R users. These functions tell R that the data uses a comma instead of a period to denote decimal places. (If you're wondering how this works with CSV files, CSV2 files usually separate cells with a semicolon, not a comma.)
 
@@ -209,11 +204,11 @@ You can also load plain text files with RStudio's Import Dataset button, as desc
 
 ### read.fwf
 
-One type of plain-text file defies the pattern by using its layout to separate data cells. Each row is placed in its own line (as with other plain-text files), and then each column begins at a specific number of characters from the lefthand side of the document. To achieve this, an arbitrary number of character spaces is added to the end of each entry to correctly position the next entry. These documents are known as _fixed-width files_ and usually end with the extension _.fwf_. 
+One type of plain-text file defies the pattern by using its layout to separate data cells. Each row is placed in its own line (as with other plain-text files), and then each column begins at a specific number of characters from the lefthand side of the document. To achieve this, an arbitrary number of character spaces is added to the end of each entry to correctly position the next entry. These documents are known as *fixed-width files* and usually end with the extension *.fwf*.
 
 Here's one way the royal flush data set could look as a fixed-width file. In each row, the suit entry begins exactly 10 characters from the start of the line. It doesn't matter how many characters appeared in the first cell of each row:
 
-```default
+``` {.default}
 card      suit       value
 ace       spades     14
 king      spades     13  
@@ -222,60 +217,59 @@ jack      spades     11
 10        spades     10
 ```
 
-
 Fixed-width files look nice to human eyes (but no better than a tab-delimited file); however, they can be difficult to work with. Perhaps because of this, R comes with a function for reading fixed-width files, but no function for saving them. Unfortunately, US government agencies seem to like fixed-width files, and you'll likely encounter one or more during your career.
 
-You can read fixed-width files into R with the function `read.fwf`. The function takes the same arguments as `read.table` but requires an additional argument, `widths`, which should be a vector of numbers. Each _i_th entry of the `widths` vector should state the width (in characters) of the _i_th column of the data set.
+You can read fixed-width files into R with the function `read.fwf`. The function takes the same arguments as `read.table` but requires an additional argument, `widths`, which should be a vector of numbers. Each \_i_th entry of the `widths` vector should state the width (in characters) of the \_i_th column of the data set.
 
-If the aforementioned fixed-width royal flush data was saved as _poker.fwf_ in your working directory, you could read it with:
+If the aforementioned fixed-width royal flush data was saved as *poker.fwf* in your working directory, you could read it with:
 
-```r
+``` {.r}
 poker <- read.fwf("poker.fwf", widths = c(10, 7, 6), header = TRUE)
 ```
 
 ### HTML Links
 
-Many data files are made available on the Internet at their own web address. If you are connected to the Internet, you can open these files straight into R with `read.table`, `read.csv`, etc. You can pass a web address into the file name argument for any of R's data-reading functions. As a result, you could read in the poker data set from a web address like _http://.../poker.csv_ with:
+Many data files are made available on the Internet at their own web address. If you are connected to the Internet, you can open these files straight into R with `read.table`, `read.csv`, etc. You can pass a web address into the file name argument for any of R's data-reading functions. As a result, you could read in the poker data set from a web address like [*http://*](http://){.uri}*.../poker.csv* with:
 
-```r
+``` {.r}
 poker <- read.csv("http://.../poker.csv")
 ```
 
 That's obviously not a real address, but here's something that would work---if you can manage to type it!
 
-```r
+``` {.r}
 deck <- read.csv("https://gist.githubusercontent.com/garrettgman/9629323/raw/ee5dfc039fd581cb467cc69c226ea2524913c3d8/deck.csv")
 ```
 
 Just make sure that the web address links directly to the file and not to a web page that links to the file. Usually, when you visit a data file's web address, the file will begin to download or the raw data will appear in your browser window.
 
-Note that websites that begin with _https://_ are secure websites, which means R may not be able to access the data provided at these links.
+Note that websites that begin with \_<https://_> are secure websites, which means R may not be able to access the data provided at these links.
 
 ### Saving Plain-Text Files
 
-Once your data is in R, you can save it to any file format that R supports. If you'd like to save it as a plain-text file, you can use the +write+ family of functions. The three basic write functions appear in @tbl:write. Use `write.csv` to save your data as a _.csv_ file and `write.table` to save your data as a tab delimited document or a document with more exotic separators.
+Once your data is in R, you can save it to any file format that R supports. If you'd like to save it as a plain-text file, you can use the +write+ family of functions. The three basic write functions appear in @tbl:write. Use `write.csv` to save your data as a *.csv* file and `write.table` to save your data as a tab delimited document or a document with more exotic separators.
 
-Table: R saves data sets to plain-text files with the write family of functions {#tbl:write}
+| File format                               | Function and syntax                                                   |
+|-------------------------------------------|-----------------------------------------------------------------------|
+| **.csv**                                  | `write.csv(r_object, file = filepath, row.names = FALSE)`             |
+| **.csv** (with European decimal notation) | `write.csv2(r_object, file = filepath, row.names = FALSE)`            |
+| tab delimited                             | `write.table(r_object, file = filepath, sep = "\t", row.names=FALSE)` |
 
-|File format|Function and syntax
-|-----------|--------------------
-|__.csv__|`write.csv(r_object, file = filepath, row.names = FALSE)`
-|__.csv__ (with European decimal notation)|`write.csv2(r_object, file = filepath, row.names = FALSE)`
-|tab delimited|`write.table(r_object, file = filepath, sep = "\t", row.names=FALSE)`
+: R saves data sets to plain-text files with the write family of functions {\#tbl:write}
 
 The first argument of each function is the R object that contains your data set. The `file` argument is the file name (including extension) that you wish to give the saved data. By default, each function will save your data into your working directory. However, you can supply a file path to the file argument. R will oblige by saving the file at the end of the file path. If the file path does not begin with your root directory, R will append it to the end of the file path that leads to your working directory.
 
-For example, you can save the (hypothetical) poker data frame to a subdirectory named _data_ within your working directory with the command:
+For example, you can save the (hypothetical) poker data frame to a subdirectory named *data* within your working directory with the command:
 
-```r
+``` {.r}
 write.csv(poker, "data/poker.csv", row.names = FALSE)
 ```
 
-Keep in mind that `write.csv` and `write.table` cannot create new directories on your computer. Each folder in the file path must exist before you try to save a file with it. 
+Keep in mind that `write.csv` and `write.table` cannot create new directories on your computer. Each folder in the file path must exist before you try to save a file with it.
 
-The `row.names` argument prevents R from saving the data frame's row names as a column in the plain-text file. You might have noticed that R automatically names each row in a data frame with a number. For example, each row in our poker data frame appears with a number next to it: 
+The `row.names` argument prevents R from saving the data frame's row names as a column in the plain-text file. You might have noticed that R automatically names each row in a data frame with a number. For example, each row in our poker data frame appears with a number next to it:
 
-```r
+``` {.r}
 poker
 ##    card   suit value
 ## 1   ace spades    14
@@ -291,29 +285,29 @@ These row numbers are helpful, but can quickly accumulate if you start saving th
 
 To compress a plain-text file, surround the file name or file path with the function `bzfile`, `gzfile`, or `xzfile`. For example:
 
-```r
+``` {.r}
 write.csv(poker, file = bzfile("data/poker.csv.bz2"), row.names = FALSE)
 ```
 
-Each of these functions will compress the output with a different type of compression format, shown in @tbl:compression. 
+Each of these functions will compress the output with a different type of compression format, shown in @tbl:compression.
 
-Table: R comes with three helper functions for compressing files {#tbl:compression}
+| Function | Compression type |
+|----------|------------------|
+| `bzfile` | bzip2            |
+| `gzfile` | gnu zip (gzip)   |
+| `xzfile` | xz compression   |
 
-|Function|Compression type
-|--------|----------------
-|`bzfile`|bzip2
-|`gzfile`|gnu zip (gzip)
-|`xzfile`|xz compression
+: R comes with three helper functions for compressing files {\#tbl:compression}
 
-It is a good idea to adjust your file's extension to reflect the compression. R's `read` functions will open plain-text files compressed in any of these formats. For example, you could read a compressed file named _poker.csv.bz2_ with:
+It is a good idea to adjust your file's extension to reflect the compression. R's `read` functions will open plain-text files compressed in any of these formats. For example, you could read a compressed file named *poker.csv.bz2* with:
 
-```r
+``` {.r}
 read.csv("poker.csv.bz2")
 ```
 
-or: 
+or:
 
-```r
+``` {.r}
 read.csv("data/poker.csv.bz2")
 ```
 
@@ -321,17 +315,17 @@ depending on where the file is saved.
 
 ## R Files
 
-R provides two file formats of its own for storing data, _.RDS_ and _.RData_. RDS files can store a single R object, and RData files can store multiple R objects.
+R provides two file formats of its own for storing data, *.RDS* and *.RData*. RDS files can store a single R object, and RData files can store multiple R objects.
 
-You can open a RDS file with `readRDS`. For example, if the royal flush data was saved as _poker.RDS_, you could open it with:
+You can open a RDS file with `readRDS`. For example, if the royal flush data was saved as *poker.RDS*, you could open it with:
 
-```r
+``` {.r}
 poker <- readRDS("poker.RDS")
 ```
 
 Opening RData files is even easier. Simply run the function `load` with the file:
 
-```r
+``` {.r}
 load("file.RData")
 ```
 
@@ -349,7 +343,7 @@ To save data as an RData object, use the `save` function. To save data as a RDS 
 
 For example, if you have three R objects, `a`, `b`, and `c`, you could save them all in the same RData file and then reload them in another R session:
 
-```r
+``` {.r}
 a <- 1
 b <- 2
 c <- 3
@@ -357,42 +351,42 @@ save(a, b, c, file = "stuff.RData")
 load("stuff.RData")
 ```
 
-However, if you forget the names of your objects or give your file to someone else to use, it will be difficult to determine what was in the file—even after you (or they) load it. The user interface for RDS files is much more clear. You can save only one object per file, and whoever loads it can decide what they want to call their new data. As a bonus, you don't have to worry about `load` overwriting any R objects that happened to have the same name as the objects you are loading:
+However, if you forget the names of your objects or give your file to someone else to use, it will be difficult to determine what was in the file---even after you (or they) load it. The user interface for RDS files is much more clear. You can save only one object per file, and whoever loads it can decide what they want to call their new data. As a bonus, you don't have to worry about `load` overwriting any R objects that happened to have the same name as the objects you are loading:
 
-```r
+``` {.r}
 saveRDS(a, file = "stuff.RDS") 
 a <- readRDS("stuff.RDS")
 ```
 
-Saving your data as an R file offers some advantages over saving your data as a plain-text file. R automatically compresses the file and will also save any R-related metadata associated with your object. This can be handy if your data contains factors, dates and times, or class attributes. You won't have to reparse this information into R the way you would if you converted everything to a text file. 
+Saving your data as an R file offers some advantages over saving your data as a plain-text file. R automatically compresses the file and will also save any R-related metadata associated with your object. This can be handy if your data contains factors, dates and times, or class attributes. You won't have to reparse this information into R the way you would if you converted everything to a text file.
 
 On the other hand, R files cannot be read by many other programs, which makes them inefficient for sharing. They may also create a problem for long-term storage if you don't think you'll have a copy of R when you reopen the files.
 
 ## Excel Spreadsheets
 
-Microsoft Excel is a popular spreadsheet program that has become almost industry standard in the business world. There is a good chance that you will need to work with an Excel spreadsheet in R at least once in your career. You can read spreadsheets into R and also save R data as a spreadsheet in a variety of ways. 
+Microsoft Excel is a popular spreadsheet program that has become almost industry standard in the business world. There is a good chance that you will need to work with an Excel spreadsheet in R at least once in your career. You can read spreadsheets into R and also save R data as a spreadsheet in a variety of ways.
 
 ### Export from Excel
 
-The best method for moving data from Excel to R is to export the spreadsheet from Excel as a _.csv_ or _.txt_ file. Not only will R be able to read the text file, so will any other data analysis software. Text files are the lingua franca of data storage.
+The best method for moving data from Excel to R is to export the spreadsheet from Excel as a *.csv* or *.txt* file. Not only will R be able to read the text file, so will any other data analysis software. Text files are the lingua franca of data storage.
 
-Exporting the data solves another difficulty as well. Excel uses proprietary formats and metadata that will not easily transfer into R. For example, a single Excel file can include multiple spreadsheets, each with their own columns and macros. When Excel exports the file as a _.csv_ or _.txt_, it makes sure this format is transferred into a plain-text file in the most appropriate way. R may not be able to manage the conversion as efficiently.
+Exporting the data solves another difficulty as well. Excel uses proprietary formats and metadata that will not easily transfer into R. For example, a single Excel file can include multiple spreadsheets, each with their own columns and macros. When Excel exports the file as a *.csv* or *.txt*, it makes sure this format is transferred into a plain-text file in the most appropriate way. R may not be able to manage the conversion as efficiently.
 
 To export data from Excel, open the Excel spreadsheet and then go to Save As in the Microsoft Office Button menu. Then choose CSV in the Save as type box that appears and save the files. You can then read the file into R with the `read.csv` function.
 
 ### Copy and Paste
 
-You can also copy portions of an Excel spreadsheet and paste them into R. To do this, open the spreadsheet and select the cells you wish to read into R. Then select Edit > Copy in the menu bar—or use a keyboard shortcut—to copy the cells to your clipboard.
+You can also copy portions of an Excel spreadsheet and paste them into R. To do this, open the spreadsheet and select the cells you wish to read into R. Then select Edit \> Copy in the menu bar---or use a keyboard shortcut---to copy the cells to your clipboard.
 
-On most operating systems, you can read the data stored in your clipboard into R with: 
+On most operating systems, you can read the data stored in your clipboard into R with:
 
-```r
+``` {.r}
 read.table("clipboard")
 ```
 
 On Macs you will need to use:
 
-```r
+``` {.r}
 read.table(pipe("pbpaste"))
 ```
 
@@ -400,9 +394,9 @@ If the cells contain values with spaces in them, this will disrupt `read.table`.
 
 ### XLConnect
 
-Many packages have been written to help you read Excel files directly into R. Unfortunately, many of these packages do not work on all operating systems. Others have been made out of date by the _.xlsx_ file format. One package that does work on all file systems (and gets good reviews) is the XLConnect package. To use it, you'll need to install and load the package:
+Many packages have been written to help you read Excel files directly into R. Unfortunately, many of these packages do not work on all operating systems. Others have been made out of date by the *.xlsx* file format. One package that does work on all file systems (and gets good reviews) is the XLConnect package. To use it, you'll need to install and load the package:
 
-```r
+``` {.r}
 install.packages("XLConnect")
 library(XLConnect)
 ```
@@ -411,19 +405,19 @@ XLConnect relies on Java to be platform independent. So when you first open XLCo
 
 ### Reading Spreadsheets
 
-You can use XLConnect to read in an Excel spreadsheet with either a one- or a two-step process. I'll start with the two-step process. First, load an Excel workbook with `loadWorkbook`. `loadWorkbook` can load both _.xls_ and _.xlsx_ files. It takes one argument: the file path to your Excel workbook (this will be the name of the workbook if it is saved in your working directory):
+You can use XLConnect to read in an Excel spreadsheet with either a one- or a two-step process. I'll start with the two-step process. First, load an Excel workbook with `loadWorkbook`. `loadWorkbook` can load both *.xls* and *.xlsx* files. It takes one argument: the file path to your Excel workbook (this will be the name of the workbook if it is saved in your working directory):
 
-```r
+``` {.r}
 wb <- loadWorkbook("file.xlsx")
 ```
 
-Next, read a spreadsheet from the workbook with `readWorksheet`, which takes several arguments. The first argument should be a workbook object created with `loadWorkbook`. The next argument, `sheet`, should be the name of the spreadsheet in the workbook that you would like to read into R. This will be the name that appears on the bottom tab of the spreadsheet. You can also give `sheet` a number, which specifies the sheet that you want to read in (one for the first sheet, two for the second, and so on). 
+Next, read a spreadsheet from the workbook with `readWorksheet`, which takes several arguments. The first argument should be a workbook object created with `loadWorkbook`. The next argument, `sheet`, should be the name of the spreadsheet in the workbook that you would like to read into R. This will be the name that appears on the bottom tab of the spreadsheet. You can also give `sheet` a number, which specifies the sheet that you want to read in (one for the first sheet, two for the second, and so on).
 
 `readWorksheet` then takes four arguments that specify a bounding box of cells to read in: `startRow`, `startCol`, `endRow`, and `endCol`. Use `startRow` and `startCol` to describe the cell in the top-left corner of the bounding box of cells that you wish to read in. Use `endRow` and `endCol` to specify the cell in the bottom-right corner of the bounding box. Each of these arguments takes a number. If you do not supply bounding arguments, `readWorksheet` will read in the rectangular region of cells in the spreadsheet that appears to contain data. `readWorksheet` will assume that this region contains a header row, but you can tell it otherwise with `header = FALSE`.
 
 So to read in the first worksheet from `wb`, you could use:
 
-```r
+``` {.r}
 sheet1 <- readWorksheet(wb, sheet = 1, startRow = 0, startCol = 0, 
   endRow = 100, endCol = 3)
 ```
@@ -432,29 +426,28 @@ R will save the output as a data frame. All of the arguments in `readWorkbook` e
 
 You can combine these two steps with `readWorksheetFromFile`. It takes the file argument from `loadWorkbook` and combines it with the arguments from `readWorksheet`. You can use it to read one or more sheets straight from an Excel file:
 
-```r
+``` {.r}
 sheet1 <- readWorksheetFromFile("file.xlsx", sheet = 1, startRow = 0, 
   startCol = 0, endRow = 100, endCol = 3)
 ```
-
 
 ### Writing Spreadsheets
 
 Writing to an Excel spreadsheet is a four-step process. First, you need to set up a workbook object with `loadWorkbook`. This works just as before, except if you are not using an existing Excel file, you should add the argument `create = TRUE`. XLConnect will create a blank workbook. When you save it, XLConnect will write it to the file location that you specified here with `loadWorkbook`:
 
-```r
+``` {.r}
 wb <- loadWorkbook("file.xlsx", create = TRUE)
 ```
 
 Next, you need to create a worksheet inside your workbook object with `createSheet`. Tell `createSheet` which workbook to place the sheet in and which to use for the sheet.
 
-```r
+``` {.r}
 createSheet(wb, "Sheet 1")
 ```
 
 Then you can save your data frame or matrix to the sheet with `writeWorksheet`. The first argument of `writeWorksheet`, `object`, is the workbook to write the data to. The second argument, `data`, is the data to write. The third argument, `sheet`, is the name of the sheet to write it to. The next two arguments, `startRow` and `startCol`, tell R where in the spreadsheet to place the upper-left cell of the new data. These arguments each default to 1. Finally, you can use `header` to tell R whether your column names should be written with the data:
 
-```r
+``` {.r}
 writeWorksheet(wb, data = poker, sheet = "Sheet 1")
 ```
 
@@ -462,17 +455,16 @@ Once you have finished adding sheets and data to your workbook, you can save it 
 
 You can also collapse these steps into a single call with `writeWorksheetToFile`, like this:
 
-```r
+``` {.r}
 writeWorksheetToFile("file.xlsx", data = poker, sheet = "Sheet 1", 
   startRow = 1, startCol = 1)
 ```
 
 The XLConnect package also lets you do more advanced things with Excel spreadsheets, such as writing to a named region in a spreadsheet, working with formulas, and assigning styles to cells. You can read about these features in XLConnect's vignette, which is accessible by loading XLConnect and then running:
 
-```r
+``` {.r}
 vignette("XLConnect")
 ```
-
 
 ## Loading Files from Other Programs
 
@@ -480,23 +472,23 @@ You should follow the same advice I gave you for Excel files whenever you wish t
 
 Sometimes, however, you may acquire a file but not the program it came from. As a result, you won't be able to open the file in its native program and export it as a text file. In this case, you can use one of the functions in @tbl:others to open the file. These functions mostly come in R's `foreign` package. Each attempts to read in a different file format with as few hiccups as possible.
 
-Table: A number of functions will attempt to read the file types of other data-analysis programs {#tbl:others}
+| File format              | Function         | Library    |
+|--------------------------|------------------|------------|
+| ERSI ArcGIS              | `read.shapefile` | shapefiles |
+| Matlab                   | `readMat`        | R.matlab   |
+| minitab                  | `read.mtp`       | foreign    |
+| SAS (permanent data set) | `read.ssd`       | foreign    |
+| SAS (XPORT format)       | `read.xport`     | foreign    |
+| SPSS                     | `read.spss`      | foreign    |
+| Stata                    | `read.dta`       | foreign    |
+| Systat                   | `read.systat`    | foreign    |
 
-|File format|Function|Library
-|-----------|--------|-------
-|ERSI ArcGIS|`read.shapefile`|shapefiles
-|Matlab|`readMat`|R.matlab
-|minitab|`read.mtp`|foreign
-|SAS (permanent data set)|`read.ssd`|foreign
-|SAS (XPORT format)|`read.xport`|foreign
-|SPSS|`read.spss`|foreign
-|Stata|`read.dta`|foreign
-|Systat|`read.systat`|foreign
+: A number of functions will attempt to read the file types of other data-analysis programs {\#tbl:others}
 
 ### Connecting to Databases
 
 You can also use R to connect to a database and read in data.
 
-Use the RODBC package to connect to databases through an ODBC connection. 
+Use the RODBC package to connect to databases through an ODBC connection.
 
 Use the DBI package to connect to databases through individual drivers. The DBI package provides a common syntax for working with different databases. You will have to download a database-specific package to use in conjunction with DBI. These packages provide the API for the native drivers of different database programs. For MySQL use RMySQL, for SQLite use RSQLite, for Oracle use ROracle, for PostgreSQL use RPostgreSQL, and for databases that use drivers based on the Java Database Connectivity (JDBC) API use RJDBC. Once you have loaded the appropriate driver package, you can use the commands provided by DBI to access your database.

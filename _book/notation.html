@@ -492,7 +492,7 @@ Indexing begins at 1
 <section class="level3" data-number="0.1.5">
 <h3 data-number="4.1.5" class="anchored" id="logic"><span class="header-section-number">4.1.5</span> Logical Values</h3>
 <p>If you supply a vector of <code>TRUE</code>s and <code>FALSE</code>s as your index, R will match each <code>TRUE</code> and <code>FALSE</code> to a row in your data frame (or a column depending on where you place the index). R will then return each row that corresponds to a <code>TRUE</code>, <a href="#fig:logicals">fig.&nbsp;<span>4.2</span></a>.</p>
-<p>It may help to imagine R reading through the data frame and asking, "Should I return the _i_th row of the data structure?" and then consulting the _i_th value of the index for its answer. For this system to work, your vector must be as long as the dimension you are trying to subset:</p>
+<p>It may help to imagine R reading through the data frame and asking, “Should I return the _i_th row of the data structure?” and then consulting the _i_th value of the index for its answer. For this system to work, your vector must be as long as the dimension you are trying to subset:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>deck[<span class="dv">1</span>, <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)]</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="do">## face   suit </span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="do">## king spades</span></span>

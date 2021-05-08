@@ -6,7 +6,7 @@ knit: quarto render
 
 Your deck is now ready for a game of blackjack (or hearts or war), but are your `shuffle` and `deal` functions up to snuff? Definitely not. For example, `deal` deals the same card over and over again:
 
-```r
+``` {.r}
 deal(deck)
 ## face   suit value
 ## king spades    13
@@ -20,7 +20,7 @@ deal(deck)
 ## king spades    13
 ```
 
-And the `shuffle` function doesn't actually shuffle `deck` (it returns a copy of `deck` that has been shuffled). In short, both of these functions use `deck`, but neither manipulates `deck`—and we would like them to. 
+And the `shuffle` function doesn't actually shuffle `deck` (it returns a copy of `deck` that has been shuffled). In short, both of these functions use `deck`, but neither manipulates `deck`---and we would like them to.
 
 To fix these functions, you will need to learn how R stores, looks up, and manipulates objects like `deck`. R does all of these things with the help of an environment system.
 
@@ -28,15 +28,15 @@ To fix these functions, you will need to learn how R stores, looks up, and manip
 
 Consider for a moment how your computer stores files. Every file is saved in a folder, and each folder is saved in another folder, which forms a hierarchical file system. If your computer wants to open up a file, it must first look up the file in this file system.
 
-You can see your file system by opening a finder window. For example, @fig:folders shows part of the file system on my computer. I have tons of folders. Inside one of them is a subfolder named _Documents_, inside of that subfolder is a sub-subfolder named _ggsubplot_, inside of that folder is a folder named _inst_, inside of that is a folder named _doc_, and inside of that is a file named _manual.pdf_.
+You can see your file system by opening a finder window. For example, @fig:folders shows part of the file system on my computer. I have tons of folders. Inside one of them is a subfolder named *Documents*, inside of that subfolder is a sub-subfolder named *ggsubplot*, inside of that folder is a folder named *inst*, inside of that is a folder named *doc*, and inside of that is a file named *manual.pdf*.
 
 ![Your computer arranges files into a hierarchy of folders and subfolders. To look at a file, you need to find where it is saved in the file system.](images/hopr_0601.png){#fig:folders}
 
-R uses a similar system to save R objects. Each object is saved inside of an environment, a list-like object that resembles a folder on your computer. Each environment is connected to a _parent environment_, a higher-level environment, which creates a hierarchy of environments. 
+R uses a similar system to save R objects. Each object is saved inside of an environment, a list-like object that resembles a folder on your computer. Each environment is connected to a *parent environment*, a higher-level environment, which creates a hierarchy of environments.
 
 You can see R's environment system with the `parenvs` function in the pryr package (note `parenvs` came in the pryr package when this book was first published). `parenvs(all = TRUE)` will return a list of the environments that your R session is using. The actual output will vary from session to session depending on which packages you have loaded. Here's the output from my current session:
 
-```r
+``` {.r}
 library(pryr)
 parenvs(all = TRUE)
 ##    label                            name               
@@ -54,7 +54,7 @@ parenvs(all = TRUE)
 ## 12 <environment: R_EmptyEnv>        ""                 
 ```
 
-It takes some imagination to interpret this output, so let's visualize the environments as a system of folders, @fig:environments. You can think of the environment tree like this. The lowest-level environment is named `R_GlobalEnv` and is saved inside an environment named `package:pryr`, which is saved inside the environment named `0x7fff3321c388`, and so on, until you get to the final, highest-level environment, `R_EmptyEnv`. `R_EmptyEnv` is the only R environment that does not have a parent environment. 
+It takes some imagination to interpret this output, so let's visualize the environments as a system of folders, @fig:environments. You can think of the environment tree like this. The lowest-level environment is named `R_GlobalEnv` and is saved inside an environment named `package:pryr`, which is saved inside the environment named `0x7fff3321c388`, and so on, until you get to the final, highest-level environment, `R_EmptyEnv`. `R_EmptyEnv` is the only R environment that does not have a parent environment.
 
 ![R stores R objects in an environment tree that resembles your computer's folder system.](images/hopr_0602.png){#fig:environments}
 
@@ -64,7 +64,7 @@ Remember that this example is just a metaphor. R's environments exist in your RA
 
 R comes with some helper functions that you can use to explore your environment tree. First, you can refer to any of the environments in your tree with `as.environment`. `as.environment` takes an environment name (as a character string) and returns the corresponding environment:
 
-```r
+``` {.r}
 as.environment("package:stats")
 ## <environment: package:stats>
 ## attr(,"name")
@@ -75,7 +75,7 @@ as.environment("package:stats")
 
 Three environments in your tree also come with their own accessor functions. These are the global environment (`R_GlobalEnv`), the base environment (`base`), and the empty environment (`R_EmptyEnv`). You can refer to them with:
 
-```r
+``` {.r}
 globalenv()
 ## <environment: R_GlobalEnv>
 
@@ -86,9 +86,9 @@ emptyenv()
 ##<environment: R_EmptyEnv>
 ```
 
-Next, you can look up an environment's parent with `parent.env`: 
+Next, you can look up an environment's parent with `parent.env`:
 
-```r
+``` {.r}
 parent.env(globalenv())
 ## <environment: package:pryr>
 ## attr(,"name")
@@ -99,15 +99,14 @@ parent.env(globalenv())
 
 Notice that the empty environment is the only R environment without a parent:
 
-
-```r
+``` {.r}
 parent.env(emptyenv())
 ## Error in parent.env(emptyenv()) : the empty environment has no parent
 ```
 
 You can view the objects saved in an environment with `ls` or `ls.str`. `ls` will return just the object names, but `ls.str` will display a little about each object's structure:
 
-```r
+``` {.r}
 ls(emptyenv())
 ## character(0)
 
@@ -117,7 +116,7 @@ ls(globalenv())
 ##  "new"     "now"     "shuffle" "vec"  
 ```
 
-The empty environment is—not surprisingly—empty; the base environment has too many objects to list here; and the global environment has some familiar faces. It is where R has saved all of the objects that you've created so far. 
+The empty environment is---not surprisingly---empty; the base environment has too many objects to list here; and the global environment has some familiar faces. It is where R has saved all of the objects that you've created so far.
 
 ::: {.callout-tip}
 RStudio's environment pane displays all of the objects in your global environment.
@@ -125,7 +124,7 @@ RStudio's environment pane displays all of the objects in your global environmen
 
 You can use R's `$` syntax to access an object in a specific environment. For example, you can access `deck` from the global environment:
 
-```r
+``` {.r}
 head(globalenv()$deck, 3)
 ##  face   suit value
 ##  king spades    13
@@ -135,7 +134,7 @@ head(globalenv()$deck, 3)
 
 And you can use the `assign` function to save an object into a particular environment. First give `assign` the name of the new object (as a character string). Then give `assign` the value of the new object, and finally the environment to save the object in:
 
-```r
+``` {.r}
 assign("new", "Hello Global", envir = globalenv())
 
 globalenv()$new
@@ -148,11 +147,11 @@ Now that you can explore R's environment tree, let's examine how R uses it. R wo
 
 ### The Active Environment
 
-At any moment of time, R is working closely with a single environment. R will store new objects in this environment (if you create any), and R will use this environment as a starting point to look up existing objects (if you call any). I'll call this special environment the _active environment_. The active environment is usually the global environment, but this may change when you run a function.
+At any moment of time, R is working closely with a single environment. R will store new objects in this environment (if you create any), and R will use this environment as a starting point to look up existing objects (if you call any). I'll call this special environment the *active environment*. The active environment is usually the global environment, but this may change when you run a function.
 
 You can use `environment` to see the current active environment:
 
-```r
+``` {.r}
 environment()
 <environment: R_GlobalEnv>
 ```
@@ -163,14 +162,14 @@ When you call an object at the command line, R will look for it first in the glo
 
 ## Scoping Rules
 
-R follows a special set of rules to look up objects. These rules are known as R's scoping rules, and you've already met a couple of them: 
+R follows a special set of rules to look up objects. These rules are known as R's scoping rules, and you've already met a couple of them:
 
-1. R looks for objects in the current active environment.
-2. When you work at the command line, the active environment is the global environment. Hence, R looks up objects that you call at the command line in the global environment.
+1.  R looks for objects in the current active environment.
+2.  When you work at the command line, the active environment is the global environment. Hence, R looks up objects that you call at the command line in the global environment.
 
 Here is a third rule that explains how R finds objects that are not in the active environment
 
-3. When R does not find an object in an environment, R looks in the environment's parent environment, then the parent of the parent, and so on, until R finds the object or reaches the empty environment.
+3.  When R does not find an object in an environment, R looks in the environment's parent environment, then the parent of the parent, and so on, until R finds the object or reaches the empty environment.
 
 So, if you call an object at the command line, R will look for it in the global environment. If R can't find it there, R will look in the parent of the global environment, and then the parent of the parent, and so on, working its way up the environment tree until it finds the object, as in @fig:path. If R cannot find the object in any environment, it will return an error that says the object is not found.
 
@@ -186,14 +185,14 @@ When you assign a value to an object, R saves the value in the active environmen
 
 For example, an object named `new` exists in the global environment:
 
-```r
+``` {.r}
 new
 ## "Hello Global"
 ```
 
 You can save a new object named `new` to the global environment with this command. R will overwrite the old object as a result:
 
-```r
+``` {.r}
 new <- "Hello Active"
 
 new
@@ -202,7 +201,7 @@ new
 
 This arrangement creates a quandary for R whenever R runs a function. Many functions save temporary objects that help them do their jobs. For example, the `roll` function from [Project 1: Weighted Dice](#sec:project-1) saved an object named `die` and an object named `dice`:
 
-```r
+``` {.r}
 roll <- function() {
   die <- 1:6
   dice <- sample(die, size = 2, replace = TRUE)
@@ -214,11 +213,11 @@ R must save these temporary objects in the active environment; but if R does tha
 
 ## Evaluation
 
-R creates a new environment _each_ time it evaluates a function. R will use the new environment as the active environment while it runs the function, and then R will return to the environment that you called the function from, bringing the function's result with it. Let's call these new environments _runtime environments_ because R creates them at runtime to evaluate functions.
+R creates a new environment *each* time it evaluates a function. R will use the new environment as the active environment while it runs the function, and then R will return to the environment that you called the function from, bringing the function's result with it. Let's call these new environments *runtime environments* because R creates them at runtime to evaluate functions.
 
-We'll use the following function to explore R's runtime environments. We want to know what the environments look like: what are their parent environments, and what objects do they contain? `show_env` is designed to tell us: 
+We'll use the following function to explore R's runtime environments. We want to know what the environments look like: what are their parent environments, and what objects do they contain? `show_env` is designed to tell us:
 
-```r
+``` {.r}
 show_env <- function(){
   list(ran.in = environment(), 
     parent = parent.env(environment()), 
@@ -228,7 +227,7 @@ show_env <- function(){
 
 `show_env` is itself a function, so when we call `show_env()`, R will create a runtime environment to evaluate the function in. The results of `show_env` will tell us the name of the runtime environment, its parent, and which objects the runtime environment contains:
 
-```r
+``` {.r}
 show_env()
 ## $ran.in
 ## <environment: 0x7ff711d12e28>
@@ -243,7 +242,7 @@ The results reveal that R created a new environment named `0x7ff711d12e28` to ru
 
 Let's run `show_env` again:
 
-```r
+``` {.r}
 show_env()
 ## $ran.in
 ## <environment: 0x7ff715f49808>
@@ -254,32 +253,31 @@ show_env()
 ## $objects
 ```
 
-This time `show_env` ran in a new environment, `0x7ff715f49808`.  R creates a new environment _each_ time you run a function. The `0x7ff715f49808` environment looks exactly the same as `0x7ff711d12e28`. It is empty and has the same global environment as its parent.
+This time `show_env` ran in a new environment, `0x7ff715f49808`. R creates a new environment *each* time you run a function. The `0x7ff715f49808` environment looks exactly the same as `0x7ff711d12e28`. It is empty and has the same global environment as its parent.
 
 ![R creates a new environment to run show_env in. The environment is a child of the global environment.](images/hopr_0604.png){#fig:tree}
 
-Now let's consider which environment R will use as the parent of the runtime environment. 
+Now let's consider which environment R will use as the parent of the runtime environment.
 
-R will connect a function's runtime environment to the environment that the function _was first created in_. This environment plays an important role in the function's life—because all of the function's runtime environments will use it as a parent. Let's call this environment the _origin environment_. You can look up a function's origin environment by running `environment` on the function:
+R will connect a function's runtime environment to the environment that the function *was first created in*. This environment plays an important role in the function's life---because all of the function's runtime environments will use it as a parent. Let's call this environment the *origin environment*. You can look up a function's origin environment by running `environment` on the function:
 
-```r
+``` {.r}
 environment(show_env)
 ## <environment: R_GlobalEnv>
 ```
 
-The origin environment of `show_env` is the global environment because we created `show_env` at the command line, but the origin environment does not need to be the global environment. For example, the environment of `parenvs` is the `pryr` package: 
+The origin environment of `show_env` is the global environment because we created `show_env` at the command line, but the origin environment does not need to be the global environment. For example, the environment of `parenvs` is the `pryr` package:
 
-
-```r
+``` {.r}
 environment(parenvs)
 ## <environment: namespace:pryr>
 ```
 
 In other words, the parent of a runtime environment will not always be the global environment; it will be whichever environment the function was first created in.
 
-Finally, let's look at the objects contained in a runtime environment. At the moment, `show_env`'s runtime environments do not contain any objects, but that is easy to fix. Just have `show_env` create some objects in its body of code. R will store any objects created by `show_env` in its runtime environment. Why? Because the runtime environment will be the active environment when those objects are created: 
+Finally, let's look at the objects contained in a runtime environment. At the moment, `show_env`'s runtime environments do not contain any objects, but that is easy to fix. Just have `show_env` create some objects in its body of code. R will store any objects created by `show_env` in its runtime environment. Why? Because the runtime environment will be the active environment when those objects are created:
 
-```r
+``` {.r}
 show_env <- function(){
   a <- 1
   b <- 2
@@ -292,7 +290,7 @@ show_env <- function(){
 
 This time when we run `show_env`, R stores `a`, `b`, and `c` in the runtime environment:
 
-```r
+``` {.r}
 show_env()
 ## $ran.in
 ## <environment: 0x7ff712312cd0>
@@ -310,7 +308,7 @@ This is how R ensures that a function does not overwrite anything that it should
 
 R will also put a second type of object in a runtime environment. If a function has arguments, R will copy over each argument to the runtime environment. The argument will appear as an object that has the name of the argument but the value of whatever input the user provided for the argument. This ensures that a function will be able to find and use each of its arguments:
 
-```r
+``` {.r}
 foo <- "take me to your runtime"
 
 show_env <- function(x = foo){
@@ -330,11 +328,11 @@ show_env()
 ## x :  chr "take me to your runtime"
 ```
 
-Let's put this all together to see how R evaluates a function. Before you call a function, R is working in an active environment; let's call this the _calling environment_. It is the environment R calls the function from. 
+Let's put this all together to see how R evaluates a function. Before you call a function, R is working in an active environment; let's call this the *calling environment*. It is the environment R calls the function from.
 
-Then you call the function. R responds by setting up a new runtime environment. This environment will be a child of the function's origin enviornment. R will copy each of the function's arguments into the runtime environment and then make the runtime environment the new active environment. 
+Then you call the function. R responds by setting up a new runtime environment. This environment will be a child of the function's origin enviornment. R will copy each of the function's arguments into the runtime environment and then make the runtime environment the new active environment.
 
-Next, R runs the code in the body of the function. If the code creates any objects, R stores them in the active, that is, runtime environment. If the code calls any objects, R uses its scoping rules to look them up. R will search the runtime environment, then the parent of the runtime environment (which will be the origin environment), then the parent of the origin environment, and so on. Notice that the calling environment might not be on the search path. Usually, a function will only call its arguments, which R can find in the active runtime environment. 
+Next, R runs the code in the body of the function. If the code creates any objects, R stores them in the active, that is, runtime environment. If the code calls any objects, R uses its scoping rules to look them up. R will search the runtime environment, then the parent of the runtime environment (which will be the origin environment), then the parent of the origin environment, and so on. Notice that the calling environment might not be on the search path. Usually, a function will only call its arguments, which R can find in the active runtime environment.
 
 Finally, R finishes running the function. It switches the active environment back to the calling environment. Now R executes any other commands in the line of code that called the function. So if you save the result of the function to an object with `<-`, the new object will be stored in the calling environment.
 
@@ -344,7 +342,7 @@ How can you use this knowledge to fix the `deal` and `shuffle` functions?
 
 First, let's start with a warm-up question. Suppose I redefine `deal` at the command line like this:
 
-```r
+``` {.r}
 deal <- function() {
   deck[1, ]
 }
@@ -356,18 +354,18 @@ Notice that `deal` no longer takes an argument, and it calls the `deck` object, 
 Will R be able to find `deck` and return an answer when I call the new version of `deal`, such as `deal()`?
 :::
 
-```solution
+``` {.solution}
 Yes. `deal` will still work the same as before. R will run `deal` in a runtime environment that is a child of the global environment. Why will it be a child of the global environment? Because the global environment is the origin environment of `deal` (we defined `deal` in the global environment):
 ```
 
-```r
+``` {.r}
 environment(deal)
 ## <environment: R_GlobalEnv>
 ```
 
 When `deal` calls `deck`, R will need to look up the `deck` object. R's scoping rules will lead it to the version of `deck` in the global environment, as in @fig:deal. `deal` works as expected as a result:
 
-```r
+``` {.r}
 deal()
 ##  face   suit value
 ##  king spades    13
@@ -375,10 +373,9 @@ deal()
 
 ![R finds `deck` by looking in the parent of deal's runtime environment. The parent is the global environment, deal's origin environment. Here, R finds the copy of `deck`.](images/hopr_0605.png){#fig:deal}
 
-
 Now let's fix the `deal` function to remove the cards it has dealt from `deck`. Recall that `deal` returns the top card of `deck` but does not remove the card from the deck. As a result, `deal` always returns the same card:
 
-```r
+``` {.r}
 deal()
 ##  face   suit value
 ##  king spades    13
@@ -390,7 +387,7 @@ deal()
 
 You know enough R syntax to remove the top card of `deck`. The following code will save a prisitine copy of `deck` and then remove the top card:
 
-```r
+``` {.r}
 DECK <- deck
 
 deck <- deck[-1, ]
@@ -404,7 +401,7 @@ head(deck, 3)
 
 Now let's add the code to `deal`. Here `deal` saves (and then returns) the top card of `deck`. In between, it removes the card from `deck`...or does it?
 
-```r
+``` {.r}
 deal <- function() {
   card <- deck[1, ]
   deck <- deck[-1, ]
@@ -417,14 +414,14 @@ This code won't work because R will be in a runtime environment when it executes
 ![The deal function looks up deck in the global environment but saves `deck[-1, ]` in the runtime environment as a new object named deck.](images/hopr_0606.png){#fig:second-deck}
 
 ::: {#exr:overwrite-deck name="Overwrite deck"}
-Rewrite the `deck <- deck[-1, ]` line of `deal` to _assign_ `deck[-1, ]` to an object named `deck` in the global environment. Hint: consider the `assign` function.
+Rewrite the `deck <- deck[-1, ]` line of `deal` to *assign* `deck[-1, ]` to an object named `deck` in the global environment. Hint: consider the `assign` function.
 :::
 
-```solution
+``` {.solution}
 You can assign an object to a specific environment with the `assign` function: 
 ```
 
-```r
+``` {.r}
 deal <- function() {
   card <- deck[1, ]
   assign("deck", deck[-1, ], envir = globalenv())
@@ -434,7 +431,7 @@ deal <- function() {
 
 Now `deal` will finally clean up the global copy of `deck`, and we can `deal` cards just as we would in real life:
 
-```r
+``` {.r}
 deal()
 ##  face   suit value
 ## queen spades    12
@@ -450,7 +447,7 @@ deal()
 
 Let's turn our attention to the `shuffle` function:
 
-```r
+``` {.r}
 shuffle <- function(cards) { 
   random <- sample(1:52, size = 52)
   cards[random, ]
@@ -459,7 +456,7 @@ shuffle <- function(cards) {
 
 `shuffle(deck)` doesn't shuffle the `deck` object; it returns a shuffled copy of the `deck` object:
 
-```r
+``` {.r}
 head(deck, 3)
 ##  face   suit value
 ##  nine spades     9
@@ -481,32 +478,32 @@ head(a, 3)
 ##   two    clubs     2
 ```
 
-This behavior is now undesirable in two ways. First, `shuffle` fails to shuffle `deck`. Second, `shuffle` returns a copy of `deck`, which may be missing the cards that have been dealt away. It would be better if `shuffle` returned the dealt cards to the deck and then shuffled. This is what happens when you shuffle a deck of cards in real life. 
+This behavior is now undesirable in two ways. First, `shuffle` fails to shuffle `deck`. Second, `shuffle` returns a copy of `deck`, which may be missing the cards that have been dealt away. It would be better if `shuffle` returned the dealt cards to the deck and then shuffled. This is what happens when you shuffle a deck of cards in real life.
 
-:::{#exr:rewrite-shuffle name="Rewrite shuffle"}
+::: {#exr:rewrite-shuffle name="Rewrite shuffle"}
 Rewrite `shuffle` so that it replaces the copy of `deck` that lives in the global environment with a shuffled version of `DECK`, the intact copy of `deck` that also lives in the global environment. The new version of `shuffle` should have no arguments and return no output.
 :::
 
-```solution
+``` {.solution}
 You can update `shuffle` in the same way that you updated `deck`. The following version will do the job: 
 ```
 
-```r
+``` {.r}
 shuffle <- function(){
   random <- sample(1:52, size = 52)
   assign("deck", DECK[random, ], envir = globalenv())
 }
 ```
 
-Since `DECK` lives in the global environment, `shuffle`'s environment of origin, `shuffle` will be able to find `DECK` at runtime. R will search for `DECK` first in `shuffle`'s runtime environment, and then in `shuffle`'s origin environment—the global environment—which is where `DECK` is stored.
+Since `DECK` lives in the global environment, `shuffle`'s environment of origin, `shuffle` will be able to find `DECK` at runtime. R will search for `DECK` first in `shuffle`'s runtime environment, and then in `shuffle`'s origin environment---the global environment---which is where `DECK` is stored.
 
 The second line of `shuffle` will create a reordered copy of `DECK` and save it as `deck` in the global environment. This will overwrite the previous, nonshuffled version of `deck`.
 
 ## Closures
 
-Our system finally works. For example, you can shuffle the cards and then deal a hand of blackjack: 
+Our system finally works. For example, you can shuffle the cards and then deal a hand of blackjack:
 
-```r
+``` {.r}
 shuffle()
 
 deal()
@@ -518,13 +515,13 @@ deal()
 ## eight hearts     8
 ```
 
-But the system requires `deck` and `DECK` to exist in the global environment. Lots of things happen in this environment, and it is possible that `deck` may get modified or erased by accident. 
+But the system requires `deck` and `DECK` to exist in the global environment. Lots of things happen in this environment, and it is possible that `deck` may get modified or erased by accident.
 
 It would be better if we could store `deck` in a safe, out-of-the-way place, like one of those safe, out-of-the-way environments that R creates to run functions in. In fact, storing `deck` in a runtime environment is not such a bad idea.
 
 You could create a function that takes `deck` as an argument and saves a copy of `deck` as `DECK`. The function could also save its own copies of `deal` and `shuffle`:
 
-```r
+``` {.r}
 setup <- function(deck) {
   DECK <- deck
 
@@ -545,8 +542,7 @@ When you run `setup`, R will create a runtime environment to store these objects
 
 Now all of these things are safely out of the way in a child of the global environment. That makes them safe but hard to use. Let's ask `setup` to return `DEAL` and `SHUFFLE` so we can use them. The best way to do this is to return the functions as a list:
 
-
-```r
+``` {.r}
 setup <- function(deck) {
   DECK <- deck
 
@@ -569,17 +565,16 @@ cards <- setup(deck)
 
 ![Running setup will store deck and DECK in an out-of-the-way place, and create a DEAL and SHUFFLE function. Each of these objects will be stored in an environment whose parent is the global environment.](images/hopr_0607.png){#fig:closure1}
 
-
 Then you can save each of the elements of the list to a dedicated object in the global environment:
 
-```r
+``` {.r}
 deal <- cards$deal
 shuffle <- cards$shuffle
 ```
 
 Now you can run `deal` and `shuffle` just as before. Each object contains the same code as the original `deal` and `shuffle`:
 
-```r
+``` {.r}
 deal
 ## function() {
 ##     card <- deck[1, ]
@@ -596,9 +591,9 @@ shuffle
 ## <environment: 0x7ff7169c3390>
 ```
 
-However, the functions now have one important difference. Their origin environment is no longer the global environment (although `deal` and `shuffle` _are_ currently saved there). Their origin environment is the runtime environment that R made when you ran `setup`. That's where R created `DEAL` and `SHUFFLE`, the functions copied into the new `deal` and `shuffle`, as shown in: 
+However, the functions now have one important difference. Their origin environment is no longer the global environment (although `deal` and `shuffle` *are* currently saved there). Their origin environment is the runtime environment that R made when you ran `setup`. That's where R created `DEAL` and `SHUFFLE`, the functions copied into the new `deal` and `shuffle`, as shown in:
 
-```r
+``` {.r}
 environment(deal)
 ## <environment: 0x7ff7169c3390>
 
@@ -610,12 +605,11 @@ Why does this matter? Because now when you run `deal` or `shuffle`, R will evalu
 
 ![Now deal and shuffle will be run in an environment that has the protected deck and DECK in its search path.](images/hopr_0608.png){#fig:closure2}
 
-
-This arrangement is called a _closure_. `setup`'s runtime environment "encloses" the `deal` and `shuffle` functions. Both `deal` and `shuffle` can work closely with the objects contained in the enclosing environment, but almost nothing else can. The enclosing environment is not on the search path for any other R function or environment.
+This arrangement is called a *closure*. `setup`'s runtime environment "encloses" the `deal` and `shuffle` functions. Both `deal` and `shuffle` can work closely with the objects contained in the enclosing environment, but almost nothing else can. The enclosing environment is not on the search path for any other R function or environment.
 
 You may have noticed that `deal` and `shuffle` still update the `deck` object in the global environment. Don't worry, we're about to change that. We want `deal` and `shuffle` to work exclusively with the objects in the parent (enclosing) environment of their runtime environments. Instead of having each function reference the global environment to update `deck`, you can have them reference their parent environment at runtime, as shown in @fig:closure3:
 
-```r
+``` {.r}
 setup <- function(deck) {
   DECK <- deck
 
@@ -642,7 +636,7 @@ shuffle <- cards$shuffle
 
 We finally have a self-contained card game. You can delete (or modify) the global copy of `deck` as much as you want and still play cards. `deal` and `shuffle` will use the pristine, protected copy of `deck`:
 
-```r
+``` {.r}
 rm(deck)
 
 shuffle()
@@ -658,12 +652,11 @@ deal()
 
 Blackjack!
 
-
 ## Summary
 
-R saves its objects in an environment system that resembles your computer's file system. If you understand this system, you can predict how R will look up objects. If you call an object at the command line, R will look for the object in the global environment and then the parents of the global environment, working its way up the environment tree one environment at a time. 
+R saves its objects in an environment system that resembles your computer's file system. If you understand this system, you can predict how R will look up objects. If you call an object at the command line, R will look for the object in the global environment and then the parents of the global environment, working its way up the environment tree one environment at a time.
 
-R will use a slightly different search path when you call an object from inside of a function. When you run a function, R creates a new environment to execute commands in. This environment will be a child of the environment where the function was originally defined. This may be the global environment, but it also may not be.  You can use this behavior to create closures, which are functions linked to objects in protected environments.
+R will use a slightly different search path when you call an object from inside of a function. When you run a function, R creates a new environment to execute commands in. This environment will be a child of the environment where the function was originally defined. This may be the global environment, but it also may not be. You can use this behavior to create closures, which are functions linked to objects in protected environments.
 
 As you become familiar with R's environment system, you can use it to produce elegant results, like we did here. However, the real value of understanding the environment system comes from knowing how R functions do their job. You can use this knowledge to figure out what is going wrong when a function does not perform as expected.
 

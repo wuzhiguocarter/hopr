@@ -6,9 +6,9 @@ knit: quarto render
 
 Loops are R's method for repeating a task, which makes them a useful tool for programming simulations. This chapter will teach you how to use R's loop tools.
 
-Let's use the `score` function to solve a real-world problem. 
+Let's use the `score` function to solve a real-world problem.
 
-Your slot machine is modeled after real machines that were accused of fraud. The machines appeared to pay out 40 cents on the dollar, but the manufacturer claimed that they paid out 92 cents on the dollar. You can calculate the exact payout rate of your machine with the `score` program. The payout rate will be the expected value of the slot machine's prize. 
+Your slot machine is modeled after real machines that were accused of fraud. The machines appeared to pay out 40 cents on the dollar, but the manufacturer claimed that they paid out 92 cents on the dollar. You can calculate the exact payout rate of your machine with the `score` program. The payout rate will be the expected value of the slot machine's prize.
 
 ## Expected Values
 
@@ -22,7 +22,7 @@ You can think of the expected value as the average prize that you would observe 
 
 Do you remember the `die` you created in [Project 1: Weighted Dice](#sec:project-dice)?
 
-```r
+``` {.r}
 die <- c(1, 2, 3, 4, 5, 6)
 ```
 
@@ -32,8 +32,7 @@ $$
 E(\text{die}) = \sum_{i = 1}^{n}\left( \text{die}_{i} \cdot P(\text{die}_{i}) \right)
 $$
 
-The $\text{die}_{i}$s are the possible outcomes of rolling the die: 1, 2, 3, 4, 5, and 6; and the $P(\text{die}_{i})$'s are the probabilities associated with each of the outcomes. If your die is fair, each outcome will occur with the same probability: 1/6. So our equation simplifies to: 
-
+The $\text{die}_{i}$s are the possible outcomes of rolling the die: 1, 2, 3, 4, 5, and 6; and the $P(\text{die}_{i})$'s are the probabilities associated with each of the outcomes. If your die is fair, each outcome will occur with the same probability: 1/6. So our equation simplifies to:
 
 $$
 \begin{array}{rl}
@@ -43,7 +42,7 @@ E(\text{die}) & = \sum_{i = 1}^{n}\left( \text{die}_{i} \cdot P(\text{die}_{i}) 
 \end{array}
 $$
 
-Hence, the expected value of rolling a fair die is 3.5. You may notice that this is also the average value of the die. The expected value will equal the average if every outcome has the same chance of occurring. 
+Hence, the expected value of rolling a fair die is 3.5. You may notice that this is also the average value of the die. The expected value will equal the average if every outcome has the same chance of occurring.
 
 But what if each outcome has a different chance of occurring? For example, we weighted our dice in [Packages and Help Pages](#sec:packages-and-help) so that each die rolled 1, 2, 3, 4, and 5 with probability 1/8 and 6 with probability 3/8. You can use the same formula to calculate the expected value in these conditions:
 
@@ -58,27 +57,27 @@ Hence, the expected value of a loaded die does not equal the average value of it
 
 Notice that we did the same three things to calculate both of these expected values. We have:
 
-* Listed out all of the possible outcomes
-* Determined the _value_ of each outcome (here just the value of the die)
-* Calculated the probability that each outcome occurred
+-   Listed out all of the possible outcomes
+-   Determined the *value* of each outcome (here just the value of the die)
+-   Calculated the probability that each outcome occurred
 
 The expected value was then just the sum of the values in step 2 multiplied by the probabilities in step 3.
 
-You can use these steps to calculate more sophisticated expected values. For example, you could calculate the expected value of rolling a pair of weighted dice. Let's do this step by step. 
+You can use these steps to calculate more sophisticated expected values. For example, you could calculate the expected value of rolling a pair of weighted dice. Let's do this step by step.
 
 First, list out all of the possible outcomes. A total of 36 different outcomes can appear when you roll two dice. For example, you might roll (1, 1), which notates one on the first die and one on the second die. Or, you may roll (1, 2), one on the first die and two on the second. And so on. Listing out these combinations can be tedious, but R has a function that can help.
 
 ## expand.grid
 
-The `expand.grid` function in R provides a quick way to write out every combination of the elements in _n_ vectors. For example, you can list every combination of two dice. To do so, run `expand.grid` on two copies of `die`: 
+The `expand.grid` function in R provides a quick way to write out every combination of the elements in *n* vectors. For example, you can list every combination of two dice. To do so, run `expand.grid` on two copies of `die`:
 
-```r
+``` {.r}
 rolls <- expand.grid(die, die)
 ```
 
 `expand.grid` will return a data frame that contains every way to pair an element from the first `die` vector with an element from the second `die` vector. This will capture all 36 possible combinations of values:
 
-```r
+``` {.r}
 rolls
 ##    Var1 Var2
 ## 1     1    1
@@ -90,11 +89,11 @@ rolls
 ## 36    6    6
 ```
 
-You can use `expand.grid` with more than two vectors if you like. For example, you could list every combination of rolling three dice with `expand.grid(die, die, die)` and every combination of rolling four dice with `expand.grid(die, die, die, die)`, and so on. `expand.grid` will always return a data frame that contains each possible combination of _n_ elements from the _n_ vectors. Each combination will contain exactly one element from each vector.
+You can use `expand.grid` with more than two vectors if you like. For example, you could list every combination of rolling three dice with `expand.grid(die, die, die)` and every combination of rolling four dice with `expand.grid(die, die, die, die)`, and so on. `expand.grid` will always return a data frame that contains each possible combination of *n* elements from the *n* vectors. Each combination will contain exactly one element from each vector.
 
-You can determine the value of each roll once you've made your list of outcomes. This will be the sum of the two dice, which you can calculate using R's element-wise execution: 
+You can determine the value of each roll once you've made your list of outcomes. This will be the sum of the two dice, which you can calculate using R's element-wise execution:
 
-```r
+``` {.r}
 rolls$value <- rolls$Var1 + rolls$Var2
 head(rolls, 3)
 ## Var1 Var2 value
@@ -107,7 +106,7 @@ R will match up the elements in each vector before adding them together. As a re
 
 Next, you must determine the probability that each combination appears. You can calculate this with a basic rule of probability:
 
-_The probability that_ n _independent, random events all occur is equal to the product of the probabilities that each random event occurs_. 
+*The probability that* n *independent, random events all occur is equal to the product of the probabilities that each random event occurs*.
 
 Or more succinctly:
 
@@ -125,7 +124,7 @@ P(1 \& 1) & = P(1) \cdot P(1) \\
 \end{array}
 $$
 
-And the probability that we roll a (1, 2) will be: 
+And the probability that we roll a (1, 2) will be:
 
 $$
 \begin{array}{rl}
@@ -137,9 +136,9 @@ $$
 
 And so on.
 
-Let me suggest a three-step process for calculating these probabilities in R. First, we can look up the probabilities of rolling the values in `Var1`. We'll do this with the lookup table that follows: 
+Let me suggest a three-step process for calculating these probabilities in R. First, we can look up the probabilities of rolling the values in `Var1`. We'll do this with the lookup table that follows:
 
-```r
+``` {.r}
 prob <- c("1" = 1/8, "2" = 1/8, "3" = 1/8, "4" = 1/8, "5" = 1/8, "6" = 3/8)
 
 prob
@@ -149,7 +148,7 @@ prob
 
 If you subset this table by `rolls$Var1`, you will get a vector of probabilities perfectly keyed to the values of `Var1`:
 
-```r
+``` {.r}
 rolls$Var1
 ## 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6
 
@@ -171,7 +170,7 @@ head(rolls, 3)
 
 Second, we can look up the probabilities of rolling the values in `Var2`:
 
-```r
+``` {.r}
 rolls$prob2 <- prob[rolls$Var2]
 
 head(rolls, 3)
@@ -183,7 +182,7 @@ head(rolls, 3)
 
 Third, we can calculate the probability of rolling each combination by multiplying `prob1` by `prob2`:
 
-```r
+``` {.r}
 rolls$prob <- rolls$prob1 * rolls$prob2
 
 head(rolls, 3)
@@ -195,22 +194,22 @@ head(rolls, 3)
 
 It is easy to calculate the expected value now that we have each outcome, the value of each outcome, and the probability of each outcome. The expected value will be the summation of the dice values multiplied by the dice probabilities:
 
-```r
+``` {.r}
 sum(rolls$value * rolls$prob)
 ## 8.25
 ```
 
 So the expected value of rolling two loaded dice is 8.25. If you rolled a pair of loaded dice an infinite number of times, the average sum would be 8.25. (If you are curious, the expected value of rolling a pair of fair dice is 7, which explains why 7 plays such a large role in dice games like craps.)
 
-Now that you've warmed up, let's use our method to calculate the expected value of the slot machine prize. We will follow the same steps we just took: 
+Now that you've warmed up, let's use our method to calculate the expected value of the slot machine prize. We will follow the same steps we just took:
 
-* We will list out every possible outcome of playing the machine. This will be a list of every combination of three slot symbols.
-* We will calculate the probability of getting each combination when you play the machine.
-* We will determine the prize that we would win for each combination.
+-   We will list out every possible outcome of playing the machine. This will be a list of every combination of three slot symbols.
+-   We will calculate the probability of getting each combination when you play the machine.
+-   We will determine the prize that we would win for each combination.
 
 When we are finished, we will have a data set that looks like this:
 
-```r
+``` {.r}
 ## Var1 Var2 Var3 prob1 prob2 prob3     prob prize
 ##   DD   DD   DD  0.03  0.03  0.03 0.000027   800
 ##    7   DD   DD  0.03  0.03  0.03 0.000027     0
@@ -227,21 +226,20 @@ $$
 Ready to begin?
 
 ::: {#exr:list-the-combinations name="List the Combinations"}
-Use `expand.grid` to make a data frame that contains every possible combination of _three_ symbols from the `wheel` vector:
+Use `expand.grid` to make a data frame that contains every possible combination of *three* symbols from the `wheel` vector:
 
-
-```r
+``` {.r}
 wheel <- c("DD", "7", "BBB", "BB", "B", "C", "0")
 ```
 
 Be sure to add the argument `stringsAsFactors = FALSE` to your `expand.grid` call; otherwise, `expand.grid` will save the combinations as factors, an unfortunate choice that will disrupt the `score` function.
 :::
 
-```solution
+``` {.solution}
 To create a data frame of each combination of _three_ symbols, you need to run `expand.grid` and give it _three_ copies of `wheel`. The result will be a data frame with 343 rows, one for each unique combination of three slot symbols:
 ```
 
-```r
+``` {.r}
 combos <- expand.grid(wheel, wheel, wheel, stringsAsFactors = FALSE)
 
 combos
@@ -260,7 +258,7 @@ combos
 
 Now, let's calculate the probability of getting each combination. You can use the probabilities contained in the `prob` argument of `get_symbols` to do this. These probabilities determine how frequently each symbol is chosen when your slot machine generates symbols. They were calculated after observing 345 plays of the Manitoba video lottery terminals. Zeroes have the largest chance of being selected (0.52) and cherries the least (0.01):
 
-```r
+``` {.r}
 get_symbols <- function() {
   wheel <- c("DD", "7", "BBB", "BB", "B", "C", "0")
   sample(wheel, size = 3, replace = TRUE, 
@@ -268,17 +266,15 @@ get_symbols <- function() {
 }
 ```
 
-
 ::: {#exr:lookup-table name="Make a Lookup Table"}
 Isolate the previous probabilities in a lookup table. What names will you use in your table?
 :::
 
-
-```solution
+``` {.solution}
 Your names should match the input that you want to look up. In this case, the input will be the character strings that appear in `Var1`, `Var2`, and `Var3`. So your lookup table should look like this:
 ```
 
-```r
+``` {.r}
 prob <- c("DD" = 0.03, "7" = 0.03, "BBB" = 0.06, 
   "BB" = 0.1, "B" = 0.25, "C" = 0.01, "0" = 0.52)
 ```
@@ -286,15 +282,14 @@ prob <- c("DD" = 0.03, "7" = 0.03, "BBB" = 0.06,
 Now let's look up our probabilities.
 
 ::: {#exr:lookup-probabilities name="Lookup the Probabilities"}
-Look up the probabilities of getting the values in `Var1`. Then add them to `combos` as a column named `prob1`. Then do the same for `Var2` (`prob2`) and `Var3` (`prob3`). 
+Look up the probabilities of getting the values in `Var1`. Then add them to `combos` as a column named `prob1`. Then do the same for `Var2` (`prob2`) and `Var3` (`prob3`).
 :::
 
-
-```solution
+``` {.solution}
 Remember that you use R's selection notation to look up values in a lookup table. The values that result will be keyed to the index that you use:
 ```
 
-```r
+``` {.r}
 combos$prob1 <- prob[combos$Var1]
 combos$prob2 <- prob[combos$Var2]
 combos$prob3 <- prob[combos$Var3]
@@ -313,16 +308,16 @@ P(A \& B \& C \& ...) = P(A) \cdot P(B) \cdot P(C) \cdot ...
 $$
 
 ::: {#exr:calculate-combinations name="Calculate Probabilities for Each Combination"}
-Calculate the overall probabilities for each combination. Save them as a column named `prob` in `combos`, then check your work. 
+Calculate the overall probabilities for each combination. Save them as a column named `prob` in `combos`, then check your work.
 
-You can check that the math worked by summing the probabilities. The probabilities should add up to one, because one of the combinations _must_ appear when you play the slot machine. In other words, a combination will appear, with probability of one.
+You can check that the math worked by summing the probabilities. The probabilities should add up to one, because one of the combinations *must* appear when you play the slot machine. In other words, a combination will appear, with probability of one.
 :::
 
-```solution
+``` {.solution}
 You can calculate the probabilities of every possible combination in one fell swoop with some element-wise execution: 
 ```
 
-```r
+``` {.r}
 combos$prob <- combos$prob1 * combos$prob2 * combos$prob3
 
 head(combos, 3)
@@ -334,14 +329,14 @@ head(combos, 3)
 
 The sum of the probabilities is one, which suggests that our math is correct:
 
-```r
+``` {.r}
 sum(combos$prob)
 ## 1
 ```
 
 You only need to do one more thing before you can calculate the expected value: you must determine the prize for each combination in `combos`. You can calculate the prize with `score`. For example, we can calculate the prize for the first row of `combos` like this:
 
-```r
+``` {.r}
 symbols <- c(combos[1, 1], combos[1, 2], combos[1, 3])
 ## "DD" "DD" "DD"
 
@@ -349,14 +344,13 @@ score(symbols)
 ## 800
 ```
 
-However there are 343 rows, which makes for tedious work if you plan to calculate the scores manually. It will be quicker to automate this task and have R do it for you, which you can do with a `for` loop.  
-  
+However there are 343 rows, which makes for tedious work if you plan to calculate the scores manually. It will be quicker to automate this task and have R do it for you, which you can do with a `for` loop.
 
 ## for Loops
 
 A `for` loop repeats a chunk of code many times, once for each element in a set of input. `for` loops provide a way to tell R, "Do this for every value of that." In R syntax, this looks like:
 
-```r
+``` {.r}
 for (value in that) {
   this
 }
@@ -364,7 +358,7 @@ for (value in that) {
 
 The `that` object should be a set of objects (often a vector of numbers or character strings). The for loop will run the code in that appears between the braces once for each member of `that`. For example, the for loop below runs `print("one run")` once for each element in a vector of character strings:
 
-```r
+``` {.r}
 for (value in c("My", "first", "for", "loop")) {
   print("one run")
 }
@@ -378,7 +372,7 @@ The `value` symbol in a for loop acts like an argument in a function. The for lo
 
 What values will the for loop assign to `value`? It will use the elements in the set that you run the loop on. `for` starts with the first element and then assigns a different element to `value` on each run of the for loop, until all of the elements have been assigned to `value`. For example, the for loop below will run `print(value)` four times and will print out one element of `c("My", "second", "for", "loop")` each time:
 
-```r
+``` {.r}
 for (value in c("My", "second", "for", "loop")) {
   print(value)
 }
@@ -388,18 +382,18 @@ for (value in c("My", "second", "for", "loop")) {
 ## "loop"
 ```
 
-On the first run, the for loop substituted `"My"` for `value` in `print(value)`. On the second run it substituted `"second"`, and so on until `for` had run `print(value)` once with every element in the set: 
+On the first run, the for loop substituted `"My"` for `value` in `print(value)`. On the second run it substituted `"second"`, and so on until `for` had run `print(value)` once with every element in the set:
 
 If you look at `value` after the loop runs, you will see that it still contains the value of the last element in the set:
 
-```r
+``` {.r}
 value
 ## "loop"
 ```
 
 I've been using the symbol `value` in my for loops, but there is nothing special about it. You can use any symbol you like in your loop to do the same thing as long as the symbol appears before `in` in the parentheses that follow `for`. For example, you could rewrite the previous loop with any of the following:
 
-```r
+``` {.r}
 for (word in c("My", "second", "for", "loop")) {
   print(word)
 }
@@ -413,26 +407,25 @@ for (i in c("My", "second", "for", "loop")) {
 
 ::: {.callout-warning}
 ## Choose your symbols carefully
-  
+
 R will run your loop in whichever environment you call it from. This is bad news if your loop uses object names that already exist in the environment. Your loop will overwrite the existing objects with the objects that it creates. This applies to the value symbol as well.
 :::
 
-
 ::: {.callout-tip}
 ## For loops run on sets
-  
-In many programming languages, `for` loops are designed to work with integers, not sets. You give the loop a starting value and an ending value, as well as an increment to advance the value by between loops. The `for` loop then runs until the loop value exceeds the ending value. 
+
+In many programming languages, `for` loops are designed to work with integers, not sets. You give the loop a starting value and an ending value, as well as an increment to advance the value by between loops. The `for` loop then runs until the loop value exceeds the ending value.
 
 You can recreate this effect in R by having a `for` loop execute on a set of integers, but don't lose track of the fact that R's `for` loops execute on members of a set, not sequences of integers.
 :::
 
 `for` loops are very useful in programming because they help you connect a piece of code with each element in a set. For example, we could use a `for` loop to run `score` once for each row in `combos`. However, R's `for` loops have a shortcoming that you'll want to know about before you start using them: `for` loops do not return output.
 
-`for` loops are like Las Vegas: what happens in a `for` loop stays in a `for` loop. If you want to use the products of a `for` loop, you must write the `for` loop so that it saves its own output as it goes. 
+`for` loops are like Las Vegas: what happens in a `for` loop stays in a `for` loop. If you want to use the products of a `for` loop, you must write the `for` loop so that it saves its own output as it goes.
 
 Our previous examples appeared to return output, but this was misleading. The examples worked because we called `print`, which always prints its arguments in the console (even if it is called from a function, a `for` loop, or anything else). Our `for` loops won't return anything if you remove the `print` call:
 
-```r
+``` {.r}
 for (value in c("My", "third", "for", "loop")) {
   value
 }
@@ -443,13 +436,13 @@ To save output from a `for` loop, you must write the loop so that it saves its o
 
 Let's see this in action. The following code creates an empty vector of length 4:
 
-```r
+``` {.r}
 chars <- vector(length = 4)
 ```
 
 The next loop will fill it with strings:
 
-```r
+``` {.r}
 words <- c("My", "fourth", "for", "loop")
 
 for (i in 1:4) {
@@ -460,11 +453,11 @@ chars
 ## "My"    "fourth" "for"   "loop"
 ```
 
-This approach will usually require you to change the sets that you execute your `for` loop on. Instead of executing on a set of objects, execute on a set of integers that you can use to index both your object and your storage vector. This approach is very common in R. You'll find in practice that you use `for` loops not so much to run code, but to fill up vectors and lists with the results of code. 
+This approach will usually require you to change the sets that you execute your `for` loop on. Instead of executing on a set of objects, execute on a set of integers that you can use to index both your object and your storage vector. This approach is very common in R. You'll find in practice that you use `for` loops not so much to run code, but to fill up vectors and lists with the results of code.
 
 Let's use a `for` loop to calculate the prize for each row in `combos`. To begin, create a new column in `combos` to store the results of the `for` loop:
 
-```r
+``` {.r}
 combos$prize <- NA
 
 head(combos, 3)
@@ -474,17 +467,17 @@ head(combos, 3)
 ##   BBB   DD   DD  0.06  0.03  0.03 0.000054    NA
 ```
 
-The code creates a new column named prize and fills it with `NA`s. R uses its recycling rules to populate every value of the column with `NA`. 
+The code creates a new column named prize and fills it with `NA`s. R uses its recycling rules to populate every value of the column with `NA`.
 
 ::: {#exr:build-a-loop name="Build a Loop"}
-Construct a `for` loop that will run `score` on all 343 rows of `combos`. The loop should run `score` on the first three entries of the _i_th row of `combos` and should store the results in the _i_th entry of `combos$prize`.
+Construct a `for` loop that will run `score` on all 343 rows of `combos`. The loop should run `score` on the first three entries of the \_i_th row of `combos` and should store the results in the \_i_th entry of `combos$prize`.
 :::
 
-```solution
+``` {.solution}
 You can score the rows in `combos` with: 
 ```
 
-```r
+``` {.r}
 for (i in 1:nrow(combos)) {
   symbols <- c(combos[i, 1], combos[i, 2], combos[i, 3])
   combos$prize[i] <- score(symbols)
@@ -493,7 +486,7 @@ for (i in 1:nrow(combos)) {
 
 After you run the for loop, `combos$prize` will contain the correct prize for each row. This exercise also tests the `score` function; `score` appears to work correctly for every possible slot combination:
 
-```r
+``` {.r}
 head(combos, 3)
 ## Var1 Var2 Var3 prob1 prob2 prob3     prob prize
 ##   DD   DD   DD  0.03  0.03  0.03 0.000027   800
@@ -501,18 +494,18 @@ head(combos, 3)
 ##  BBB   DD   DD  0.06  0.03  0.03 0.000054     0
 ```
 
-We're now ready to calculate the expected value of the prize. The expected value is the sum of `combos$prize` weighted by `combos$prob`. This is also the payout rate of the slot machine: 
+We're now ready to calculate the expected value of the prize. The expected value is the sum of `combos$prize` weighted by `combos$prob`. This is also the payout rate of the slot machine:
 
-```r
+``` {.r}
 sum(combos$prize * combos$prob)
 ## 0.538014
 ```
 
-Uh oh. The expected prize is about 0.54, which means our slot machine only pays 54 cents on the dollar over the long run. Does this mean that the manufacturer of the Manitoba slot machines _was_ lying?
+Uh oh. The expected prize is about 0.54, which means our slot machine only pays 54 cents on the dollar over the long run. Does this mean that the manufacturer of the Manitoba slot machines *was* lying?
 
-No, because we ignored an important feature of the slot machine when we wrote `score`: a diamond is wild. You can treat a `DD` as any other symbol if it increases your prize, with one exception. You cannot make a `DD` a `C` unless you already have another `C` in your symbols (it'd be too easy if every `DD` automatically earned you $2). 
+No, because we ignored an important feature of the slot machine when we wrote `score`: a diamond is wild. You can treat a `DD` as any other symbol if it increases your prize, with one exception. You cannot make a `DD` a `C` unless you already have another `C` in your symbols (it'd be too easy if every `DD` automatically earned you \$2).
 
-The best thing about `DD`s is that their effects are cumulative. For example, consider the combination `B`, `DD`, `B`. Not only does the `DD` count as a `B`, which would earn a prize of $10; the `DD` also doubles the prize to $20.
+The best thing about `DD`s is that their effects are cumulative. For example, consider the combination `B`, `DD`, `B`. Not only does the `DD` count as a `B`, which would earn a prize of \$10; the `DD` also doubles the prize to \$20.
 
 Adding this behavior to our code is a little tougher than what we have done so far, but it involves all of the same principles. You can decide that your slot machine doesn't use wilds and keep the code that we have. In that case, your slot machine will have a payout rate of about 54 percent. Or, you could rewrite your code to use wilds. If you do, you will find that your slot machine has a payout rate of 93 percent, one percent higher than the manufacturer's claim. You can calculate this rate with the same method that we used in this section.
 
@@ -522,12 +515,11 @@ There are many ways to modify `score` that would count `DD`s as wild. If you wou
 If you would like a more modest challenge, study the following `score` code. It accounts for wild diamonds in a way that I find elegant and succinct. See if you can understand each step in the code and how it achieves its result.
 :::
 
-
-```solution
+``` {.solution}
 Here is a version of score that handles wild diamonds:
 ```
 
-```r
+``` {.r}
 score <- function(symbols) {
   
   diamonds <- sum(symbols == "DD")
@@ -562,16 +554,15 @@ score <- function(symbols) {
 }
 ```
 
-
 ::: {#exr:expected-value name="Calculate the Expected Value"}
 Calculate the expected value of the slot machine when it uses the new `score` function. You can use the existing `combos` data frame, but you will need to build a `for` loop to recalculate `combos$prize`.
 :::
 
-```solution
+``` {.solution}
 To update the expected value, just update `combos$prize`:
 ```
 
-```r
+``` {.r}
 for (i in 1:nrow(combos)) {
   symbols <- c(combos[i, 1], combos[i, 2], combos[i, 3])
   combos$prize[i] <- score(symbols)
@@ -580,7 +571,7 @@ for (i in 1:nrow(combos)) {
 
 Then recompute the expected value:
 
-```r
+``` {.r}
 sum(combos$prize * combos$prob)
 ## 0.934356
 ```
@@ -589,15 +580,15 @@ This result vindicates the manufacturer's claim. If anything, the slot machines 
 
 ## while Loops
 
-R has two companions to the `for` loop: the `while` loop and the `repeat` loop. A `while` loop reruns a chunk _while_ a certain condition remains `TRUE`. To create a `while` loop, follow `while` by a condition and a chunk of code, like this:
+R has two companions to the `for` loop: the `while` loop and the `repeat` loop. A `while` loop reruns a chunk *while* a certain condition remains `TRUE`. To create a `while` loop, follow `while` by a condition and a chunk of code, like this:
 
-```r
+``` {.r}
 while (condition) {
   code
 }
 ```
 
-`while` will rerun `condition`, which should be a logical test, at the start of each loop. If `condition` evaluates to `TRUE`, `while` will run the code between its braces. If `condition` evaluates to `FALSE`, `while` will finish the loop. 
+`while` will rerun `condition`, which should be a logical test, at the start of each loop. If `condition` evaluates to `TRUE`, `while` will run the code between its braces. If `condition` evaluates to `FALSE`, `while` will finish the loop.
 
 Why might `condition` change from `TRUE` to `FALSE`? Presumably because the code inside your loop has changed whether the condition is still `TRUE`. If the code has no relationship to the condition, a `while` loop will run until you stop it. So be careful. You can stop a `while` loop by hitting Escape or by clicking on the stop-sign icon at the top of the RStudio console pane. The icon will appear once the loop begins to run.
 
@@ -605,7 +596,7 @@ Like `for` loops, `while` loops do not return a result, so you must think about 
 
 You can use `while` loops to do things that take a varying number of iterations, like calculating how long it takes to go broke playing slots (as follows). However, in practice, `while` loops are much less common than `for` loops in R:
 
-```r
+``` {.r}
 plays_till_broke <- function(start_with) {
   cash <- start_with
   n <- 0
@@ -624,9 +615,9 @@ plays_till_broke(100)
 
 `repeat` loops are even more basic than `while` loops. They will repeat a chunk of code until you tell them to stop (by hitting Escape) or until they encounter the command `break`, which will stop the loop.
 
-You can use a `repeat` loop to recreate `plays_till_broke`, my function that simulates how long it takes to lose money while playing slots: 
+You can use a `repeat` loop to recreate `plays_till_broke`, my function that simulates how long it takes to lose money while playing slots:
 
-```r
+``` {.r}
 plays_till_broke <- function(start_with) {
   cash <- start_with
   n <- 0

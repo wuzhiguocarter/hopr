@@ -6,7 +6,7 @@ knit: quarto render
 
 The R Core Development Team continuously hones the R language by catching bugs, improving performance, and updating R to work with new technologies. As a result, new versions of R are released several times a year. The easiest way to stay current with R is to periodically check [the CRAN website](http://cran.r-project.org). The website is updated for each new release and makes the release available for download. You'll have to install the new release. The process is the same as when you first installed R.
 
-Don't worry if you're not interested in staying up-to-date on R Core's doings. R changes only slightly between releases, and you're not likely to notice the differences. However, updating to the current version of R is a good place to start if you ever encounter a bug that you can't explain. 
+Don't worry if you're not interested in staying up-to-date on R Core's doings. R changes only slightly between releases, and you're not likely to notice the differences. However, updating to the current version of R is a good place to start if you ever encounter a bug that you can't explain.
 
 RStudio also constantly improves its product. You can acquire the newest updates just by downloading them from [RStudio](http://www.rstudio.com/ide).
 
@@ -14,7 +14,7 @@ RStudio also constantly improves its product. You can acquire the newest updates
 
 Package authors occasionally release new versions of their packages to add functions, fix bugs, or improve performance. The `update.packages` command checks whether you have the most current version of a package and installs the most current version if you do not. The syntax for `update.packages` follows that of `install.packages`. If you already have ggplot2, reshape2, and dplyr on your computer, it'd be a good idea to check for updates before you use them:
 
-```r
+``` {.r}
 update.packages(c("ggplot2", "reshape2", "dplyr"))
 ```
 
