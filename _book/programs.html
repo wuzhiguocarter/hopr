@@ -582,9 +582,7 @@
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>The code will return the number 2. `x` begins as 1, and then R encounters the `if` statement. Since the condition evaluates to `TRUE`, R will run `x &lt;- 2`, changing the value of `x`.</code></pre>
-</div>
+<pre class="{solution}"><code>The code will return the number 2. `x` begins as 1, and then R encounters the `if` statement. Since the condition evaluates to `TRUE`, R will run `x &lt;- 2`, changing the value of `x`.</code></pre>
 <div id="exr:quiz-b" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 7.2 (Quiz B) </strong></span>What will this return?</p>
 <pre><code>
@@ -595,9 +593,7 @@ if (TRUE) {
 }
 x</code></pre>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>This code will also return the number 2. It works the same as the code in Quiz A, except the condition in this statement is already `TRUE`. R doesn't even need to evaluate it. As a result, the code inside the `if` statement will be run, and `x` will be set to 2. </code></pre>
-</div>
+<pre class="{solution}"><code>This code will also return the number 2. It works the same as the code in Quiz A, except the condition in this statement is already `TRUE`. R doesn't even need to evaluate it. As a result, the code inside the `if` statement will be run, and `x` will be set to 2. </code></pre>
 <div id="exr:quiz-c" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 7.3 (Quiz C) </strong></span>What will this return?</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
@@ -609,9 +605,7 @@ x</code></pre>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>Once again, the code will return the number 2. `x` starts out as 1, and the condition of the first `if` statement will evaluate to `TRUE`, which causes R to run the code in the body of the `if` statement. First, R sets `x` equal to 2, then R evaluates the second `if` statement, which is in the body of the first. This time `x == 1` will evaluate to `FALSE` because `x` now equals 2. As a result, R ignores `x &lt;- 3` and exits both `if` statements. </code></pre>
-</div>
+<pre class="{solution}"><code>Once again, the code will return the number 2. `x` starts out as 1, and the condition of the first `if` statement will evaluate to `TRUE`, which causes R to run the code in the body of the `if` statement. First, R sets `x` equal to 2, then R evaluates the second `if` statement, which is in the body of the first. This time `x == 1` will evaluate to `FALSE` because `x` now equals 2. As a result, R ignores `x &lt;- 3` and exits both `if` statements. </code></pre>
 </section>
 <section class="level2" data-number="0.3">
 <h2 data-number="7.3" class="anchored" id="else-statements"><span class="header-section-number">7.3</span> else Statements</h2>
@@ -721,9 +715,7 @@ x</code></pre>
 <div id="exr:write-a-test" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 7.4 (Write a Test) </strong></span>Turn the preceding statement into a logical test written in R. Use your knowledge of logical tests, Boolean operators, and subsetting from [R Notation]. The test should work with the vector <code>symbols</code> and return a <code>TRUE</code> <em>if and only if</em> each element in <code>symbols</code> is the same. Be sure to test your code on <code>symbols</code>.</p>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>Here are a couple of ways to test that `symbols` contains three of the same symbol. The first method parallels the English suggestion above, but there are other ways to do the same test. There is no right or wrong answer, so long as your solution works, which is easy to check because you've created a vector named `symbols`:</code></pre>
-</div>
+<pre class="{solution}"><code>Here are a couple of ways to test that `symbols` contains three of the same symbol. The first method parallels the English suggestion above, but there are other ways to do the same test. There is no right or wrong answer, so long as your solution works, which is easy to check because you've created a vector named `symbols`:</code></pre>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>symbols</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  "7" "7" "7"</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -767,9 +759,7 @@ x</code></pre>
 <div id="exr:test-for-all-bars" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 7.5 (Test for All Bars) </strong></span>Use R’s logical and Boolean operators to write a test that will determine whether a vector named <code>symbols</code> contains only symbols that are a type of bar. Check whether your test works with our example <code>symbols</code> vector. Remember to describe how the test should work in English, and then convert the solution to R.</p>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>As with many things in R, there are multiple ways to test whether `symbols` contains all bars. For example, you could write a very long test that uses multiple Boolean operators, like this:</code></pre>
-</div>
+<pre class="{solution}"><code>As with many things in R, there are multiple ways to test whether `symbols` contains all bars. For example, you could write a very long test that uses multiple Boolean operators, like this:</code></pre>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>(symbols[<span class="dv">1</span>] <span class="sc">==</span> <span class="st">"B"</span> <span class="sc">|</span> symbols[<span class="dv">1</span>] <span class="sc">==</span> <span class="st">"BB"</span> <span class="sc">|</span> symbols[<span class="dv">1</span>] <span class="sc">==</span> <span class="st">"BBB"</span>) <span class="sc">&amp;</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  (symbols[<span class="dv">2</span>] <span class="sc">==</span> <span class="st">"B"</span> <span class="sc">|</span> symbols[<span class="dv">2</span>] <span class="sc">==</span> <span class="st">"BB"</span> <span class="sc">|</span> symbols[<span class="dv">2</span>] <span class="sc">==</span> <span class="st">"BBB"</span>) <span class="sc">&amp;</span></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  (symbols[<span class="dv">3</span>] <span class="sc">==</span> <span class="st">"B"</span> <span class="sc">|</span> symbols[<span class="dv">3</span>] <span class="sc">==</span> <span class="st">"BB"</span> <span class="sc">|</span> symbols[<span class="dv">3</span>] <span class="sc">==</span> <span class="st">"BBB"</span>)</span>
@@ -905,9 +895,7 @@ Challenge
 </div>
 </div>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>As always, let's work with a real example:</code></pre>
-</div>
+<pre class="{solution}"><code>As always, let's work with a real example:</code></pre>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>symbols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"C"</span>, <span class="st">"DD"</span>, <span class="st">"C"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>One way to test for cherries would be to check which, if any, of the symbols are a <code>C</code>:</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>symbols <span class="sc">==</span> <span class="st">"C"</span></span>
@@ -1011,9 +999,7 @@ Lookup Tables Versus if Trees
 <div id="exr:adjust-for-diamonds" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 7.7 (Adjust for Diamonds) </strong></span>Write a method for adjusting <code>prize</code> based on <code>diamonds</code>. Describe a solution in English first, and then write your code.</p>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>Here is a concise solution inspired by the previous pattern. The adjusted prize will equal:</code></pre>
-</div>
+<pre class="{solution}"><code>Here is a concise solution inspired by the previous pattern. The adjusted prize will equal:</code></pre>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>prize <span class="sc">*</span> <span class="dv">2</span> <span class="sc">^</span> diamonds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>which gives us our final <code>score</code> script:</p>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>same <span class="ot">&lt;-</span> symbols[<span class="dv">1</span>] <span class="sc">==</span> symbols[<span class="dv">2</span>] <span class="sc">&amp;&amp;</span> symbols[<span class="dv">2</span>] <span class="sc">==</span> symbols[<span class="dv">3</span>]</span>
@@ -1134,7 +1120,7 @@ Lookup Tables Versus if Trees
 <li><a href="#code-comments" class="nav-link" data-bs-target="#code-comments"><span class="toc-section-number">7.5</span> Code Comments</a></li>
 <li><a href="#summary" class="nav-link" data-bs-target="#summary"><span class="toc-section-number">7.6</span> Summary</a></li>
 </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/programs.rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/programs.md">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
 

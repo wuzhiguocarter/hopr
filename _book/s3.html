@@ -395,9 +395,7 @@
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">score</span>(symbols)</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>You can create a new version of `play` by capturing the output of `score(symbols)` and assigning an attribute to it. `play` can then return the enhanced version of the output:</code></pre>
-</div>
+<pre class="{solution}"><code>You can create a new version of `play` by capturing the output of `score(symbols)` and assigning an attribute to it. `play` can then return the enhanced version of the output:</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>play <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  symbols <span class="ot">&lt;-</span> <span class="fu">get_symbols</span>()</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  prize <span class="ot">&lt;-</span> <span class="fu">score</span>(symbols)</span>
@@ -619,9 +617,7 @@
 <p><span class="theorem-title"><strong>Exercise 8.2 (Make a Print Method) </strong></span>Write a new print method for the slots class. The method should call <code>slot_display</code> to return well-formatted slot-machine output.</p>
 <p>What name must you use for this method?</p>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>It is surprisingly easy to write a good `print.slots` method because we've already done all of the hard work when we wrote `slot_display`. For example, the following method will work. Just make sure the method is named `print.slots` so `UseMethod` can find it, and make sure that it takes the same arguments as `print` so `UseMethod` can pass those arguments to `print.slots` without any trouble: </code></pre>
-</div>
+<pre class="{solution}"><code>It is surprisingly easy to write a good `print.slots` method because we've already done all of the hard work when we wrote `slot_display`. For example, the following method will work. Just make sure the method is named `print.slots` so `UseMethod` can find it, and make sure that it takes the same arguments as `print` so `UseMethod` can pass those arguments to `print.slots` without any trouble: </code></pre>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>print.slots <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slot_display</span>(x)</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -637,9 +633,7 @@
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">structure</span>(<span class="fu">score</span>(symbols), <span class="at">symbols =</span> symbols)</span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>You can set the `class` attribute of the output at the same time that you set the +symbols+ attribute. Just add `class = "slots"` to the `structure` call:</code></pre>
-</div>
+<pre class="{solution}"><code>You can set the `class` attribute of the output at the same time that you set the +symbols+ attribute. Just add `class = "slots"` to the `structure` call:</code></pre>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>play <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  symbols <span class="ot">&lt;-</span> <span class="fu">get_symbols</span>()</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">structure</span>(<span class="fu">score</span>(symbols), <span class="at">symbols =</span> symbols, <span class="at">class =</span> <span class="st">"slots"</span>)</span>
@@ -750,7 +744,7 @@
 <li><a href="#s4-and-r5" class="nav-link" data-bs-target="#s4-and-r5"><span class="toc-section-number">8.7</span> S4 and R5</a></li>
 <li><a href="#summary" class="nav-link" data-bs-target="#summary"><span class="toc-section-number">8.8</span> Summary</a></li>
 </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/s3.rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/s3.md">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
 

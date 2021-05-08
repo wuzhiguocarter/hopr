@@ -17,33 +17,33 @@ book:
   sharing: [twitter, facebook, linkedin]
   downloads: [pdf, epub]
   contents:
-    - index.rmd
-    - preface.rmd
+    - index.md
+    - preface.md
     - part: "Part 1"
       contents: 
-        - dice.rmd
-        - basics.rmd
-        - packages.rmd
+        - dice.md
+        - basics.md
+        - packages.md
     - part: "Part 2"
       contents:
-        - cards.rmd
-        - objects.rmd
-        - notation.rmd
-        - modifying.rmd
-        - environments.rmd
+        - cards.md
+        - objects.md
+        - notation.md
+        - modifying.md
+        - environments.md
     - part: "Part 3"
       contents:
-        - slots.rmd
-        - programs.rmd
-        - s3.rmd
-        - loops.rmd
-        - speed.rmd
+        - slots.md
+        - programs.md
+        - s3.md
+        - loops.md
+        - speed.md
   appendix:
-    - a1-starting.rmd
-    - a2-packages.rmd
-    - a3-updating.rmd
-    - a4-data.rmd
-    - a5-debug.rmd 
+    - a1-starting.md
+    - a2-packages.md
+    - a3-updating.md
+    - a4-data.md
+    - a5-debug.md 
 
 format:
   html: 

@@ -408,9 +408,7 @@
 <p><span class="theorem-title"><strong>Exercise 10.1 (How fast is abs?) </strong></span>Many preexisting R functions are already vectorized and have been optimized to perform quickly. You can make your code faster by relying on these functions whenever possible. For example, R comes with a built-in absolute value function, <code>abs</code>.</p>
 <p>Check to see how much faster <code>abs</code> computes the absolute value of <code>long</code> than <code>abs_loop</code> and <code>abs_set</code> do.</p>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>You can measure the speed of `abs` with `system.time`. It takes `abs` a lightning-fast 0.05 seconds to calculate the absolute value of 10 million numbers. This is 0.592 / 0.054 = 10.96 times faster than `abs_set` and nearly 300 times faster than `abs_loop`:</code></pre>
-</div>
+<pre class="{solution}"><code>You can measure the speed of `abs` with `system.time`. It takes `abs` a lightning-fast 0.05 seconds to calculate the absolute value of 10 million numbers. This is 0.592 / 0.054 = 10.96 times faster than `abs_set` and nearly 300 times faster than `abs_loop`:</code></pre>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>(<span class="fu">abs</span>(long))</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="do">##   user  system elapsed </span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  0.037   0.018   0.054</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -480,9 +478,7 @@
 <span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="do">##    user  system elapsed </span></span>
 <span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="do">##  30.057   0.031  30.079</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>`change_symbols` uses a `for` loop to sort values into seven different cases, as demonstrated in @fig:change.</code></pre>
-</div>
+<pre class="{solution}"><code>`change_symbols` uses a `for` loop to sort values into seven different cases, as demonstrated in @fig:change.</code></pre>
 <p>To vectorize <code>change_symbols</code>, create a logical test that can identify each case:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>vec[vec <span class="sc">==</span> <span class="st">"DD"</span>]</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="do">## "DD"</span></span>
@@ -668,9 +664,7 @@
 <p><span class="theorem-title"><strong>Exercise 10.4 (Advanced Challenge) </strong></span>Instead of examining the model answer, write your own vectorized version of <code>score</code>. Assume that the data is stored in an <em>n</em> × 3 matrix where each row of the matrix contains one combination of slots to be scored.</p>
 <p>You can use the version of <code>score</code> that treats diamonds as wild or the version of <code>score</code> that doesn’t. However, the model answer will use the version treating diamonds as wild.</p>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>`score_many` is a vectorized version of `score`. You can use it to run the simulation at the start of this section in a little over 20 seconds. This is 17 times faster than using a `for` loop:</code></pre>
-</div>
+<pre class="{solution}"><code>`score_many` is a vectorized version of `score`. You can use it to run the simulation at the start of this section in a little over 20 seconds. This is 17 times faster than using a `for` loop:</code></pre>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># symbols should be a matrix with a column for each slot machine window</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>score_many <span class="ot">&lt;-</span> <span class="cf">function</span>(symbols) {</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -805,7 +799,7 @@
 <li><a href="#summary" class="nav-link" data-bs-target="#summary"><span class="toc-section-number">10.5</span> Summary</a></li>
 <li><a href="#project-3-wrap-up" class="nav-link" data-bs-target="#project-3-wrap-up"><span class="toc-section-number">10.6</span> Project 3 Wrap-up</a></li>
 </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/speed.rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/speed.md">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
 

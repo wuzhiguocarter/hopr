@@ -534,9 +534,7 @@ Indexing begins at 1
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>   <span class="co"># ?</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>You can use any of the systems that return the first row of your data frame to write a `deal` function. I'll use positive integers and blanks because I think they are easy to understand:</code></pre>
-</div>
+<pre class="{solution}"><code>You can use any of the systems that return the first row of your data frame to write a `deal` function. I'll use positive integers and blanks because I think they are easy to understand:</code></pre>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>deal <span class="ot">&lt;-</span> <span class="cf">function</span>(cards) {</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  cards[<span class="dv">1</span>, ]</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -600,9 +598,7 @@ Indexing begins at 1
 <div id="exr:shuffile-a-deck" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 4.2 (Shuffle a Deck) </strong></span>Use the preceding ideas to write a <code>shuffle</code> function. <code>shuffle</code> should take a data frame and return a shuffled copy of the data frame.</p>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>Your `shuffle` function will look like the one that follows:</code></pre>
-</div>
+<pre class="{solution}"><code>Your `shuffle` function will look like the one that follows:</code></pre>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>shuffle <span class="ot">&lt;-</span> <span class="cf">function</span>(cards) { </span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  random <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">52</span>, <span class="at">size =</span> <span class="dv">52</span>)</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  cards[random, ]</span>
@@ -730,7 +726,7 @@ Never attach
 <li><a href="#dollar-signs-and-double-brackets" class="nav-link" data-bs-target="#dollar-signs-and-double-brackets"><span class="toc-section-number">4.4</span> Dollar Signs and Double Brackets</a></li>
 <li><a href="#summary" class="nav-link" data-bs-target="#summary"><span class="toc-section-number">4.5</span> Summary</a></li>
 </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/notation.rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/notation.md">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
 

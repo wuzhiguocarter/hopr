@@ -552,9 +552,7 @@
 <div id="exr:how-many-aces" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 5.1 (How many Aces?) </strong></span>Extract the <code>face</code> column of <code>deck2</code> and test whether each value is equal to <code>ace</code>. As a challenge, use R to quickly count how many cards are equal to <code>ace</code>.</p>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>You can extract the `face` column with R's `$` notation:</code></pre>
-</div>
+<pre class="{solution}"><code>You can extract the `face` column with R's `$` notation:</code></pre>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>deck2<span class="sc">$</span>face</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  "king"  "queen" "jack"  "ten"   "nine" </span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  "eight" "seven" "six"   "five"  "four" </span></span>
@@ -622,9 +620,7 @@
 <div id="exr:score-the-deck" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 5.2 (Score the Deck for Hearts) </strong></span>Assign a value of <code>1</code> to every card in <code>deck4</code> that has a suit of hearts.</p>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>To do this, first write a test that identifies cards in the `hearts` suit:</code></pre>
-</div>
+<pre class="{solution}"><code>To do this, first write a test that identifies cards in the `hearts` suit:</code></pre>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>deck4<span class="sc">$</span>suit <span class="sc">==</span> <span class="st">"hearts"</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span></span>
@@ -786,9 +782,7 @@ The most common mistake with Boolean operators
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">15</span>)</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="st">"February"</span></span>
 <span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Monday"</span>, <span class="st">"Tuesday"</span>, <span class="st">"Friday"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell">
-<pre class="solution cell-code"><code>Here are some model answers. If you got stuck, be sure to re-read how R evaluates logical tests that use Boolean values:</code></pre>
-</div>
+<pre class="{solution}"><code>Here are some model answers. If you got stuck, be sure to re-read how R evaluates logical tests that use Boolean values:</code></pre>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>w <span class="sc">&gt;</span> <span class="dv">0</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">&lt;</span> x <span class="sc">&amp;</span> x <span class="sc">&lt;</span> <span class="dv">20</span></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>y <span class="sc">==</span> <span class="st">"February"</span></span>
@@ -950,7 +944,7 @@ The most common mistake with Boolean operators
 </ul></li>
 <li><a href="#summary" class="nav-link" data-bs-target="#summary"><span class="toc-section-number">5.4</span> Summary</a></li>
 </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/modifying.rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/modifying.md">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
 

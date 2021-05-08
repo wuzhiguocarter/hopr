@@ -420,9 +420,7 @@
 <p>Imagine what a histogram of <code>x3</code> would look like. Assume that the histogram has a bin width of 1. How many bars will the histogram have? Where will they appear? How high will each be?</p>
 <p>When you are done, plot a histogram of <code>x3</code> with <code>binwidth = 1</code>, and see if you are right.</p>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>You can make a histogram of `x3` with `qplot(x3, binwidth = 1)`. The histogram will look like a symmetric pyramid. The middle bar will have a height of 3 and will appear above `[2, 3)`, but be sure to try it and see for yourself.</code></pre>
-</div>
+<pre class="{solution}"><code>You can make a histogram of `x3` with `qplot(x3, binwidth = 1)`. The histogram will look like a symmetric pyramid. The middle bar will have a height of 3 and will appear above `[2, 3)`, but be sure to try it and see for yourself.</code></pre>
 <p>You can use a histogram to display visually how common different values of <code>x</code> are. Numbers covered by a tall bar are more common than numbers covered by a short bar.</p>
 <p>How can you use a histogram to check the accuracy of your dice?</p>
 <p>Well, if you roll your dice many times and keep track of the results, you would expect some numbers to occur more than others. This is because there are more ways to get some numbers by adding two dice together than to get other numbers, as shown in <a href="#fig:probs">fig.&nbsp;<span>2.3</span></a>.</p>
@@ -558,9 +556,7 @@
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You will need to add a <code>prob</code> argument to the <code>sample</code> function inside of <code>roll</code>. This argument should tell <code>sample</code> to sample the numbers one through five with probability 1/8 and the number 6 with probability 3/8.</p>
 <p>When you are finished, read on for a model answer.</p>
-<div class="cell">
-<pre class="solution cell-code"><code>To weight your dice, you need to add a `prob` argument with a vector of weights to `sample`, like this:</code></pre>
-</div>
+<pre class="{solution}"><code>To weight your dice, you need to add a `prob` argument with a vector of weights to `sample`, like this:</code></pre>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>roll <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  die <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  dice <span class="ot">&lt;-</span> <span class="fu">sample</span>(die, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, </span>
@@ -633,7 +629,7 @@
 <li><a href="#summary" class="nav-link" data-bs-target="#summary"><span class="toc-section-number">2.3</span> Summary</a></li>
 <li><a href="#project-1-wrap-up" class="nav-link" data-bs-target="#project-1-wrap-up"><span class="toc-section-number">2.4</span> Project 1 Wrap-up</a></li>
 </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/packages.rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/packages.md">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
 

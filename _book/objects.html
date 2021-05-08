@@ -471,9 +471,7 @@ length
 <div id="exr:char-or-number" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 3.1 (Character or Number?) </strong></span>Can you spot the difference between a character string and a number? Here’s a test: Which of these are character strings and which are numbers? <code>1</code>, <code>"1"</code>, <code>"one"</code>.</p>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>`"1"` and `"one"` are both character strings. </code></pre>
-</div>
+<pre class="{solution}"><code>`"1"` and `"one"` are both character strings. </code></pre>
 <p>Character strings can contain number characters, but that doesn’t make them numeric. They’re just strings that happen to have numbers in them. You can tell strings from real numbers because strings come surrounded by quotes. In fact, anything surrounded by quotes in R will be treated as a character string—no matter what appears between the quotes.</p>
 <p>It is easy to confuse R objects with character strings. Why? Because both appear as pieces of text in R code. For example, <code>x</code> is the name of an R object named “x,” <code>"x"</code> is a character string that contains the character “x.” One is an object that contains raw data, the other is a piece of raw data itself.</p>
 <p>Expect an error whenever you forget your quotation marks; R will start looking for an object that probably does not exist.</p>
@@ -514,9 +512,7 @@ length
 <p><span class="theorem-title"><strong>Exercise 3.2 (Vector of Cards) </strong></span>Create an atomic vector that stores just the face names of the cards in a royal flush, for example, the ace of spades, king of spades, queen of spades, jack of spades, and ten of spades. The face name of the ace of spades would be “ace,” and “spades” is the suit.</p>
 <p>Which type of vector will you use to save the names?</p>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>A character vector is the most appropriate type of atomic vector in which to save card names. You can create one with the `c` function if you surround each name with quotation marks:</code></pre>
-</div>
+<pre class="{solution}"><code>A character vector is the most appropriate type of atomic vector in which to save card names. You can create one with the `c` function if you surround each name with quotation marks:</code></pre>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>hand <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ace"</span>, <span class="st">"king"</span>, <span class="st">"queen"</span>, <span class="st">"jack"</span>, <span class="st">"ten"</span>)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>hand</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="do">## "ace"   "king"  "queen" "jack"  "ten"  </span></span>
@@ -660,9 +656,7 @@ length
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [3,] "queen" "spades"</span></span>
 <span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [4,] "jack"  "spades"</span></span>
 <span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [5,] "ten"   "spades"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell">
-<pre class="solution cell-code"><code>There is more than one way to build this matrix, but in every case, you will need to start by making a character vector with 10 values. If you start with the following character vector, you can turn it into a matrix with any of the following three commands:</code></pre>
-</div>
+<pre class="{solution}"><code>There is more than one way to build this matrix, but in every case, you will need to start by making a character vector with 10 values. If you start with the following character vector, you can turn it into a matrix with any of the following three commands:</code></pre>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>hand1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ace"</span>, <span class="st">"king"</span>, <span class="st">"queen"</span>, <span class="st">"jack"</span>, <span class="st">"ten"</span>, <span class="st">"spades"</span>, <span class="st">"spades"</span>, </span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"spades"</span>, <span class="st">"spades"</span>, <span class="st">"spades"</span>)</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -759,9 +753,7 @@ length
 <p><span class="theorem-title"><strong>Exercise 3.4 (Write a Card) </strong></span>Many card games assign a numerical value to each card. For example, in blackjack, each face card is worth 10 points, each number card is worth between 2 and 10 points, and each ace is worth 1 or 11 points, depending on the final score.</p>
 <p>Make a virtual playing card by combining “ace,” “heart,” and 1 into a vector. What type of atomic vector will result? Check if you are right.</p>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>You may have guessed that this exercise would not go well. Each atomic vector can only store one type of data. As a result, R coerces all of your values to character strings:</code></pre>
-</div>
+<pre class="{solution}"><code>You may have guessed that this exercise would not go well. Each atomic vector can only store one type of data. As a result, R coerces all of your values to character strings:</code></pre>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>card <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ace"</span>, <span class="st">"hearts"</span>, <span class="dv">1</span>)</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>card</span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="do">## "ace"    "hearts" "1" </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -843,9 +835,7 @@ Data types in vectors
 <div id="exr:list-make-card" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 3.5 (Use a List to Make a Card) </strong></span>Use a list to store a single playing card, like the ace of hearts, which has a point value of one. The list should save the face of the card, the suit, and the point value in separate elements.</p>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>You can create your card like this. In the following example, the first element of the list is a character vector (of length 1). The second element is also a character vector, and the third element is a numeric vector:</code></pre>
-</div>
+<pre class="{solution}"><code>You can create your card like this. In the following example, the first element of the list is a character vector (of length 1). The second element is also a character vector, and the third element is a numeric vector:</code></pre>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>card <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"ace"</span>, <span class="st">"hearts"</span>, <span class="dv">1</span>)</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>card</span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
@@ -1091,7 +1081,7 @@ Online data
 <li><a href="#saving-data" class="nav-link" data-bs-target="#saving-data"><span class="toc-section-number">3.10</span> Saving Data</a></li>
 <li><a href="#summary" class="nav-link" data-bs-target="#summary"><span class="toc-section-number">3.11</span> Summary</a></li>
 </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/objects.rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/objects.md">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
 

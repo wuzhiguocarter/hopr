@@ -616,9 +616,7 @@
 <div id="exr:will-deal-work" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 6.1 (Will deal work?) </strong></span>Will R be able to find <code>deck</code> and return an answer when I call the new version of <code>deal</code>, such as <code>deal()</code>?</p>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>Yes. `deal` will still work the same as before. R will run `deal` in a runtime environment that is a child of the global environment. Why will it be a child of the global environment? Because the global environment is the origin environment of `deal` (we defined `deal` in the global environment):</code></pre>
-</div>
+<pre class="{solution}"><code>Yes. `deal` will still work the same as before. R will run `deal` in a runtime environment that is a child of the global environment. Why will it be a child of the global environment? Because the global environment is the origin environment of `deal` (we defined `deal` in the global environment):</code></pre>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">environment</span>(deal)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="do">## &lt;environment: R_GlobalEnv&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>When <code>deal</code> calls <code>deck</code>, R will need to look up the <code>deck</code> object. R’s scoping rules will lead it to the version of <code>deck</code> in the global environment, as in <a href="#fig:deal">fig.&nbsp;<span>6.5</span></a>. <code>deal</code> works as expected as a result:</p>
@@ -665,9 +663,7 @@
 <div id="exr:overwrite-deck" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 6.2 (Overwrite deck) </strong></span>Rewrite the <code>deck &lt;- deck[-1, ]</code> line of <code>deal</code> to <em>assign</em> <code>deck[-1, ]</code> to an object named <code>deck</code> in the global environment. Hint: consider the <code>assign</code> function.</p>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>You can assign an object to a specific environment with the `assign` function: </code></pre>
-</div>
+<pre class="{solution}"><code>You can assign an object to a specific environment with the `assign` function: </code></pre>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>deal <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  card <span class="ot">&lt;-</span> deck[<span class="dv">1</span>, ]</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">assign</span>(<span class="st">"deck"</span>, deck[<span class="sc">-</span><span class="dv">1</span>, ], <span class="at">envir =</span> <span class="fu">globalenv</span>())</span>
@@ -714,9 +710,7 @@
 <div id="exr:rewrite-shuffle" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 6.3 (Rewrite shuffle) </strong></span>Rewrite <code>shuffle</code> so that it replaces the copy of <code>deck</code> that lives in the global environment with a shuffled version of <code>DECK</code>, the intact copy of <code>deck</code> that also lives in the global environment. The new version of <code>shuffle</code> should have no arguments and return no output.</p>
 </div>
-<div class="cell">
-<pre class="solution cell-code"><code>You can update `shuffle` in the same way that you updated `deck`. The following version will do the job: </code></pre>
-</div>
+<pre class="{solution}"><code>You can update `shuffle` in the same way that you updated `deck`. The following version will do the job: </code></pre>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>shuffle <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  random <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">52</span>, <span class="at">size =</span> <span class="dv">52</span>)</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">assign</span>(<span class="st">"deck"</span>, DECK[random, ], <span class="at">envir =</span> <span class="fu">globalenv</span>())</span>
@@ -895,7 +889,7 @@
 <li><a href="#summary" class="nav-link" data-bs-target="#summary"><span class="toc-section-number">6.7</span> Summary</a></li>
 <li><a href="#project-2-wrap-up" class="nav-link" data-bs-target="#project-2-wrap-up"><span class="toc-section-number">6.8</span> Project 2 Wrap-up</a></li>
 </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/environments.rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-education/hopr/edit/main/environments.md">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
 
