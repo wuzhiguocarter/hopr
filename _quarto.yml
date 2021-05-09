@@ -14,7 +14,7 @@ book:
     use all of R's programming tools. Throughout the book, you'll use your
     newfound skills to solve practical data science problems.
   site-url: https://rstudio-education.github.io/hopr/
-  repo-url: https://github.com/rstudio-education/hopr
+  repo-url: https://github.com/jjallaire/hopr/
   repo-actions: [edit]
   sharing: [twitter, facebook, linkedin]
   contents:
