@@ -143,7 +143,6 @@
        display: inline-table;
     }
     .quarto-layout-cell-subref figcaption {
-      font-size: 0.8em;
       font-style: italic;
     }
     figure > p:empty {
@@ -768,9 +767,9 @@ Data types in vectors
 <p>R’s coercion behavior may seem inconvenient, but it is not arbitrary. R always follows the same rules when it coerces data types. Once you are familiar with these rules, you can use R’s coercion behavior to do surprisingly useful things.</p>
 <p>So how does R coerce data types? If a character string is present in an atomic vector, R will convert everything else in the vector to character strings. If a vector only contains logicals and numbers, R will convert the logicals to numbers; every <code>TRUE</code> becomes a 1, and every <code>FALSE</code> becomes a 0, as shown in <a href="#fig:coercion">fig.&nbsp;<span>3.1</span></a>.</p>
 <div id="fig:coercion" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0301.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 3.1: R always uses the same rules to coerce data to a single type. If character strings are present, everything will be coerced to a character string. Otherwise, logicals are coerced to numerics.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0301.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.1: R always uses the same rules to coerce data to a single type. If character strings are present, everything will be coerced to a character string. Otherwise, logicals are coerced to numerics.</figcaption><p></p>
 </figure>
 </div>
 <p>This arrangement preserves information. It is easy to look at a character string and tell what information it used to contain. For example, you can easily spot the origins of <code>"TRUE"</code> and <code>"5"</code>. You can also easily back-transform a vector of 1s and 0s to <code>TRUE</code>s and <code>FALSE</code>s.</p>
@@ -840,9 +839,9 @@ Data types in vectors
 <p>Data frames are the two-dimensional version of a list. They are far and away the most useful storage structure for data analysis, and they provide an ideal way to store an entire deck of cards. You can think of a data frame as R’s equivalent to the Excel spreadsheet because it stores data in a similar format.</p>
 <p>Data frames group vectors together into a two-dimensional table. Each vector becomes a column in the table. As a result, each column of a data frame can contain a different type of data; but within a column, every cell must be the same type of data, as in <a href="#fig:data-frame">fig.&nbsp;<span>3.2</span></a>.</p>
 <div id="fig:data-frame" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0302.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 3.2: Data frames store data as a sequence of columns. Each column can be a different data type. Every column in a data frame must be the same length.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0302.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.2: Data frames store data as a sequence of columns. Each column can be a different data type. Every column in a data frame must be the same length.</figcaption><p></p>
 </figure>
 </div>
 <p>Creating a data frame by hand takes a lot of typing, but you can do it (if you like) with the <code>data.frame</code> function. Give <code>data.frame</code> any number of vectors, each separated with a comma. Each vector should be set equal to a name that describes the vector. <code>data.frame</code> will turn each vector into a column of the new data frame:</p>
@@ -944,17 +943,17 @@ Names
 <p>Most data-science applications can open plain-text files and export data as plain-text files. This makes plain-text files a sort of lingua franca for data science.</p>
 <p>To load a plain-text file into R, click the Import Dataset icon in RStudio, shown in <a href="#fig:import">fig.&nbsp;<span>3.3</span></a>. Then select “From text file.”</p>
 <div id="fig:import" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0303.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 3.3: You can import data from plain-text files with RStudio’s Import Dataset.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0303.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.3: You can import data from plain-text files with RStudio’s Import Dataset.</figcaption><p></p>
 </figure>
 </div>
 <p>RStudio will ask you to select the file you want to import, then it will open a wizard to help you import the data, as in <a href="#fig:wizard">fig.&nbsp;<span>3.4</span></a>. Use the wizard to tell RStudio what name to give the data set. You can also use the wizard to tell RStudio which character the data set uses as a separator, which character it uses to represent decimals (usually a period in the United States and a comma in Europe), and whether or not the data set comes with a row of column names (known as a <em>header</em>). To help you out, the wizard shows you what the raw file looks like, as well as what your loaded data will look like based on the input settings.</p>
 <p>You can also unclick the box “Strings as factors” in the wizard. I recommend doing this. If you do, R will load all of your character strings as character strings. If you do not, R will convert them to factors.</p>
 <div id="fig:wizard" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0304.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 3.4: RStudio’s import wizard.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0304.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.4: RStudio’s import wizard.</figcaption><p></p>
 </figure>
 </div>
 <p>Once everything looks right, click Import. RStudio will read in the data and save it to a data frame. RStudio will also open a data viewer, so you can see your new data in a spreadsheet format. This is a good way to check that everything came through as expected. If all worked well, your file should appear in a View tab of RStudio, like in <a href="#fig:view">fig.&nbsp;<span>3.5</span></a>. You can examine the data frame in the console with <code>head(deck)</code>.</p>
@@ -972,9 +971,9 @@ Online data
 </div>
 </div>
 <div id="fig:view" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0305.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 3.5: When you import a data set, RStudio will save the data to a data frame and then display the data frame in a View tab. You can open any data frame in a View tab at any time with the View function.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0305.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.5: When you import a data set, RStudio will save the data to a data frame and then display the data frame in a View tab. You can open any data frame in a View tab at any time with the View function.</figcaption><p></p>
 </figure>
 </div>
 <p>Now it is your turn. Download <em>deck.csv</em> and import it into RStudio. Be sure to save the output to an R object called <code>deck</code>: you’ll use it in the next few chapters. If everything goes correctly, the first few lines of your data frame should look like this:</p>
@@ -1013,9 +1012,9 @@ Online data
 <h2 data-number="3.11" class="anchored" id="summary"><span class="header-section-number">3.11</span> Summary</h2>
 <p>You can save data in R with five different objects, which let you store different types of values in different types of relationships, as in <a href="#fig:structures">fig.&nbsp;<span>3.6</span></a>. Of these objects, data frames are by far the most useful for data science. Data frames store one of the most common forms of data used in data science, tabular data.</p>
 <div id="fig:structures" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0306.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 3.6: R’s most common data structures are vectors, matrices, arrays, lists, and data frames.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0306.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.6: R’s most common data structures are vectors, matrices, arrays, lists, and data frames.</figcaption><p></p>
 </figure>
 </div>
 <p>You can load tabular data into a data frame with RStudio’s Import Dataset button—so long as the data is saved as a plain-text file. This requirement is not as limiting as it sounds. Most software programs can export data as a plain-text file. So if you have an Excel file (for example) you can open the file in Excel and export the data as a CSV to use with R. In fact, opening a file in its original program is good practice. Excel files use metadata, like sheets and formulas, that help Excel work with the file. R can try to extract raw data from the file, but it won’t be as good at doing this as Microsoft Excel is. No program is better at converting Excel files than Excel. Similarly, no program is better at converting SAS Xport files than SAS, and so on.</p>

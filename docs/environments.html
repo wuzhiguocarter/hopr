@@ -142,7 +142,6 @@
        display: inline-table;
     }
     .quarto-layout-cell-subref figcaption {
-      font-size: 0.8em;
       font-style: italic;
     }
     figure > p:empty {
@@ -357,9 +356,9 @@
 <p>Consider for a moment how your computer stores files. Every file is saved in a folder, and each folder is saved in another folder, which forms a hierarchical file system. If your computer wants to open up a file, it must first look up the file in this file system.</p>
 <p>You can see your file system by opening a finder window. For example, <a href="#fig:folders">fig.&nbsp;<span>6.1</span></a> shows part of the file system on my computer. I have tons of folders. Inside one of them is a subfolder named <em>Documents</em>, inside of that subfolder is a sub-subfolder named <em>ggsubplot</em>, inside of that folder is a folder named <em>inst</em>, inside of that is a folder named <em>doc</em>, and inside of that is a file named <em>manual.pdf</em>.</p>
 <div id="fig:folders" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0601.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 6.1: Your computer arranges files into a hierarchy of folders and subfolders. To look at a file, you need to find where it is saved in the file system.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0601.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.1: Your computer arranges files into a hierarchy of folders and subfolders. To look at a file, you need to find where it is saved in the file system.</figcaption><p></p>
 </figure>
 </div>
 <p>R uses a similar system to save R objects. Each object is saved inside of an environment, a list-like object that resembles a folder on your computer. Each environment is connected to a <em>parent environment</em>, a higher-level environment, which creates a hierarchy of environments.</p>
@@ -381,9 +380,9 @@
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 12 &lt;environment: R_EmptyEnv&gt;        ""                 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>It takes some imagination to interpret this output, so let’s visualize the environments as a system of folders, <a href="#fig:environments">fig.&nbsp;<span>6.2</span></a>. You can think of the environment tree like this. The lowest-level environment is named <code>R_GlobalEnv</code> and is saved inside an environment named <code>package:pryr</code>, which is saved inside the environment named <code>0x7fff3321c388</code>, and so on, until you get to the final, highest-level environment, <code>R_EmptyEnv</code>. <code>R_EmptyEnv</code> is the only R environment that does not have a parent environment.</p>
 <div id="fig:environments" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0602.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 6.2: R stores R objects in an environment tree that resembles your computer’s folder system.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0602.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.2: R stores R objects in an environment tree that resembles your computer’s folder system.</figcaption><p></p>
 </figure>
 </div>
 <p>Remember that this example is just a metaphor. R’s environments exist in your RAM memory, and not in your file system. Also, R environments aren’t technically saved inside one another. Each environment is connected to a parent environment, which makes it easy to search up R’s environment tree. But this connection is one-way: there’s no way to look at one environment and tell what its “children” are. So you cannot search down R’s environment tree. In other ways, though, R’s environment system works similar to a file system.</p>
@@ -471,9 +470,9 @@
 </ol>
 <p>So, if you call an object at the command line, R will look for it in the global environment. If R can’t find it there, R will look in the parent of the global environment, and then the parent of the parent, and so on, working its way up the environment tree until it finds the object, as in <a href="#fig:path">fig.&nbsp;<span>6.3</span></a>. If R cannot find the object in any environment, it will return an error that says the object is not found.</p>
 <div id="fig:path" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0603.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 6.3: R will search for an object by name in the active environment, here the global environment. If R does not find the object there, it will search in the active environment’s parent, and then the parent’s parent, and so on until R finds the object or runs out of environments.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0603.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.3: R will search for an object by name in the active environment, here the global environment. If R does not find the object there, it will search in the active environment’s parent, and then the parent’s parent, and so on until R finds the object or runs out of environments.</figcaption><p></p>
 </figure>
 </div>
 <div class="callout-tip callout">
@@ -536,9 +535,9 @@
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="do">## $objects</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This time <code>show_env</code> ran in a new environment, <code>0x7ff715f49808</code>. R creates a new environment <em>each</em> time you run a function. The <code>0x7ff715f49808</code> environment looks exactly the same as <code>0x7ff711d12e28</code>. It is empty and has the same global environment as its parent.</p>
 <div id="fig:tree" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0604.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 6.4: R creates a new environment to run show_env in. The environment is a child of the global environment.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0604.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.4: R creates a new environment to run show_env in. The environment is a child of the global environment.</figcaption><p></p>
 </figure>
 </div>
 <p>Now let’s consider which environment R will use as the parent of the runtime environment.</p>
@@ -611,9 +610,9 @@
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  face   suit value</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  king spades    13</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig:deal" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0605.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 6.5: R finds <code>deck</code> by looking in the parent of deal’s runtime environment. The parent is the global environment, deal’s origin environment. Here, R finds the copy of <code>deck</code>.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0605.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.5: R finds <code>deck</code> by looking in the parent of deal’s runtime environment. The parent is the global environment, deal’s origin environment. Here, R finds the copy of <code>deck</code>.</figcaption><p></p>
 </figure>
 </div>
 <p>Now let’s fix the <code>deal</code> function to remove the cards it has dealt from <code>deck</code>. Recall that <code>deal</code> returns the top card of <code>deck</code> but does not remove the card from the deck. As a result, <code>deal</code> always returns the same card:</p>
@@ -642,9 +641,9 @@
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This code won’t work because R will be in a runtime environment when it executes <code>deck &lt;- deck[-1, ]</code>. Instead of overwriting the global copy of <code>deck</code> with <code>deck[-1, ]</code>, <code>deal</code> will just create a slightly altered copy of <code>deck</code> in its runtime environment, as in <a href="#fig:second-deck">fig.&nbsp;<span>6.6</span></a>.</p>
 <div id="fig:second-deck" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0606.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 6.6: The deal function looks up deck in the global environment but saves <code>deck[-1, ]</code> in the runtime environment as a new object named deck.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0606.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.6: The deal function looks up deck in the global environment but saves <code>deck[-1, ]</code> in the runtime environment as a new object named deck.</figcaption><p></p>
 </figure>
 </div>
 <div id="exr:overwrite-deck" class="theorem exercise">
@@ -755,9 +754,9 @@
 <span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>cards <span class="ot">&lt;-</span> <span class="fu">setup</span>(deck)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig:closure1" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0607.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 6.7: Running setup will store deck and DECK in an out-of-the-way place, and create a DEAL and SHUFFLE function. Each of these objects will be stored in an environment whose parent is the global environment.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0607.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.7: Running setup will store deck and DECK in an out-of-the-way place, and create a DEAL and SHUFFLE function. Each of these objects will be stored in an environment whose parent is the global environment.</figcaption><p></p>
 </figure>
 </div>
 <p>Then you can save each of the elements of the list to a dedicated object in the global environment:</p>
@@ -786,9 +785,9 @@
 <span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="do">## &lt;environment: 0x7ff7169c3390&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Why does this matter? Because now when you run <code>deal</code> or <code>shuffle</code>, R will evaluate the functions in a runtime environment that uses <code>0x7ff7169c3390</code> as its parent. <code>DECK</code> and <code>deck</code> will be in this parent environment, which means that <code>deal</code> and <code>shuffle</code> will be able to find them at runtime. <code>DECK</code> and <code>deck</code> will be in the functions’ search path but still out of the way in every other respect, as shown in <a href="#fig:closure2">fig.&nbsp;<span>6.8</span></a>.</p>
 <div id="fig:closure2" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0608.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 6.8: Now deal and shuffle will be run in an environment that has the protected deck and DECK in its search path.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0608.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.8: Now deal and shuffle will be run in an environment that has the protected deck and DECK in its search path.</figcaption><p></p>
 </figure>
 </div>
 <p>This arrangement is called a <em>closure</em>. <code>setup</code>’s runtime environment “encloses” the <code>deal</code> and <code>shuffle</code> functions. Both <code>deal</code> and <code>shuffle</code> can work closely with the objects contained in the enclosing environment, but almost nothing else can. The enclosing environment is not on the search path for any other R function or environment.</p>
@@ -814,9 +813,9 @@
 <span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>deal <span class="ot">&lt;-</span> cards<span class="sc">$</span>deal</span>
 <span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>shuffle <span class="ot">&lt;-</span> cards<span class="sc">$</span>shuffle</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig:closure3" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0609.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 6.9: When you change your code, deal and shuffle will go from updating the global environment (left) to updating their parent environment (right).</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0609.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.9: When you change your code, deal and shuffle will go from updating the global environment (left) to updating their parent environment (right).</figcaption><p></p>
 </figure>
 </div>
 <p>We finally have a self-contained card game. You can delete (or modify) the global copy of <code>deck</code> as much as you want and still play cards. <code>deal</code> and <code>shuffle</code> will use the pristine, protected copy of <code>deck</code>:</p>

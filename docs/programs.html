@@ -142,7 +142,6 @@
        display: inline-table;
     }
     .quarto-layout-cell-subref figcaption {
-      font-size: 0.8em;
       font-style: italic;
     }
     figure > p:empty {
@@ -487,9 +486,9 @@
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To have R execute steps in sequence, place the steps one after another in an R script or function body.</p>
 <div id="fig:subdivide1" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0701.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 7.1: The play function uses a series of steps.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0701.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 7.1: The play function uses a series of steps.</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -501,15 +500,15 @@
 <p>Adding the <code>score</code> cases to the <code>play</code> steps reveals a strategy for the complete slot machine program, as shown in <a href="#fig:subdivide3">fig.&nbsp;<span>7.3</span></a>.</p>
 <p>We’ve already solved the first few steps in this strategy. Our program can get three slot machine symbols with the <code>get_symbols</code> function. Then it can display the symbols with the <code>print</code> function. Now let’s examine how the program can handle the parallel score cases.</p>
 <div id="fig:subdivide2" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0702.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 7.2: The score function must distinguish between parallel cases.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0702.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 7.2: The score function must distinguish between parallel cases.</figcaption><p></p>
 </figure>
 </div>
 <div id="fig:subdivide3" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0703.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 7.3: The complete slot machine simulation will involve subtasks that are arranged both in series and in parallel.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0703.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 7.3: The complete slot machine simulation will involve subtasks that are arranged both in series and in parallel.</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -674,9 +673,9 @@ x</code></pre>
 <strong>&lt;8&gt;</strong> - Adjust the prize for diamonds.</p>
 <p>If you like, you can reorganize your flow chart around these tasks, as in <a href="#fig:subdivide4">fig.&nbsp;<span>7.4</span></a>. The chart will describe the same strategy, but in a more precise way. I’ll use a diamond shape to symbolize an <code>if else</code> decision.</p>
 <div id="fig:subdivide4" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0704.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 7.4: score can navigate three cases with two if else decisions. We can also break some of our tasks into two steps.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0704.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 7.4: score can navigate three cases with two if else decisions. We can also break some of our tasks into two steps.</figcaption><p></p>
 </figure>
 </div>
 <p>Now we can work through the subtasks one at a time, adding R code to the <code>if</code> tree as we go. Each subtask will be easy to solve if you set up a concrete example to work with and try to describe a solution in English before coding in R.</p>

@@ -142,7 +142,6 @@
        display: inline-table;
     }
     .quarto-layout-cell-subref figcaption {
-      font-size: 0.8em;
       font-style: italic;
     }
     figure > p:empty {
@@ -392,17 +391,17 @@
 <p>Notice that there are 5,000 lines of output in this <code>traceback</code>. If you are using RStudio, you will not get to see the traceback of an infinite recursion error (I used the Mac GUI to get this output). RStudio represses the traceback for infinite recursion errors to prevent the large call stacks from pushing your console history out of R’s memory buffer. With RStudio, you will have to recognize the infinite recursion error by its error message. However, you can still see the imposing <code>traceback</code> by running things in a UNIX shell or the Windows or Mac GUIs.</p>
 <p>RStudio makes it very easy to use <code>traceback</code>. You do not even need to type in the function name. Whenever an error occurs, RStudio will display it in a gray box with two options. The first is Show Traceback, shown in <a href="#fig:show-traceback">fig.&nbsp;<span>E.1</span></a>.</p>
 <div id="fig:show-traceback" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_ae01.png" class="img-fluid" style="width:80.0%"></p>
-<p></p><figcaption aria-hidden="true">Figure E.1: RStudio’s Show Traceback option.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_ae01.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure E.1: RStudio’s Show Traceback option.</figcaption><p></p>
 </figure>
 </div>
 <p>If you click Show Traceback, RStudio will expand the gray box and display the <code>traceback</code> call stack, as in <a href="#fig:hide-traceback">fig.&nbsp;<span>E.2</span></a>. The Show Traceback option will persist beside an error message in your console, even as you write new commands. This means that you can go back and look at the call stacks for all errors—not just the most recent error.</p>
 <p>Imagine that you’ve used <code>traceback</code> to pinpoint a function that you think might cause a bug. Now what should you do? You should try to figure out what the function did to cause an error while it ran (if it did anything). You can examine how the function runs with <code>browser</code>.</p>
 <div id="fig:hide-traceback" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_ae02.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure E.2: RStudio’s Traceback display.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_ae02.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure E.2: RStudio’s Traceback display.</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -448,9 +447,9 @@
 <p>I’m now in a new R mode, called <em>browser mode</em>. Browser mode is designed to help you uncover bugs, and the new display in RStudio is designed to help you navigate this mode.</p>
 <p>Any command that you run in browser mode will be evaluated in the context of the runtime environment of the function that called <code>browser</code>. This will be the function that is highlighted in the new Traceback pane. Here, that function is <code>score</code>. So while we are in browser mode, the active environment will be <code>score</code>’s runtime environment. This lets you do two things.</p>
 <div id="fig:browser" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_ae03.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure E.3: RStudio updates its display whenever you enter browser mode to help you navigate the mode.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_ae03.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure E.3: RStudio updates its display whenever you enter browser mode to help you navigate the mode.</figcaption><p></p>
 </figure>
 </div>
 <p>First, you can inspect the objects that <code>score</code> uses. The updated Environments pane shows you which objects <code>score</code> has saved in its local environment. You can inspect any of them by typing their name at the browser prompt. This gives you a way to see the values of runtime variables that you normally would not be able to access. If a value looks clearly wrong, you may be close to finding a bug:</p>
@@ -464,9 +463,9 @@
 <p>The second button, Continue, will run all of the remaining lines of <code>score</code> and then exit the browser mode.</p>
 <p>The third button, Stop, will exit browser mode without running any more lines of <code>score</code>.</p>
 <div id="fig:browser-buttons" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_ae04.png" class="img-fluid" style="width:80.0%"></p>
-<p></p><figcaption aria-hidden="true">Figure E.4: You can navigate browser mode with the three buttons at the top of the console pane.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_ae04.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure E.4: You can navigate browser mode with the three buttons at the top of the console pane.</figcaption><p></p>
 </figure>
 </div>
 <p>You can do the same things by typing the commands <code>n</code>, <code>c</code>, and <code>Q</code> into the browser prompt. This creates an annoyance: what if you want to look up an object named <code>n</code>, <code>c</code>, or <code>Q</code>? Typing in the object name will not work, R will either advance, continue, or quit the browser mode. Instead you will have to look these objects up with the commands <code>get("n")</code>, <code>get("c")</code>, and <code>get("Q")</code>. <code>cont</code> is a synonym for <code>c</code> in browser mode and <code>where</code> prints the call stack, so you’ll have to look up these objects with <code>get</code> as well.</p>
@@ -478,9 +477,9 @@
 <p>RStudio’s break points provide a graphical way to add a <code>browser</code> statement to a function. To use them, open the script where you’ve defined a function. Then click to the left of the line number of the line of code in the function body where you’d like to add the browser statement. A hollow red dot will appear to show you where the break point will occur. Then run the script by clicking the Source button at the top of the Scripts pane. The hollow dot will turn into a solid red dot to show that the function has a break point (see <a href="#fig:break-point">fig.&nbsp;<span>E.5</span></a>).</p>
 <p>R will treat the break point like a <code>browser</code> statement, going into browser mode when it encounters it. You can remove a break point by clicking on the red dot. The dot will disappear, and the break point will be removed.</p>
 <div id="fig:break-point" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_ae05.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure E.5: Break points provide the graphical equivalent of a browser statement.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_ae05.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure E.5: Break points provide the graphical equivalent of a browser statement.</figcaption><p></p>
 </figure>
 </div>
 <p>Break points and <code>browser</code> provide a great way to debug functions that you have defined. But what if you want to debug a function that already exists in R? You can do that with the <code>debug</code> function.</p>

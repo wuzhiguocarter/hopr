@@ -142,7 +142,6 @@
        display: inline-table;
     }
     .quarto-layout-cell-subref figcaption {
-      font-size: 0.8em;
       font-style: italic;
     }
     figure > p:empty {
@@ -400,9 +399,9 @@ Repetition
 </div>
 </div>
 <div id="fig:positive" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0401.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 4.1: R uses the <em>ij</em> notation system of linear algebra. The commands in this figure will return the shaded values.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0401.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.1: R uses the <em>ij</em> notation system of linear algebra. The commands in this figure will return the shaded values.</figcaption><p></p>
 </figure>
 </div>
 <p>R’s notation system is not limited to data frames. You can use the same syntax to select values in any R object, as long as you supply one index for each dimension of the object. So, for example, you can subset a vector (which has one dimension) with a single index:</p>
@@ -491,9 +490,9 @@ Indexing begins at 1
 <span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="do">## face   suit value</span></span>
 <span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="do">## king spades    13</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig:logicals" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0402.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 4.2: You can use vectors of TRUEs and FALSEs to tell R exactly which values you want to extract and which you do not. The command would return just the numbers 1, 6, and 5.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0402.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.2: You can use vectors of TRUEs and FALSEs to tell R exactly which values you want to extract and which you do not. The command would return just the numbers 1, 6, and 5.</figcaption><p></p>
 </figure>
 </div>
 <p>This system may seem odd—who wants to type so many <code>TRUE</code>s and <code>FALSE</code>s?—but it will become very powerful in <a href="modifying.html">Modifying Values</a>.</p>
@@ -652,9 +651,9 @@ Indexing begins at 1
 <span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This difference is subtle but important. In the R community, there is a popular, and helpful, way to think about it, <a href="#fig:trains">fig.&nbsp;<span>4.3</span></a>. Imagine that each list is a train and each element is a train car. When you use single brackets, R selects individual train cars and returns them as a new train. Each car keeps its contents, but those contents are still inside a train car (i.e., a list). When you use double brackets, R actually unloads the car and gives you back the contents.</p>
 <div id="fig:trains" class="quarto-figure" style="text-align: center;">
-<figure>
-<p><img src="images/hopr_0403.png" class="img-fluid"></p>
-<p></p><figcaption aria-hidden="true">Figure 4.3: It can be helpful to think of your list as a train. Use single brackets to select train cars, double brackets to select the contents inside of a car.</figcaption><p></p>
+<figure class="figure">
+<p><img src="images/hopr_0403.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.3: It can be helpful to think of your list as a train. Use single brackets to select train cars, double brackets to select the contents inside of a car.</figcaption><p></p>
 </figure>
 </div>
 <div class="callout-important callout callout-captioned">
