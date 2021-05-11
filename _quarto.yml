@@ -17,29 +17,29 @@ book:
   repo-url: https://github.com/jjallaire/hopr/
   repo-actions: [edit]
   sharing: [twitter, facebook, linkedin]
-  contents:
+  chapters:
     - index.md
     - preface.md
     - part: "Part 1"
-      contents: 
+      chapters: 
         - dice.md
         - basics.md
         - packages.md
     - part: "Part 2"
-      contents:
+      chapters:
         - cards.md
         - objects.md
         - notation.md
         - modifying.md
         - environments.md
     - part: "Part 3"
-      contents:
+      chapters:
         - slots.md
         - programs.md
         - s3.md
         - loops.md
         - speed.md
-  appendix:
+  appendices:
     - a1-starting.md
     - a2-packages.md
     - a3-updating.md
