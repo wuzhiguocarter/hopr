@@ -225,7 +225,9 @@ $$
 
 Ready to begin?
 
-::: {#exr:list-the-combinations name="List the Combinations"}
+::: {#exr:list-the-combinations}
+## List the Combinations
+
 Use `expand.grid` to make a data frame that contains every possible combination of *three* symbols from the `wheel` vector:
 
 ``` {.r}
@@ -266,7 +268,9 @@ get_symbols <- function() {
 }
 ```
 
-::: {#exr:lookup-table name="Make a Lookup Table"}
+::: {#exr:lookup-table}
+## Make a Lookup Table
+
 Isolate the previous probabilities in a lookup table. What names will you use in your table?
 :::
 
@@ -281,7 +285,9 @@ prob <- c("DD" = 0.03, "7" = 0.03, "BBB" = 0.06,
 
 Now let's look up our probabilities.
 
-::: {#exr:lookup-probabilities name="Lookup the Probabilities"}
+::: {#exr:lookup-probabilities}
+## Lookup the Probabilities
+
 Look up the probabilities of getting the values in `Var1`. Then add them to `combos` as a column named `prob1`. Then do the same for `Var2` (`prob2`) and `Var3` (`prob3`).
 :::
 
@@ -307,7 +313,9 @@ $$
 P(A \& B \& C \& ...) = P(A) \cdot P(B) \cdot P(C) \cdot ...
 $$
 
-::: {#exr:calculate-combinations name="Calculate Probabilities for Each Combination"}
+::: {#exr:calculate-combinations}
+## Calculate Probabilities for Each Combination
+
 Calculate the overall probabilities for each combination. Save them as a column named `prob` in `combos`, then check your work.
 
 You can check that the math worked by summing the probabilities. The probabilities should add up to one, because one of the combinations *must* appear when you play the slot machine. In other words, a combination will appear, with probability of one.
@@ -469,7 +477,9 @@ head(combos, 3)
 
 The code creates a new column named prize and fills it with `NA`s. R uses its recycling rules to populate every value of the column with `NA`.
 
-::: {#exr:build-a-loop name="Build a Loop"}
+::: {#exr:build-a-loop}
+## Build a Loop
+
 Construct a `for` loop that will run `score` on all 343 rows of `combos`. The loop should run `score` on the first three entries of the \_i_th row of `combos` and should store the results in the \_i_th entry of `combos$prize`.
 :::
 
@@ -509,7 +519,9 @@ The best thing about `DD`s is that their effects are cumulative. For example, co
 
 Adding this behavior to our code is a little tougher than what we have done so far, but it involves all of the same principles. You can decide that your slot machine doesn't use wilds and keep the code that we have. In that case, your slot machine will have a payout rate of about 54 percent. Or, you could rewrite your code to use wilds. If you do, you will find that your slot machine has a payout rate of 93 percent, one percent higher than the manufacturer's claim. You can calculate this rate with the same method that we used in this section.
 
-::: {#exr:challenge name="Challenge"}
+::: {#exr:challenge}
+## Challenge
+
 There are many ways to modify `score` that would count `DD`s as wild. If you would like to test your skill as an R programmer, try to write your own version of `score` that correctly handles diamonds.
 
 If you would like a more modest challenge, study the following `score` code. It accounts for wild diamonds in a way that I find elegant and succinct. See if you can understand each step in the code and how it achieves its result.
@@ -554,7 +566,9 @@ score <- function(symbols) {
 }
 ```
 
-::: {#exr:expected-value name="Calculate the Expected Value"}
+::: {#exr:expected-value}
+## Calculate the Expected Value
+
 Calculate the expected value of the slot machine when it uses the new `score` function. You can use the existing `combos` data frame, but you will need to build a `for` loop to recalculate `combos$prize`.
 :::
 

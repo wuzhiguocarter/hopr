@@ -161,7 +161,9 @@ typeof("Hello")
 
 The individual elements of a character vector are known as *strings*. Note that a string can contain more than just letters. You can assemble a character string from numbers or symbols as well.
 
-::: {#exr:char-or-number name="Character or Number?"}
+::: {#exr:char-or-number}
+## Character or Number?
+
 Can you spot the difference between a character string and a number? Here's a test: Which of these are character strings and which are numbers? `1`, `"1"`, `"one"`.
 :::
 
@@ -223,7 +225,9 @@ typeof(raw(3))
 ## "raw"
 ```
 
-::: {#exr:vector-of-cards name="Vector of Cards"}
+::: {#exr:vector-of-cards}
+## Vector of Cards
+
 Create an atomic vector that stores just the face names of the cards in a royal flush, for example, the ace of spades, king of spades, queen of spades, jack of spades, and ten of spades. The face name of the ace of spades would be "ace," and "spades" is the suit.
 
 Which type of vector will you use to save the names?
@@ -418,7 +422,9 @@ ar
 ## [2,]   32   34
 ```
 
-::: {#exr:make-a-matrix name="Make a Matrix"}
+::: {#exr:make-a-matrix}
+## Make a Matrix
+
 Create the following matrix, which stores the name and suit of every card in a royal flush.
 :::
 
@@ -582,7 +588,9 @@ as.character(gender)
 
 Now that you understand the possibilities provided by R's atomic vectors, let's make a more complicated type of playing card.
 
-::: {#exr:write-a-card name="Write a Card"}
+::: {#exr:write-a-card}
+## Write a Card
+
 Many card games assign a numerical value to each card. For example, in blackjack, each face card is worth 10 points, each number card is worth between 2 and 10 points, and each ace is worth 1 or 11 points, depending on the final score.
 
 Make a virtual playing card by combining "ace," "heart," and 1 into a vector. What type of atomic vector will result? Check if you are right.
@@ -693,7 +701,9 @@ As you can imagine, the structure of lists can become quite complicated, but thi
 
 However, not every list needs to be complicated. You can store a playing card in a very simple list.
 
-::: {#exr:list-make-card name="Use a List to Make a Card"}
+::: {#exr:list-make-card}
+## Use a List to Make a Card
+
 Use a list to store a single playing card, like the ace of hearts, which has a point value of one. The list should save the face of the card, the suit, and the point value in separate elements.
 :::
 

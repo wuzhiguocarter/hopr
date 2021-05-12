@@ -67,7 +67,9 @@ The first two columns of the output of `system.time` report how many seconds you
 
 The last column displays how many seconds elapsed while R ran the expression. The results show that `abs_set` calculated the absolute value 30 times faster than `abs_loop` when applied to a vector of 10 million numbers. You can expect similar speed-ups whenever you write vectorized code.
 
-::: {#exr:how-fast-is-abs name="How fast is abs?"}
+::: {#exr:how-fast-is-abs}
+## How fast is abs?
+
 Many preexisting R functions are already vectorized and have been optimized to perform quickly. You can make your code faster by relying on these functions whenever possible. For example, R comes with a built-in absolute value function, `abs`.
 
 Check to see how much faster `abs` computes the absolute value of `long` than `abs_loop` and `abs_set` do.
@@ -116,7 +118,9 @@ Finally, you can use R's assignment operator, which is also vectorized, to save 
 
 ![Use logical subsetting to modify groups of values in place. R's arithmetic and assignment operators are vectorized, which lets you manipulate and update multiple values at once.](images/hopr_1002.png){#fig:assignment}
 
-::: {#exr:vectorize-a-function name="Vectorize a Function"}
+::: {#exr:vectorize-a-function}
+## Vectorize a Function
+
 The following function converts a vector of slot symbols to a vector of new slot symbols. Can you vectorize it? How much faster does the vectorized version work?
 
 ``` {.r}
@@ -380,11 +384,15 @@ symbols
 
 Then you can run each line of `score_many` against the example and examine the results as you go.
 
-::: {#exr:test-your-understanding name="Test Your Understanding"}
+::: {#exr:test-your-understanding}
+## Test Your Understanding
+
 Study the model `score_many` function until you are satisfied that you understand how it works and could write a similar function yourself.
 :::
 
-::: {#exr:advanced-challenge name="Advanced Challenge"}
+::: {#exr:advanced-challenge}
+## Advanced Challenge
+
 Instead of examining the model answer, write your own vectorized version of `score`. Assume that the data is stored in an *n* × 3 matrix where each row of the matrix contains one combination of slots to be scored.
 
 You can use the version of `score` that treats diamonds as wild or the version of `score` that doesn't. However, the model answer will use the version treating diamonds as wild.

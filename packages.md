@@ -95,7 +95,9 @@ x2 <- c(1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 4)
 qplot(x2, binwidth = 1)
 ```
 
-::: {#exr:histogram name="Visualize a Histogram"}
+::: {#exr:histogram}
+## Visualize a Histogram
+
 Let `x3` be the following vector:
 
 `x3 <- c(0, 1, 1, 2, 2, 2, 3, 3, 4)`
@@ -247,7 +249,9 @@ If replace is true, Walker's alias method (Ripley, 1987) is used...
 
 Okay, that looks like time to start skimming. We should have enough info now to figure out how to weight our dice.
 
-::: {#exr:roll name="Roll a Pair of Dice"}
+::: {#exr:roll}
+## Roll a Pair of Dice
+
 Rewrite the `roll` function below to roll a pair of weighted dice:
 :::
 

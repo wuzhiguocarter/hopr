@@ -20,21 +20,18 @@ book:
   chapters:
     - index.md
     - preface.md
-    - part: "Part 1"
+    - part: dice.md
       chapters: 
-        - dice.md
         - basics.md
         - packages.md
-    - part: "Part 2"
+    - part: cards.md
       chapters:
-        - cards.md
         - objects.md
         - notation.md
         - modifying.md
         - environments.md
-    - part: "Part 3"
+    - part: slots.md
       chapters:
-        - slots.md
         - programs.md
         - s3.md
         - loops.md

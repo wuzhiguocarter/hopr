@@ -350,7 +350,9 @@ deal <- function() {
 
 Notice that `deal` no longer takes an argument, and it calls the `deck` object, which lives in the global environment.
 
-::: {#exr:will-deal-work name="Will deal work?"}
+::: {#exr:will-deal-work}
+## Will deal work?
+
 Will R be able to find `deck` and return an answer when I call the new version of `deal`, such as `deal()`?
 :::
 
@@ -413,7 +415,9 @@ This code won't work because R will be in a runtime environment when it executes
 
 ![The deal function looks up deck in the global environment but saves `deck[-1, ]` in the runtime environment as a new object named deck.](images/hopr_0606.png){#fig:second-deck}
 
-::: {#exr:overwrite-deck name="Overwrite deck"}
+::: {#exr:overwrite-deck}
+## Overwrite deck
+
 Rewrite the `deck <- deck[-1, ]` line of `deal` to *assign* `deck[-1, ]` to an object named `deck` in the global environment. Hint: consider the `assign` function.
 :::
 
@@ -480,7 +484,9 @@ head(a, 3)
 
 This behavior is now undesirable in two ways. First, `shuffle` fails to shuffle `deck`. Second, `shuffle` returns a copy of `deck`, which may be missing the cards that have been dealt away. It would be better if `shuffle` returned the dealt cards to the deck and then shuffled. This is what happens when you shuffle a deck of cards in real life.
 
-::: {#exr:rewrite-shuffle name="Rewrite shuffle"}
+::: {#exr:rewrite-shuffle}
+## Rewrite shuffle
+
 Rewrite `shuffle` so that it replaces the copy of `deck` that lives in the global environment with a shuffled version of `DECK`, the intact copy of `deck` that also lives in the global environment. The new version of `shuffle` should have no arguments and return no output.
 :::
 

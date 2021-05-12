@@ -219,7 +219,9 @@ deck[ , "value"]
 
 Now that you know the basics of R's notation system, let's put it to use.
 
-::: {#exr:deal-a-card name="Deal a Card"}
+::: {#exr:deal-a-card}
+## Deal a Card
+
 Complete the following code to make a function that returns the first row of a data frame:
 
 ``` {.r}
@@ -315,7 +317,9 @@ head(deck4)
 
 Now the new set is truly shuffled. You'll be finished once you wrap these steps into a function.
 
-::: {#exr:shuffile-a-deck name="Shuffle a Deck"}
+::: {#exr:shuffile-a-deck}
+## Shuffle a Deck
+
 Use the preceding ideas to write a `shuffle` function. `shuffle` should take a data frame and return a shuffled copy of the data frame.
 :::
 

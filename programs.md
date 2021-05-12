@@ -225,7 +225,9 @@ num
 
 Try the following quizzes to develop your understanding of `if` statements.
 
-::: {#exr:quiz-a name="Quiz A"}
+::: {#exr:quiz-a}
+## Quiz A
+
 What will this return?
 
 ``` {.r}
@@ -241,7 +243,9 @@ x
 The code will return the number 2. `x` begins as 1, and then R encounters the `if` statement. Since the condition evaluates to `TRUE`, R will run `x <- 2`, changing the value of `x`.
 ```
 
-::: {#exr:quiz-b name="Quiz B"}
+::: {#exr:quiz-b}
+## Quiz B
+
 What will this return?
 
     ```r
@@ -256,7 +260,9 @@ What will this return?
 This code will also return the number 2. It works the same as the code in Quiz A, except the condition in this statement is already `TRUE`. R doesn't even need to evaluate it. As a result, the code inside the `if` statement will be run, and `x` will be set to 2. 
 ```
 
-::: {#exr:quiz-c name="Quiz C"}
+::: {#exr:quiz-c}
+## Quiz C
+
 What will this return?
 
 ``` {.r}
@@ -413,7 +419,9 @@ Our first subtask asks us to "test whether the symbols are three of a kind." Thi
 
 *A vector named `symbols` will contain three of the same symbol if the first element of `symbols` is equal to the second element of `symbols` and the second element of `symbols` is equal to the third element of `symbols`*.
 
-::: {#exr:write-a-test name="Write a Test"}
+::: {#exr:write-a-test}
+## Write a Test
+
 Turn the preceding statement into a logical test written in R. Use your knowledge of logical tests, Boolean operators, and subsetting from [R Notation]. The test should work with the vector `symbols` and return a `TRUE` *if and only if* each element in `symbols` is the same. Be sure to test your code on `symbols`.
 :::
 
@@ -471,7 +479,9 @@ The second prize case occurs when all the symbols are a type of bar, for example
 symbols <- c("B", "BBB", "BB")
 ```
 
-::: {#exr:test-for-all-bars name="Test for All Bars"}
+::: {#exr:test-for-all-bars}
+## Test for All Bars
+
 Use R's logical and Boolean operators to write a test that will determine whether a vector named `symbols` contains only symbols that are a type of bar. Check whether your test works with our example `symbols` vector. Remember to describe how the test should work in English, and then convert the solution to R.
 :::
 
@@ -647,7 +657,9 @@ if (same) {
 
 Now we can work on the last case. Here, you'll need to know how many cherries are in `symbols` before you can calculate a prize.
 
-::: {#exr:find-c name="Find C's"}
+::: {#exr:find-c}
+## Find C's
+
 How can you tell which elements of a vector named `symbols` are a `C`? Devise a test and try it out.
 
 ::: {.callout-note}
@@ -820,7 +832,9 @@ prize * 8      # 8 = 2 ^ 3
 
 Can you think of an easy way to handle this? How about something similar to these examples?
 
-::: {#exr:adjust-for-diamonds name="Adjust for Diamonds"}
+::: {#exr:adjust-for-diamonds}
+## Adjust for Diamonds
+
 Write a method for adjusting `prize` based on `diamonds`. Describe a solution in English first, and then write your code.
 :::
 

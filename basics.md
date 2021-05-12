@@ -95,7 +95,9 @@ For the remainder of the book, I'll use hashtags to display the output of R code
 Some R commands may take a long time to run. You can cancel a command once it has begun by pressing ctrl + c. Note that it may also take R a long time to cancel the command.
 :::
 
-::: {#exr:magic name="Magic with Numbers"}
+::: {#exr:magic}
+## Magic with Numbers
+
 That's the basic interface for executing R code in RStudio. Think you have it? If so, try doing these simple tasks. If you execute everything correctly, you should end up with the same number that you started with:
 
 1.  Choose any number and add 2 to it.
