@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="description" content="This book will teach you how to program in R, with hands-on examples. I wrote it for non-programmers to provide a friendly introduction to the R language. You’ll learn how to load data, assemble and disassemble data objects, navigate R’s environment system, write your own functions, and use all of R’s programming tools. Throughout the book, you’ll use your newfound skills to solve practical data science problems.">
-  <title>Hands-On Programming with R – 10&nbsp; Speed</title>
-  <style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="pandoc">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="description" content="This book will teach you how to program in R, with hands-on examples. I wrote it for non-programmers to provide a friendly introduction to the R language. You’ll learn how to load data, assemble and disassemble data objects, navigate R’s environment system, write your own functions, and use all of R’s programming tools. Throughout the book, you’ll use your newfound skills to solve practical data science problems.">
+<title>Hands-On Programming with R – 10&nbsp; Speed</title>
+<style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -76,26 +77,13 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-
-  <!--[if lt IE 9]>
+<!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
-  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-  <script src="site_libs/quarto-nav/headroom.min.js"></script>
-  <meta name="quarto:offset" content=".">
-  <script src="site_libs/quarto-search/autocomplete.min.js"></script>
-  <script src="site_libs/quarto-search/fuse.min.js"></script>
-  <script src="site_libs/quarto-search/quarto-search.js"></script>
-  <script src="site_libs/quarto-html/popper.min.js"></script>
-  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-  <script src="site_libs/quarto-html/clipboard.min.js"></script>
-  <script src="site_libs/quarto-html/anchor.min.js"></script>
-  <script src="site_libs/quarto-html/quarto-html.js"></script>
-  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
-  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-  <style type="text/css">
+  <![endif]--><script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><meta name="quarto:offset" content=".">
+<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
     .quarto-layout-panel > figure > figcaption,
     .quarto-layout-panel > .panel-caption {
       margin-top: 10pt;
@@ -158,28 +146,23 @@
 </head>
 <body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
 <div id="quarto-search-results"></div>
-<header id="quarto-header" class="headroom fixed-top">
-<nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <div class="container-fluid d-flex justify-content-between">
-    <h1 class="quarto-secondary-nav-title mb-0 fs-5 d-inline"><span class="chapter-number">10</span>&nbsp; Speed</h1>
+<header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
+    <h1 class="quarto-secondary-nav-title mb-0 fs-5 d-inline">
+<span class="chapter-number">10</span>&nbsp; Speed</h1>
     <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
       <i class="bi bi-chevron-right"></i>
     </button>
   </div>
-</nav>
-</header>
- <!-- /navbar/sidebar -->
-<div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
+</nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll ">
-  <div class="px-3 pt-lg-3 text-center">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-3 text-center">
     <h4 class="sidebar-title text-center mt-1 mb-0 py-0">Hands-On Programming with R</h4>
       <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
+<li>
           <a class="dropdown-item" href="http://www.twitter.com/share">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
@@ -210,7 +193,7 @@
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
+<li>
           <a class="dropdown-item" href="http://www.twitter.com/share">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
@@ -233,14 +216,14 @@
     </div>
   <div class="sidebar-menu-container"> 
   <ul class="list-unstyled mt-3 px-3">
-      <li class="sidebar-item">
+<li class="sidebar-item">
   <a href="./index.html" class="">Welcome</a>
 </li>
       <li class="sidebar-item">
   <a href="./preface.html" class="">Preface</a>
 </li>
       <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
+<li class="">
         <div class="me-auto ">
           <div class="d-inline-flex w-100 sidebar-section-item">
             <div class="sidebar-section-link me-auto ">
@@ -252,18 +235,19 @@
             </div>
       <div class="collapse  show" id="project1weighteddice-collapse">
         <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
+<li class="sidebar-item">
   <a href="./basics.html" class=""><span class="chapter-number">1</span>&nbsp; The Very Basics</a>
 </li>
           <li class="sidebar-item">
   <a href="./packages.html" class=""><span class="chapter-number">2</span>&nbsp; Packages and Help Pages</a>
 </li>
         </ul>
-      </div>
-    </div></li>
+</div>
+    </div>
+</li>
   </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
+<ul class="list-unstyled sidebar-section depth1">
+<li class="">
         <div class="me-auto ">
           <div class="d-inline-flex w-100 sidebar-section-item">
             <div class="sidebar-section-link me-auto ">
@@ -275,7 +259,7 @@
             </div>
       <div class="collapse  show" id="project2playingcards-collapse">
         <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
+<li class="sidebar-item">
   <a href="./objects.html" class=""><span class="chapter-number">3</span>&nbsp; R Objects</a>
 </li>
           <li class="sidebar-item">
@@ -288,11 +272,12 @@
   <a href="./environments.html" class=""><span class="chapter-number">6</span>&nbsp; Environments</a>
 </li>
         </ul>
-      </div>
-    </div></li>
+</div>
+    </div>
+</li>
   </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
+<ul class="list-unstyled sidebar-section depth1">
+<li class="">
         <div class="me-auto ">
           <div class="d-inline-flex w-100 sidebar-section-item">
             <div class="sidebar-section-link me-auto ">
@@ -304,7 +289,7 @@
             </div>
       <div class="collapse  show" id="project3slotmachine-collapse">
         <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
+<li class="sidebar-item">
   <a href="./programs.html" class=""><span class="chapter-number">7</span>&nbsp; Programs</a>
 </li>
           <li class="sidebar-item">
@@ -317,11 +302,12 @@
   <a href="./speed.html" class="active"><span class="chapter-number">10</span>&nbsp; Speed</a>
 </li>
         </ul>
-      </div>
-    </div></li>
+</div>
+    </div>
+</li>
   </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
+<ul class="list-unstyled sidebar-section depth1">
+<li class="">
         <div class="me-auto ">
             <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
@@ -331,7 +317,7 @@
             </button>
       <div class="collapse  show" id="appendices-collapse">
         <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
+<li class="sidebar-item">
   <a href="./a1-starting.html" class=""><span class="chapter-number">A</span>&nbsp; Installing R and RStudio</a>
 </li>
           <li class="sidebar-item">
@@ -347,42 +333,40 @@
   <a href="./a5-debug.html" class=""><span class="chapter-number">E</span>&nbsp; Debugging R Code</a>
 </li>
         </ul>
-      </div>
-    </div></li>
+</div>
+    </div>
+</li>
   </ul>
-  </ul>
-  </div>
+</ul>
+</div>
 </nav>
-  </div>
+</div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
-<main>
-<header id="title-block-header">
-<h1 class="title d-none d-lg-block display-6"><span class="chapter-number">10</span>&nbsp; Speed</h1>
-</header>
-
-<p>As a data scientist, you need speed. You can work with bigger data and do more ambitious tasks when your code runs fast. This chapter will show you a specific way to write fast code in R. You will then use the method to simulate 10 million plays of your slot machine.</p>
-<section class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" id="vectorized-code"><span class="header-section-number">10.1</span> Vectorized Code</h2>
+<main><header id="title-block-header"><h1 class="title d-none d-lg-block display-6">
+<span class="chapter-number">10</span>&nbsp; Speed</h1>
+</header><p>As a data scientist, you need speed. You can work with bigger data and do more ambitious tasks when your code runs fast. This chapter will show you a specific way to write fast code in R. You will then use the method to simulate 10 million plays of your slot machine.</p>
+<section class="level2" data-number="10.1"><h2 data-number="10.1" class="anchored" id="vectorized-code">
+<span class="header-section-number">10.1</span> Vectorized Code</h2>
 <p>You can write a piece of code in many different ways, but the fastest R code will usually take advantage of three things: logical tests, subsetting, and element-wise execution. These are the things that R does best. Code that uses these things usually has a certain quality: it is <em>vectorized</em>; the code can take a vector of values as input and manipulate each value in the vector at the same time.</p>
 <p>To see what vectorized code looks like, compare these two examples of an absolute value function. Each takes a vector of numbers and transforms it into a vector of absolute values (e.g., positive numbers). The first example is not vectorized; <code>abs_loop</code> uses a <code>for</code> loop to manipulate each element of the vector one at a time:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>abs_loop <span class="ot">&lt;-</span> <span class="cf">function</span>(vec){</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(vec)) {</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (vec[i] <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>      vec[i] <span class="ot">&lt;-</span> <span class="sc">-</span>vec[i]</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  vec</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">abs_loop</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">vec</span><span class="op">)</span><span class="op">{</span>
+  <span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">vec</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="kw">if</span> <span class="op">(</span><span class="va">vec</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span>
+      <span class="va">vec</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="op">-</span><span class="va">vec</span><span class="op">[</span><span class="va">i</span><span class="op">]</span>
+    <span class="op">}</span>
+  <span class="op">}</span>
+  <span class="va">vec</span>
+<span class="op">}</span></code></pre></div>
 <p>The second example, <code>abs_set</code>, is a vectorized version of <code>abs_loop</code>. It uses logical subsetting to manipulate every negative number in the vector at the same time:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>abs_sets <span class="ot">&lt;-</span> <span class="cf">function</span>(vec){</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  negs <span class="ot">&lt;-</span> vec <span class="sc">&lt;</span> <span class="dv">0</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  vec[negs] <span class="ot">&lt;-</span> vec[negs] <span class="sc">*</span> <span class="sc">-</span><span class="dv">1</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  vec</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">abs_sets</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">vec</span><span class="op">)</span><span class="op">{</span>
+  <span class="va">negs</span> <span class="op">&lt;-</span> <span class="va">vec</span> <span class="op">&lt;</span> <span class="fl">0</span>
+  <span class="va">vec</span><span class="op">[</span><span class="va">negs</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">vec</span><span class="op">[</span><span class="va">negs</span><span class="op">]</span> <span class="op">*</span> <span class="op">-</span><span class="fl">1</span>
+  <span class="va">vec</span>
+<span class="op">}</span></code></pre></div>
 <p><code>abs_set</code> is much faster than <code>abs_loop</code> because it relies on operations that R does quickly: logical tests, subsetting, and element-wise execution.</p>
 <p>You can use the <code>system.time</code> function to see just how fast <code>abs_set</code> is. <code>system.time</code> takes an R expression, runs it, and then displays how much time elapsed while the expression ran.</p>
 <p>To compare <code>abs_loop</code> and <code>abs_set</code>, first make a long vector of positive and negative numbers. <code>long</code> will contain 10 million values:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>long <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>), <span class="dv">5000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">long</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>, <span class="fl">5000000</span><span class="op">)</span></code></pre></div>
 <div class="callout-note callout">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -394,13 +378,13 @@
 </div>
 </div>
 <p>You can then use <code>system.time</code> to measure how much time it takes each function to evaluate <code>long</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>(<span class="fu">abs_loop</span>(long))</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">##    user  system elapsed </span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  15.982   0.032  16.018</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>(<span class="fu">abs_sets</span>(long))</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="do">##    user  system elapsed </span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="do">##   0.529   0.063   0.592</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="fu">abs_loop</span><span class="op">(</span><span class="va">long</span><span class="op">)</span><span class="op">)</span>
+<span class="co">##    user  system elapsed </span>
+<span class="co">##  15.982   0.032  16.018</span>
+
+<span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="fu">abs_sets</span><span class="op">(</span><span class="va">long</span><span class="op">)</span><span class="op">)</span>
+<span class="co">##    user  system elapsed </span>
+<span class="co">##   0.529   0.063   0.592</span></code></pre></div>
 <div class="callout-important callout">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -418,12 +402,11 @@
 <p>Check to see how much faster <code>abs</code> computes the absolute value of <code>long</code> than <code>abs_loop</code> and <code>abs_set</code> do.</p>
 </div>
 <p>You can measure the speed of <code>abs</code> with <code>system.time</code>. It takes <code>abs</code> a lightning-fast 0.05 seconds to calculate the absolute value of 10 million numbers. This is 0.592 / 0.054 = 10.96 times faster than <code>abs_set</code> and nearly 300 times faster than <code>abs_loop</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>(<span class="fu">abs</span>(long))</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="do">##   user  system elapsed </span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  0.037   0.018   0.054</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" id="how-to-write-vectorized-code"><span class="header-section-number">10.2</span> How to Write Vectorized Code</h2>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">long</span><span class="op">)</span><span class="op">)</span>
+<span class="co">##   user  system elapsed </span>
+<span class="co">##  0.037   0.018   0.054</span></code></pre></div>
+</section><section class="level2" data-number="10.2"><h2 data-number="10.2" class="anchored" id="how-to-write-vectorized-code">
+<span class="header-section-number">10.2</span> How to Write Vectorized Code</h2>
 <p>Vectorized code is easy to write in R because most R functions are already vectorized. Code based on these functions can easily be made vectorized and therefore fast. To create vectorized code:</p>
 <ol type="1">
 <li>Use vectorized functions to complete the sequential steps in your program.</li>
@@ -431,124 +414,124 @@
 </ol>
 <p><code>abs_loop</code> and <code>abs_set</code> illustrate these rules. The functions both handle two cases and perform one sequential step, <a href="#fig:abs">fig.&nbsp;<span>10.1</span></a>. If a number is positive, the functions leave it alone. If a number is negative, the functions multiply it by negative one.</p>
 <div id="fig:abs" class="quarto-figure" style="text-align: center;">
-<figure class="figure">
-<p><img src="images/hopr_1001.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.1: <code>abs_loop</code> uses a for loop to sift data into one of two cases: negative numbers and nonnegative numbers.</figcaption><p></p>
+<figure class="figure"><p><img src="images/hopr_1001.png" class="img-fluid figure-img"></p>
+<p></p>
+<figcaption aria-hidden="true" class="figure-caption">Figure 10.1: <code>abs_loop</code> uses a for loop to sift data into one of two cases: negative numbers and nonnegative numbers.</figcaption><p></p>
 </figure>
 </div>
 <p>You can identify all of the elements of a vector that fall into a case with a logical test. R will execute the test in element-wise fashion and return a <code>TRUE</code> for every element that belongs in the case. For example, <code>vec &lt; 0</code> identifies every value of <code>vec</code> that belongs to the negative case. You can use the same logical test to extract the set of negative values with logical subsetting:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">3</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="dv">5</span>, <span class="sc">-</span><span class="dv">6</span>, <span class="dv">7</span>, <span class="sc">-</span><span class="dv">8</span>, <span class="dv">9</span>, <span class="sc">-</span><span class="dv">10</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>vec <span class="sc">&lt;</span> <span class="dv">0</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="do">## FALSE TRUE FALSE TRUE FALSE TRUE FALSE TRUE FALSE TRUE</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>vec[vec <span class="sc">&lt;</span> <span class="dv">0</span>]</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="do">## -2  -4  -6  -8 -10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The plan in <a href="#fig:abs">fig.&nbsp;<span>10.1</span></a> now requires a sequential step: you must multiply each of the negative values by negative one. All of R’s arithmetic operators are vectorized, so you can use <code>*</code> to complete this step in vectorized fashion. <code>*</code> will multiply each number in <code>vec[vec &lt; 0]</code> by negative one at the same time:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>vec[vec <span class="sc">&lt;</span> <span class="dv">0</span>] <span class="sc">*</span> <span class="sc">-</span><span class="dv">1</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 2  4  6  8 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Finally, you can use R’s assignment operator, which is also vectorized, to save the new set over the old set in the original <code>vec</code> object. Since <code>&lt;-</code> is vectorized, the elements of the new set will be paired up to the elements of the old set, in order, and then element-wise assignment will occur. As a result, each negative value will be replaced by its positive partner, as in <a href="#fig:assignment">fig.&nbsp;<span>10.2</span></a>.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="op">-</span><span class="fl">2</span>, <span class="fl">3</span>, <span class="op">-</span><span class="fl">4</span>, <span class="fl">5</span>, <span class="op">-</span><span class="fl">6</span>, <span class="fl">7</span>, <span class="op">-</span><span class="fl">8</span>, <span class="fl">9</span>, <span class="op">-</span><span class="fl">10</span><span class="op">)</span>
+<span class="va">vec</span> <span class="op">&lt;</span> <span class="fl">0</span>
+<span class="co">## FALSE TRUE FALSE TRUE FALSE TRUE FALSE TRUE FALSE TRUE</span>
+
+<span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">&lt;</span> <span class="fl">0</span><span class="op">]</span>
+<span class="co">## -2  -4  -6  -8 -10</span></code></pre></div>
+<p>The plan in <a href="#fig:abs">fig.&nbsp;<span>10.1</span></a> now requires a sequential step: you must multiply each of the negative values by negative one. All of R’s arithmetic operators are vectorized, so you can use <code><a href="https://rdrr.io/r/base/Arithmetic.html">*</a></code> to complete this step in vectorized fashion. <code><a href="https://rdrr.io/r/base/Arithmetic.html">*</a></code> will multiply each number in <code>vec[vec &lt; 0]</code> by negative one at the same time:</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">&lt;</span> <span class="fl">0</span><span class="op">]</span> <span class="op">*</span> <span class="op">-</span><span class="fl">1</span>
+<span class="co">## 2  4  6  8 10</span></code></pre></div>
+<p>Finally, you can use R’s assignment operator, which is also vectorized, to save the new set over the old set in the original <code>vec</code> object. Since <code><a href="https://rdrr.io/r/base/assignOps.html">&lt;-</a></code> is vectorized, the elements of the new set will be paired up to the elements of the old set, in order, and then element-wise assignment will occur. As a result, each negative value will be replaced by its positive partner, as in <a href="#fig:assignment">fig.&nbsp;<span>10.2</span></a>.</p>
 <div id="fig:assignment" class="quarto-figure" style="text-align: center;">
-<figure class="figure">
-<p><img src="images/hopr_1002.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.2: Use logical subsetting to modify groups of values in place. R’s arithmetic and assignment operators are vectorized, which lets you manipulate and update multiple values at once.</figcaption><p></p>
+<figure class="figure"><p><img src="images/hopr_1002.png" class="img-fluid figure-img"></p>
+<p></p>
+<figcaption aria-hidden="true" class="figure-caption">Figure 10.2: Use logical subsetting to modify groups of values in place. R’s arithmetic and assignment operators are vectorized, which lets you manipulate and update multiple values at once.</figcaption><p></p>
 </figure>
 </div>
 <div id="exr:vectorize-a-function" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 10.2 (Vectorize a Function) </strong></span>The following function converts a vector of slot symbols to a vector of new slot symbols. Can you vectorize it? How much faster does the vectorized version work?</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>change_symbols <span class="ot">&lt;-</span> <span class="cf">function</span>(vec){</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(vec)){</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (vec[i] <span class="sc">==</span> <span class="st">"DD"</span>) {</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>      vec[i] <span class="ot">&lt;-</span> <span class="st">"joker"</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (vec[i] <span class="sc">==</span> <span class="st">"C"</span>) {</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>      vec[i] <span class="ot">&lt;-</span> <span class="st">"ace"</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (vec[i] <span class="sc">==</span> <span class="st">"7"</span>) {</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>      vec[i] <span class="ot">&lt;-</span> <span class="st">"king"</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span> <span class="cf">if</span> (vec[i] <span class="sc">==</span> <span class="st">"B"</span>) {</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>      vec[i] <span class="ot">&lt;-</span> <span class="st">"queen"</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (vec[i] <span class="sc">==</span> <span class="st">"BB"</span>) {</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>      vec[i] <span class="ot">&lt;-</span> <span class="st">"jack"</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (vec[i] <span class="sc">==</span> <span class="st">"BBB"</span>) {</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>      vec[i] <span class="ot">&lt;-</span> <span class="st">"ten"</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>      vec[i] <span class="ot">&lt;-</span> <span class="st">"nine"</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    } </span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  vec</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"DD"</span>, <span class="st">"C"</span>, <span class="st">"7"</span>, <span class="st">"B"</span>, <span class="st">"BB"</span>, <span class="st">"BBB"</span>, <span class="st">"0"</span>)</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="fu">change_symbols</span>(vec)</span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="do">##  "joker" "ace"   "king"  "queen" "jack"  "ten"   "nine"</span></span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>many <span class="ot">&lt;-</span> <span class="fu">rep</span>(vec, <span class="dv">1000000</span>)</span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>(<span class="fu">change_symbols</span>(many))</span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="do">##    user  system elapsed </span></span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="do">##  30.057   0.031  30.079</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">change_symbols</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">vec</span><span class="op">)</span><span class="op">{</span>
+  <span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">vec</span><span class="op">)</span><span class="op">)</span><span class="op">{</span>
+    <span class="kw">if</span> <span class="op">(</span><span class="va">vec</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">==</span> <span class="st">"DD"</span><span class="op">)</span> <span class="op">{</span>
+      <span class="va">vec</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"joker"</span>
+    <span class="op">}</span> <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span><span class="va">vec</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">==</span> <span class="st">"C"</span><span class="op">)</span> <span class="op">{</span>
+      <span class="va">vec</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"ace"</span>
+    <span class="op">}</span> <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span><span class="va">vec</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">==</span> <span class="st">"7"</span><span class="op">)</span> <span class="op">{</span>
+      <span class="va">vec</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"king"</span>
+    <span class="op">}</span><span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span><span class="va">vec</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">==</span> <span class="st">"B"</span><span class="op">)</span> <span class="op">{</span>
+      <span class="va">vec</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"queen"</span>
+    <span class="op">}</span> <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span><span class="va">vec</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">==</span> <span class="st">"BB"</span><span class="op">)</span> <span class="op">{</span>
+      <span class="va">vec</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"jack"</span>
+    <span class="op">}</span> <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span><span class="va">vec</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">==</span> <span class="st">"BBB"</span><span class="op">)</span> <span class="op">{</span>
+      <span class="va">vec</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"ten"</span>
+    <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+      <span class="va">vec</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"nine"</span>
+    <span class="op">}</span> 
+  <span class="op">}</span>
+  <span class="va">vec</span>
+<span class="op">}</span>
+
+<span class="va">vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"DD"</span>, <span class="st">"C"</span>, <span class="st">"7"</span>, <span class="st">"B"</span>, <span class="st">"BB"</span>, <span class="st">"BBB"</span>, <span class="st">"0"</span><span class="op">)</span>
+
+<span class="fu">change_symbols</span><span class="op">(</span><span class="va">vec</span><span class="op">)</span>
+<span class="co">##  "joker" "ace"   "king"  "queen" "jack"  "ten"   "nine"</span>
+
+<span class="va">many</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="va">vec</span>, <span class="fl">1000000</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="fu">change_symbols</span><span class="op">(</span><span class="va">many</span><span class="op">)</span><span class="op">)</span>
+<span class="co">##    user  system elapsed </span>
+<span class="co">##  30.057   0.031  30.079</span></code></pre></div>
 </div>
 <p><code>change_symbols</code> uses a <code>for</code> loop to sort values into seven different cases, as demonstrated in <a href="#fig:change">fig.&nbsp;<span>10.3</span></a>.</p>
 <p>To vectorize <code>change_symbols</code>, create a logical test that can identify each case:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>vec[vec <span class="sc">==</span> <span class="st">"DD"</span>]</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="do">## "DD"</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>vec[vec <span class="sc">==</span> <span class="st">"C"</span>]</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="do">## "C"</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>vec[vec <span class="sc">==</span> <span class="st">"7"</span>]</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="do">## "7"</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>vec[vec <span class="sc">==</span> <span class="st">"B"</span>]</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="do">## "B"</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>vec[vec <span class="sc">==</span> <span class="st">"BB"</span>]</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="do">## "BB"</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>vec[vec <span class="sc">==</span> <span class="st">"BBB"</span>]</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="do">## "BBB"</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>vec[vec <span class="sc">==</span> <span class="st">"0"</span>]</span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="do">## "0"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"DD"</span><span class="op">]</span>
+<span class="co">## "DD"</span>
+
+<span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"C"</span><span class="op">]</span>
+<span class="co">## "C"</span>
+
+<span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"7"</span><span class="op">]</span>
+<span class="co">## "7"</span>
+
+<span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"B"</span><span class="op">]</span>
+<span class="co">## "B"</span>
+
+<span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"BB"</span><span class="op">]</span>
+<span class="co">## "BB"</span>
+
+<span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"BBB"</span><span class="op">]</span>
+<span class="co">## "BBB"</span>
+
+<span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"0"</span><span class="op">]</span>
+<span class="co">## "0"</span></code></pre></div>
 <div id="fig:change" class="quarto-figure" style="text-align: center;">
-<figure class="figure">
-<p><img src="images/hopr_1003.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.3: <code>change_many</code> does something different for each of seven cases.</figcaption><p></p>
+<figure class="figure"><p><img src="images/hopr_1003.png" class="img-fluid figure-img"></p>
+<p></p>
+<figcaption aria-hidden="true" class="figure-caption">Figure 10.3: <code>change_many</code> does something different for each of seven cases.</figcaption><p></p>
 </figure>
 </div>
 <p>Then write code that can change the symbols for each case:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>vec[vec <span class="sc">==</span> <span class="st">"DD"</span>] <span class="ot">&lt;-</span> <span class="st">"joker"</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>vec[vec <span class="sc">==</span> <span class="st">"C"</span>] <span class="ot">&lt;-</span> <span class="st">"ace"</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>vec[vec <span class="sc">==</span> <span class="st">"7"</span>] <span class="ot">&lt;-</span> <span class="st">"king"</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>vec[vec <span class="sc">==</span> <span class="st">"B"</span>] <span class="ot">&lt;-</span> <span class="st">"queen"</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>vec[vec <span class="sc">==</span> <span class="st">"BB"</span>] <span class="ot">&lt;-</span> <span class="st">"jack"</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>vec[vec <span class="sc">==</span> <span class="st">"BBB"</span>] <span class="ot">&lt;-</span> <span class="st">"ten"</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>vec[vec <span class="sc">==</span> <span class="st">"0"</span>] <span class="ot">&lt;-</span> <span class="st">"nine"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"DD"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"joker"</span>
+<span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"C"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"ace"</span>
+<span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"7"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"king"</span>
+<span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"B"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"queen"</span>
+<span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"BB"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"jack"</span>
+<span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"BBB"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"ten"</span>
+<span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"0"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"nine"</span></code></pre></div>
 <p>When you combine this into a function, you have a vectorized version of <code>change_symbols</code> that runs about 14 times faster:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>change_vec <span class="ot">&lt;-</span> <span class="cf">function</span> (vec) {</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  vec[vec <span class="sc">==</span> <span class="st">"DD"</span>] <span class="ot">&lt;-</span> <span class="st">"joker"</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  vec[vec <span class="sc">==</span> <span class="st">"C"</span>] <span class="ot">&lt;-</span> <span class="st">"ace"</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  vec[vec <span class="sc">==</span> <span class="st">"7"</span>] <span class="ot">&lt;-</span> <span class="st">"king"</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  vec[vec <span class="sc">==</span> <span class="st">"B"</span>] <span class="ot">&lt;-</span> <span class="st">"queen"</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  vec[vec <span class="sc">==</span> <span class="st">"BB"</span>] <span class="ot">&lt;-</span> <span class="st">"jack"</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  vec[vec <span class="sc">==</span> <span class="st">"BBB"</span>] <span class="ot">&lt;-</span> <span class="st">"ten"</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  vec[vec <span class="sc">==</span> <span class="st">"0"</span>] <span class="ot">&lt;-</span> <span class="st">"nine"</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  vec</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>(<span class="fu">change_vec</span>(many))</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="do">##   user  system elapsed </span></span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="do">##  1.994   0.059   2.051 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">change_vec</span> <span class="op">&lt;-</span> <span class="kw">function</span> <span class="op">(</span><span class="va">vec</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"DD"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"joker"</span>
+  <span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"C"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"ace"</span>
+  <span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"7"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"king"</span>
+  <span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"B"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"queen"</span>
+  <span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"BB"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"jack"</span>
+  <span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"BBB"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"ten"</span>
+  <span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"0"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"nine"</span>
+  
+  <span class="va">vec</span>
+<span class="op">}</span>
+
+<span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="fu">change_vec</span><span class="op">(</span><span class="va">many</span><span class="op">)</span><span class="op">)</span>
+<span class="co">##   user  system elapsed </span>
+<span class="co">##  1.994   0.059   2.051 </span></code></pre></div>
 <p>Or, even better, use a lookup table. Lookup tables are a vectorized method because they rely on R’s vectorized selection operations:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>change_vec2 <span class="ot">&lt;-</span> <span class="cf">function</span>(vec){</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  tb <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"DD"</span> <span class="ot">=</span> <span class="st">"joker"</span>, <span class="st">"C"</span> <span class="ot">=</span> <span class="st">"ace"</span>, <span class="st">"7"</span> <span class="ot">=</span> <span class="st">"king"</span>, <span class="st">"B"</span> <span class="ot">=</span> <span class="st">"queen"</span>, </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"BB"</span> <span class="ot">=</span> <span class="st">"jack"</span>, <span class="st">"BBB"</span> <span class="ot">=</span> <span class="st">"ten"</span>, <span class="st">"0"</span> <span class="ot">=</span> <span class="st">"nine"</span>)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unname</span>(tb[vec])</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>(<span class="fu">change_vec</span>(many))</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="do">##   user  system elapsed </span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  0.687   0.059   0.746 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">change_vec2</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">vec</span><span class="op">)</span><span class="op">{</span>
+  <span class="va">tb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"DD"</span> <span class="op">=</span> <span class="st">"joker"</span>, <span class="st">"C"</span> <span class="op">=</span> <span class="st">"ace"</span>, <span class="st">"7"</span> <span class="op">=</span> <span class="st">"king"</span>, <span class="st">"B"</span> <span class="op">=</span> <span class="st">"queen"</span>, 
+    <span class="st">"BB"</span> <span class="op">=</span> <span class="st">"jack"</span>, <span class="st">"BBB"</span> <span class="op">=</span> <span class="st">"ten"</span>, <span class="st">"0"</span> <span class="op">=</span> <span class="st">"nine"</span><span class="op">)</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/unname.html">unname</a></span><span class="op">(</span><span class="va">tb</span><span class="op">[</span><span class="va">vec</span><span class="op">]</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="fu">change_vec</span><span class="op">(</span><span class="va">many</span><span class="op">)</span><span class="op">)</span>
+<span class="co">##   user  system elapsed </span>
+<span class="co">##  0.687   0.059   0.746 </span></code></pre></div>
 <p>Here, a lookup table is 40 times faster than the original function.</p>
 <p><code>abs_loop</code> and <code>change_many</code> illustrate a characteristic of vectorized code: programmers often write slower, nonvectorized code by relying on unnecessary <code>for</code> loops, like the one in <code>change_many</code>. I think this is the result of a general misunderstanding about R. <code>for</code> loops do not behave the same way in R as they do in other languages, which means you should write code differently in R than you would in other languages.</p>
 <p>When you write in languages like C and Fortran, you must compile your code before your computer can run it. This compilation step optimizes how the <code>for</code> loops in the code use your computer’s memory, which makes the <code>for</code> loops very fast. As a result, many programmers use <code>for</code> loops frequently when they write in C and Fortran.</p>
@@ -567,28 +550,27 @@
 </div>
 </div>
 <p>This doesn’t mean that you should never use <code>for</code> loops in R. There are still many places in R where <code>for</code> loops make sense. <code>for</code> loops perform a basic task that you cannot always recreate with vectorized code. <code>for</code> loops are also easy to understand and run reasonably fast in R, so long as you take a few precautions.</p>
-</section>
-<section class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" id="how-to-write-fast-for-loops-in-r"><span class="header-section-number">10.3</span> How to Write Fast for Loops in R</h2>
+</section><section class="level2" data-number="10.3"><h2 data-number="10.3" class="anchored" id="how-to-write-fast-for-loops-in-r">
+<span class="header-section-number">10.3</span> How to Write Fast for Loops in R</h2>
 <p>You can dramatically increase the speed of your <code>for</code> loops by doing two things to optimize each loop. First, do as much as you can outside of the <code>for</code> loop. Every line of code that you place inside of the <code>for</code> loop will be run many, many times. If a line of code only needs to be run once, place it outside of the loop to avoid repetition.</p>
 <p>Second, make sure that any storage objects that you use with the loop are large enough to contain <em>all</em> of the results of the loop. For example, both loops below will need to store one million values. The first loop stores its values in an object named <code>output</code> that begins with a length of <em>one million</em>:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>({</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  output <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">1000000</span>) </span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000000</span>) {</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    output[i] <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="do">##   user  system elapsed </span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  1.709   0.015   1.724 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="op">{</span>
+  <span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="fl">1000000</span><span class="op">)</span> 
+  <span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">1000000</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">output</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">i</span> <span class="op">+</span> <span class="fl">1</span>
+  <span class="op">}</span>
+<span class="op">}</span><span class="op">)</span>
+<span class="co">##   user  system elapsed </span>
+<span class="co">##  1.709   0.015   1.724 </span></code></pre></div>
 <p>The second loop stores its values in an object named <code>output</code> that begins with a length of <em>one</em>. R will expand the object to a length of one million as it runs the loop. The code in this loop is very similar to the code in the first loop, but the loop takes <em>37 minutes</em> longer to run than the first loop:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>({</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  output <span class="ot">&lt;-</span> <span class="cn">NA</span> </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000000</span>) {</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    output[i] <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="do">##     user   system  elapsed </span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 1689.537  560.951 2249.927</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="op">{</span>
+  <span class="va">output</span> <span class="op">&lt;-</span> <span class="cn">NA</span> 
+  <span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">1000000</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">output</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">i</span> <span class="op">+</span> <span class="fl">1</span>
+  <span class="op">}</span>
+<span class="op">}</span><span class="op">)</span>
+<span class="co">##     user   system  elapsed </span>
+<span class="co">## 1689.537  560.951 2249.927</span></code></pre></div>
 <p>The two loops do the same thing, so what accounts for the difference? In the second loop, R has to increase the length of <code>output</code> by one for each run of the loop. To do this, R needs to find a new place in your computer’s memory that can contain the larger object. R must then copy the <code>output</code> vector over and erase the old version of <code>output</code> before moving on to the next run of the loop. By the end of the loop, R has rewritten <code>output</code> in your computer’s memory one million times.</p>
 <p>In the first case, the size of <code>output</code> never changes; R can define one <code>output</code> object in memory and use it for each run of the <code>for</code> loop.</p>
 <div class="callout-tip callout">
@@ -602,69 +584,68 @@
 </div>
 </div>
 </div>
-</section>
-<section class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" id="vectorized-code-in-practice"><span class="header-section-number">10.4</span> Vectorized Code in Practice</h2>
+</section><section class="level2" data-number="10.4"><h2 data-number="10.4" class="anchored" id="vectorized-code-in-practice">
+<span class="header-section-number">10.4</span> Vectorized Code in Practice</h2>
 <p>To see how vectorized code can help you as a data scientist, consider our slot machine project. In <a href="loops.html">Loops</a>, you calculated the exact payout rate for your slot machine, but you could have estimated this payout rate with a simulation. If you played the slot machine many, many times, the average prize over all of the plays would be a good estimate of the true payout rate.</p>
 <p>This method of estimation is based on the law of large numbers and is similar to many statistical simulations. To run this simulation, you could use a <code>for</code> loop:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>winnings <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">length =</span> <span class="dv">1000000</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000000</span>) {</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  winnings[i] <span class="ot">&lt;-</span> <span class="fu">play</span>()</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(winnings)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 0.9366984</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">winnings</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span>length <span class="op">=</span> <span class="fl">1000000</span><span class="op">)</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">1000000</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">winnings</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu">play</span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">winnings</span><span class="op">)</span>
+<span class="co">## 0.9366984</span></code></pre></div>
 <p>The estimated payout rate after 10 million runs is 0.937, which is very close to the true payout rate of 0.934. Note that I’m using the modified <code>score</code> function that treats diamonds as wilds.</p>
 <p>If you run this simulation, you will notice that it takes a while to run. In fact, the simulation takes 342,308 seconds to run, which is about 5.7 minutes. This is not particularly impressive, and you can do better by using vectorized code:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>(<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000000</span>) {</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  winnings[i] <span class="ot">&lt;-</span> <span class="fu">play</span>()</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="do">##    user  system elapsed </span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 342.041   0.355 342.308 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">1000000</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">winnings</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu">play</span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span><span class="op">)</span>
+<span class="co">##    user  system elapsed </span>
+<span class="co">## 342.041   0.355 342.308 </span></code></pre></div>
 <p>The current <code>score</code> function is not vectorized. It takes a single slot combination and uses an <code>if</code> tree to assign a prize to it. This combination of an <code>if</code> tree with a <code>for</code> loop suggests that you could write a piece of vectorized code that takes <em>many</em> slot combinations and then uses logical subsetting to operate on them all at once.</p>
 <p>For example, you could rewrite <code>get_symbols</code> to generate <em>n</em> slot combinations and return them as an <em>n</em> x 3 matrix, like the one that follows. Each row of the matrix will contain one slot combination to be scored:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>get_many_symbols <span class="ot">&lt;-</span> <span class="cf">function</span>(n) {</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  wheel <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"DD"</span>, <span class="st">"7"</span>, <span class="st">"BBB"</span>, <span class="st">"BB"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"0"</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  vec <span class="ot">&lt;-</span> <span class="fu">sample</span>(wheel, <span class="at">size =</span> <span class="dv">3</span> <span class="sc">*</span> n, <span class="at">replace =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.03</span>, <span class="fl">0.03</span>, <span class="fl">0.06</span>, <span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.01</span>, <span class="fl">0.52</span>))</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">matrix</span>(vec, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="fu">get_many_symbols</span>(<span class="dv">5</span>)</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="do">##      [,1]  [,2] [,3] </span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,] "B"   "0"  "B"  </span></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,] "0"   "BB" "7"  </span></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [3,] "0"   "0"  "BBB"</span></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [4,] "0"   "0"  "B"  </span></span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [5,] "BBB" "0"  "0" </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">get_many_symbols</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">wheel</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"DD"</span>, <span class="st">"7"</span>, <span class="st">"BBB"</span>, <span class="st">"BB"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"0"</span><span class="op">)</span>
+  <span class="va">vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">wheel</span>, size <span class="op">=</span> <span class="fl">3</span> <span class="op">*</span> <span class="va">n</span>, replace <span class="op">=</span> <span class="cn">TRUE</span>,
+    prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.03</span>, <span class="fl">0.03</span>, <span class="fl">0.06</span>, <span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.01</span>, <span class="fl">0.52</span><span class="op">)</span><span class="op">)</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="va">vec</span>, ncol <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="fu">get_many_symbols</span><span class="op">(</span><span class="fl">5</span><span class="op">)</span>
+<span class="co">##      [,1]  [,2] [,3] </span>
+<span class="co">## [1,] "B"   "0"  "B"  </span>
+<span class="co">## [2,] "0"   "BB" "7"  </span>
+<span class="co">## [3,] "0"   "0"  "BBB"</span>
+<span class="co">## [4,] "0"   "0"  "B"  </span>
+<span class="co">## [5,] "BBB" "0"  "0" </span></code></pre></div>
 <p>You could also rewrite <code>play</code> to take a parameter, <code>n</code>, and return <code>n</code> prizes, in a data frame:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>play_many <span class="ot">&lt;-</span> <span class="cf">function</span>(n) {</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  symb_mat <span class="ot">&lt;-</span> <span class="fu">get_many_symbols</span>(<span class="at">n =</span> n)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">w1 =</span> symb_mat[,<span class="dv">1</span>], <span class="at">w2 =</span> symb_mat[,<span class="dv">2</span>],</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">w3 =</span> symb_mat[,<span class="dv">3</span>], <span class="at">prize =</span> <span class="fu">score_many</span>(symb_mat))</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">play_many</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">symb_mat</span> <span class="op">&lt;-</span> <span class="fu">get_many_symbols</span><span class="op">(</span>n <span class="op">=</span> <span class="va">n</span><span class="op">)</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>w1 <span class="op">=</span> <span class="va">symb_mat</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, w2 <span class="op">=</span> <span class="va">symb_mat</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>,
+             w3 <span class="op">=</span> <span class="va">symb_mat</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span>, prize <span class="op">=</span> <span class="fu">score_many</span><span class="op">(</span><span class="va">symb_mat</span><span class="op">)</span><span class="op">)</span>
+<span class="op">}</span></code></pre></div>
 <p>This new function would make it easy to simulate a million, or even 10 million plays of the slot machine, which will be our goal. When we’re finished, you will be able to estimate the payout rate with:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plays &lt;- play_many(10000000))</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mean(plays$prize)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="co"># plays &lt;- play_many(10000000))</span>
+<span class="co"># mean(plays$prize)</span></code></pre></div>
 <p>Now you just need to write <code>score_many</code>, a vectorized (matix-ized?) version of <code>score</code> that takes an <em>n</em> x 3 matrix and returns <em>n</em> prizes. It will be difficult to write this function because <code>score</code> is already quite complicated. I would not expect you to feel confident doing this on your own until you have more practice and experience than we’ve been able to develop here.</p>
 <p>Should you like to test your skills and write a version of <code>score_many</code>, I recommend that you use the function <code>rowSums</code> within your code. It calculates the sum of each row of numbers (or logicals) in a matrix.</p>
 <p>If you would like to test yourself in a more modest way, I recommend that you study the following model <code>score_many</code> function until you understand how each part works and how the parts work together to create a vectorized function. To do this, it will be helpful to create a concrete example, like this:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>symbols <span class="ot">&lt;-</span> <span class="fu">matrix</span>(</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"DD"</span>, <span class="st">"DD"</span>, <span class="st">"DD"</span>, </span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"C"</span>, <span class="st">"DD"</span>, <span class="st">"0"</span>, </span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"B"</span>, <span class="st">"B"</span>, <span class="st">"B"</span>, </span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"B"</span>, <span class="st">"BB"</span>, <span class="st">"BBB"</span>, </span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"C"</span>, <span class="st">"C"</span>, <span class="st">"0"</span>, </span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"7"</span>, <span class="st">"DD"</span>, <span class="st">"DD"</span>), <span class="at">nrow =</span> <span class="dv">6</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>symbols</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="do">##      [,1] [,2] [,3] </span></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,] "DD" "DD" "DD" </span></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,] "C"  "DD" "0"  </span></span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [3,] "B"  "B"  "B"  </span></span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [4,] "B"  "BB" "BBB"</span></span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [5,] "C"  "C"  "0"  </span></span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [6,] "7"  "DD" "DD" </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">symbols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"DD"</span>, <span class="st">"DD"</span>, <span class="st">"DD"</span>, 
+    <span class="st">"C"</span>, <span class="st">"DD"</span>, <span class="st">"0"</span>, 
+    <span class="st">"B"</span>, <span class="st">"B"</span>, <span class="st">"B"</span>, 
+    <span class="st">"B"</span>, <span class="st">"BB"</span>, <span class="st">"BBB"</span>, 
+    <span class="st">"C"</span>, <span class="st">"C"</span>, <span class="st">"0"</span>, 
+    <span class="st">"7"</span>, <span class="st">"DD"</span>, <span class="st">"DD"</span><span class="op">)</span>, nrow <span class="op">=</span> <span class="fl">6</span>, byrow <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+
+<span class="va">symbols</span>
+<span class="co">##      [,1] [,2] [,3] </span>
+<span class="co">## [1,] "DD" "DD" "DD" </span>
+<span class="co">## [2,] "C"  "DD" "0"  </span>
+<span class="co">## [3,] "B"  "B"  "B"  </span>
+<span class="co">## [4,] "B"  "BB" "BBB"</span>
+<span class="co">## [5,] "C"  "C"  "0"  </span>
+<span class="co">## [6,] "7"  "DD" "DD" </span></code></pre></div>
 <p>Then you can run each line of <code>score_many</code> against the example and examine the results as you go.</p>
 <div id="exr:test-your-understanding" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 10.3 (Test Your Understanding) </strong></span>Study the model <code>score_many</code> function until you are satisfied that you understand how it works and could write a similar function yourself.</p>
@@ -674,87 +655,84 @@
 <p>You can use the version of <code>score</code> that treats diamonds as wild or the version of <code>score</code> that doesn’t. However, the model answer will use the version treating diamonds as wild.</p>
 </div>
 <p><code>score_many</code> is a vectorized version of <code>score</code>. You can use it to run the simulation at the start of this section in a little over 20 seconds. This is 17 times faster than using a <code>for</code> loop:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># symbols should be a matrix with a column for each slot machine window</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>score_many <span class="ot">&lt;-</span> <span class="cf">function</span>(symbols) {</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Step 1: Assign base prize based on cherries and diamonds ---------</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Count the number of cherries and diamonds in each combination</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  cherries <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(symbols <span class="sc">==</span> <span class="st">"C"</span>)</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  diamonds <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(symbols <span class="sc">==</span> <span class="st">"DD"</span>) </span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Wild diamonds count as cherries</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  prize <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">5</span>)[cherries <span class="sc">+</span> diamonds <span class="sc">+</span> <span class="dv">1</span>]</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="do">## ...but not if there are zero real cherries </span></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="do">### (cherries is coerced to FALSE where cherries == 0)</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  prize[<span class="sc">!</span>cherries] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Step 2: Change prize for combinations that contain three of a kind </span></span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>  same <span class="ot">&lt;-</span> symbols[, <span class="dv">1</span>] <span class="sc">==</span> symbols[, <span class="dv">2</span>] <span class="sc">&amp;</span> </span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>    symbols[, <span class="dv">2</span>] <span class="sc">==</span> symbols[, <span class="dv">3</span>]</span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>  payoffs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"DD"</span> <span class="ot">=</span> <span class="dv">100</span>, <span class="st">"7"</span> <span class="ot">=</span> <span class="dv">80</span>, <span class="st">"BBB"</span> <span class="ot">=</span> <span class="dv">40</span>, </span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"BB"</span> <span class="ot">=</span> <span class="dv">25</span>, <span class="st">"B"</span> <span class="ot">=</span> <span class="dv">10</span>, <span class="st">"C"</span> <span class="ot">=</span> <span class="dv">10</span>, <span class="st">"0"</span> <span class="ot">=</span> <span class="dv">0</span>)</span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>  prize[same] <span class="ot">&lt;-</span> payoffs[symbols[same, <span class="dv">1</span>]]</span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Step 3: Change prize for combinations that contain all bars ------</span></span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>  bars <span class="ot">&lt;-</span> symbols <span class="sc">==</span> <span class="st">"B"</span> <span class="sc">|</span> symbols <span class="sc">==</span>  <span class="st">"BB"</span> <span class="sc">|</span> symbols <span class="sc">==</span> <span class="st">"BBB"</span></span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>  all_bars <span class="ot">&lt;-</span> bars[, <span class="dv">1</span>] <span class="sc">&amp;</span> bars[, <span class="dv">2</span>] <span class="sc">&amp;</span> bars[, <span class="dv">3</span>] <span class="sc">&amp;</span> <span class="sc">!</span>same</span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>  prize[all_bars] <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Step 4: Handle wilds ---------------------------------------------</span></span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>  <span class="do">## combos with two diamonds</span></span>
-<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>  two_wilds <span class="ot">&lt;-</span> diamonds <span class="sc">==</span> <span class="dv">2</span></span>
-<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a>  <span class="do">### Identify the nonwild symbol</span></span>
-<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a>  one <span class="ot">&lt;-</span> two_wilds <span class="sc">&amp;</span> symbols[, <span class="dv">1</span>] <span class="sc">!=</span> symbols[, <span class="dv">2</span>] <span class="sc">&amp;</span> </span>
-<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a>    symbols[, <span class="dv">2</span>] <span class="sc">==</span> symbols[, <span class="dv">3</span>]</span>
-<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a>  two <span class="ot">&lt;-</span> two_wilds <span class="sc">&amp;</span> symbols[, <span class="dv">1</span>] <span class="sc">!=</span> symbols[, <span class="dv">2</span>] <span class="sc">&amp;</span> </span>
-<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a>    symbols[, <span class="dv">1</span>] <span class="sc">==</span> symbols[, <span class="dv">3</span>]</span>
-<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a>  three <span class="ot">&lt;-</span> two_wilds <span class="sc">&amp;</span> symbols[, <span class="dv">1</span>] <span class="sc">==</span> symbols[, <span class="dv">2</span>] <span class="sc">&amp;</span> </span>
-<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a>    symbols[, <span class="dv">2</span>] <span class="sc">!=</span> symbols[, <span class="dv">3</span>]</span>
-<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a>  <span class="do">### Treat as three of a kind</span></span>
-<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a>  prize[one] <span class="ot">&lt;-</span> payoffs[symbols[one, <span class="dv">1</span>]]</span>
-<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a>  prize[two] <span class="ot">&lt;-</span> payoffs[symbols[two, <span class="dv">2</span>]]</span>
-<span id="cb21-44"><a href="#cb21-44" aria-hidden="true" tabindex="-1"></a>  prize[three] <span class="ot">&lt;-</span> payoffs[symbols[three, <span class="dv">3</span>]]</span>
-<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-46"><a href="#cb21-46" aria-hidden="true" tabindex="-1"></a>  <span class="do">## combos with one wild</span></span>
-<span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a>  one_wild <span class="ot">&lt;-</span> diamonds <span class="sc">==</span> <span class="dv">1</span></span>
-<span id="cb21-48"><a href="#cb21-48" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-49"><a href="#cb21-49" aria-hidden="true" tabindex="-1"></a>  <span class="do">### Treat as all bars (if appropriate)</span></span>
-<span id="cb21-50"><a href="#cb21-50" aria-hidden="true" tabindex="-1"></a>  wild_bars <span class="ot">&lt;-</span> one_wild <span class="sc">&amp;</span> (<span class="fu">rowSums</span>(bars) <span class="sc">==</span> <span class="dv">2</span>)</span>
-<span id="cb21-51"><a href="#cb21-51" aria-hidden="true" tabindex="-1"></a>  prize[wild_bars] <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb21-52"><a href="#cb21-52" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-53"><a href="#cb21-53" aria-hidden="true" tabindex="-1"></a>  <span class="do">### Treat as three of a kind (if appropriate)</span></span>
-<span id="cb21-54"><a href="#cb21-54" aria-hidden="true" tabindex="-1"></a>  one <span class="ot">&lt;-</span> one_wild <span class="sc">&amp;</span> symbols[, <span class="dv">1</span>] <span class="sc">==</span> symbols[, <span class="dv">2</span>]</span>
-<span id="cb21-55"><a href="#cb21-55" aria-hidden="true" tabindex="-1"></a>  two <span class="ot">&lt;-</span> one_wild <span class="sc">&amp;</span> symbols[, <span class="dv">2</span>] <span class="sc">==</span> symbols[, <span class="dv">3</span>]</span>
-<span id="cb21-56"><a href="#cb21-56" aria-hidden="true" tabindex="-1"></a>  three <span class="ot">&lt;-</span> one_wild <span class="sc">&amp;</span> symbols[, <span class="dv">3</span>] <span class="sc">==</span> symbols[, <span class="dv">1</span>]</span>
-<span id="cb21-57"><a href="#cb21-57" aria-hidden="true" tabindex="-1"></a>  prize[one] <span class="ot">&lt;-</span> payoffs[symbols[one, <span class="dv">1</span>]]</span>
-<span id="cb21-58"><a href="#cb21-58" aria-hidden="true" tabindex="-1"></a>  prize[two] <span class="ot">&lt;-</span> payoffs[symbols[two, <span class="dv">2</span>]]</span>
-<span id="cb21-59"><a href="#cb21-59" aria-hidden="true" tabindex="-1"></a>  prize[three] <span class="ot">&lt;-</span> payoffs[symbols[three, <span class="dv">3</span>]]</span>
-<span id="cb21-60"><a href="#cb21-60" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb21-61"><a href="#cb21-61" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Step 5: Double prize for every diamond in combo ------------------</span></span>
-<span id="cb21-62"><a href="#cb21-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unname</span>(prize <span class="sc">*</span> <span class="dv">2</span><span class="sc">^</span>diamonds)</span>
-<span id="cb21-63"><a href="#cb21-63" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-64"><a href="#cb21-64" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb21-65"><a href="#cb21-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-66"><a href="#cb21-66" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>(<span class="fu">play_many</span>(<span class="dv">10000000</span>))</span>
-<span id="cb21-67"><a href="#cb21-67" aria-hidden="true" tabindex="-1"></a><span class="do">##   user  system elapsed </span></span>
-<span id="cb21-68"><a href="#cb21-68" aria-hidden="true" tabindex="-1"></a><span class="do">## 20.942   1.433  22.367</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section class="level3" data-number="10.4.1">
-<h3 data-number="10.4.1" class="anchored" id="loops-versus-vectorized-code"><span class="header-section-number">10.4.1</span> Loops Versus Vectorized Code</h3>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="co"># symbols should be a matrix with a column for each slot machine window</span>
+<span class="va">score_many</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">symbols</span><span class="op">)</span> <span class="op">{</span>
+
+  <span class="co"># Step 1: Assign base prize based on cherries and diamonds ---------</span>
+  <span class="co">## Count the number of cherries and diamonds in each combination</span>
+  <span class="va">cherries</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="va">symbols</span> <span class="op">==</span> <span class="st">"C"</span><span class="op">)</span>
+  <span class="va">diamonds</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="va">symbols</span> <span class="op">==</span> <span class="st">"DD"</span><span class="op">)</span> 
+  
+  <span class="co">## Wild diamonds count as cherries</span>
+  <span class="va">prize</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">2</span>, <span class="fl">5</span><span class="op">)</span><span class="op">[</span><span class="va">cherries</span> <span class="op">+</span> <span class="va">diamonds</span> <span class="op">+</span> <span class="fl">1</span><span class="op">]</span>
+  
+  <span class="co">## ...but not if there are zero real cherries </span>
+  <span class="co">### (cherries is coerced to FALSE where cherries == 0)</span>
+  <span class="va">prize</span><span class="op">[</span><span class="op">!</span><span class="va">cherries</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">0</span>
+  
+  <span class="co"># Step 2: Change prize for combinations that contain three of a kind </span>
+  <span class="va">same</span> <span class="op">&lt;-</span> <span class="va">symbols</span><span class="op">[</span>, <span class="fl">1</span><span class="op">]</span> <span class="op">==</span> <span class="va">symbols</span><span class="op">[</span>, <span class="fl">2</span><span class="op">]</span> <span class="op">&amp;</span> 
+    <span class="va">symbols</span><span class="op">[</span>, <span class="fl">2</span><span class="op">]</span> <span class="op">==</span> <span class="va">symbols</span><span class="op">[</span>, <span class="fl">3</span><span class="op">]</span>
+  <span class="va">payoffs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"DD"</span> <span class="op">=</span> <span class="fl">100</span>, <span class="st">"7"</span> <span class="op">=</span> <span class="fl">80</span>, <span class="st">"BBB"</span> <span class="op">=</span> <span class="fl">40</span>, 
+    <span class="st">"BB"</span> <span class="op">=</span> <span class="fl">25</span>, <span class="st">"B"</span> <span class="op">=</span> <span class="fl">10</span>, <span class="st">"C"</span> <span class="op">=</span> <span class="fl">10</span>, <span class="st">"0"</span> <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+  <span class="va">prize</span><span class="op">[</span><span class="va">same</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">payoffs</span><span class="op">[</span><span class="va">symbols</span><span class="op">[</span><span class="va">same</span>, <span class="fl">1</span><span class="op">]</span><span class="op">]</span>
+  
+  <span class="co"># Step 3: Change prize for combinations that contain all bars ------</span>
+  <span class="va">bars</span> <span class="op">&lt;-</span> <span class="va">symbols</span> <span class="op">==</span> <span class="st">"B"</span> <span class="op">|</span> <span class="va">symbols</span> <span class="op">==</span>  <span class="st">"BB"</span> <span class="op">|</span> <span class="va">symbols</span> <span class="op">==</span> <span class="st">"BBB"</span>
+  <span class="va">all_bars</span> <span class="op">&lt;-</span> <span class="va">bars</span><span class="op">[</span>, <span class="fl">1</span><span class="op">]</span> <span class="op">&amp;</span> <span class="va">bars</span><span class="op">[</span>, <span class="fl">2</span><span class="op">]</span> <span class="op">&amp;</span> <span class="va">bars</span><span class="op">[</span>, <span class="fl">3</span><span class="op">]</span> <span class="op">&amp;</span> <span class="op">!</span><span class="va">same</span>
+  <span class="va">prize</span><span class="op">[</span><span class="va">all_bars</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">5</span>
+  
+  <span class="co"># Step 4: Handle wilds ---------------------------------------------</span>
+  
+  <span class="co">## combos with two diamonds</span>
+  <span class="va">two_wilds</span> <span class="op">&lt;-</span> <span class="va">diamonds</span> <span class="op">==</span> <span class="fl">2</span>
+
+  <span class="co">### Identify the nonwild symbol</span>
+  <span class="va">one</span> <span class="op">&lt;-</span> <span class="va">two_wilds</span> <span class="op">&amp;</span> <span class="va">symbols</span><span class="op">[</span>, <span class="fl">1</span><span class="op">]</span> <span class="op">!=</span> <span class="va">symbols</span><span class="op">[</span>, <span class="fl">2</span><span class="op">]</span> <span class="op">&amp;</span> 
+    <span class="va">symbols</span><span class="op">[</span>, <span class="fl">2</span><span class="op">]</span> <span class="op">==</span> <span class="va">symbols</span><span class="op">[</span>, <span class="fl">3</span><span class="op">]</span>
+  <span class="va">two</span> <span class="op">&lt;-</span> <span class="va">two_wilds</span> <span class="op">&amp;</span> <span class="va">symbols</span><span class="op">[</span>, <span class="fl">1</span><span class="op">]</span> <span class="op">!=</span> <span class="va">symbols</span><span class="op">[</span>, <span class="fl">2</span><span class="op">]</span> <span class="op">&amp;</span> 
+    <span class="va">symbols</span><span class="op">[</span>, <span class="fl">1</span><span class="op">]</span> <span class="op">==</span> <span class="va">symbols</span><span class="op">[</span>, <span class="fl">3</span><span class="op">]</span>
+  <span class="va">three</span> <span class="op">&lt;-</span> <span class="va">two_wilds</span> <span class="op">&amp;</span> <span class="va">symbols</span><span class="op">[</span>, <span class="fl">1</span><span class="op">]</span> <span class="op">==</span> <span class="va">symbols</span><span class="op">[</span>, <span class="fl">2</span><span class="op">]</span> <span class="op">&amp;</span> 
+    <span class="va">symbols</span><span class="op">[</span>, <span class="fl">2</span><span class="op">]</span> <span class="op">!=</span> <span class="va">symbols</span><span class="op">[</span>, <span class="fl">3</span><span class="op">]</span>
+  
+  <span class="co">### Treat as three of a kind</span>
+  <span class="va">prize</span><span class="op">[</span><span class="va">one</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">payoffs</span><span class="op">[</span><span class="va">symbols</span><span class="op">[</span><span class="va">one</span>, <span class="fl">1</span><span class="op">]</span><span class="op">]</span>
+  <span class="va">prize</span><span class="op">[</span><span class="va">two</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">payoffs</span><span class="op">[</span><span class="va">symbols</span><span class="op">[</span><span class="va">two</span>, <span class="fl">2</span><span class="op">]</span><span class="op">]</span>
+  <span class="va">prize</span><span class="op">[</span><span class="va">three</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">payoffs</span><span class="op">[</span><span class="va">symbols</span><span class="op">[</span><span class="va">three</span>, <span class="fl">3</span><span class="op">]</span><span class="op">]</span>
+  
+  <span class="co">## combos with one wild</span>
+  <span class="va">one_wild</span> <span class="op">&lt;-</span> <span class="va">diamonds</span> <span class="op">==</span> <span class="fl">1</span>
+  
+  <span class="co">### Treat as all bars (if appropriate)</span>
+  <span class="va">wild_bars</span> <span class="op">&lt;-</span> <span class="va">one_wild</span> <span class="op">&amp;</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="va">bars</span><span class="op">)</span> <span class="op">==</span> <span class="fl">2</span><span class="op">)</span>
+  <span class="va">prize</span><span class="op">[</span><span class="va">wild_bars</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">5</span>
+  
+  <span class="co">### Treat as three of a kind (if appropriate)</span>
+  <span class="va">one</span> <span class="op">&lt;-</span> <span class="va">one_wild</span> <span class="op">&amp;</span> <span class="va">symbols</span><span class="op">[</span>, <span class="fl">1</span><span class="op">]</span> <span class="op">==</span> <span class="va">symbols</span><span class="op">[</span>, <span class="fl">2</span><span class="op">]</span>
+  <span class="va">two</span> <span class="op">&lt;-</span> <span class="va">one_wild</span> <span class="op">&amp;</span> <span class="va">symbols</span><span class="op">[</span>, <span class="fl">2</span><span class="op">]</span> <span class="op">==</span> <span class="va">symbols</span><span class="op">[</span>, <span class="fl">3</span><span class="op">]</span>
+  <span class="va">three</span> <span class="op">&lt;-</span> <span class="va">one_wild</span> <span class="op">&amp;</span> <span class="va">symbols</span><span class="op">[</span>, <span class="fl">3</span><span class="op">]</span> <span class="op">==</span> <span class="va">symbols</span><span class="op">[</span>, <span class="fl">1</span><span class="op">]</span>
+  <span class="va">prize</span><span class="op">[</span><span class="va">one</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">payoffs</span><span class="op">[</span><span class="va">symbols</span><span class="op">[</span><span class="va">one</span>, <span class="fl">1</span><span class="op">]</span><span class="op">]</span>
+  <span class="va">prize</span><span class="op">[</span><span class="va">two</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">payoffs</span><span class="op">[</span><span class="va">symbols</span><span class="op">[</span><span class="va">two</span>, <span class="fl">2</span><span class="op">]</span><span class="op">]</span>
+  <span class="va">prize</span><span class="op">[</span><span class="va">three</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">payoffs</span><span class="op">[</span><span class="va">symbols</span><span class="op">[</span><span class="va">three</span>, <span class="fl">3</span><span class="op">]</span><span class="op">]</span>
+ 
+  <span class="co"># Step 5: Double prize for every diamond in combo ------------------</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/unname.html">unname</a></span><span class="op">(</span><span class="va">prize</span> <span class="op">*</span> <span class="fl">2</span><span class="op">^</span><span class="va">diamonds</span><span class="op">)</span>
+  
+<span class="op">}</span>
+
+<span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="fu">play_many</span><span class="op">(</span><span class="fl">10000000</span><span class="op">)</span><span class="op">)</span>
+<span class="co">##   user  system elapsed </span>
+<span class="co">## 20.942   1.433  22.367</span></code></pre></div>
+<section class="level3" data-number="10.4.1"><h3 data-number="10.4.1" class="anchored" id="loops-versus-vectorized-code">
+<span class="header-section-number">10.4.1</span> Loops Versus Vectorized Code</h3>
 <p>In many languages, <code>for</code> loops run very fast. As a result, programmers learn to use <code>for</code> loops whenever possible when they code. Often these programmers continue to rely on <code>for</code> loops when they begin to program in R, usually without taking the simple steps needed to optimize R’s <code>for</code> loops. These programmers may become disillusioned with R when their code does not work as fast as they would like. If you think that this may be happening to you, examine how often you are using <code>for</code> loops and what you are using them to do. If you find yourself using <code>for</code> loops for every task, there is a good chance that you are “speaking R with a C accent.” The cure is to learn to write and use vectorized code.</p>
 <p>This doesn’t mean that <code>for</code> loops have no place in R. <code>for</code> loops are a very useful feature; they can do many things that vectorized code cannot do. You also should not become a slave to vectorized code. Sometimes it would take more time to rewrite code in vectorized format than to let a <code>for</code> loop run. For example, would it be faster to let the slot simulation run for 5.7 minutes or to rewrite <code>score</code>?</p>
-</section>
-</section>
-<section class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" id="summary"><span class="header-section-number">10.5</span> Summary</h2>
+</section></section><section class="level2" data-number="10.5"><h2 data-number="10.5" class="anchored" id="summary">
+<span class="header-section-number">10.5</span> Summary</h2>
 <p>Fast code is an important component of data science because you can do more with fast code than you can do with slow code. You can work with larger data sets before computational constraints intervene, and you can do more computation before time constraints intervene. The fastest code in R will rely on the things that R does best: logical tests, subsetting, and element-wise execution. I’ve called this type of code vectorized code because code written with these operations will take a vector of values as input and operate on each element of the vector at the same time. The majority of the code written in R is already vectorized.</p>
 <p>If you use these operations, but your code does not appear vectorized, analyze the sequential steps and parallel cases in your program. Ensure that you’ve used vectorized functions to handle the steps and logical subsetting to handle the cases. Be aware, however, that some tasks cannot be vectorized.</p>
-</section>
-<section class="level2" data-number="10.6">
-<h2 data-number="10.6" class="anchored" id="project-3-wrap-up"><span class="header-section-number">10.6</span> Project 3 Wrap-up</h2>
+</section><section class="level2" data-number="10.6"><h2 data-number="10.6" class="anchored" id="project-3-wrap-up">
+<span class="header-section-number">10.6</span> Project 3 Wrap-up</h2>
 <p>You have now written your first program in R, and it is a program that you should be proud of. <code>play</code> is not a simple <code>hello world</code> exercise, but a real program that does a real task in a complicated way.</p>
 <p>Writing new programs in R will always be challenging because programming depends so much on your own creativity, problem-solving ability, and experience writing similar types of programs. However, you can use the suggestions in this chapter to make even the most complicated program manageable: divide tasks into simple steps and cases, work with concrete examples, and describe possible solutions in English.</p>
 <p>This project completes the education you began in [The Very Basics]. You can now use R to handle data, which has augmented your ability to analyze data. You can:</p>
@@ -766,22 +744,23 @@
 <p>These skills solve an important logistical problem faced by every data scientist: <em>how can you store and manipulate data without making errors?</em> However, this is not the only problem that you will face as a data scientist. The next problem will appear when you try to understand the information contained in your data. It is nearly impossible to spot insights or to discover patterns in raw data. A third problem will appear when you try to use your data set to reason about reality, which includes things not contained in your data set. What exactly does your data imply about things outside of the data set? How certain can you be?</p>
 <p>I refer to these problems as the logistical, tactical, and strategic problems of data science, as shown in <a href="#fig:venn">fig.&nbsp;<span>10.4</span></a>. You’ll face them whenever you try to learn from data:</p>
 <ul>
-<li><strong>A logistical problem:</strong> - How can you store and manipulate data without making errors?</li>
-<li><strong>A tactical problem</strong> - How can you discover the information contained in your data?</li>
-<li><strong>A strategic problem</strong> - How can you use the data to draw conclusions about the world at large?</li>
+<li>
+<strong>A logistical problem:</strong> - How can you store and manipulate data without making errors?</li>
+<li>
+<strong>A tactical problem</strong> - How can you discover the information contained in your data?</li>
+<li>
+<strong>A strategic problem</strong> - How can you use the data to draw conclusions about the world at large?</li>
 </ul>
 <div id="fig:venn" class="quarto-figure" style="text-align: center;">
-<figure class="figure">
-<p><img src="images/hopr_1004.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.4: The three core skill sets of data science: computer programming, data comprehension, and scientific reasoning.</figcaption><p></p>
+<figure class="figure"><p><img src="images/hopr_1004.png" class="img-fluid figure-img"></p>
+<p></p>
+<figcaption aria-hidden="true" class="figure-caption">Figure 10.4: The three core skill sets of data science: computer programming, data comprehension, and scientific reasoning.</figcaption><p></p>
 </figure>
 </div>
 <p>A well-rounded data scientist will need to be able to solve each of these problems in many different situations. By learning to program in R, you have mastered the logistical problem, which is a prerequisite for solving the tactical and strategic problems.</p>
 <p>If you would like to learn how to reason with data, or how to transform, visualize, and explore your data sets with R tools, I recommend the book <a href="http://r4ds.had.co.nz/"><em>R for Data Science</em></a>, the companion volume to this book. <em>R for Data Science</em> teaches a simple workflow for transforming, visualizing, and modeling data in R, as well as how to report results with the R Markdown package.</p>
 <!-- -->
-</section>
-</main>
-<div class="row page-navigation ">
+</section></main><div class="row page-navigation ">
   <div class="nav-page nav-page-previous col">
       <a href="./loops.html">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; Loops</span>
@@ -795,22 +774,29 @@
 </div>
 </div> <!-- /main column -->
 <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
-<nav id="TOC" role="doc-toc">
-<h2 id="toc-title">Table of contents</h2>
+<nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
 <ul>
 <li><a href="#vectorized-code" class="nav-link" data-bs-target="#vectorized-code"> <span class="header-section-number">10.1</span> Vectorized Code</a></li>
 <li><a href="#how-to-write-vectorized-code" class="nav-link" data-bs-target="#how-to-write-vectorized-code"> <span class="header-section-number">10.2</span> How to Write Vectorized Code</a></li>
 <li><a href="#how-to-write-fast-for-loops-in-r" class="nav-link" data-bs-target="#how-to-write-fast-for-loops-in-r"> <span class="header-section-number">10.3</span> How to Write Fast for Loops in R</a></li>
-<li><a href="#vectorized-code-in-practice" class="nav-link" data-bs-target="#vectorized-code-in-practice"> <span class="header-section-number">10.4</span> Vectorized Code in Practice</a>
+<li>
+<a href="#vectorized-code-in-practice" class="nav-link" data-bs-target="#vectorized-code-in-practice"> <span class="header-section-number">10.4</span> Vectorized Code in Practice</a>
 <ul>
 <li><a href="#loops-versus-vectorized-code" class="nav-link" data-bs-target="#loops-versus-vectorized-code"> <span class="header-section-number">10.4.1</span> Loops Versus Vectorized Code</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="#summary" class="nav-link" data-bs-target="#summary"> <span class="header-section-number">10.5</span> Summary</a></li>
 <li><a href="#project-3-wrap-up" class="nav-link" data-bs-target="#project-3-wrap-up"> <span class="header-section-number">10.6</span> Project 3 Wrap-up</a></li>
 </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/speed.md">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
+<div class="toc-actions">
+<div><i class="bi bi-github"></i></div>
+<div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/speed.Rmd">Edit this page</a></p></div>
+</div></nav>
+</div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
+
+
 
 
 </body></html>
