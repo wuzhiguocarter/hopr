@@ -1,7 +1,6 @@
 project:
   type: book
   output-dir: docs
-  resources: [.nojekyll]
   
 book:
   title: "Hands-On Programming with R"
