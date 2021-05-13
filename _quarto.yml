@@ -15,6 +15,7 @@ book:
     newfound skills to solve practical data science problems.
   site-url: https://rstudio-education.github.io/hopr/
   repo-url: https://github.com/jjallaire/hopr/
+  repo-branch: master
   repo-actions: [edit]
   sharing: [twitter, facebook, linkedin]
   chapters:
