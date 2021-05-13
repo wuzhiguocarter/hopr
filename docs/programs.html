@@ -562,10 +562,10 @@
 <span class="va">num</span>
 <span class="co">## 1</span></code></pre></div>
 <p>Try the following quizzes to develop your understanding of <code>if</code> statements.</p>
-<div class="callout callout callout-captioned">
+<div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="flex-fill">
 Exercise: Quiz A
@@ -581,10 +581,10 @@ Exercise: Quiz A
 </div>
 </div>
 <p>The code will return the number 2. <code>x</code> begins as 1, and then R encounters the <code>if</code> statement. Since the condition evaluates to <code>TRUE</code>, R will run <code>x &lt;- 2</code>, changing the value of <code>x</code>.</p>
-<div class="callout callout callout-captioned">
+<div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="flex-fill">
 Exercise: Quiz B
@@ -601,10 +601,10 @@ x</code></pre>
 </div>
 </div>
 <p>This code will also return the number 2. It works the same as the code in Quiz A, except the condition in this statement is already <code>TRUE</code>. R doesn’t even need to evaluate it. As a result, the code inside the <code>if</code> statement will be run, and <code>x</code> will be set to 2.</p>
-<div class="callout callout callout-captioned">
+<div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="flex-fill">
 Exercise: Quiz C
@@ -721,10 +721,10 @@ Exercise: Quiz C
 <p>After you set up a concrete example, try to describe how you will do the subtask in English. The more precisely you can describe your solution, the easier it will be to write your R code.</p>
 <p>Our first subtask asks us to “test whether the symbols are three of a kind.” This phrase does not suggest any useful R code to me. However, I could describe a more precise test for three of a kind: three symbols will be the same if the first symbol is equal to the second and the second symbol is equal to the third. Or, even more precisely:</p>
 <p><em>A vector named <code>symbols</code> will contain three of the same symbol if the first element of <code>symbols</code> is equal to the second element of <code>symbols</code> and the second element of <code>symbols</code> is equal to the third element of <code>symbols</code></em>.</p>
-<div class="callout callout callout-captioned">
+<div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="flex-fill">
 Exercise: Write a Test
@@ -775,10 +775,10 @@ Exercise: Write a Test
 </div>
 <p>The second prize case occurs when all the symbols are a type of bar, for example, <code>B</code>, <code>BB</code>, and <code>BBB</code>. Let’s begin by creating a concrete example to work with:</p>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">symbols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"B"</span>, <span class="st">"BBB"</span>, <span class="st">"BB"</span><span class="op">)</span></code></pre></div>
-<div class="callout callout callout-captioned">
+<div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="flex-fill">
 Exercise: Test for All Bars
@@ -907,10 +907,10 @@ Exercise: Test for All Bars
 <span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="co"># count diamonds</span></span>
 <span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a><span class="co"># double the prize if necessary</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now we can work on the last case. Here, you’ll need to know how many cherries are in <code>symbols</code> before you can calculate a prize.</p>
-<div class="callout callout callout-captioned">
+<div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="flex-fill">
 Exercise: Find C’s
@@ -918,6 +918,8 @@ Exercise: Find C’s
 </div>
 <div class="callout-body">
 <p>How can you tell which elements of a vector named <code>symbols</code> are a <code>C</code>? Devise a test and try it out.</p>
+</div>
+</div>
 <div class="callout-note callout callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -929,8 +931,6 @@ Challenge
 </div>
 <div class="callout-body">
 <p>How might you count the number of <code>C</code>s in a vector named <code>symbols</code>? Remember R’s coercion rules.</p>
-</div>
-</div>
 </div>
 </div>
 <p>As always, let’s work with a real example:</p>
@@ -1034,10 +1034,10 @@ Lookup Tables Versus if Trees
 <p>And if three diamonds are present, it will be:</p>
 <div class="sourceCode" id="cb53"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">prize</span> <span class="op">*</span> <span class="fl">8</span>      <span class="co"># 8 = 2 ^ 3</span></code></pre></div>
 <p>Can you think of an easy way to handle this? How about something similar to these examples?</p>
-<div class="callout callout callout-captioned">
+<div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="flex-fill">
 Exercise: Adjust for Diamonds

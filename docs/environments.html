@@ -601,10 +601,10 @@
   <span class="va">deck</span><span class="op">[</span><span class="fl">1</span>, <span class="op">]</span>
 <span class="op">}</span></code></pre></div>
 <p>Notice that <code>deal</code> no longer takes an argument, and it calls the <code>deck</code> object, which lives in the global environment.</p>
-<div class="callout callout callout-captioned">
+<div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="flex-fill">
 Exercise: Will deal work?
@@ -658,10 +658,10 @@ Exercise: Will deal work?
 <figcaption aria-hidden="true" class="figure-caption">Figure 6.6: The deal function looks up deck in the global environment but saves <code>deck[-1, ]</code> in the runtime environment as a new object named deck.</figcaption><p></p>
 </figure>
 </div>
-<div class="callout callout callout-captioned">
+<div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="flex-fill">
 Exercise: Overwrite deck
@@ -715,10 +715,10 @@ Exercise: Overwrite deck
 <span class="co">## seven    clubs     7</span>
 <span class="co">##   two    clubs     2</span></code></pre></div>
 <p>This behavior is now undesirable in two ways. First, <code>shuffle</code> fails to shuffle <code>deck</code>. Second, <code>shuffle</code> returns a copy of <code>deck</code>, which may be missing the cards that have been dealt away. It would be better if <code>shuffle</code> returned the dealt cards to the deck and then shuffled. This is what happens when you shuffle a deck of cards in real life.</p>
-<div class="callout callout callout-captioned">
+<div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="flex-fill">
 Exercise: Rewrite shuffle

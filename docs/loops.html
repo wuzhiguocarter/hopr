@@ -433,10 +433,10 @@ P(1 \&amp; 2) &amp; = P(1) \cdot P(2) \\
 E(\text{prize}) = \sum_{i = 1}^{n}\left( \text{prize}_{i} \cdot P(\text{prize}_{i}) \right)
 \]</span></p>
 <p>Ready to begin?</p>
-<div class="callout callout callout-captioned">
+<div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="flex-fill">
 Exercise: List the Combinations
@@ -469,10 +469,10 @@ Exercise: List the Combinations
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample</span>(wheel, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, </span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.03</span>, <span class="fl">0.03</span>, <span class="fl">0.06</span>, <span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.01</span>, <span class="fl">0.52</span>)</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout callout-captioned">
+<div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="flex-fill">
 Exercise: Make a Lookup Table
@@ -486,10 +486,10 @@ Exercise: Make a Lookup Table
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">prob</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"DD"</span> <span class="op">=</span> <span class="fl">0.03</span>, <span class="st">"7"</span> <span class="op">=</span> <span class="fl">0.03</span>, <span class="st">"BBB"</span> <span class="op">=</span> <span class="fl">0.06</span>, 
   <span class="st">"BB"</span> <span class="op">=</span> <span class="fl">0.1</span>, <span class="st">"B"</span> <span class="op">=</span> <span class="fl">0.25</span>, <span class="st">"C"</span> <span class="op">=</span> <span class="fl">0.01</span>, <span class="st">"0"</span> <span class="op">=</span> <span class="fl">0.52</span><span class="op">)</span></code></pre></div>
 <p>Now let’s look up our probabilities.</p>
-<div class="callout callout callout-captioned">
+<div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="flex-fill">
 Exercise: Lookup the Probabilities
@@ -513,10 +513,10 @@ Exercise: Lookup the Probabilities
 <p><span class="math display">\[
 P(A \&amp; B \&amp; C \&amp; ...) = P(A) \cdot P(B) \cdot P(C) \cdot ...
 \]</span></p>
-<div class="callout callout callout-captioned">
+<div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="flex-fill">
 Exercise: Calculate Probabilities for Each Combination
@@ -638,10 +638,10 @@ For loops run on sets
 <span class="co">##     7   DD   DD  0.03  0.03  0.03 0.000027    NA</span>
 <span class="co">##   BBB   DD   DD  0.06  0.03  0.03 0.000054    NA</span></code></pre></div>
 <p>The code creates a new column named prize and fills it with <code>NA</code>s. R uses its recycling rules to populate every value of the column with <code>NA</code>.</p>
-<div class="callout callout callout-captioned">
+<div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="flex-fill">
 Exercise: Build a Loop
@@ -669,10 +669,10 @@ Exercise: Build a Loop
 <p>No, because we ignored an important feature of the slot machine when we wrote <code>score</code>: a diamond is wild. You can treat a <code>DD</code> as any other symbol if it increases your prize, with one exception. You cannot make a <code>DD</code> a <code>C</code> unless you already have another <code>C</code> in your symbols (it’d be too easy if every <code>DD</code> automatically earned you $2).</p>
 <p>The best thing about <code>DD</code>s is that their effects are cumulative. For example, consider the combination <code>B</code>, <code>DD</code>, <code>B</code>. Not only does the <code>DD</code> count as a <code>B</code>, which would earn a prize of $10; the <code>DD</code> also doubles the prize to $20.</p>
 <p>Adding this behavior to our code is a little tougher than what we have done so far, but it involves all of the same principles. You can decide that your slot machine doesn’t use wilds and keep the code that we have. In that case, your slot machine will have a payout rate of about 54 percent. Or, you could rewrite your code to use wilds. If you do, you will find that your slot machine has a payout rate of 93 percent, one percent higher than the manufacturer’s claim. You can calculate this rate with the same method that we used in this section.</p>
-<div class="callout callout callout-captioned">
+<div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="flex-fill">
 Exercise: Challenge
@@ -716,10 +716,10 @@ Exercise: Challenge
   <span class="co"># double for each diamond</span>
   <span class="va">prize</span> <span class="op">*</span> <span class="fl">2</span><span class="op">^</span><span class="va">diamonds</span>
 <span class="op">}</span></code></pre></div>
-<div class="callout callout callout-captioned">
+<div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="flex-fill">
 Exercise: Calculate the Expected Value
