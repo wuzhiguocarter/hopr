@@ -651,12 +651,12 @@ Now we can work on the last case. Here, you'll need to know how many cherries ar
 ## Exercise: Find C's
 
 How can you tell which elements of a vector named `symbols` are a `C`? Devise a test and try it out.
+:::
 
 ::: {.callout-note}
 ## Challenge
 
 How might you count the number of `C`s in a vector named `symbols`? Remember R's coercion rules.
-:::
 :::
 
 As always, let's work with a real example:
