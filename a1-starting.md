@@ -8,7 +8,7 @@ To get started with R, you need to acquire your own copy. This appendix will sho
 
 Both R and RStudio are free and easy to download.
 
-## How to Download and Install R2
+## How to Download and Install R
 
 R is maintained by an international team of developers who make the language available through the web page of [The Comprehensive R Archive Network](http://cran.r-project.org). The top of the web page provides three links for downloading R. Follow the link that describes your operating system: Windows, Mac, or Linux.
 
