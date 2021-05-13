@@ -237,9 +237,7 @@ wheel <- c("DD", "7", "BBB", "BB", "B", "C", "0")
 Be sure to add the argument `stringsAsFactors = FALSE` to your `expand.grid` call; otherwise, `expand.grid` will save the combinations as factors, an unfortunate choice that will disrupt the `score` function.
 :::
 
-``` {.solution}
-To create a data frame of each combination of _three_ symbols, you need to run `expand.grid` and give it _three_ copies of `wheel`. The result will be a data frame with 343 rows, one for each unique combination of three slot symbols:
-```
+To create a data frame of each combination of *three* symbols, you need to run `expand.grid` and give it *three* copies of `wheel`. The result will be a data frame with 343 rows, one for each unique combination of three slot symbols:
 
 ``` {.r}
 combos <- expand.grid(wheel, wheel, wheel, stringsAsFactors = FALSE)
@@ -274,9 +272,7 @@ get_symbols <- function() {
 Isolate the previous probabilities in a lookup table. What names will you use in your table?
 :::
 
-``` {.solution}
 Your names should match the input that you want to look up. In this case, the input will be the character strings that appear in `Var1`, `Var2`, and `Var3`. So your lookup table should look like this:
-```
 
 ``` {.r}
 prob <- c("DD" = 0.03, "7" = 0.03, "BBB" = 0.06, 
@@ -291,9 +287,7 @@ Now let's look up our probabilities.
 Look up the probabilities of getting the values in `Var1`. Then add them to `combos` as a column named `prob1`. Then do the same for `Var2` (`prob2`) and `Var3` (`prob3`).
 :::
 
-``` {.solution}
 Remember that you use R's selection notation to look up values in a lookup table. The values that result will be keyed to the index that you use:
-```
 
 ``` {.r}
 combos$prob1 <- prob[combos$Var1]
@@ -321,9 +315,7 @@ Calculate the overall probabilities for each combination. Save them as a column 
 You can check that the math worked by summing the probabilities. The probabilities should add up to one, because one of the combinations *must* appear when you play the slot machine. In other words, a combination will appear, with probability of one.
 :::
 
-``` {.solution}
-You can calculate the probabilities of every possible combination in one fell swoop with some element-wise execution: 
-```
+You can calculate the probabilities of every possible combination in one fell swoop with some element-wise execution:
 
 ``` {.r}
 combos$prob <- combos$prob1 * combos$prob2 * combos$prob3
@@ -483,9 +475,7 @@ The code creates a new column named prize and fills it with `NA`s. R uses its re
 Construct a `for` loop that will run `score` on all 343 rows of `combos`. The loop should run `score` on the first three entries of the \_i_th row of `combos` and should store the results in the \_i_th entry of `combos$prize`.
 :::
 
-``` {.solution}
-You can score the rows in `combos` with: 
-```
+You can score the rows in `combos` with:
 
 ``` {.r}
 for (i in 1:nrow(combos)) {
@@ -527,9 +517,7 @@ There are many ways to modify `score` that would count `DD`s as wild. If you wou
 If you would like a more modest challenge, study the following `score` code. It accounts for wild diamonds in a way that I find elegant and succinct. See if you can understand each step in the code and how it achieves its result.
 :::
 
-``` {.solution}
 Here is a version of score that handles wild diamonds:
-```
 
 ``` {.r}
 score <- function(symbols) {
@@ -572,9 +560,7 @@ score <- function(symbols) {
 Calculate the expected value of the slot machine when it uses the new `score` function. You can use the existing `combos` data frame, but you will need to build a `for` loop to recalculate `combos$prize`.
 :::
 
-``` {.solution}
 To update the expected value, just update `combos$prize`:
-```
 
 ``` {.r}
 for (i in 1:nrow(combos)) {

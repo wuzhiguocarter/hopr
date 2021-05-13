@@ -108,9 +108,9 @@ That's the basic interface for executing R code in RStudio. Think you have it? I
 
 Throughout the book, I'll put exercises in chunks, like the one above. I'll follow each exercise with a model answer, like the one below.
 
-``` {.solution}
 You could start with the number 10, and then do the following steps:
 
+``` {.r}
 10 + 2
 ## 12
 

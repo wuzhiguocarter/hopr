@@ -456,47 +456,47 @@ E(\text{prize}) = \sum_{i = 1}^{n}\left( \text{prize}_{i} \cdot P(\text{prize}_{
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>wheel <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"DD"</span>, <span class="st">"7"</span>, <span class="st">"BBB"</span>, <span class="st">"BB"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"0"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Be sure to add the argument <code>stringsAsFactors = FALSE</code> to your <code>expand.grid</code> call; otherwise, <code>expand.grid</code> will save the combinations as factors, an unfortunate choice that will disrupt the <code>score</code> function.</p>
 </div>
-<pre class="solution"><code>To create a data frame of each combination of _three_ symbols, you need to run `expand.grid` and give it _three_ copies of `wheel`. The result will be a data frame with 343 rows, one for each unique combination of three slot symbols:</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>combos <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(wheel, wheel, wheel, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>combos</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="do">##   Var1 Var2 Var3</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 1   DD   DD   DD</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    7   DD   DD</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 3  BBB   DD   DD</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 4   BB   DD   DD</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 5    B   DD   DD</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 6    C   DD   DD</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="do">## ...</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 341    B    0    0</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 342    C    0    0</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 343    0    0    0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To create a data frame of each combination of <em>three</em> symbols, you need to run <code>expand.grid</code> and give it <em>three</em> copies of <code>wheel</code>. The result will be a data frame with 343 rows, one for each unique combination of three slot symbols:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>combos <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(wheel, wheel, wheel, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>combos</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="do">##   Var1 Var2 Var3</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 1   DD   DD   DD</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    7   DD   DD</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 3  BBB   DD   DD</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 4   BB   DD   DD</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 5    B   DD   DD</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 6    C   DD   DD</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="do">## ...</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 341    B    0    0</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 342    C    0    0</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 343    0    0    0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now, let’s calculate the probability of getting each combination. You can use the probabilities contained in the <code>prob</code> argument of <code>get_symbols</code> to do this. These probabilities determine how frequently each symbol is chosen when your slot machine generates symbols. They were calculated after observing 345 plays of the Manitoba video lottery terminals. Zeroes have the largest chance of being selected (0.52) and cherries the least (0.01):</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>get_symbols <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  wheel <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"DD"</span>, <span class="st">"7"</span>, <span class="st">"BBB"</span>, <span class="st">"BB"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"0"</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample</span>(wheel, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.03</span>, <span class="fl">0.03</span>, <span class="fl">0.06</span>, <span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.01</span>, <span class="fl">0.52</span>)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>get_symbols <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  wheel <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"DD"</span>, <span class="st">"7"</span>, <span class="st">"BBB"</span>, <span class="st">"BB"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"0"</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample</span>(wheel, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.03</span>, <span class="fl">0.03</span>, <span class="fl">0.06</span>, <span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.01</span>, <span class="fl">0.52</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="exr:lookup-table" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 9.2 (Make a Lookup Table) </strong></span>Isolate the previous probabilities in a lookup table. What names will you use in your table?</p>
 </div>
-<pre class="solution"><code>Your names should match the input that you want to look up. In this case, the input will be the character strings that appear in `Var1`, `Var2`, and `Var3`. So your lookup table should look like this:</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>prob <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"DD"</span> <span class="ot">=</span> <span class="fl">0.03</span>, <span class="st">"7"</span> <span class="ot">=</span> <span class="fl">0.03</span>, <span class="st">"BBB"</span> <span class="ot">=</span> <span class="fl">0.06</span>, </span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BB"</span> <span class="ot">=</span> <span class="fl">0.1</span>, <span class="st">"B"</span> <span class="ot">=</span> <span class="fl">0.25</span>, <span class="st">"C"</span> <span class="ot">=</span> <span class="fl">0.01</span>, <span class="st">"0"</span> <span class="ot">=</span> <span class="fl">0.52</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Your names should match the input that you want to look up. In this case, the input will be the character strings that appear in <code>Var1</code>, <code>Var2</code>, and <code>Var3</code>. So your lookup table should look like this:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>prob <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"DD"</span> <span class="ot">=</span> <span class="fl">0.03</span>, <span class="st">"7"</span> <span class="ot">=</span> <span class="fl">0.03</span>, <span class="st">"BBB"</span> <span class="ot">=</span> <span class="fl">0.06</span>, </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BB"</span> <span class="ot">=</span> <span class="fl">0.1</span>, <span class="st">"B"</span> <span class="ot">=</span> <span class="fl">0.25</span>, <span class="st">"C"</span> <span class="ot">=</span> <span class="fl">0.01</span>, <span class="st">"0"</span> <span class="ot">=</span> <span class="fl">0.52</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now let’s look up our probabilities.</p>
 <div id="exr:lookup-probabilities" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 9.3 (Lookup the Probabilities) </strong></span>Look up the probabilities of getting the values in <code>Var1</code>. Then add them to <code>combos</code> as a column named <code>prob1</code>. Then do the same for <code>Var2</code> (<code>prob2</code>) and <code>Var3</code> (<code>prob3</code>).</p>
 </div>
-<pre class="solution"><code>Remember that you use R's selection notation to look up values in a lookup table. The values that result will be keyed to the index that you use:</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>combos<span class="sc">$</span>prob1 <span class="ot">&lt;-</span> prob[combos<span class="sc">$</span>Var1]</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>combos<span class="sc">$</span>prob2 <span class="ot">&lt;-</span> prob[combos<span class="sc">$</span>Var2]</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>combos<span class="sc">$</span>prob3 <span class="ot">&lt;-</span> prob[combos<span class="sc">$</span>Var3]</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(combos, <span class="dv">3</span>)</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Var1 Var2 Var3 prob1 prob2 prob3</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="do">##   DD   DD   DD  0.03  0.03  0.03</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="do">##    7   DD   DD  0.03  0.03  0.03</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  BBB   DD   DD  0.06  0.03  0.03</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Remember that you use R’s selection notation to look up values in a lookup table. The values that result will be keyed to the index that you use:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>combos<span class="sc">$</span>prob1 <span class="ot">&lt;-</span> prob[combos<span class="sc">$</span>Var1]</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>combos<span class="sc">$</span>prob2 <span class="ot">&lt;-</span> prob[combos<span class="sc">$</span>Var2]</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>combos<span class="sc">$</span>prob3 <span class="ot">&lt;-</span> prob[combos<span class="sc">$</span>Var3]</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(combos, <span class="dv">3</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Var1 Var2 Var3 prob1 prob2 prob3</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="do">##   DD   DD   DD  0.03  0.03  0.03</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="do">##    7   DD   DD  0.03  0.03  0.03</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  BBB   DD   DD  0.06  0.03  0.03</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now how should we calculate the total probability of each combination? Our three slot symbols are all chosen independently, which means that the same rule that governed our dice probabilities governs our symbol probabilities:</p>
 <p><span class="math display">\[
 P(A \&amp; B \&amp; C \&amp; ...) = P(A) \cdot P(B) \cdot P(C) \cdot ...
@@ -505,62 +505,62 @@ P(A \&amp; B \&amp; C \&amp; ...) = P(A) \cdot P(B) \cdot P(C) \cdot ...
 <p><span class="theorem-title"><strong>Exercise 9.4 (Calculate Probabilities for Each Combination) </strong></span>Calculate the overall probabilities for each combination. Save them as a column named <code>prob</code> in <code>combos</code>, then check your work.</p>
 <p>You can check that the math worked by summing the probabilities. The probabilities should add up to one, because one of the combinations <em>must</em> appear when you play the slot machine. In other words, a combination will appear, with probability of one.</p>
 </div>
-<pre class="solution"><code>You can calculate the probabilities of every possible combination in one fell swoop with some element-wise execution: </code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>combos<span class="sc">$</span>prob <span class="ot">&lt;-</span> combos<span class="sc">$</span>prob1 <span class="sc">*</span> combos<span class="sc">$</span>prob2 <span class="sc">*</span> combos<span class="sc">$</span>prob3</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(combos, <span class="dv">3</span>)</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Var1 Var2 Var3 prob1 prob2 prob3     prob</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="do">##   DD   DD   DD  0.03  0.03  0.03 0.000027</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="do">##    7   DD   DD  0.03  0.03  0.03 0.000027</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  BBB   DD   DD  0.06  0.03  0.03 0.000054</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can calculate the probabilities of every possible combination in one fell swoop with some element-wise execution:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>combos<span class="sc">$</span>prob <span class="ot">&lt;-</span> combos<span class="sc">$</span>prob1 <span class="sc">*</span> combos<span class="sc">$</span>prob2 <span class="sc">*</span> combos<span class="sc">$</span>prob3</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(combos, <span class="dv">3</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Var1 Var2 Var3 prob1 prob2 prob3     prob</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="do">##   DD   DD   DD  0.03  0.03  0.03 0.000027</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="do">##    7   DD   DD  0.03  0.03  0.03 0.000027</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  BBB   DD   DD  0.06  0.03  0.03 0.000054</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The sum of the probabilities is one, which suggests that our math is correct:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(combos<span class="sc">$</span>prob)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(combos<span class="sc">$</span>prob)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You only need to do one more thing before you can calculate the expected value: you must determine the prize for each combination in <code>combos</code>. You can calculate the prize with <code>score</code>. For example, we can calculate the prize for the first row of <code>combos</code> like this:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>symbols <span class="ot">&lt;-</span> <span class="fu">c</span>(combos[<span class="dv">1</span>, <span class="dv">1</span>], combos[<span class="dv">1</span>, <span class="dv">2</span>], combos[<span class="dv">1</span>, <span class="dv">3</span>])</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="do">## "DD" "DD" "DD"</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">score</span>(symbols)</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 800</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>symbols <span class="ot">&lt;-</span> <span class="fu">c</span>(combos[<span class="dv">1</span>, <span class="dv">1</span>], combos[<span class="dv">1</span>, <span class="dv">2</span>], combos[<span class="dv">1</span>, <span class="dv">3</span>])</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="do">## "DD" "DD" "DD"</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">score</span>(symbols)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 800</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>However there are 343 rows, which makes for tedious work if you plan to calculate the scores manually. It will be quicker to automate this task and have R do it for you, which you can do with a <code>for</code> loop.</p>
 </section>
 <section class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" id="for-loops"><span class="header-section-number">9.3</span> for Loops</h2>
 <p>A <code>for</code> loop repeats a chunk of code many times, once for each element in a set of input. <code>for</code> loops provide a way to tell R, “Do this for every value of that.” In R syntax, this looks like:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (value <span class="cf">in</span> that) {</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  this</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (value <span class="cf">in</span> that) {</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  this</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The <code>that</code> object should be a set of objects (often a vector of numbers or character strings). The for loop will run the code in that appears between the braces once for each member of <code>that</code>. For example, the for loop below runs <code>print("one run")</code> once for each element in a vector of character strings:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (value <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"first"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)) {</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"one run"</span>)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="do">## "one run"</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="do">## "one run"</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="do">## "one run"</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="do">## "one run"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (value <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"first"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)) {</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"one run"</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="do">## "one run"</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="do">## "one run"</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="do">## "one run"</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="do">## "one run"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The <code>value</code> symbol in a for loop acts like an argument in a function. The for loop will create an object named <code>value</code> and assign it a new value on each run of the loop. The code in your loop can access this value by calling the <code>value</code> object.</p>
 <p>What values will the for loop assign to <code>value</code>? It will use the elements in the set that you run the loop on. <code>for</code> starts with the first element and then assigns a different element to <code>value</code> on each run of the for loop, until all of the elements have been assigned to <code>value</code>. For example, the for loop below will run <code>print(value)</code> four times and will print out one element of <code>c("My", "second", "for", "loop")</code> each time:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (value <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"second"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)) {</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(value)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="do">## "My"</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="do">## "second"</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="do">## "for"</span></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="do">## "loop"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (value <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"second"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)) {</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(value)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="do">## "My"</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="do">## "second"</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="do">## "for"</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="do">## "loop"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>On the first run, the for loop substituted <code>"My"</code> for <code>value</code> in <code>print(value)</code>. On the second run it substituted <code>"second"</code>, and so on until <code>for</code> had run <code>print(value)</code> once with every element in the set:</p>
 <p>If you look at <code>value</code> after the loop runs, you will see that it still contains the value of the last element in the set:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>value</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="do">## "loop"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>value</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="do">## "loop"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>I’ve been using the symbol <code>value</code> in my for loops, but there is nothing special about it. You can use any symbol you like in your loop to do the same thing as long as the symbol appears before <code>in</code> in the parentheses that follow <code>for</code>. For example, you could rewrite the previous loop with any of the following:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (word <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"second"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)) {</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(word)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (string <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"second"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)) {</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(string)</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"second"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)) {</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (word <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"second"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)) {</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(word)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (string <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"second"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)) {</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(string)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"second"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)) {</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout-warning callout callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -591,49 +591,49 @@ For loops run on sets
 <p><code>for</code> loops are very useful in programming because they help you connect a piece of code with each element in a set. For example, we could use a <code>for</code> loop to run <code>score</code> once for each row in <code>combos</code>. However, R’s <code>for</code> loops have a shortcoming that you’ll want to know about before you start using them: <code>for</code> loops do not return output.</p>
 <p><code>for</code> loops are like Las Vegas: what happens in a <code>for</code> loop stays in a <code>for</code> loop. If you want to use the products of a <code>for</code> loop, you must write the <code>for</code> loop so that it saves its own output as it goes.</p>
 <p>Our previous examples appeared to return output, but this was misleading. The examples worked because we called <code>print</code>, which always prints its arguments in the console (even if it is called from a function, a <code>for</code> loop, or anything else). Our <code>for</code> loops won’t return anything if you remove the <code>print</code> call:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (value <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"third"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)) {</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  value</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (value <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"third"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)) {</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  value</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To save output from a <code>for</code> loop, you must write the loop so that it saves its own output as it runs. You can do this by creating an empty vector or list before you run the <code>for</code> loop. Then use the <code>for</code> loop to fill up the vector or list. When the <code>for</code> loop is finished, you’ll be able to access the vector or list, which will now have all of your results.</p>
 <p>Let’s see this in action. The following code creates an empty vector of length 4:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>chars <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">length =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>chars <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">length =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The next loop will fill it with strings:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>words <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"fourth"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  chars[i] <span class="ot">&lt;-</span> words[i]</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>chars</span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="do">## "My"    "fourth" "for"   "loop"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>words <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"fourth"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  chars[i] <span class="ot">&lt;-</span> words[i]</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>chars</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="do">## "My"    "fourth" "for"   "loop"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This approach will usually require you to change the sets that you execute your <code>for</code> loop on. Instead of executing on a set of objects, execute on a set of integers that you can use to index both your object and your storage vector. This approach is very common in R. You’ll find in practice that you use <code>for</code> loops not so much to run code, but to fill up vectors and lists with the results of code.</p>
 <p>Let’s use a <code>for</code> loop to calculate the prize for each row in <code>combos</code>. To begin, create a new column in <code>combos</code> to store the results of the <code>for</code> loop:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>combos<span class="sc">$</span>prize <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(combos, <span class="dv">3</span>)</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  Var1 Var2 Var3 prob1 prob2 prob3     prob prize</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="do">##    DD   DD   DD  0.03  0.03  0.03 0.000027    NA</span></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="do">##     7   DD   DD  0.03  0.03  0.03 0.000027    NA</span></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="do">##   BBB   DD   DD  0.06  0.03  0.03 0.000054    NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>combos<span class="sc">$</span>prize <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(combos, <span class="dv">3</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  Var1 Var2 Var3 prob1 prob2 prob3     prob prize</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="do">##    DD   DD   DD  0.03  0.03  0.03 0.000027    NA</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="do">##     7   DD   DD  0.03  0.03  0.03 0.000027    NA</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="do">##   BBB   DD   DD  0.06  0.03  0.03 0.000054    NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The code creates a new column named prize and fills it with <code>NA</code>s. R uses its recycling rules to populate every value of the column with <code>NA</code>.</p>
 <div id="exr:build-a-loop" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 9.5 (Build a Loop) </strong></span>Construct a <code>for</code> loop that will run <code>score</code> on all 343 rows of <code>combos</code>. The loop should run <code>score</code> on the first three entries of the _i_th row of <code>combos</code> and should store the results in the _i_th entry of <code>combos$prize</code>.</p>
 </div>
-<pre class="solution"><code>You can score the rows in `combos` with: </code></pre>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(combos)) {</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  symbols <span class="ot">&lt;-</span> <span class="fu">c</span>(combos[i, <span class="dv">1</span>], combos[i, <span class="dv">2</span>], combos[i, <span class="dv">3</span>])</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  combos<span class="sc">$</span>prize[i] <span class="ot">&lt;-</span> <span class="fu">score</span>(symbols)</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can score the rows in <code>combos</code> with:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(combos)) {</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  symbols <span class="ot">&lt;-</span> <span class="fu">c</span>(combos[i, <span class="dv">1</span>], combos[i, <span class="dv">2</span>], combos[i, <span class="dv">3</span>])</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  combos<span class="sc">$</span>prize[i] <span class="ot">&lt;-</span> <span class="fu">score</span>(symbols)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>After you run the for loop, <code>combos$prize</code> will contain the correct prize for each row. This exercise also tests the <code>score</code> function; <code>score</code> appears to work correctly for every possible slot combination:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(combos, <span class="dv">3</span>)</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Var1 Var2 Var3 prob1 prob2 prob3     prob prize</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="do">##   DD   DD   DD  0.03  0.03  0.03 0.000027   800</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="do">##    7   DD   DD  0.03  0.03  0.03 0.000027     0</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  BBB   DD   DD  0.06  0.03  0.03 0.000054     0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(combos, <span class="dv">3</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Var1 Var2 Var3 prob1 prob2 prob3     prob prize</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="do">##   DD   DD   DD  0.03  0.03  0.03 0.000027   800</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="do">##    7   DD   DD  0.03  0.03  0.03 0.000027     0</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  BBB   DD   DD  0.06  0.03  0.03 0.000054     0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We’re now ready to calculate the expected value of the prize. The expected value is the sum of <code>combos$prize</code> weighted by <code>combos$prob</code>. This is also the payout rate of the slot machine:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(combos<span class="sc">$</span>prize <span class="sc">*</span> combos<span class="sc">$</span>prob)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 0.538014</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(combos<span class="sc">$</span>prize <span class="sc">*</span> combos<span class="sc">$</span>prob)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 0.538014</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Uh oh. The expected prize is about 0.54, which means our slot machine only pays 54 cents on the dollar over the long run. Does this mean that the manufacturer of the Manitoba slot machines <em>was</em> lying?</p>
 <p>No, because we ignored an important feature of the slot machine when we wrote <code>score</code>: a diamond is wild. You can treat a <code>DD</code> as any other symbol if it increases your prize, with one exception. You cannot make a <code>DD</code> a <code>C</code> unless you already have another <code>C</code> in your symbols (it’d be too easy if every <code>DD</code> automatically earned you $2).</p>
 <p>The best thing about <code>DD</code>s is that their effects are cumulative. For example, consider the combination <code>B</code>, <code>DD</code>, <code>B</code>. Not only does the <code>DD</code> count as a <code>B</code>, which would earn a prize of $10; the <code>DD</code> also doubles the prize to $20.</p>
@@ -642,94 +642,94 @@ For loops run on sets
 <p><span class="theorem-title"><strong>Exercise 9.6 (Challenge) </strong></span>There are many ways to modify <code>score</code> that would count <code>DD</code>s as wild. If you would like to test your skill as an R programmer, try to write your own version of <code>score</code> that correctly handles diamonds.</p>
 <p>If you would like a more modest challenge, study the following <code>score</code> code. It accounts for wild diamonds in a way that I find elegant and succinct. See if you can understand each step in the code and how it achieves its result.</p>
 </div>
-<pre class="solution"><code>Here is a version of score that handles wild diamonds:</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="cf">function</span>(symbols) {</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  diamonds <span class="ot">&lt;-</span> <span class="fu">sum</span>(symbols <span class="sc">==</span> <span class="st">"DD"</span>)</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>  cherries <span class="ot">&lt;-</span> <span class="fu">sum</span>(symbols <span class="sc">==</span> <span class="st">"C"</span>)</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># identify case</span></span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># since diamonds are wild, only nondiamonds </span></span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># matter for three of a kind and all bars</span></span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>  slots <span class="ot">&lt;-</span> symbols[symbols <span class="sc">!=</span> <span class="st">"DD"</span>]</span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>  same <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(slots)) <span class="sc">==</span> <span class="dv">1</span></span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>  bars <span class="ot">&lt;-</span> slots <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"B"</span>, <span class="st">"BB"</span>, <span class="st">"BBB"</span>)</span>
-<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># assign prize</span></span>
-<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (diamonds <span class="sc">==</span> <span class="dv">3</span>) {</span>
-<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>    prize <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (same) {</span>
-<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>    payouts <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"7"</span> <span class="ot">=</span> <span class="dv">80</span>, <span class="st">"BBB"</span> <span class="ot">=</span> <span class="dv">40</span>, <span class="st">"BB"</span> <span class="ot">=</span> <span class="dv">25</span>,</span>
-<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">"B"</span> <span class="ot">=</span> <span class="dv">10</span>, <span class="st">"C"</span> <span class="ot">=</span> <span class="dv">10</span>, <span class="st">"0"</span> <span class="ot">=</span> <span class="dv">0</span>)</span>
-<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>    prize <span class="ot">&lt;-</span> <span class="fu">unname</span>(payouts[slots[<span class="dv">1</span>]])</span>
-<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (<span class="fu">all</span>(bars)) {</span>
-<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>    prize <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (cherries <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># diamonds count as cherries</span></span>
-<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># so long as there is one real cherry</span></span>
-<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a>    prize <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">5</span>)[cherries <span class="sc">+</span> diamonds <span class="sc">+</span> <span class="dv">1</span>]</span>
-<span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a>    prize <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb37-28"><a href="#cb37-28" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb37-29"><a href="#cb37-29" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb37-30"><a href="#cb37-30" aria-hidden="true" tabindex="-1"></a>  <span class="co"># double for each diamond</span></span>
-<span id="cb37-31"><a href="#cb37-31" aria-hidden="true" tabindex="-1"></a>  prize <span class="sc">*</span> <span class="dv">2</span><span class="sc">^</span>diamonds</span>
-<span id="cb37-32"><a href="#cb37-32" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here is a version of score that handles wild diamonds:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="cf">function</span>(symbols) {</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  diamonds <span class="ot">&lt;-</span> <span class="fu">sum</span>(symbols <span class="sc">==</span> <span class="st">"DD"</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  cherries <span class="ot">&lt;-</span> <span class="fu">sum</span>(symbols <span class="sc">==</span> <span class="st">"C"</span>)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># identify case</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># since diamonds are wild, only nondiamonds </span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># matter for three of a kind and all bars</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>  slots <span class="ot">&lt;-</span> symbols[symbols <span class="sc">!=</span> <span class="st">"DD"</span>]</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>  same <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(slots)) <span class="sc">==</span> <span class="dv">1</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>  bars <span class="ot">&lt;-</span> slots <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"B"</span>, <span class="st">"BB"</span>, <span class="st">"BBB"</span>)</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># assign prize</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (diamonds <span class="sc">==</span> <span class="dv">3</span>) {</span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>    prize <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (same) {</span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>    payouts <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"7"</span> <span class="ot">=</span> <span class="dv">80</span>, <span class="st">"BBB"</span> <span class="ot">=</span> <span class="dv">40</span>, <span class="st">"BB"</span> <span class="ot">=</span> <span class="dv">25</span>,</span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">"B"</span> <span class="ot">=</span> <span class="dv">10</span>, <span class="st">"C"</span> <span class="ot">=</span> <span class="dv">10</span>, <span class="st">"0"</span> <span class="ot">=</span> <span class="dv">0</span>)</span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>    prize <span class="ot">&lt;-</span> <span class="fu">unname</span>(payouts[slots[<span class="dv">1</span>]])</span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (<span class="fu">all</span>(bars)) {</span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>    prize <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (cherries <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># diamonds count as cherries</span></span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># so long as there is one real cherry</span></span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>    prize <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">5</span>)[cherries <span class="sc">+</span> diamonds <span class="sc">+</span> <span class="dv">1</span>]</span>
+<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>    prize <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a>  <span class="co"># double for each diamond</span></span>
+<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a>  prize <span class="sc">*</span> <span class="dv">2</span><span class="sc">^</span>diamonds</span>
+<span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="exr:expected-value" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 9.7 (Calculate the Expected Value) </strong></span>Calculate the expected value of the slot machine when it uses the new <code>score</code> function. You can use the existing <code>combos</code> data frame, but you will need to build a <code>for</code> loop to recalculate <code>combos$prize</code>.</p>
 </div>
-<pre class="solution"><code>To update the expected value, just update `combos$prize`:</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(combos)) {</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  symbols <span class="ot">&lt;-</span> <span class="fu">c</span>(combos[i, <span class="dv">1</span>], combos[i, <span class="dv">2</span>], combos[i, <span class="dv">3</span>])</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  combos<span class="sc">$</span>prize[i] <span class="ot">&lt;-</span> <span class="fu">score</span>(symbols)</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To update the expected value, just update <code>combos$prize</code>:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(combos)) {</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  symbols <span class="ot">&lt;-</span> <span class="fu">c</span>(combos[i, <span class="dv">1</span>], combos[i, <span class="dv">2</span>], combos[i, <span class="dv">3</span>])</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  combos<span class="sc">$</span>prize[i] <span class="ot">&lt;-</span> <span class="fu">score</span>(symbols)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then recompute the expected value:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(combos<span class="sc">$</span>prize <span class="sc">*</span> combos<span class="sc">$</span>prob)</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 0.934356</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(combos<span class="sc">$</span>prize <span class="sc">*</span> combos<span class="sc">$</span>prob)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 0.934356</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This result vindicates the manufacturer’s claim. If anything, the slot machines seem more generous than the manufacturer stated.</p>
 </section>
 <section class="level2" data-number="9.4">
 <h2 data-number="9.4" class="anchored" id="while-loops"><span class="header-section-number">9.4</span> while Loops</h2>
 <p>R has two companions to the <code>for</code> loop: the <code>while</code> loop and the <code>repeat</code> loop. A <code>while</code> loop reruns a chunk <em>while</em> a certain condition remains <code>TRUE</code>. To create a <code>while</code> loop, follow <code>while</code> by a condition and a chunk of code, like this:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (condition) {</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  code</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (condition) {</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  code</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>while</code> will rerun <code>condition</code>, which should be a logical test, at the start of each loop. If <code>condition</code> evaluates to <code>TRUE</code>, <code>while</code> will run the code between its braces. If <code>condition</code> evaluates to <code>FALSE</code>, <code>while</code> will finish the loop.</p>
 <p>Why might <code>condition</code> change from <code>TRUE</code> to <code>FALSE</code>? Presumably because the code inside your loop has changed whether the condition is still <code>TRUE</code>. If the code has no relationship to the condition, a <code>while</code> loop will run until you stop it. So be careful. You can stop a <code>while</code> loop by hitting Escape or by clicking on the stop-sign icon at the top of the RStudio console pane. The icon will appear once the loop begins to run.</p>
 <p>Like <code>for</code> loops, <code>while</code> loops do not return a result, so you must think about what you want the loop to return and save it to an object during the loop.</p>
 <p>You can use <code>while</code> loops to do things that take a varying number of iterations, like calculating how long it takes to go broke playing slots (as follows). However, in practice, <code>while</code> loops are much less common than <code>for</code> loops in R:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>plays_till_broke <span class="ot">&lt;-</span> <span class="cf">function</span>(start_with) {</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  cash <span class="ot">&lt;-</span> start_with</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (cash <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>    cash <span class="ot">&lt;-</span> cash <span class="sc">-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="fu">play</span>()</span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">&lt;-</span> n <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>  n</span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plays_till_broke</span>(<span class="dv">100</span>)</span>
-<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 260</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>plays_till_broke <span class="ot">&lt;-</span> <span class="cf">function</span>(start_with) {</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  cash <span class="ot">&lt;-</span> start_with</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (cash <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    cash <span class="ot">&lt;-</span> cash <span class="sc">-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="fu">play</span>()</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">&lt;-</span> n <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>  n</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plays_till_broke</span>(<span class="dv">100</span>)</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 260</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="level2" data-number="9.5">
 <h2 data-number="9.5" class="anchored" id="repeat-loops"><span class="header-section-number">9.5</span> repeat Loops</h2>
 <p><code>repeat</code> loops are even more basic than <code>while</code> loops. They will repeat a chunk of code until you tell them to stop (by hitting Escape) or until they encounter the command <code>break</code>, which will stop the loop.</p>
 <p>You can use a <code>repeat</code> loop to recreate <code>plays_till_broke</code>, my function that simulates how long it takes to lose money while playing slots:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>plays_till_broke <span class="ot">&lt;-</span> <span class="cf">function</span>(start_with) {</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  cash <span class="ot">&lt;-</span> start_with</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">repeat</span> {</span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>    cash <span class="ot">&lt;-</span> cash <span class="sc">-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="fu">play</span>()</span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">&lt;-</span> n <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (cash <span class="sc">&lt;=</span> <span class="dv">0</span>) {</span>
-<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>      <span class="cf">break</span></span>
-<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>  n</span>
-<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plays_till_broke</span>(<span class="dv">100</span>)</span>
-<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 237</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>plays_till_broke <span class="ot">&lt;-</span> <span class="cf">function</span>(start_with) {</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  cash <span class="ot">&lt;-</span> start_with</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">repeat</span> {</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    cash <span class="ot">&lt;-</span> cash <span class="sc">-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="fu">play</span>()</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">&lt;-</span> n <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (cash <span class="sc">&lt;=</span> <span class="dv">0</span>) {</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>      <span class="cf">break</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>  n</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plays_till_broke</span>(<span class="dv">100</span>)</span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 237</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="level2" data-number="9.6">
 <h2 data-number="9.6" class="anchored" id="summary"><span class="header-section-number">9.6</span> Summary</h2>

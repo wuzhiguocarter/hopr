@@ -167,9 +167,7 @@ The individual elements of a character vector are known as *strings*. Note that 
 Can you spot the difference between a character string and a number? Here's a test: Which of these are character strings and which are numbers? `1`, `"1"`, `"one"`.
 :::
 
-``` {.solution}
-`"1"` and `"one"` are both character strings. 
-```
+`"1"` and `"one"` are both character strings.
 
 Character strings can contain number characters, but that doesn't make them numeric. They're just strings that happen to have numbers in them. You can tell strings from real numbers because strings come surrounded by quotes. In fact, anything surrounded by quotes in R will be treated as a character string---no matter what appears between the quotes.
 
@@ -233,9 +231,7 @@ Create an atomic vector that stores just the face names of the cards in a royal 
 Which type of vector will you use to save the names?
 :::
 
-``` {.solution}
 A character vector is the most appropriate type of atomic vector in which to save card names. You can create one with the `c` function if you surround each name with quotation marks:
-```
 
 ``` {.r}
 hand <- c("ace", "king", "queen", "jack", "ten")
@@ -437,9 +433,7 @@ Create the following matrix, which stores the name and suit of every card in a r
 ## [5,] "ten"   "spades"
 ```
 
-``` {.solution}
 There is more than one way to build this matrix, but in every case, you will need to start by making a character vector with 10 values. If you start with the following character vector, you can turn it into a matrix with any of the following three commands:
-```
 
 ``` {.r}
 hand1 <- c("ace", "king", "queen", "jack", "ten", "spades", "spades", 
@@ -596,9 +590,7 @@ Many card games assign a numerical value to each card. For example, in blackjack
 Make a virtual playing card by combining "ace," "heart," and 1 into a vector. What type of atomic vector will result? Check if you are right.
 :::
 
-``` {.solution}
 You may have guessed that this exercise would not go well. Each atomic vector can only store one type of data. As a result, R coerces all of your values to character strings:
-```
 
 ``` {.r}
 card <- c("ace", "hearts", 1)
@@ -707,9 +699,7 @@ However, not every list needs to be complicated. You can store a playing card in
 Use a list to store a single playing card, like the ace of hearts, which has a point value of one. The list should save the face of the card, the suit, and the point value in separate elements.
 :::
 
-``` {.solution}
 You can create your card like this. In the following example, the first element of the list is a character vector (of length 1). The second element is also a character vector, and the third element is a numeric vector:
-```
 
 ``` {.r}
 card <- list("ace", "hearts", 1)

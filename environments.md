@@ -356,9 +356,7 @@ Notice that `deal` no longer takes an argument, and it calls the `deck` object, 
 Will R be able to find `deck` and return an answer when I call the new version of `deal`, such as `deal()`?
 :::
 
-``` {.solution}
 Yes. `deal` will still work the same as before. R will run `deal` in a runtime environment that is a child of the global environment. Why will it be a child of the global environment? Because the global environment is the origin environment of `deal` (we defined `deal` in the global environment):
-```
 
 ``` {.r}
 environment(deal)
@@ -421,9 +419,7 @@ This code won't work because R will be in a runtime environment when it executes
 Rewrite the `deck <- deck[-1, ]` line of `deal` to *assign* `deck[-1, ]` to an object named `deck` in the global environment. Hint: consider the `assign` function.
 :::
 
-``` {.solution}
-You can assign an object to a specific environment with the `assign` function: 
-```
+You can assign an object to a specific environment with the `assign` function:
 
 ``` {.r}
 deal <- function() {
@@ -490,9 +486,7 @@ This behavior is now undesirable in two ways. First, `shuffle` fails to shuffle 
 Rewrite `shuffle` so that it replaces the copy of `deck` that lives in the global environment with a shuffled version of `DECK`, the intact copy of `deck` that also lives in the global environment. The new version of `shuffle` should have no arguments and return no output.
 :::
 
-``` {.solution}
-You can update `shuffle` in the same way that you updated `deck`. The following version will do the job: 
-```
+You can update `shuffle` in the same way that you updated `deck`. The following version will do the job:
 
 ``` {.r}
 shuffle <- function(){

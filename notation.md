@@ -231,9 +231,7 @@ deal <- function(cards) {
 ```
 :::
 
-``` {.solution}
 You can use any of the systems that return the first row of your data frame to write a `deal` function. I'll use positive integers and blanks because I think they are easy to understand:
-```
 
 ``` {.r}
 deal <- function(cards) {
@@ -323,9 +321,7 @@ Now the new set is truly shuffled. You'll be finished once you wrap these steps 
 Use the preceding ideas to write a `shuffle` function. `shuffle` should take a data frame and return a shuffled copy of the data frame.
 :::
 
-``` {.solution}
 Your `shuffle` function will look like the one that follows:
-```
 
 ``` {.r}
 shuffle <- function(cards) { 

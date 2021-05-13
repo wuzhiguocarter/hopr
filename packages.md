@@ -107,9 +107,7 @@ Imagine what a histogram of `x3` would look like. Assume that the histogram has 
 When you are done, plot a histogram of `x3` with `binwidth = 1`, and see if you are right.
 :::
 
-``` {.solution}
 You can make a histogram of `x3` with `qplot(x3, binwidth = 1)`. The histogram will look like a symmetric pyramid. The middle bar will have a height of 3 and will appear above `[2, 3)`, but be sure to try it and see for yourself.
-```
 
 You can use a histogram to display visually how common different values of `x` are. Numbers covered by a tall bar are more common than numbers covered by a short bar.
 
@@ -267,9 +265,7 @@ You will need to add a `prob` argument to the `sample` function inside of `roll`
 
 When you are finished, read on for a model answer.
 
-``` {.solution}
 To weight your dice, you need to add a `prob` argument with a vector of weights to `sample`, like this:
-```
 
 ``` {.r}
 roll <- function() {
