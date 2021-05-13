@@ -162,8 +162,8 @@ one_play + 1
 ##  "B" "0" "B"
 ```
 
-::: {#exr:add-attribute}
-## Add an Attribute
+::: {.callout}
+## Exercise: Add an Attribute
 
 Modify `play` to return a prize that contains the symbols associated with it as an attribute named `symbols`. Remove the redundant call to `print(symbols)`:
 
@@ -485,8 +485,8 @@ If you give `print` an object whose class or classes do not have a print method,
 
 Let's use this system to write a better print method for the slot machine output.
 
-::: {#exr:print-method}
-## Make a Print Method
+::: {.callout}
+## Exercise: Make a Print Method
 
 Write a new print method for the slots class. The method should call `slot_display` to return well-formatted slot-machine output.
 
@@ -511,8 +511,8 @@ one_play
 
 Let's ensure that every piece of slot machine output has the `slots` class.
 
-::: {#exr:add-a-class}
-## Add a Class
+::: {.callout}
+## Exercise: Add a Class
 
 Modify the `play` function so it assigns `slots` to the `class` attribute of its output:
 

@@ -562,17 +562,36 @@
 <span class="va">num</span>
 <span class="co">## 1</span></code></pre></div>
 <p>Try the following quizzes to develop your understanding of <code>if</code> statements.</p>
-<div id="exr:quiz-a" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7.1 (Quiz A) </strong></span>What will this return?</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Quiz A
+</div>
+</div>
+<div class="callout-body">
+<p>What will this return?</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">1</span>
 <span class="kw">if</span> <span class="op">(</span><span class="fl">3</span> <span class="op">==</span> <span class="fl">3</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">2</span>
 <span class="op">}</span>
 <span class="va">x</span></code></pre></div>
 </div>
+</div>
 <p>The code will return the number 2. <code>x</code> begins as 1, and then R encounters the <code>if</code> statement. Since the condition evaluates to <code>TRUE</code>, R will run <code>x &lt;- 2</code>, changing the value of <code>x</code>.</p>
-<div id="exr:quiz-b" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7.2 (Quiz B) </strong></span>What will this return?</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Quiz B
+</div>
+</div>
+<div class="callout-body">
+<p>What will this return?</p>
 <pre><code>```r
 x &lt;- 1
 if (TRUE) {
@@ -580,9 +599,19 @@ if (TRUE) {
 }
 x</code></pre>
 </div>
+</div>
 <p>This code will also return the number 2. It works the same as the code in Quiz A, except the condition in this statement is already <code>TRUE</code>. R doesn’t even need to evaluate it. As a result, the code inside the <code>if</code> statement will be run, and <code>x</code> will be set to 2.</p>
-<div id="exr:quiz-c" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7.3 (Quiz C) </strong></span>What will this return?</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Quiz C
+</div>
+</div>
+<div class="callout-body">
+<p>What will this return?</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">1</span>
 <span class="kw">if</span> <span class="op">(</span><span class="va">x</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">2</span>
@@ -591,6 +620,7 @@ x</code></pre>
   <span class="op">}</span>
 <span class="op">}</span>
 <span class="va">x</span></code></pre></div>
+</div>
 </div>
 <p>Once again, the code will return the number 2. <code>x</code> starts out as 1, and the condition of the first <code>if</code> statement will evaluate to <code>TRUE</code>, which causes R to run the code in the body of the <code>if</code> statement. First, R sets <code>x</code> equal to 2, then R evaluates the second <code>if</code> statement, which is in the body of the first. This time <code>x == 1</code> will evaluate to <code>FALSE</code> because <code>x</code> now equals 2. As a result, R ignores <code>x &lt;- 3</code> and exits both <code>if</code> statements.</p>
 </section><section class="level2" data-number="7.3"><h2 data-number="7.3" class="anchored" id="else-statements">
@@ -691,8 +721,18 @@ x</code></pre>
 <p>After you set up a concrete example, try to describe how you will do the subtask in English. The more precisely you can describe your solution, the easier it will be to write your R code.</p>
 <p>Our first subtask asks us to “test whether the symbols are three of a kind.” This phrase does not suggest any useful R code to me. However, I could describe a more precise test for three of a kind: three symbols will be the same if the first symbol is equal to the second and the second symbol is equal to the third. Or, even more precisely:</p>
 <p><em>A vector named <code>symbols</code> will contain three of the same symbol if the first element of <code>symbols</code> is equal to the second element of <code>symbols</code> and the second element of <code>symbols</code> is equal to the third element of <code>symbols</code></em>.</p>
-<div id="exr:write-a-test" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7.4 (Write a Test) </strong></span>Turn the preceding statement into a logical test written in R. Use your knowledge of logical tests, Boolean operators, and subsetting from [R Notation]. The test should work with the vector <code>symbols</code> and return a <code>TRUE</code> <em>if and only if</em> each element in <code>symbols</code> is the same. Be sure to test your code on <code>symbols</code>.</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Write a Test
+</div>
+</div>
+<div class="callout-body">
+<p>Turn the preceding statement into a logical test written in R. Use your knowledge of logical tests, Boolean operators, and subsetting from [R Notation]. The test should work with the vector <code>symbols</code> and return a <code>TRUE</code> <em>if and only if</em> each element in <code>symbols</code> is the same. Be sure to test your code on <code>symbols</code>.</p>
+</div>
 </div>
 <p>Here are a couple of ways to test that <code>symbols</code> contains three of the same symbol. The first method parallels the English suggestion above, but there are other ways to do the same test. There is no right or wrong answer, so long as your solution works, which is easy to check because you’ve created a vector named <code>symbols</code>:</p>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">symbols</span>
@@ -735,8 +775,18 @@ x</code></pre>
 </div>
 <p>The second prize case occurs when all the symbols are a type of bar, for example, <code>B</code>, <code>BB</code>, and <code>BBB</code>. Let’s begin by creating a concrete example to work with:</p>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">symbols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"B"</span>, <span class="st">"BBB"</span>, <span class="st">"BB"</span><span class="op">)</span></code></pre></div>
-<div id="exr:test-for-all-bars" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7.5 (Test for All Bars) </strong></span>Use R’s logical and Boolean operators to write a test that will determine whether a vector named <code>symbols</code> contains only symbols that are a type of bar. Check whether your test works with our example <code>symbols</code> vector. Remember to describe how the test should work in English, and then convert the solution to R.</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Test for All Bars
+</div>
+</div>
+<div class="callout-body">
+<p>Use R’s logical and Boolean operators to write a test that will determine whether a vector named <code>symbols</code> contains only symbols that are a type of bar. Check whether your test works with our example <code>symbols</code> vector. Remember to describe how the test should work in English, and then convert the solution to R.</p>
+</div>
 </div>
 <p>As with many things in R, there are multiple ways to test whether <code>symbols</code> contains all bars. For example, you could write a very long test that uses multiple Boolean operators, like this:</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="op">(</span><span class="va">symbols</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op">==</span> <span class="st">"B"</span> <span class="op">|</span> <span class="va">symbols</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op">==</span> <span class="st">"BB"</span> <span class="op">|</span> <span class="va">symbols</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op">==</span> <span class="st">"BBB"</span><span class="op">)</span> <span class="op">&amp;</span>
@@ -857,8 +907,17 @@ x</code></pre>
 <span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="co"># count diamonds</span></span>
 <span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a><span class="co"># double the prize if necessary</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now we can work on the last case. Here, you’ll need to know how many cherries are in <code>symbols</code> before you can calculate a prize.</p>
-<div id="exr:find-c" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7.6 (Find C’s) </strong></span>How can you tell which elements of a vector named <code>symbols</code> are a <code>C</code>? Devise a test and try it out.</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Find C’s
+</div>
+</div>
+<div class="callout-body">
+<p>How can you tell which elements of a vector named <code>symbols</code> are a <code>C</code>? Devise a test and try it out.</p>
 <div class="callout-note callout callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -870,6 +929,7 @@ Challenge
 </div>
 <div class="callout-body">
 <p>How might you count the number of <code>C</code>s in a vector named <code>symbols</code>? Remember R’s coercion rules.</p>
+</div>
 </div>
 </div>
 </div>
@@ -974,8 +1034,18 @@ Lookup Tables Versus if Trees
 <p>And if three diamonds are present, it will be:</p>
 <div class="sourceCode" id="cb53"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">prize</span> <span class="op">*</span> <span class="fl">8</span>      <span class="co"># 8 = 2 ^ 3</span></code></pre></div>
 <p>Can you think of an easy way to handle this? How about something similar to these examples?</p>
-<div id="exr:adjust-for-diamonds" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7.7 (Adjust for Diamonds) </strong></span>Write a method for adjusting <code>prize</code> based on <code>diamonds</code>. Describe a solution in English first, and then write your code.</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Adjust for Diamonds
+</div>
+</div>
+<div class="callout-body">
+<p>Write a method for adjusting <code>prize</code> based on <code>diamonds</code>. Describe a solution in English first, and then write your code.</p>
+</div>
 </div>
 <p>Here is a concise solution inspired by the previous pattern. The adjusted prize will equal:</p>
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">prize</span> <span class="op">*</span> <span class="fl">2</span> <span class="op">^</span> <span class="va">diamonds</span></code></pre></div>

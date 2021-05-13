@@ -247,8 +247,8 @@ If replace is true, Walker's alias method (Ripley, 1987) is used...
 
 Okay, that looks like time to start skimming. We should have enough info now to figure out how to weight our dice.
 
-::: {#exr:roll}
-## Roll a Pair of Dice
+::: {.callout}
+## Exercise: Roll a Pair of Dice
 
 Rewrite the `roll` function below to roll a pair of weighted dice:
 :::

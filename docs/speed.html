@@ -397,9 +397,19 @@
 </div>
 <p>The first two columns of the output of <code>system.time</code> report how many seconds your computer spent executing the call on the user side and system sides of your process, a dichotomy that will vary from OS to OS.</p>
 <p>The last column displays how many seconds elapsed while R ran the expression. The results show that <code>abs_set</code> calculated the absolute value 30 times faster than <code>abs_loop</code> when applied to a vector of 10 million numbers. You can expect similar speed-ups whenever you write vectorized code.</p>
-<div id="exr:how-fast-is-abs" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 10.1 (How fast is abs?) </strong></span>Many preexisting R functions are already vectorized and have been optimized to perform quickly. You can make your code faster by relying on these functions whenever possible. For example, R comes with a built-in absolute value function, <code>abs</code>.</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: How fast is abs?
+</div>
+</div>
+<div class="callout-body">
+<p>Many preexisting R functions are already vectorized and have been optimized to perform quickly. You can make your code faster by relying on these functions whenever possible. For example, R comes with a built-in absolute value function, <code>abs</code>.</p>
 <p>Check to see how much faster <code>abs</code> computes the absolute value of <code>long</code> than <code>abs_loop</code> and <code>abs_set</code> do.</p>
+</div>
 </div>
 <p>You can measure the speed of <code>abs</code> with <code>system.time</code>. It takes <code>abs</code> a lightning-fast 0.05 seconds to calculate the absolute value of 10 million numbers. This is 0.592 / 0.054 = 10.96 times faster than <code>abs_set</code> and nearly 300 times faster than <code>abs_loop</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">long</span><span class="op">)</span><span class="op">)</span>
@@ -436,8 +446,17 @@
 <figcaption aria-hidden="true" class="figure-caption">Figure 10.2: Use logical subsetting to modify groups of values in place. R’s arithmetic and assignment operators are vectorized, which lets you manipulate and update multiple values at once.</figcaption><p></p>
 </figure>
 </div>
-<div id="exr:vectorize-a-function" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 10.2 (Vectorize a Function) </strong></span>The following function converts a vector of slot symbols to a vector of new slot symbols. Can you vectorize it? How much faster does the vectorized version work?</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Vectorize a Function
+</div>
+</div>
+<div class="callout-body">
+<p>The following function converts a vector of slot symbols to a vector of new slot symbols. Can you vectorize it? How much faster does the vectorized version work?</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">change_symbols</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">vec</span><span class="op">)</span><span class="op">{</span>
   <span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">vec</span><span class="op">)</span><span class="op">)</span><span class="op">{</span>
     <span class="kw">if</span> <span class="op">(</span><span class="va">vec</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">==</span> <span class="st">"DD"</span><span class="op">)</span> <span class="op">{</span>
@@ -469,6 +488,7 @@
 <span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="fu">change_symbols</span><span class="op">(</span><span class="va">many</span><span class="op">)</span><span class="op">)</span>
 <span class="co">##    user  system elapsed </span>
 <span class="co">##  30.057   0.031  30.079</span></code></pre></div>
+</div>
 </div>
 <p><code>change_symbols</code> uses a <code>for</code> loop to sort values into seven different cases, as demonstrated in <a href="#fig:change">fig.&nbsp;<span>10.3</span></a>.</p>
 <p>To vectorize <code>change_symbols</code>, create a logical test that can identify each case:</p>
@@ -647,12 +667,32 @@
 <span class="co">## [5,] "C"  "C"  "0"  </span>
 <span class="co">## [6,] "7"  "DD" "DD" </span></code></pre></div>
 <p>Then you can run each line of <code>score_many</code> against the example and examine the results as you go.</p>
-<div id="exr:test-your-understanding" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 10.3 (Test Your Understanding) </strong></span>Study the model <code>score_many</code> function until you are satisfied that you understand how it works and could write a similar function yourself.</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div id="exr:advanced-challenge" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 10.4 (Advanced Challenge) </strong></span>Instead of examining the model answer, write your own vectorized version of <code>score</code>. Assume that the data is stored in an <em>n</em> × 3 matrix where each row of the matrix contains one combination of slots to be scored.</p>
+<div class="flex-fill">
+Exercise: Test Your Understanding
+</div>
+</div>
+<div class="callout-body">
+<p>Study the model <code>score_many</code> function until you are satisfied that you understand how it works and could write a similar function yourself.</p>
+</div>
+</div>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Advanced Challenge
+</div>
+</div>
+<div class="callout-body">
+<p>Instead of examining the model answer, write your own vectorized version of <code>score</code>. Assume that the data is stored in an <em>n</em> × 3 matrix where each row of the matrix contains one combination of slots to be scored.</p>
 <p>You can use the version of <code>score</code> that treats diamonds as wild or the version of <code>score</code> that doesn’t. However, the model answer will use the version treating diamonds as wild.</p>
+</div>
 </div>
 <p><code>score_many</code> is a vectorized version of <code>score</code>. You can use it to run the simulation at the start of this section in a little over 20 seconds. This is 17 times faster than using a <code>for</code> loop:</p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="co"># symbols should be a matrix with a column for each slot machine window</span>

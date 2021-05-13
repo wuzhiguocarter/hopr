@@ -601,8 +601,18 @@
   <span class="va">deck</span><span class="op">[</span><span class="fl">1</span>, <span class="op">]</span>
 <span class="op">}</span></code></pre></div>
 <p>Notice that <code>deal</code> no longer takes an argument, and it calls the <code>deck</code> object, which lives in the global environment.</p>
-<div id="exr:will-deal-work" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 6.1 (Will deal work?) </strong></span>Will R be able to find <code>deck</code> and return an answer when I call the new version of <code>deal</code>, such as <code>deal()</code>?</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Will deal work?
+</div>
+</div>
+<div class="callout-body">
+<p>Will R be able to find <code>deck</code> and return an answer when I call the new version of <code>deal</code>, such as <code>deal()</code>?</p>
+</div>
 </div>
 <p>Yes. <code>deal</code> will still work the same as before. R will run <code>deal</code> in a runtime environment that is a child of the global environment. Why will it be a child of the global environment? Because the global environment is the origin environment of <code>deal</code> (we defined <code>deal</code> in the global environment):</p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="va">deal</span><span class="op">)</span>
@@ -648,8 +658,18 @@
 <figcaption aria-hidden="true" class="figure-caption">Figure 6.6: The deal function looks up deck in the global environment but saves <code>deck[-1, ]</code> in the runtime environment as a new object named deck.</figcaption><p></p>
 </figure>
 </div>
-<div id="exr:overwrite-deck" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 6.2 (Overwrite deck) </strong></span>Rewrite the <code>deck &lt;- deck[-1, ]</code> line of <code>deal</code> to <em>assign</em> <code>deck[-1, ]</code> to an object named <code>deck</code> in the global environment. Hint: consider the <code>assign</code> function.</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Overwrite deck
+</div>
+</div>
+<div class="callout-body">
+<p>Rewrite the <code>deck &lt;- deck[-1, ]</code> line of <code>deal</code> to <em>assign</em> <code>deck[-1, ]</code> to an object named <code>deck</code> in the global environment. Hint: consider the <code>assign</code> function.</p>
+</div>
 </div>
 <p>You can assign an object to a specific environment with the <code>assign</code> function:</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">deal</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
@@ -695,8 +715,18 @@
 <span class="co">## seven    clubs     7</span>
 <span class="co">##   two    clubs     2</span></code></pre></div>
 <p>This behavior is now undesirable in two ways. First, <code>shuffle</code> fails to shuffle <code>deck</code>. Second, <code>shuffle</code> returns a copy of <code>deck</code>, which may be missing the cards that have been dealt away. It would be better if <code>shuffle</code> returned the dealt cards to the deck and then shuffled. This is what happens when you shuffle a deck of cards in real life.</p>
-<div id="exr:rewrite-shuffle" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 6.3 (Rewrite shuffle) </strong></span>Rewrite <code>shuffle</code> so that it replaces the copy of <code>deck</code> that lives in the global environment with a shuffled version of <code>DECK</code>, the intact copy of <code>deck</code> that also lives in the global environment. The new version of <code>shuffle</code> should have no arguments and return no output.</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Rewrite shuffle
+</div>
+</div>
+<div class="callout-body">
+<p>Rewrite <code>shuffle</code> so that it replaces the copy of <code>deck</code> that lives in the global environment with a shuffled version of <code>DECK</code>, the intact copy of <code>deck</code> that also lives in the global environment. The new version of <code>shuffle</code> should have no arguments and return no output.</p>
+</div>
 </div>
 <p>You can update <code>shuffle</code> in the same way that you updated <code>deck</code>. The following version will do the job:</p>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">shuffle</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span><span class="op">{</span>

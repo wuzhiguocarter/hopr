@@ -514,11 +514,21 @@ Indexing begins at 1
 </section></section><section class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" id="deal-a-card">
 <span class="header-section-number">4.2</span> Deal a Card</h2>
 <p>Now that you know the basics of R’s notation system, let’s put it to use.</p>
-<div id="exr:deal-a-card" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4.1 (Deal a Card) </strong></span>Complete the following code to make a function that returns the first row of a data frame:</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Deal a Card
+</div>
+</div>
+<div class="callout-body">
+<p>Complete the following code to make a function that returns the first row of a data frame:</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">deal</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">cards</span><span class="op">)</span> <span class="op">{</span>
    <span class="co"># ?</span>
 <span class="op">}</span></code></pre></div>
+</div>
 </div>
 <p>You can use any of the systems that return the first row of your data frame to write a <code>deal</code> function. I’ll use positive integers and blanks because I think they are easy to understand:</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">deal</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">cards</span><span class="op">)</span> <span class="op">{</span>
@@ -580,8 +590,18 @@ Indexing begins at 1
 <span class="co">##   nine    clubs     9</span>
 <span class="co">##   jack diamonds    11</span></code></pre></div>
 <p>Now the new set is truly shuffled. You’ll be finished once you wrap these steps into a function.</p>
-<div id="exr:shuffile-a-deck" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4.2 (Shuffle a Deck) </strong></span>Use the preceding ideas to write a <code>shuffle</code> function. <code>shuffle</code> should take a data frame and return a shuffled copy of the data frame.</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Shuffle a Deck
+</div>
+</div>
+<div class="callout-body">
+<p>Use the preceding ideas to write a <code>shuffle</code> function. <code>shuffle</code> should take a data frame and return a shuffled copy of the data frame.</p>
+</div>
 </div>
 <p>Your <code>shuffle</code> function will look like the one that follows:</p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">shuffle</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">cards</span><span class="op">)</span> <span class="op">{</span> 

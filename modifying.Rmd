@@ -234,8 +234,8 @@ Be careful not to confuse `=` with `==`. `=` does the same thing as `<-`: it ass
 
 You can compare any two R objects with a logical operator; however, logical operators make the most sense if you compare two objects of the same data type. If you compare objects of different data types, R will use its coercion rules to coerce the objects to the same type before it makes the comparison.
 
-::: {#exr:how-many-aces}
-## How many Aces?
+::: {.callout}
+## Exercise: How many Aces?
 
 Extract the `face` column of `deck2` and test whether each value is equal to `ace`. As a challenge, use R to quickly count how many cards are equal to `ace`.
 :::
@@ -337,8 +337,8 @@ head(deck4, 13)
 
 except cards in the suit of hearts and the queen of spades. Each card in the suit of hearts has a value of 1. Can you find these cards and replace their values? Give it a try.
 
-::: {#exr:score-the-deck}
-## Score the Deck for Hearts
+::: {.callout}
+## Exercise: Score the Deck for Hearts
 
 Assign a value of `1` to every card in `deck4` that has a suit of hearts.
 :::
@@ -495,8 +495,8 @@ deck4[queenOfSpades, ]
 
 Your deck is now ready to play hearts.
 
-::: {#exr:practice-with-tests}
-## Practice with Tests
+::: {.callout}
+## Exercise: Practice with Tests
 
 If you think you have the hang of logical tests, try converting these sentences into tests written with R code. To help you out, I've defined some R objects after the sentences that you can use to test your answers:
 

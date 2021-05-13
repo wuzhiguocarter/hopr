@@ -380,13 +380,23 @@
 <span class="co">##  1</span>
 <span class="co">## attr(,"symbols")</span>
 <span class="co">##  "B" "0" "B"</span></code></pre></div>
-<div id="exr:add-attribute" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 8.1 (Add an Attribute) </strong></span>Modify <code>play</code> to return a prize that contains the symbols associated with it as an attribute named <code>symbols</code>. Remove the redundant call to <code><a href="https://rdrr.io/r/base/print.html">print(symbols)</a></code>:</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Add an Attribute
+</div>
+</div>
+<div class="callout-body">
+<p>Modify <code>play</code> to return a prize that contains the symbols associated with it as an attribute named <code>symbols</code>. Remove the redundant call to <code><a href="https://rdrr.io/r/base/print.html">print(symbols)</a></code>:</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">play</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">symbols</span> <span class="op">&lt;-</span> <span class="fu">get_symbols</span><span class="op">(</span><span class="op">)</span>
   <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">symbols</span><span class="op">)</span>
   <span class="fu">score</span><span class="op">(</span><span class="va">symbols</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
+</div>
 </div>
 <p>You can create a new version of <code>play</code> by capturing the output of <code>score(symbols)</code> and assigning an attribute to it. <code>play</code> can then return the enhanced version of the output:</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">play</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
@@ -604,9 +614,19 @@
 <p><code>UseMethod</code> will first look for a method that matches the first class listed in the object’s class vector. If <code>UseMethod</code> cannot find one, it will then look for the method that matches the second class (and so on if there are more classes in an object’s class vector).</p>
 <p>If you give <code>print</code> an object whose class or classes do not have a print method, <code>UseMethod</code> will call <code>print.default</code>, a special method written to handle general cases.</p>
 <p>Let’s use this system to write a better print method for the slot machine output.</p>
-<div id="exr:print-method" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 8.2 (Make a Print Method) </strong></span>Write a new print method for the slots class. The method should call <code>slot_display</code> to return well-formatted slot-machine output.</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Make a Print Method
+</div>
+</div>
+<div class="callout-body">
+<p>Write a new print method for the slots class. The method should call <code>slot_display</code> to return well-formatted slot-machine output.</p>
 <p>What name must you use for this method?</p>
+</div>
 </div>
 <p>It is surprisingly easy to write a good <code>print.slots</code> method because we’ve already done all of the hard work when we wrote <code>slot_display</code>. For example, the following method will work. Just make sure the method is named <code>print.slots</code> so <code>UseMethod</code> can find it, and make sure that it takes the same arguments as <code>print</code> so <code>UseMethod</code> can pass those arguments to <code>print.slots</code> without any trouble:</p>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">print.slots</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span>
@@ -617,12 +637,22 @@
 <span class="co">## B 0 B</span>
 <span class="co">## $0</span></code></pre></div>
 <p>Let’s ensure that every piece of slot machine output has the <code>slots</code> class.</p>
-<div id="exr:add-a-class" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 8.3 (Add a Class) </strong></span>Modify the <code>play</code> function so it assigns <code>slots</code> to the <code>class</code> attribute of its output:</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Add a Class
+</div>
+</div>
+<div class="callout-body">
+<p>Modify the <code>play</code> function so it assigns <code>slots</code> to the <code>class</code> attribute of its output:</p>
 <div class="sourceCode" id="cb38"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">play</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">symbols</span> <span class="op">&lt;-</span> <span class="fu">get_symbols</span><span class="op">(</span><span class="op">)</span>
   <span class="fu"><a href="https://rdrr.io/r/base/structure.html">structure</a></span><span class="op">(</span><span class="fu">score</span><span class="op">(</span><span class="va">symbols</span><span class="op">)</span>, symbols <span class="op">=</span> <span class="va">symbols</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
+</div>
 </div>
 <p>You can set the <code>class</code> attribute of the output at the same time that you set the +symbols+ attribute. Just add <code>class = "slots"</code> to the <code>structure</code> call:</p>
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">play</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>

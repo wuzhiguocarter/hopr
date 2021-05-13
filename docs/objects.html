@@ -458,8 +458,18 @@ length
 <span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="st">"Hello"</span><span class="op">)</span>
 <span class="co">## "character"</span></code></pre></div>
 <p>The individual elements of a character vector are known as <em>strings</em>. Note that a string can contain more than just letters. You can assemble a character string from numbers or symbols as well.</p>
-<div id="exr:char-or-number" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.1 (Character or Number?) </strong></span>Can you spot the difference between a character string and a number? Here’s a test: Which of these are character strings and which are numbers? <code>1</code>, <code>"1"</code>, <code>"one"</code>.</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Character or Number?
+</div>
+</div>
+<div class="callout-body">
+<p>Can you spot the difference between a character string and a number? Here’s a test: Which of these are character strings and which are numbers? <code>1</code>, <code>"1"</code>, <code>"one"</code>.</p>
+</div>
 </div>
 <p><code>"1"</code> and <code>"one"</code> are both character strings.</p>
 <p>Character strings can contain number characters, but that doesn’t make them numeric. They’re just strings that happen to have numbers in them. You can tell strings from real numbers because strings come surrounded by quotes. In fact, anything surrounded by quotes in R will be treated as a character string—no matter what appears between the quotes.</p>
@@ -496,9 +506,19 @@ length
 
 <span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/raw.html">raw</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span>
 <span class="co">## "raw"</span></code></pre></div>
-<div id="exr:vector-of-cards" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.2 (Vector of Cards) </strong></span>Create an atomic vector that stores just the face names of the cards in a royal flush, for example, the ace of spades, king of spades, queen of spades, jack of spades, and ten of spades. The face name of the ace of spades would be “ace,” and “spades” is the suit.</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Vector of Cards
+</div>
+</div>
+<div class="callout-body">
+<p>Create an atomic vector that stores just the face names of the cards in a royal flush, for example, the ace of spades, king of spades, queen of spades, jack of spades, and ten of spades. The face name of the ace of spades would be “ace,” and “spades” is the suit.</p>
 <p>Which type of vector will you use to save the names?</p>
+</div>
 </div>
 <p>A character vector is the most appropriate type of atomic vector in which to save card names. You can create one with the <code>c</code> function if you surround each name with quotation marks:</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">hand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ace"</span>, <span class="st">"king"</span>, <span class="st">"queen"</span>, <span class="st">"jack"</span>, <span class="st">"ten"</span><span class="op">)</span>
@@ -629,8 +649,18 @@ length
 <span class="co">##      [,1] [,2]</span>
 <span class="co">## [1,]   31   33</span>
 <span class="co">## [2,]   32   34</span></code></pre></div>
-<div id="exr:make-a-matrix" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.3 (Make a Matrix) </strong></span>Create the following matrix, which stores the name and suit of every card in a royal flush.</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Make a Matrix
+</div>
+</div>
+<div class="callout-body">
+<p>Create the following matrix, which stores the name and suit of every card in a royal flush.</p>
+</div>
 </div>
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="co">##      [,1]    [,2]    </span>
 <span class="co">## [1,] "ace"   "spades"</span>
@@ -729,9 +759,19 @@ length
 <div class="sourceCode" id="cb43"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="va">gender</span><span class="op">)</span>
 <span class="co">## "male"   "female" "female" "male"</span></code></pre></div>
 <p>Now that you understand the possibilities provided by R’s atomic vectors, let’s make a more complicated type of playing card.</p>
-<div id="exr:write-a-card" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.4 (Write a Card) </strong></span>Many card games assign a numerical value to each card. For example, in blackjack, each face card is worth 10 points, each number card is worth between 2 and 10 points, and each ace is worth 1 or 11 points, depending on the final score.</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Write a Card
+</div>
+</div>
+<div class="callout-body">
+<p>Many card games assign a numerical value to each card. For example, in blackjack, each face card is worth 10 points, each number card is worth between 2 and 10 points, and each ace is worth 1 or 11 points, depending on the final score.</p>
 <p>Make a virtual playing card by combining “ace,” “heart,” and 1 into a vector. What type of atomic vector will result? Check if you are right.</p>
+</div>
 </div>
 <p>You may have guessed that this exercise would not go well. Each atomic vector can only store one type of data. As a result, R coerces all of your values to character strings:</p>
 <div class="sourceCode" id="cb44"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">card</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ace"</span>, <span class="st">"hearts"</span>, <span class="fl">1</span><span class="op">)</span>
@@ -809,8 +849,18 @@ Data types in vectors
 <p>Lists are a basic type of object in R, on par with atomic vectors. Like atomic vectors, they are used as building blocks to create many more spohisticated types of R objects.</p>
 <p>As you can imagine, the structure of lists can become quite complicated, but this flexibility makes lists a useful all-purpose storage tool in R: you can group together anything with a list.</p>
 <p>However, not every list needs to be complicated. You can store a playing card in a very simple list.</p>
-<div id="exr:list-make-card" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.5 (Use a List to Make a Card) </strong></span>Use a list to store a single playing card, like the ace of hearts, which has a point value of one. The list should save the face of the card, the suit, and the point value in separate elements.</p>
+<div class="callout callout callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="flex-fill">
+Exercise: Use a List to Make a Card
+</div>
+</div>
+<div class="callout-body">
+<p>Use a list to store a single playing card, like the ace of hearts, which has a point value of one. The list should save the face of the card, the suit, and the point value in separate elements.</p>
+</div>
 </div>
 <p>You can create your card like this. In the following example, the first element of the list is a character vector (of length 1). The second element is also a character vector, and the third element is a numeric vector:</p>
 <div class="sourceCode" id="cb49"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">card</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"ace"</span>, <span class="st">"hearts"</span>, <span class="fl">1</span><span class="op">)</span>
