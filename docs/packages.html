@@ -132,6 +132,18 @@
     .quarto-layout-cell-subref figcaption {
       font-style: italic;
     }
+    .quarto-figure > figure {
+      width: 100%;
+    }
+    .quarto-figure-left > figure > p {
+     text-align: left;
+    }
+    .quarto-figure-center > figure > p {
+      text-align: center;
+    }
+    .quarto-figure-right > figure > p {
+      text-align: right;
+    }
     figure > p:empty {
       display: none;
     }
@@ -147,7 +159,7 @@
 <body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
 <div id="quarto-search-results"></div>
 <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-    <h1 class="quarto-secondary-nav-title mb-0 fs-5 d-inline">2&nbsp; Packages and Help Pages</h1>
+    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">2&nbsp; Packages and Help Pages</h1>
     <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
       <i class="bi bi-chevron-right"></i>
     </button>
@@ -155,7 +167,7 @@
 </nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-3 text-center">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-2 text-center">
     <h4 class="sidebar-title text-center mt-1 mb-0 py-0">Hands-On Programming with R</h4>
       <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
@@ -341,7 +353,7 @@
 </nav>
 </div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
-<main><header id="title-block-header"><h1 class="title d-none d-lg-block display-6">2&nbsp; Packages and Help Pages</h1>
+<main><header id="title-block-header"><h1 class="title d-none d-lg-block display-7">2&nbsp; Packages and Help Pages</h1>
 </header><p>You now have a function that simulates rolling a pair of dice. Let’s make things a little more interesting by weighting the dice in your favor. The house always wins, right? Let’s make the dice roll high numbers slightly more often than it rolls low numbers.</p>
 <p>Before we weight the dice, we should make sure that they are fair to begin with. Two tools will help you do this: <em>repetition</em> and <em>visualization</em>. By coincidence, these tools are also two of the most useful superpowers in the world of data science.</p>
 <p>We will repeat our dice rolls with a function called <code>replicate</code>, and we will visualize our rolls with a function called <code>qplot</code>. <code>qplot</code> does not come with R when you download it; <code>qplot</code> comes in a standalone R package. Many of the most useful R tools come in R packages, so let’s take a moment to look at what R packages are and how you can use them.</p>
@@ -383,7 +395,7 @@
 <span class="co">##  0.064  0.216  0.512  1.000</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/qplot.html">qplot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></code></pre></div>
-<div id="fig:qplot" class="quarto-figure" style="text-align: center;">
+<div id="fig:qplot" class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/hopr_0201.png" class="img-fluid figure-img"></p>
 <p></p>
 <figcaption aria-hidden="true" class="figure-caption">Figure 2.1: <code>qplot</code> makes a scatterplot when you give it two vectors.</figcaption><p></p>
@@ -394,7 +406,7 @@
 <p>Let’s take a look at a histogram to see if this makes sense. <code>qplot</code> will make a histogram whenever you give it only <em>one</em> vector to plot. The following code makes the left-hand plot in <a href="#fig:hist">fig.&nbsp;<span>2.2</span></a> (we’ll worry about the right-hand plot in just second). To make sure our graphs look the same, use the extra argument <em><code>binwidth = 1</code></em>:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">3</span><span class="op">)</span>
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/qplot.html">qplot</a></span><span class="op">(</span><span class="va">x</span>, binwidth <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
-<div id="fig:hist" class="quarto-figure" style="text-align: center;">
+<div id="fig:hist" class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/hopr_0202.png" class="img-fluid figure-img"></p>
 <p></p>
 <figcaption aria-hidden="true" class="figure-caption">Figure 2.2: <code>qplot</code> makes a histogram when you give it a single vector.</figcaption><p></p>
@@ -421,7 +433,7 @@
 
 <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fu">roll</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="co">## 3  7  5  3  6  2  3  8 11  7</span></code></pre></div>
-<div id="fig:probs" class="quarto-figure" style="text-align: center;">
+<div id="fig:probs" class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/hopr_0203.png" class="img-fluid figure-img"></p>
 <p></p>
 <figcaption aria-hidden="true" class="figure-caption">Figure 2.3: Each individual dice combination should occur with the same frequency. As a result, some sums will occur more often than others. With fair dice, each sum should appear in proportion to the number of combinations that make it.</figcaption><p></p>
@@ -432,7 +444,7 @@
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/qplot.html">qplot</a></span><span class="op">(</span><span class="va">rolls</span>, binwidth <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
 <p>The results suggest that the dice are fair. Over the long run, each number occurs in proportion to the number of combinations that generate it.</p>
 <p>Now how can you bias these results? The previous pattern occurs because each underlying combination of dice (e.g., (3,4)) occurs with the same frequency. If you could increase the probability that a 6 is rolled on either die, then any combination with a six in it will occur more often than any combination without a six in it. The combination (6, 6) would occur most of all. This won’t make the dice add up to 12 more often than they add up to seven, but it will skew the results toward the higher numbers.</p>
-<div id="fig:fair" class="quarto-figure" style="text-align: center;">
+<div id="fig:fair" class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/hopr_0204.png" class="img-fluid figure-img"></p>
 <p></p>
 <figcaption aria-hidden="true" class="figure-caption">Figure 2.4: The behavior of our dice suggests that they are fair. Seven occurs more often than any other number, and frequencies diminish in proportion to the number of die combinations that create each number.</figcaption><p></p>
@@ -564,7 +576,7 @@ Exercise: Roll a Pair of Dice
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">rolls</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span><span class="op">(</span><span class="fl">10000</span>, <span class="fu">roll</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/qplot.html">qplot</a></span><span class="op">(</span><span class="va">rolls</span>, binwidth <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
 <p>This confirms that we’ve effectively weighted the dice. High numbers occur much more often than low numbers. The remarkable thing is that this behavior will only be apparent when you examine long-term frequencies. On any single roll, the dice will appear to behave randomly. This is great news if you play Settlers of Catan (just tell your friends you lost the dice), but it should be disturbing if you analyze data, because it means that bias can easily occur without anyone noticing it in the short run.</p>
-<div id="fig:weighted" class="quarto-figure" style="text-align: center;">
+<div id="fig:weighted" class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/hopr_0205.png" class="img-fluid figure-img"></p>
 <p></p>
 <figcaption aria-hidden="true" class="figure-caption">Figure 2.5: The dice are now clearly biased towards high numbers, since high sums occur much more often than low sums.</figcaption><p></p>

@@ -132,6 +132,18 @@
     .quarto-layout-cell-subref figcaption {
       font-style: italic;
     }
+    .quarto-figure > figure {
+      width: 100%;
+    }
+    .quarto-figure-left > figure > p {
+     text-align: left;
+    }
+    .quarto-figure-center > figure > p {
+      text-align: center;
+    }
+    .quarto-figure-right > figure > p {
+      text-align: right;
+    }
     figure > p:empty {
       display: none;
     }
@@ -147,7 +159,7 @@
 <body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
 <div id="quarto-search-results"></div>
 <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-    <h1 class="quarto-secondary-nav-title mb-0 fs-5 d-inline">Appendix E — Debugging R Code</h1>
+    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">Appendix E — Debugging R Code</h1>
     <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
       <i class="bi bi-chevron-right"></i>
     </button>
@@ -155,7 +167,7 @@
 </nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-3 text-center">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-2 text-center">
     <h4 class="sidebar-title text-center mt-1 mb-0 py-0">Hands-On Programming with R</h4>
       <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
@@ -341,7 +353,7 @@
 </nav>
 </div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
-<main><header id="title-block-header"><h1 class="title d-none d-lg-block display-6">Appendix E — Debugging R Code</h1>
+<main><header id="title-block-header"><h1 class="title d-none d-lg-block display-7">Appendix E — Debugging R Code</h1>
 </header><div class="callout-note callout">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -395,7 +407,7 @@
 <span class="co">## ...</span></code></pre></div>
 <p>Notice that there are 5,000 lines of output in this <code>traceback</code>. If you are using RStudio, you will not get to see the traceback of an infinite recursion error (I used the Mac GUI to get this output). RStudio represses the traceback for infinite recursion errors to prevent the large call stacks from pushing your console history out of R’s memory buffer. With RStudio, you will have to recognize the infinite recursion error by its error message. However, you can still see the imposing <code>traceback</code> by running things in a UNIX shell or the Windows or Mac GUIs.</p>
 <p>RStudio makes it very easy to use <code>traceback</code>. You do not even need to type in the function name. Whenever an error occurs, RStudio will display it in a gray box with two options. The first is Show Traceback, shown in <a href="#fig:show-traceback">fig.&nbsp;<span>E.1</span></a>.</p>
-<div id="fig:show-traceback" class="quarto-figure" style="text-align: center;">
+<div id="fig:show-traceback" class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/hopr_ae01.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <p></p>
 <figcaption aria-hidden="true" class="figure-caption">Figure E.1: RStudio’s Show Traceback option.</figcaption><p></p>
@@ -403,7 +415,7 @@
 </div>
 <p>If you click Show Traceback, RStudio will expand the gray box and display the <code>traceback</code> call stack, as in <a href="#fig:hide-traceback">fig.&nbsp;<span>E.2</span></a>. The Show Traceback option will persist beside an error message in your console, even as you write new commands. This means that you can go back and look at the call stacks for all errors—not just the most recent error.</p>
 <p>Imagine that you’ve used <code>traceback</code> to pinpoint a function that you think might cause a bug. Now what should you do? You should try to figure out what the function did to cause an error while it ran (if it did anything). You can examine how the function runs with <code>browser</code>.</p>
-<div id="fig:hide-traceback" class="quarto-figure" style="text-align: center;">
+<div id="fig:hide-traceback" class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/hopr_ae02.png" class="img-fluid figure-img"></p>
 <p></p>
 <figcaption aria-hidden="true" class="figure-caption">Figure E.2: RStudio’s Traceback display.</figcaption><p></p>
@@ -450,7 +462,7 @@
 <p>When you run <code>play</code>, <code>play</code> will call <code>get_symbols</code> and then <code>score</code>. As R works through <code>score</code>, it will come across the call to <code>browser</code> and run it. When R runs this call, several things will happen, as in <a href="#fig:browser">fig.&nbsp;<span>E.3</span></a>. First, R will stop running <code>score</code>. Second, the command prompt will change to <code>browser[1]&gt;</code> and R will give me back control; I can now type new commands in at the new command prompt. Third, three buttons will appear above the console pane: Next, Continue, and Stop. Fourth, RStudio will display the source code for <code>score</code> in the scripts pane, and it will highlight the line that contains <code><a href="https://rdrr.io/r/base/browser.html">browser()</a></code>. Fifth, the environments tab will change. Instead of revealing the objects that are saved in the global environment, it will reveal the objects that are saved in the runtime environment of <code>score</code> (see [Environments] for an explanation of R’s environment system). Sixth, RStudio will open a new Traceback pane, which shows the call stack RStudio took to get to <code>browser</code>. The most recent function, <code>score</code>, will be highlighted.</p>
 <p>I’m now in a new R mode, called <em>browser mode</em>. Browser mode is designed to help you uncover bugs, and the new display in RStudio is designed to help you navigate this mode.</p>
 <p>Any command that you run in browser mode will be evaluated in the context of the runtime environment of the function that called <code>browser</code>. This will be the function that is highlighted in the new Traceback pane. Here, that function is <code>score</code>. So while we are in browser mode, the active environment will be <code>score</code>’s runtime environment. This lets you do two things.</p>
-<div id="fig:browser" class="quarto-figure" style="text-align: center;">
+<div id="fig:browser" class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/hopr_ae03.png" class="img-fluid figure-img"></p>
 <p></p>
 <figcaption aria-hidden="true" class="figure-caption">Figure E.3: RStudio updates its display whenever you enter browser mode to help you navigate the mode.</figcaption><p></p>
@@ -466,7 +478,7 @@
 <p>The first button, Next, will run the next line of code in <code>score</code>. The highlighted line in the scripts pane will advance by one line to show you your new location in the <code>score</code> function. If the next line begins a code chunk, like a <code>for</code> loop or an <code>if</code> tree, R will run the whole chunk and will highlight the whole chunk in the script window.</p>
 <p>The second button, Continue, will run all of the remaining lines of <code>score</code> and then exit the browser mode.</p>
 <p>The third button, Stop, will exit browser mode without running any more lines of <code>score</code>.</p>
-<div id="fig:browser-buttons" class="quarto-figure" style="text-align: center;">
+<div id="fig:browser-buttons" class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/hopr_ae04.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <p></p>
 <figcaption aria-hidden="true" class="figure-caption">Figure E.4: You can navigate browser mode with the three buttons at the top of the console pane.</figcaption><p></p>
@@ -479,7 +491,7 @@
 <span class="header-section-number">E.3</span> Break Points</h2>
 <p>RStudio’s break points provide a graphical way to add a <code>browser</code> statement to a function. To use them, open the script where you’ve defined a function. Then click to the left of the line number of the line of code in the function body where you’d like to add the browser statement. A hollow red dot will appear to show you where the break point will occur. Then run the script by clicking the Source button at the top of the Scripts pane. The hollow dot will turn into a solid red dot to show that the function has a break point (see <a href="#fig:break-point">fig.&nbsp;<span>E.5</span></a>).</p>
 <p>R will treat the break point like a <code>browser</code> statement, going into browser mode when it encounters it. You can remove a break point by clicking on the red dot. The dot will disappear, and the break point will be removed.</p>
-<div id="fig:break-point" class="quarto-figure" style="text-align: center;">
+<div id="fig:break-point" class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/hopr_ae05.png" class="img-fluid figure-img"></p>
 <p></p>
 <figcaption aria-hidden="true" class="figure-caption">Figure E.5: Break points provide the graphical equivalent of a browser statement.</figcaption><p></p>

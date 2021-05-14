@@ -132,6 +132,18 @@
     .quarto-layout-cell-subref figcaption {
       font-style: italic;
     }
+    .quarto-figure > figure {
+      width: 100%;
+    }
+    .quarto-figure-left > figure > p {
+     text-align: left;
+    }
+    .quarto-figure-center > figure > p {
+      text-align: center;
+    }
+    .quarto-figure-right > figure > p {
+      text-align: right;
+    }
     figure > p:empty {
       display: none;
     }
@@ -147,7 +159,7 @@
 <body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
 <div id="quarto-search-results"></div>
 <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-    <h1 class="quarto-secondary-nav-title mb-0 fs-5 d-inline">10&nbsp; Speed</h1>
+    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">10&nbsp; Speed</h1>
     <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
       <i class="bi bi-chevron-right"></i>
     </button>
@@ -155,7 +167,7 @@
 </nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-3 text-center">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-2 text-center">
     <h4 class="sidebar-title text-center mt-1 mb-0 py-0">Hands-On Programming with R</h4>
       <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
@@ -341,7 +353,7 @@
 </nav>
 </div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
-<main><header id="title-block-header"><h1 class="title d-none d-lg-block display-6">10&nbsp; Speed</h1>
+<main><header id="title-block-header"><h1 class="title d-none d-lg-block display-7">10&nbsp; Speed</h1>
 </header><p>As a data scientist, you need speed. You can work with bigger data and do more ambitious tasks when your code runs fast. This chapter will show you a specific way to write fast code in R. You will then use the method to simulate 10 million plays of your slot machine.</p>
 <section class="level2" data-number="10.1"><h2 data-number="10.1" class="anchored" id="vectorized-code">
 <span class="header-section-number">10.1</span> Vectorized Code</h2>
@@ -421,7 +433,7 @@ Exercise: How fast is abs?
 <li>Use logical subsetting to handle parallel cases. Try to manipulate every element in a case at once.</li>
 </ol>
 <p><code>abs_loop</code> and <code>abs_set</code> illustrate these rules. The functions both handle two cases and perform one sequential step, <a href="#fig:abs">fig.&nbsp;<span>10.1</span></a>. If a number is positive, the functions leave it alone. If a number is negative, the functions multiply it by negative one.</p>
-<div id="fig:abs" class="quarto-figure" style="text-align: center;">
+<div id="fig:abs" class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/hopr_1001.png" class="img-fluid figure-img"></p>
 <p></p>
 <figcaption aria-hidden="true" class="figure-caption">Figure 10.1: <code>abs_loop</code> uses a for loop to sift data into one of two cases: negative numbers and nonnegative numbers.</figcaption><p></p>
@@ -438,7 +450,7 @@ Exercise: How fast is abs?
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">&lt;</span> <span class="fl">0</span><span class="op">]</span> <span class="op">*</span> <span class="op">-</span><span class="fl">1</span>
 <span class="co">## 2  4  6  8 10</span></code></pre></div>
 <p>Finally, you can use R’s assignment operator, which is also vectorized, to save the new set over the old set in the original <code>vec</code> object. Since <code><a href="https://rdrr.io/r/base/assignOps.html">&lt;-</a></code> is vectorized, the elements of the new set will be paired up to the elements of the old set, in order, and then element-wise assignment will occur. As a result, each negative value will be replaced by its positive partner, as in <a href="#fig:assignment">fig.&nbsp;<span>10.2</span></a>.</p>
-<div id="fig:assignment" class="quarto-figure" style="text-align: center;">
+<div id="fig:assignment" class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/hopr_1002.png" class="img-fluid figure-img"></p>
 <p></p>
 <figcaption aria-hidden="true" class="figure-caption">Figure 10.2: Use logical subsetting to modify groups of values in place. R’s arithmetic and assignment operators are vectorized, which lets you manipulate and update multiple values at once.</figcaption><p></p>
@@ -510,7 +522,7 @@ Exercise: Vectorize a Function
 
 <span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"0"</span><span class="op">]</span>
 <span class="co">## "0"</span></code></pre></div>
-<div id="fig:change" class="quarto-figure" style="text-align: center;">
+<div id="fig:change" class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/hopr_1003.png" class="img-fluid figure-img"></p>
 <p></p>
 <figcaption aria-hidden="true" class="figure-caption">Figure 10.3: <code>change_many</code> does something different for each of seven cases.</figcaption><p></p>
@@ -789,7 +801,7 @@ Exercise: Advanced Challenge
 <li>
 <strong>A strategic problem</strong> - How can you use the data to draw conclusions about the world at large?</li>
 </ul>
-<div id="fig:venn" class="quarto-figure" style="text-align: center;">
+<div id="fig:venn" class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/hopr_1004.png" class="img-fluid figure-img"></p>
 <p></p>
 <figcaption aria-hidden="true" class="figure-caption">Figure 10.4: The three core skill sets of data science: computer programming, data comprehension, and scientific reasoning.</figcaption><p></p>

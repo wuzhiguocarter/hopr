@@ -132,6 +132,18 @@
     .quarto-layout-cell-subref figcaption {
       font-style: italic;
     }
+    .quarto-figure > figure {
+      width: 100%;
+    }
+    .quarto-figure-left > figure > p {
+     text-align: left;
+    }
+    .quarto-figure-center > figure > p {
+      text-align: center;
+    }
+    .quarto-figure-right > figure > p {
+      text-align: right;
+    }
     figure > p:empty {
       display: none;
     }
@@ -147,7 +159,7 @@
 <body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
 <div id="quarto-search-results"></div>
 <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-    <h1 class="quarto-secondary-nav-title mb-0 fs-5 d-inline">Appendix A — Installing R and RStudio</h1>
+    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">Appendix A — Installing R and RStudio</h1>
     <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
       <i class="bi bi-chevron-right"></i>
     </button>
@@ -155,7 +167,7 @@
 </nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-3 text-center">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-2 text-center">
     <h4 class="sidebar-title text-center mt-1 mb-0 py-0">Hands-On Programming with R</h4>
       <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
@@ -341,7 +353,7 @@
 </nav>
 </div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
-<main><header id="title-block-header"><h1 class="title d-none d-lg-block display-6">Appendix A — Installing R and RStudio</h1>
+<main><header id="title-block-header"><h1 class="title d-none d-lg-block display-7">Appendix A — Installing R and RStudio</h1>
 </header><p>To get started with R, you need to acquire your own copy. This appendix will show you how to download R as well as RStudio, a software application that makes R easier to use. You’ll go from downloading R to opening your first R session.</p>
 <p>Both R and RStudio are free and easy to download.</p>
 <section class="level2" data-number="A.1"><h2 data-number="A.1" class="anchored" id="how-to-download-and-install-r">
@@ -419,7 +431,7 @@ The R GUIs
 </div>
 </div>
 <p>When you open RStudio, a window appears with three panes in it, as in <a href="#fig:layout">fig.&nbsp;<span>A.1</span></a>. The largest pane is a console window. This is where you’ll run your R code and see results. The console window is exactly what you’d see if you ran R from a UNIX console or the Windows or Mac GUIs. Everything else you see is unique to RStudio. Hidden in the other panes are a text editor, a graphics window, a debugger, a file manager, and much more. You’ll learn about these panes as they become useful throughout the course of this book.</p>
-<div id="fig:layout" class="quarto-figure" style="text-align: center;">
+<div id="fig:layout" class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/hopr_aa01.png" class="img-fluid figure-img"></p>
 <p></p>
 <figcaption aria-hidden="true" class="figure-caption">Figure A.1: The RStudio IDE for R.</figcaption><p></p>

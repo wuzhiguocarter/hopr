@@ -132,6 +132,18 @@
     .quarto-layout-cell-subref figcaption {
       font-style: italic;
     }
+    .quarto-figure > figure {
+      width: 100%;
+    }
+    .quarto-figure-left > figure > p {
+     text-align: left;
+    }
+    .quarto-figure-center > figure > p {
+      text-align: center;
+    }
+    .quarto-figure-right > figure > p {
+      text-align: right;
+    }
     figure > p:empty {
       display: none;
     }
@@ -147,7 +159,7 @@
 <body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
 <div id="quarto-search-results"></div>
 <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-    <h1 class="quarto-secondary-nav-title mb-0 fs-5 d-inline">4&nbsp; R Notation</h1>
+    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">4&nbsp; R Notation</h1>
     <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
       <i class="bi bi-chevron-right"></i>
     </button>
@@ -155,7 +167,7 @@
 </nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-3 text-center">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-2 text-center">
     <h4 class="sidebar-title text-center mt-1 mb-0 py-0">Hands-On Programming with R</h4>
       <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
@@ -341,7 +353,7 @@
 </nav>
 </div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
-<main><header id="title-block-header"><h1 class="title d-none d-lg-block display-6">4&nbsp; R Notation</h1>
+<main><header id="title-block-header"><h1 class="title d-none d-lg-block display-7">4&nbsp; R Notation</h1>
 </header><p>Now that you have a deck of cards, you need a way to do card-like things with it. First, you’ll want to reshuffle the deck from time to time. And next, you’ll want to deal cards from the deck (one card at a time, whatever card is on top—we’re not cheaters).</p>
 <p>To do these things, you’ll need to work with the individual values inside your data frame, a task essential to data science. For example, to deal a card from the top of your deck, you’ll need to write a function that selects the first row of values in your data frame, like this</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu">deal</span><span class="op">(</span><span class="va">deck</span><span class="op">)</span>
@@ -403,7 +415,7 @@ Repetition
 <span class="co">## king spades    13</span></code></pre></div>
 </div>
 </div>
-<div id="fig:positive" class="quarto-figure" style="text-align: center;">
+<div id="fig:positive" class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/hopr_0401.png" class="img-fluid figure-img"></p>
 <p></p>
 <figcaption aria-hidden="true" class="figure-caption">Figure 4.1: R uses the <em>ij</em> notation system of linear algebra. The commands in this figure will return the shaded values.</figcaption><p></p>
@@ -490,7 +502,7 @@ Indexing begins at 1
 <span class="va">deck</span><span class="op">[</span><span class="va">rows</span>, <span class="op">]</span>
 <span class="co">## face   suit value</span>
 <span class="co">## king spades    13</span></code></pre></div>
-<div id="fig:logicals" class="quarto-figure" style="text-align: center;">
+<div id="fig:logicals" class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/hopr_0402.png" class="img-fluid figure-img"></p>
 <p></p>
 <figcaption aria-hidden="true" class="figure-caption">Figure 4.2: You can use vectors of TRUEs and FALSEs to tell R exactly which values you want to extract and which you do not. The command would return just the numbers 1, 6, and 5.</figcaption><p></p>
@@ -666,7 +678,7 @@ Exercise: Shuffle a Deck
 <span class="va">lst</span><span class="op">[[</span><span class="st">"numbers"</span><span class="op">]</span><span class="op">]</span>
 <span class="co">## 1 2</span></code></pre></div>
 <p>This difference is subtle but important. In the R community, there is a popular, and helpful, way to think about it, <a href="#fig:trains">fig.&nbsp;<span>4.3</span></a>. Imagine that each list is a train and each element is a train car. When you use single brackets, R selects individual train cars and returns them as a new train. Each car keeps its contents, but those contents are still inside a train car (i.e., a list). When you use double brackets, R actually unloads the car and gives you back the contents.</p>
-<div id="fig:trains" class="quarto-figure" style="text-align: center;">
+<div id="fig:trains" class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/hopr_0403.png" class="img-fluid figure-img"></p>
 <p></p>
 <figcaption aria-hidden="true" class="figure-caption">Figure 4.3: It can be helpful to think of your list as a train. Use single brackets to select train cars, double brackets to select the contents inside of a car.</figcaption><p></p>

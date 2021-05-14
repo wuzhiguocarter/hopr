@@ -1,5 +1,11 @@
 [
   {
+    "href": "index.html#welcome",
+    "title": "Hands-On Programming with R",
+    "section": "Welcome",
+    "text": "This is the website for “Hands-On Programming with R”. This book will teach you how to program in R, with hands-on examples. I wrote it for non-programmers to provide a friendly introduction to the R language. You’ll learn how to load data, assemble and disassemble data objects, navigate R’s environment system, write your own functions, and use all of R’s programming tools. Throughout the book, you’ll use your newfound skills to solve practical data science problems.\nIf you are already comfortable with R, and would like to focus instead how to analyze data using R’s Tidyverse packages, I recommend R for Data Science, a book that I co-authored with Hadley Wickham."
+  },
+  {
     "href": "index.html#license",
     "title": "Hands-On Programming with R",
     "section": "License",
@@ -538,11 +544,5 @@
     "title": "Appendix E — Debugging R Code",
     "section": "\nE.6 recover",
     "text": "The recover function provides one final option for debugging. It combines the call stack of traceback with the browser mode of browser. You can use recover just like browser, by inserting it directly into a function’s body. Let’s demonstrate recover with the fifth function:\nfifth <- function() recover()\nWhen R runs recover, it will pause and display the call stack, but that’s not all. R gives you the option of opening a browser mode in any of the functions that appear in the call stack. Annoyingly, the call stack will be displayed upside down compared to traceback. The most recent function will be on the bottom, and the original function will be on the top:\nfirst()\n## \n## Enter a frame number, or 0 to exit   \n## \n## 1: first()\n## 2: #1: second()\n## 3: #1: third()\n## 4: #1: fourth()\n## 5: #1: fifth()\nTo enter a browser mode, type in the number next to the function in whose runtime environment you would like to browse. If you do not wish to browse any of the functions, type 0:\n3\n## Selection: 3\n## Called from: fourth()\n## Browse[1]> \nYou can then proceed as normal. recover gives you a chance to inspect variables up and down your call stack and is a powerful tool for uncovering bugs. However, adding recover to the body of an R function can be cumbersome. Most R users use it as a global option for handling errors.\nIf you run the following code, R will automatically call recover() whenever an error occurs:\noptions(error = recover)\nThis behavior will last until you close your R session, or reverse the behavior by calling:\noptions(error = NULL)"
-  },
-  {
-    "href": "slots.html#try-it",
-    "title": "Project 3: Slot Machine",
-    "section": "Try it!",
-    "text": "Slot machines are the most popular game in modern casinos. If you’ve never seen one, a slot machine resembles an arcade game that has a lever on its side. For a small fee you can pull the lever, and the machine will generate a random combination of three symbols. If the correct combination appears, you can win a prize, maybe even the jackpot.\nSlot machines make fantastic profits for casinos because they offer a very low payout rate. In many games, such as Blackjack and Roulette, the odds are only slightly stacked in the casino’s favor. In the long run, the casino pays back 97 to 98 cents in prizes of every dollar that a gambler spends on these games. With slot machines, it is typical for a casino to only pay back 90 to 95 cents—and the casino keeps the rest. If this seems underhanded, keep in mind that slot machines are one of the most popular games at a casino; few people seem to mind. And if you consider that state lotteries have payout rates that are much closer to 50 cents on the dollar, slot machines don’t look that bad.\nIn this project, you will build a real, working slot machine modeled after some real life Video Lottery Terminals from Manitoba, Canada. The terminals were a source of scandal in the 1990s. You’ll get to the bottom of this scandal by writing a program that recreates the slot machines. You’ll then do some calculations and run some simulations that reveal the true payout rate of the machines.\nThis project will teach you how to write programs and run simulations in R. You will also learn how to:\n\nUse a practical strategy to design programs\nUse if and else statements to tell R what to do when\nCreate lookup tables to find values\nUse for, while, and repeat loops to automate repetitive operations\nUse S3 methods, R’s version of Object-Oriented Programming\nMeasure the speed of R code\nWrite fast, vectorized R code"
   }
 ]
