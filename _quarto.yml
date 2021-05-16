@@ -46,6 +46,6 @@ book:
 format:
   html: 
     theme: cosmo
-    code-link: true
+    code-link: false
   pdf: default
   epub: default
