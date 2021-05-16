@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="description" content="This book will teach you how to program in R, with hands-on examples. I wrote it for non-programmers to provide a friendly introduction to the R language. You’ll learn how to load data, assemble and disassemble data objects, navigate R’s environment system, write your own functions, and use all of R’s programming tools. Throughout the book, you’ll use your newfound skills to solve practical data science problems.">
-  <title>Hands-On Programming with R – 9&nbsp; Loops</title>
-  <style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="pandoc">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="description" content="This book will teach you how to program in R, with hands-on examples. I wrote it for non-programmers to provide a friendly introduction to the R language. You’ll learn how to load data, assemble and disassemble data objects, navigate R’s environment system, write your own functions, and use all of R’s programming tools. Throughout the book, you’ll use your newfound skills to solve practical data science problems.">
+<title>Hands-On Programming with R – 9&nbsp; Loops</title>
+<style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -76,54 +77,32 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-  <!--[if lt IE 9]>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
-  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-  <script src="site_libs/quarto-nav/headroom.min.js"></script>
-  <meta name="quarto:offset" content=".">
-  <script src="site_libs/quarto-search/autocomplete.min.js"></script>
-  <script src="site_libs/quarto-search/fuse.min.js"></script>
-  <script src="site_libs/quarto-search/quarto-search.js"></script>
-  <script src="site_libs/quarto-html/quarto.js"></script>
-  <script src="site_libs/quarto-html/popper.min.js"></script>
-  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-  <script src="site_libs/quarto-html/clipboard.min.js"></script>
-  <script src="site_libs/quarto-html/anchor.min.js"></script>
-  <script src="site_libs/quarto-html/quarto-html.js"></script>
-  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
-  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-  
+  <![endif]--><script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><meta name="quarto:offset" content=".">
+<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
 </head>
 <body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
 <div id="quarto-search-results"></div>
-<header id="quarto-header" class="headroom fixed-top">
-<nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <div class="container-fluid d-flex justify-content-between">
+<header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
     <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">9&nbsp; Loops</h1>
     <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
       <i class="bi bi-chevron-right"></i>
     </button>
   </div>
-</nav>
-</header>
- <!-- /navbar/sidebar -->
-<div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
+</nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll ">
-  <div class="px-3 pt-lg-2 text-left">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-2 text-left">
     <div class="sidebar-title mt-1 mb-0 py-0">
       Hands-On Programming with R
         <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
+<li>
           <a class="dropdown-item" href="http://www.twitter.com/share">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
@@ -144,7 +123,7 @@
     </ul>
 </div>
     </div>
-  </div>  
+  </div>
     <div class="d-flex px-3 mt-2">
       <div class="sidebar-search flex-fill">
       <form class="d-flex mb-0">
@@ -155,7 +134,7 @@
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
+<li>
           <a class="dropdown-item" href="http://www.twitter.com/share">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
@@ -178,14 +157,14 @@
     </div>
   <div class="sidebar-menu-container"> 
   <ul class="list-unstyled mt-3 px-3">
-      <li class="sidebar-item">
+<li class="sidebar-item">
   <a href="./index.html" class="">Welcome</a>
 </li>
       <li class="sidebar-item">
   <a href="./preface.html" class="">Preface</a>
 </li>
       <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
+<li class="">
         <div class="me-auto ">
           <div class="d-inline-flex w-100 sidebar-section-item">
             <div class="sidebar-section-link me-auto ">
@@ -195,20 +174,21 @@
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </button>
             </div>
+        </div>
       <div class="collapse  show" id="project1weighteddice-collapse">
         <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
+<li class="sidebar-item">
   <a href="./basics.html" class=""><span class="chapter-number">1</span>&nbsp; The Very Basics</a>
 </li>
           <li class="sidebar-item">
   <a href="./packages.html" class=""><span class="chapter-number">2</span>&nbsp; Packages and Help Pages</a>
 </li>
         </ul>
-      </div>
-    </div></li>
+</div>
+    </li>
   </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
+<ul class="list-unstyled sidebar-section depth1">
+<li class="">
         <div class="me-auto ">
           <div class="d-inline-flex w-100 sidebar-section-item">
             <div class="sidebar-section-link me-auto ">
@@ -218,9 +198,10 @@
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </button>
             </div>
+        </div>
       <div class="collapse  show" id="project2playingcards-collapse">
         <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
+<li class="sidebar-item">
   <a href="./objects.html" class=""><span class="chapter-number">3</span>&nbsp; R Objects</a>
 </li>
           <li class="sidebar-item">
@@ -233,11 +214,11 @@
   <a href="./environments.html" class=""><span class="chapter-number">6</span>&nbsp; Environments</a>
 </li>
         </ul>
-      </div>
-    </div></li>
+</div>
+    </li>
   </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
+<ul class="list-unstyled sidebar-section depth1">
+<li class="">
         <div class="me-auto ">
           <div class="d-inline-flex w-100 sidebar-section-item">
             <div class="sidebar-section-link me-auto ">
@@ -247,9 +228,10 @@
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </button>
             </div>
+        </div>
       <div class="collapse  show" id="project3slotmachine-collapse">
         <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
+<li class="sidebar-item">
   <a href="./programs.html" class=""><span class="chapter-number">7</span>&nbsp; Programs</a>
 </li>
           <li class="sidebar-item">
@@ -262,11 +244,11 @@
   <a href="./speed.html" class=""><span class="chapter-number">10</span>&nbsp; Speed</a>
 </li>
         </ul>
-      </div>
-    </div></li>
+</div>
+    </li>
   </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
+<ul class="list-unstyled sidebar-section depth1">
+<li class="">
         <div class="me-auto ">
             <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
@@ -274,9 +256,10 @@
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </button>
+        </div>
       <div class="collapse  show" id="appendices-collapse">
         <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
+<li class="sidebar-item">
   <a href="./a1-starting.html" class=""><span class="chapter-number">A</span>&nbsp; Installing R and RStudio</a>
 </li>
           <li class="sidebar-item">
@@ -292,32 +275,27 @@
   <a href="./a5-debug.html" class=""><span class="chapter-number">E</span>&nbsp; Debugging R Code</a>
 </li>
         </ul>
-      </div>
-    </div></li>
+</div>
+    </li>
   </ul>
-  </ul>
-  </div>
+</ul>
+</div>
 </nav>
-  </div>
+</div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
-<main>
-
-<header id="title-block-header">
-<h1 class="title d-none d-lg-block display-7">9&nbsp; Loops</h1>
-</header>
-
-<p>Loops are R’s method for repeating a task, which makes them a useful tool for programming simulations. This chapter will teach you how to use R’s loop tools.</p>
+<main><header id="title-block-header"><h1 class="title d-none d-lg-block display-7">9&nbsp; Loops</h1>
+</header><p>Loops are R’s method for repeating a task, which makes them a useful tool for programming simulations. This chapter will teach you how to use R’s loop tools.</p>
 <p>Let’s use the <code>score</code> function to solve a real-world problem.</p>
 <p>Your slot machine is modeled after real machines that were accused of fraud. The machines appeared to pay out 40 cents on the dollar, but the manufacturer claimed that they paid out 92 cents on the dollar. You can calculate the exact payout rate of your machine with the <code>score</code> program. The payout rate will be the expected value of the slot machine’s prize.</p>
-<section class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" id="expected-values"><span class="header-section-number">9.1</span> Expected Values</h2>
+<section class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" id="expected-values">
+<span class="header-section-number">9.1</span> Expected Values</h2>
 <p>The expected value of a random event is a type of weighted average; it is the sum of each possible outcome of the event, weighted by the probability that each outcome occurs:</p>
 <p><span class="math display">\[
 E(x) = \sum_{i = 1}^{n}\left( x_{i} \cdot P(x_{i}) \right)
 \]</span></p>
 <p>You can think of the expected value as the average prize that you would observe if you played the slot machine an infinite number of times. Let’s use the formula to calculate some simple expected values. Then we will apply the formula to your slot machine.</p>
 <p>Do you remember the <code>die</code> you created in <a href="dice.html">Project 1: Weighted Dice</a>?</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>die <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">die</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Each time you roll the die, it returns a value selected at random (one through six). You can find the expected value of rolling the die with the formula:</p>
 <p><span class="math display">\[
 E(\text{die}) = \sum_{i = 1}^{n}\left( \text{die}_{i} \cdot P(\text{die}_{i}) \right)
@@ -348,29 +326,28 @@ E(\text{die}) &amp; = \sum_{i = 1}^{n}\left( \text{die}_{i} \cdot P(\text{die}_{
 <p>The expected value was then just the sum of the values in step 2 multiplied by the probabilities in step 3.</p>
 <p>You can use these steps to calculate more sophisticated expected values. For example, you could calculate the expected value of rolling a pair of weighted dice. Let’s do this step by step.</p>
 <p>First, list out all of the possible outcomes. A total of 36 different outcomes can appear when you roll two dice. For example, you might roll (1, 1), which notates one on the first die and one on the second die. Or, you may roll (1, 2), one on the first die and two on the second. And so on. Listing out these combinations can be tedious, but R has a function that can help.</p>
-</section>
-<section class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" id="expand.grid"><span class="header-section-number">9.2</span> expand.grid</h2>
+</section><section class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" id="expand.grid">
+<span class="header-section-number">9.2</span> expand.grid</h2>
 <p>The <code>expand.grid</code> function in R provides a quick way to write out every combination of the elements in <em>n</em> vectors. For example, you can list every combination of two dice. To do so, run <code>expand.grid</code> on two copies of <code>die</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rolls <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(die, die)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">rolls</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/expand.grid.html">expand.grid</a></span><span class="op">(</span><span class="va">die</span>, <span class="va">die</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>expand.grid</code> will return a data frame that contains every way to pair an element from the first <code>die</code> vector with an element from the second <code>die</code> vector. This will capture all 36 possible combinations of values:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rolls</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">##    Var1 Var2</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 1     1    1</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 2     2    1</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 3     3    1</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="do">## ...</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 34    4    6</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 35    5    6</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 36    6    6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You can use <code>expand.grid</code> with more than two vectors if you like. For example, you could list every combination of rolling three dice with <code>expand.grid(die, die, die)</code> and every combination of rolling four dice with <code>expand.grid(die, die, die, die)</code>, and so on. <code>expand.grid</code> will always return a data frame that contains each possible combination of <em>n</em> elements from the <em>n</em> vectors. Each combination will contain exactly one element from each vector.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">rolls</span>
+<span class="co">##    Var1 Var2</span>
+<span class="co">## 1     1    1</span>
+<span class="co">## 2     2    1</span>
+<span class="co">## 3     3    1</span>
+<span class="co">## ...</span>
+<span class="co">## 34    4    6</span>
+<span class="co">## 35    5    6</span>
+<span class="co">## 36    6    6</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can use <code>expand.grid</code> with more than two vectors if you like. For example, you could list every combination of rolling three dice with <code><a href="https://rdrr.io/r/base/expand.grid.html">expand.grid(die, die, die)</a></code> and every combination of rolling four dice with <code><a href="https://rdrr.io/r/base/expand.grid.html">expand.grid(die, die, die, die)</a></code>, and so on. <code>expand.grid</code> will always return a data frame that contains each possible combination of <em>n</em> elements from the <em>n</em> vectors. Each combination will contain exactly one element from each vector.</p>
 <p>You can determine the value of each roll once you’ve made your list of outcomes. This will be the sum of the two dice, which you can calculate using R’s element-wise execution:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>rolls<span class="sc">$</span>value <span class="ot">&lt;-</span> rolls<span class="sc">$</span>Var1 <span class="sc">+</span> rolls<span class="sc">$</span>Var2</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(rolls, <span class="dv">3</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Var1 Var2 value</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="do">##    1    1     2</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="do">##    2    1     3</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="do">##    3    1     4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">rolls</span><span class="op">$</span><span class="va">value</span> <span class="op">&lt;-</span> <span class="va">rolls</span><span class="op">$</span><span class="va">Var1</span> <span class="op">+</span> <span class="va">rolls</span><span class="op">$</span><span class="va">Var2</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">rolls</span>, <span class="fl">3</span><span class="op">)</span>
+<span class="co">## Var1 Var2 value</span>
+<span class="co">##    1    1     2</span>
+<span class="co">##    2    1     3</span>
+<span class="co">##    3    1     4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>R will match up the elements in each vector before adding them together. As a result, each element of <code>value</code> will refer to the elements of <code>Var1</code> and <code>Var2</code> that appear in the same row.</p>
 <p>Next, you must determine the probability that each combination appears. You can calculate this with a basic rule of probability:</p>
 <p><em>The probability that</em> n <em>independent, random events all occur is equal to the product of the probabilities that each random event occurs</em>.</p>
@@ -396,48 +373,48 @@ P(1 \&amp; 2) &amp; = P(1) \cdot P(2) \\
 \]</span></p>
 <p>And so on.</p>
 <p>Let me suggest a three-step process for calculating these probabilities in R. First, we can look up the probabilities of rolling the values in <code>Var1</code>. We’ll do this with the lookup table that follows:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>prob <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"1"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">8</span>, <span class="st">"2"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">8</span>, <span class="st">"3"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">8</span>, <span class="st">"4"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">8</span>, <span class="st">"5"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">8</span>, <span class="st">"6"</span> <span class="ot">=</span> <span class="dv">3</span><span class="sc">/</span><span class="dv">8</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>prob</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="do">##     1     2     3     4     5     6 </span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 0.125 0.125 0.125 0.125 0.125 0.375 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">prob</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"1"</span> <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="fl">8</span>, <span class="st">"2"</span> <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="fl">8</span>, <span class="st">"3"</span> <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="fl">8</span>, <span class="st">"4"</span> <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="fl">8</span>, <span class="st">"5"</span> <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="fl">8</span>, <span class="st">"6"</span> <span class="op">=</span> <span class="fl">3</span><span class="op">/</span><span class="fl">8</span><span class="op">)</span>
+
+<span class="va">prob</span>
+<span class="co">##     1     2     3     4     5     6 </span>
+<span class="co">## 0.125 0.125 0.125 0.125 0.125 0.375 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If you subset this table by <code>rolls$Var1</code>, you will get a vector of probabilities perfectly keyed to the values of <code>Var1</code>:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>rolls<span class="sc">$</span>Var1</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>prob[rolls<span class="sc">$</span>Var1]</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="do">##     1     2     3     4     5     6     1     2     3     4     5     6 </span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 0.125 0.125 0.125 0.125 0.125 0.375 0.125 0.125 0.125 0.125 0.125 0.375 </span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="do">##     1     2     3     4     5     6     1     2     3     4     5     6 </span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 0.125 0.125 0.125 0.125 0.125 0.375 0.125 0.125 0.125 0.125 0.125 0.375 </span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="do">##     1     2     3     4     5     6     1     2     3     4     5     6 </span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 0.125 0.125 0.125 0.125 0.125 0.375 0.125 0.125 0.125 0.125 0.125 0.375 </span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>rolls<span class="sc">$</span>prob1 <span class="ot">&lt;-</span> prob[rolls<span class="sc">$</span>Var1]</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(rolls, <span class="dv">3</span>)</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Var1 Var2 value prob1</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="do">##    1    1     2 0.125</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="do">##    2    1     3 0.125</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="do">##    3    1     4 0.125</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">rolls</span><span class="op">$</span><span class="va">Var1</span>
+<span class="co">## 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6</span>
+
+<span class="va">prob</span><span class="op">[</span><span class="va">rolls</span><span class="op">$</span><span class="va">Var1</span><span class="op">]</span>
+<span class="co">##     1     2     3     4     5     6     1     2     3     4     5     6 </span>
+<span class="co">## 0.125 0.125 0.125 0.125 0.125 0.375 0.125 0.125 0.125 0.125 0.125 0.375 </span>
+<span class="co">##     1     2     3     4     5     6     1     2     3     4     5     6 </span>
+<span class="co">## 0.125 0.125 0.125 0.125 0.125 0.375 0.125 0.125 0.125 0.125 0.125 0.375 </span>
+<span class="co">##     1     2     3     4     5     6     1     2     3     4     5     6 </span>
+<span class="co">## 0.125 0.125 0.125 0.125 0.125 0.375 0.125 0.125 0.125 0.125 0.125 0.375 </span>
+
+<span class="va">rolls</span><span class="op">$</span><span class="va">prob1</span> <span class="op">&lt;-</span> <span class="va">prob</span><span class="op">[</span><span class="va">rolls</span><span class="op">$</span><span class="va">Var1</span><span class="op">]</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">rolls</span>, <span class="fl">3</span><span class="op">)</span>
+<span class="co">## Var1 Var2 value prob1</span>
+<span class="co">##    1    1     2 0.125</span>
+<span class="co">##    2    1     3 0.125</span>
+<span class="co">##    3    1     4 0.125</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Second, we can look up the probabilities of rolling the values in <code>Var2</code>:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rolls<span class="sc">$</span>prob2 <span class="ot">&lt;-</span> prob[rolls<span class="sc">$</span>Var2]</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(rolls, <span class="dv">3</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Var1 Var2 value prob1 prob2</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="do">##    1    1     2 0.125 0.125</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="do">##    2    1     3 0.125 0.125</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="do">##    3    1     4 0.125 0.125</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">rolls</span><span class="op">$</span><span class="va">prob2</span> <span class="op">&lt;-</span> <span class="va">prob</span><span class="op">[</span><span class="va">rolls</span><span class="op">$</span><span class="va">Var2</span><span class="op">]</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">rolls</span>, <span class="fl">3</span><span class="op">)</span>
+<span class="co">## Var1 Var2 value prob1 prob2</span>
+<span class="co">##    1    1     2 0.125 0.125</span>
+<span class="co">##    2    1     3 0.125 0.125</span>
+<span class="co">##    3    1     4 0.125 0.125</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Third, we can calculate the probability of rolling each combination by multiplying <code>prob1</code> by <code>prob2</code>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>rolls<span class="sc">$</span>prob <span class="ot">&lt;-</span> rolls<span class="sc">$</span>prob1 <span class="sc">*</span> rolls<span class="sc">$</span>prob2</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(rolls, <span class="dv">3</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Var1 Var2 value prob1 prob2     prob</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="do">##    1    1     2 0.125 0.125 0.015625</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="do">##    2    1     3 0.125 0.125 0.015625</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="do">##    3    1     4 0.125 0.125 0.015625</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">rolls</span><span class="op">$</span><span class="va">prob</span> <span class="op">&lt;-</span> <span class="va">rolls</span><span class="op">$</span><span class="va">prob1</span> <span class="op">*</span> <span class="va">rolls</span><span class="op">$</span><span class="va">prob2</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">rolls</span>, <span class="fl">3</span><span class="op">)</span>
+<span class="co">## Var1 Var2 value prob1 prob2     prob</span>
+<span class="co">##    1    1     2 0.125 0.125 0.015625</span>
+<span class="co">##    2    1     3 0.125 0.125 0.015625</span>
+<span class="co">##    3    1     4 0.125 0.125 0.015625</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>It is easy to calculate the expected value now that we have each outcome, the value of each outcome, and the probability of each outcome. The expected value will be the summation of the dice values multiplied by the dice probabilities:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(rolls<span class="sc">$</span>value <span class="sc">*</span> rolls<span class="sc">$</span>prob)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 8.25</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">rolls</span><span class="op">$</span><span class="va">value</span> <span class="op">*</span> <span class="va">rolls</span><span class="op">$</span><span class="va">prob</span><span class="op">)</span>
+<span class="co">## 8.25</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>So the expected value of rolling two loaded dice is 8.25. If you rolled a pair of loaded dice an infinite number of times, the average sum would be 8.25. (If you are curious, the expected value of rolling a pair of fair dice is 7, which explains why 7 plays such a large role in dice games like craps.)</p>
 <p>Now that you’ve warmed up, let’s use our method to calculate the expected value of the slot machine prize. We will follow the same steps we just took:</p>
 <ul>
@@ -446,11 +423,11 @@ P(1 \&amp; 2) &amp; = P(1) \cdot P(2) \\
 <li>We will determine the prize that we would win for each combination.</li>
 </ul>
 <p>When we are finished, we will have a data set that looks like this:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Var1 Var2 Var3 prob1 prob2 prob3     prob prize</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="do">##   DD   DD   DD  0.03  0.03  0.03 0.000027   800</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="do">##    7   DD   DD  0.03  0.03  0.03 0.000027     0</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  BBB   DD   DD  0.06  0.03  0.03 0.000054     0</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="do">## ... and so on.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="co">## Var1 Var2 Var3 prob1 prob2 prob3     prob prize</span>
+<span class="co">##   DD   DD   DD  0.03  0.03  0.03 0.000027   800</span>
+<span class="co">##    7   DD   DD  0.03  0.03  0.03 0.000027     0</span>
+<span class="co">##  BBB   DD   DD  0.06  0.03  0.03 0.000054     0</span>
+<span class="co">## ... and so on.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The expected value will then be the sum of the prizes multiplied by their probability of occuring:</p>
 <p><span class="math display">\[
 E(\text{prize}) = \sum_{i = 1}^{n}\left( \text{prize}_{i} \cdot P(\text{prize}_{i}) \right)
@@ -467,25 +444,25 @@ Exercise: List the Combinations
 </div>
 <div class="callout-body">
 <p>Use <code>expand.grid</code> to make a data frame that contains every possible combination of <em>three</em> symbols from the <code>wheel</code> vector:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>wheel <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"DD"</span>, <span class="st">"7"</span>, <span class="st">"BBB"</span>, <span class="st">"BB"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"0"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">wheel</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"DD"</span>, <span class="st">"7"</span>, <span class="st">"BBB"</span>, <span class="st">"BB"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"0"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Be sure to add the argument <code>stringsAsFactors = FALSE</code> to your <code>expand.grid</code> call; otherwise, <code>expand.grid</code> will save the combinations as factors, an unfortunate choice that will disrupt the <code>score</code> function.</p>
 </div>
 </div>
 <p>To create a data frame of each combination of <em>three</em> symbols, you need to run <code>expand.grid</code> and give it <em>three</em> copies of <code>wheel</code>. The result will be a data frame with 343 rows, one for each unique combination of three slot symbols:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>combos <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(wheel, wheel, wheel, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>combos</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="do">##   Var1 Var2 Var3</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 1   DD   DD   DD</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    7   DD   DD</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 3  BBB   DD   DD</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 4   BB   DD   DD</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 5    B   DD   DD</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 6    C   DD   DD</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="do">## ...</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 341    B    0    0</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 342    C    0    0</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 343    0    0    0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">combos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/expand.grid.html">expand.grid</a></span><span class="op">(</span><span class="va">wheel</span>, <span class="va">wheel</span>, <span class="va">wheel</span>, stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+
+<span class="va">combos</span>
+<span class="co">##   Var1 Var2 Var3</span>
+<span class="co">## 1   DD   DD   DD</span>
+<span class="co">## 2    7   DD   DD</span>
+<span class="co">## 3  BBB   DD   DD</span>
+<span class="co">## 4   BB   DD   DD</span>
+<span class="co">## 5    B   DD   DD</span>
+<span class="co">## 6    C   DD   DD</span>
+<span class="co">## ...</span>
+<span class="co">## 341    B    0    0</span>
+<span class="co">## 342    C    0    0</span>
+<span class="co">## 343    0    0    0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now, let’s calculate the probability of getting each combination. You can use the probabilities contained in the <code>prob</code> argument of <code>get_symbols</code> to do this. These probabilities determine how frequently each symbol is chosen when your slot machine generates symbols. They were calculated after observing 345 plays of the Manitoba video lottery terminals. Zeroes have the largest chance of being selected (0.52) and cherries the least (0.01):</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>get_symbols <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  wheel <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"DD"</span>, <span class="st">"7"</span>, <span class="st">"BBB"</span>, <span class="st">"BB"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"0"</span>)</span>
@@ -506,8 +483,8 @@ Exercise: Make a Lookup Table
 </div>
 </div>
 <p>Your names should match the input that you want to look up. In this case, the input will be the character strings that appear in <code>Var1</code>, <code>Var2</code>, and <code>Var3</code>. So your lookup table should look like this:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>prob <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"DD"</span> <span class="ot">=</span> <span class="fl">0.03</span>, <span class="st">"7"</span> <span class="ot">=</span> <span class="fl">0.03</span>, <span class="st">"BBB"</span> <span class="ot">=</span> <span class="fl">0.06</span>, </span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BB"</span> <span class="ot">=</span> <span class="fl">0.1</span>, <span class="st">"B"</span> <span class="ot">=</span> <span class="fl">0.25</span>, <span class="st">"C"</span> <span class="ot">=</span> <span class="fl">0.01</span>, <span class="st">"0"</span> <span class="ot">=</span> <span class="fl">0.52</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">prob</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"DD"</span> <span class="op">=</span> <span class="fl">0.03</span>, <span class="st">"7"</span> <span class="op">=</span> <span class="fl">0.03</span>, <span class="st">"BBB"</span> <span class="op">=</span> <span class="fl">0.06</span>, 
+  <span class="st">"BB"</span> <span class="op">=</span> <span class="fl">0.1</span>, <span class="st">"B"</span> <span class="op">=</span> <span class="fl">0.25</span>, <span class="st">"C"</span> <span class="op">=</span> <span class="fl">0.01</span>, <span class="st">"0"</span> <span class="op">=</span> <span class="fl">0.52</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now let’s look up our probabilities.</p>
 <div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -523,15 +500,15 @@ Exercise: Lookup the Probabilities
 </div>
 </div>
 <p>Remember that you use R’s selection notation to look up values in a lookup table. The values that result will be keyed to the index that you use:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>combos<span class="sc">$</span>prob1 <span class="ot">&lt;-</span> prob[combos<span class="sc">$</span>Var1]</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>combos<span class="sc">$</span>prob2 <span class="ot">&lt;-</span> prob[combos<span class="sc">$</span>Var2]</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>combos<span class="sc">$</span>prob3 <span class="ot">&lt;-</span> prob[combos<span class="sc">$</span>Var3]</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(combos, <span class="dv">3</span>)</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Var1 Var2 Var3 prob1 prob2 prob3</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="do">##   DD   DD   DD  0.03  0.03  0.03</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="do">##    7   DD   DD  0.03  0.03  0.03</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  BBB   DD   DD  0.06  0.03  0.03</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">combos</span><span class="op">$</span><span class="va">prob1</span> <span class="op">&lt;-</span> <span class="va">prob</span><span class="op">[</span><span class="va">combos</span><span class="op">$</span><span class="va">Var1</span><span class="op">]</span>
+<span class="va">combos</span><span class="op">$</span><span class="va">prob2</span> <span class="op">&lt;-</span> <span class="va">prob</span><span class="op">[</span><span class="va">combos</span><span class="op">$</span><span class="va">Var2</span><span class="op">]</span>
+<span class="va">combos</span><span class="op">$</span><span class="va">prob3</span> <span class="op">&lt;-</span> <span class="va">prob</span><span class="op">[</span><span class="va">combos</span><span class="op">$</span><span class="va">Var3</span><span class="op">]</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">combos</span>, <span class="fl">3</span><span class="op">)</span>
+<span class="co">## Var1 Var2 Var3 prob1 prob2 prob3</span>
+<span class="co">##   DD   DD   DD  0.03  0.03  0.03</span>
+<span class="co">##    7   DD   DD  0.03  0.03  0.03</span>
+<span class="co">##  BBB   DD   DD  0.06  0.03  0.03</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now how should we calculate the total probability of each combination? Our three slot symbols are all chosen independently, which means that the same rule that governed our dice probabilities governs our symbol probabilities:</p>
 <p><span class="math display">\[
 P(A \&amp; B \&amp; C \&amp; ...) = P(A) \cdot P(B) \cdot P(C) \cdot ...
@@ -551,61 +528,60 @@ Exercise: Calculate Probabilities for Each Combination
 </div>
 </div>
 <p>You can calculate the probabilities of every possible combination in one fell swoop with some element-wise execution:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>combos<span class="sc">$</span>prob <span class="ot">&lt;-</span> combos<span class="sc">$</span>prob1 <span class="sc">*</span> combos<span class="sc">$</span>prob2 <span class="sc">*</span> combos<span class="sc">$</span>prob3</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(combos, <span class="dv">3</span>)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Var1 Var2 Var3 prob1 prob2 prob3     prob</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="do">##   DD   DD   DD  0.03  0.03  0.03 0.000027</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="do">##    7   DD   DD  0.03  0.03  0.03 0.000027</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  BBB   DD   DD  0.06  0.03  0.03 0.000054</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">combos</span><span class="op">$</span><span class="va">prob</span> <span class="op">&lt;-</span> <span class="va">combos</span><span class="op">$</span><span class="va">prob1</span> <span class="op">*</span> <span class="va">combos</span><span class="op">$</span><span class="va">prob2</span> <span class="op">*</span> <span class="va">combos</span><span class="op">$</span><span class="va">prob3</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">combos</span>, <span class="fl">3</span><span class="op">)</span>
+<span class="co">## Var1 Var2 Var3 prob1 prob2 prob3     prob</span>
+<span class="co">##   DD   DD   DD  0.03  0.03  0.03 0.000027</span>
+<span class="co">##    7   DD   DD  0.03  0.03  0.03 0.000027</span>
+<span class="co">##  BBB   DD   DD  0.06  0.03  0.03 0.000054</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The sum of the probabilities is one, which suggests that our math is correct:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(combos<span class="sc">$</span>prob)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">combos</span><span class="op">$</span><span class="va">prob</span><span class="op">)</span>
+<span class="co">## 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You only need to do one more thing before you can calculate the expected value: you must determine the prize for each combination in <code>combos</code>. You can calculate the prize with <code>score</code>. For example, we can calculate the prize for the first row of <code>combos</code> like this:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>symbols <span class="ot">&lt;-</span> <span class="fu">c</span>(combos[<span class="dv">1</span>, <span class="dv">1</span>], combos[<span class="dv">1</span>, <span class="dv">2</span>], combos[<span class="dv">1</span>, <span class="dv">3</span>])</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="do">## "DD" "DD" "DD"</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">score</span>(symbols)</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 800</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">symbols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">combos</span><span class="op">[</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">]</span>, <span class="va">combos</span><span class="op">[</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">]</span>, <span class="va">combos</span><span class="op">[</span><span class="fl">1</span>, <span class="fl">3</span><span class="op">]</span><span class="op">)</span>
+<span class="co">## "DD" "DD" "DD"</span>
+
+<span class="fu">score</span><span class="op">(</span><span class="va">symbols</span><span class="op">)</span>
+<span class="co">## 800</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>However there are 343 rows, which makes for tedious work if you plan to calculate the scores manually. It will be quicker to automate this task and have R do it for you, which you can do with a <code>for</code> loop.</p>
-</section>
-<section class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" id="for-loops"><span class="header-section-number">9.3</span> for Loops</h2>
+</section><section class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" id="for-loops">
+<span class="header-section-number">9.3</span> for Loops</h2>
 <p>A <code>for</code> loop repeats a chunk of code many times, once for each element in a set of input. <code>for</code> loops provide a way to tell R, “Do this for every value of that.” In R syntax, this looks like:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (value <span class="cf">in</span> that) {</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  this</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The <code>that</code> object should be a set of objects (often a vector of numbers or character strings). The for loop will run the code in that appears between the braces once for each member of <code>that</code>. For example, the for loop below runs <code>print("one run")</code> once for each element in a vector of character strings:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (value <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"first"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)) {</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"one run"</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="do">## "one run"</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="do">## "one run"</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="do">## "one run"</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="do">## "one run"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="kw">for</span> <span class="op">(</span><span class="va">value</span> <span class="kw">in</span> <span class="va">that</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">this</span>
+<span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>that</code> object should be a set of objects (often a vector of numbers or character strings). The for loop will run the code in that appears between the braces once for each member of <code>that</code>. For example, the for loop below runs <code><a href="https://rdrr.io/r/base/print.html">print("one run")</a></code> once for each element in a vector of character strings:</p>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="kw">for</span> <span class="op">(</span><span class="va">value</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"My"</span>, <span class="st">"first"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"one run"</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="co">## "one run"</span>
+<span class="co">## "one run"</span>
+<span class="co">## "one run"</span>
+<span class="co">## "one run"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The <code>value</code> symbol in a for loop acts like an argument in a function. The for loop will create an object named <code>value</code> and assign it a new value on each run of the loop. The code in your loop can access this value by calling the <code>value</code> object.</p>
-<p>What values will the for loop assign to <code>value</code>? It will use the elements in the set that you run the loop on. <code>for</code> starts with the first element and then assigns a different element to <code>value</code> on each run of the for loop, until all of the elements have been assigned to <code>value</code>. For example, the for loop below will run <code>print(value)</code> four times and will print out one element of <code>c("My", "second", "for", "loop")</code> each time:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (value <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"second"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)) {</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(value)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="do">## "My"</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="do">## "second"</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="do">## "for"</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="do">## "loop"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>On the first run, the for loop substituted <code>"My"</code> for <code>value</code> in <code>print(value)</code>. On the second run it substituted <code>"second"</code>, and so on until <code>for</code> had run <code>print(value)</code> once with every element in the set:</p>
+<p>What values will the for loop assign to <code>value</code>? It will use the elements in the set that you run the loop on. <code>for</code> starts with the first element and then assigns a different element to <code>value</code> on each run of the for loop, until all of the elements have been assigned to <code>value</code>. For example, the for loop below will run <code><a href="https://rdrr.io/r/base/print.html">print(value)</a></code> four times and will print out one element of <code><a href="https://rdrr.io/r/base/c.html">c("My", "second", "for", "loop")</a></code> each time:</p>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="kw">for</span> <span class="op">(</span><span class="va">value</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"My"</span>, <span class="st">"second"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">value</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="co">## "My"</span>
+<span class="co">## "second"</span>
+<span class="co">## "for"</span>
+<span class="co">## "loop"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>On the first run, the for loop substituted <code>"My"</code> for <code>value</code> in <code><a href="https://rdrr.io/r/base/print.html">print(value)</a></code>. On the second run it substituted <code>"second"</code>, and so on until <code>for</code> had run <code><a href="https://rdrr.io/r/base/print.html">print(value)</a></code> once with every element in the set:</p>
 <p>If you look at <code>value</code> after the loop runs, you will see that it still contains the value of the last element in the set:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>value</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="do">## "loop"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">value</span>
+<span class="co">## "loop"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>I’ve been using the symbol <code>value</code> in my for loops, but there is nothing special about it. You can use any symbol you like in your loop to do the same thing as long as the symbol appears before <code>in</code> in the parentheses that follow <code>for</code>. For example, you could rewrite the previous loop with any of the following:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (word <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"second"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)) {</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(word)</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (string <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"second"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)) {</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(string)</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"second"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)) {</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="kw">for</span> <span class="op">(</span><span class="va">word</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"My"</span>, <span class="st">"second"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">word</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">string</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"My"</span>, <span class="st">"second"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">string</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"My"</span>, <span class="st">"second"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">i</span><span class="op">)</span>
+<span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout-warning callout callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -636,31 +612,31 @@ For loops run on sets
 <p><code>for</code> loops are very useful in programming because they help you connect a piece of code with each element in a set. For example, we could use a <code>for</code> loop to run <code>score</code> once for each row in <code>combos</code>. However, R’s <code>for</code> loops have a shortcoming that you’ll want to know about before you start using them: <code>for</code> loops do not return output.</p>
 <p><code>for</code> loops are like Las Vegas: what happens in a <code>for</code> loop stays in a <code>for</code> loop. If you want to use the products of a <code>for</code> loop, you must write the <code>for</code> loop so that it saves its own output as it goes.</p>
 <p>Our previous examples appeared to return output, but this was misleading. The examples worked because we called <code>print</code>, which always prints its arguments in the console (even if it is called from a function, a <code>for</code> loop, or anything else). Our <code>for</code> loops won’t return anything if you remove the <code>print</code> call:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (value <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"third"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)) {</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  value</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="kw">for</span> <span class="op">(</span><span class="va">value</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"My"</span>, <span class="st">"third"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">value</span>
+<span class="op">}</span>
+<span class="co">##</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To save output from a <code>for</code> loop, you must write the loop so that it saves its own output as it runs. You can do this by creating an empty vector or list before you run the <code>for</code> loop. Then use the <code>for</code> loop to fill up the vector or list. When the <code>for</code> loop is finished, you’ll be able to access the vector or list, which will now have all of your results.</p>
 <p>Let’s see this in action. The following code creates an empty vector of length 4:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>chars <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">length =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">chars</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span>length <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The next loop will fill it with strings:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>words <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"My"</span>, <span class="st">"fourth"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  chars[i] <span class="ot">&lt;-</span> words[i]</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>chars</span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="do">## "My"    "fourth" "for"   "loop"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">words</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"My"</span>, <span class="st">"fourth"</span>, <span class="st">"for"</span>, <span class="st">"loop"</span><span class="op">)</span>
+
+<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">chars</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">words</span><span class="op">[</span><span class="va">i</span><span class="op">]</span>
+<span class="op">}</span>
+
+<span class="va">chars</span>
+<span class="co">## "My"    "fourth" "for"   "loop"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This approach will usually require you to change the sets that you execute your <code>for</code> loop on. Instead of executing on a set of objects, execute on a set of integers that you can use to index both your object and your storage vector. This approach is very common in R. You’ll find in practice that you use <code>for</code> loops not so much to run code, but to fill up vectors and lists with the results of code.</p>
 <p>Let’s use a <code>for</code> loop to calculate the prize for each row in <code>combos</code>. To begin, create a new column in <code>combos</code> to store the results of the <code>for</code> loop:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>combos<span class="sc">$</span>prize <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(combos, <span class="dv">3</span>)</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  Var1 Var2 Var3 prob1 prob2 prob3     prob prize</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="do">##    DD   DD   DD  0.03  0.03  0.03 0.000027    NA</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="do">##     7   DD   DD  0.03  0.03  0.03 0.000027    NA</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="do">##   BBB   DD   DD  0.06  0.03  0.03 0.000054    NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">combos</span><span class="op">$</span><span class="va">prize</span> <span class="op">&lt;-</span> <span class="cn">NA</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">combos</span>, <span class="fl">3</span><span class="op">)</span>
+<span class="co">##  Var1 Var2 Var3 prob1 prob2 prob3     prob prize</span>
+<span class="co">##    DD   DD   DD  0.03  0.03  0.03 0.000027    NA</span>
+<span class="co">##     7   DD   DD  0.03  0.03  0.03 0.000027    NA</span>
+<span class="co">##   BBB   DD   DD  0.06  0.03  0.03 0.000054    NA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The code creates a new column named prize and fills it with <code>NA</code>s. R uses its recycling rules to populate every value of the column with <code>NA</code>.</p>
 <div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -676,19 +652,19 @@ Exercise: Build a Loop
 </div>
 </div>
 <p>You can score the rows in <code>combos</code> with:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(combos)) {</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  symbols <span class="ot">&lt;-</span> <span class="fu">c</span>(combos[i, <span class="dv">1</span>], combos[i, <span class="dv">2</span>], combos[i, <span class="dv">3</span>])</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  combos<span class="sc">$</span>prize[i] <span class="ot">&lt;-</span> <span class="fu">score</span>(symbols)</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">combos</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">symbols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">combos</span><span class="op">[</span><span class="va">i</span>, <span class="fl">1</span><span class="op">]</span>, <span class="va">combos</span><span class="op">[</span><span class="va">i</span>, <span class="fl">2</span><span class="op">]</span>, <span class="va">combos</span><span class="op">[</span><span class="va">i</span>, <span class="fl">3</span><span class="op">]</span><span class="op">)</span>
+  <span class="va">combos</span><span class="op">$</span><span class="va">prize</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu">score</span><span class="op">(</span><span class="va">symbols</span><span class="op">)</span>
+<span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>After you run the for loop, <code>combos$prize</code> will contain the correct prize for each row. This exercise also tests the <code>score</code> function; <code>score</code> appears to work correctly for every possible slot combination:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(combos, <span class="dv">3</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Var1 Var2 Var3 prob1 prob2 prob3     prob prize</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="do">##   DD   DD   DD  0.03  0.03  0.03 0.000027   800</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="do">##    7   DD   DD  0.03  0.03  0.03 0.000027     0</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  BBB   DD   DD  0.06  0.03  0.03 0.000054     0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">combos</span>, <span class="fl">3</span><span class="op">)</span>
+<span class="co">## Var1 Var2 Var3 prob1 prob2 prob3     prob prize</span>
+<span class="co">##   DD   DD   DD  0.03  0.03  0.03 0.000027   800</span>
+<span class="co">##    7   DD   DD  0.03  0.03  0.03 0.000027     0</span>
+<span class="co">##  BBB   DD   DD  0.06  0.03  0.03 0.000054     0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We’re now ready to calculate the expected value of the prize. The expected value is the sum of <code>combos$prize</code> weighted by <code>combos$prob</code>. This is also the payout rate of the slot machine:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(combos<span class="sc">$</span>prize <span class="sc">*</span> combos<span class="sc">$</span>prob)</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 0.538014</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">combos</span><span class="op">$</span><span class="va">prize</span> <span class="op">*</span> <span class="va">combos</span><span class="op">$</span><span class="va">prob</span><span class="op">)</span>
+<span class="co">## 0.538014</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Uh oh. The expected prize is about 0.54, which means our slot machine only pays 54 cents on the dollar over the long run. Does this mean that the manufacturer of the Manitoba slot machines <em>was</em> lying?</p>
 <p>No, because we ignored an important feature of the slot machine when we wrote <code>score</code>: a diamond is wild. You can treat a <code>DD</code> as any other symbol if it increases your prize, with one exception. You cannot make a <code>DD</code> a <code>C</code> unless you already have another <code>C</code> in your symbols (it’d be too easy if every <code>DD</code> automatically earned you $2).</p>
 <p>The best thing about <code>DD</code>s is that their effects are cumulative. For example, consider the combination <code>B</code>, <code>DD</code>, <code>B</code>. Not only does the <code>DD</code> count as a <code>B</code>, which would earn a prize of $10; the <code>DD</code> also doubles the prize to $20.</p>
@@ -708,38 +684,38 @@ Exercise: Challenge
 </div>
 </div>
 <p>Here is a version of score that handles wild diamonds:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="cf">function</span>(symbols) {</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  diamonds <span class="ot">&lt;-</span> <span class="fu">sum</span>(symbols <span class="sc">==</span> <span class="st">"DD"</span>)</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  cherries <span class="ot">&lt;-</span> <span class="fu">sum</span>(symbols <span class="sc">==</span> <span class="st">"C"</span>)</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># identify case</span></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># since diamonds are wild, only nondiamonds </span></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># matter for three of a kind and all bars</span></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>  slots <span class="ot">&lt;-</span> symbols[symbols <span class="sc">!=</span> <span class="st">"DD"</span>]</span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>  same <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(slots)) <span class="sc">==</span> <span class="dv">1</span></span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>  bars <span class="ot">&lt;-</span> slots <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"B"</span>, <span class="st">"BB"</span>, <span class="st">"BBB"</span>)</span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># assign prize</span></span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (diamonds <span class="sc">==</span> <span class="dv">3</span>) {</span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>    prize <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (same) {</span>
-<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>    payouts <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"7"</span> <span class="ot">=</span> <span class="dv">80</span>, <span class="st">"BBB"</span> <span class="ot">=</span> <span class="dv">40</span>, <span class="st">"BB"</span> <span class="ot">=</span> <span class="dv">25</span>,</span>
-<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">"B"</span> <span class="ot">=</span> <span class="dv">10</span>, <span class="st">"C"</span> <span class="ot">=</span> <span class="dv">10</span>, <span class="st">"0"</span> <span class="ot">=</span> <span class="dv">0</span>)</span>
-<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>    prize <span class="ot">&lt;-</span> <span class="fu">unname</span>(payouts[slots[<span class="dv">1</span>]])</span>
-<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (<span class="fu">all</span>(bars)) {</span>
-<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>    prize <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (cherries <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># diamonds count as cherries</span></span>
-<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># so long as there is one real cherry</span></span>
-<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>    prize <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">5</span>)[cherries <span class="sc">+</span> diamonds <span class="sc">+</span> <span class="dv">1</span>]</span>
-<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>    prize <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a>  <span class="co"># double for each diamond</span></span>
-<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a>  prize <span class="sc">*</span> <span class="dv">2</span><span class="sc">^</span>diamonds</span>
-<span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">score</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">symbols</span><span class="op">)</span> <span class="op">{</span>
+  
+  <span class="va">diamonds</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">symbols</span> <span class="op">==</span> <span class="st">"DD"</span><span class="op">)</span>
+  <span class="va">cherries</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">symbols</span> <span class="op">==</span> <span class="st">"C"</span><span class="op">)</span>
+  
+  <span class="co"># identify case</span>
+  <span class="co"># since diamonds are wild, only nondiamonds </span>
+  <span class="co"># matter for three of a kind and all bars</span>
+  <span class="va">slots</span> <span class="op">&lt;-</span> <span class="va">symbols</span><span class="op">[</span><span class="va">symbols</span> <span class="op">!=</span> <span class="st">"DD"</span><span class="op">]</span>
+  <span class="va">same</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">slots</span><span class="op">)</span><span class="op">)</span> <span class="op">==</span> <span class="fl">1</span>
+  <span class="va">bars</span> <span class="op">&lt;-</span> <span class="va">slots</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"B"</span>, <span class="st">"BB"</span>, <span class="st">"BBB"</span><span class="op">)</span>
+
+  <span class="co"># assign prize</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="va">diamonds</span> <span class="op">==</span> <span class="fl">3</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">prize</span> <span class="op">&lt;-</span> <span class="fl">100</span>
+  <span class="op">}</span> <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span><span class="va">same</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">payouts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"7"</span> <span class="op">=</span> <span class="fl">80</span>, <span class="st">"BBB"</span> <span class="op">=</span> <span class="fl">40</span>, <span class="st">"BB"</span> <span class="op">=</span> <span class="fl">25</span>,
+      <span class="st">"B"</span> <span class="op">=</span> <span class="fl">10</span>, <span class="st">"C"</span> <span class="op">=</span> <span class="fl">10</span>, <span class="st">"0"</span> <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+    <span class="va">prize</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/unname.html">unname</a></span><span class="op">(</span><span class="va">payouts</span><span class="op">[</span><span class="va">slots</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>
+  <span class="op">}</span> <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/all.html">all</a></span><span class="op">(</span><span class="va">bars</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">prize</span> <span class="op">&lt;-</span> <span class="fl">5</span>
+  <span class="op">}</span> <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span><span class="va">cherries</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span>
+    <span class="co"># diamonds count as cherries</span>
+    <span class="co"># so long as there is one real cherry</span>
+    <span class="va">prize</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">2</span>, <span class="fl">5</span><span class="op">)</span><span class="op">[</span><span class="va">cherries</span> <span class="op">+</span> <span class="va">diamonds</span> <span class="op">+</span> <span class="fl">1</span><span class="op">]</span>
+  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+    <span class="va">prize</span> <span class="op">&lt;-</span> <span class="fl">0</span>
+  <span class="op">}</span>
+  
+  <span class="co"># double for each diamond</span>
+  <span class="va">prize</span> <span class="op">*</span> <span class="fl">2</span><span class="op">^</span><span class="va">diamonds</span>
+<span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -754,67 +730,62 @@ Exercise: Calculate the Expected Value
 </div>
 </div>
 <p>To update the expected value, just update <code>combos$prize</code>:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(combos)) {</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  symbols <span class="ot">&lt;-</span> <span class="fu">c</span>(combos[i, <span class="dv">1</span>], combos[i, <span class="dv">2</span>], combos[i, <span class="dv">3</span>])</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  combos<span class="sc">$</span>prize[i] <span class="ot">&lt;-</span> <span class="fu">score</span>(symbols)</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">combos</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">symbols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">combos</span><span class="op">[</span><span class="va">i</span>, <span class="fl">1</span><span class="op">]</span>, <span class="va">combos</span><span class="op">[</span><span class="va">i</span>, <span class="fl">2</span><span class="op">]</span>, <span class="va">combos</span><span class="op">[</span><span class="va">i</span>, <span class="fl">3</span><span class="op">]</span><span class="op">)</span>
+  <span class="va">combos</span><span class="op">$</span><span class="va">prize</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu">score</span><span class="op">(</span><span class="va">symbols</span><span class="op">)</span>
+<span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then recompute the expected value:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(combos<span class="sc">$</span>prize <span class="sc">*</span> combos<span class="sc">$</span>prob)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 0.934356</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">combos</span><span class="op">$</span><span class="va">prize</span> <span class="op">*</span> <span class="va">combos</span><span class="op">$</span><span class="va">prob</span><span class="op">)</span>
+<span class="co">## 0.934356</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This result vindicates the manufacturer’s claim. If anything, the slot machines seem more generous than the manufacturer stated.</p>
-</section>
-<section class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" id="while-loops"><span class="header-section-number">9.4</span> while Loops</h2>
+</section><section class="level2" data-number="9.4"><h2 data-number="9.4" class="anchored" id="while-loops">
+<span class="header-section-number">9.4</span> while Loops</h2>
 <p>R has two companions to the <code>for</code> loop: the <code>while</code> loop and the <code>repeat</code> loop. A <code>while</code> loop reruns a chunk <em>while</em> a certain condition remains <code>TRUE</code>. To create a <code>while</code> loop, follow <code>while</code> by a condition and a chunk of code, like this:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (condition) {</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  code</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="kw">while</span> <span class="op">(</span><span class="va">condition</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">code</span>
+<span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>while</code> will rerun <code>condition</code>, which should be a logical test, at the start of each loop. If <code>condition</code> evaluates to <code>TRUE</code>, <code>while</code> will run the code between its braces. If <code>condition</code> evaluates to <code>FALSE</code>, <code>while</code> will finish the loop.</p>
 <p>Why might <code>condition</code> change from <code>TRUE</code> to <code>FALSE</code>? Presumably because the code inside your loop has changed whether the condition is still <code>TRUE</code>. If the code has no relationship to the condition, a <code>while</code> loop will run until you stop it. So be careful. You can stop a <code>while</code> loop by hitting Escape or by clicking on the stop-sign icon at the top of the RStudio console pane. The icon will appear once the loop begins to run.</p>
 <p>Like <code>for</code> loops, <code>while</code> loops do not return a result, so you must think about what you want the loop to return and save it to an object during the loop.</p>
 <p>You can use <code>while</code> loops to do things that take a varying number of iterations, like calculating how long it takes to go broke playing slots (as follows). However, in practice, <code>while</code> loops are much less common than <code>for</code> loops in R:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>plays_till_broke <span class="ot">&lt;-</span> <span class="cf">function</span>(start_with) {</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  cash <span class="ot">&lt;-</span> start_with</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (cash <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    cash <span class="ot">&lt;-</span> cash <span class="sc">-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="fu">play</span>()</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">&lt;-</span> n <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>  n</span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plays_till_broke</span>(<span class="dv">100</span>)</span>
-<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 260</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" id="repeat-loops"><span class="header-section-number">9.5</span> repeat Loops</h2>
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">plays_till_broke</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">start_with</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">cash</span> <span class="op">&lt;-</span> <span class="va">start_with</span>
+  <span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">0</span>
+  <span class="kw">while</span> <span class="op">(</span><span class="va">cash</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">cash</span> <span class="op">&lt;-</span> <span class="va">cash</span> <span class="op">-</span> <span class="fl">1</span> <span class="op">+</span> <span class="fu">play</span><span class="op">(</span><span class="op">)</span>
+    <span class="va">n</span> <span class="op">&lt;-</span> <span class="va">n</span> <span class="op">+</span> <span class="fl">1</span>
+  <span class="op">}</span>
+  <span class="va">n</span>
+<span class="op">}</span>
+
+<span class="fu">plays_till_broke</span><span class="op">(</span><span class="fl">100</span><span class="op">)</span>
+<span class="co">## 260</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section class="level2" data-number="9.5"><h2 data-number="9.5" class="anchored" id="repeat-loops">
+<span class="header-section-number">9.5</span> repeat Loops</h2>
 <p><code>repeat</code> loops are even more basic than <code>while</code> loops. They will repeat a chunk of code until you tell them to stop (by hitting Escape) or until they encounter the command <code>break</code>, which will stop the loop.</p>
 <p>You can use a <code>repeat</code> loop to recreate <code>plays_till_broke</code>, my function that simulates how long it takes to lose money while playing slots:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>plays_till_broke <span class="ot">&lt;-</span> <span class="cf">function</span>(start_with) {</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  cash <span class="ot">&lt;-</span> start_with</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">repeat</span> {</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    cash <span class="ot">&lt;-</span> cash <span class="sc">-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="fu">play</span>()</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">&lt;-</span> n <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (cash <span class="sc">&lt;=</span> <span class="dv">0</span>) {</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>      <span class="cf">break</span></span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>  n</span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plays_till_broke</span>(<span class="dv">100</span>)</span>
-<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 237</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" id="summary"><span class="header-section-number">9.6</span> Summary</h2>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">plays_till_broke</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">start_with</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">cash</span> <span class="op">&lt;-</span> <span class="va">start_with</span>
+  <span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">0</span>
+  <span class="kw">repeat</span> <span class="op">{</span>
+    <span class="va">cash</span> <span class="op">&lt;-</span> <span class="va">cash</span> <span class="op">-</span> <span class="fl">1</span> <span class="op">+</span> <span class="fu">play</span><span class="op">(</span><span class="op">)</span>
+    <span class="va">n</span> <span class="op">&lt;-</span> <span class="va">n</span> <span class="op">+</span> <span class="fl">1</span>
+    <span class="kw">if</span> <span class="op">(</span><span class="va">cash</span> <span class="op">&lt;=</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span>
+      <span class="kw">break</span>
+    <span class="op">}</span>
+  <span class="op">}</span>
+  <span class="va">n</span>
+<span class="op">}</span>
+
+<span class="fu">plays_till_broke</span><span class="op">(</span><span class="fl">100</span><span class="op">)</span>
+<span class="co">## 237</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section class="level2" data-number="9.6"><h2 data-number="9.6" class="anchored" id="summary">
+<span class="header-section-number">9.6</span> Summary</h2>
 <p>You can repeat tasks in R with <code>for</code>, <code>while</code>, and <code>repeat</code> loops. To use <code>for</code>, give it a chunk of code to run and a set of objects to loop through. <code>for</code> will run the code chunk once for each object. If you wish to save the output of your loop, you can assign it to an object that exists outside of the loop.</p>
 <p>Repetition plays an important role in data science. It is the basis for simulation, as well as for estimates of variance and probability. Loops are not the only way to create repetition in R (consider <code>replicate</code> for example), but they are one of the most popular ways.</p>
 <p>Unfortunately, loops in R can sometimes be slower than loops in other languages. As a result, R’s loops get a bad rap. This reputation is not entirely deserved, but it does highlight an important issue. Speed is essential to data analysis. When your code runs fast, you can work with bigger data and do more to it before you run out of time or computational power. <a href="speed.html">Speed</a> will teach you how to write fast <code>for</code> loops and fast code in general with R. There, you will learn to write vectorized code, a style of lightning-fast code that takes advantage of all of R’s strengths.</p>
 <!-- -->
-</section>
-</main>
-<div class="row page-navigation ">
+</section></main><div class="row page-navigation ">
   <div class="nav-page nav-page-previous col">
       <a href="./s3.html">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; S3</span>
@@ -828,8 +799,7 @@ Exercise: Calculate the Expected Value
 </div>
 </div> <!-- /main column -->
 <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
-<nav id="TOC" role="doc-toc">
-<h2 id="toc-title">On this page</h2>
+<nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
 <ul>
 <li><a href="#expected-values" class="nav-link" data-bs-target="#expected-values"> <span class="header-section-number">9.1</span> Expected Values</a></li>
 <li><a href="#expand.grid" class="nav-link" data-bs-target="#expand.grid"> <span class="header-section-number">9.2</span> expand.grid</a></li>
@@ -837,11 +807,9 @@ Exercise: Calculate the Expected Value
 <li><a href="#while-loops" class="nav-link" data-bs-target="#while-loops"> <span class="header-section-number">9.4</span> while Loops</a></li>
 <li><a href="#repeat-loops" class="nav-link" data-bs-target="#repeat-loops"> <span class="header-section-number">9.5</span> repeat Loops</a></li>
 <li><a href="#summary" class="nav-link" data-bs-target="#summary"> <span class="header-section-number">9.6</span> Summary</a></li>
-</ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/loops.Rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
+</ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/loops.Rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
-
 
 
 </body></html>
