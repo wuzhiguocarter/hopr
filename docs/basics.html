@@ -156,7 +156,7 @@
     }
   </style>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
+<body>
 <div id="quarto-search-results"></div>
 <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
     <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">1&nbsp; The Very Basics</h1>
@@ -354,6 +354,26 @@
 </div>
 </nav>
 </div>
+  <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#the-r-user-interface" class="nav-link active" data-scroll-target="#the-r-user-interface"> <span class="header-section-number">1.1</span> The R User Interface</a></li>
+<li><a href="#objects" class="nav-link" data-scroll-target="#objects"> <span class="header-section-number">1.2</span> Objects</a></li>
+<li>
+<a href="#functions" class="nav-link" data-scroll-target="#functions"> <span class="header-section-number">1.3</span> Functions</a>
+<ul class="collapse">
+<li><a href="#sample-with-replacement" class="nav-link" data-scroll-target="#sample-with-replacement"> <span class="header-section-number">1.3.1</span> Sample with Replacement</a></li>
+</ul>
+</li>
+<li>
+<a href="#sec:write-functions" class="nav-link" data-scroll-target="#sec\:write-functions"> <span class="header-section-number">1.4</span> Writing Your Own Functions</a>
+<ul class="collapse">
+<li><a href="#the-function-constructor" class="nav-link" data-scroll-target="#the-function-constructor"> <span class="header-section-number">1.4.1</span> The Function Constructor</a></li>
+</ul>
+</li>
+<li><a href="#arguments" class="nav-link" data-scroll-target="#arguments"> <span class="header-section-number">1.5</span> Arguments</a></li>
+<li><a href="#scripts" class="nav-link" data-scroll-target="#scripts"> <span class="header-section-number">1.6</span> Scripts</a></li>
+<li><a href="#summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">1.7</span> Summary</a></li>
+</ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/basics.Rmd">Edit this page</a></p></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
 <main><header id="title-block-header"><h1 class="title d-none d-lg-block display-7">1&nbsp; The Very Basics</h1>
 </header><p>This chapter provides a broad overview of the R language that will get you programming right away. In it, you will build a pair of virtual dice that you can use to generate random numbers. Don’t worry if you’ve never programmed before; the chapter will teach you everything you need to know.</p>
@@ -869,42 +889,22 @@ Extract function
 <p>The two most important components of the R language are objects, which store data, and functions, which manipulate data. R also uses a host of operators like <code><a href="https://rdrr.io/r/base/Arithmetic.html">+</a></code>, <code><a href="https://rdrr.io/r/base/Arithmetic.html">-</a></code>, <code><a href="https://rdrr.io/r/base/Arithmetic.html">*</a></code>, <code><a href="https://rdrr.io/r/base/Arithmetic.html">/</a></code>, and <code><a href="https://rdrr.io/r/base/assignOps.html">&lt;-</a></code> to do basic tasks. As a data scientist, you will use R objects to store data in your computer’s memory, and you will use functions to automate tasks and do complicated calculations. We will examine objects in more depth later in <a href="cards.html">Project 2: Playing Cards</a> and dig further into functions in <a href="slots.html">Project 3: Slot Machine</a>. The vocabulary you have developed here will make each of those projects easier to understand. However, we’re not done with your dice yet.</p>
 <p>In <a href="packages.html">Packages and Help Pages</a>, you’ll run some simulations on your dice and build your first graphs in R. You’ll also look at two of the most useful components of the R language: R <em>packages</em>, which are collections of functions writted by R’s talented community of developers, and R documentation, which is a collection of help pages built into R that explains every function and data set in the language.</p>
 <!-- -->
-</section></main><div class="row page-navigation ">
-  <div class="nav-page nav-page-previous col">
+</section></main><div class="page-navigation ">
+  <div class="nav-page nav-page-previous">
       <a href="./dice.html">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Project 1: Weighted Dice</span>
       </a>          
   </div>
-  <div class="nav-page nav-page-next col">
+  <div class="nav-page nav-page-next">
       <a href="./packages.html">
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; Packages and Help Pages</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </div>
 </div> <!-- /main column -->
-<div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
-<nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
-<ul>
-<li><a href="#the-r-user-interface" class="nav-link" data-bs-target="#the-r-user-interface"> <span class="header-section-number">1.1</span> The R User Interface</a></li>
-<li><a href="#objects" class="nav-link" data-bs-target="#objects"> <span class="header-section-number">1.2</span> Objects</a></li>
-<li>
-<a href="#functions" class="nav-link" data-bs-target="#functions"> <span class="header-section-number">1.3</span> Functions</a>
-<ul>
-<li><a href="#sample-with-replacement" class="nav-link" data-bs-target="#sample-with-replacement"> <span class="header-section-number">1.3.1</span> Sample with Replacement</a></li>
-</ul>
-</li>
-<li>
-<a href="#sec:write-functions" class="nav-link" data-bs-target="#sec\:write-functions"> <span class="header-section-number">1.4</span> Writing Your Own Functions</a>
-<ul>
-<li><a href="#the-function-constructor" class="nav-link" data-bs-target="#the-function-constructor"> <span class="header-section-number">1.4.1</span> The Function Constructor</a></li>
-</ul>
-</li>
-<li><a href="#arguments" class="nav-link" data-bs-target="#arguments"> <span class="header-section-number">1.5</span> Arguments</a></li>
-<li><a href="#scripts" class="nav-link" data-bs-target="#scripts"> <span class="header-section-number">1.6</span> Scripts</a></li>
-<li><a href="#summary" class="nav-link" data-bs-target="#summary"> <span class="header-section-number">1.7</span> Summary</a></li>
-</ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/basics.Rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
+
 
 
 </body></html>

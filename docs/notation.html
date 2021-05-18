@@ -156,7 +156,7 @@
     }
   </style>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
+<body>
 <div id="quarto-search-results"></div>
 <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
     <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">4&nbsp; R Notation</h1>
@@ -354,6 +354,24 @@
 </div>
 </nav>
 </div>
+  <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
+<ul>
+<li>
+<a href="#selecting-values" class="nav-link active" data-scroll-target="#selecting-values"> <span class="header-section-number">4.1</span> Selecting Values</a>
+<ul class="collapse">
+<li><a href="#positive-integers" class="nav-link" data-scroll-target="#positive-integers"> <span class="header-section-number">4.1.1</span> Positive Integers</a></li>
+<li><a href="#negative-integers" class="nav-link" data-scroll-target="#negative-integers"> <span class="header-section-number">4.1.2</span> Negative Integers</a></li>
+<li><a href="#zero" class="nav-link" data-scroll-target="#zero"> <span class="header-section-number">4.1.3</span> Zero</a></li>
+<li><a href="#blank-spaces" class="nav-link" data-scroll-target="#blank-spaces"> <span class="header-section-number">4.1.4</span> Blank Spaces</a></li>
+<li><a href="#logic" class="nav-link" data-scroll-target="#logic"> <span class="header-section-number">4.1.5</span> Logical Values</a></li>
+<li><a href="#names" class="nav-link" data-scroll-target="#names"> <span class="header-section-number">4.1.6</span> Names</a></li>
+</ul>
+</li>
+<li><a href="#deal-a-card" class="nav-link" data-scroll-target="#deal-a-card"> <span class="header-section-number">4.2</span> Deal a Card</a></li>
+<li><a href="#shuffle-the-deck" class="nav-link" data-scroll-target="#shuffle-the-deck"> <span class="header-section-number">4.3</span> Shuffle the Deck</a></li>
+<li><a href="#dollar-signs-and-double-brackets" class="nav-link" data-scroll-target="#dollar-signs-and-double-brackets"> <span class="header-section-number">4.4</span> Dollar Signs and Double Brackets</a></li>
+<li><a href="#summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">4.5</span> Summary</a></li>
+</ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/notation.Rmd">Edit this page</a></p></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
 <main><header id="title-block-header"><h1 class="title d-none d-lg-block display-7">4&nbsp; R Notation</h1>
 </header><p>Now that you have a deck of cards, you need a way to do card-like things with it. First, you’ll want to reshuffle the deck from time to time. And next, you’ll want to deal cards from the deck (one card at a time, whatever card is on top—we’re not cheaters).</p>
@@ -705,40 +723,22 @@ Never attach
 <p>In <a href="modifying.html">Modifying Values</a>, you’ll take this system a step further and learn how to change the actual values that are stored inside your data frame. This is all adding up to something special: complete control of your data. You can now store your data in your computer, retrieve individual values at will, and use your computer to perform correct calculations with those values.</p>
 <p>Does this sound basic? It may be, but it is also powerful and essential for efficient data science. You no longer need to memorize everything in your head, nor worry about doing mental arithmetic wrong. This low-level control over your data is also a prerequisite for more efficient R programs, the subject of <a href="slots.html">Project 3: Slot Machine</a>.</p>
 <!-- -->
-</section></main><div class="row page-navigation ">
-  <div class="nav-page nav-page-previous col">
+</section></main><div class="page-navigation ">
+  <div class="nav-page nav-page-previous">
       <a href="./objects.html">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; R Objects</span>
       </a>          
   </div>
-  <div class="nav-page nav-page-next col">
+  <div class="nav-page nav-page-next">
       <a href="./modifying.html">
         <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; Modifying Values</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </div>
 </div> <!-- /main column -->
-<div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
-<nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
-<ul>
-<li>
-<a href="#selecting-values" class="nav-link" data-bs-target="#selecting-values"> <span class="header-section-number">4.1</span> Selecting Values</a>
-<ul>
-<li><a href="#positive-integers" class="nav-link" data-bs-target="#positive-integers"> <span class="header-section-number">4.1.1</span> Positive Integers</a></li>
-<li><a href="#negative-integers" class="nav-link" data-bs-target="#negative-integers"> <span class="header-section-number">4.1.2</span> Negative Integers</a></li>
-<li><a href="#zero" class="nav-link" data-bs-target="#zero"> <span class="header-section-number">4.1.3</span> Zero</a></li>
-<li><a href="#blank-spaces" class="nav-link" data-bs-target="#blank-spaces"> <span class="header-section-number">4.1.4</span> Blank Spaces</a></li>
-<li><a href="#logic" class="nav-link" data-bs-target="#logic"> <span class="header-section-number">4.1.5</span> Logical Values</a></li>
-<li><a href="#names" class="nav-link" data-bs-target="#names"> <span class="header-section-number">4.1.6</span> Names</a></li>
-</ul>
-</li>
-<li><a href="#deal-a-card" class="nav-link" data-bs-target="#deal-a-card"> <span class="header-section-number">4.2</span> Deal a Card</a></li>
-<li><a href="#shuffle-the-deck" class="nav-link" data-bs-target="#shuffle-the-deck"> <span class="header-section-number">4.3</span> Shuffle the Deck</a></li>
-<li><a href="#dollar-signs-and-double-brackets" class="nav-link" data-bs-target="#dollar-signs-and-double-brackets"> <span class="header-section-number">4.4</span> Dollar Signs and Double Brackets</a></li>
-<li><a href="#summary" class="nav-link" data-bs-target="#summary"> <span class="header-section-number">4.5</span> Summary</a></li>
-</ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/notation.Rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
+
 
 
 </body></html>

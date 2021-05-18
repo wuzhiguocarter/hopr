@@ -156,7 +156,7 @@
     }
   </style>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
+<body>
 <div id="quarto-search-results"></div>
 <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
     <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">7&nbsp; Programs</h1>
@@ -354,6 +354,21 @@
 </div>
 </nav>
 </div>
+  <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
+<ul>
+<li>
+<a href="#strategy" class="nav-link active" data-scroll-target="#strategy"> <span class="header-section-number">7.1</span> Strategy</a>
+<ul class="collapse">
+<li><a href="#sequential-steps" class="nav-link" data-scroll-target="#sequential-steps"> <span class="header-section-number">7.1.1</span> Sequential Steps</a></li>
+<li><a href="#parallel-cases" class="nav-link" data-scroll-target="#parallel-cases"> <span class="header-section-number">7.1.2</span> Parallel Cases</a></li>
+</ul>
+</li>
+<li><a href="#if-statements" class="nav-link" data-scroll-target="#if-statements"> <span class="header-section-number">7.2</span> if Statements</a></li>
+<li><a href="#else-statements" class="nav-link" data-scroll-target="#else-statements"> <span class="header-section-number">7.3</span> else Statements</a></li>
+<li><a href="#lookup-tables" class="nav-link" data-scroll-target="#lookup-tables"> <span class="header-section-number">7.4</span> Lookup Tables</a></li>
+<li><a href="#code-comments" class="nav-link" data-scroll-target="#code-comments"> <span class="header-section-number">7.5</span> Code Comments</a></li>
+<li><a href="#summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">7.6</span> Summary</a></li>
+</ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/programs.Rmd">Edit this page</a></p></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
 <main><header id="title-block-header"><h1 class="title d-none d-lg-block display-7">7&nbsp; Programs</h1>
 </header><p>In this chapter, you will build a real, working slot machine that you can play by running an R function. When you’re finished, you’ll be able to play it like this:</p>
@@ -1144,37 +1159,22 @@ Exercise: Adjust for Diamonds
 <p>Things often go wrong when people write programs. It will be up to you to find the source of any errors that occur and to fix them. It should be easy to find the source of your errors if you use a stepwise approach to writing functions, writing—and then testing—one bit at a time. However, if the source of an error eludes you, or you find yourself working with large chunks of untested code, consider using R’s built in debugging tools, described in <a href="a5-debug.html">Debugging R Code</a>.</p>
 <p>The next two chapters will teach you more tools that you can use in your programs. As you master these tools, you will find it easier to write R programs that let you do whatever you wish to your data. In <a href="s3.html">S3</a>, you will learn how to use R’s S3 system, an invisible hand that shapes many parts of R. You will use the system to build a custom class for your slot machine output, and you will tell R how to display objects that have your class.</p>
 <!-- -->
-</section></main><div class="row page-navigation ">
-  <div class="nav-page nav-page-previous col">
+</section></main><div class="page-navigation ">
+  <div class="nav-page nav-page-previous">
       <a href="./slots.html">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Project 3: Slot Machine</span>
       </a>          
   </div>
-  <div class="nav-page nav-page-next col">
+  <div class="nav-page nav-page-next">
       <a href="./s3.html">
         <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; S3</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </div>
 </div> <!-- /main column -->
-<div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
-<nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
-<ul>
-<li>
-<a href="#strategy" class="nav-link" data-bs-target="#strategy"> <span class="header-section-number">7.1</span> Strategy</a>
-<ul>
-<li><a href="#sequential-steps" class="nav-link" data-bs-target="#sequential-steps"> <span class="header-section-number">7.1.1</span> Sequential Steps</a></li>
-<li><a href="#parallel-cases" class="nav-link" data-bs-target="#parallel-cases"> <span class="header-section-number">7.1.2</span> Parallel Cases</a></li>
-</ul>
-</li>
-<li><a href="#if-statements" class="nav-link" data-bs-target="#if-statements"> <span class="header-section-number">7.2</span> if Statements</a></li>
-<li><a href="#else-statements" class="nav-link" data-bs-target="#else-statements"> <span class="header-section-number">7.3</span> else Statements</a></li>
-<li><a href="#lookup-tables" class="nav-link" data-bs-target="#lookup-tables"> <span class="header-section-number">7.4</span> Lookup Tables</a></li>
-<li><a href="#code-comments" class="nav-link" data-bs-target="#code-comments"> <span class="header-section-number">7.5</span> Code Comments</a></li>
-<li><a href="#summary" class="nav-link" data-bs-target="#summary"> <span class="header-section-number">7.6</span> Summary</a></li>
-</ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/programs.Rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
+
 
 
 </body></html>

@@ -156,7 +156,7 @@
     }
   </style>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
+<body>
 <div id="quarto-search-results"></div>
 <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
     <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">5&nbsp; Modifying Values</h1>
@@ -354,6 +354,25 @@
 </div>
 </nav>
 </div>
+  <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#changing-values-in-place" class="nav-link active" data-scroll-target="#changing-values-in-place"> <span class="header-section-number">5.1</span> Changing Values in Place</a></li>
+<li>
+<a href="#logical-subsetting" class="nav-link" data-scroll-target="#logical-subsetting"> <span class="header-section-number">5.2</span> Logical Subsetting</a>
+<ul class="collapse">
+<li><a href="#logical-tests" class="nav-link" data-scroll-target="#logical-tests"> <span class="header-section-number">5.2.1</span> Logical Tests</a></li>
+<li><a href="#boolean-operators" class="nav-link" data-scroll-target="#boolean-operators"> <span class="header-section-number">5.2.2</span> Boolean Operators</a></li>
+</ul>
+</li>
+<li>
+<a href="#sec:missing" class="nav-link" data-scroll-target="#sec\:missing"> <span class="header-section-number">5.3</span> Missing Information</a>
+<ul class="collapse">
+<li><a href="#na.rm" class="nav-link" data-scroll-target="#na.rm"> <span class="header-section-number">5.3.1</span> na.rm</a></li>
+<li><a href="#is.na" class="nav-link" data-scroll-target="#is.na"> <span class="header-section-number">5.3.2</span> is.na</a></li>
+</ul>
+</li>
+<li><a href="#summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">5.4</span> Summary</a></li>
+</ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/modifying.Rmd">Edit this page</a></p></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
 <main><header id="title-block-header"><h1 class="title d-none d-lg-block display-7">5&nbsp; Modifying Values</h1>
 </header><p>Are you ready to play some games with your virtual deck? Not so fast! The point system in your deck of cards doesn’t align well with many card games. For example, in war and poker, aces are usually scored higher than kings. They’d have a point value of 14, not 1.</p>
@@ -935,41 +954,22 @@ Exercise: Practice with Tests
 <p>When you work with large data sets, modifying and retrieving values creates a logistical problem of its own. How can you search through the data to find the values that you want to modify or retrieve? As an R user, you can do this with logical subsetting. Create a logical test with logical and Boolean operators and then use the test as an index in R’s bracket notation. R will return the values that you are looking for, even if you do not know where they are.</p>
 <p>Retrieving individual values will not be your only concern as an R programmer. You’ll also need to retrieve entire data sets themselves; for example, you may call one in a function. <a href="environments.html">Environments</a> will teach you how R looks up and saves data sets and other R objects in its environment system. You’ll then use this knowledge to fix the <code>deal</code> and <code>shuffle</code> functions.</p>
 <!-- -->
-</section></main><div class="row page-navigation ">
-  <div class="nav-page nav-page-previous col">
+</section></main><div class="page-navigation ">
+  <div class="nav-page nav-page-previous">
       <a href="./notation.html">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; R Notation</span>
       </a>          
   </div>
-  <div class="nav-page nav-page-next col">
+  <div class="nav-page nav-page-next">
       <a href="./environments.html">
         <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; Environments</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </div>
 </div> <!-- /main column -->
-<div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
-<nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
-<ul>
-<li><a href="#changing-values-in-place" class="nav-link" data-bs-target="#changing-values-in-place"> <span class="header-section-number">5.1</span> Changing Values in Place</a></li>
-<li>
-<a href="#logical-subsetting" class="nav-link" data-bs-target="#logical-subsetting"> <span class="header-section-number">5.2</span> Logical Subsetting</a>
-<ul>
-<li><a href="#logical-tests" class="nav-link" data-bs-target="#logical-tests"> <span class="header-section-number">5.2.1</span> Logical Tests</a></li>
-<li><a href="#boolean-operators" class="nav-link" data-bs-target="#boolean-operators"> <span class="header-section-number">5.2.2</span> Boolean Operators</a></li>
-</ul>
-</li>
-<li>
-<a href="#sec:missing" class="nav-link" data-bs-target="#sec\:missing"> <span class="header-section-number">5.3</span> Missing Information</a>
-<ul>
-<li><a href="#na.rm" class="nav-link" data-bs-target="#na.rm"> <span class="header-section-number">5.3.1</span> na.rm</a></li>
-<li><a href="#is.na" class="nav-link" data-bs-target="#is.na"> <span class="header-section-number">5.3.2</span> is.na</a></li>
-</ul>
-</li>
-<li><a href="#summary" class="nav-link" data-bs-target="#summary"> <span class="header-section-number">5.4</span> Summary</a></li>
-</ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/modifying.Rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
+
 
 
 </body></html>

@@ -156,7 +156,7 @@
     }
   </style>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
+<body>
 <div id="quarto-search-results"></div>
 <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
     <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">6&nbsp; Environments</h1>
@@ -354,6 +354,22 @@
 </div>
 </nav>
 </div>
+  <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#environments" class="nav-link active" data-scroll-target="#environments"> <span class="header-section-number">6.1</span> Environments</a></li>
+<li>
+<a href="#working-with-environments" class="nav-link" data-scroll-target="#working-with-environments"> <span class="header-section-number">6.2</span> Working with Environments</a>
+<ul class="collapse">
+<li><a href="#the-active-environment" class="nav-link" data-scroll-target="#the-active-environment"> <span class="header-section-number">6.2.1</span> The Active Environment</a></li>
+</ul>
+</li>
+<li><a href="#scoping-rules" class="nav-link" data-scroll-target="#scoping-rules"> <span class="header-section-number">6.3</span> Scoping Rules</a></li>
+<li><a href="#assignment" class="nav-link" data-scroll-target="#assignment"> <span class="header-section-number">6.4</span> Assignment</a></li>
+<li><a href="#evaluation" class="nav-link" data-scroll-target="#evaluation"> <span class="header-section-number">6.5</span> Evaluation</a></li>
+<li><a href="#closures" class="nav-link" data-scroll-target="#closures"> <span class="header-section-number">6.6</span> Closures</a></li>
+<li><a href="#summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">6.7</span> Summary</a></li>
+<li><a href="#project-2-wrap-up" class="nav-link" data-scroll-target="#project-2-wrap-up"> <span class="header-section-number">6.8</span> Project 2 Wrap-up</a></li>
+</ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/environments.Rmd">Edit this page</a></p></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
 <main><header id="title-block-header"><h1 class="title d-none d-lg-block display-7">6&nbsp; Environments</h1>
 </header><p>Your deck is now ready for a game of blackjack (or hearts or war), but are your <code>shuffle</code> and <code>deal</code> functions up to snuff? Definitely not. For example, <code>deal</code> deals the same card over and over again:</p>
@@ -876,38 +892,22 @@ Exercise: Rewrite shuffle
 <p>You may not realize it yet, but your expertise makes you a powerful, computer-augmented data user. You can use R to save and work with larger data sets than you could otherwise handle. So far we’ve only worked with <code>deck</code>, a small data set; but you can use the same techniques to work with any data set that fits in your computer’s memory.</p>
 <p>However, storing data is not the only logistical task that you will face as a data scientist. You will often want to do tasks with your data that are so complex or repetitive that they are difficult to do without a computer. Some of the things can be done with functions that already exist in R and its packages, but others cannot. You will be the most versatile as a data scientist if you can write your own programs for computers to follow. R can help you do this. When you are ready, <a href="slots.html">Project 3: Slot Machine</a> will teach you the most useful skills for writing programs in R.</p>
 <!-- -->
-</section></main><div class="row page-navigation ">
-  <div class="nav-page nav-page-previous col">
+</section></main><div class="page-navigation ">
+  <div class="nav-page nav-page-previous">
       <a href="./modifying.html">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; Modifying Values</span>
       </a>          
   </div>
-  <div class="nav-page nav-page-next col">
+  <div class="nav-page nav-page-next">
       <a href="./slots.html">
         <span class="nav-page-text">Project 3: Slot Machine</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </div>
 </div> <!-- /main column -->
-<div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
-<nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
-<ul>
-<li><a href="#environments" class="nav-link" data-bs-target="#environments"> <span class="header-section-number">6.1</span> Environments</a></li>
-<li>
-<a href="#working-with-environments" class="nav-link" data-bs-target="#working-with-environments"> <span class="header-section-number">6.2</span> Working with Environments</a>
-<ul>
-<li><a href="#the-active-environment" class="nav-link" data-bs-target="#the-active-environment"> <span class="header-section-number">6.2.1</span> The Active Environment</a></li>
-</ul>
-</li>
-<li><a href="#scoping-rules" class="nav-link" data-bs-target="#scoping-rules"> <span class="header-section-number">6.3</span> Scoping Rules</a></li>
-<li><a href="#assignment" class="nav-link" data-bs-target="#assignment"> <span class="header-section-number">6.4</span> Assignment</a></li>
-<li><a href="#evaluation" class="nav-link" data-bs-target="#evaluation"> <span class="header-section-number">6.5</span> Evaluation</a></li>
-<li><a href="#closures" class="nav-link" data-bs-target="#closures"> <span class="header-section-number">6.6</span> Closures</a></li>
-<li><a href="#summary" class="nav-link" data-bs-target="#summary"> <span class="header-section-number">6.7</span> Summary</a></li>
-<li><a href="#project-2-wrap-up" class="nav-link" data-bs-target="#project-2-wrap-up"> <span class="header-section-number">6.8</span> Project 2 Wrap-up</a></li>
-</ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/environments.Rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
+
 
 
 </body></html>

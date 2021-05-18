@@ -84,7 +84,7 @@
 <script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
 </head>
-<body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
+<body>
 <div id="quarto-search-results"></div>
 <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
     <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">8&nbsp; S3</h1>
@@ -282,6 +282,22 @@
 </div>
 </nav>
 </div>
+  <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#the-s3-system" class="nav-link active" data-scroll-target="#the-s3-system"> <span class="header-section-number">8.1</span> The S3 System</a></li>
+<li><a href="#attributes" class="nav-link" data-scroll-target="#attributes"> <span class="header-section-number">8.2</span> Attributes</a></li>
+<li><a href="#generic-functions" class="nav-link" data-scroll-target="#generic-functions"> <span class="header-section-number">8.3</span> Generic Functions</a></li>
+<li>
+<a href="#methods" class="nav-link" data-scroll-target="#methods"> <span class="header-section-number">8.4</span> Methods</a>
+<ul class="collapse">
+<li><a href="#method-dispatch" class="nav-link" data-scroll-target="#method-dispatch"> <span class="header-section-number">8.4.1</span> Method Dispatch</a></li>
+</ul>
+</li>
+<li><a href="#classes" class="nav-link" data-scroll-target="#classes"> <span class="header-section-number">8.5</span> Classes</a></li>
+<li><a href="#s3-and-debugging" class="nav-link" data-scroll-target="#s3-and-debugging"> <span class="header-section-number">8.6</span> S3 and Debugging</a></li>
+<li><a href="#s4-and-r5" class="nav-link" data-scroll-target="#s4-and-r5"> <span class="header-section-number">8.7</span> S4 and R5</a></li>
+<li><a href="#summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">8.8</span> Summary</a></li>
+</ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/s3.Rmd">Edit this page</a></p></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
 <main><header id="title-block-header"><h1 class="title d-none d-lg-block display-7">8&nbsp; S3</h1>
 </header><p>You may have noticed that your slot machine results do not look the way I promised they would. I suggested that the slot machine would display its results like this:</p>
@@ -729,38 +745,22 @@ Exercise: Add a Class
 <p>R’s S3 system is more helpful for the tasks of computer science than the tasks of data science, but understanding S3 can help you troubleshoot your work in R as a data scientist.</p>
 <p>You now know quite a bit about how to write R code that performs custom tasks, but how could you repeat these tasks? As a data scientist, you will often repeat tasks, sometimes thousands or even millions of times. Why? Because repetition lets you simulate results and estimate probabilities. <a href="loops.html">Loops</a> will show you how to automate repetition with R’s <code>for</code> and <code>while</code> functions. You’ll use <code>for</code> to simulate various slot machine plays and to calculate the payout rate of your slot machine.</p>
 <!-- -->
-</section></main><div class="row page-navigation ">
-  <div class="nav-page nav-page-previous col">
+</section></main><div class="page-navigation ">
+  <div class="nav-page nav-page-previous">
       <a href="./programs.html">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; Programs</span>
       </a>          
   </div>
-  <div class="nav-page nav-page-next col">
+  <div class="nav-page nav-page-next">
       <a href="./loops.html">
         <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; Loops</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </div>
 </div> <!-- /main column -->
-<div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
-<nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
-<ul>
-<li><a href="#the-s3-system" class="nav-link" data-bs-target="#the-s3-system"> <span class="header-section-number">8.1</span> The S3 System</a></li>
-<li><a href="#attributes" class="nav-link" data-bs-target="#attributes"> <span class="header-section-number">8.2</span> Attributes</a></li>
-<li><a href="#generic-functions" class="nav-link" data-bs-target="#generic-functions"> <span class="header-section-number">8.3</span> Generic Functions</a></li>
-<li>
-<a href="#methods" class="nav-link" data-bs-target="#methods"> <span class="header-section-number">8.4</span> Methods</a>
-<ul>
-<li><a href="#method-dispatch" class="nav-link" data-bs-target="#method-dispatch"> <span class="header-section-number">8.4.1</span> Method Dispatch</a></li>
-</ul>
-</li>
-<li><a href="#classes" class="nav-link" data-bs-target="#classes"> <span class="header-section-number">8.5</span> Classes</a></li>
-<li><a href="#s3-and-debugging" class="nav-link" data-bs-target="#s3-and-debugging"> <span class="header-section-number">8.6</span> S3 and Debugging</a></li>
-<li><a href="#s4-and-r5" class="nav-link" data-bs-target="#s4-and-r5"> <span class="header-section-number">8.7</span> S4 and R5</a></li>
-<li><a href="#summary" class="nav-link" data-bs-target="#summary"> <span class="header-section-number">8.8</span> Summary</a></li>
-</ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/s3.Rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
+
 
 
 </body></html>

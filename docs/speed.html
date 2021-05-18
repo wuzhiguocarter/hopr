@@ -156,7 +156,7 @@
     }
   </style>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#quarto-toc-sidebar">
+<body>
 <div id="quarto-search-results"></div>
 <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
     <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">10&nbsp; Speed</h1>
@@ -354,6 +354,20 @@
 </div>
 </nav>
 </div>
+  <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#vectorized-code" class="nav-link active" data-scroll-target="#vectorized-code"> <span class="header-section-number">10.1</span> Vectorized Code</a></li>
+<li><a href="#how-to-write-vectorized-code" class="nav-link" data-scroll-target="#how-to-write-vectorized-code"> <span class="header-section-number">10.2</span> How to Write Vectorized Code</a></li>
+<li><a href="#how-to-write-fast-for-loops-in-r" class="nav-link" data-scroll-target="#how-to-write-fast-for-loops-in-r"> <span class="header-section-number">10.3</span> How to Write Fast for Loops in R</a></li>
+<li>
+<a href="#vectorized-code-in-practice" class="nav-link" data-scroll-target="#vectorized-code-in-practice"> <span class="header-section-number">10.4</span> Vectorized Code in Practice</a>
+<ul class="collapse">
+<li><a href="#loops-versus-vectorized-code" class="nav-link" data-scroll-target="#loops-versus-vectorized-code"> <span class="header-section-number">10.4.1</span> Loops Versus Vectorized Code</a></li>
+</ul>
+</li>
+<li><a href="#summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">10.5</span> Summary</a></li>
+<li><a href="#project-3-wrap-up" class="nav-link" data-scroll-target="#project-3-wrap-up"> <span class="header-section-number">10.6</span> Project 3 Wrap-up</a></li>
+</ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/speed.Rmd">Edit this page</a></p></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
 <main><header id="title-block-header"><h1 class="title d-none d-lg-block display-7">10&nbsp; Speed</h1>
 </header><p>As a data scientist, you need speed. You can work with bigger data and do more ambitious tasks when your code runs fast. This chapter will show you a specific way to write fast code in R. You will then use the method to simulate 10 million plays of your slot machine.</p>
@@ -808,36 +822,22 @@ Exercise: Advanced Challenge
 <p>A well-rounded data scientist will need to be able to solve each of these problems in many different situations. By learning to program in R, you have mastered the logistical problem, which is a prerequisite for solving the tactical and strategic problems.</p>
 <p>If you would like to learn how to reason with data, or how to transform, visualize, and explore your data sets with R tools, I recommend the book <a href="http://r4ds.had.co.nz/"><em>R for Data Science</em></a>, the companion volume to this book. <em>R for Data Science</em> teaches a simple workflow for transforming, visualizing, and modeling data in R, as well as how to report results with the R Markdown package.</p>
 <!-- -->
-</section></main><div class="row page-navigation ">
-  <div class="nav-page nav-page-previous col">
+</section></main><div class="page-navigation ">
+  <div class="nav-page nav-page-previous">
       <a href="./loops.html">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; Loops</span>
       </a>          
   </div>
-  <div class="nav-page nav-page-next col">
+  <div class="nav-page nav-page-next">
       <a href="./a1-starting.html">
         <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; Installing R and RStudio</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </div>
 </div> <!-- /main column -->
-<div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc">
-<nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
-<ul>
-<li><a href="#vectorized-code" class="nav-link" data-bs-target="#vectorized-code"> <span class="header-section-number">10.1</span> Vectorized Code</a></li>
-<li><a href="#how-to-write-vectorized-code" class="nav-link" data-bs-target="#how-to-write-vectorized-code"> <span class="header-section-number">10.2</span> How to Write Vectorized Code</a></li>
-<li><a href="#how-to-write-fast-for-loops-in-r" class="nav-link" data-bs-target="#how-to-write-fast-for-loops-in-r"> <span class="header-section-number">10.3</span> How to Write Fast for Loops in R</a></li>
-<li>
-<a href="#vectorized-code-in-practice" class="nav-link" data-bs-target="#vectorized-code-in-practice"> <span class="header-section-number">10.4</span> Vectorized Code in Practice</a>
-<ul>
-<li><a href="#loops-versus-vectorized-code" class="nav-link" data-bs-target="#loops-versus-vectorized-code"> <span class="header-section-number">10.4.1</span> Loops Versus Vectorized Code</a></li>
-</ul>
-</li>
-<li><a href="#summary" class="nav-link" data-bs-target="#summary"> <span class="header-section-number">10.5</span> Summary</a></li>
-<li><a href="#project-3-wrap-up" class="nav-link" data-bs-target="#project-3-wrap-up"> <span class="header-section-number">10.6</span> Project 3 Wrap-up</a></li>
-</ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/speed.Rmd">Edit this page</a></p></div></div></nav></div> <!-- /toc column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
+
 
 
 </body></html>
