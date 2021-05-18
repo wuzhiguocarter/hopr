@@ -132,6 +132,9 @@
     .quarto-layout-cell-subref figcaption {
       font-style: italic;
     }
+    .quarto-figure {
+      position: relative;
+    }
     .quarto-figure > figure {
       width: 100%;
     }
@@ -416,7 +419,7 @@
 <span class="co">##  0.064  0.216  0.512  1.000</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/qplot.html">qplot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig:qplot" class="quarto-figure quarto-figure-center">
+<div id="fig:qplot" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0201.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.1: <code>qplot</code> makes a scatterplot when you give it two vectors.</figcaption><p></p>
 </figure>
@@ -426,7 +429,7 @@
 <p>Let’s take a look at a histogram to see if this makes sense. <code>qplot</code> will make a histogram whenever you give it only <em>one</em> vector to plot. The following code makes the left-hand plot in <a href="#fig:hist">fig.&nbsp;<span>2.2</span></a> (we’ll worry about the right-hand plot in just second). To make sure our graphs look the same, use the extra argument <em><code>binwidth = 1</code></em>:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">3</span><span class="op">)</span>
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/qplot.html">qplot</a></span><span class="op">(</span><span class="va">x</span>, binwidth <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig:hist" class="quarto-figure quarto-figure-center">
+<div id="fig:hist" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0202.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.2: <code>qplot</code> makes a histogram when you give it a single vector.</figcaption><p></p>
 </figure>
@@ -452,7 +455,7 @@
 
 <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fu">roll</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="co">## 3  7  5  3  6  2  3  8 11  7</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig:probs" class="quarto-figure quarto-figure-center">
+<div id="fig:probs" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0203.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.3: Each individual dice combination should occur with the same frequency. As a result, some sums will occur more often than others. With fair dice, each sum should appear in proportion to the number of combinations that make it.</figcaption><p></p>
 </figure>
@@ -462,7 +465,7 @@
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/qplot.html">qplot</a></span><span class="op">(</span><span class="va">rolls</span>, binwidth <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The results suggest that the dice are fair. Over the long run, each number occurs in proportion to the number of combinations that generate it.</p>
 <p>Now how can you bias these results? The previous pattern occurs because each underlying combination of dice (e.g., (3,4)) occurs with the same frequency. If you could increase the probability that a 6 is rolled on either die, then any combination with a six in it will occur more often than any combination without a six in it. The combination (6, 6) would occur most of all. This won’t make the dice add up to 12 more often than they add up to seven, but it will skew the results toward the higher numbers.</p>
-<div id="fig:fair" class="quarto-figure quarto-figure-center">
+<div id="fig:fair" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0204.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.4: The behavior of our dice suggests that they are fair. Seven occurs more often than any other number, and frequencies diminish in proportion to the number of die combinations that create each number.</figcaption><p></p>
 </figure>
@@ -593,7 +596,7 @@ Exercise: Roll a Pair of Dice
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">rolls</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span><span class="op">(</span><span class="fl">10000</span>, <span class="fu">roll</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/qplot.html">qplot</a></span><span class="op">(</span><span class="va">rolls</span>, binwidth <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This confirms that we’ve effectively weighted the dice. High numbers occur much more often than low numbers. The remarkable thing is that this behavior will only be apparent when you examine long-term frequencies. On any single roll, the dice will appear to behave randomly. This is great news if you play Settlers of Catan (just tell your friends you lost the dice), but it should be disturbing if you analyze data, because it means that bias can easily occur without anyone noticing it in the short run.</p>
-<div id="fig:weighted" class="quarto-figure quarto-figure-center">
+<div id="fig:weighted" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0205.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.5: The dice are now clearly biased towards high numbers, since high sums occur much more often than low sums.</figcaption><p></p>
 </figure>
@@ -632,7 +635,6 @@ Exercise: Roll a Pair of Dice
 </div> <!-- /main column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
-
 
 
 </body></html>

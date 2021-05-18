@@ -12,6 +12,7 @@ book:
     objects, navigate R's environment system, write your own functions, and
     use all of R's programming tools. Throughout the book, you'll use your
     newfound skills to solve practical data science problems.
+  cover-image: images/cover.png
   site-url: https://rstudio-education.github.io/hopr/
   repo-url: https://github.com/jjallaire/hopr/
   repo-branch: master
@@ -46,5 +47,6 @@ book:
 format:
   html: 
     theme: cosmo
+    cover-image: cover.png
     code-link: true
 

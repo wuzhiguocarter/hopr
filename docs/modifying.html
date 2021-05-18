@@ -132,6 +132,9 @@
     .quarto-layout-cell-subref figcaption {
       font-style: italic;
     }
+    .quarto-figure {
+      position: relative;
+    }
     .quarto-figure > figure {
       width: 100%;
     }
@@ -487,7 +490,7 @@
 <section class="level3" data-number="5.2.1"><h3 data-number="5.2.1" class="anchored" id="logical-tests">
 <span class="header-section-number">5.2.1</span> Logical Tests</h3>
 <p>A logical test is a comparison like “is one less than two?”, <code>1 &lt; 2</code>, or “is three greater than four?”, <code>3 &gt; 4</code>. R provides seven logical operators that you can use to make comparisons, shown in <a href="#tbl:logop">tbl.&nbsp;<span>5.1</span></a>.</p>
-<div id="tbl:logop">
+<div id="tbl:logop" class="anchored">
 <table class="table">
 <caption>Table 5.1: R’s Logical Operators </caption>
 <thead><tr class="header">
@@ -706,7 +709,7 @@ Exercise: Score the Deck for Hearts
 </section><section class="level3" data-number="5.2.2"><h3 data-number="5.2.2" class="anchored" id="boolean-operators">
 <span class="header-section-number">5.2.2</span> Boolean Operators</h3>
 <p>Boolean operators are things like <em>and</em> (<code><a href="https://rdrr.io/r/base/Logic.html">&amp;</a></code>) and <em>or</em> (<code><a href="https://rdrr.io/r/base/Logic.html">|</a></code>). They collapse the results of multiple logical tests into a single <code>TRUE</code> or <code>FALSE</code>. R has six boolean operators, shown in <a href="#tbl:boole">tbl.&nbsp;<span>5.2</span></a>.</p>
-<div id="tbl:boole">
+<div id="tbl:boole" class="anchored">
 <table class="table">
 <caption>Table 5.2: Boolean operators </caption>
 <thead><tr class="header">
@@ -762,7 +765,7 @@ The most common mistake with Boolean operators
 <p>It is easy to forget to put a complete test on either side of a Boolean operator. In English, it is efficient to say “Is <em>x</em> greater than two and less than nine?” But in R, you need to write the equivalent of “Is <em>x</em> greater than two and <em>is x</em> less than nine?” This is shown in <a href="#fig:boolean">fig.&nbsp;<span>5.1</span></a>.</p>
 </div>
 </div>
-<div id="fig:boolean" class="quarto-figure quarto-figure-center">
+<div id="fig:boolean" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0501.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5.1: R will evaluate the expressions on each side of a Boolean operator separately, and then combine the results into a single TRUE or FALSE. If you do not supply a complete test to each side of the operator, R will return an error.</figcaption><p></p>
 </figure>
@@ -969,7 +972,6 @@ Exercise: Practice with Tests
 </div> <!-- /main column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
-
 
 
 </body></html>

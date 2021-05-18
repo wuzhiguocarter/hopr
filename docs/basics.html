@@ -132,6 +132,9 @@
     .quarto-layout-cell-subref figcaption {
       font-style: italic;
     }
+    .quarto-figure {
+      position: relative;
+    }
     .quarto-figure > figure {
       width: 100%;
     }
@@ -383,7 +386,7 @@
 <section class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" id="the-r-user-interface">
 <span class="header-section-number">1.1</span> The R User Interface</h2>
 <p>Before you can ask your computer to save some numbers, you’ll need to know how to talk to it. That’s where R and RStudio come in. RStudio gives you a way to talk to your computer. R gives you a language to speak in. To get started, open RStudio just as you would open any other application on your computer. When you do, a window should appear in your screen like the one shown in <a href="#fig:console">fig.&nbsp;<span>1.1</span></a>.</p>
-<div id="fig:console" class="quarto-figure quarto-figure-center">
+<div id="fig:console" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0101.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.1: Your computer does your bidding when you type R commands at the prompt in the bottom line of the console pane. Don’t forget to hit the Enter key. When you first open RStudio, the console appears in the pane on your left, but you can change this with File &gt; Preferences in the menu bar.</figcaption><p></p>
 </figure>
@@ -535,7 +538,7 @@ Exercise: Magic with Numbers
 <span class="va">die</span>
 <span class="co">## 1 2 3 4 5 6</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>When you create an object, the object will appear in the environment pane of RStudio, as shown in <a href="#fig:environment">fig.&nbsp;<span>1.2</span></a>. This pane will show you all of the objects you’ve created since opening RStudio.</p>
-<div id="fig:environment" class="quarto-figure quarto-figure-center">
+<div id="fig:environment" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0102.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.2: The RStudio environment pane keeps track of the R objects you create.</figcaption><p></p>
 </figure>
@@ -610,7 +613,7 @@ Capitalization
 <span class="co">## 1  4  9 16 25 36</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If you are a big fan of linear algebra (and who isn’t?), you may notice that R does not always follow the rules of matrix multiplication. Instead, R uses <em>element-wise execution</em>. When you manipulate a set of numbers, R will apply the same operation to each element in the set. So for example, when you run <em><code>die - 1</code></em>, R subtracts one from each element of <code>die</code>.</p>
 <p>When you use two or more vectors in an operation, R will line up the vectors and perform a sequence of individual operations. For example, when you run <em><code>die * die</code></em>, R lines up the two <code>die</code> vectors and then multiplies the first element of vector 1 by the first element of vector 2. R then multiplies the second element of vector 1 by the second element of vector 2, and so on, until every element has been multiplied. The result will be a new vector the same length as the first two, as shown in <a href="#fig:elementwise">fig.&nbsp;<span>1.3</span></a>.</p>
-<div id="fig:elementwise" class="quarto-figure quarto-figure-center">
+<div id="fig:elementwise" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0103.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.3: When R performs element-wise execution, it matches up vectors and then manipulates each pair of elements independently.</figcaption><p></p>
 </figure>
@@ -633,7 +636,7 @@ Capitalization
 <span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>Warning message<span class="sc">:</span></span>
 <span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>In die <span class="sc">+</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span> <span class="sc">:</span></span>
 <span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>  longer object length is not a multiple of shorter object length</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig:recycle" class="quarto-figure quarto-figure-center">
+<div id="fig:recycle" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0104.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.4: R will repeat a short vector to do element-wise operations with two vectors of uneven lengths.</figcaption><p></p>
 </figure>
@@ -671,7 +674,7 @@ Capitalization
 
 <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">die</span><span class="op">)</span><span class="op">)</span>
 <span class="co">## 4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig:pemdas" class="quarto-figure quarto-figure-center">
+<div id="fig:pemdas" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0105.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.5: When you link functions together, R will resolve them from the innermost operation to the outermost. Here R first looks up die, then calculates the mean of one through six, then rounds the mean.</figcaption><p></p>
 </figure>
@@ -846,7 +849,7 @@ Capitalization
 <p>You can give your functions as many arguments as you like. Just list their names, separated by commas, in the parentheses that follow <code>function</code>. When the function is run, R will replace each argument name in the function body with the value that the user supplies for the argument. If the user does not supply a value, R will replace the argument name with the argument’s default value (if you defined one).</p>
 <p>To summarize, <code>function</code> helps you construct your own R functions. You create a body of code for your function to run by writing code between the braces that follow <code>function</code>. You create arguments for your function to use by supplying their names in the parentheses that follow <code>function</code>. Finally, you give your function a name by saving its output to an R object, as shown in <a href="#fig:functions">fig.&nbsp;<span>1.6</span></a>.</p>
 <p>Once you’ve created your function, R will treat it like every other function in R. Think about how useful this is. Have you ever tried to create a new Excel option and add it to Microsoft’s menu bar? Or a new slide animation and add it to Powerpoint’s options? When you work with a programming language, you can do these types of things. As you learn to program in R, you will be able to create new, customized, reproducible tools for yourself whenever you like. <a href="#slots">Project 3: Slot Machine</a> will teach you much more about writing functions in R.</p>
-<div id="fig:functions" class="quarto-figure quarto-figure-center">
+<div id="fig:functions" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0106.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.6: Every function in R has the same parts, and you can use function to create these parts. Assign the result to a name, so you can call the function later.</figcaption><p></p>
 </figure>
@@ -855,14 +858,14 @@ Capitalization
 <span class="header-section-number">1.6</span> Scripts</h2>
 <p>What if you want to edit <code>roll2</code> again? You could go back and retype each line of code in <code>roll2</code>, but it would be so much easier if you had a draft of the code to start from. You can create a draft of your code as you go by using an R <em>script</em>. An R script is just a plain text file that you save R code in. You can open an R script in RStudio by going to <code>File &gt; New File &gt; R script</code> in the menu bar. RStudio will then open a fresh script above your console pane, as shown in <a href="#fig:script">fig.&nbsp;<span>1.7</span></a>.</p>
 <p>I strongly encourage you to write and edit all of your R code in a script before you run it in the console. Why? This habit creates a reproducible record of your work. When you’re finished for the day, you can save your script and then use it to rerun your entire analysis the next day. Scripts are also very handy for editing and proofreading your code, and they make a nice copy of your work to share with others. To save a script, click the scripts pane, and then go to <code>File &gt; Save As</code> in the menu bar.</p>
-<div id="fig:script" class="quarto-figure quarto-figure-center">
+<div id="fig:script" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0107.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.7: When you open an R Script (File &gt; New File &gt; R Script in the menu bar), RStudio creates a fourth pane above the console where you can write and edit your code.</figcaption><p></p>
 </figure>
 </div>
 <p>RStudio comes with many built-in features that make it easy to work with scripts. First, you can automatically execute a line of code in a script by clicking the Run button, as shown in <a href="#fig:run">fig.&nbsp;<span>1.8</span></a>.</p>
 <p>R will run whichever line of code your cursor is on. If you have a whole section highlighted, R will run the highlighted code. Alternatively, you can run the entire script by clicking the Source button. Don’t like clicking buttons? You can use Control + Return as a shortcut for the Run button. On Macs, that would be Command + Return.</p>
-<div id="fig:run" class="quarto-figure quarto-figure-center">
+<div id="fig:run" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0108.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.8: You can run a highlighted portion of code in your script if you click the Run button at the top of the scripts pane. You can run the entire script by clicking the Source button.</figcaption><p></p>
 </figure>
@@ -904,7 +907,6 @@ Extract function
 </div> <!-- /main column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
-
 
 
 </body></html>

@@ -4,7 +4,7 @@ knit: quarto render
 
 ## Welcome {.unnumbered}
 
-<a href="https://www.amazon.com/Hands-Programming-Write-Functions-Simulations/dp/1449359019"><img src="cover.png" alt="Cover image" width="285" height="375" align="right" style="margin: 0 1em 0 1em"/></a> This is the website for **"Hands-On Programming with R"**. This book will teach you how to program in R, with hands-on examples. I wrote it for non-programmers to provide a friendly introduction to the R language. You'll learn how to load data, assemble and disassemble data objects, navigate R's environment system, write your own functions, and use all of R's programming tools. Throughout the book, you'll use your newfound skills to solve practical data science problems.
+This is the website for **"Hands-On Programming with R"**. This book will teach you how to program in R, with hands-on examples. I wrote it for non-programmers to provide a friendly introduction to the R language. You'll learn how to load data, assemble and disassemble data objects, navigate R's environment system, write your own functions, and use all of R's programming tools. Throughout the book, you'll use your newfound skills to solve practical data science problems.
 
 If you are already comfortable with R, and would like to focus instead how to analyze data using R's Tidyverse packages, I recommend [R for Data Science](http://r4ds.had.co.nz/), a book that I co-authored with Hadley Wickham.
 

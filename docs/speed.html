@@ -132,6 +132,9 @@
     .quarto-layout-cell-subref figcaption {
       font-style: italic;
     }
+    .quarto-figure {
+      position: relative;
+    }
     .quarto-figure > figure {
       width: 100%;
     }
@@ -449,7 +452,7 @@ Exercise: How fast is abs?
 <li>Use logical subsetting to handle parallel cases. Try to manipulate every element in a case at once.</li>
 </ol>
 <p><code>abs_loop</code> and <code>abs_set</code> illustrate these rules. The functions both handle two cases and perform one sequential step, <a href="#fig:abs">fig.&nbsp;<span>10.1</span></a>. If a number is positive, the functions leave it alone. If a number is negative, the functions multiply it by negative one.</p>
-<div id="fig:abs" class="quarto-figure quarto-figure-center">
+<div id="fig:abs" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_1001.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.1: <code>abs_loop</code> uses a for loop to sift data into one of two cases: negative numbers and nonnegative numbers.</figcaption><p></p>
 </figure>
@@ -465,7 +468,7 @@ Exercise: How fast is abs?
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">&lt;</span> <span class="fl">0</span><span class="op">]</span> <span class="op">*</span> <span class="op">-</span><span class="fl">1</span>
 <span class="co">## 2  4  6  8 10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Finally, you can use R’s assignment operator, which is also vectorized, to save the new set over the old set in the original <code>vec</code> object. Since <code><a href="https://rdrr.io/r/base/assignOps.html">&lt;-</a></code> is vectorized, the elements of the new set will be paired up to the elements of the old set, in order, and then element-wise assignment will occur. As a result, each negative value will be replaced by its positive partner, as in <a href="#fig:assignment">fig.&nbsp;<span>10.2</span></a>.</p>
-<div id="fig:assignment" class="quarto-figure quarto-figure-center">
+<div id="fig:assignment" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_1002.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.2: Use logical subsetting to modify groups of values in place. R’s arithmetic and assignment operators are vectorized, which lets you manipulate and update multiple values at once.</figcaption><p></p>
 </figure>
@@ -536,7 +539,7 @@ Exercise: Vectorize a Function
 
 <span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"0"</span><span class="op">]</span>
 <span class="co">## "0"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig:change" class="quarto-figure quarto-figure-center">
+<div id="fig:change" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_1003.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.3: <code>change_many</code> does something different for each of seven cases.</figcaption><p></p>
 </figure>
@@ -814,7 +817,7 @@ Exercise: Advanced Challenge
 <li>
 <strong>A strategic problem</strong> - How can you use the data to draw conclusions about the world at large?</li>
 </ul>
-<div id="fig:venn" class="quarto-figure quarto-figure-center">
+<div id="fig:venn" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_1004.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.4: The three core skill sets of data science: computer programming, data comprehension, and scientific reasoning.</figcaption><p></p>
 </figure>
@@ -837,7 +840,6 @@ Exercise: Advanced Challenge
 </div> <!-- /main column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
-
 
 
 </body></html>

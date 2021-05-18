@@ -132,6 +132,9 @@
     .quarto-layout-cell-subref figcaption {
       font-style: italic;
     }
+    .quarto-figure {
+      position: relative;
+    }
     .quarto-figure > figure {
       width: 100%;
     }
@@ -435,7 +438,7 @@ Repetition
 <span class="co">## king spades    13</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="fig:positive" class="quarto-figure quarto-figure-center">
+<div id="fig:positive" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0401.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.1: R uses the <em>ij</em> notation system of linear algebra. The commands in this figure will return the shaded values.</figcaption><p></p>
 </figure>
@@ -521,7 +524,7 @@ Indexing begins at 1
 <span class="va">deck</span><span class="op">[</span><span class="va">rows</span>, <span class="op">]</span>
 <span class="co">## face   suit value</span>
 <span class="co">## king spades    13</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig:logicals" class="quarto-figure quarto-figure-center">
+<div id="fig:logicals" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0402.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.2: You can use vectors of TRUEs and FALSEs to tell R exactly which values you want to extract and which you do not. The command would return just the numbers 1, 6, and 5.</figcaption><p></p>
 </figure>
@@ -696,7 +699,7 @@ Exercise: Shuffle a Deck
 <span class="va">lst</span><span class="op">[[</span><span class="st">"numbers"</span><span class="op">]</span><span class="op">]</span>
 <span class="co">## 1 2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This difference is subtle but important. In the R community, there is a popular, and helpful, way to think about it, <a href="#fig:trains">fig.&nbsp;<span>4.3</span></a>. Imagine that each list is a train and each element is a train car. When you use single brackets, R selects individual train cars and returns them as a new train. Each car keeps its contents, but those contents are still inside a train car (i.e., a list). When you use double brackets, R actually unloads the car and gives you back the contents.</p>
-<div id="fig:trains" class="quarto-figure quarto-figure-center">
+<div id="fig:trains" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0403.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.3: It can be helpful to think of your list as a train. Use single brackets to select train cars, double brackets to select the contents inside of a car.</figcaption><p></p>
 </figure>
@@ -738,7 +741,6 @@ Never attach
 </div> <!-- /main column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
-
 
 
 </body></html>

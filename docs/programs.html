@@ -132,6 +132,9 @@
     .quarto-layout-cell-subref figcaption {
       font-style: italic;
     }
+    .quarto-figure {
+      position: relative;
+    }
     .quarto-figure > figure {
       width: 100%;
     }
@@ -405,7 +408,7 @@
 <p>Otherwise, the player receives no prize.</p>
 <p>The monetary value of the prize is determined by the exact combination of symbols and is further modified by the presence of diamonds. Diamonds are treated like “wild cards,” which means they can be considered any other symbol if it would increase a player’s prize. For example, a player who rolls <code>7</code> <code>7</code> <code>DD</code> would earn a prize for getting three sevens. There is one exception to this rule, however: a diamond cannot be considered a cherry unless the player also gets one real cherry. This prevents a dud roll like, <code>0</code> <code>DD</code> <code>0</code> from being scored as <code>0</code> <code>C</code> <code>0</code>.</p>
 <p>Diamonds are also special in another way. Every diamond that appears in a combination doubles the amount of the final prize. So <code>7</code> <code>7</code> <code>DD</code> would actually be scored <em>higher</em> than <code>7</code> <code>7</code> <code>7</code>. Three sevens would earn you $80, but two sevens and a diamond would earn you $160. One seven and two diamonds would be even better, resulting in a prize that has been doubled twice, or $320. A jackpot occurs when a player rolls <code>DD</code> <code>DD</code> <code>DD</code>. Then a player earns $100 doubled three times, which is $800.</p>
-<div id="tbl:prizes">
+<div id="tbl:prizes" class="anchored">
 <table class="table">
 <caption>Table 7.1: Each play of the slot machine costs $1. A player’s symbols determine how much they win. Diamonds (<code>DD</code>) are wild, and each diamond doubles the final prize. * = any symbol </caption>
 <thead><tr class="header">
@@ -517,7 +520,7 @@
   <span class="fu">score</span><span class="op">(</span><span class="va">symbols</span><span class="op">)</span>
 <span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To have R execute steps in sequence, place the steps one after another in an R script or function body.</p>
-<div id="fig:subdivide1" class="quarto-figure quarto-figure-center">
+<div id="fig:subdivide1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0701.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 7.1: The play function uses a series of steps.</figcaption><p></p>
 </figure>
@@ -529,12 +532,12 @@
 <p>Diamonds complicate all of this because diamonds can be treated as wild cards. Let’s ignore that for now and focus on the simpler case where diamonds double the prize but are not wilds. <code>score</code> can double the prize as necessary after it runs one of the following algorithms, as shown in <a href="#fig:subdivide2">fig.&nbsp;<span>7.2</span></a>.</p>
 <p>Adding the <code>score</code> cases to the <code>play</code> steps reveals a strategy for the complete slot machine program, as shown in <a href="#fig:subdivide3">fig.&nbsp;<span>7.3</span></a>.</p>
 <p>We’ve already solved the first few steps in this strategy. Our program can get three slot machine symbols with the <code>get_symbols</code> function. Then it can display the symbols with the <code>print</code> function. Now let’s examine how the program can handle the parallel score cases.</p>
-<div id="fig:subdivide2" class="quarto-figure quarto-figure-center">
+<div id="fig:subdivide2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0702.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 7.2: The score function must distinguish between parallel cases.</figcaption><p></p>
 </figure>
 </div>
-<div id="fig:subdivide3" class="quarto-figure quarto-figure-center">
+<div id="fig:subdivide3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0703.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 7.3: The complete slot machine simulation will involve subtasks that are arranged both in series and in parallel.</figcaption><p></p>
 </figure>
@@ -720,7 +723,7 @@ Exercise: Quiz C
 <p>Our skeleton is rather incomplete; there are many sections that are just code comments instead of real code. However, we’ve reduced the program to eight simple subtasks:</p>
 <p><strong>&lt;1&gt;</strong> - Test whether the symbols are three of a kind.<br><strong>&lt;2&gt;</strong> - Test whether the symbols are all bars.<br><strong>&lt;3&gt;</strong> - Look up the prize for three of a kind based on the common symbol.<br><strong>&lt;4&gt;</strong> - Assign a prize of $5.<br><strong>&lt;5&gt;</strong> - Count the number of cherries.<br><strong>&lt;6&gt;</strong> - Count the number of diamonds.<br><strong>&lt;7&gt;</strong> - Calculate a prize based on the number of cherries.<br><strong>&lt;8&gt;</strong> - Adjust the prize for diamonds.</p>
 <p>If you like, you can reorganize your flow chart around these tasks, as in <a href="#fig:subdivide4">fig.&nbsp;<span>7.4</span></a>. The chart will describe the same strategy, but in a more precise way. I’ll use a diamond shape to symbolize an <code>if else</code> decision.</p>
-<div id="fig:subdivide4" class="quarto-figure quarto-figure-center">
+<div id="fig:subdivide4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0704.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 7.4: score can navigate three cases with two if else decisions. We can also break some of our tasks into two steps.</figcaption><p></p>
 </figure>
@@ -1174,7 +1177,6 @@ Exercise: Adjust for Diamonds
 </div> <!-- /main column -->
 </div> <!-- /row -->
 </div> <!-- /container fluid -->
-
 
 
 </body></html>
