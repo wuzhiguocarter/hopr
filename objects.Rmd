@@ -19,7 +19,7 @@ eight spades     8
 ...
 ```
 
-Do you need to build a data set from scratch to use it in R? Not at all. You can load most data sets into R with one simple step, see [Loading Data]{#sec:loading-data}. But this exercise will teach you how R stores data, and how you can assemble---or disassemble---your own data sets. You will also learn about the various types of objects available for you to use in R (not all R objects are the same!). Consider this exercise a rite of passage; by doing it, you will become an expert on storing data in R.
+Do you need to build a data set from scratch to use it in R? Not at all. You can load most data sets into R with one simple step, see [Loading Data](#sec:loading-data). But this exercise will teach you how R stores data, and how you can assemble---or disassemble---your own data sets. You will also learn about the various types of objects available for you to use in R (not all R objects are the same!). Consider this exercise a rite of passage; by doing it, you will become an expert on storing data in R.
 
 We'll start with the very basics. The most simple type of object in R is an *atomic vector*. Atomic vectors are not nuclear powered, but they are very simple and they do show up everywhere. If you look closely enough, you'll see that most structures in R are built from atomic vectors.
 
