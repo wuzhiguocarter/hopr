@@ -2,7 +2,7 @@
 knit: quarto render
 ---
 
-# Project 3: Slot Machine {#sec:project-slots}
+# Project 3: Slot Machine {#sec-project-slots}
 
 Slot machines are the most popular game in modern casinos. If you've never seen one, a slot machine resembles an arcade game that has a lever on its side. For a small fee you can pull the lever, and the machine will generate a random combination of three symbols. If the correct combination appears, you can win a prize, maybe even the jackpot.
 

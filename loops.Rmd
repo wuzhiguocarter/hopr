@@ -2,7 +2,7 @@
 knit: quarto render
 ---
 
-# Loops {#sec:loops}
+# Loops {#sec-loops}
 
 Loops are R's method for repeating a task, which makes them a useful tool for programming simulations. This chapter will teach you how to use R's loop tools.
 
@@ -20,7 +20,7 @@ $$
 
 You can think of the expected value as the average prize that you would observe if you played the slot machine an infinite number of times. Let's use the formula to calculate some simple expected values. Then we will apply the formula to your slot machine.
 
-Do you remember the `die` you created in [Project 1: Weighted Dice](#sec:project-dice)?
+Do you remember the `die` you created in [Project 1: Weighted Dice](#sec-project-dice)?
 
 ``` {.r}
 die <- c(1, 2, 3, 4, 5, 6)
@@ -44,7 +44,7 @@ $$
 
 Hence, the expected value of rolling a fair die is 3.5. You may notice that this is also the average value of the die. The expected value will equal the average if every outcome has the same chance of occurring.
 
-But what if each outcome has a different chance of occurring? For example, we weighted our dice in [Packages and Help Pages](#sec:packages-and-help) so that each die rolled 1, 2, 3, 4, and 5 with probability 1/8 and 6 with probability 3/8. You can use the same formula to calculate the expected value in these conditions:
+But what if each outcome has a different chance of occurring? For example, we weighted our dice in [Packages and Help Pages](#sec-packages-and-help) so that each die rolled 1, 2, 3, 4, and 5 with probability 1/8 and 6 with probability 3/8. You can use the same formula to calculate the expected value in these conditions:
 
 $$
 \begin{array}{rl}
@@ -641,4 +641,4 @@ You can repeat tasks in R with `for`, `while`, and `repeat` loops. To use `for`,
 
 Repetition plays an important role in data science. It is the basis for simulation, as well as for estimates of variance and probability. Loops are not the only way to create repetition in R (consider `replicate` for example), but they are one of the most popular ways.
 
-Unfortunately, loops in R can sometimes be slower than loops in other languages. As a result, R's loops get a bad rap. This reputation is not entirely deserved, but it does highlight an important issue. Speed is essential to data analysis. When your code runs fast, you can work with bigger data and do more to it before you run out of time or computational power. [Speed](#sec:speed) will teach you how to write fast `for` loops and fast code in general with R. There, you will learn to write vectorized code, a style of lightning-fast code that takes advantage of all of R's strengths.
+Unfortunately, loops in R can sometimes be slower than loops in other languages. As a result, R's loops get a bad rap. This reputation is not entirely deserved, but it does highlight an important issue. Speed is essential to data analysis. When your code runs fast, you can work with bigger data and do more to it before you run out of time or computational power. [Speed](#sec-speed) will teach you how to write fast `for` loops and fast code in general with R. There, you will learn to write vectorized code, a style of lightning-fast code that takes advantage of all of R's strengths.

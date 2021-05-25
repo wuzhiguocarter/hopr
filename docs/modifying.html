@@ -80,7 +80,9 @@
 <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]--><script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><meta name="quarto:offset" content=".">
-<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><link href="./environments.html" rel="next">
+<link href="./notation.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
@@ -130,6 +132,7 @@
        display: inline-table;
     }
     .quarto-layout-cell-subref figcaption {
+      text-align: center;
       font-style: italic;
     }
     .quarto-figure {
@@ -158,6 +161,32 @@
       margin-top: 0.5em;
     }
   </style>
+<style type="text/css">
+    details {
+      margin-bottom: 1em;
+    } 
+    details[show] {
+      margin-bottom: 0;
+    }
+
+    .quarto-unresolved-ref {
+      font-weight: 600;
+    }
+
+    .quarto-cover-image {
+      max-width: 35%;
+      float: right;
+      margin-left: 30px;
+    }
+
+    .cell-output-display {
+      overflow-x: scroll;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
@@ -170,27 +199,29 @@
 </nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-2 text-left">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll"><div class="px-3 pt-lg-2 text-left">
     <div class="sidebar-title mt-1 mb-0 py-0">
+      <a href="./">
       Hands-On Programming with R
+      </a>
         <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -199,8 +230,8 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2">
-      <div class="sidebar-search flex-fill">
+    <div class="d-flex px-3 mt-2 flex-shrink-0">
+      <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
@@ -210,19 +241,19 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -245,9 +276,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./dice.html" class="">Project 1: Weighted Dice</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project1weighteddice-collapse">
@@ -269,9 +300,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./cards.html" class="">Project 2: Playing Cards</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project2playingcards-collapse">
@@ -299,9 +330,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./slots.html" class="">Project 3: Slot Machine</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project3slotmachine-collapse">
@@ -325,12 +356,12 @@
 <ul class="list-unstyled sidebar-section depth1">
 <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Appendices
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="appendices-collapse">
         <ul class="list-unstyled sidebar-item-contents">
@@ -368,7 +399,7 @@
 </ul>
 </li>
 <li>
-<a href="#sec:missing" class="nav-link" data-scroll-target="#sec\:missing"> <span class="header-section-number">5.3</span> Missing Information</a>
+<a href="#sec-missing" class="nav-link" data-scroll-target="#sec-missing"> <span class="header-section-number">5.3</span> Missing Information</a>
 <ul class="collapse">
 <li><a href="#na.rm" class="nav-link" data-scroll-target="#na.rm"> <span class="header-section-number">5.3.1</span> na.rm</a></li>
 <li><a href="#is.na" class="nav-link" data-scroll-target="#is.na"> <span class="header-section-number">5.3.2</span> is.na</a></li>
@@ -480,7 +511,7 @@
 <p>Why not ask R to find the aces for you? You can do this with logical subsetting. Logical subsetting provides a way to do targeted extraction and modification with R objects, a sort of search-and-destroy mission inside your own data sets.</p>
 </section><section class="level2" data-number="5.2"><h2 data-number="5.2" class="anchored" id="logical-subsetting">
 <span class="header-section-number">5.2</span> Logical Subsetting</h2>
-<p>Do you remember R’s logical index system, <a href="objects.html#sec:logicals">logicals</a>? To recap, you can select values with a vector of <code>TRUE</code>s and <code>FALSE</code>s. The vector must be the same length as the dimension that you wish to subset. R will return every element that matches a TRUE:</p>
+<p>Do you remember R’s logical index system, <a href="objects.html#sec-logicals">logicals</a>? To recap, you can select values with a vector of <code>TRUE</code>s and <code>FALSE</code>s. The vector must be the same length as the dimension that you wish to subset. R will return every element that matches a TRUE:</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">vec</span>
 <span class="co">## 1 0 1 1 2 1 0</span>
 
@@ -489,8 +520,8 @@
 <p>At first glance, this system might seem impractical. Who wants to type out long vectors of TRUEs and FALSEs? No one. But you don’t have to. You can let a logical test create a vector of TRUEs and FALSEs for you.</p>
 <section class="level3" data-number="5.2.1"><h3 data-number="5.2.1" class="anchored" id="logical-tests">
 <span class="header-section-number">5.2.1</span> Logical Tests</h3>
-<p>A logical test is a comparison like “is one less than two?”, <code>1 &lt; 2</code>, or “is three greater than four?”, <code>3 &gt; 4</code>. R provides seven logical operators that you can use to make comparisons, shown in <a href="#tbl:logop">tbl.&nbsp;<span>5.1</span></a>.</p>
-<div id="tbl:logop" class="anchored">
+<p>A logical test is a comparison like “is one less than two?”, <code>1 &lt; 2</code>, or “is three greater than four?”, <code>3 &gt; 4</code>. R provides seven logical operators that you can use to make comparisons, shown in <a href="#tbl-logop">tbl.&nbsp;<span>5.1</span></a>.</p>
+<div id="tbl-logop" class="anchored">
 <table class="table">
 <caption>Table 5.1: R’s Logical Operators </caption>
 <thead><tr class="header">
@@ -708,8 +739,8 @@ Exercise: Score the Deck for Hearts
 <p>But that’s 12 cards too many. What you really want to find is all of the cards that have both a face value equal to queen and a suit value equal to spades. You can do that with a <em>Boolean operator</em>. Boolean operators combine multiple logical tests together into a single test.</p>
 </section><section class="level3" data-number="5.2.2"><h3 data-number="5.2.2" class="anchored" id="boolean-operators">
 <span class="header-section-number">5.2.2</span> Boolean Operators</h3>
-<p>Boolean operators are things like <em>and</em> (<code><a href="https://rdrr.io/r/base/Logic.html">&amp;</a></code>) and <em>or</em> (<code><a href="https://rdrr.io/r/base/Logic.html">|</a></code>). They collapse the results of multiple logical tests into a single <code>TRUE</code> or <code>FALSE</code>. R has six boolean operators, shown in <a href="#tbl:boole">tbl.&nbsp;<span>5.2</span></a>.</p>
-<div id="tbl:boole" class="anchored">
+<p>Boolean operators are things like <em>and</em> (<code><a href="https://rdrr.io/r/base/Logic.html">&amp;</a></code>) and <em>or</em> (<code><a href="https://rdrr.io/r/base/Logic.html">|</a></code>). They collapse the results of multiple logical tests into a single <code>TRUE</code> or <code>FALSE</code>. R has six boolean operators, shown in <a href="#tbl-boole">tbl.&nbsp;<span>5.2</span></a>.</p>
+<div id="tbl-boole" class="anchored">
 <table class="table">
 <caption>Table 5.2: Boolean operators </caption>
 <thead><tr class="header">
@@ -751,7 +782,7 @@ Exercise: Score the Deck for Hearts
 </tbody>
 </table>
 </div>
-<p>To use a Boolean operator, place it between two <em>complete</em> logical tests. R will execute each logical test and then use the Boolean operator to combine the results into a single <code>TRUE</code> or <code>FALSE</code>, <a href="#fig:boolean">fig.&nbsp;<span>5.1</span></a>.</p>
+<p>To use a Boolean operator, place it between two <em>complete</em> logical tests. R will execute each logical test and then use the Boolean operator to combine the results into a single <code>TRUE</code> or <code>FALSE</code>, <a href="#fig-boolean">fig.&nbsp;<span>5.1</span></a>.</p>
 <div class="callout-warning callout callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -762,10 +793,10 @@ The most common mistake with Boolean operators
 </div>
 </div>
 <div class="callout-body">
-<p>It is easy to forget to put a complete test on either side of a Boolean operator. In English, it is efficient to say “Is <em>x</em> greater than two and less than nine?” But in R, you need to write the equivalent of “Is <em>x</em> greater than two and <em>is x</em> less than nine?” This is shown in <a href="#fig:boolean">fig.&nbsp;<span>5.1</span></a>.</p>
+<p>It is easy to forget to put a complete test on either side of a Boolean operator. In English, it is efficient to say “Is <em>x</em> greater than two and less than nine?” But in R, you need to write the equivalent of “Is <em>x</em> greater than two and <em>is x</em> less than nine?” This is shown in <a href="#fig-boolean">fig.&nbsp;<span>5.1</span></a>.</p>
 </div>
 </div>
-<div id="fig:boolean" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-boolean" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0501.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5.1: R will evaluate the expressions on each side of a Boolean operator separately, and then combine the results into a single TRUE or FALSE. If you do not supply a complete test to each side of the operator, R will return an error.</figcaption><p></p>
 </figure>
@@ -892,7 +923,7 @@ Exercise: Practice with Tests
 <span class="co">##    two spades     2</span>
 <span class="co">##    ace spades     1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now you just need to fix the ace values—or do you? It is hard to decide what value to give the aces because their exact value will change from hand to hand. At the end of each hand, an ace will equal 11 if the sum of the player’s cards does not exceed 21. Otherwise, the ace will equal 1. The actual value of the ace will depend on the other cards in the player’s hand. This is a case of missing information. At the moment, you do not have enough information to assign a correct point value to the ace cards.</p>
-</section></section><section class="level2" data-number="5.3"><h2 data-number="5.3" class="anchored" id="sec:missing">
+</section></section><section class="level2" data-number="5.3"><h2 data-number="5.3" class="anchored" id="sec-missing">
 <span class="header-section-number">5.3</span> Missing Information</h2>
 <p>Missing information problems happen frequently in data science. Usually, they are more straightforward: you don’t know a value because the measurement was lost, corrupted, or never taken to begin with. R has a way to help you manage these missing values.</p>
 <p>The <code>NA</code> character is a special symbol in R. It stands for “not available” and can be used as a placeholder for missing information. R will treat NA exactly as you should want missing information treated. For example, what result would you expect if you add 1 to a piece of missing information?</p>

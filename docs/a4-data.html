@@ -80,9 +80,37 @@
 <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]--><script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><meta name="quarto:offset" content=".">
-<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><link href="./a5-debug.html" rel="next">
+<link href="./a3-updating.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
+    details {
+      margin-bottom: 1em;
+    } 
+    details[show] {
+      margin-bottom: 0;
+    }
+
+    .quarto-unresolved-ref {
+      font-weight: 600;
+    }
+
+    .quarto-cover-image {
+      max-width: 35%;
+      float: right;
+      margin-left: 30px;
+    }
+
+    .cell-output-display {
+      overflow-x: scroll;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
@@ -95,27 +123,29 @@
 </nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-2 text-left">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll"><div class="px-3 pt-lg-2 text-left">
     <div class="sidebar-title mt-1 mb-0 py-0">
+      <a href="./">
       Hands-On Programming with R
+      </a>
         <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -124,8 +154,8 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2">
-      <div class="sidebar-search flex-fill">
+    <div class="d-flex px-3 mt-2 flex-shrink-0">
+      <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
@@ -135,19 +165,19 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -170,9 +200,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./dice.html" class="">Project 1: Weighted Dice</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project1weighteddice-collapse">
@@ -194,9 +224,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./cards.html" class="">Project 2: Playing Cards</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project2playingcards-collapse">
@@ -224,9 +254,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./slots.html" class="">Project 3: Slot Machine</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project3slotmachine-collapse">
@@ -250,12 +280,12 @@
 <ul class="list-unstyled sidebar-section depth1">
 <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Appendices
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="appendices-collapse">
         <ul class="list-unstyled sidebar-item-contents">
@@ -372,7 +402,7 @@
 <p>Use <code>header</code> to tell <code>read.table</code> whether the first line of the file contains variable names instead of values. If the first line of the file is a set of variable names, you should set <code>header = TRUE</code>.</p>
 </section><section class="level4" data-number="D.3.1.3"><h4 data-number="D.3.1.3" class="anchored" id="na.strings">
 <span class="header-section-number">D.3.1.3</span> na.strings</h4>
-<p>Oftentimes data sets will use special symbols to represent missing information. If you know that your data uses a certain symbol to represent missing entries, you can tell <code>read.table</code> (and the preceding functions) what the symbol is with the <code>na.strings</code> argument. <code>read.table</code> will convert all instances of the missing information symbol to <code>NA</code>, which is R’s missing information symbol (see <a href="modifying.html#sec:missing">Missing Information</a>).</p>
+<p>Oftentimes data sets will use special symbols to represent missing information. If you know that your data uses a certain symbol to represent missing entries, you can tell <code>read.table</code> (and the preceding functions) what the symbol is with the <code>na.strings</code> argument. <code>read.table</code> will convert all instances of the missing information symbol to <code>NA</code>, which is R’s missing information symbol (see <a href="modifying.html#sec-missing">Missing Information</a>).</p>
 <p>For example, your poker data set contained missing values stored as a <code>.</code>, like this:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="co">## "card","suit","value"</span>
 <span class="co">## "ace"," spades"," 14"</span>
@@ -423,8 +453,8 @@
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>stringsAsFactors <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section><section class="level3" data-number="D.3.2"><h3 data-number="D.3.2" class="anchored" id="the-read-family">
 <span class="header-section-number">D.3.2</span> The read Family</h3>
-<p>R also comes with some prepackaged short cuts for <code>read.table</code>, shown in <a href="#tbl:shortcuts">tbl.&nbsp;<span>D.1</span></a>.</p>
-<div id="tbl:shortcuts" class="anchored">
+<p>R also comes with some prepackaged short cuts for <code>read.table</code>, shown in <a href="#tbl-shortcuts">tbl.&nbsp;<span>D.1</span></a>.</p>
+<div id="tbl-shortcuts" class="anchored">
 <table class="table">
 <caption>Table D.1: R’s read functions. You can overwrite any of the default arguments as necessary. </caption>
 <colgroup>
@@ -507,8 +537,8 @@ Import Dataset
 <p>Note that websites that begin with _<a href="https://_" class="uri">https://_</a> are secure websites, which means R may not be able to access the data provided at these links.</p>
 </section><section class="level3" data-number="D.3.5"><h3 data-number="D.3.5" class="anchored" id="saving-plain-text-files">
 <span class="header-section-number">D.3.5</span> Saving Plain-Text Files</h3>
-<p>Once your data is in R, you can save it to any file format that R supports. If you’d like to save it as a plain-text file, you can use the +write+ family of functions. The three basic write functions appear in <a href="#tbl:write">tbl.&nbsp;<span>D.2</span></a>. Use <code>write.csv</code> to save your data as a <em>.csv</em> file and <code>write.table</code> to save your data as a tab delimited document or a document with more exotic separators.</p>
-<div id="tbl:write" class="anchored">
+<p>Once your data is in R, you can save it to any file format that R supports. If you’d like to save it as a plain-text file, you can use the +write+ family of functions. The three basic write functions appear in <a href="#tbl-write">tbl.&nbsp;<span>D.2</span></a>. Use <code>write.csv</code> to save your data as a <em>.csv</em> file and <code>write.table</code> to save your data as a tab delimited document or a document with more exotic separators.</p>
+<div id="tbl-write" class="anchored">
 <table class="table">
 <caption>Table D.2: R saves data sets to plain-text files with the write family of functions </caption>
 <colgroup>
@@ -553,8 +583,8 @@ Import Dataset
 <span class="header-section-number">D.3.6</span> Compressing Files</h3>
 <p>To compress a plain-text file, surround the file name or file path with the function <code>bzfile</code>, <code>gzfile</code>, or <code>xzfile</code>. For example:</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.csv</a></span><span class="op">(</span><span class="va">poker</span>, file <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html">bzfile</a></span><span class="op">(</span><span class="st">"data/poker.csv.bz2"</span><span class="op">)</span>, row.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Each of these functions will compress the output with a different type of compression format, shown in <a href="#tbl:compression">tbl.&nbsp;<span>D.3</span></a>.</p>
-<div id="tbl:compression" class="anchored">
+<p>Each of these functions will compress the output with a different type of compression format, shown in <a href="#tbl-compression">tbl.&nbsp;<span>D.3</span></a>.</p>
+<div id="tbl-compression" class="anchored">
 <table class="table">
 <caption>Table D.3: R comes with three helper functions for compressing files </caption>
 <thead><tr class="header">
@@ -659,8 +689,8 @@ Import Dataset
 </section></section><section class="level2" data-number="D.6"><h2 data-number="D.6" class="anchored" id="loading-files-from-other-programs">
 <span class="header-section-number">D.6</span> Loading Files from Other Programs</h2>
 <p>You should follow the same advice I gave you for Excel files whenever you wish to work with file formats native to other programs: open the file in the original program and export the data as a plain-text file, usually a CSV. This will ensure the most faithful transcription of the data in the file, and it will usually give you the most options for customizing how the data is transcribed.</p>
-<p>Sometimes, however, you may acquire a file but not the program it came from. As a result, you won’t be able to open the file in its native program and export it as a text file. In this case, you can use one of the functions in <a href="#tbl:others">tbl.&nbsp;<span>D.4</span></a> to open the file. These functions mostly come in R’s <code>foreign</code> package. Each attempts to read in a different file format with as few hiccups as possible.</p>
-<div id="tbl:others" class="anchored">
+<p>Sometimes, however, you may acquire a file but not the program it came from. As a result, you won’t be able to open the file in its native program and export it as a text file. In this case, you can use one of the functions in <a href="#tbl-others">tbl.&nbsp;<span>D.4</span></a> to open the file. These functions mostly come in R’s <code>foreign</code> package. Each attempts to read in a different file format with as few hiccups as possible.</p>
+<div id="tbl-others" class="anchored">
 <table class="table">
 <caption>Table D.4: A number of functions will attempt to read the file types of other data-analysis programs </caption>
 <thead><tr class="header">

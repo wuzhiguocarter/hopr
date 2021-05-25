@@ -80,7 +80,8 @@
 <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]--><script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><meta name="quarto:offset" content=".">
-<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><link href="./a4-data.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
@@ -130,6 +131,7 @@
        display: inline-table;
     }
     .quarto-layout-cell-subref figcaption {
+      text-align: center;
       font-style: italic;
     }
     .quarto-figure {
@@ -158,6 +160,32 @@
       margin-top: 0.5em;
     }
   </style>
+<style type="text/css">
+    details {
+      margin-bottom: 1em;
+    } 
+    details[show] {
+      margin-bottom: 0;
+    }
+
+    .quarto-unresolved-ref {
+      font-weight: 600;
+    }
+
+    .quarto-cover-image {
+      max-width: 35%;
+      float: right;
+      margin-left: 30px;
+    }
+
+    .cell-output-display {
+      overflow-x: scroll;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
@@ -170,27 +198,29 @@
 </nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-2 text-left">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll"><div class="px-3 pt-lg-2 text-left">
     <div class="sidebar-title mt-1 mb-0 py-0">
+      <a href="./">
       Hands-On Programming with R
+      </a>
         <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -199,8 +229,8 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2">
-      <div class="sidebar-search flex-fill">
+    <div class="d-flex px-3 mt-2 flex-shrink-0">
+      <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
@@ -210,19 +240,19 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -245,9 +275,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./dice.html" class="">Project 1: Weighted Dice</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project1weighteddice-collapse">
@@ -269,9 +299,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./cards.html" class="">Project 2: Playing Cards</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project2playingcards-collapse">
@@ -299,9 +329,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./slots.html" class="">Project 3: Slot Machine</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project3slotmachine-collapse">
@@ -325,12 +355,12 @@
 <ul class="list-unstyled sidebar-section depth1">
 <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Appendices
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="appendices-collapse">
         <ul class="list-unstyled sidebar-item-contents">
@@ -420,15 +450,15 @@
 <span class="co">## 4993: fifth() at #1</span>
 <span class="co">## ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Notice that there are 5,000 lines of output in this <code>traceback</code>. If you are using RStudio, you will not get to see the traceback of an infinite recursion error (I used the Mac GUI to get this output). RStudio represses the traceback for infinite recursion errors to prevent the large call stacks from pushing your console history out of R’s memory buffer. With RStudio, you will have to recognize the infinite recursion error by its error message. However, you can still see the imposing <code>traceback</code> by running things in a UNIX shell or the Windows or Mac GUIs.</p>
-<p>RStudio makes it very easy to use <code>traceback</code>. You do not even need to type in the function name. Whenever an error occurs, RStudio will display it in a gray box with two options. The first is Show Traceback, shown in <a href="#fig:show-traceback">fig.&nbsp;<span>E.1</span></a>.</p>
-<div id="fig:show-traceback" class="quarto-figure quarto-figure-center anchored">
+<p>RStudio makes it very easy to use <code>traceback</code>. You do not even need to type in the function name. Whenever an error occurs, RStudio will display it in a gray box with two options. The first is Show Traceback, shown in <a href="#fig-show-traceback">fig.&nbsp;<span>E.1</span></a>.</p>
+<div id="fig-show-traceback" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_ae01.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure E.1: RStudio’s Show Traceback option.</figcaption><p></p>
 </figure>
 </div>
-<p>If you click Show Traceback, RStudio will expand the gray box and display the <code>traceback</code> call stack, as in <a href="#fig:hide-traceback">fig.&nbsp;<span>E.2</span></a>. The Show Traceback option will persist beside an error message in your console, even as you write new commands. This means that you can go back and look at the call stacks for all errors—not just the most recent error.</p>
+<p>If you click Show Traceback, RStudio will expand the gray box and display the <code>traceback</code> call stack, as in <a href="#fig-hide-traceback">fig.&nbsp;<span>E.2</span></a>. The Show Traceback option will persist beside an error message in your console, even as you write new commands. This means that you can go back and look at the call stacks for all errors—not just the most recent error.</p>
 <p>Imagine that you’ve used <code>traceback</code> to pinpoint a function that you think might cause a bug. Now what should you do? You should try to figure out what the function did to cause an error while it ran (if it did anything). You can examine how the function runs with <code>browser</code>.</p>
-<div id="fig:hide-traceback" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-hide-traceback" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_ae02.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure E.2: RStudio’s Traceback display.</figcaption><p></p>
 </figure>
@@ -471,10 +501,10 @@
   <span class="va">symbols</span> <span class="op">&lt;-</span> <span class="fu">get_symbols</span><span class="op">(</span><span class="op">)</span>
   <span class="fu"><a href="https://rdrr.io/r/base/structure.html">structure</a></span><span class="op">(</span><span class="fu">score</span><span class="op">(</span><span class="va">symbols</span><span class="op">)</span>, symbols <span class="op">=</span> <span class="va">symbols</span>, class <span class="op">=</span> <span class="st">"slots"</span><span class="op">)</span>
 <span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>When you run <code>play</code>, <code>play</code> will call <code>get_symbols</code> and then <code>score</code>. As R works through <code>score</code>, it will come across the call to <code>browser</code> and run it. When R runs this call, several things will happen, as in <a href="#fig:browser">fig.&nbsp;<span>E.3</span></a>. First, R will stop running <code>score</code>. Second, the command prompt will change to <code>browser[1]&gt;</code> and R will give me back control; I can now type new commands in at the new command prompt. Third, three buttons will appear above the console pane: Next, Continue, and Stop. Fourth, RStudio will display the source code for <code>score</code> in the scripts pane, and it will highlight the line that contains <code><a href="https://rdrr.io/r/base/browser.html">browser()</a></code>. Fifth, the environments tab will change. Instead of revealing the objects that are saved in the global environment, it will reveal the objects that are saved in the runtime environment of <code>score</code> (see [Environments] for an explanation of R’s environment system). Sixth, RStudio will open a new Traceback pane, which shows the call stack RStudio took to get to <code>browser</code>. The most recent function, <code>score</code>, will be highlighted.</p>
+<p>When you run <code>play</code>, <code>play</code> will call <code>get_symbols</code> and then <code>score</code>. As R works through <code>score</code>, it will come across the call to <code>browser</code> and run it. When R runs this call, several things will happen, as in <a href="#fig-browser">fig.&nbsp;<span>E.3</span></a>. First, R will stop running <code>score</code>. Second, the command prompt will change to <code>browser[1]&gt;</code> and R will give me back control; I can now type new commands in at the new command prompt. Third, three buttons will appear above the console pane: Next, Continue, and Stop. Fourth, RStudio will display the source code for <code>score</code> in the scripts pane, and it will highlight the line that contains <code><a href="https://rdrr.io/r/base/browser.html">browser()</a></code>. Fifth, the environments tab will change. Instead of revealing the objects that are saved in the global environment, it will reveal the objects that are saved in the runtime environment of <code>score</code> (see [Environments] for an explanation of R’s environment system). Sixth, RStudio will open a new Traceback pane, which shows the call stack RStudio took to get to <code>browser</code>. The most recent function, <code>score</code>, will be highlighted.</p>
 <p>I’m now in a new R mode, called <em>browser mode</em>. Browser mode is designed to help you uncover bugs, and the new display in RStudio is designed to help you navigate this mode.</p>
 <p>Any command that you run in browser mode will be evaluated in the context of the runtime environment of the function that called <code>browser</code>. This will be the function that is highlighted in the new Traceback pane. Here, that function is <code>score</code>. So while we are in browser mode, the active environment will be <code>score</code>’s runtime environment. This lets you do two things.</p>
-<div id="fig:browser" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-browser" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_ae03.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure E.3: RStudio updates its display whenever you enter browser mode to help you navigate the mode.</figcaption><p></p>
 </figure>
@@ -485,11 +515,11 @@
 
 <span class="va">Browse</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">&gt;</span> <span class="va">same</span>
 <span class="co">## [1] FALSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Second, you can run code and see the same results that <code>score</code> would see. For example, you could run the remaining lines of the <code>score</code> function and see if they do anything unusual. You could run these lines by typing them into the command prompt, or you could use the three navigation buttons that now appear above the prompt, as in <a href="#fig:browser-buttons">fig.&nbsp;<span>E.4</span></a>.</p>
+<p>Second, you can run code and see the same results that <code>score</code> would see. For example, you could run the remaining lines of the <code>score</code> function and see if they do anything unusual. You could run these lines by typing them into the command prompt, or you could use the three navigation buttons that now appear above the prompt, as in <a href="#fig-browser-buttons">fig.&nbsp;<span>E.4</span></a>.</p>
 <p>The first button, Next, will run the next line of code in <code>score</code>. The highlighted line in the scripts pane will advance by one line to show you your new location in the <code>score</code> function. If the next line begins a code chunk, like a <code>for</code> loop or an <code>if</code> tree, R will run the whole chunk and will highlight the whole chunk in the script window.</p>
 <p>The second button, Continue, will run all of the remaining lines of <code>score</code> and then exit the browser mode.</p>
 <p>The third button, Stop, will exit browser mode without running any more lines of <code>score</code>.</p>
-<div id="fig:browser-buttons" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-browser-buttons" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_ae04.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure E.4: You can navigate browser mode with the three buttons at the top of the console pane.</figcaption><p></p>
 </figure>
@@ -499,9 +529,9 @@
 <p>Once you fix the bug, you should resave your function a third time—this time without the <code><a href="https://rdrr.io/r/base/browser.html">browser()</a></code> call. As long as the browser call is in there, R will pause each time you, or another function, calls <code>score</code>.</p>
 </section><section class="level2" data-number="E.3"><h2 data-number="E.3" class="anchored" id="break-points">
 <span class="header-section-number">E.3</span> Break Points</h2>
-<p>RStudio’s break points provide a graphical way to add a <code>browser</code> statement to a function. To use them, open the script where you’ve defined a function. Then click to the left of the line number of the line of code in the function body where you’d like to add the browser statement. A hollow red dot will appear to show you where the break point will occur. Then run the script by clicking the Source button at the top of the Scripts pane. The hollow dot will turn into a solid red dot to show that the function has a break point (see <a href="#fig:break-point">fig.&nbsp;<span>E.5</span></a>).</p>
+<p>RStudio’s break points provide a graphical way to add a <code>browser</code> statement to a function. To use them, open the script where you’ve defined a function. Then click to the left of the line number of the line of code in the function body where you’d like to add the browser statement. A hollow red dot will appear to show you where the break point will occur. Then run the script by clicking the Source button at the top of the Scripts pane. The hollow dot will turn into a solid red dot to show that the function has a break point (see <a href="#fig-break-point">fig.&nbsp;<span>E.5</span></a>).</p>
 <p>R will treat the break point like a <code>browser</code> statement, going into browser mode when it encounters it. You can remove a break point by clicking on the red dot. The dot will disappear, and the break point will be removed.</p>
-<div id="fig:break-point" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-break-point" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_ae05.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure E.5: Break points provide the graphical equivalent of a browser statement.</figcaption><p></p>
 </figure>
@@ -517,7 +547,7 @@
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/debug.html">isdebugged</a></span><span class="op">(</span><span class="va">sample</span><span class="op">)</span>
 <span class="co">## FALSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If this is all too much of a hassle, you can do what I do and use <code>debugonce</code> instead of <code>debug</code>. R will enter browser mode the very next time it runs the function but will automatically undebug the function afterward. If you need to browse through the function again, you can just run <code>debugonce</code> on it a second time.</p>
-<p>You can recreate <code>debugonce</code> in RStudio whenever an error occurs. “Rerun with debug” will appear in the grey error box beneath Show Traceback (<a href="#fig:show-traceback">fig.&nbsp;<span>E.1</span></a>). If you click this option, RStudio will rerun the command as if you had first run <code>debugonce</code> on it. R will immediately go into browser mode, allowing you to step through the code. The browser behavior will only occur on this run of the code. You do not need to worry about calling <code>undebug</code> when you are done.</p>
+<p>You can recreate <code>debugonce</code> in RStudio whenever an error occurs. “Rerun with debug” will appear in the grey error box beneath Show Traceback (<a href="#fig-show-traceback">fig.&nbsp;<span>E.1</span></a>). If you click this option, RStudio will rerun the command as if you had first run <code>debugonce</code> on it. R will immediately go into browser mode, allowing you to step through the code. The browser behavior will only occur on this run of the code. You do not need to worry about calling <code>undebug</code> when you are done.</p>
 </section><section class="level2" data-number="E.5"><h2 data-number="E.5" class="anchored" id="trace">
 <span class="header-section-number">E.5</span> trace</h2>
 <p>You can add the browser statement further into the function, and not at the very start, with <code>trace</code>. <code>trace</code> takes the name of a function as a character string and then an R expression to insert into the function. You can also provide an <code>at</code> argument that tells <code>trace</code> at which line of the function to place the expression. So to insert a browser call at the fourth line of <code>sample</code>, you would run:</p>

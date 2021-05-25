@@ -2,7 +2,7 @@
 knit: quarto render
 ---
 
-# S3 {#sec:s3}
+# S3 {#sec-s3}
 
 You may have noticed that your slot machine results do not look the way I promised they would. I suggested that the slot machine would display its results like this:
 
@@ -58,9 +58,9 @@ R's S3 system is built around three components: attributes (especially the `clas
 
 ## Attributes
 
-In [Attributes](#sec:attributes), you learned that many R objects come with attributes, pieces of extra information that are given a name and appended to the object. Attributes do not affect the values of the object, but stick to the object as a type of metadata that R can use to handle the object. For example, a data frame stores its row and column names as attributes. Data frames also store their class, `"data.frame"`, as an attribute.
+In [Attributes](#sec-attributes), you learned that many R objects come with attributes, pieces of extra information that are given a name and appended to the object. Attributes do not affect the values of the object, but stick to the object as a type of metadata that R can use to handle the object. For example, a data frame stores its row and column names as attributes. Data frames also store their class, `"data.frame"`, as an attribute.
 
-You can see an object's attributes with `attribute`. If you run `attribute` on the `deck` data frame that you created in [Project 2: Playing Cards](#sec:project-cards), you will see:
+You can see an object's attributes with `attribute`. If you run `attribute` on the `deck` data frame that you created in [Project 2: Playing Cards](#sec-project-cards), you will see:
 
 ``` {.r}
 attributes(deck)
@@ -630,4 +630,4 @@ Values are not the only place to store information in R, and functions are not t
 
 R's S3 system is more helpful for the tasks of computer science than the tasks of data science, but understanding S3 can help you troubleshoot your work in R as a data scientist.
 
-You now know quite a bit about how to write R code that performs custom tasks, but how could you repeat these tasks? As a data scientist, you will often repeat tasks, sometimes thousands or even millions of times. Why? Because repetition lets you simulate results and estimate probabilities. [Loops](#sec:loops) will show you how to automate repetition with R's `for` and `while` functions. You'll use `for` to simulate various slot machine plays and to calculate the payout rate of your slot machine.
+You now know quite a bit about how to write R code that performs custom tasks, but how could you repeat these tasks? As a data scientist, you will often repeat tasks, sometimes thousands or even millions of times. Why? Because repetition lets you simulate results and estimate probabilities. [Loops](#sec-loops) will show you how to automate repetition with R's `for` and `while` functions. You'll use `for` to simulate various slot machine plays and to calculate the payout rate of your slot machine.

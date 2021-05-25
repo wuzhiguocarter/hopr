@@ -80,7 +80,9 @@
 <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]--><script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><meta name="quarto:offset" content=".">
-<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><link href="./packages.html" rel="next">
+<link href="./dice.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
@@ -130,6 +132,7 @@
        display: inline-table;
     }
     .quarto-layout-cell-subref figcaption {
+      text-align: center;
       font-style: italic;
     }
     .quarto-figure {
@@ -158,6 +161,32 @@
       margin-top: 0.5em;
     }
   </style>
+<style type="text/css">
+    details {
+      margin-bottom: 1em;
+    } 
+    details[show] {
+      margin-bottom: 0;
+    }
+
+    .quarto-unresolved-ref {
+      font-weight: 600;
+    }
+
+    .quarto-cover-image {
+      max-width: 35%;
+      float: right;
+      margin-left: 30px;
+    }
+
+    .cell-output-display {
+      overflow-x: scroll;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
@@ -170,27 +199,29 @@
 </nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-2 text-left">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll"><div class="px-3 pt-lg-2 text-left">
     <div class="sidebar-title mt-1 mb-0 py-0">
+      <a href="./">
       Hands-On Programming with R
+      </a>
         <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -199,8 +230,8 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2">
-      <div class="sidebar-search flex-fill">
+    <div class="d-flex px-3 mt-2 flex-shrink-0">
+      <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
@@ -210,19 +241,19 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -245,9 +276,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./dice.html" class="">Project 1: Weighted Dice</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project1weighteddice-collapse">
@@ -269,9 +300,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./cards.html" class="">Project 2: Playing Cards</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project2playingcards-collapse">
@@ -299,9 +330,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./slots.html" class="">Project 3: Slot Machine</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project3slotmachine-collapse">
@@ -325,12 +356,12 @@
 <ul class="list-unstyled sidebar-section depth1">
 <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Appendices
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="appendices-collapse">
         <ul class="list-unstyled sidebar-item-contents">
@@ -368,7 +399,7 @@
 </ul>
 </li>
 <li>
-<a href="#sec:write-functions" class="nav-link" data-scroll-target="#sec\:write-functions"> <span class="header-section-number">1.4</span> Writing Your Own Functions</a>
+<a href="#sec-write-functions" class="nav-link" data-scroll-target="#sec-write-functions"> <span class="header-section-number">1.4</span> Writing Your Own Functions</a>
 <ul class="collapse">
 <li><a href="#the-function-constructor" class="nav-link" data-scroll-target="#the-function-constructor"> <span class="header-section-number">1.4.1</span> The Function Constructor</a></li>
 </ul>
@@ -385,8 +416,8 @@
 <p>Let’s work on saving these numbers first, and then consider a method for “rolling” our die.</p>
 <section class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" id="the-r-user-interface">
 <span class="header-section-number">1.1</span> The R User Interface</h2>
-<p>Before you can ask your computer to save some numbers, you’ll need to know how to talk to it. That’s where R and RStudio come in. RStudio gives you a way to talk to your computer. R gives you a language to speak in. To get started, open RStudio just as you would open any other application on your computer. When you do, a window should appear in your screen like the one shown in <a href="#fig:console">fig.&nbsp;<span>1.1</span></a>.</p>
-<div id="fig:console" class="quarto-figure quarto-figure-center anchored">
+<p>Before you can ask your computer to save some numbers, you’ll need to know how to talk to it. That’s where R and RStudio come in. RStudio gives you a way to talk to your computer. R gives you a language to speak in. To get started, open RStudio just as you would open any other application on your computer. When you do, a window should appear in your screen like the one shown in <a href="#fig-console">fig.&nbsp;<span>1.1</span></a>.</p>
+<div id="fig-console" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0101.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.1: Your computer does your bidding when you type R commands at the prompt in the bottom line of the console pane. Don’t forget to hit the Enter key. When you first open RStudio, the console appears in the pane on your left, but you can change this with File &gt; Preferences in the menu bar.</figcaption><p></p>
 </figure>
@@ -537,8 +568,8 @@ Exercise: Magic with Numbers
 
 <span class="va">die</span>
 <span class="co">## 1 2 3 4 5 6</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>When you create an object, the object will appear in the environment pane of RStudio, as shown in <a href="#fig:environment">fig.&nbsp;<span>1.2</span></a>. This pane will show you all of the objects you’ve created since opening RStudio.</p>
-<div id="fig:environment" class="quarto-figure quarto-figure-center anchored">
+<p>When you create an object, the object will appear in the environment pane of RStudio, as shown in <a href="#fig-environment">fig.&nbsp;<span>1.2</span></a>. This pane will show you all of the objects you’ve created since opening RStudio.</p>
+<div id="fig-environment" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0102.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.2: The RStudio environment pane keeps track of the R objects you create.</figcaption><p></p>
 </figure>
@@ -612,13 +643,13 @@ Capitalization
 <span class="va">die</span> <span class="op">*</span> <span class="va">die</span>
 <span class="co">## 1  4  9 16 25 36</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If you are a big fan of linear algebra (and who isn’t?), you may notice that R does not always follow the rules of matrix multiplication. Instead, R uses <em>element-wise execution</em>. When you manipulate a set of numbers, R will apply the same operation to each element in the set. So for example, when you run <em><code>die - 1</code></em>, R subtracts one from each element of <code>die</code>.</p>
-<p>When you use two or more vectors in an operation, R will line up the vectors and perform a sequence of individual operations. For example, when you run <em><code>die * die</code></em>, R lines up the two <code>die</code> vectors and then multiplies the first element of vector 1 by the first element of vector 2. R then multiplies the second element of vector 1 by the second element of vector 2, and so on, until every element has been multiplied. The result will be a new vector the same length as the first two, as shown in <a href="#fig:elementwise">fig.&nbsp;<span>1.3</span></a>.</p>
-<div id="fig:elementwise" class="quarto-figure quarto-figure-center anchored">
+<p>When you use two or more vectors in an operation, R will line up the vectors and perform a sequence of individual operations. For example, when you run <em><code>die * die</code></em>, R lines up the two <code>die</code> vectors and then multiplies the first element of vector 1 by the first element of vector 2. R then multiplies the second element of vector 1 by the second element of vector 2, and so on, until every element has been multiplied. The result will be a new vector the same length as the first two, as shown in <a href="#fig-elementwise">fig.&nbsp;<span>1.3</span></a>.</p>
+<div id="fig-elementwise" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0103.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.3: When R performs element-wise execution, it matches up vectors and then manipulates each pair of elements independently.</figcaption><p></p>
 </figure>
 </div>
-<p>If you give R two vectors of unequal lengths, R will repeat the shorter vector until it is as long as the longer vector, and then do the math, as shown in <a href="#fig:recycle">fig.&nbsp;<span>1.4</span></a>. This isn’t a permanent change–the shorter vector will be its original size after R does the math. If the length of the short vector does not divide evenly into the length of the long vector, R will return a warning message. This behavior is known as <em>vector recycling</em>, and it helps R do element-wise operations:</p>
+<p>If you give R two vectors of unequal lengths, R will repeat the shorter vector until it is as long as the longer vector, and then do the math, as shown in <a href="#fig-recycle">fig.&nbsp;<span>1.4</span></a>. This isn’t a permanent change–the shorter vector will be its original size after R does the math. If the length of the short vector does not divide evenly into the length of the long vector, R will return a warning message. This behavior is known as <em>vector recycling</em>, and it helps R do element-wise operations:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 2</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -636,7 +667,7 @@ Capitalization
 <span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>Warning message<span class="sc">:</span></span>
 <span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>In die <span class="sc">+</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span> <span class="sc">:</span></span>
 <span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>  longer object length is not a multiple of shorter object length</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig:recycle" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-recycle" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0104.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.4: R will repeat a short vector to do element-wise operations with two vectors of uneven lengths.</figcaption><p></p>
 </figure>
@@ -665,7 +696,7 @@ Capitalization
 
 <span class="fu"><a href="https://rdrr.io/r/base/Special.html">factorial</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span>
 <span class="co">## 6</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The data that you pass into the function is called the function’s <em>argument</em>. The argument can be raw data, an R object, or even the results of another R function. In this last case, R will work from the innermost function to the outermost, as in <a href="#fig:pemdas">fig.&nbsp;<span>1.5</span></a>.</p>
+<p>The data that you pass into the function is called the function’s <em>argument</em>. The argument can be raw data, an R object, or even the results of another R function. In this last case, R will work from the innermost function to the outermost, as in <a href="#fig-pemdas">fig.&nbsp;<span>1.5</span></a>.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">)</span>
 <span class="co">## 3.5</span>
 
@@ -674,7 +705,7 @@ Capitalization
 
 <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">die</span><span class="op">)</span><span class="op">)</span>
 <span class="co">## 4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig:pemdas" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-pemdas" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0105.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.5: When you link functions together, R will resolve them from the innermost operation to the outermost. Here R first looks up die, then calculates the mean of one through six, then rounds the mean.</figcaption><p></p>
 </figure>
@@ -748,7 +779,7 @@ Capitalization
 <span class="co">## 2 4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Nope. Each time you call <code>dice</code>, R will show you the result of that one time you called <code>sample</code> and saved the output to <code>dice</code>. R won’t rerun <code><a href="https://rdrr.io/r/base/sample.html">sample(die, 2, replace = TRUE)</a></code> to create a new roll of the dice. This is a relief in a way. Once you save a set of results to an R object, those results do not change. Programming would be quite hard if the values of your objects changed each time you called them.</p>
 <p>However, it <em>would</em> be convenient to have an object that can re-roll the dice whenever you call it. You can make such an object by writing your own R function.</p>
-</section></section><section class="level2" data-number="1.4"><h2 data-number="1.4" class="anchored" id="sec:write-functions">
+</section></section><section class="level2" data-number="1.4"><h2 data-number="1.4" class="anchored" id="sec-write-functions">
 <span class="header-section-number">1.4</span> Writing Your Own Functions</h2>
 <p>To recap, you already have working R code that simulates rolling a pair of dice:</p>
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">die</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>
@@ -847,25 +878,25 @@ Capitalization
 <div class="sourceCode" id="cb45"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu">roll2</span><span class="op">(</span><span class="op">)</span>
 <span class="co">## 9</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can give your functions as many arguments as you like. Just list their names, separated by commas, in the parentheses that follow <code>function</code>. When the function is run, R will replace each argument name in the function body with the value that the user supplies for the argument. If the user does not supply a value, R will replace the argument name with the argument’s default value (if you defined one).</p>
-<p>To summarize, <code>function</code> helps you construct your own R functions. You create a body of code for your function to run by writing code between the braces that follow <code>function</code>. You create arguments for your function to use by supplying their names in the parentheses that follow <code>function</code>. Finally, you give your function a name by saving its output to an R object, as shown in <a href="#fig:functions">fig.&nbsp;<span>1.6</span></a>.</p>
+<p>To summarize, <code>function</code> helps you construct your own R functions. You create a body of code for your function to run by writing code between the braces that follow <code>function</code>. You create arguments for your function to use by supplying their names in the parentheses that follow <code>function</code>. Finally, you give your function a name by saving its output to an R object, as shown in <a href="#fig-functions">fig.&nbsp;<span>1.6</span></a>.</p>
 <p>Once you’ve created your function, R will treat it like every other function in R. Think about how useful this is. Have you ever tried to create a new Excel option and add it to Microsoft’s menu bar? Or a new slide animation and add it to Powerpoint’s options? When you work with a programming language, you can do these types of things. As you learn to program in R, you will be able to create new, customized, reproducible tools for yourself whenever you like. <a href="#slots">Project 3: Slot Machine</a> will teach you much more about writing functions in R.</p>
-<div id="fig:functions" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-functions" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0106.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.6: Every function in R has the same parts, and you can use function to create these parts. Assign the result to a name, so you can call the function later.</figcaption><p></p>
 </figure>
 </div>
 </section><section class="level2" data-number="1.6"><h2 data-number="1.6" class="anchored" id="scripts">
 <span class="header-section-number">1.6</span> Scripts</h2>
-<p>What if you want to edit <code>roll2</code> again? You could go back and retype each line of code in <code>roll2</code>, but it would be so much easier if you had a draft of the code to start from. You can create a draft of your code as you go by using an R <em>script</em>. An R script is just a plain text file that you save R code in. You can open an R script in RStudio by going to <code>File &gt; New File &gt; R script</code> in the menu bar. RStudio will then open a fresh script above your console pane, as shown in <a href="#fig:script">fig.&nbsp;<span>1.7</span></a>.</p>
+<p>What if you want to edit <code>roll2</code> again? You could go back and retype each line of code in <code>roll2</code>, but it would be so much easier if you had a draft of the code to start from. You can create a draft of your code as you go by using an R <em>script</em>. An R script is just a plain text file that you save R code in. You can open an R script in RStudio by going to <code>File &gt; New File &gt; R script</code> in the menu bar. RStudio will then open a fresh script above your console pane, as shown in <a href="#fig-script">fig.&nbsp;<span>1.7</span></a>.</p>
 <p>I strongly encourage you to write and edit all of your R code in a script before you run it in the console. Why? This habit creates a reproducible record of your work. When you’re finished for the day, you can save your script and then use it to rerun your entire analysis the next day. Scripts are also very handy for editing and proofreading your code, and they make a nice copy of your work to share with others. To save a script, click the scripts pane, and then go to <code>File &gt; Save As</code> in the menu bar.</p>
-<div id="fig:script" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-script" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0107.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.7: When you open an R Script (File &gt; New File &gt; R Script in the menu bar), RStudio creates a fourth pane above the console where you can write and edit your code.</figcaption><p></p>
 </figure>
 </div>
-<p>RStudio comes with many built-in features that make it easy to work with scripts. First, you can automatically execute a line of code in a script by clicking the Run button, as shown in <a href="#fig:run">fig.&nbsp;<span>1.8</span></a>.</p>
+<p>RStudio comes with many built-in features that make it easy to work with scripts. First, you can automatically execute a line of code in a script by clicking the Run button, as shown in <a href="#fig-run">fig.&nbsp;<span>1.8</span></a>.</p>
 <p>R will run whichever line of code your cursor is on. If you have a whole section highlighted, R will run the highlighted code. Alternatively, you can run the entire script by clicking the Source button. Don’t like clicking buttons? You can use Control + Return as a shortcut for the Run button. On Macs, that would be Command + Return.</p>
-<div id="fig:run" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-run" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0108.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.8: You can run a highlighted portion of code in your script if you click the Run button at the top of the scripts pane. You can run the entire script by clicking the Source button.</figcaption><p></p>
 </figure>

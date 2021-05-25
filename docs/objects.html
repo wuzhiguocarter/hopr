@@ -80,7 +80,9 @@
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]--><script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><meta name="quarto:offset" content=".">
-<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><link href="./notation.html" rel="next">
+<link href="./cards.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
@@ -130,6 +132,7 @@
        display: inline-table;
     }
     .quarto-layout-cell-subref figcaption {
+      text-align: center;
       font-style: italic;
     }
     .quarto-figure {
@@ -158,6 +161,32 @@
       margin-top: 0.5em;
     }
   </style>
+<style type="text/css">
+    details {
+      margin-bottom: 1em;
+    } 
+    details[show] {
+      margin-bottom: 0;
+    }
+
+    .quarto-unresolved-ref {
+      font-weight: 600;
+    }
+
+    .quarto-cover-image {
+      max-width: 35%;
+      float: right;
+      margin-left: 30px;
+    }
+
+    .cell-output-display {
+      overflow-x: scroll;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
@@ -170,27 +199,29 @@
 </nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-2 text-left">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll"><div class="px-3 pt-lg-2 text-left">
     <div class="sidebar-title mt-1 mb-0 py-0">
+      <a href="./">
       Hands-On Programming with R
+      </a>
         <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -199,8 +230,8 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2">
-      <div class="sidebar-search flex-fill">
+    <div class="d-flex px-3 mt-2 flex-shrink-0">
+      <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
@@ -210,19 +241,19 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -245,9 +276,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./dice.html" class="">Project 1: Weighted Dice</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project1weighteddice-collapse">
@@ -269,9 +300,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./cards.html" class="">Project 2: Playing Cards</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project2playingcards-collapse">
@@ -299,9 +330,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./slots.html" class="">Project 3: Slot Machine</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project3slotmachine-collapse">
@@ -325,12 +356,12 @@
 <ul class="list-unstyled sidebar-section depth1">
 <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Appendices
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="appendices-collapse">
         <ul class="list-unstyled sidebar-item-contents">
@@ -365,14 +396,14 @@
 <li><a href="#doubles" class="nav-link" data-scroll-target="#doubles"> <span class="header-section-number">3.1.1</span> Doubles</a></li>
 <li><a href="#integers" class="nav-link" data-scroll-target="#integers"> <span class="header-section-number">3.1.2</span> Integers</a></li>
 <li><a href="#characters" class="nav-link" data-scroll-target="#characters"> <span class="header-section-number">3.1.3</span> Characters</a></li>
-<li><a href="#sec:logicals" class="nav-link" data-scroll-target="#sec\:logicals"> <span class="header-section-number">3.1.4</span> Logicals</a></li>
+<li><a href="#sec-logicals" class="nav-link" data-scroll-target="#sec-logicals"> <span class="header-section-number">3.1.4</span> Logicals</a></li>
 <li><a href="#complex-and-raw" class="nav-link" data-scroll-target="#complex-and-raw"> <span class="header-section-number">3.1.5</span> Complex and Raw</a></li>
 </ul>
 </li>
 <li>
-<a href="#sec:attributes" class="nav-link" data-scroll-target="#sec\:attributes"> <span class="header-section-number">3.2</span> Attributes</a>
+<a href="#sec-attributes" class="nav-link" data-scroll-target="#sec-attributes"> <span class="header-section-number">3.2</span> Attributes</a>
 <ul class="collapse">
-<li><a href="#sec:names" class="nav-link" data-scroll-target="#sec\:names"> <span class="header-section-number">3.2.1</span> Names</a></li>
+<li><a href="#sec-names" class="nav-link" data-scroll-target="#sec-names"> <span class="header-section-number">3.2.1</span> Names</a></li>
 <li><a href="#dim" class="nav-link" data-scroll-target="#dim"> <span class="header-section-number">3.2.2</span> Dim</a></li>
 </ul>
 </li>
@@ -388,7 +419,7 @@
 <li><a href="#coercion" class="nav-link" data-scroll-target="#coercion"> <span class="header-section-number">3.6</span> Coercion</a></li>
 <li><a href="#lists" class="nav-link" data-scroll-target="#lists"> <span class="header-section-number">3.7</span> Lists</a></li>
 <li><a href="#data-frames" class="nav-link" data-scroll-target="#data-frames"> <span class="header-section-number">3.8</span> Data Frames</a></li>
-<li><a href="#sec:loading-data" class="nav-link" data-scroll-target="#sec\:loading-data"> <span class="header-section-number">3.9</span> Loading Data</a></li>
+<li><a href="#sec-loading-data" class="nav-link" data-scroll-target="#sec-loading-data"> <span class="header-section-number">3.9</span> Loading Data</a></li>
 <li><a href="#saving-data" class="nav-link" data-scroll-target="#saving-data"> <span class="header-section-number">3.10</span> Saving Data</a></li>
 <li><a href="#summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">3.11</span> Summary</a></li>
 </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/objects.Rmd">Edit this page</a></p></div></div></nav></div>
@@ -404,11 +435,11 @@
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a> nine spades     <span class="dv">9</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>eight spades     <span class="dv">8</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Do you need to build a data set from scratch to use it in R? Not at all. You can load most data sets into R with one simple step, see <a href="#sec:loading-data">Loading Data</a>. But this exercise will teach you how R stores data, and how you can assemble—or disassemble—your own data sets. You will also learn about the various types of objects available for you to use in R (not all R objects are the same!). Consider this exercise a rite of passage; by doing it, you will become an expert on storing data in R.</p>
+<p>Do you need to build a data set from scratch to use it in R? Not at all. You can load most data sets into R with one simple step, see <a href="#sec-loading-data">Loading Data</a>. But this exercise will teach you how R stores data, and how you can assemble—or disassemble—your own data sets. You will also learn about the various types of objects available for you to use in R (not all R objects are the same!). Consider this exercise a rite of passage; by doing it, you will become an expert on storing data in R.</p>
 <p>We’ll start with the very basics. The most simple type of object in R is an <em>atomic vector</em>. Atomic vectors are not nuclear powered, but they are very simple and they do show up everywhere. If you look closely enough, you’ll see that most structures in R are built from atomic vectors.</p>
 <section class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" id="atomic-vectors">
 <span class="header-section-number">3.1</span> Atomic Vectors</h2>
-<p>An atomic vector is just a simple vector of data. In fact, you’ve already made an atomic vector, your <code>die</code> object from <span id="sec:project-1">Project 1: Weighted Dice</span>. You can make an atomic vector by grouping some values of data together with <code>c</code>:</p>
+<p>An atomic vector is just a simple vector of data. In fact, you’ve already made an atomic vector, your <code>die</code> object from <span id="sec-project-1">Project 1: Weighted Dice</span>. You can make an atomic vector by grouping some values of data together with <code>c</code>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">die</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span><span class="op">)</span>
 <span class="va">die</span>
 <span class="co">## 1 2 3 4 5 6</span>
@@ -525,7 +556,7 @@ Exercise: Character or Number?
 <p>Character strings can contain number characters, but that doesn’t make them numeric. They’re just strings that happen to have numbers in them. You can tell strings from real numbers because strings come surrounded by quotes. In fact, anything surrounded by quotes in R will be treated as a character string—no matter what appears between the quotes.</p>
 <p>It is easy to confuse R objects with character strings. Why? Because both appear as pieces of text in R code. For example, <code>x</code> is the name of an R object named “x,” <code>"x"</code> is a character string that contains the character “x.” One is an object that contains raw data, the other is a piece of raw data itself.</p>
 <p>Expect an error whenever you forget your quotation marks; R will start looking for an object that probably does not exist.</p>
-</section><section class="level3" data-number="3.1.4"><h3 data-number="3.1.4" class="anchored" id="sec:logicals">
+</section><section class="level3" data-number="3.1.4"><h3 data-number="3.1.4" class="anchored" id="sec-logicals">
 <span class="header-section-number">3.1.4</span> Logicals</h3>
 <p>Logical vectors store <code>TRUE</code>s and <code>FALSE</code>s, R’s form of Boolean data. Logicals are very helpful for doing things like comparisons:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fl">3</span> <span class="op">&gt;</span> <span class="fl">4</span>
@@ -578,7 +609,7 @@ Exercise: Vector of Cards
 <span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="va">hand</span><span class="op">)</span>
 <span class="co">## "character"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This creates a one-dimensional group of card names—great job! Now let’s make a more sophisticated data structure, a two-dimensional table of card names and suits. You can build a more sophisticated object from an atomic vector by giving it some attributes and assigning it a class.</p>
-</section></section><section class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" id="sec:attributes">
+</section></section><section class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" id="sec-attributes">
 <span class="header-section-number">3.2</span> Attributes</h2>
 <p>An attribute is a piece of information that you can attach to an atomic vector (or any R object). The attribute won’t affect any of the values in the object, and it will not appear when you display your object. You can think of an attribute as “metadata”; it is just a convenient place to put information associated with an object. R will normally ignore this metadata, but some R functions will check for specific attributes. These functions may use the attributes to do special things with the data.</p>
 <p>You can see which attributes an object has with <code>attributes</code>. <code>attributes</code> will return <code>NULL</code> if an object has no attributes. An atomic vector, like <code>die</code>, won’t have any attributes unless you give it some:</p>
@@ -597,7 +628,7 @@ Exercise: Vector of Cards
 <p>R uses <code>NULL</code> to represent the null set, an empty object. <code>NULL</code> is often returned by functions whose values are undefined. You can create a <code>NULL</code> object by typing <code>NULL</code> in capital letters.</p>
 </div>
 </div>
-<section class="level3" data-number="3.2.1"><h3 data-number="3.2.1" class="anchored" id="sec:names">
+<section class="level3" data-number="3.2.1"><h3 data-number="3.2.1" class="anchored" id="sec-names">
 <span class="header-section-number">3.2.1</span> Names</h3>
 <p>The most common attributes to give an atomic vector are names, dimensions (dim), and classes. Each of these attributes has its own helper function that you can use to give attributes to an object. You can also use the helper functions to look up the value of these attributes for objects that already have them. For example, you can look up the value of the names attribute of <code>die</code> with <code>names</code>:</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">die</span><span class="op">)</span>
@@ -847,8 +878,8 @@ Data types in vectors
 </section></section><section class="level2" data-number="3.6"><h2 data-number="3.6" class="anchored" id="coercion">
 <span class="header-section-number">3.6</span> Coercion</h2>
 <p>R’s coercion behavior may seem inconvenient, but it is not arbitrary. R always follows the same rules when it coerces data types. Once you are familiar with these rules, you can use R’s coercion behavior to do surprisingly useful things.</p>
-<p>So how does R coerce data types? If a character string is present in an atomic vector, R will convert everything else in the vector to character strings. If a vector only contains logicals and numbers, R will convert the logicals to numbers; every <code>TRUE</code> becomes a 1, and every <code>FALSE</code> becomes a 0, as shown in <a href="#fig:coercion">fig.&nbsp;<span>3.1</span></a>.</p>
-<div id="fig:coercion" class="quarto-figure quarto-figure-center anchored">
+<p>So how does R coerce data types? If a character string is present in an atomic vector, R will convert everything else in the vector to character strings. If a vector only contains logicals and numbers, R will convert the logicals to numbers; every <code>TRUE</code> becomes a 1, and every <code>FALSE</code> becomes a 0, as shown in <a href="#fig-coercion">fig.&nbsp;<span>3.1</span></a>.</p>
+<div id="fig-coercion" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0301.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.1: R always uses the same rules to coerce data to a single type. If character strings are present, everything will be coerced to a character string. Otherwise, logicals are coerced to numerics.</figcaption><p></p>
 </figure>
@@ -926,8 +957,8 @@ Exercise: Use a List to Make a Card
 </section><section class="level2" data-number="3.8"><h2 data-number="3.8" class="anchored" id="data-frames">
 <span class="header-section-number">3.8</span> Data Frames</h2>
 <p>Data frames are the two-dimensional version of a list. They are far and away the most useful storage structure for data analysis, and they provide an ideal way to store an entire deck of cards. You can think of a data frame as R’s equivalent to the Excel spreadsheet because it stores data in a similar format.</p>
-<p>Data frames group vectors together into a two-dimensional table. Each vector becomes a column in the table. As a result, each column of a data frame can contain a different type of data; but within a column, every cell must be the same type of data, as in <a href="#fig:data-frame">fig.&nbsp;<span>3.2</span></a>.</p>
-<div id="fig:data-frame" class="quarto-figure quarto-figure-center anchored">
+<p>Data frames group vectors together into a two-dimensional table. Each vector becomes a column in the table. As a result, each column of a data frame can contain a different type of data; but within a column, every cell must be the same type of data, as in <a href="#fig-data-frame">fig.&nbsp;<span>3.2</span></a>.</p>
+<div id="fig-data-frame" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0302.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.2: Data frames store data as a sequence of columns. Each column can be a different data type. Every column in a data frame must be the same length.</figcaption><p></p>
 </figure>
@@ -940,7 +971,7 @@ Exercise: Use a List to Make a Card
 <span class="co">##  ace clubs     1</span>
 <span class="co">##  two clubs     2</span>
 <span class="co">##  six clubs     3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You’ll need to make sure that each vector is the same length (or can be made so with R’s recycling rules; see <a href="basics.html#fig:recycle">fig.&nbsp;<span>1.4</span></a>, as data frames cannot combine columns of different lengths.</p>
+<p>You’ll need to make sure that each vector is the same length (or can be made so with R’s recycling rules; see <a href="basics.html#fig-recycle">fig.&nbsp;<span>1.4</span></a>, as data frames cannot combine columns of different lengths.</p>
 <p>In the previous code, I named the arguments in <code>data.frame</code> <code>face</code>, <code>suit</code>, and <code>value</code>, but you can name the arguments whatever you like. <code>data.frame</code> will use your argument names to label the columns of the data frame.</p>
 <div class="callout-tip callout callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -1015,7 +1046,7 @@ Names
 <span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You should avoid typing large data sets in by hand whenever possible. Typing invites typos and errors, not to mention RSI. It is always better to acquire large data sets as a computer file. You can then ask R to read the file and store the contents as an object.</p>
 <p>I’ve created a file for you to load that contains a data frame of playing-card information, so don’t worry about typing in the code. Instead, turn your attention toward loading data into R.</p>
-</section><section class="level2" data-number="3.9"><h2 data-number="3.9" class="anchored" id="sec:loading-data">
+</section><section class="level2" data-number="3.9"><h2 data-number="3.9" class="anchored" id="sec-loading-data">
 <span class="header-section-number">3.9</span> Loading Data</h2>
 <p>You can load the <code>deck</code> data frame from the file <a href="http://bit.ly/deck_CSV"><em>deck.csv</em></a>. Please take a moment to download the file before reading on. Visit the website, click “Download Zip,” and then unzip and open the folder that your web browser downloads. <em>deck.csv</em> will be inside.</p>
 <p><em>deck.csv</em> is a comma-separated values file, or CSV for short. CSVs are plain-text files, which means you can open them in a text editor (as well as many other programs). If you open <em>desk.csv</em>, you’ll notice that it contains a table of data that looks like the following table. Each row of the table is saved on its own line, and a comma is used to separate the cells within each row. Every CSV file shares this basic format:</p>
@@ -1027,20 +1058,20 @@ Names
 <span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>"nine","spades,9</span>
 <span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>... and so on.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Most data-science applications can open plain-text files and export data as plain-text files. This makes plain-text files a sort of lingua franca for data science.</p>
-<p>To load a plain-text file into R, click the Import Dataset icon in RStudio, shown in <a href="#fig:import">fig.&nbsp;<span>3.3</span></a>. Then select “From text file.”</p>
-<div id="fig:import" class="quarto-figure quarto-figure-center anchored">
+<p>To load a plain-text file into R, click the Import Dataset icon in RStudio, shown in <a href="#fig-import">fig.&nbsp;<span>3.3</span></a>. Then select “From text file.”</p>
+<div id="fig-import" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0303.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.3: You can import data from plain-text files with RStudio’s Import Dataset.</figcaption><p></p>
 </figure>
 </div>
-<p>RStudio will ask you to select the file you want to import, then it will open a wizard to help you import the data, as in <a href="#fig:wizard">fig.&nbsp;<span>3.4</span></a>. Use the wizard to tell RStudio what name to give the data set. You can also use the wizard to tell RStudio which character the data set uses as a separator, which character it uses to represent decimals (usually a period in the United States and a comma in Europe), and whether or not the data set comes with a row of column names (known as a <em>header</em>). To help you out, the wizard shows you what the raw file looks like, as well as what your loaded data will look like based on the input settings.</p>
+<p>RStudio will ask you to select the file you want to import, then it will open a wizard to help you import the data, as in <a href="#fig-wizard">fig.&nbsp;<span>3.4</span></a>. Use the wizard to tell RStudio what name to give the data set. You can also use the wizard to tell RStudio which character the data set uses as a separator, which character it uses to represent decimals (usually a period in the United States and a comma in Europe), and whether or not the data set comes with a row of column names (known as a <em>header</em>). To help you out, the wizard shows you what the raw file looks like, as well as what your loaded data will look like based on the input settings.</p>
 <p>You can also unclick the box “Strings as factors” in the wizard. I recommend doing this. If you do, R will load all of your character strings as character strings. If you do not, R will convert them to factors.</p>
-<div id="fig:wizard" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-wizard" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0304.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.4: RStudio’s import wizard.</figcaption><p></p>
 </figure>
 </div>
-<p>Once everything looks right, click Import. RStudio will read in the data and save it to a data frame. RStudio will also open a data viewer, so you can see your new data in a spreadsheet format. This is a good way to check that everything came through as expected. If all worked well, your file should appear in a View tab of RStudio, like in <a href="#fig:view">fig.&nbsp;<span>3.5</span></a>. You can examine the data frame in the console with <code><a href="https://rdrr.io/r/utils/head.html">head(deck)</a></code>.</p>
+<p>Once everything looks right, click Import. RStudio will read in the data and save it to a data frame. RStudio will also open a data viewer, so you can see your new data in a spreadsheet format. This is a good way to check that everything came through as expected. If all worked well, your file should appear in a View tab of RStudio, like in <a href="#fig-view">fig.&nbsp;<span>3.5</span></a>. You can examine the data frame in the console with <code><a href="https://rdrr.io/r/utils/head.html">head(deck)</a></code>.</p>
 <div class="callout-tip callout callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1054,7 +1085,7 @@ Online data
 <p>You can load a plain-text file straight from the Internet by clicking the “From Web URL…” option under Import Dataset. The file will need to have its own URL, and you will need to be connected.</p>
 </div>
 </div>
-<div id="fig:view" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-view" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0305.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.5: When you import a data set, RStudio will save the data to a data frame and then display the data frame in a View tab. You can open any data frame in a View tab at any time with the View function.</figcaption><p></p>
 </figure>
@@ -1091,8 +1122,8 @@ Online data
 <p>Good work. You now have a virtual deck of cards to work with. Take a breather, and when you come back, we’ll start writing some functions to use on your deck.</p>
 </section><section class="level2" data-number="3.11"><h2 data-number="3.11" class="anchored" id="summary">
 <span class="header-section-number">3.11</span> Summary</h2>
-<p>You can save data in R with five different objects, which let you store different types of values in different types of relationships, as in <a href="#fig:structures">fig.&nbsp;<span>3.6</span></a>. Of these objects, data frames are by far the most useful for data science. Data frames store one of the most common forms of data used in data science, tabular data.</p>
-<div id="fig:structures" class="quarto-figure quarto-figure-center anchored">
+<p>You can save data in R with five different objects, which let you store different types of values in different types of relationships, as in <a href="#fig-structures">fig.&nbsp;<span>3.6</span></a>. Of these objects, data frames are by far the most useful for data science. Data frames store one of the most common forms of data used in data science, tabular data.</p>
+<div id="fig-structures" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0306.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.6: R’s most common data structures are vectors, matrices, arrays, lists, and data frames.</figcaption><p></p>
 </figure>

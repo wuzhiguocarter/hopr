@@ -80,7 +80,9 @@
 <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]--><script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><meta name="quarto:offset" content=".">
-<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><link href="./modifying.html" rel="next">
+<link href="./objects.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
@@ -130,6 +132,7 @@
        display: inline-table;
     }
     .quarto-layout-cell-subref figcaption {
+      text-align: center;
       font-style: italic;
     }
     .quarto-figure {
@@ -158,6 +161,32 @@
       margin-top: 0.5em;
     }
   </style>
+<style type="text/css">
+    details {
+      margin-bottom: 1em;
+    } 
+    details[show] {
+      margin-bottom: 0;
+    }
+
+    .quarto-unresolved-ref {
+      font-weight: 600;
+    }
+
+    .quarto-cover-image {
+      max-width: 35%;
+      float: right;
+      margin-left: 30px;
+    }
+
+    .cell-output-display {
+      overflow-x: scroll;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
@@ -170,27 +199,29 @@
 </nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-2 text-left">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll"><div class="px-3 pt-lg-2 text-left">
     <div class="sidebar-title mt-1 mb-0 py-0">
+      <a href="./">
       Hands-On Programming with R
+      </a>
         <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -199,8 +230,8 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2">
-      <div class="sidebar-search flex-fill">
+    <div class="d-flex px-3 mt-2 flex-shrink-0">
+      <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
@@ -210,19 +241,19 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -245,9 +276,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./dice.html" class="">Project 1: Weighted Dice</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project1weighteddice-collapse">
@@ -269,9 +300,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./cards.html" class="">Project 2: Playing Cards</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project2playingcards-collapse">
@@ -299,9 +330,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./slots.html" class="">Project 3: Slot Machine</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project3slotmachine-collapse">
@@ -325,12 +356,12 @@
 <ul class="list-unstyled sidebar-section depth1">
 <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Appendices
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="appendices-collapse">
         <ul class="list-unstyled sidebar-item-contents">
@@ -400,7 +431,7 @@
 <p>The simplest of these to use is positive integers.</p>
 <section class="level3" data-number="4.1.1"><h3 data-number="4.1.1" class="anchored" id="positive-integers">
 <span class="header-section-number">4.1.1</span> Positive Integers</h3>
-<p>R treats positive integers just like <em>ij</em> notation in linear algebra: as illustrated in <a href="#fig:positive">fig.&nbsp;<span>4.1</span></a>, <code>deck[i,j]</code> will return the value of <code>deck</code> that is in the <em>ith</em> row and the <em>jth</em> column. Notice that <em>i</em> and <em>j</em> only need to be integers in the mathematical sense. They can be saved as numerics in R</p>
+<p>R treats positive integers just like <em>ij</em> notation in linear algebra: as illustrated in <a href="#fig-positive">fig.&nbsp;<span>4.1</span></a>, <code>deck[i,j]</code> will return the value of <code>deck</code> that is in the <em>ith</em> row and the <em>jth</em> column. Notice that <em>i</em> and <em>j</em> only need to be integers in the mathematical sense. They can be saved as numerics in R</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">deck</span><span class="op">)</span>
 <span class="co">##  face   suit value</span>
 <span class="co">##  king spades    13</span>
@@ -438,7 +469,7 @@ Repetition
 <span class="co">## king spades    13</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="fig:positive" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-positive" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0401.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.1: R uses the <em>ij</em> notation system of linear algebra. The commands in this figure will return the shaded values.</figcaption><p></p>
 </figure>
@@ -512,7 +543,7 @@ Indexing begins at 1
 <span class="co">## king spades    13</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section class="level3" data-number="4.1.5"><h3 data-number="4.1.5" class="anchored" id="logic">
 <span class="header-section-number">4.1.5</span> Logical Values</h3>
-<p>If you supply a vector of <code>TRUE</code>s and <code>FALSE</code>s as your index, R will match each <code>TRUE</code> and <code>FALSE</code> to a row in your data frame (or a column depending on where you place the index). R will then return each row that corresponds to a <code>TRUE</code>, <a href="#fig:logicals">fig.&nbsp;<span>4.2</span></a>.</p>
+<p>If you supply a vector of <code>TRUE</code>s and <code>FALSE</code>s as your index, R will match each <code>TRUE</code> and <code>FALSE</code> to a row in your data frame (or a column depending on where you place the index). R will then return each row that corresponds to a <code>TRUE</code>, <a href="#fig-logicals">fig.&nbsp;<span>4.2</span></a>.</p>
 <p>It may help to imagine R reading through the data frame and asking, “Should I return the _i_th row of the data structure?” and then consulting the _i_th value of the index for its answer. For this system to work, your vector must be as long as the dimension you are trying to subset:</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">deck</span><span class="op">[</span><span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span><span class="op">]</span>
 <span class="co">## face   suit </span>
@@ -524,7 +555,7 @@ Indexing begins at 1
 <span class="va">deck</span><span class="op">[</span><span class="va">rows</span>, <span class="op">]</span>
 <span class="co">## face   suit value</span>
 <span class="co">## king spades    13</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig:logicals" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-logicals" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0402.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.2: You can use vectors of TRUEs and FALSEs to tell R exactly which values you want to extract and which you do not. The command would return just the numbers 1, 6, and 5.</figcaption><p></p>
 </figure>
@@ -532,7 +563,7 @@ Indexing begins at 1
 <p>This system may seem odd—who wants to type so many <code>TRUE</code>s and <code>FALSE</code>s?—but it will become very powerful in <a href="modifying.html">Modifying Values</a>.</p>
 </section><section class="level3" data-number="4.1.6"><h3 data-number="4.1.6" class="anchored" id="names">
 <span class="header-section-number">4.1.6</span> Names</h3>
-<p>Finally, you can ask for the elements you want by name—if your object has names (see <a href="objects.html#sec:names">Names</a>). This is a common way to extract the columns of a data frame, since columns almost always have names:</p>
+<p>Finally, you can ask for the elements you want by name—if your object has names (see <a href="objects.html#sec-names">Names</a>). This is a common way to extract the columns of a data frame, since columns almost always have names:</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">deck</span><span class="op">[</span><span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"face"</span>, <span class="st">"suit"</span>, <span class="st">"value"</span><span class="op">)</span><span class="op">]</span>
 <span class="co">## face   suit value</span>
 <span class="co">## king spades    13</span>
@@ -698,8 +729,8 @@ Exercise: Shuffle a Deck
 
 <span class="va">lst</span><span class="op">[[</span><span class="st">"numbers"</span><span class="op">]</span><span class="op">]</span>
 <span class="co">## 1 2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This difference is subtle but important. In the R community, there is a popular, and helpful, way to think about it, <a href="#fig:trains">fig.&nbsp;<span>4.3</span></a>. Imagine that each list is a train and each element is a train car. When you use single brackets, R selects individual train cars and returns them as a new train. Each car keeps its contents, but those contents are still inside a train car (i.e., a list). When you use double brackets, R actually unloads the car and gives you back the contents.</p>
-<div id="fig:trains" class="quarto-figure quarto-figure-center anchored">
+<p>This difference is subtle but important. In the R community, there is a popular, and helpful, way to think about it, <a href="#fig-trains">fig.&nbsp;<span>4.3</span></a>. Imagine that each list is a train and each element is a train car. When you use single brackets, R selects individual train cars and returns them as a new train. Each car keeps its contents, but those contents are still inside a train car (i.e., a list). When you use double brackets, R actually unloads the car and gives you back the contents.</p>
+<div id="fig-trains" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0403.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4.3: It can be helpful to think of your list as a train. Use single brackets to select train cars, double brackets to select the contents inside of a car.</figcaption><p></p>
 </figure>

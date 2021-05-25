@@ -80,7 +80,9 @@
 <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]--><script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><meta name="quarto:offset" content=".">
-<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><link href="./slots.html" rel="next">
+<link href="./modifying.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
@@ -130,6 +132,7 @@
        display: inline-table;
     }
     .quarto-layout-cell-subref figcaption {
+      text-align: center;
       font-style: italic;
     }
     .quarto-figure {
@@ -158,6 +161,32 @@
       margin-top: 0.5em;
     }
   </style>
+<style type="text/css">
+    details {
+      margin-bottom: 1em;
+    } 
+    details[show] {
+      margin-bottom: 0;
+    }
+
+    .quarto-unresolved-ref {
+      font-weight: 600;
+    }
+
+    .quarto-cover-image {
+      max-width: 35%;
+      float: right;
+      margin-left: 30px;
+    }
+
+    .cell-output-display {
+      overflow-x: scroll;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
@@ -170,27 +199,29 @@
 </nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-2 text-left">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll"><div class="px-3 pt-lg-2 text-left">
     <div class="sidebar-title mt-1 mb-0 py-0">
+      <a href="./">
       Hands-On Programming with R
+      </a>
         <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -199,8 +230,8 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2">
-      <div class="sidebar-search flex-fill">
+    <div class="d-flex px-3 mt-2 flex-shrink-0">
+      <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
@@ -210,19 +241,19 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -245,9 +276,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./dice.html" class="">Project 1: Weighted Dice</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project1weighteddice-collapse">
@@ -269,9 +300,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./cards.html" class="">Project 2: Playing Cards</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project2playingcards-collapse">
@@ -299,9 +330,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./slots.html" class="">Project 3: Slot Machine</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project3slotmachine-collapse">
@@ -325,12 +356,12 @@
 <ul class="list-unstyled sidebar-section depth1">
 <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Appendices
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="appendices-collapse">
         <ul class="list-unstyled sidebar-item-contents">
@@ -392,8 +423,8 @@
 <section class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" id="environments">
 <span class="header-section-number">6.1</span> Environments</h2>
 <p>Consider for a moment how your computer stores files. Every file is saved in a folder, and each folder is saved in another folder, which forms a hierarchical file system. If your computer wants to open up a file, it must first look up the file in this file system.</p>
-<p>You can see your file system by opening a finder window. For example, <a href="#fig:folders">fig.&nbsp;<span>6.1</span></a> shows part of the file system on my computer. I have tons of folders. Inside one of them is a subfolder named <em>Documents</em>, inside of that subfolder is a sub-subfolder named <em>ggsubplot</em>, inside of that folder is a folder named <em>inst</em>, inside of that is a folder named <em>doc</em>, and inside of that is a file named <em>manual.pdf</em>.</p>
-<div id="fig:folders" class="quarto-figure quarto-figure-center anchored">
+<p>You can see your file system by opening a finder window. For example, <a href="#fig-folders">fig.&nbsp;<span>6.1</span></a> shows part of the file system on my computer. I have tons of folders. Inside one of them is a subfolder named <em>Documents</em>, inside of that subfolder is a sub-subfolder named <em>ggsubplot</em>, inside of that folder is a folder named <em>inst</em>, inside of that is a folder named <em>doc</em>, and inside of that is a file named <em>manual.pdf</em>.</p>
+<div id="fig-folders" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0601.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.1: Your computer arranges files into a hierarchy of folders and subfolders. To look at a file, you need to find where it is saved in the file system.</figcaption><p></p>
 </figure>
@@ -415,8 +446,8 @@
 <span class="co">## 10 &lt;environment: 0x7fff3193dab0&gt;    "Autoloads"        </span>
 <span class="co">## 11 &lt;environment: base&gt;              ""                 </span>
 <span class="co">## 12 &lt;environment: R_EmptyEnv&gt;        ""                 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>It takes some imagination to interpret this output, so let’s visualize the environments as a system of folders, <a href="#fig:environments">fig.&nbsp;<span>6.2</span></a>. You can think of the environment tree like this. The lowest-level environment is named <code>R_GlobalEnv</code> and is saved inside an environment named <code>package:pryr</code>, which is saved inside the environment named <code>0x7fff3321c388</code>, and so on, until you get to the final, highest-level environment, <code>R_EmptyEnv</code>. <code>R_EmptyEnv</code> is the only R environment that does not have a parent environment.</p>
-<div id="fig:environments" class="quarto-figure quarto-figure-center anchored">
+<p>It takes some imagination to interpret this output, so let’s visualize the environments as a system of folders, <a href="#fig-environments">fig.&nbsp;<span>6.2</span></a>. You can think of the environment tree like this. The lowest-level environment is named <code>R_GlobalEnv</code> and is saved inside an environment named <code>package:pryr</code>, which is saved inside the environment named <code>0x7fff3321c388</code>, and so on, until you get to the final, highest-level environment, <code>R_EmptyEnv</code>. <code>R_EmptyEnv</code> is the only R environment that does not have a parent environment.</p>
+<div id="fig-environments" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0602.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.2: R stores R objects in an environment tree that resembles your computer’s folder system.</figcaption><p></p>
 </figure>
@@ -501,8 +532,8 @@
 <ol start="3" type="1">
 <li>When R does not find an object in an environment, R looks in the environment’s parent environment, then the parent of the parent, and so on, until R finds the object or reaches the empty environment.</li>
 </ol>
-<p>So, if you call an object at the command line, R will look for it in the global environment. If R can’t find it there, R will look in the parent of the global environment, and then the parent of the parent, and so on, working its way up the environment tree until it finds the object, as in <a href="#fig:path">fig.&nbsp;<span>6.3</span></a>. If R cannot find the object in any environment, it will return an error that says the object is not found.</p>
-<div id="fig:path" class="quarto-figure quarto-figure-center anchored">
+<p>So, if you call an object at the command line, R will look for it in the global environment. If R can’t find it there, R will look in the parent of the global environment, and then the parent of the parent, and so on, working its way up the environment tree until it finds the object, as in <a href="#fig-path">fig.&nbsp;<span>6.3</span></a>. If R cannot find the object in any environment, it will return an error that says the object is not found.</p>
+<div id="fig-path" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0603.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.3: R will search for an object by name in the active environment, here the global environment. If R does not find the object there, it will search in the active environment’s parent, and then the parent’s parent, and so on until R finds the object or runs out of environments.</figcaption><p></p>
 </figure>
@@ -528,7 +559,7 @@
 
 <span class="va">new</span>
 <span class="co">## "Hello Active"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This arrangement creates a quandary for R whenever R runs a function. Many functions save temporary objects that help them do their jobs. For example, the <code>roll</code> function from <a href="#sec:project-1">Project 1: Weighted Dice</a> saved an object named <code>die</code> and an object named <code>dice</code>:</p>
+<p>This arrangement creates a quandary for R whenever R runs a function. Many functions save temporary objects that help them do their jobs. For example, the <code>roll</code> function from <a href="#sec-project-1">Project 1: Weighted Dice</a> saved an object named <code>die</code> and an object named <code>dice</code>:</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">roll</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">die</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>
   <span class="va">dice</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">die</span>, size <span class="op">=</span> <span class="fl">2</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
@@ -553,7 +584,7 @@
 <span class="co">## &lt;environment: R_GlobalEnv&gt;</span>
 <span class="co">## </span>
 <span class="co">## $objects</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The results reveal that R created a new environment named <code>0x7ff711d12e28</code> to run <code>show_env()</code> in. The environment had no objects in it, and its parent was the <code>global environment</code>. So for purposes of running <code>show_env</code>, R’s environment tree looked like <a href="#fig:tree">fig.&nbsp;<span>6.4</span></a>.</p>
+<p>The results reveal that R created a new environment named <code>0x7ff711d12e28</code> to run <code>show_env()</code> in. The environment had no objects in it, and its parent was the <code>global environment</code>. So for purposes of running <code>show_env</code>, R’s environment tree looked like <a href="#fig-tree">fig.&nbsp;<span>6.4</span></a>.</p>
 <p>Let’s run <code>show_env</code> again:</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu">show_env</span><span class="op">(</span><span class="op">)</span>
 <span class="co">## $ran.in</span>
@@ -564,7 +595,7 @@
 <span class="co">## </span>
 <span class="co">## $objects</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This time <code>show_env</code> ran in a new environment, <code>0x7ff715f49808</code>. R creates a new environment <em>each</em> time you run a function. The <code>0x7ff715f49808</code> environment looks exactly the same as <code>0x7ff711d12e28</code>. It is empty and has the same global environment as its parent.</p>
-<div id="fig:tree" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-tree" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0604.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.4: R creates a new environment to run show_env in. The environment is a child of the global environment.</figcaption><p></p>
 </figure>
@@ -644,11 +675,11 @@ Exercise: Will deal work?
 <p>Yes. <code>deal</code> will still work the same as before. R will run <code>deal</code> in a runtime environment that is a child of the global environment. Why will it be a child of the global environment? Because the global environment is the origin environment of <code>deal</code> (we defined <code>deal</code> in the global environment):</p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="va">deal</span><span class="op">)</span>
 <span class="co">## &lt;environment: R_GlobalEnv&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>When <code>deal</code> calls <code>deck</code>, R will need to look up the <code>deck</code> object. R’s scoping rules will lead it to the version of <code>deck</code> in the global environment, as in <a href="#fig:deal">fig.&nbsp;<span>6.5</span></a>. <code>deal</code> works as expected as a result:</p>
+<p>When <code>deal</code> calls <code>deck</code>, R will need to look up the <code>deck</code> object. R’s scoping rules will lead it to the version of <code>deck</code> in the global environment, as in <a href="#fig-deal">fig.&nbsp;<span>6.5</span></a>. <code>deal</code> works as expected as a result:</p>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu">deal</span><span class="op">(</span><span class="op">)</span>
 <span class="co">##  face   suit value</span>
 <span class="co">##  king spades    13</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig:deal" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-deal" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0605.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.5: R finds <code>deck</code> by looking in the parent of deal’s runtime environment. The parent is the global environment, deal’s origin environment. Here, R finds the copy of <code>deck</code>.</figcaption><p></p>
 </figure>
@@ -677,8 +708,8 @@ Exercise: Will deal work?
   <span class="va">deck</span> <span class="op">&lt;-</span> <span class="va">deck</span><span class="op">[</span><span class="op">-</span><span class="fl">1</span>, <span class="op">]</span>
   <span class="va">card</span>
 <span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This code won’t work because R will be in a runtime environment when it executes <code>deck &lt;- deck[-1, ]</code>. Instead of overwriting the global copy of <code>deck</code> with <code>deck[-1, ]</code>, <code>deal</code> will just create a slightly altered copy of <code>deck</code> in its runtime environment, as in <a href="#fig:second-deck">fig.&nbsp;<span>6.6</span></a>.</p>
-<div id="fig:second-deck" class="quarto-figure quarto-figure-center anchored">
+<p>This code won’t work because R will be in a runtime environment when it executes <code>deck &lt;- deck[-1, ]</code>. Instead of overwriting the global copy of <code>deck</code> with <code>deck[-1, ]</code>, <code>deal</code> will just create a slightly altered copy of <code>deck</code> in its runtime environment, as in <a href="#fig-second-deck">fig.&nbsp;<span>6.6</span></a>.</p>
+<div id="fig-second-deck" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0606.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.6: The deal function looks up deck in the global environment but saves <code>deck[-1, ]</code> in the runtime environment as a new object named deck.</figcaption><p></p>
 </figure>
@@ -789,7 +820,7 @@ Exercise: Rewrite shuffle
     <span class="fu"><a href="https://rdrr.io/r/base/assign.html">assign</a></span><span class="op">(</span><span class="st">"deck"</span>, <span class="va">DECK</span><span class="op">[</span><span class="va">random</span>, <span class="op">]</span>, envir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html">globalenv</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
  <span class="op">}</span>
 <span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>When you run <code>setup</code>, R will create a runtime environment to store these objects in. The environment will look like <a href="#fig:closure1">fig.&nbsp;<span>6.7</span></a>.</p>
+<p>When you run <code>setup</code>, R will create a runtime environment to store these objects in. The environment will look like <a href="#fig-closure1">fig.&nbsp;<span>6.7</span></a>.</p>
 <p>Now all of these things are safely out of the way in a child of the global environment. That makes them safe but hard to use. Let’s ask <code>setup</code> to return <code>DEAL</code> and <code>SHUFFLE</code> so we can use them. The best way to do this is to return the functions as a list:</p>
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">setup</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">deck</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">DECK</span> <span class="op">&lt;-</span> <span class="va">deck</span>
@@ -809,7 +840,7 @@ Exercise: Rewrite shuffle
 <span class="op">}</span>
 
 <span class="va">cards</span> <span class="op">&lt;-</span> <span class="fu">setup</span><span class="op">(</span><span class="va">deck</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig:closure1" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-closure1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0607.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.7: Running setup will store deck and DECK in an out-of-the-way place, and create a DEAL and SHUFFLE function. Each of these objects will be stored in an environment whose parent is the global environment.</figcaption><p></p>
 </figure>
@@ -838,14 +869,14 @@ Exercise: Rewrite shuffle
 
 <span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="va">shuffle</span><span class="op">)</span>
 <span class="co">## &lt;environment: 0x7ff7169c3390&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Why does this matter? Because now when you run <code>deal</code> or <code>shuffle</code>, R will evaluate the functions in a runtime environment that uses <code>0x7ff7169c3390</code> as its parent. <code>DECK</code> and <code>deck</code> will be in this parent environment, which means that <code>deal</code> and <code>shuffle</code> will be able to find them at runtime. <code>DECK</code> and <code>deck</code> will be in the functions’ search path but still out of the way in every other respect, as shown in <a href="#fig:closure2">fig.&nbsp;<span>6.8</span></a>.</p>
-<div id="fig:closure2" class="quarto-figure quarto-figure-center anchored">
+<p>Why does this matter? Because now when you run <code>deal</code> or <code>shuffle</code>, R will evaluate the functions in a runtime environment that uses <code>0x7ff7169c3390</code> as its parent. <code>DECK</code> and <code>deck</code> will be in this parent environment, which means that <code>deal</code> and <code>shuffle</code> will be able to find them at runtime. <code>DECK</code> and <code>deck</code> will be in the functions’ search path but still out of the way in every other respect, as shown in <a href="#fig-closure2">fig.&nbsp;<span>6.8</span></a>.</p>
+<div id="fig-closure2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0608.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.8: Now deal and shuffle will be run in an environment that has the protected deck and DECK in its search path.</figcaption><p></p>
 </figure>
 </div>
 <p>This arrangement is called a <em>closure</em>. <code>setup</code>’s runtime environment “encloses” the <code>deal</code> and <code>shuffle</code> functions. Both <code>deal</code> and <code>shuffle</code> can work closely with the objects contained in the enclosing environment, but almost nothing else can. The enclosing environment is not on the search path for any other R function or environment.</p>
-<p>You may have noticed that <code>deal</code> and <code>shuffle</code> still update the <code>deck</code> object in the global environment. Don’t worry, we’re about to change that. We want <code>deal</code> and <code>shuffle</code> to work exclusively with the objects in the parent (enclosing) environment of their runtime environments. Instead of having each function reference the global environment to update <code>deck</code>, you can have them reference their parent environment at runtime, as shown in <a href="#fig:closure3">fig.&nbsp;<span>6.9</span></a>:</p>
+<p>You may have noticed that <code>deal</code> and <code>shuffle</code> still update the <code>deck</code> object in the global environment. Don’t worry, we’re about to change that. We want <code>deal</code> and <code>shuffle</code> to work exclusively with the objects in the parent (enclosing) environment of their runtime environments. Instead of having each function reference the global environment to update <code>deck</code>, you can have them reference their parent environment at runtime, as shown in <a href="#fig-closure3">fig.&nbsp;<span>6.9</span></a>:</p>
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">setup</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">deck</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">DECK</span> <span class="op">&lt;-</span> <span class="va">deck</span>
 
@@ -866,7 +897,7 @@ Exercise: Rewrite shuffle
 <span class="va">cards</span> <span class="op">&lt;-</span> <span class="fu">setup</span><span class="op">(</span><span class="va">deck</span><span class="op">)</span>
 <span class="va">deal</span> <span class="op">&lt;-</span> <span class="va">cards</span><span class="op">$</span><span class="va">deal</span>
 <span class="va">shuffle</span> <span class="op">&lt;-</span> <span class="va">cards</span><span class="op">$</span><span class="va">shuffle</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig:closure3" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-closure3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0609.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.9: When you change your code, deal and shuffle will go from updating the global environment (left) to updating their parent environment (right).</figcaption><p></p>
 </figure>

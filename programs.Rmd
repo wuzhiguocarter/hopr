@@ -2,7 +2,7 @@
 knit: quarto render
 ---
 
-# Programs {#sec:programs}
+# Programs {#sec-programs}
 
 In this chapter, you will build a real, working slot machine that you can play by running an R function. When you're finished, you'll be able to play it like this:
 
@@ -43,7 +43,7 @@ get_symbols()
 
 `get_symbols` uses the probabilities observed in a group of video lottery terminals from Manitoba, Canada. These slot machines became briefly controversial in the 1990s, when a reporter decided to test their payout rate. The machines appeared to pay out only 40 cents on the dollar, even though the manufacturer claimed they would pay out 92 cents on the dollar. The original data collected on the machines and a description of the controversy is available online in [a journal article by W. John Braun](http://bit.ly/jse_Braun). The controversy died down when additional testing showed that the manufacturer was correct.
 
-The Manitoba slot machines use the complicated payout scheme shown in @tbl:prizes. A player will win a prize if he gets:
+The Manitoba slot machines use the complicated payout scheme shown in @tbl-prizes. A player will win a prize if he gets:
 
 -   Three of the same type of symbol (except for three zeroes)
 -   Three bars (of mixed variety)
@@ -71,9 +71,9 @@ Diamonds are also special in another way. Every diamond that appears in a combin
 | `*  C  *`               | 2         |
 | `*  *  C`               | 2         |
 
-: Each play of the slot machine costs \$1. A player's symbols determine how much they win. Diamonds (`DD`) are wild, and each diamond doubles the final prize. \* = any symbol {\#tbl:prizes}
+: Each play of the slot machine costs \$1. A player's symbols determine how much they win. Diamonds (`DD`) are wild, and each diamond doubles the final prize. \* = any symbol {\#tbl-prizes}
 
-To create your `play` function, you will need to write a program that can take the output of `get_symbols` and calculate the correct prize based on @tbl:prizes.
+To create your `play` function, you will need to write a program that can take the output of `get_symbols` and calculate the correct prize based on @tbl-prizes.
 
 In R, programs are saved either as R scripts or as functions. We'll save your program as a function named `score`. When you are finished, you will be able to use `score` to calculate a prize like this:
 
@@ -98,7 +98,7 @@ The `print` command prints its output to the console window, which makes `print`
 
 You may notice that `play` calls a new function, `print`. This will help `play` display the three slot machine symbols, since they do not get returned by the last line of the function. The `print` command prints its output to the console window -- even if R calls it from within a function.
 
-In [Project 1: Weighted Dice](#sec:project-dice), I encouraged you to write all of your R code in an R script, a text file where you can compose and save code. That advice will become very important as you work through this chapter. Remember that you can open an R script in RStudio by going to the menu bar and clicking on File \> New File \> R Script.
+In [Project 1: Weighted Dice](#sec-project-dice), I encouraged you to write all of your R code in an R script, a text file where you can compose and save code. That advice will become very important as you work through this chapter. Remember that you can open an R script in RStudio by going to the menu bar and clicking on File \> New File \> R Script.
 
 ## Strategy
 
@@ -118,7 +118,7 @@ R programs contain two types of subtasks: sequential steps and parallel cases.
 
 ### Sequential Steps
 
-One way to subdivide a program is into a series of sequential steps. The `play` function takes the approach, shown in @fig:subdivide1. First, it generates three symbols (step 1), then it displays them in the console window (step 2), and then it scores them (step 3):
+One way to subdivide a program is into a series of sequential steps. The `play` function takes the approach, shown in @fig-subdivide1. First, it generates three symbols (step 1), then it displays them in the console window (step 2), and then it scores them (step 3):
 
 ``` {.r}
 play <- function() {
@@ -136,7 +136,7 @@ play <- function() {
 
 To have R execute steps in sequence, place the steps one after another in an R script or function body.
 
-![The play function uses a series of steps.](images/hopr_0701.png){#fig:subdivide1}
+![The play function uses a series of steps.](images/hopr_0701.png){#fig-subdivide1}
 
 ### Parallel Cases
 
@@ -144,15 +144,15 @@ Another way to divide a task is to spot groups of similar cases within the task.
 
 For example, `score` will need to calculate the prize one way if `symbols` contains three of a kind (In that case, `score` will need to match the common symbol to a prize). `score` will need to calculate the prize a second way if the symbols are all bars (In that case, `score` can just assign a prize of \$5). And, finally, `score` will need to calculate the prize in a third way if the symbols do not contain three of a kind or all bars (In that case, `score` must count the number of cherries present). `score` will never use all three of these algorithms at once; it will always choose just one algorithm to run based on the combination of symbols.
 
-Diamonds complicate all of this because diamonds can be treated as wild cards. Let's ignore that for now and focus on the simpler case where diamonds double the prize but are not wilds. `score` can double the prize as necessary after it runs one of the following algorithms, as shown in @fig:subdivide2.
+Diamonds complicate all of this because diamonds can be treated as wild cards. Let's ignore that for now and focus on the simpler case where diamonds double the prize but are not wilds. `score` can double the prize as necessary after it runs one of the following algorithms, as shown in @fig-subdivide2.
 
-Adding the `score` cases to the `play` steps reveals a strategy for the complete slot machine program, as shown in @fig:subdivide3.
+Adding the `score` cases to the `play` steps reveals a strategy for the complete slot machine program, as shown in @fig-subdivide3.
 
 We've already solved the first few steps in this strategy. Our program can get three slot machine symbols with the `get_symbols` function. Then it can display the symbols with the `print` function. Now let's examine how the program can handle the parallel score cases.
 
-![The score function must distinguish between parallel cases.](images/hopr_0702.png){#fig:subdivide2}
+![The score function must distinguish between parallel cases.](images/hopr_0702.png){#fig-subdivide2}
 
-![The complete slot machine simulation will involve subtasks that are arranged both in series and in parallel.](images/hopr_0703.png){#fig:subdivide3}
+![The complete slot machine simulation will involve subtasks that are arranged both in series and in parallel.](images/hopr_0703.png){#fig-subdivide3}
 
 ## if Statements
 
@@ -344,7 +344,7 @@ R will work through the `if` conditions until one evaluates to `TRUE`, then R wi
 
 If two `if` statements describe mutually exclusive events, it is better to join the `if` statements with an `else if` than to list them separately. This lets R ignore the second `if` statement whenever the first returns a `TRUE`, which saves work.
 
-You can use `if` and `else` to link the subtasks in your slot-machine function. Open a fresh R script, and copy this code into it. The code will be the skeleton of our final `score` function. Compare it to the flow chart for `score` in @fig:subdivide2:
+You can use `if` and `else` to link the subtasks in your slot-machine function. Open a fresh R script, and copy this code into it. The code will be the skeleton of our final `score` function. Compare it to the flow chart for `score` in @fig-subdivide2:
 
 ``` {.r}
 if ( # Case 1: all the same <1>) {
@@ -371,9 +371,9 @@ Our skeleton is rather incomplete; there are many sections that are just code co
 **\<7\>** - Calculate a prize based on the number of cherries.\
 **\<8\>** - Adjust the prize for diamonds.
 
-If you like, you can reorganize your flow chart around these tasks, as in @fig:subdivide4. The chart will describe the same strategy, but in a more precise way. I'll use a diamond shape to symbolize an `if else` decision.
+If you like, you can reorganize your flow chart around these tasks, as in @fig-subdivide4. The chart will describe the same strategy, but in a more precise way. I'll use a diamond shape to symbolize an `if else` decision.
 
-![score can navigate three cases with two if else decisions. We can also break some of our tasks into two steps.](images/hopr_0704.png){#fig:subdivide4}
+![score can navigate three cases with two if else decisions. We can also break some of our tasks into two steps.](images/hopr_0704.png){#fig-subdivide4}
 
 Now we can work through the subtasks one at a time, adding R code to the `if` tree as we go. Each subtask will be easy to solve if you set up a concrete example to work with and try to describe a solution in English before coding in R.
 
@@ -879,7 +879,7 @@ diamonds <- sum(symbols == "DD")
 prize * 2 ^ diamonds
 ```
 
-Now that each part of your code works, you can wrap it into a function with the methods you learned in [Writing Your Own Functions](#sec:write-functions). Either use RStudio's Extract Function option in the menu bar under Code, or use the `function` function. Ensure that the last line of the function returns a result (it does), and identify any arguments used by your function. Often the concrete examples that you used to test your code, like `symbols`, will become the arguments of your function. Run the following code to start using the `score` function:
+Now that each part of your code works, you can wrap it into a function with the methods you learned in [Writing Your Own Functions](#sec-write-functions). Either use RStudio's Extract Function option in the menu bar under Code, or use the `function` function. Ensure that the last line of the function returns a result (it does), and identify any arguments used by your function. Often the concrete examples that you used to test your code, like `symbols`, will become the arguments of your function. Run the following code to start using the `score` function:
 
 ``` {.r}
 score <- function (symbols) {
@@ -939,6 +939,6 @@ As a programmer, you are more likely to be fooled in the opposite way. A program
 
 R provides tools that can help you do this. You can manage cases with `if` and `else` statements. You can create a lookup table with objects and subsetting. You can add code comments with `#`. And you can save your programs as a function with `function`.
 
-Things often go wrong when people write programs. It will be up to you to find the source of any errors that occur and to fix them. It should be easy to find the source of your errors if you use a stepwise approach to writing functions, writing---and then testing---one bit at a time. However, if the source of an error eludes you, or you find yourself working with large chunks of untested code, consider using R's built in debugging tools, described in [Debugging R Code](#sec:appendix-debug).
+Things often go wrong when people write programs. It will be up to you to find the source of any errors that occur and to fix them. It should be easy to find the source of your errors if you use a stepwise approach to writing functions, writing---and then testing---one bit at a time. However, if the source of an error eludes you, or you find yourself working with large chunks of untested code, consider using R's built in debugging tools, described in [Debugging R Code](#sec-appendix-debug).
 
-The next two chapters will teach you more tools that you can use in your programs. As you master these tools, you will find it easier to write R programs that let you do whatever you wish to your data. In [S3](#sec:s3), you will learn how to use R's S3 system, an invisible hand that shapes many parts of R. You will use the system to build a custom class for your slot machine output, and you will tell R how to display objects that have your class.
+The next two chapters will teach you more tools that you can use in your programs. As you master these tools, you will find it easier to write R programs that let you do whatever you wish to your data. In [S3](#sec-s3), you will learn how to use R's S3 system, an invisible hand that shapes many parts of R. You will use the system to build a custom class for your slot machine output, and you will tell R how to display objects that have your class.

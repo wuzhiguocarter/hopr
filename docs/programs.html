@@ -80,7 +80,9 @@
 <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]--><script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><meta name="quarto:offset" content=".">
-<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><link href="./s3.html" rel="next">
+<link href="./slots.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
@@ -130,6 +132,7 @@
        display: inline-table;
     }
     .quarto-layout-cell-subref figcaption {
+      text-align: center;
       font-style: italic;
     }
     .quarto-figure {
@@ -158,6 +161,32 @@
       margin-top: 0.5em;
     }
   </style>
+<style type="text/css">
+    details {
+      margin-bottom: 1em;
+    } 
+    details[show] {
+      margin-bottom: 0;
+    }
+
+    .quarto-unresolved-ref {
+      font-weight: 600;
+    }
+
+    .quarto-cover-image {
+      max-width: 35%;
+      float: right;
+      margin-left: 30px;
+    }
+
+    .cell-output-display {
+      overflow-x: scroll;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
@@ -170,27 +199,29 @@
 </nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-2 text-left">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll"><div class="px-3 pt-lg-2 text-left">
     <div class="sidebar-title mt-1 mb-0 py-0">
+      <a href="./">
       Hands-On Programming with R
+      </a>
         <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -199,8 +230,8 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2">
-      <div class="sidebar-search flex-fill">
+    <div class="d-flex px-3 mt-2 flex-shrink-0">
+      <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
@@ -210,19 +241,19 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -245,9 +276,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./dice.html" class="">Project 1: Weighted Dice</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project1weighteddice-collapse">
@@ -269,9 +300,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./cards.html" class="">Project 2: Playing Cards</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project2playingcards-collapse">
@@ -299,9 +330,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./slots.html" class="">Project 3: Slot Machine</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project3slotmachine-collapse">
@@ -325,12 +356,12 @@
 <ul class="list-unstyled sidebar-section depth1">
 <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Appendices
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="appendices-collapse">
         <ul class="list-unstyled sidebar-item-contents">
@@ -399,7 +430,7 @@
 <span class="fu">get_symbols</span><span class="op">(</span><span class="op">)</span>
 <span class="co">## "7" "0" "B"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>get_symbols</code> uses the probabilities observed in a group of video lottery terminals from Manitoba, Canada. These slot machines became briefly controversial in the 1990s, when a reporter decided to test their payout rate. The machines appeared to pay out only 40 cents on the dollar, even though the manufacturer claimed they would pay out 92 cents on the dollar. The original data collected on the machines and a description of the controversy is available online in <a href="http://bit.ly/jse_Braun">a journal article by W. John Braun</a>. The controversy died down when additional testing showed that the manufacturer was correct.</p>
-<p>The Manitoba slot machines use the complicated payout scheme shown in <a href="#tbl:prizes">tbl.&nbsp;<span>7.1</span></a>. A player will win a prize if he gets:</p>
+<p>The Manitoba slot machines use the complicated payout scheme shown in <a href="#tbl-prizes">tbl.&nbsp;<span>7.1</span></a>. A player will win a prize if he gets:</p>
 <ul>
 <li>Three of the same type of symbol (except for three zeroes)</li>
 <li>Three bars (of mixed variety)</li>
@@ -408,7 +439,7 @@
 <p>Otherwise, the player receives no prize.</p>
 <p>The monetary value of the prize is determined by the exact combination of symbols and is further modified by the presence of diamonds. Diamonds are treated like “wild cards,” which means they can be considered any other symbol if it would increase a player’s prize. For example, a player who rolls <code>7</code> <code>7</code> <code>DD</code> would earn a prize for getting three sevens. There is one exception to this rule, however: a diamond cannot be considered a cherry unless the player also gets one real cherry. This prevents a dud roll like, <code>0</code> <code>DD</code> <code>0</code> from being scored as <code>0</code> <code>C</code> <code>0</code>.</p>
 <p>Diamonds are also special in another way. Every diamond that appears in a combination doubles the amount of the final prize. So <code>7</code> <code>7</code> <code>DD</code> would actually be scored <em>higher</em> than <code>7</code> <code>7</code> <code>7</code>. Three sevens would earn you $80, but two sevens and a diamond would earn you $160. One seven and two diamonds would be even better, resulting in a prize that has been doubled twice, or $320. A jackpot occurs when a player rolls <code>DD</code> <code>DD</code> <code>DD</code>. Then a player earns $100 doubled three times, which is $800.</p>
-<div id="tbl:prizes" class="anchored">
+<div id="tbl-prizes" class="anchored">
 <table class="table">
 <caption>Table 7.1: Each play of the slot machine costs $1. A player’s symbols determine how much they win. Diamonds (<code>DD</code>) are wild, and each diamond doubles the final prize. * = any symbol </caption>
 <thead><tr class="header">
@@ -471,7 +502,7 @@
 </tbody>
 </table>
 </div>
-<p>To create your <code>play</code> function, you will need to write a program that can take the output of <code>get_symbols</code> and calculate the correct prize based on <a href="#tbl:prizes">tbl.&nbsp;<span>7.1</span></a>.</p>
+<p>To create your <code>play</code> function, you will need to write a program that can take the output of <code>get_symbols</code> and calculate the correct prize based on <a href="#tbl-prizes">tbl.&nbsp;<span>7.1</span></a>.</p>
 <p>In R, programs are saved either as R scripts or as functions. We’ll save your program as a function named <code>score</code>. When you are finished, you will be able to use <code>score</code> to calculate a prize like this:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu">score</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"DD"</span>, <span class="st">"DD"</span>, <span class="st">"DD"</span><span class="op">)</span><span class="op">)</span>
 <span class="co">## 800</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -507,7 +538,7 @@
 <p>R programs contain two types of subtasks: sequential steps and parallel cases.</p>
 <section class="level3" data-number="7.1.1"><h3 data-number="7.1.1" class="anchored" id="sequential-steps">
 <span class="header-section-number">7.1.1</span> Sequential Steps</h3>
-<p>One way to subdivide a program is into a series of sequential steps. The <code>play</code> function takes the approach, shown in <a href="#fig:subdivide1">fig.&nbsp;<span>7.1</span></a>. First, it generates three symbols (step 1), then it displays them in the console window (step 2), and then it scores them (step 3):</p>
+<p>One way to subdivide a program is into a series of sequential steps. The <code>play</code> function takes the approach, shown in <a href="#fig-subdivide1">fig.&nbsp;<span>7.1</span></a>. First, it generates three symbols (step 1), then it displays them in the console window (step 2), and then it scores them (step 3):</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">play</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
 
   <span class="co"># step 1: generate symbols</span>
@@ -520,7 +551,7 @@
   <span class="fu">score</span><span class="op">(</span><span class="va">symbols</span><span class="op">)</span>
 <span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To have R execute steps in sequence, place the steps one after another in an R script or function body.</p>
-<div id="fig:subdivide1" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-subdivide1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0701.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 7.1: The play function uses a series of steps.</figcaption><p></p>
 </figure>
@@ -529,15 +560,15 @@
 <span class="header-section-number">7.1.2</span> Parallel Cases</h3>
 <p>Another way to divide a task is to spot groups of similar cases within the task. Some tasks require different algorithms for different groups of input. If you can identify those groups, you can work out their algorithms one at a time.</p>
 <p>For example, <code>score</code> will need to calculate the prize one way if <code>symbols</code> contains three of a kind (In that case, <code>score</code> will need to match the common symbol to a prize). <code>score</code> will need to calculate the prize a second way if the symbols are all bars (In that case, <code>score</code> can just assign a prize of $5). And, finally, <code>score</code> will need to calculate the prize in a third way if the symbols do not contain three of a kind or all bars (In that case, <code>score</code> must count the number of cherries present). <code>score</code> will never use all three of these algorithms at once; it will always choose just one algorithm to run based on the combination of symbols.</p>
-<p>Diamonds complicate all of this because diamonds can be treated as wild cards. Let’s ignore that for now and focus on the simpler case where diamonds double the prize but are not wilds. <code>score</code> can double the prize as necessary after it runs one of the following algorithms, as shown in <a href="#fig:subdivide2">fig.&nbsp;<span>7.2</span></a>.</p>
-<p>Adding the <code>score</code> cases to the <code>play</code> steps reveals a strategy for the complete slot machine program, as shown in <a href="#fig:subdivide3">fig.&nbsp;<span>7.3</span></a>.</p>
+<p>Diamonds complicate all of this because diamonds can be treated as wild cards. Let’s ignore that for now and focus on the simpler case where diamonds double the prize but are not wilds. <code>score</code> can double the prize as necessary after it runs one of the following algorithms, as shown in <a href="#fig-subdivide2">fig.&nbsp;<span>7.2</span></a>.</p>
+<p>Adding the <code>score</code> cases to the <code>play</code> steps reveals a strategy for the complete slot machine program, as shown in <a href="#fig-subdivide3">fig.&nbsp;<span>7.3</span></a>.</p>
 <p>We’ve already solved the first few steps in this strategy. Our program can get three slot machine symbols with the <code>get_symbols</code> function. Then it can display the symbols with the <code>print</code> function. Now let’s examine how the program can handle the parallel score cases.</p>
-<div id="fig:subdivide2" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-subdivide2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0702.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 7.2: The score function must distinguish between parallel cases.</figcaption><p></p>
 </figure>
 </div>
-<div id="fig:subdivide3" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-subdivide3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0703.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 7.3: The complete slot machine simulation will involve subtasks that are arranged both in series and in parallel.</figcaption><p></p>
 </figure>
@@ -708,7 +739,7 @@ Exercise: Quiz C
 <span class="co">## "Tie."</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>R will work through the <code>if</code> conditions until one evaluates to <code>TRUE</code>, then R will ignore any remaining <code>if</code> and <code>else</code> clauses in the tree. If no conditions evaluate to <code>TRUE</code>, R will run the final <code>else</code> statement.</p>
 <p>If two <code>if</code> statements describe mutually exclusive events, it is better to join the <code>if</code> statements with an <code>else if</code> than to list them separately. This lets R ignore the second <code>if</code> statement whenever the first returns a <code>TRUE</code>, which saves work.</p>
-<p>You can use <code>if</code> and <code>else</code> to link the subtasks in your slot-machine function. Open a fresh R script, and copy this code into it. The code will be the skeleton of our final <code>score</code> function. Compare it to the flow chart for <code>score</code> in <a href="#fig:subdivide2">fig.&nbsp;<span>7.2</span></a>:</p>
+<p>You can use <code>if</code> and <code>else</code> to link the subtasks in your slot-machine function. Open a fresh R script, and copy this code into it. The code will be the skeleton of our final <code>score</code> function. Compare it to the flow chart for <code>score</code> in <a href="#fig-subdivide2">fig.&nbsp;<span>7.2</span></a>:</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> ( <span class="co"># Case 1: all the same &lt;1&gt;) {</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  prize <span class="ot">&lt;-</span> <span class="co"># look up the prize &lt;3&gt;</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="er">}</span> <span class="cf">else</span> <span class="cf">if</span> ( <span class="co"># Case 2: all bars &lt;2&gt; ) {</span></span>
@@ -722,8 +753,8 @@ Exercise: Quiz C
 <span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="co"># double the prize if necessary &lt;8&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Our skeleton is rather incomplete; there are many sections that are just code comments instead of real code. However, we’ve reduced the program to eight simple subtasks:</p>
 <p><strong>&lt;1&gt;</strong> - Test whether the symbols are three of a kind.<br><strong>&lt;2&gt;</strong> - Test whether the symbols are all bars.<br><strong>&lt;3&gt;</strong> - Look up the prize for three of a kind based on the common symbol.<br><strong>&lt;4&gt;</strong> - Assign a prize of $5.<br><strong>&lt;5&gt;</strong> - Count the number of cherries.<br><strong>&lt;6&gt;</strong> - Count the number of diamonds.<br><strong>&lt;7&gt;</strong> - Calculate a prize based on the number of cherries.<br><strong>&lt;8&gt;</strong> - Adjust the prize for diamonds.</p>
-<p>If you like, you can reorganize your flow chart around these tasks, as in <a href="#fig:subdivide4">fig.&nbsp;<span>7.4</span></a>. The chart will describe the same strategy, but in a more precise way. I’ll use a diamond shape to symbolize an <code>if else</code> decision.</p>
-<div id="fig:subdivide4" class="quarto-figure quarto-figure-center anchored">
+<p>If you like, you can reorganize your flow chart around these tasks, as in <a href="#fig-subdivide4">fig.&nbsp;<span>7.4</span></a>. The chart will describe the same strategy, but in a more precise way. I’ll use a diamond shape to symbolize an <code>if else</code> decision.</p>
+<div id="fig-subdivide4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_0704.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 7.4: score can navigate three cases with two if else decisions. We can also break some of our tasks into two steps.</figcaption><p></p>
 </figure>
@@ -1114,7 +1145,7 @@ Exercise: Adjust for Diamonds
 <span class="co"># adjust for diamonds</span>
 <span class="va">diamonds</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">symbols</span> <span class="op">==</span> <span class="st">"DD"</span><span class="op">)</span>
 <span class="va">prize</span> <span class="op">*</span> <span class="fl">2</span> <span class="op">^</span> <span class="va">diamonds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now that each part of your code works, you can wrap it into a function with the methods you learned in <a href="basics.html#sec:write-functions">Writing Your Own Functions</a>. Either use RStudio’s Extract Function option in the menu bar under Code, or use the <code>function</code> function. Ensure that the last line of the function returns a result (it does), and identify any arguments used by your function. Often the concrete examples that you used to test your code, like <code>symbols</code>, will become the arguments of your function. Run the following code to start using the <code>score</code> function:</p>
+<p>Now that each part of your code works, you can wrap it into a function with the methods you learned in <a href="basics.html#sec-write-functions">Writing Your Own Functions</a>. Either use RStudio’s Extract Function option in the menu bar under Code, or use the <code>function</code> function. Ensure that the last line of the function returns a result (it does), and identify any arguments used by your function. Often the concrete examples that you used to test your code, like <code>symbols</code>, will become the arguments of your function. Run the following code to start using the <code>score</code> function:</p>
 <div class="sourceCode" id="cb57"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">score</span> <span class="op">&lt;-</span> <span class="kw">function</span> <span class="op">(</span><span class="va">symbols</span><span class="op">)</span> <span class="op">{</span>
   <span class="co"># identify case</span>
   <span class="va">same</span> <span class="op">&lt;-</span> <span class="va">symbols</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op">==</span> <span class="va">symbols</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">&amp;&amp;</span> <span class="va">symbols</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">==</span> <span class="va">symbols</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span>

@@ -2,7 +2,7 @@
 knit: quarto render
 ---
 
-# Updating R and Its Packages {#sec:appendix-updating}
+# Updating R and Its Packages {#sec-appendix-updating}
 
 The R Core Development Team continuously hones the R language by catching bugs, improving performance, and updating R to work with new technologies. As a result, new versions of R are released several times a year. The easiest way to stay current with R is to periodically check [the CRAN website](http://cran.r-project.org). The website is updated for each new release and makes the release available for download. You'll have to install the new release. The process is the same as when you first installed R.
 

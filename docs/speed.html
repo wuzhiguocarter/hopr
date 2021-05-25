@@ -80,7 +80,9 @@
 <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]--><script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><meta name="quarto:offset" content=".">
-<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><link href="./a1-starting.html" rel="next">
+<link href="./loops.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
@@ -130,6 +132,7 @@
        display: inline-table;
     }
     .quarto-layout-cell-subref figcaption {
+      text-align: center;
       font-style: italic;
     }
     .quarto-figure {
@@ -158,6 +161,32 @@
       margin-top: 0.5em;
     }
   </style>
+<style type="text/css">
+    details {
+      margin-bottom: 1em;
+    } 
+    details[show] {
+      margin-bottom: 0;
+    }
+
+    .quarto-unresolved-ref {
+      font-weight: 600;
+    }
+
+    .quarto-cover-image {
+      max-width: 35%;
+      float: right;
+      margin-left: 30px;
+    }
+
+    .cell-output-display {
+      overflow-x: scroll;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
@@ -170,27 +199,29 @@
 </nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll "><div class="px-3 pt-lg-2 text-left">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll"><div class="px-3 pt-lg-2 text-left">
     <div class="sidebar-title mt-1 mb-0 py-0">
+      <a href="./">
       Hands-On Programming with R
+      </a>
         <div class="sidebar-tools-main mt-1">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -199,8 +230,8 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2">
-      <div class="sidebar-search flex-fill">
+    <div class="d-flex px-3 mt-2 flex-shrink-0">
+      <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
@@ -210,19 +241,19 @@
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item" href="http://www.twitter.com/share">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url=">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -245,9 +276,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./dice.html" class="">Project 1: Weighted Dice</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project1weighteddice-collapse">
@@ -269,9 +300,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./cards.html" class="">Project 2: Playing Cards</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project2playingcards-collapse">
@@ -299,9 +330,9 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./slots.html" class="">Project 3: Slot Machine</a>
             </div>
-            <button class="btn text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
             </div>
         </div>
       <div class="collapse  show" id="project3slotmachine-collapse">
@@ -325,12 +356,12 @@
 <ul class="list-unstyled sidebar-section depth1">
 <li class="">
         <div class="me-auto ">
-            <button class="btn sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
               <div class="me-auto  sidebar-section-item">
                 Appendices
               </div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
-            </button>
+            </a>
         </div>
       <div class="collapse  show" id="appendices-collapse">
         <ul class="list-unstyled sidebar-item-contents">
@@ -451,8 +482,8 @@ Exercise: How fast is abs?
 <li>Use vectorized functions to complete the sequential steps in your program.</li>
 <li>Use logical subsetting to handle parallel cases. Try to manipulate every element in a case at once.</li>
 </ol>
-<p><code>abs_loop</code> and <code>abs_set</code> illustrate these rules. The functions both handle two cases and perform one sequential step, <a href="#fig:abs">fig.&nbsp;<span>10.1</span></a>. If a number is positive, the functions leave it alone. If a number is negative, the functions multiply it by negative one.</p>
-<div id="fig:abs" class="quarto-figure quarto-figure-center anchored">
+<p><code>abs_loop</code> and <code>abs_set</code> illustrate these rules. The functions both handle two cases and perform one sequential step, <a href="#fig-abs">fig.&nbsp;<span>10.1</span></a>. If a number is positive, the functions leave it alone. If a number is negative, the functions multiply it by negative one.</p>
+<div id="fig-abs" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_1001.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.1: <code>abs_loop</code> uses a for loop to sift data into one of two cases: negative numbers and nonnegative numbers.</figcaption><p></p>
 </figure>
@@ -464,11 +495,11 @@ Exercise: How fast is abs?
 
 <span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">&lt;</span> <span class="fl">0</span><span class="op">]</span>
 <span class="co">## -2  -4  -6  -8 -10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The plan in <a href="#fig:abs">fig.&nbsp;<span>10.1</span></a> now requires a sequential step: you must multiply each of the negative values by negative one. All of R’s arithmetic operators are vectorized, so you can use <code><a href="https://rdrr.io/r/base/Arithmetic.html">*</a></code> to complete this step in vectorized fashion. <code><a href="https://rdrr.io/r/base/Arithmetic.html">*</a></code> will multiply each number in <code>vec[vec &lt; 0]</code> by negative one at the same time:</p>
+<p>The plan in <a href="#fig-abs">fig.&nbsp;<span>10.1</span></a> now requires a sequential step: you must multiply each of the negative values by negative one. All of R’s arithmetic operators are vectorized, so you can use <code><a href="https://rdrr.io/r/base/Arithmetic.html">*</a></code> to complete this step in vectorized fashion. <code><a href="https://rdrr.io/r/base/Arithmetic.html">*</a></code> will multiply each number in <code>vec[vec &lt; 0]</code> by negative one at the same time:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">&lt;</span> <span class="fl">0</span><span class="op">]</span> <span class="op">*</span> <span class="op">-</span><span class="fl">1</span>
 <span class="co">## 2  4  6  8 10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Finally, you can use R’s assignment operator, which is also vectorized, to save the new set over the old set in the original <code>vec</code> object. Since <code><a href="https://rdrr.io/r/base/assignOps.html">&lt;-</a></code> is vectorized, the elements of the new set will be paired up to the elements of the old set, in order, and then element-wise assignment will occur. As a result, each negative value will be replaced by its positive partner, as in <a href="#fig:assignment">fig.&nbsp;<span>10.2</span></a>.</p>
-<div id="fig:assignment" class="quarto-figure quarto-figure-center anchored">
+<p>Finally, you can use R’s assignment operator, which is also vectorized, to save the new set over the old set in the original <code>vec</code> object. Since <code><a href="https://rdrr.io/r/base/assignOps.html">&lt;-</a></code> is vectorized, the elements of the new set will be paired up to the elements of the old set, in order, and then element-wise assignment will occur. As a result, each negative value will be replaced by its positive partner, as in <a href="#fig-assignment">fig.&nbsp;<span>10.2</span></a>.</p>
+<div id="fig-assignment" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_1002.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.2: Use logical subsetting to modify groups of values in place. R’s arithmetic and assignment operators are vectorized, which lets you manipulate and update multiple values at once.</figcaption><p></p>
 </figure>
@@ -517,7 +548,7 @@ Exercise: Vectorize a Function
 <span class="co">##  30.057   0.031  30.079</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p><code>change_symbols</code> uses a <code>for</code> loop to sort values into seven different cases, as demonstrated in <a href="#fig:change">fig.&nbsp;<span>10.3</span></a>.</p>
+<p><code>change_symbols</code> uses a <code>for</code> loop to sort values into seven different cases, as demonstrated in <a href="#fig-change">fig.&nbsp;<span>10.3</span></a>.</p>
 <p>To vectorize <code>change_symbols</code>, create a logical test that can identify each case:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"DD"</span><span class="op">]</span>
 <span class="co">## "DD"</span>
@@ -539,7 +570,7 @@ Exercise: Vectorize a Function
 
 <span class="va">vec</span><span class="op">[</span><span class="va">vec</span> <span class="op">==</span> <span class="st">"0"</span><span class="op">]</span>
 <span class="co">## "0"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig:change" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-change" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_1003.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.3: <code>change_many</code> does something different for each of seven cases.</figcaption><p></p>
 </figure>
@@ -808,7 +839,7 @@ Exercise: Advanced Challenge
 <li>Instruct your computer to do tedious, or complex, tasks on your behalf</li>
 </ul>
 <p>These skills solve an important logistical problem faced by every data scientist: <em>how can you store and manipulate data without making errors?</em> However, this is not the only problem that you will face as a data scientist. The next problem will appear when you try to understand the information contained in your data. It is nearly impossible to spot insights or to discover patterns in raw data. A third problem will appear when you try to use your data set to reason about reality, which includes things not contained in your data set. What exactly does your data imply about things outside of the data set? How certain can you be?</p>
-<p>I refer to these problems as the logistical, tactical, and strategic problems of data science, as shown in <a href="#fig:venn">fig.&nbsp;<span>10.4</span></a>. You’ll face them whenever you try to learn from data:</p>
+<p>I refer to these problems as the logistical, tactical, and strategic problems of data science, as shown in <a href="#fig-venn">fig.&nbsp;<span>10.4</span></a>. You’ll face them whenever you try to learn from data:</p>
 <ul>
 <li>
 <strong>A logistical problem:</strong> - How can you store and manipulate data without making errors?</li>
@@ -817,7 +848,7 @@ Exercise: Advanced Challenge
 <li>
 <strong>A strategic problem</strong> - How can you use the data to draw conclusions about the world at large?</li>
 </ul>
-<div id="fig:venn" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-venn" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/hopr_1004.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10.4: The three core skill sets of data science: computer programming, data comprehension, and scientific reasoning.</figcaption><p></p>
 </figure>
