@@ -47,146 +47,45 @@
     @media screen {
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #007ba5; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
     code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
     code span.im { } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #007ba5; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #007ba5; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
 <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]--><script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><meta name="quarto:offset" content=".">
+  <![endif]--><script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><link href="./slots.html" rel="next">
 <link href="./modifying.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-<style type="text/css">
-    .quarto-layout-panel > figure > figcaption,
-    .quarto-layout-panel > .panel-caption {
-      margin-top: 10pt;
-    }
-    .quarto-layout-row {
-      display: flex;
-      align-items: flex-start;
-    }
-    .quarto-layout-valign-top {
-      align-items: flex-start;
-    }
-    .quarto-layout-valign-bottom {
-      align-items: flex-end;
-    }
-    .quarto-layout-valign-center {
-      align-items: center;
-    }
-    .quarto-layout-cell {
-      position: relative;
-      margin-right: 20px;
-    }
-    .quarto-layout-cell:last-child {
-      margin-right: 0;
-    }
-    .quarto-layout-cell figure,
-    .quarto-layout-cell > p {
-      margin: 0.2em;
-    }
-    .quarto-layout-cell img {
-      max-width: 100%;
-    }
-    .quarto-layout-cell .html-widget {
-      width: 100% !important;
-    }
-    .quarto-layout-cell div figure p {
-      margin: 0;
-    }
-    .quarto-layout-cell figure {
-      display: inline-block;
-      margin-inline-start: 0;
-      margin-inline-end: 0;
-    }
-    .quarto-layout-cell table {
-       display: inline-table;
-    }
-    .quarto-layout-cell-subref figcaption {
-      text-align: center;
-      font-style: italic;
-    }
-    .quarto-figure {
-      position: relative;
-    }
-    .quarto-figure > figure {
-      width: 100%;
-    }
-    .quarto-figure-left > figure > p {
-     text-align: left;
-    }
-    .quarto-figure-center > figure > p {
-      text-align: center;
-    }
-    .quarto-figure-right > figure > p {
-      text-align: right;
-    }
-    figure > p:empty {
-      display: none;
-    }
-    figure > p:first-child {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-    figure > figcaption {
-      margin-top: 0.5em;
-    }
-  </style>
-<style type="text/css">
-    details {
-      margin-bottom: 1em;
-    } 
-    details[show] {
-      margin-bottom: 0;
-    }
-
-    .quarto-unresolved-ref {
-      font-weight: 600;
-    }
-
-    .quarto-cover-image {
-      max-width: 35%;
-      float: right;
-      margin-left: 30px;
-    }
-
-    .cell-output-display {
-      overflow-x: scroll;
-    }
-
-    .hidden {
-      display: none;
-    }
-  </style>
 </head>
 <body>
 <div id="quarto-search-results"></div>
@@ -196,15 +95,15 @@
       <i class="bi bi-chevron-right"></i>
     </button>
   </div>
-</nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column" id="quarto-content">
+</nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column page-layout-article" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll"><div class="px-3 pt-lg-2 text-left">
-    <div class="sidebar-title mt-1 mb-0 py-0">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll"><div class="px-3 pt-lg-2 mt-1 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
       <a href="./">
       Hands-On Programming with R
       </a>
-        <div class="sidebar-tools-main mt-1">
+        <div class="sidebar-tools-main">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
@@ -230,13 +129,13 @@
 </div>
     </div>
   </div>
-    <div class="d-flex px-3 mt-2 flex-shrink-0">
+    <div class="d-flex px-3 mt-2 flex-shrink-0 align-items-center">
       <div class="sidebar-search">
       <form class="d-flex mb-0">
   <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
       </div>
-        <div class="sidebar-tools-collapse mt-1">
+        <div class="sidebar-tools-collapse">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
@@ -276,7 +175,7 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./dice.html" class="">Project 1: Weighted Dice</a>
             </div>
-            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded="true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </a>
             </div>
@@ -300,7 +199,7 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./cards.html" class="">Project 2: Playing Cards</a>
             </div>
-            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded="true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </a>
             </div>
@@ -330,7 +229,7 @@
             <div class="sidebar-section-link me-auto ">
             <a href="./slots.html" class="">Project 3: Slot Machine</a>
             </div>
-            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded=" true">
+            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded="true">
               <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </a>
             </div>
@@ -356,10 +255,8 @@
 <ul class="list-unstyled sidebar-section depth1">
 <li class="">
         <div class="me-auto ">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded=" true">
-              <div class="me-auto  sidebar-section-item">
-                Appendices
-              </div>
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded="true">
+              <div class="me-auto  sidebar-section-item">Appendices</div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </a>
         </div>
@@ -407,7 +304,7 @@
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
 <main><header id="title-block-header"><h1 class="title d-none d-lg-block display-7">6&nbsp; Environments</h1>
 </header><p>Your deck is now ready for a game of blackjack (or hearts or war), but are your <code>shuffle</code> and <code>deal</code> functions up to snuff? Definitely not. For example, <code>deal</code> deals the same card over and over again:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu">deal</span><span class="op">(</span><span class="va">deck</span><span class="op">)</span>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu">deal</span><span class="op">(</span><span class="va">deck</span><span class="op">)</span>
 <span class="co">## face   suit value</span>
 <span class="co">## king spades    13</span>
 
@@ -420,7 +317,7 @@
 <span class="co">## king spades    13</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>And the <code>shuffle</code> function doesn’t actually shuffle <code>deck</code> (it returns a copy of <code>deck</code> that has been shuffled). In short, both of these functions use <code>deck</code>, but neither manipulates <code>deck</code>—and we would like them to.</p>
 <p>To fix these functions, you will need to learn how R stores, looks up, and manipulates objects like <code>deck</code>. R does all of these things with the help of an environment system.</p>
-<section class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" id="environments">
+<section id="environments" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="environments">
 <span class="header-section-number">6.1</span> Environments</h2>
 <p>Consider for a moment how your computer stores files. Every file is saved in a folder, and each folder is saved in another folder, which forms a hierarchical file system. If your computer wants to open up a file, it must first look up the file in this file system.</p>
 <p>You can see your file system by opening a finder window. For example, <a href="#fig-folders">fig.&nbsp;<span>6.1</span></a> shows part of the file system on my computer. I have tons of folders. Inside one of them is a subfolder named <em>Documents</em>, inside of that subfolder is a sub-subfolder named <em>ggsubplot</em>, inside of that folder is a folder named <em>inst</em>, inside of that is a folder named <em>doc</em>, and inside of that is a file named <em>manual.pdf</em>.</p>
@@ -431,7 +328,7 @@
 </div>
 <p>R uses a similar system to save R objects. Each object is saved inside of an environment, a list-like object that resembles a folder on your computer. Each environment is connected to a <em>parent environment</em>, a higher-level environment, which creates a hierarchy of environments.</p>
 <p>You can see R’s environment system with the <code>parenvs</code> function in the pryr package (note <code>parenvs</code> came in the pryr package when this book was first published). <code>parenvs(all = TRUE)</code> will return a list of the environments that your R session is using. The actual output will vary from session to session depending on which packages you have loaded. Here’s the output from my current session:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">pryr</span><span class="op">)</span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">pryr</span><span class="op">)</span>
 <span class="fu">parenvs</span><span class="op">(</span>all <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="co">##    label                            name               </span>
 <span class="co">## 1  &lt;environment: R_GlobalEnv&gt;       ""                 </span>
@@ -453,17 +350,17 @@
 </figure>
 </div>
 <p>Remember that this example is just a metaphor. R’s environments exist in your RAM memory, and not in your file system. Also, R environments aren’t technically saved inside one another. Each environment is connected to a parent environment, which makes it easy to search up R’s environment tree. But this connection is one-way: there’s no way to look at one environment and tell what its “children” are. So you cannot search down R’s environment tree. In other ways, though, R’s environment system works similar to a file system.</p>
-</section><section class="level2" data-number="6.2"><h2 data-number="6.2" class="anchored" id="working-with-environments">
+</section><section id="working-with-environments" class="level2" data-number="6.2"><h2 data-number="6.2" class="anchored" data-anchor-id="working-with-environments">
 <span class="header-section-number">6.2</span> Working with Environments</h2>
 <p>R comes with some helper functions that you can use to explore your environment tree. First, you can refer to any of the environments in your tree with <code>as.environment</code>. <code>as.environment</code> takes an environment name (as a character string) and returns the corresponding environment:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/as.environment.html">as.environment</a></span><span class="op">(</span><span class="st">"package:stats"</span><span class="op">)</span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/as.environment.html">as.environment</a></span><span class="op">(</span><span class="st">"package:stats"</span><span class="op">)</span>
 <span class="co">## &lt;environment: package:stats&gt;</span>
 <span class="co">## attr(,"name")</span>
 <span class="co">## [1] "package:stats"</span>
 <span class="co">## attr(,"path")</span>
 <span class="co">## [1] "/Library/Frameworks/R.framework/Versions/3.0/Resources/library/stats"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Three environments in your tree also come with their own accessor functions. These are the global environment (<code>R_GlobalEnv</code>), the base environment (<code>base</code>), and the empty environment (<code>R_EmptyEnv</code>). You can refer to them with:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/environment.html">globalenv</a></span><span class="op">(</span><span class="op">)</span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/environment.html">globalenv</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">## &lt;environment: R_GlobalEnv&gt;</span>
 
 <span class="fu"><a href="https://rdrr.io/r/base/environment.html">baseenv</a></span><span class="op">(</span><span class="op">)</span>
@@ -472,17 +369,17 @@
 <span class="fu"><a href="https://rdrr.io/r/base/environment.html">emptyenv</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">##&lt;environment: R_EmptyEnv&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Next, you can look up an environment’s parent with <code>parent.env</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/environment.html">parent.env</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/environment.html">globalenv</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/environment.html">parent.env</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/environment.html">globalenv</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="co">## &lt;environment: package:pryr&gt;</span>
 <span class="co">## attr(,"name")</span>
 <span class="co">## [1] "package:pryr"</span>
 <span class="co">## attr(,"path")</span>
 <span class="co">## [1] "/Library/Frameworks/R.framework/Versions/3.0/Resources/library/pryr"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Notice that the empty environment is the only R environment without a parent:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/environment.html">parent.env</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/environment.html">emptyenv</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/environment.html">parent.env</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/environment.html">emptyenv</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="co">## Error in parent.env(emptyenv()) : the empty environment has no parent</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can view the objects saved in an environment with <code>ls</code> or <code>ls.str</code>. <code>ls</code> will return just the object names, but <code>ls.str</code> will display a little about each object’s structure:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/environment.html">emptyenv</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/environment.html">emptyenv</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="co">## character(0)</span>
 
 <span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/environment.html">globalenv</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
@@ -490,38 +387,41 @@
 <span class="co">##  "die"     "gender"  "hand"    "lst"     "mat"     "mil"    </span>
 <span class="co">##  "new"     "now"     "shuffle" "vec"  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The empty environment is—not surprisingly—empty; the base environment has too many objects to list here; and the global environment has some familiar faces. It is where R has saved all of the objects that you’ve created so far.</p>
-<div class="callout-tip callout">
-<div class="callout-body d-flex">
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>RStudio’s environment pane displays all of the objects in your global environment.</p>
 </div>
 </div>
-</div>
 <p>You can use R’s <code><a href="https://rdrr.io/r/base/Extract.html">$</a></code> syntax to access an object in a specific environment. For example, you can access <code>deck</code> from the global environment:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/environment.html">globalenv</a></span><span class="op">(</span><span class="op">)</span><span class="op">$</span><span class="va">deck</span>, <span class="fl">3</span><span class="op">)</span>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/environment.html">globalenv</a></span><span class="op">(</span><span class="op">)</span><span class="op">$</span><span class="va">deck</span>, <span class="fl">3</span><span class="op">)</span>
 <span class="co">##  face   suit value</span>
 <span class="co">##  king spades    13</span>
 <span class="co">## queen spades    12</span>
 <span class="co">##  jack spades    11</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>And you can use the <code>assign</code> function to save an object into a particular environment. First give <code>assign</code> the name of the new object (as a character string). Then give <code>assign</code> the value of the new object, and finally the environment to save the object in:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/assign.html">assign</a></span><span class="op">(</span><span class="st">"new"</span>, <span class="st">"Hello Global"</span>, envir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html">globalenv</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/assign.html">assign</a></span><span class="op">(</span><span class="st">"new"</span>, <span class="st">"Hello Global"</span>, envir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html">globalenv</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 
 <span class="fu"><a href="https://rdrr.io/r/base/environment.html">globalenv</a></span><span class="op">(</span><span class="op">)</span><span class="op">$</span><span class="va">new</span>
 <span class="co">## "Hello Global"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Notice that <code>assign</code> works similar to <code><a href="https://rdrr.io/r/base/assignOps.html">&lt;-</a></code>. If an object already exists with the given name in the given environment, <code>assign</code> will overwrite it without asking for permission. This makes <code>assign</code> useful for updating objects but creates the potential for heartache.</p>
 <p>Now that you can explore R’s environment tree, let’s examine how R uses it. R works closely with the environment tree to look up objects, store objects, and evaluate functions. How R does each of these tasks will depend on the current active environment.</p>
-<section class="level3" data-number="6.2.1"><h3 data-number="6.2.1" class="anchored" id="the-active-environment">
+<section id="the-active-environment" class="level3" data-number="6.2.1"><h3 data-number="6.2.1" class="anchored" data-anchor-id="the-active-environment">
 <span class="header-section-number">6.2.1</span> The Active Environment</h3>
 <p>At any moment of time, R is working closely with a single environment. R will store new objects in this environment (if you create any), and R will use this environment as a starting point to look up existing objects (if you call any). I’ll call this special environment the <em>active environment</em>. The active environment is usually the global environment, but this may change when you run a function.</p>
 <p>You can use <code>environment</code> to see the current active environment:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">environment</span>()</span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">environment</span>()</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&lt;</span>environment<span class="sc">:</span> R_GlobalEnv<span class="sc">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The global environment plays a special role in R. It is the active environment for every command that you run at the command line. As a result, any object that you create at the command line will be saved in the global environment. You can think of the global environment as your user workspace.</p>
 <p>When you call an object at the command line, R will look for it first in the global environment. But what if the object is not there? In that case, R will follow a series of rules to look up the object.</p>
-</section></section><section class="level2" data-number="6.3"><h2 data-number="6.3" class="anchored" id="scoping-rules">
+</section></section><section id="scoping-rules" class="level2" data-number="6.3"><h2 data-number="6.3" class="anchored" data-anchor-id="scoping-rules">
 <span class="header-section-number">6.3</span> Scoping Rules</h2>
 <p>R follows a special set of rules to look up objects. These rules are known as R’s scoping rules, and you’ve already met a couple of them:</p>
 <ol type="1">
@@ -538,45 +438,48 @@
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.3: R will search for an object by name in the active environment, here the global environment. If R does not find the object there, it will search in the active environment’s parent, and then the parent’s parent, and so on until R finds the object or runs out of environments.</figcaption><p></p>
 </figure>
 </div>
-<div class="callout-tip callout">
-<div class="callout-body d-flex">
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Remember that functions are a type of object in R. R will store and look up functions the same way it stores and looks up other objects, by searching for them by name in the environment tree.</p>
 </div>
 </div>
-</div>
-</section><section class="level2" data-number="6.4"><h2 data-number="6.4" class="anchored" id="assignment">
+</section><section id="assignment" class="level2" data-number="6.4"><h2 data-number="6.4" class="anchored" data-anchor-id="assignment">
 <span class="header-section-number">6.4</span> Assignment</h2>
 <p>When you assign a value to an object, R saves the value in the active environment under the object’s name. If an object with the same name already exists in the active environment, R will overwrite it.</p>
 <p>For example, an object named <code>new</code> exists in the global environment:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">new</span>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">new</span>
 <span class="co">## "Hello Global"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can save a new object named <code>new</code> to the global environment with this command. R will overwrite the old object as a result:</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">new</span> <span class="op">&lt;-</span> <span class="st">"Hello Active"</span>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">new</span> <span class="op">&lt;-</span> <span class="st">"Hello Active"</span>
 
 <span class="va">new</span>
 <span class="co">## "Hello Active"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This arrangement creates a quandary for R whenever R runs a function. Many functions save temporary objects that help them do their jobs. For example, the <code>roll</code> function from <a href="#sec-project-1">Project 1: Weighted Dice</a> saved an object named <code>die</code> and an object named <code>dice</code>:</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">roll</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">roll</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">die</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>
   <span class="va">dice</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">die</span>, size <span class="op">=</span> <span class="fl">2</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
   <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">dice</span><span class="op">)</span>
 <span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>R must save these temporary objects in the active environment; but if R does that, it may overwrite existing objects. Function authors cannot guess ahead of time which names may already exist in your active environment. How does R avoid this risk? Every time R runs a function, it creates a new active environment to evaluate the function in.</p>
-</section><section class="level2" data-number="6.5"><h2 data-number="6.5" class="anchored" id="evaluation">
+</section><section id="evaluation" class="level2" data-number="6.5"><h2 data-number="6.5" class="anchored" data-anchor-id="evaluation">
 <span class="header-section-number">6.5</span> Evaluation</h2>
 <p>R creates a new environment <em>each</em> time it evaluates a function. R will use the new environment as the active environment while it runs the function, and then R will return to the environment that you called the function from, bringing the function’s result with it. Let’s call these new environments <em>runtime environments</em> because R creates them at runtime to evaluate functions.</p>
 <p>We’ll use the following function to explore R’s runtime environments. We want to know what the environments look like: what are their parent environments, and what objects do they contain? <code>show_env</code> is designed to tell us:</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">show_env</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span><span class="op">{</span>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">show_env</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span><span class="op">{</span>
   <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>ran.in <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="op">)</span>, 
     parent <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html">parent.env</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>, 
     objects <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/utils/ls_str.html">ls.str</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 <span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>show_env</code> is itself a function, so when we call <code>show_env()</code>, R will create a runtime environment to evaluate the function in. The results of <code>show_env</code> will tell us the name of the runtime environment, its parent, and which objects the runtime environment contains:</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu">show_env</span><span class="op">(</span><span class="op">)</span>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu">show_env</span><span class="op">(</span><span class="op">)</span>
 <span class="co">## $ran.in</span>
 <span class="co">## &lt;environment: 0x7ff711d12e28&gt;</span>
 <span class="co">## </span>
@@ -586,7 +489,7 @@
 <span class="co">## $objects</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The results reveal that R created a new environment named <code>0x7ff711d12e28</code> to run <code>show_env()</code> in. The environment had no objects in it, and its parent was the <code>global environment</code>. So for purposes of running <code>show_env</code>, R’s environment tree looked like <a href="#fig-tree">fig.&nbsp;<span>6.4</span></a>.</p>
 <p>Let’s run <code>show_env</code> again:</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu">show_env</span><span class="op">(</span><span class="op">)</span>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu">show_env</span><span class="op">(</span><span class="op">)</span>
 <span class="co">## $ran.in</span>
 <span class="co">## &lt;environment: 0x7ff715f49808&gt;</span>
 <span class="co">## </span>
@@ -602,14 +505,14 @@
 </div>
 <p>Now let’s consider which environment R will use as the parent of the runtime environment.</p>
 <p>R will connect a function’s runtime environment to the environment that the function <em>was first created in</em>. This environment plays an important role in the function’s life—because all of the function’s runtime environments will use it as a parent. Let’s call this environment the <em>origin environment</em>. You can look up a function’s origin environment by running <code>environment</code> on the function:</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="va">show_env</span><span class="op">)</span>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="va">show_env</span><span class="op">)</span>
 <span class="co">## &lt;environment: R_GlobalEnv&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The origin environment of <code>show_env</code> is the global environment because we created <code>show_env</code> at the command line, but the origin environment does not need to be the global environment. For example, the environment of <code>parenvs</code> is the <code>pryr</code> package:</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="va">parenvs</span><span class="op">)</span>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="va">parenvs</span><span class="op">)</span>
 <span class="co">## &lt;environment: namespace:pryr&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In other words, the parent of a runtime environment will not always be the global environment; it will be whichever environment the function was first created in.</p>
 <p>Finally, let’s look at the objects contained in a runtime environment. At the moment, <code>show_env</code>’s runtime environments do not contain any objects, but that is easy to fix. Just have <code>show_env</code> create some objects in its body of code. R will store any objects created by <code>show_env</code> in its runtime environment. Why? Because the runtime environment will be the active environment when those objects are created:</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">show_env</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span><span class="op">{</span>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">show_env</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span><span class="op">{</span>
   <span class="va">a</span> <span class="op">&lt;-</span> <span class="fl">1</span>
   <span class="va">b</span> <span class="op">&lt;-</span> <span class="fl">2</span>
   <span class="va">c</span> <span class="op">&lt;-</span> <span class="fl">3</span>
@@ -618,7 +521,7 @@
     objects <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/utils/ls_str.html">ls.str</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 <span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This time when we run <code>show_env</code>, R stores <code>a</code>, <code>b</code>, and <code>c</code> in the runtime environment:</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu">show_env</span><span class="op">(</span><span class="op">)</span>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu">show_env</span><span class="op">(</span><span class="op">)</span>
 <span class="co">## $ran.in</span>
 <span class="co">## &lt;environment: 0x7ff712312cd0&gt;</span>
 <span class="co">## </span>
@@ -631,7 +534,7 @@
 <span class="co">## c :  num 3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This is how R ensures that a function does not overwrite anything that it shouldn’t. Any objects created by the function are stored in a safe, out-of-the-way runtime environment.</p>
 <p>R will also put a second type of object in a runtime environment. If a function has arguments, R will copy over each argument to the runtime environment. The argument will appear as an object that has the name of the argument but the value of whatever input the user provided for the argument. This ensures that a function will be able to find and use each of its arguments:</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">foo</span> <span class="op">&lt;-</span> <span class="st">"take me to your runtime"</span>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">foo</span> <span class="op">&lt;-</span> <span class="st">"take me to your runtime"</span>
 
 <span class="va">show_env</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span> <span class="op">=</span> <span class="va">foo</span><span class="op">)</span><span class="op">{</span>
   <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>ran.in <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="op">)</span>, 
@@ -655,28 +558,28 @@
 <p>To recap, R stores its objects in an environment system. At any moment of time, R is working closely with a single active environment. It stores new objects in this environment, and it uses the environment as a starting point when it searches for existing objects. R’s active environment is usually the global environment, but R will adjust the active environment to do things like run functions in a safe manner.</p>
 <p>How can you use this knowledge to fix the <code>deal</code> and <code>shuffle</code> functions?</p>
 <p>First, let’s start with a warm-up question. Suppose I redefine <code>deal</code> at the command line like this:</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">deal</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">deal</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">deck</span><span class="op">[</span><span class="fl">1</span>, <span class="op">]</span>
 <span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Notice that <code>deal</code> no longer takes an argument, and it calls the <code>deck</code> object, which lives in the global environment.</p>
-<div class="callout callout no-icon callout-captioned">
+<div class="callout callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="flex-fill">
+<div class="callout-caption-container flex-fill">
 Exercise: Will deal work?
 </div>
 </div>
-<div class="callout-body">
+<div class="callout-body-container callout-body">
 <p>Will R be able to find <code>deck</code> and return an answer when I call the new version of <code>deal</code>, such as <code>deal()</code>?</p>
 </div>
 </div>
 <p>Yes. <code>deal</code> will still work the same as before. R will run <code>deal</code> in a runtime environment that is a child of the global environment. Why will it be a child of the global environment? Because the global environment is the origin environment of <code>deal</code> (we defined <code>deal</code> in the global environment):</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="va">deal</span><span class="op">)</span>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="va">deal</span><span class="op">)</span>
 <span class="co">## &lt;environment: R_GlobalEnv&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>When <code>deal</code> calls <code>deck</code>, R will need to look up the <code>deck</code> object. R’s scoping rules will lead it to the version of <code>deck</code> in the global environment, as in <a href="#fig-deal">fig.&nbsp;<span>6.5</span></a>. <code>deal</code> works as expected as a result:</p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu">deal</span><span class="op">(</span><span class="op">)</span>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu">deal</span><span class="op">(</span><span class="op">)</span>
 <span class="co">##  face   suit value</span>
 <span class="co">##  king spades    13</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-deal" class="quarto-figure quarto-figure-center anchored">
@@ -685,7 +588,7 @@ Exercise: Will deal work?
 </figure>
 </div>
 <p>Now let’s fix the <code>deal</code> function to remove the cards it has dealt from <code>deck</code>. Recall that <code>deal</code> returns the top card of <code>deck</code> but does not remove the card from the deck. As a result, <code>deal</code> always returns the same card:</p>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu">deal</span><span class="op">(</span><span class="op">)</span>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu">deal</span><span class="op">(</span><span class="op">)</span>
 <span class="co">##  face   suit value</span>
 <span class="co">##  king spades    13</span>
 
@@ -693,7 +596,7 @@ Exercise: Will deal work?
 <span class="co">##  face   suit value</span>
 <span class="co">##  king spades    13</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You know enough R syntax to remove the top card of <code>deck</code>. The following code will save a prisitine copy of <code>deck</code> and then remove the top card:</p>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">DECK</span> <span class="op">&lt;-</span> <span class="va">deck</span>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">DECK</span> <span class="op">&lt;-</span> <span class="va">deck</span>
 
 <span class="va">deck</span> <span class="op">&lt;-</span> <span class="va">deck</span><span class="op">[</span><span class="op">-</span><span class="fl">1</span>, <span class="op">]</span>
 
@@ -703,7 +606,7 @@ Exercise: Will deal work?
 <span class="co">##  jack spades    11</span>
 <span class="co">##   ten spades    10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now let’s add the code to <code>deal</code>. Here <code>deal</code> saves (and then returns) the top card of <code>deck</code>. In between, it removes the card from <code>deck</code>…or does it?</p>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">deal</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">deal</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">card</span> <span class="op">&lt;-</span> <span class="va">deck</span><span class="op">[</span><span class="fl">1</span>, <span class="op">]</span>
   <span class="va">deck</span> <span class="op">&lt;-</span> <span class="va">deck</span><span class="op">[</span><span class="op">-</span><span class="fl">1</span>, <span class="op">]</span>
   <span class="va">card</span>
@@ -714,27 +617,27 @@ Exercise: Will deal work?
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6.6: The deal function looks up deck in the global environment but saves <code>deck[-1, ]</code> in the runtime environment as a new object named deck.</figcaption><p></p>
 </figure>
 </div>
-<div class="callout callout no-icon callout-captioned">
+<div class="callout callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="flex-fill">
+<div class="callout-caption-container flex-fill">
 Exercise: Overwrite deck
 </div>
 </div>
-<div class="callout-body">
+<div class="callout-body-container callout-body">
 <p>Rewrite the <code>deck &lt;- deck[-1, ]</code> line of <code>deal</code> to <em>assign</em> <code>deck[-1, ]</code> to an object named <code>deck</code> in the global environment. Hint: consider the <code>assign</code> function.</p>
 </div>
 </div>
 <p>You can assign an object to a specific environment with the <code>assign</code> function:</p>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">deal</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">deal</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">card</span> <span class="op">&lt;-</span> <span class="va">deck</span><span class="op">[</span><span class="fl">1</span>, <span class="op">]</span>
   <span class="fu"><a href="https://rdrr.io/r/base/assign.html">assign</a></span><span class="op">(</span><span class="st">"deck"</span>, <span class="va">deck</span><span class="op">[</span><span class="op">-</span><span class="fl">1</span>, <span class="op">]</span>, envir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html">globalenv</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
   <span class="va">card</span>
 <span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now <code>deal</code> will finally clean up the global copy of <code>deck</code>, and we can <code>deal</code> cards just as we would in real life:</p>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu">deal</span><span class="op">(</span><span class="op">)</span>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu">deal</span><span class="op">(</span><span class="op">)</span>
 <span class="co">##  face   suit value</span>
 <span class="co">## queen spades    12</span>
 
@@ -746,12 +649,12 @@ Exercise: Overwrite deck
 <span class="co">## face   suit value</span>
 <span class="co">##  ten spades    10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Let’s turn our attention to the <code>shuffle</code> function:</p>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">shuffle</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">cards</span><span class="op">)</span> <span class="op">{</span> 
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">shuffle</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">cards</span><span class="op">)</span> <span class="op">{</span> 
   <span class="va">random</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">52</span>, size <span class="op">=</span> <span class="fl">52</span><span class="op">)</span>
   <span class="va">cards</span><span class="op">[</span><span class="va">random</span>, <span class="op">]</span>
 <span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>shuffle(deck)</code> doesn’t shuffle the <code>deck</code> object; it returns a shuffled copy of the <code>deck</code> object:</p>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">deck</span>, <span class="fl">3</span><span class="op">)</span>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">deck</span>, <span class="fl">3</span><span class="op">)</span>
 <span class="co">##  face   suit value</span>
 <span class="co">##  nine spades     9</span>
 <span class="co">## eight spades     8</span>
@@ -771,30 +674,30 @@ Exercise: Overwrite deck
 <span class="co">## seven    clubs     7</span>
 <span class="co">##   two    clubs     2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This behavior is now undesirable in two ways. First, <code>shuffle</code> fails to shuffle <code>deck</code>. Second, <code>shuffle</code> returns a copy of <code>deck</code>, which may be missing the cards that have been dealt away. It would be better if <code>shuffle</code> returned the dealt cards to the deck and then shuffled. This is what happens when you shuffle a deck of cards in real life.</p>
-<div class="callout callout no-icon callout-captioned">
+<div class="callout callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="flex-fill">
+<div class="callout-caption-container flex-fill">
 Exercise: Rewrite shuffle
 </div>
 </div>
-<div class="callout-body">
+<div class="callout-body-container callout-body">
 <p>Rewrite <code>shuffle</code> so that it replaces the copy of <code>deck</code> that lives in the global environment with a shuffled version of <code>DECK</code>, the intact copy of <code>deck</code> that also lives in the global environment. The new version of <code>shuffle</code> should have no arguments and return no output.</p>
 </div>
 </div>
 <p>You can update <code>shuffle</code> in the same way that you updated <code>deck</code>. The following version will do the job:</p>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">shuffle</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span><span class="op">{</span>
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">shuffle</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span><span class="op">{</span>
   <span class="va">random</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">52</span>, size <span class="op">=</span> <span class="fl">52</span><span class="op">)</span>
   <span class="fu"><a href="https://rdrr.io/r/base/assign.html">assign</a></span><span class="op">(</span><span class="st">"deck"</span>, <span class="va">DECK</span><span class="op">[</span><span class="va">random</span>, <span class="op">]</span>, envir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html">globalenv</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Since <code>DECK</code> lives in the global environment, <code>shuffle</code>’s environment of origin, <code>shuffle</code> will be able to find <code>DECK</code> at runtime. R will search for <code>DECK</code> first in <code>shuffle</code>’s runtime environment, and then in <code>shuffle</code>’s origin environment—the global environment—which is where <code>DECK</code> is stored.</p>
 <p>The second line of <code>shuffle</code> will create a reordered copy of <code>DECK</code> and save it as <code>deck</code> in the global environment. This will overwrite the previous, nonshuffled version of <code>deck</code>.</p>
-</section><section class="level2" data-number="6.6"><h2 data-number="6.6" class="anchored" id="closures">
+</section><section id="closures" class="level2" data-number="6.6"><h2 data-number="6.6" class="anchored" data-anchor-id="closures">
 <span class="header-section-number">6.6</span> Closures</h2>
 <p>Our system finally works. For example, you can shuffle the cards and then deal a hand of blackjack:</p>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu">shuffle</span><span class="op">(</span><span class="op">)</span>
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu">shuffle</span><span class="op">(</span><span class="op">)</span>
 
 <span class="fu">deal</span><span class="op">(</span><span class="op">)</span>
 <span class="co">##  face   suit value</span>
@@ -806,7 +709,7 @@ Exercise: Rewrite shuffle
 <p>But the system requires <code>deck</code> and <code>DECK</code> to exist in the global environment. Lots of things happen in this environment, and it is possible that <code>deck</code> may get modified or erased by accident.</p>
 <p>It would be better if we could store <code>deck</code> in a safe, out-of-the-way place, like one of those safe, out-of-the-way environments that R creates to run functions in. In fact, storing <code>deck</code> in a runtime environment is not such a bad idea.</p>
 <p>You could create a function that takes <code>deck</code> as an argument and saves a copy of <code>deck</code> as <code>DECK</code>. The function could also save its own copies of <code>deal</code> and <code>shuffle</code>:</p>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">setup</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">deck</span><span class="op">)</span> <span class="op">{</span>
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">setup</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">deck</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">DECK</span> <span class="op">&lt;-</span> <span class="va">deck</span>
 
   <span class="va">DEAL</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
@@ -822,7 +725,7 @@ Exercise: Rewrite shuffle
 <span class="op">}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>When you run <code>setup</code>, R will create a runtime environment to store these objects in. The environment will look like <a href="#fig-closure1">fig.&nbsp;<span>6.7</span></a>.</p>
 <p>Now all of these things are safely out of the way in a child of the global environment. That makes them safe but hard to use. Let’s ask <code>setup</code> to return <code>DEAL</code> and <code>SHUFFLE</code> so we can use them. The best way to do this is to return the functions as a list:</p>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">setup</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">deck</span><span class="op">)</span> <span class="op">{</span>
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">setup</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">deck</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">DECK</span> <span class="op">&lt;-</span> <span class="va">deck</span>
 
   <span class="va">DEAL</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
@@ -846,10 +749,10 @@ Exercise: Rewrite shuffle
 </figure>
 </div>
 <p>Then you can save each of the elements of the list to a dedicated object in the global environment:</p>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">deal</span> <span class="op">&lt;-</span> <span class="va">cards</span><span class="op">$</span><span class="va">deal</span>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">deal</span> <span class="op">&lt;-</span> <span class="va">cards</span><span class="op">$</span><span class="va">deal</span>
 <span class="va">shuffle</span> <span class="op">&lt;-</span> <span class="va">cards</span><span class="op">$</span><span class="va">shuffle</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now you can run <code>deal</code> and <code>shuffle</code> just as before. Each object contains the same code as the original <code>deal</code> and <code>shuffle</code>:</p>
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">deal</span>
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">deal</span>
 <span class="co">## function() {</span>
 <span class="co">##     card &lt;- deck[1, ]</span>
 <span class="co">##     assign("deck", deck[-1, ], envir = globalenv())</span>
@@ -864,7 +767,7 @@ Exercise: Rewrite shuffle
 <span class="co">##  }</span>
 <span class="co">## &lt;environment: 0x7ff7169c3390&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>However, the functions now have one important difference. Their origin environment is no longer the global environment (although <code>deal</code> and <code>shuffle</code> <em>are</em> currently saved there). Their origin environment is the runtime environment that R made when you ran <code>setup</code>. That’s where R created <code>DEAL</code> and <code>SHUFFLE</code>, the functions copied into the new <code>deal</code> and <code>shuffle</code>, as shown in:</p>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="va">deal</span><span class="op">)</span>
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="va">deal</span><span class="op">)</span>
 <span class="co">## &lt;environment: 0x7ff7169c3390&gt;</span>
 
 <span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="va">shuffle</span><span class="op">)</span>
@@ -877,7 +780,7 @@ Exercise: Rewrite shuffle
 </div>
 <p>This arrangement is called a <em>closure</em>. <code>setup</code>’s runtime environment “encloses” the <code>deal</code> and <code>shuffle</code> functions. Both <code>deal</code> and <code>shuffle</code> can work closely with the objects contained in the enclosing environment, but almost nothing else can. The enclosing environment is not on the search path for any other R function or environment.</p>
 <p>You may have noticed that <code>deal</code> and <code>shuffle</code> still update the <code>deck</code> object in the global environment. Don’t worry, we’re about to change that. We want <code>deal</code> and <code>shuffle</code> to work exclusively with the objects in the parent (enclosing) environment of their runtime environments. Instead of having each function reference the global environment to update <code>deck</code>, you can have them reference their parent environment at runtime, as shown in <a href="#fig-closure3">fig.&nbsp;<span>6.9</span></a>:</p>
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="va">setup</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">deck</span><span class="op">)</span> <span class="op">{</span>
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">setup</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">deck</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">DECK</span> <span class="op">&lt;-</span> <span class="va">deck</span>
 
   <span class="va">DEAL</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
@@ -903,7 +806,7 @@ Exercise: Rewrite shuffle
 </figure>
 </div>
 <p>We finally have a self-contained card game. You can delete (or modify) the global copy of <code>deck</code> as much as you want and still play cards. <code>deal</code> and <code>shuffle</code> will use the pristine, protected copy of <code>deck</code>:</p>
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">deck</span><span class="op">)</span>
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">deck</span><span class="op">)</span>
 
 <span class="fu">shuffle</span><span class="op">(</span><span class="op">)</span>
 
@@ -915,12 +818,12 @@ Exercise: Rewrite shuffle
 <span class="co">## face  suit value</span>
 <span class="co">## jack clubs    11</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Blackjack!</p>
-</section><section class="level2" data-number="6.7"><h2 data-number="6.7" class="anchored" id="summary">
+</section><section id="summary" class="level2" data-number="6.7"><h2 data-number="6.7" class="anchored" data-anchor-id="summary">
 <span class="header-section-number">6.7</span> Summary</h2>
 <p>R saves its objects in an environment system that resembles your computer’s file system. If you understand this system, you can predict how R will look up objects. If you call an object at the command line, R will look for the object in the global environment and then the parents of the global environment, working its way up the environment tree one environment at a time.</p>
 <p>R will use a slightly different search path when you call an object from inside of a function. When you run a function, R creates a new environment to execute commands in. This environment will be a child of the environment where the function was originally defined. This may be the global environment, but it also may not be. You can use this behavior to create closures, which are functions linked to objects in protected environments.</p>
 <p>As you become familiar with R’s environment system, you can use it to produce elegant results, like we did here. However, the real value of understanding the environment system comes from knowing how R functions do their job. You can use this knowledge to figure out what is going wrong when a function does not perform as expected.</p>
-</section><section class="level2" data-number="6.8"><h2 data-number="6.8" class="anchored" id="project-2-wrap-up">
+</section><section id="project-2-wrap-up" class="level2" data-number="6.8"><h2 data-number="6.8" class="anchored" data-anchor-id="project-2-wrap-up">
 <span class="header-section-number">6.8</span> Project 2 Wrap-up</h2>
 <p>You now have full control over the data sets and values that you load into R. You can store data as R objects, you can retrieve and manipulate data values at will, and you can even predict how R will store and look up your objects in your computer’s memory.</p>
 <p>You may not realize it yet, but your expertise makes you a powerful, computer-augmented data user. You can use R to save and work with larger data sets than you could otherwise handle. So far we’ve only worked with <code>deck</code>, a small data set; but you can use the same techniques to work with any data set that fits in your computer’s memory.</p>
