@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="pandoc">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="description" content="This book will teach you how to program in R, with hands-on examples. I wrote it for non-programmers to provide a friendly introduction to the R language. You’ll learn how to load data, assemble and disassemble data objects, navigate R’s environment system, write your own functions, and use all of R’s programming tools. Throughout the book, you’ll use your newfound skills to solve practical data science problems.">
-<title>Hands-On Programming with R – Appendix B — R Packages</title>
-<style>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="This book will teach you how to program in R, with hands-on examples. I wrote it for non-programmers to provide a friendly introduction to the R language. You’ll learn how to load data, assemble and disassemble data objects, navigate R’s environment system, write your own functions, and use all of R’s programming tools. Throughout the book, you’ll use your newfound skills to solve practical data science problems.">
+  <title>Hands-On Programming with R – Appendix B — R Packages</title>
+  <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -77,28 +76,48 @@
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-<!--[if lt IE 9]>
+
+  <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]--><script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><link href="./a3-updating.html" rel="next">
-<link href="./a1-starting.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <![endif]-->
+  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="site_libs/quarto-nav/headroom.min.js"></script>
+  <meta name="quarto:offset" content="./">
+  <script src="site_libs/quarto-search/autocomplete.min.js"></script>
+  <script src="site_libs/quarto-search/fuse.min.js"></script>
+  <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <link href="./a3-updating.html" rel="next">
+  <link href="./a1-starting.html" rel="prev">
+  <script src="site_libs/quarto-html/quarto.js"></script>
+  <script src="site_libs/quarto-html/popper.min.js"></script>
+  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="site_libs/quarto-html/clipboard.min.js"></script>
+  <script src="site_libs/quarto-html/anchor.min.js"></script>
+  <script src="site_libs/quarto-html/quarto-html.js"></script>
+  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <div id="quarto-search-results"></div>
-<header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
+<header id="quarto-header" class="headroom fixed-top">
+<nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <div class="container-fluid d-flex justify-content-between">
     <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">Appendix B — R Packages</h1>
     <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
       <i class="bi bi-chevron-right"></i>
     </button>
   </div>
-</nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column page-layout-article" id="quarto-content">
+</nav>
+</header>
+ <!-- /navbar/sidebar -->
+<div class="container-fluid quarto-container d-flex flex-column page-layout-article" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll"><div class="px-3 pt-lg-2 mt-1 text-left sidebar-header">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll">
+  <div class="px-3 pt-lg-2 mt-1 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">
       Hands-On Programming with R
@@ -107,20 +126,20 @@
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-<li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -139,20 +158,20 @@
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-<li>
-          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
+        <li>
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -162,14 +181,14 @@
     </div>
   <div class="sidebar-menu-container"> 
   <ul class="list-unstyled mt-3 px-3">
-<li class="sidebar-item">
+      <li class="sidebar-item">
   <a href="./index.html" class="">Welcome</a>
 </li>
       <li class="sidebar-item">
   <a href="./preface.html" class="">Preface</a>
 </li>
       <ul class="list-unstyled sidebar-section depth1">
-<li class="">
+    <li class="">
         <div class="me-auto ">
           <div class="d-inline-flex w-100 sidebar-section-item">
             <div class="sidebar-section-link me-auto ">
@@ -182,18 +201,18 @@
         </div>
       <div class="collapse  show" id="project1weighteddice-collapse">
         <ul class="list-unstyled sidebar-item-contents">
-<li class="sidebar-item">
+          <li class="sidebar-item">
   <a href="./basics.html" class=""><span class="chapter-number">1</span>&nbsp; The Very Basics</a>
 </li>
           <li class="sidebar-item">
   <a href="./packages.html" class=""><span class="chapter-number">2</span>&nbsp; Packages and Help Pages</a>
 </li>
         </ul>
-</div>
+      </div>
     </li>
   </ul>
-<ul class="list-unstyled sidebar-section depth1">
-<li class="">
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
         <div class="me-auto ">
           <div class="d-inline-flex w-100 sidebar-section-item">
             <div class="sidebar-section-link me-auto ">
@@ -206,7 +225,7 @@
         </div>
       <div class="collapse  show" id="project2playingcards-collapse">
         <ul class="list-unstyled sidebar-item-contents">
-<li class="sidebar-item">
+          <li class="sidebar-item">
   <a href="./objects.html" class=""><span class="chapter-number">3</span>&nbsp; R Objects</a>
 </li>
           <li class="sidebar-item">
@@ -219,11 +238,11 @@
   <a href="./environments.html" class=""><span class="chapter-number">6</span>&nbsp; Environments</a>
 </li>
         </ul>
-</div>
+      </div>
     </li>
   </ul>
-<ul class="list-unstyled sidebar-section depth1">
-<li class="">
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
         <div class="me-auto ">
           <div class="d-inline-flex w-100 sidebar-section-item">
             <div class="sidebar-section-link me-auto ">
@@ -236,7 +255,7 @@
         </div>
       <div class="collapse  show" id="project3slotmachine-collapse">
         <ul class="list-unstyled sidebar-item-contents">
-<li class="sidebar-item">
+          <li class="sidebar-item">
   <a href="./programs.html" class=""><span class="chapter-number">7</span>&nbsp; Programs</a>
 </li>
           <li class="sidebar-item">
@@ -249,11 +268,11 @@
   <a href="./speed.html" class=""><span class="chapter-number">10</span>&nbsp; Speed</a>
 </li>
         </ul>
-</div>
+      </div>
     </li>
   </ul>
-<ul class="list-unstyled sidebar-section depth1">
-<li class="">
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
         <div class="me-auto ">
             <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded="true">
               <div class="me-auto  sidebar-section-item">Appendices</div>
@@ -262,7 +281,7 @@
         </div>
       <div class="collapse  show" id="appendices-collapse">
         <ul class="list-unstyled sidebar-item-contents">
-<li class="sidebar-item">
+          <li class="sidebar-item">
   <a href="./a1-starting.html" class=""><span class="chapter-number">A</span>&nbsp; Installing R and RStudio</a>
 </li>
           <li class="sidebar-item">
@@ -278,21 +297,27 @@
   <a href="./a5-debug.html" class=""><span class="chapter-number">E</span>&nbsp; Debugging R Code</a>
 </li>
         </ul>
-</div>
+      </div>
     </li>
   </ul>
-</ul>
-</div>
+  </ul>
+  </div>
 </nav>
-</div>
-  <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
+  </div>
+  <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc">
+<h2 id="toc-title">On this page</h2>
 <ul>
 <li><a href="#installing-packages" class="nav-link active" data-scroll-target="#installing-packages"> <span class="header-section-number">B.1</span> Installing Packages</a></li>
 <li><a href="#loading-packages" class="nav-link" data-scroll-target="#loading-packages"> <span class="header-section-number">B.2</span> Loading Packages</a></li>
-</ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/a2-packages.Rmd">Edit this page</a></p></div></div></nav></div>
+</ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/a2-packages.qmd">Edit this page</a></p></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
-<main><header id="title-block-header"><h1 class="title d-none d-lg-block display-7">Appendix B — R Packages</h1>
-</header><p>Many of R’s most useful functions do not come preloaded when you start R, but reside in <em>packages</em> that can be installed on top of R. R packages are similar to libraries in C, C++, and Javascript, packages in Python, and gems in Ruby. An R package bundles together useful functions, help files, and data sets. You can use these functions within your own R code once you load the package they live in. Usually the contents of an R package are all related to a single type of task, which the package helps solve. R packages will let you take advantage of R’s most useful features: its large community of package writers (many of whom are active data scientists) and its prewritten routines for handling many common (and exotic) data-science tasks.</p>
+<main>
+<header id="title-block-header">
+<h1 class="title d-none d-lg-block display-7">Appendix B — R Packages</h1>
+</header>
+
+<p>Many of R’s most useful functions do not come preloaded when you start R, but reside in <em>packages</em> that can be installed on top of R. R packages are similar to libraries in C, C++, and Javascript, packages in Python, and gems in Ruby. An R package bundles together useful functions, help files, and data sets. You can use these functions within your own R code once you load the package they live in. Usually the contents of an R package are all related to a single type of task, which the package helps solve. R packages will let you take advantage of R’s most useful features: its large community of package writers (many of whom are active data scientists) and its prewritten routines for handling many common (and exotic) data-science tasks.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -306,22 +331,23 @@ Base R
 <p>You may hear R users (or me) refer to “base R.” What is base R? It is just the collection of R functions that gets loaded every time you start R. These functions provide the basics of the language, and you don’t have to load a package before you can use them.</p>
 </div>
 </div>
-<section id="installing-packages" class="level2" data-number="B.1"><h2 data-number="B.1" class="anchored" data-anchor-id="installing-packages">
-<span class="header-section-number">B.1</span> Installing Packages</h2>
+<section id="installing-packages" class="level2" data-number="B.1">
+<h2 data-number="B.1" class="anchored" data-anchor-id="installing-packages"><span class="header-section-number">B.1</span> Installing Packages</h2>
 <p>To use an R package, you must first install it on your computer and then load it in your current R session. The easiest way to install an R package is with the <code>install.packages</code> R function. Open R and type the following into the command line:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"&lt;package name&gt;"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"&lt;package name&gt;"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will search for the specified package in the collection of packages hosted on the CRAN site. When R finds the package, it will download it into a libraries folder on your computer. R can access the package here in future R sessions without reinstalling it. Anyone can write an R package and disseminate it as they like; however, almost all R packages are published through the CRAN website. CRAN tests each R package before publishing it. This doesn’t eliminate every bug inside a package, but it does mean that you can trust a package on CRAN to run in the current version of R on your OS.</p>
 <p>You can install multiple packages at once by linking their names with R’s concatenate function, <code>c</code>. For example, to install the ggplot2, reshape2, and dplyr packages, run:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ggplot2"</span>, <span class="st">"reshape2"</span>, <span class="st">"dplyr"</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"ggplot2"</span>, <span class="st">"reshape2"</span>, <span class="st">"dplyr"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If this is your first time installing a package, R will prompt you to choose an online mirror of to install from. Mirrors are listed by location. Your downloads should be quickest if you select a mirror that is close to you. If you want to download a new package, try the Austria mirror first. This is the main CRAN repository, and new packages can sometimes take a couple of days to make it around to all of the other mirrors.</p>
-</section><section id="loading-packages" class="level2" data-number="B.2"><h2 data-number="B.2" class="anchored" data-anchor-id="loading-packages">
-<span class="header-section-number">B.2</span> Loading Packages</h2>
+</section>
+<section id="loading-packages" class="level2" data-number="B.2">
+<h2 data-number="B.2" class="anchored" data-anchor-id="loading-packages"><span class="header-section-number">B.2</span> Loading Packages</h2>
 <p>Installing a package doesn’t immediately place its functions at your fingertips. It just places them on your computer. To use an R package, you next have to load it in your R session with the command:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="sc">&lt;</span>package name<span class="sc">&gt;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Notice that the quotation marks have disappeared. You can use them if you like, but quotation marks are optional for the <code>library</code> command. (This is not true for the <code>install.packages</code> command).</p>
 <p><code>library</code> will make all of the package’s functions, data sets, and help files available to you until you close your current R session. The next time you begin an R session, you’ll have to reload the package with <code>library</code> if you want to use it, but you won’t have to reinstall it. You only have to install each package once. After that, a copy of the package will live in your R library. To see which packages you currently have in your R library, run:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code><a href="https://rdrr.io/r/base/library.html">library()</a></code> also shows the path to your actual R library, which is the folder that contains your R packages. You may notice many packages that you don’t remember installing. This is because R automatically downloads a set of useful packages when you first install R.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>library()</code> also shows the path to your actual R library, which is the folder that contains your R packages. You may notice many packages that you don’t remember installing. This is because R automatically downloads a set of useful packages when you first install R.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -351,7 +377,9 @@ What’s the best way to learn about R packages?
 </div>
 </div>
 <!-- -->
-</section></main><div class="page-navigation ">
+</section>
+</main>
+<div class="page-navigation ">
   <div class="nav-page nav-page-previous">
       <a href="./a1-starting.html">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; Installing R and RStudio</span>

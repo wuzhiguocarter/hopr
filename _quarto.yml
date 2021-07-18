@@ -19,30 +19,30 @@ book:
   repo-actions: [edit]
   sharing: [twitter, facebook, linkedin]
   chapters:
-    - index.Rmd
-    - preface.Rmd
-    - part: dice.Rmd
+    - index.qmd
+    - preface.qmd
+    - part: dice.qmd
       chapters: 
-        - basics.Rmd
-        - packages.Rmd
-    - part: cards.Rmd
+        - basics.qmd
+        - packages.qmd
+    - part: cards.qmd
       chapters:
-        - objects.Rmd
-        - notation.Rmd
-        - modifying.Rmd
-        - environments.Rmd
-    - part: slots.Rmd
+        - objects.qmd
+        - notation.qmd
+        - modifying.qmd
+        - environments.qmd
+    - part: slots.qmd
       chapters:
-        - programs.Rmd
-        - s3.Rmd
-        - loops.Rmd
-        - speed.Rmd
+        - programs.qmd
+        - s3.qmd
+        - loops.qmd
+        - speed.qmd
   appendices:
-    - a1-starting.Rmd
-    - a2-packages.Rmd
-    - a3-updating.Rmd
-    - a4-data.Rmd
-    - a5-debug.Rmd 
+    - a1-starting.qmd
+    - a2-packages.qmd
+    - a3-updating.qmd
+    - a4-data.qmd
+    - a5-debug.qmd 
 
 format:
   html: 

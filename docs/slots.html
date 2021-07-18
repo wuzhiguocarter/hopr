@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="pandoc">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="description" content="This book will teach you how to program in R, with hands-on examples. I wrote it for non-programmers to provide a friendly introduction to the R language. You’ll learn how to load data, assemble and disassemble data objects, navigate R’s environment system, write your own functions, and use all of R’s programming tools. Throughout the book, you’ll use your newfound skills to solve practical data science problems.">
-<title>Hands-On Programming with R – Project 3: Slot Machine</title>
-<style>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="This book will teach you how to program in R, with hands-on examples. I wrote it for non-programmers to provide a friendly introduction to the R language. You’ll learn how to load data, assemble and disassemble data objects, navigate R’s environment system, write your own functions, and use all of R’s programming tools. Throughout the book, you’ll use your newfound skills to solve practical data science problems.">
+  <title>Hands-On Programming with R – Project 3: Slot Machine</title>
+  <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -14,28 +13,48 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
   </style>
-<!--[if lt IE 9]>
+
+  <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]--><script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-search/autocomplete.min.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><link href="./programs.html" rel="next">
-<link href="./environments.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/clipboard.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><script src="site_libs/quarto-html/quarto-html.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <![endif]-->
+  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="site_libs/quarto-nav/headroom.min.js"></script>
+  <meta name="quarto:offset" content="./">
+  <script src="site_libs/quarto-search/autocomplete.min.js"></script>
+  <script src="site_libs/quarto-search/fuse.min.js"></script>
+  <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <link href="./programs.html" rel="next">
+  <link href="./environments.html" rel="prev">
+  <script src="site_libs/quarto-html/quarto.js"></script>
+  <script src="site_libs/quarto-html/popper.min.js"></script>
+  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="site_libs/quarto-html/clipboard.min.js"></script>
+  <script src="site_libs/quarto-html/anchor.min.js"></script>
+  <script src="site_libs/quarto-html/quarto-html.js"></script>
+  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <div id="quarto-search-results"></div>
-<header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
+<header id="quarto-header" class="headroom fixed-top">
+<nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <div class="container-fluid d-flex justify-content-between">
     <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">Project 3: Slot Machine</h1>
     <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
       <i class="bi bi-chevron-right"></i>
     </button>
   </div>
-</nav></header><!-- /navbar/sidebar --><div class="container-fluid quarto-container d-flex flex-column page-layout-article" id="quarto-content">
+</nav>
+</header>
+ <!-- /navbar/sidebar -->
+<div class="container-fluid quarto-container d-flex flex-column page-layout-article" id="quarto-content">
 <div class="row flex-fill">
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="ms-lg-auto py-2 floating  overflow-scroll"><div class="px-3 pt-lg-2 mt-1 text-left sidebar-header">
+    <nav class="ms-lg-auto py-2 floating  overflow-scroll">
+  <div class="px-3 pt-lg-2 mt-1 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">
       Hands-On Programming with R
@@ -44,20 +63,20 @@
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-<li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -76,20 +95,20 @@
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-<li>
-          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
+        <li>
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
         </li>
         <li>
-          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
+          <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
             <i class="bi bi-bi-linkedin pe-1"></i>
           LinkedIn
           </a>
@@ -99,14 +118,14 @@
     </div>
   <div class="sidebar-menu-container"> 
   <ul class="list-unstyled mt-3 px-3">
-<li class="sidebar-item">
+      <li class="sidebar-item">
   <a href="./index.html" class="">Welcome</a>
 </li>
       <li class="sidebar-item">
   <a href="./preface.html" class="">Preface</a>
 </li>
       <ul class="list-unstyled sidebar-section depth1">
-<li class="">
+    <li class="">
         <div class="me-auto ">
           <div class="d-inline-flex w-100 sidebar-section-item">
             <div class="sidebar-section-link me-auto ">
@@ -119,18 +138,18 @@
         </div>
       <div class="collapse  show" id="project1weighteddice-collapse">
         <ul class="list-unstyled sidebar-item-contents">
-<li class="sidebar-item">
+          <li class="sidebar-item">
   <a href="./basics.html" class=""><span class="chapter-number">1</span>&nbsp; The Very Basics</a>
 </li>
           <li class="sidebar-item">
   <a href="./packages.html" class=""><span class="chapter-number">2</span>&nbsp; Packages and Help Pages</a>
 </li>
         </ul>
-</div>
+      </div>
     </li>
   </ul>
-<ul class="list-unstyled sidebar-section depth1">
-<li class="">
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
         <div class="me-auto ">
           <div class="d-inline-flex w-100 sidebar-section-item">
             <div class="sidebar-section-link me-auto ">
@@ -143,7 +162,7 @@
         </div>
       <div class="collapse  show" id="project2playingcards-collapse">
         <ul class="list-unstyled sidebar-item-contents">
-<li class="sidebar-item">
+          <li class="sidebar-item">
   <a href="./objects.html" class=""><span class="chapter-number">3</span>&nbsp; R Objects</a>
 </li>
           <li class="sidebar-item">
@@ -156,11 +175,11 @@
   <a href="./environments.html" class=""><span class="chapter-number">6</span>&nbsp; Environments</a>
 </li>
         </ul>
-</div>
+      </div>
     </li>
   </ul>
-<ul class="list-unstyled sidebar-section depth1">
-<li class="">
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
         <div class="me-auto ">
           <div class="d-inline-flex w-100 sidebar-section-item">
             <div class="sidebar-section-link me-auto ">
@@ -173,7 +192,7 @@
         </div>
       <div class="collapse  show" id="project3slotmachine-collapse">
         <ul class="list-unstyled sidebar-item-contents">
-<li class="sidebar-item">
+          <li class="sidebar-item">
   <a href="./programs.html" class=""><span class="chapter-number">7</span>&nbsp; Programs</a>
 </li>
           <li class="sidebar-item">
@@ -186,11 +205,11 @@
   <a href="./speed.html" class=""><span class="chapter-number">10</span>&nbsp; Speed</a>
 </li>
         </ul>
-</div>
+      </div>
     </li>
   </ul>
-<ul class="list-unstyled sidebar-section depth1">
-<li class="">
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
         <div class="me-auto ">
             <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded="true">
               <div class="me-auto  sidebar-section-item">Appendices</div>
@@ -199,7 +218,7 @@
         </div>
       <div class="collapse  show" id="appendices-collapse">
         <ul class="list-unstyled sidebar-item-contents">
-<li class="sidebar-item">
+          <li class="sidebar-item">
   <a href="./a1-starting.html" class=""><span class="chapter-number">A</span>&nbsp; Installing R and RStudio</a>
 </li>
           <li class="sidebar-item">
@@ -215,17 +234,20 @@
   <a href="./a5-debug.html" class=""><span class="chapter-number">E</span>&nbsp; Debugging R Code</a>
 </li>
         </ul>
-</div>
+      </div>
     </li>
   </ul>
-</ul>
-</div>
+  </ul>
+  </div>
 </nav>
-</div>
+  </div>
   <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
-<main><header id="title-block-header"><h1 class="title d-none d-lg-block display-7">Project 3: Slot Machine</h1>
-</header><p>Slot machines are the most popular game in modern casinos. If you’ve never seen one, a slot machine resembles an arcade game that has a lever on its side. For a small fee you can pull the lever, and the machine will generate a random combination of three symbols. If the correct combination appears, you can win a prize, maybe even the jackpot.</p>
+<main>
+<header id="title-block-header">
+<h1 class="title d-none d-lg-block display-7">Project 3: Slot Machine</h1>
+</header>
+<p>Slot machines are the most popular game in modern casinos. If you’ve never seen one, a slot machine resembles an arcade game that has a lever on its side. For a small fee you can pull the lever, and the machine will generate a random combination of three symbols. If the correct combination appears, you can win a prize, maybe even the jackpot.</p>
 <p>Slot machines make fantastic profits for casinos because they offer a very low payout rate. In many games, such as Blackjack and Roulette, the odds are only slightly stacked in the casino’s favor. In the long run, the casino pays back 97 to 98 cents in prizes of every dollar that a gambler spends on these games. With slot machines, it is typical for a casino to only pay back 90 to 95 cents—and the casino keeps the rest. If this seems underhanded, keep in mind that slot machines are one of the most popular games at a casino; few people seem to mind. And if you consider that state lotteries have payout rates that are much closer to 50 cents on the dollar, slot machines don’t look that bad.</p>
 <p>In this project, you will build a real, working slot machine modeled after some real life Video Lottery Terminals from Manitoba, Canada. The terminals were a source of scandal in the 1990s. You’ll get to the bottom of this scandal by writing a program that recreates the slot machines. You’ll then do some calculations and run some simulations that reveal the true payout rate of the machines.</p>
 <p>This project will teach you how to write programs and run simulations in R. You will also learn how to:</p>
@@ -238,7 +260,9 @@
 <li>Measure the speed of R code</li>
 <li>Write fast, vectorized R code</li>
 </ul>
-<!-- --></main><div class="page-navigation ">
+<!-- -->
+</main>
+<div class="page-navigation ">
   <div class="nav-page nav-page-previous">
       <a href="./environments.html">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; Environments</span>
