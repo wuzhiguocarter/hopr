@@ -1,7 +1,3 @@
----
-knit: quarto render
----
-
 # Packages and Help Pages {#sec-packages-and-help}
 
 You now have a function that simulates rolling a pair of dice. Let's make things a little more interesting by weighting the dice in your favor. The house always wins, right? Let's make the dice roll high numbers slightly more often than it rolls low numbers.
@@ -32,14 +28,14 @@ Installing a package doesn't place its functions at your fingertips just yet: it
 
 To see what this does, try an experiment. First, ask R to show you the `qplot` function. R won't be able to find `qplot` because `qplot` lives in the ggplot2 package, which you haven't loaded:
 
-``` {.r}
+``` r
 qplot
 ## Error: object 'qplot' not found
 ```
 
 Now load the ggplot2 package:
 
-``` {.r}
+``` r
 library("ggplot2")
 ```
 
@@ -47,7 +43,7 @@ If you installed the package with `install.packages` as instructed, everything s
 
 Now if you ask to see `qplot`, R will show you quite a bit of code (`qplot` is a long function):
 
-``` {.r}
+``` r
 qplot
 ## (quite a bit of code)
 ```
@@ -58,7 +54,7 @@ Now that you've loaded `qplot`, let's take it for a spin. `qplot` makes "quick p
 
 The following code will make the plot that appears in @fig-qplot. Until now, we've been creating sequences of numbers with the `:` operator; but you can also create vectors of numbers with the `c` function. Give `c` all of the numbers that you want to appear in the vector, separated by a comma. `c` stands for *concatenate*, but you can think of it as "collect" or "combine":
 
-``` {.r}
+``` r
 x <- c(-1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1)
 x
 ## -1.0 -0.8 -0.6 -0.4 -0.2  0.0  0.2  0.4  0.6  0.8  1.0
@@ -79,7 +75,7 @@ Scatterplots are useful for visualizing the relationship between two variables. 
 
 Let's take a look at a histogram to see if this makes sense. `qplot` will make a histogram whenever you give it only *one* vector to plot. The following code makes the left-hand plot in @fig-hist (we'll worry about the right-hand plot in just second). To make sure our graphs look the same, use the extra argument *`binwidth = 1`*:
 
-``` {.r}
+``` r
 x <- c(1, 2, 2, 2, 3, 3)
 qplot(x, binwidth = 1)
 ```
@@ -90,7 +86,7 @@ This plot shows that our vector contains one value in the interval `[1, 2)` by p
 
 Let's try another histogram. This code makes the right-hand plot in @fig-hist. Notice that there are five points with a value of 1 in `x2`. The histogram displays this by plotting a bar of height 5 above the interval x2 = [1, 2):
 
-``` {.r}
+``` r
 x2 <- c(1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 4)
 qplot(x2, binwidth = 1)
 ```
@@ -119,7 +115,7 @@ If you roll your dice many times and plot the results with `qplot`, the histogra
 
 This is where `replicate` comes in. `replicate` provides an easy way to repeat an R command many times. To use it, first give `replicate` the number of times you wish to repeat an R command, and then give it the command you wish to repeat. `replicate` will run the command multiple times and store the results as a vector:
 
-``` {.r}
+``` r
 replicate(3, 1 + 1)
 ## 2 2 2
 
@@ -131,7 +127,7 @@ replicate(10, roll())
 
 A histogram of your first 10 rolls probably won't look like the pattern shown in @fig-probs. Why not? There is too much randomness involved. Remember that we use dice in real life because they are effective random number generators. Patterns of long run frequencies will only appear *over the long run*. So let's simulate 10,000 dice rolls and plot the results. Don't worry; `qplot` and `replicate` can handle it. The results appear in @fig-fair:
 
-``` {.r}
+``` r
 rolls <- replicate(10000, roll())
 qplot(rolls, binwidth = 1)
 ```
@@ -159,7 +155,7 @@ You can change the probabilities by adding a new argument to the `sample` functi
 
 There are over 1,000 functions at the core of R, and new R functions are created all of the time. This can be a lot of material to memorize and learn! Luckily, each R function comes with its own help page, which you can access by typing the function's name after a question mark. For example, each of these commands will open a help page. Look for the pages to appear in the Help tab of RStudio's bottom-right pane:
 
-``` {.r}
+``` r
 ?sqrt
 ?log10
 ?sample
@@ -169,7 +165,7 @@ Help pages contain useful information about what each function does. These help 
 
 Don't let this bother you---you can gain a lot from a help page by scanning it for information that makes sense and glossing over the rest. This technique will inevitably bring you to the most helpful part of each help page: the bottom. Here, almost every help page includes some example code that puts the function in action. Running this code is a great way to learn by example.
 
-::: {.callout-warning}
+::: callout-warning
 If a function comes in an R package, R won't be able to find its help page unless the package is loaded.
 :::
 
@@ -193,7 +189,7 @@ Each help page is divided into sections. Which sections appear can vary from hel
 
 If you'd like to look up the help page for a function but have forgotten the function's name, you can search by keyword. To do this, type two question marks followed by a keyword in R's command line. R will pull up a list of links to help pages related to the keyword. You can think of this as the help page for the help page:
 
-``` {.r}
+``` r
 ??log
 ```
 
@@ -201,13 +197,13 @@ Let's take a stroll through `sample`'s help page. Remember: we're searching for 
 
 First, open the help page. It will appear in the same pane in RStudio as your plots did (but in the Help tab, not the Plots tab):
 
-``` {.r}
+``` r
 ?sample
 ```
 
 What do you see? Starting from the top:
 
-``` {.default}
+``` default
 Random Samples and Permutations
 
 Description
@@ -217,21 +213,21 @@ either with or without replacement.
 
 So far, so good. You knew all of that. The next section, Usage, has a possible clue. It mentions an argument called `prob`:
 
-``` {.default}
+``` default
 Usage
     sample(x, size, replace = FALSE, prob = NULL)
 ```
 
 If you scroll down to the arguments section, the description of +prob+ sounds *very* promising:
 
-``` {.default}
+``` default
 A vector of probability weights for obtaining the elements of the vector being 
 sampled.
 ```
 
 The Details section confirms our suspicions. In this case, it also tells you how to proceed:
 
-``` {.default}
+``` default
 The optional prob argument can be used to give a vector of weights for obtaining 
 the elements of the vector being sampled. They need not sum to one, but they 
 should be nonnegative and not all zero.
@@ -241,19 +237,19 @@ Although the help page does not say it here, these weights will be matched up to
 
 Reading on:
 
-``` {.default}
+``` default
 If replace is true, Walker's alias method (Ripley, 1987) is used...
 ```
 
 Okay, that looks like time to start skimming. We should have enough info now to figure out how to weight our dice.
 
-::: {.callout}
+::: callout
 ## Exercise: Roll a Pair of Dice
 
 Rewrite the `roll` function below to roll a pair of weighted dice:
 :::
 
-``` {.r}
+``` r
 roll <- function() {
   die <- 1:6
   dice <- sample(die, size = 2, replace = TRUE)
@@ -267,7 +263,7 @@ When you are finished, read on for a model answer.
 
 To weight your dice, you need to add a `prob` argument with a vector of weights to `sample`, like this:
 
-``` {.r}
+``` r
 roll <- function() {
   die <- 1:6
   dice <- sample(die, size = 2, replace = TRUE, 
@@ -280,7 +276,7 @@ This will cause `roll` to pick 1 through 5 with probability 1/8 and 6 with proba
 
 Overwrite your previous version of `roll` with the new function (by running the previous code snippet in your command line). Then visualize the new long-term behavior of your dice. I've put the results in @fig-weighted next to our original results:
 
-``` {.r}
+``` r
 rolls <- replicate(10000, roll())
 qplot(rolls, binwidth = 1)
 ```

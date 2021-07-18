@@ -1,14 +1,10 @@
----
-knit: quarto render
----
-
 # R Notation {#sec-r-notation}
 
 Now that you have a deck of cards, you need a way to do card-like things with it. First, you'll want to reshuffle the deck from time to time. And next, you'll want to deal cards from the deck (one card at a time, whatever card is on top---we're not cheaters).
 
 To do these things, you'll need to work with the individual values inside your data frame, a task essential to data science. For example, to deal a card from the top of your deck, you'll need to write a function that selects the first row of values in your data frame, like this
 
-``` {.r}
+``` r
 deal(deck)
 ##  face   suit value
 ##  king spades    13
@@ -20,7 +16,7 @@ You can select values within an R object with R's notation system.
 
 R has a notation system that lets you extract values from R objects. To extract a value or set of values from a data frame, write the data frame's name followed by a pair of hard brackets:
 
-``` {.r}
+``` r
 deck[ , ]
 ```
 
@@ -41,7 +37,7 @@ The simplest of these to use is positive integers.
 
 R treats positive integers just like *ij* notation in linear algebra: as illustrated in @fig-positive, `deck[i,j]` will return the value of `deck` that is in the *ith* row and the *jth* column. Notice that *i* and *j* only need to be integers in the mathematical sense. They can be saved as numerics in R
 
-``` {.r}
+``` r
 head(deck)
 ##  face   suit value
 ##  king spades    13
@@ -57,7 +53,7 @@ deck[1, 1]
 
 To extract more than one value, use a vector of positive integers. For example, you can return the first row of `deck` with `deck[1, c(1, 2, 3)]` or `deck[1, 1:3]`:
 
-``` {.r}
+``` r
 deck[1, c(1, 2, 3)]
 ## face   suit value
 ## king spades    13
@@ -65,19 +61,19 @@ deck[1, c(1, 2, 3)]
 
 R will return the values of `deck` that are in both the first row and the first, second, and third columns. Note that R won't actually remove these values from `deck`. R will give you a new set of values which are copies of the original values. You can then save this new set to an R object with R's assignment operator:
 
-``` {.r}
+``` r
 new <- deck[1, c(1, 2, 3)]
 new
 ## face   suit value
 ## king spades    13
 ```
 
-::: {.callout-tip}
+::: callout-tip
 ## Repetition
 
 If you repeat a number in your index, R will return the corresponding value(s) more than once in your "subset." This code will return the first row of `deck` twice:
 
-``` {.r}
+``` r
 deck[c(1, 1), c(1, 2, 3)]
 ## face   suit value
 ## king spades    13
@@ -89,13 +85,13 @@ deck[c(1, 1), c(1, 2, 3)]
 
 R's notation system is not limited to data frames. You can use the same syntax to select values in any R object, as long as you supply one index for each dimension of the object. So, for example, you can subset a vector (which has one dimension) with a single index:
 
-``` {.r}
+``` r
 vec <- c(6, 1, 3, 6, 10, 5)
 vec[1:3]
 ## 6 1 3
 ```
 
-::: {.callout-tip}
+::: callout-tip
 ## Indexing begins at 1
 
 In some programming languages, indexing begins with 0. This means that 0 returns the first element of a vector, 1 returns the second element, and so on.
@@ -103,12 +99,12 @@ In some programming languages, indexing begins with 0. This means that 0 returns
 This isn't the case with R. Indexing in R behaves just like indexing in linear algebra. The first element is always indexed by 1. Why is R different? Maybe because it was written for mathematicians. Those of us who learned indexing from a linear algebra course wonder why computers programmers start with 0.
 :::
 
-::: {.callout-tip}
+::: callout-tip
 ## `drop = FALSE`
 
 If you select two or more columns from a data frame, R will return a new data frame:
 
-``` {.r}
+``` r
 deck[1:2, 1:2]
 ##  face   suit
 ##  king spades
@@ -117,14 +113,14 @@ deck[1:2, 1:2]
 
 However, if you select a single column, R will return a vector:
 
-``` {.r}
+``` r
 deck[1:2, 1]
 ##  "king"  "queen"
 ```
 
 If you would prefer a data frame instead, you can add the optional argument `drop = FALSE` between the brackets:
 
-``` {.r}
+``` r
 deck[1:2, 1, drop = FALSE]
 ##  face
 ##  king
@@ -138,7 +134,7 @@ This method also works for selecting a single column from a matrix or an array.
 
 Negative integers do the exact opposite of positive integers when indexing. R will return every element *except* the elements in a negative index. For example, `deck[-1, 1:3]` will return everything *but* the first row of `deck`. `deck[-(2:52), 1:3]` will return the first row (and exclude everything else):
 
-``` {.r}
+``` r
 deck[-(2:52), 1:3]
 ## face   suit value
 ## king spades    13
@@ -148,7 +144,7 @@ Negative integers are a more efficient way to subset than positive integers if y
 
 R will return an error if you try to pair a negative integer with a positive integer in the *same* index:
 
-``` {.r}
+``` r
 deck[c(-1, 1), 1]
 ## Error in xj[i] : only 0's may be mixed with negative subscripts
 ```
@@ -159,7 +155,7 @@ However, you can use both negative and positive integers to subset an object if 
 
 What would happen if you used zero as an index? Zero is neither a positive integer nor a negative integer, but R will still use it to do a type of subsetting. R will return nothing from a dimension when you use zero as an index. This creates an empty object:
 
-``` {.r}
+``` r
 deck[0, 0]
 ## data frame with 0 columns and 0 rows
 ```
@@ -170,7 +166,7 @@ To be honest, indexing with zero is not very helpful.
 
 You can use a blank space to tell R to extract *every* value in a dimension. This lets you subset an object on one dimension but not the others, which is useful for extracting entire rows or columns from a data frame:
 
-``` {.r}
+``` r
 deck[1, ]
 ## face   suit value
 ## king spades    13
@@ -182,7 +178,7 @@ If you supply a vector of `TRUE`s and `FALSE`s as your index, R will match each 
 
 It may help to imagine R reading through the data frame and asking, "Should I return the \_i_th row of the data structure?" and then consulting the \_i_th value of the index for its answer. For this system to work, your vector must be as long as the dimension you are trying to subset:
 
-``` {.r}
+``` r
 deck[1, c(TRUE, TRUE, FALSE)]
 ## face   suit 
 ## king spades
@@ -203,7 +199,7 @@ This system may seem odd---who wants to type so many `TRUE`s and `FALSE`s?---but
 
 Finally, you can ask for the elements you want by name---if your object has names (see [Names](#sec-names)). This is a common way to extract the columns of a data frame, since columns almost always have names:
 
-``` {.r}
+``` r
 deck[1, c("face", "suit", "value")]
 ## face   suit value
 ## king spades    13
@@ -219,12 +215,12 @@ deck[ , "value"]
 
 Now that you know the basics of R's notation system, let's put it to use.
 
-::: {.callout}
+::: callout
 ## Exercise: Deal a Card
 
 Complete the following code to make a function that returns the first row of a data frame:
 
-``` {.r}
+``` r
 deal <- function(cards) {
    # ?
 }
@@ -233,7 +229,7 @@ deal <- function(cards) {
 
 You can use any of the systems that return the first row of your data frame to write a `deal` function. I'll use positive integers and blanks because I think they are easy to understand:
 
-``` {.r}
+``` r
 deal <- function(cards) {
   cards[1, ]
 }
@@ -241,7 +237,7 @@ deal <- function(cards) {
 
 The function does exactly what you want: it deals the top card from your data set. However, the function becomes less impressive if you run `deal` over and over again:
 
-``` {.r}
+``` r
 deal(deck)
 ## face   suit value
 ## king spades    13
@@ -265,7 +261,7 @@ When you shuffle a real deck of cards, you randomly rearrange the order of the c
 
 This may sound silly, but start by extracting every row in your data frame:
 
-``` {.r}
+``` r
 deck2 <- deck[1:52, ]
 
 head(deck2)
@@ -280,7 +276,7 @@ head(deck2)
 
 What do you get? A new data frame whose order hasn't changed at all. What if you asked R to extract the rows in a different order? For example, you could ask for row 2, *then* row 1, and then the rest of the cards:
 
-``` {.r}
+``` r
 deck3 <- deck[c(2, 1, 3:52), ]
 
 head(deck3)
@@ -295,7 +291,7 @@ head(deck3)
 
 R complies. You'll get all the rows back, and they'll come in the order you ask for them. If you want the rows to come in a random order, then you need to sort the integers from 1 to 52 into a random order and use the results as a row index. How could you generate such a random collection of integers? With our friendly neighborhood `sample` function:
 
-``` {.r}
+``` r
 random <- sample(1:52, size = 52)
 random
 ##  35 28 39  9 18 29 26 45 47 48 23 22 21 16 32 38  1 15 20
@@ -315,7 +311,7 @@ head(deck4)
 
 Now the new set is truly shuffled. You'll be finished once you wrap these steps into a function.
 
-::: {.callout}
+::: callout
 ## Exercise: Shuffle a Deck
 
 Use the preceding ideas to write a `shuffle` function. `shuffle` should take a data frame and return a shuffled copy of the data frame.
@@ -323,7 +319,7 @@ Use the preceding ideas to write a `shuffle` function. `shuffle` should take a d
 
 Your `shuffle` function will look like the one that follows:
 
-``` {.r}
+``` r
 shuffle <- function(cards) { 
   random <- sample(1:52, size = 52)
   cards[random, ]
@@ -332,7 +328,7 @@ shuffle <- function(cards) {
 
 Nice work! Now you can shuffle your cards between each deal:
 
-``` {.r}
+``` r
 deal(deck)
 ## face   suit value
 ## king spades    13
@@ -350,7 +346,7 @@ Two types of object in R obey an optional second system of notation. You can ext
 
 To select a column from a data frame, write the data frame's name and the column name separated by a `$`. Notice that no quotes should go around the column name:
 
-``` {.r}
+``` r
 deck$value
 ## 13 12 11 10  9  8  7  6  5  4  3  2  1 13 12 11 10  9  8  7
 ##  6  5  4  3  2  1 13 12 11 10  9  8  7  6  5  4  3  2  1 13
@@ -359,7 +355,7 @@ deck$value
 
 R will return all of the values in the column as a vector. This `$` notation is incredibly useful because you will often store the variables of your data sets as columns in a data frame. From time to time, you'll want to run a function like `mean` or `median` on the values in a variable. In R, these functions expect a vector of values as input, and `deck$value` delivers your data in just the right format:
 
-``` {.r}
+``` r
 mean(deck$value)
 ## 7
 
@@ -371,7 +367,7 @@ You can use the same `$` notation with the elements of a list, if they have name
 
 To see this, make a list:
 
-``` {.r}
+``` r
 lst <- list(numbers = c(1, 2), logical = TRUE, strings = c("a", "b", "c"))
 lst
 ## $numbers
@@ -386,7 +382,7 @@ lst
 
 And then subset it:
 
-``` {.r}
+``` r
 lst[1]
 ## $numbers
 ## [1] 1 2
@@ -394,35 +390,35 @@ lst[1]
 
 The result is a smaller *list* with one element. That element is the vector `c(1, 2)`. This can be annoying because many R functions do not work with lists. For example, `sum(lst[1])` will return an error. It would be horrible if once you stored a vector in a list, you could only ever get it back as a list:
 
-``` {.r}
+``` r
 sum(lst[1])
 ## Error in sum(lst[1]) : invalid 'type' (list) of argument
 ```
 
 When you use the `$` notation, R will return the selected values as they are, with no list structure around them:
 
-``` {.r}
+``` r
 lst$numbers
 ## 1 2
 ```
 
 You can then immediately feed the results to a function:
 
-``` {.r}
+``` r
 sum(lst$numbers)
 ## 3
 ```
 
 If the elements in your list do not have names (or you do not wish to use the names), you can use two brackets, instead of one, to subset the list. This notation will do the same thing as the `$` notation:
 
-``` {.r}
+``` r
 lst[[1]]
 ## 1 2
 ```
 
 In other words, if you subset a list with single-bracket notation, R will return a smaller list. If you subset a list with double-bracket notation, R will return just the values that were inside an element of the list. You can combine this feature with any of R's indexing methods:
 
-``` {.r}
+``` r
 lst["numbers"]
 ## $numbers
 ## [1] 1 2
@@ -435,7 +431,7 @@ This difference is subtle but important. In the R community, there is a popular,
 
 ![It can be helpful to think of your list as a train. Use single brackets to select train cars, double brackets to select the contents inside of a car.](images/hopr_0403.png){#fig-trains}
 
-::: {.callout-important}
+::: callout-important
 ## Never attach
 
 In R's early days, it became popular to use `attach()` on a data set once you had it loaded. Don't do this! `attach` recreates a computing environment similar to those used in other statistics applications like Stata and SPSS, which crossover users liked. However, R is not Stata or SPSS. R is optimized to use the R computing environment, and running `attach()` can cause confusion with some R functions.

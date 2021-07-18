@@ -1,10 +1,6 @@
----
-knit: quarto render
----
-
 # Debugging R Code {#sec-appendix-debug}
 
-::: {.callout-note}
+::: callout-note
 This appendix refers to environments, the topic of [Environments](#sec-environments), and uses examples from [Programs](#sec-programs) and [S3](#sec-s3). You should read through these chapters first to get the most out of this appendix.
 :::
 
@@ -18,7 +14,7 @@ Using these tools is usually a two-step process. First, you locate *where* an er
 
 The `traceback` tool pinpoints the location of an error. Many R functions call other R functions, which call other functions, and so on. When an error occurs, it may not be clear which of these functions went wrong. Let's consider an example. The following functions call one another, and the last function creates an error (you'll see why in a second):
 
-``` {.r}
+``` r
 first <- function() second()
 second <- function() third()
 third <- function() fourth()
@@ -28,7 +24,7 @@ fifth <- function() bug()
 
 When you run `first`, it will call `second`, which will call `third`, which will call `fourth`, which will call `fifth`, which will call `bug`, a function that does not exist. Here's what that will look like at the command line:
 
-``` {.r}
+``` r
 first()
 ##  Error in fifth() : could not find function "bug" 
 ```
@@ -37,7 +33,7 @@ The error report tells us that the error occurred when R tried to run `fifth`. I
 
 You can see the path of functions that R called before it hit an error by typing `traceback()` at the command line. `traceback` will return a call stack, a list of the functions that R called in the order that it called them. The bottom function will be the command that you entered in the command line. The top function will be the function that caused the error:
 
-``` {.r}
+``` r
 traceback()
 ## 5: fifth() at #1
 ## 4: fourth() at #1
@@ -54,13 +50,13 @@ Second, `traceback` can show you if R stepped off the path that you expected it 
 
 Third, `traceback` can reveal the frightening extent of infinite recursion errors. For example, if you change `fifth` so that it calls `second`, the functions will make a loop: `second` will call `third`, which will call `fourth`, which will call `fifth`, which will call `second` and start the loop over again. It is easier to do this sort of thing in practice than you might think:
 
-``` {.r}
+``` r
 fifth <- function() second()
 ```
 
 When you call `first()`, R will start to run the functions. After awhile, it will notice that it is repeating itself and will return an error. `traceback` will show just what R was doing:
 
-``` {.r}
+``` r
 first()
 ## Error: evaluation nested too deeply: infinite recursion/options(expressions=)?
 
@@ -94,7 +90,7 @@ You can ask R to pause in the middle of running a function and give control back
 
 To use `browser`, add the call `browser()` to the body of a function and then resave the function. For example, if I wanted to pause in the middle of the `score` function from [Programs], I could add `browser()` to the body of `score` and then rerun the following code, which defines `score`:
 
-``` {.r}
+``` r
 score <- function (symbols) {
   # identify case
   same <- symbols[1] == symbols[2] && symbols[2] == symbols[3]
@@ -122,7 +118,7 @@ score <- function (symbols) {
 
 Now whenever R runs `score`, it will come to the call `browser()`. You can see this with the `play` function from [Programs]. If you don't have `play` handy, you can access it by running this code:
 
-``` {.r}
+``` r
 get_symbols <- function() {
   wheel <- c("DD", "7", "BBB", "BB", "B", "C", "0")
   sample(wheel, size = 3, replace = TRUE, 
@@ -145,7 +141,7 @@ Any command that you run in browser mode will be evaluated in the context of the
 
 First, you can inspect the objects that `score` uses. The updated Environments pane shows you which objects `score` has saved in its local environment. You can inspect any of them by typing their name at the browser prompt. This gives you a way to see the values of runtime variables that you normally would not be able to access. If a value looks clearly wrong, you may be close to finding a bug:
 
-``` {.r}
+``` r
 Browse[1]> symbols
 ## [1] "B" "B" "0"
 
@@ -183,19 +179,19 @@ Break points and `browser` provide a great way to debug functions that you have 
 
 You can "add" a browser call to the very start of a preexisting function with `debug`. To do this, run `debug` on the function. For example, you can run `debug` on `sample` with:
 
-``` {.r}
+``` r
 debug(sample)
 ```
 
 Afterward, R will act as if there is a `browser()` statement in the first line of the function. Whenever R runs the function, it will immediately enter browser mode, allowing you to step through the function one line at a time. R will continue to behave this way until you "remove" the browser statement with `undebug`:
 
-``` {.r}
+``` r
 undebug(sample)
 ```
 
 You can check whether a function is in "debugging" mode with `isdebugged`. This will return `TRUE` if you've ran `debug` on the function but have yet to run `undebug`:
 
-``` {.r}
+``` r
 isdebugged(sample)
 ## FALSE
 ```
@@ -208,13 +204,13 @@ You can recreate `debugonce` in RStudio whenever an error occurs. "Rerun with de
 
 You can add the browser statement further into the function, and not at the very start, with `trace`. `trace` takes the name of a function as a character string and then an R expression to insert into the function. You can also provide an `at` argument that tells `trace` at which line of the function to place the expression. So to insert a browser call at the fourth line of `sample`, you would run:
 
-``` {.r}
+``` r
 trace("sample", browser, at = 4)
 ```
 
 You can use `trace` to insert other R functions (not just `browser`) into a function, but you may need to think of a clever reason for doing so. You can also run `trace` on a function without inserting any new code. R will prints `trace:<the function>` at the command line every time R runs the function. This is a great way to test a claim I made in [S3], that R calls `print` every time it displays something at the command line:
 
-``` {.r}
+``` r
 trace(print)
 
 first
@@ -234,7 +230,7 @@ head(deck)
 
 You can revert a function to normal after calling trace on it with `untrace`:
 
-``` {.r}
+``` r
 untrace(sample)
 untrace(print)
 ```
@@ -243,13 +239,13 @@ untrace(print)
 
 The `recover` function provides one final option for debugging. It combines the call stack of `traceback` with the browser mode of `browser`. You can use `recover` just like `browser`, by inserting it directly into a function's body. Let's demonstrate `recover` with the `fifth` function:
 
-``` {.r}
+``` r
 fifth <- function() recover()
 ```
 
 When R runs `recover`, it will pause and display the call stack, but that's not all. R gives you the option of opening a browser mode in *any* of the functions that appear in the call stack. Annoyingly, the call stack will be displayed upside down compared to `traceback`. The most recent function will be on the bottom, and the original function will be on the top:
 
-``` {.r}
+``` r
 first()
 ## 
 ## Enter a frame number, or 0 to exit   
@@ -263,7 +259,7 @@ first()
 
 To enter a browser mode, type in the number next to the function in whose runtime environment you would like to browse. If you do not wish to browse any of the functions, type `0`:
 
-``` {.r}
+``` r
 3
 ## Selection: 3
 ## Called from: fourth()
@@ -274,12 +270,12 @@ You can then proceed as normal. `recover` gives you a chance to inspect variable
 
 If you run the following code, R will automatically call `recover()` whenever an error occurs:
 
-``` {.r}
+``` r
 options(error = recover)
 ```
 
 This behavior will last until you close your R session, or reverse the behavior by calling:
 
-``` {.r}
+``` r
 options(error = NULL)
 ```

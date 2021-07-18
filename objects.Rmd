@@ -1,14 +1,10 @@
----
-knit: quarto render
----
-
 # R Objects {#sec-r-objects}
 
 In this chapter, you'll use R to assemble a deck of 52 playing cards.
 
 You'll start by building simple R objects that represent playing cards and then work your way up to a full-blown table of data. In short, you'll build the equivalent of an Excel spreadsheet from scratch. When you are finished, your deck of cards will look something like this:
 
-``` {.r}
+``` r
  face   suit value
  king spades    13
 queen spades    12
@@ -27,7 +23,7 @@ We'll start with the very basics. The most simple type of object in R is an *ato
 
 An atomic vector is just a simple vector of data. In fact, you've already made an atomic vector, your `die` object from [Project 1: Weighted Dice]{#sec-project-1}. You can make an atomic vector by grouping some values of data together with `c`:
 
-``` {.r}
+``` r
 die <- c(1, 2, 3, 4, 5, 6)
 die
 ## 1 2 3 4 5 6
@@ -36,7 +32,7 @@ is.vector(die)
 ##  TRUE
 ```
 
-::: {.callout-tip}
+::: callout-tip
 ## is.vector
 
 `is.vector` tests whether an object is an atomic vector. It returns `TRUE` if the object is an atomic vector and `FALSE` otherwise.
@@ -44,7 +40,7 @@ is.vector(die)
 
 You can also make an atomic vector with just one value. R saves single values as an atomic vector of length 1:
 
-``` {.r}
+``` r
 five <- 5
 five
 ## 5
@@ -58,7 +54,7 @@ length(die)
 ## 6
 ```
 
-::: {.callout-tip}
+::: callout-tip
 ## length
 
 `length` returns the length of an atomic vector.
@@ -68,21 +64,21 @@ Each atomic vector stores its values as a one-dimensional vector, and each atomi
 
 To create your card deck, you will need to use different types of atomic vectors to save different types of information (text and numbers). You can do this by using some simple conventions when you enter your data. For example, you can create an integer vector by including a capital `L` with your input. You can create a character vector by surrounding your input in quotation marks:
 
-``` {.r}
+``` r
 int <- 1L
 text <- "ace"
 ```
 
 Each type of atomic vector has its own convention (described below). R will recognize the convention and use it to create an atomic vector of the appropriate type. If you'd like to make atomic vectors that have more than one element in them, you can combine an element with the `c` function. Use the same convention with each element:
 
-``` {.r}
+``` r
 int <- c(1L, 5L)
 text <- c("ace", "hearts")
 ```
 
 You may wonder why R uses multiple types of vectors. Vector types help R behave as you would expect. For example, R will do math with atomic vectors that contain numbers, but not with atomic vectors that contain character strings:
 
-``` {.r}
+``` r
 sum(int)
 ## 6
 
@@ -96,7 +92,7 @@ But we're getting ahead of ourselves! Get ready to say hello to the six types of
 
 A double vector stores regular numbers. The numbers can be positive or negative, large or small, and have digits to the right of the decimal place or not. In general, R will save any number that you type in R as a double. So, for example, the die you made in [Project 1: Weighted Dice] was a double object:
 
-``` {.r}
+``` r
 die <- c(1, 2, 3, 4, 5, 6)
 die
 ## 1 2 3 4 5 6
@@ -104,7 +100,7 @@ die
 
 You'll usually know what type of object you are working with in R (it will be obvious), but you can also ask R what type of object an object is with `typeof`. For example:
 
-``` {.r}
+``` r
 typeof(die)
 ##  "double"
 ```
@@ -117,7 +113,7 @@ Integer vectors store integers, numbers that can be written without a decimal co
 
 You can specifically create an integer in R by typing a number followed by an uppercase `L`. For example:
 
-``` {.r}
+``` r
 int <- c(-1L, 2L, 4L)
 int
 ## -1  2  4
@@ -132,7 +128,7 @@ Why would you save your data as an integer instead of a double? Sometimes a diff
 
 As a result, each double is accurate to about 16 significant digits. This introduces a little bit of error. In most cases, this rounding error will go unnoticed. However, in some situations, the rounding error can cause surprising results. For example, you may expect the result of the expression below to be zero, but it is not:
 
-``` {.r}
+``` r
 sqrt(2)^2 - 2
 ## 4.440892e-16
 ```
@@ -147,7 +143,7 @@ You can avoid floating-point errors by avoiding decimals and only using integers
 
 A character vector stores small pieces of text. You can create a character vector in R by typing a character or string of characters surrounded by quotes:
 
-``` {.r}
+``` r
 text <- c("Hello",  "World")
 text
 ##  "Hello"  "World"
@@ -161,7 +157,7 @@ typeof("Hello")
 
 The individual elements of a character vector are known as *strings*. Note that a string can contain more than just letters. You can assemble a character string from numbers or symbols as well.
 
-::: {.callout}
+::: callout
 ## Exercise: Character or Number?
 
 Can you spot the difference between a character string and a number? Here's a test: Which of these are character strings and which are numbers? `1`, `"1"`, `"one"`.
@@ -179,14 +175,14 @@ Expect an error whenever you forget your quotation marks; R will start looking f
 
 Logical vectors store `TRUE`s and `FALSE`s, R's form of Boolean data. Logicals are very helpful for doing things like comparisons:
 
-``` {.r}
+``` r
 3 > 4
 ## FALSE
 ```
 
 Any time you type `TRUE` or `FALSE` in capital letters (without quotation marks), R will treat your input as logical data. R also assumes that `T` and `F` are shorthand for `TRUE` and `FALSE`, unless they are defined elsewhere (e.g. `T <- 500`). Since the meaning of `T` and `F` can change, its best to stick with `TRUE` and `FALSE`:
 
-``` {.r}
+``` r
 logic <- c(TRUE, FALSE, TRUE)
 logic
 ##   TRUE FALSE  TRUE
@@ -204,7 +200,7 @@ Doubles, integers, characters, and logicals are the most common types of atomic 
 
 Complex vectors store complex numbers. To create a complex vector, add an imaginary term to a number with `i`:
 
-``` {.r}
+``` r
 comp <- c(1 + 1i, 1 + 2i, 1 + 3i)
 comp
 ## 1+1i 1+2i 1+3i
@@ -215,7 +211,7 @@ typeof(comp)
 
 Raw vectors store raw bytes of data. Making raw vectors gets complicated, but you can make an empty raw vector of length *n* with `raw(n)`. See the help page of `raw` for more options when working with this type of data:
 
-``` {.r}
+``` r
 raw(3)
 ## 00 00 00
 
@@ -223,7 +219,7 @@ typeof(raw(3))
 ## "raw"
 ```
 
-::: {.callout}
+::: callout
 ## Exercise: Vector of Cards
 
 Create an atomic vector that stores just the face names of the cards in a royal flush, for example, the ace of spades, king of spades, queen of spades, jack of spades, and ten of spades. The face name of the ace of spades would be "ace," and "spades" is the suit.
@@ -233,7 +229,7 @@ Which type of vector will you use to save the names?
 
 A character vector is the most appropriate type of atomic vector in which to save card names. You can create one with the `c` function if you surround each name with quotation marks:
 
-``` {.r}
+``` r
 hand <- c("ace", "king", "queen", "jack", "ten")
 hand
 ## "ace"   "king"  "queen" "jack"  "ten"  
@@ -250,12 +246,12 @@ An attribute is a piece of information that you can attach to an atomic vector (
 
 You can see which attributes an object has with `attributes`. `attributes` will return `NULL` if an object has no attributes. An atomic vector, like `die`, won't have any attributes unless you give it some:
 
-``` {.r}
+``` r
 attributes(die)
 ## NULL
 ```
 
-::: {.callout-tip}
+::: callout-tip
 ## `NULL`
 
 R uses `NULL` to represent the null set, an empty object. `NULL` is often returned by functions whose values are undefined. You can create a `NULL` object by typing `NULL` in capital letters.
@@ -265,20 +261,20 @@ R uses `NULL` to represent the null set, an empty object. `NULL` is often return
 
 The most common attributes to give an atomic vector are names, dimensions (dim), and classes. Each of these attributes has its own helper function that you can use to give attributes to an object. You can also use the helper functions to look up the value of these attributes for objects that already have them. For example, you can look up the value of the names attribute of `die` with `names`:
 
-``` {.r}
+``` r
 names(die)
 ## NULL
 ```
 
 `NULL` means that `die` does not have a names attribute. You can give one to `die` by assigning a character vector to the output of `names`. The vector should include one name for each element in `die`:
 
-``` {.r}
+``` r
 names(die) <- c("one", "two", "three", "four", "five", "six")
 ```
 
 Now `die` has a names attribute:
 
-``` {.r}
+``` r
 names(die)
 ## "one"   "two"   "three" "four"  "five"  "six" 
 
@@ -289,7 +285,7 @@ attributes(die)
 
 R will display the names above the elements of `die` whenever you look at the vector:
 
-``` {.r}
+``` r
 die
 ##  one   two three  four  five   six 
 ##    1     2     3     4     5     6 
@@ -297,7 +293,7 @@ die
 
 However, the names won't affect the actual values of the vector, nor will the names be affected when you manipulate the values of the vector:
 
-``` {.r}
+``` r
 die + 1
 ##  one   two three  four  five   six 
 ##    2     3     4     5     6     7
@@ -305,7 +301,7 @@ die + 1
 
 You can also use `names` to change the names attribute or remove it all together. To change the names, assign a new set of labels to `names`:
 
-``` {.r}
+``` r
 names(die) <- c("uno", "dos", "tres", "quatro", "cinco", "seis")
 die
 ##   uno    dos   tres quatro  cinco   seis 
@@ -314,7 +310,7 @@ die
 
 To remove the names attribute, set it to `NULL`:
 
-``` {.r}
+``` r
 names(die) <- NULL
 die
 ##  1 2 3 4 5 6
@@ -324,7 +320,7 @@ die
 
 You can transform an atomic vector into an *n*-dimensional array by giving it a dimensions attribute with `dim`. To do this, set the `dim` attribute to a numeric vector of length *n*. R will reorganize the elements of the vector into *n* dimensions. Each dimension will have as many rows (or columns, etc.) as the *nth* value of the `dim` vector. For example, you can reorganize `die` into a 2 × 3 matrix (which has 2 rows and 3 columns):
 
-``` {.r}
+``` r
 dim(die) <- c(2, 3)
 die
 ##      [,1] [,2] [,3]
@@ -334,7 +330,7 @@ die
 
 or a 3 × 2 matrix (which has 3 rows and 2 columns):
 
-``` {.r}
+``` r
 dim(die) <- c(3, 2)
 die
 ##      [,1] [,2]
@@ -345,7 +341,7 @@ die
 
 or a 1 × 2 × 3 hypercube (which has 1 row, 2 columns, and 3 "slices"). This is a three-dimensional structure, but R will need to show it slice by slice by slice on your two-dimensional computer screen:
 
-``` {.r}
+``` r
 dim(die) <- c(1, 2, 3)
 die
 ## , , 1
@@ -372,7 +368,7 @@ You may notice that you don't have much control over how R reorganizes the value
 
 Matrices store values in a two-dimensional array, just like a matrix from linear algebra. To create one, first give `matrix` an atomic vector to reorganize into a matrix. Then, define how many rows should be in the matrix by setting the `nrow` argument to a number. `matrix` will organize your vector of values into a matrix with the specified number of rows. Alternatively, you can set the `ncol` argument, which tells R how many columns to include in the matrix:
 
-``` {.r}
+``` r
 m <- matrix(die, nrow = 2)
 m
 ##      [,1] [,2] [,3]
@@ -382,7 +378,7 @@ m
 
 `matrix` will fill up the matrix column by column by default, but you can fill the matrix row by row if you include the argument `byrow = TRUE`:
 
-``` {.r}
+``` r
 m <- matrix(die, nrow = 2, byrow = TRUE)
 m
 ##      [,1] [,2] [,3]
@@ -396,7 +392,7 @@ m
 
 The `array` function creates an n-dimensional array. For example, you could use `array` to sort values into a cube of three dimensions or a hypercube in 4, 5, or *n* dimensions. `array` is not as customizeable as `matrix` and basically does the same thing as setting the `dim` attribute. To use `array`, provide an atomic vector as the first argument, and a vector of dimensions as the second argument, now called `dim`:
 
-``` {.r}
+``` r
 ar <- array(c(11:14, 21:24, 31:34), dim = c(2, 2, 3))
 ar
 ## , , 1
@@ -418,13 +414,13 @@ ar
 ## [2,]   32   34
 ```
 
-::: {.callout}
+::: callout
 ## Exercise: Make a Matrix
 
 Create the following matrix, which stores the name and suit of every card in a royal flush.
 :::
 
-``` {.r}
+``` r
 ##      [,1]    [,2]    
 ## [1,] "ace"   "spades"
 ## [2,] "king"  "spades"
@@ -435,7 +431,7 @@ Create the following matrix, which stores the name and suit of every card in a r
 
 There is more than one way to build this matrix, but in every case, you will need to start by making a character vector with 10 values. If you start with the following character vector, you can turn it into a matrix with any of the following three commands:
 
-``` {.r}
+``` r
 hand1 <- c("ace", "king", "queen", "jack", "ten", "spades", "spades", 
   "spades", "spades", "spades")
 
@@ -446,7 +442,7 @@ dim(hand1) <- c(5, 2)
 
 You can also start with a character vector that lists the cards in a slightly different order. In this case, you will need to ask R to fill the matrix row by row instead of column by column:
 
-``` {.r}
+``` r
 hand2 <- c("ace", "spades", "king", "spades", "queen", "spades", "jack", 
   "spades", "ten", "spades")
 
@@ -458,7 +454,7 @@ matrix(hand2, ncol = 2, byrow = TRUE)
 
 Notice that changing the dimensions of your object will not change the type of the object, but it *will* change the object's `class` attribute:
 
-``` {.r}
+``` r
 dim(die) <- c(2, 3)
 typeof(die)
 ##  "double"
@@ -471,7 +467,7 @@ A matrix is a special case of an atomic vector. For example, the `die` matrix is
 
 Note that an object's `class` attribute will not always appear when you run `attributes`; you may need to specifically search for it with `class`:
 
-``` {.r}
+``` r
 attributes(die)
 ## $dim
 ## [1] 2 3
@@ -479,7 +475,7 @@ attributes(die)
 
 You can apply `class` to objects that do not have a `class` attribute. `class` will return a value based on the object's atomic type. Notice that the "class" of a double is "numeric," an odd deviation, but one I am thankful for. I think that the most important property of a double vector is that it contains numbers, a property that "numeric" makes obvious:
 
-``` {.r}
+``` r
 class("Hello")
 ##  "character"
 
@@ -493,7 +489,7 @@ You can also use `class` to set an object's `class` attribute, but this is usual
 
 The attribute system lets R represent more types of data than just doubles, integers, characters, logicals, complexes, and raws. The time looks like a character string when you display it, but its data type is actually `"double"`, and its class is `"POSIXct"` `"POSIXt"` (it has two classes):
 
-``` {.r}
+``` r
 now <- Sys.time()
 now
 ## "2014-03-17 12:00:00 UTC"
@@ -509,7 +505,7 @@ POSIXct is a widely used framework for representing dates and times. In the POSI
 
 R creates the time object by building a double vector with one element, `1395057600`. You can see this vector by removing the `class` attribute of `now`, or by using the `unclass` function, which does the same thing:
 
-``` {.r}
+``` r
 unclass(now)
 ## 1395057600
 ```
@@ -518,7 +514,7 @@ R then gives the double vector a `class` attribute that contains two classes, `"
 
 You can take advantage of this system by giving the `POSIXct` class to random R objects. For example, have you ever wondered what day it was a million seconds after 12:00 a.m. Jan. 1, 1970?
 
-``` {.r}
+``` r
 mil <- 1000000
 mil
 ## 1e+06
@@ -538,7 +534,7 @@ Factors are R's way of storing categorical information, like ethnicity or eye co
 
 To make a factor, pass an atomic vector into the `factor` function. R will recode the data in the vector as integers and store the results in an integer vector. R will also add a `levels` attribute to the integer, which contains a set of labels for displaying the factor values, and a `class` attribute, which contains the class `factor`:
 
-``` {.r}
+``` r
 gender <- factor(c("male", "female", "female", "male"))
 
 typeof(gender)
@@ -554,7 +550,7 @@ attributes(gender)
 
 You can see exactly how R is storing your factor with `unclass`:
 
-``` {.r}
+``` r
 unclass(gender)
 ## [1] 2 1 1 2
 ## attr(,"levels")
@@ -563,7 +559,7 @@ unclass(gender)
 
 R uses the levels attribute when it displays the factor, as you will see. R will display each `1` as `female`, the first label in the levels vector, and each `2` as `male`, the second label. If the factor included `3`s, they would be displayed as the third label, and so on:
 
-``` {.r}
+``` r
 gender
 ## male   female female male  
 ## Levels: female male
@@ -575,14 +571,14 @@ R will often try to convert character strings to factors when you load and creat
 
 You can convert a factor to a character string with the `as.character` function. R will retain the display version of the factor, not the integers stored in memory:
 
-``` {.r}
+``` r
 as.character(gender)
 ## "male"   "female" "female" "male"
 ```
 
 Now that you understand the possibilities provided by R's atomic vectors, let's make a more complicated type of playing card.
 
-::: {.callout}
+::: callout
 ## Exercise: Write a Card
 
 Many card games assign a numerical value to each card. For example, in blackjack, each face card is worth 10 points, each number card is worth between 2 and 10 points, and each ace is worth 1 or 11 points, depending on the final score.
@@ -592,7 +588,7 @@ Make a virtual playing card by combining "ace," "heart," and 1 into a vector. Wh
 
 You may have guessed that this exercise would not go well. Each atomic vector can only store one type of data. As a result, R coerces all of your values to character strings:
 
-``` {.r}
+``` r
 card <- c("ace", "hearts", 1)
 card
 ## "ace"    "hearts" "1" 
@@ -600,7 +596,7 @@ card
 
 This will cause trouble if you want to do math with that point value, for example, to see who won your game of blackjack.
 
-::: {.callout-warning}
+::: callout-warning
 ## Data types in vectors
 
 If you try to put multiple types of data into a vector, R will convert the elements to a single type of data.
@@ -624,13 +620,13 @@ This arrangement preserves information. It is easy to look at a character string
 
 R uses the same coercion rules when you try to do math with logical values. So the following code:
 
-``` {.r}
+``` r
 sum(c(TRUE, TRUE, FALSE, FALSE))
 ```
 
 will become:
 
-``` {.r}
+``` r
 sum(c(1, 1, 0, 0))
 ## 2
 ```
@@ -639,7 +635,7 @@ This means that `sum` will count the number of `TRUE`s in a logical vector (and 
 
 You can explicitly ask R to convert data from one type to another with the `as` functions. R will convert the data whenever there is a sensible way to do so:
 
-``` {.r}
+``` r
 as.character(1)
 ## "1"
 
@@ -666,7 +662,7 @@ Lists are like atomic vectors because they group data into a one-dimensional set
 
 `list` creates a list the same way `c` creates a vector. Separate each element in the list with a comma:
 
-``` {.r}
+``` r
 list1 <- list(100:130, "R", list(TRUE, FALSE))
 list1
 ## [[1]]
@@ -693,7 +689,7 @@ As you can imagine, the structure of lists can become quite complicated, but thi
 
 However, not every list needs to be complicated. You can store a playing card in a very simple list.
 
-::: {.callout}
+::: callout
 ## Exercise: Use a List to Make a Card
 
 Use a list to store a single playing card, like the ace of hearts, which has a point value of one. The list should save the face of the card, the suit, and the point value in separate elements.
@@ -701,7 +697,7 @@ Use a list to store a single playing card, like the ace of hearts, which has a p
 
 You can create your card like this. In the following example, the first element of the list is a character vector (of length 1). The second element is also a character vector, and the third element is a numeric vector:
 
-``` {.r}
+``` r
 card <- list("ace", "hearts", 1)
 card
 ## [[1]]
@@ -726,7 +722,7 @@ Data frames group vectors together into a two-dimensional table. Each vector bec
 
 Creating a data frame by hand takes a lot of typing, but you can do it (if you like) with the `data.frame` function. Give `data.frame` any number of vectors, each separated with a comma. Each vector should be set equal to a name that describes the vector. `data.frame` will turn each vector into a column of the new data frame:
 
-``` {.r}
+``` r
 df <- data.frame(face = c("ace", "two", "six"),  
   suit = c("clubs", "clubs", "clubs"), value = c(1, 2, 3))
 df
@@ -740,7 +736,7 @@ You'll need to make sure that each vector is the same length (or can be made so 
 
 In the previous code, I named the arguments in `data.frame` `face`, `suit`, and `value`, but you can name the arguments whatever you like. `data.frame` will use your argument names to label the columns of the data frame.
 
-::: {.callout-tip}
+::: callout-tip
 ## Names
 
 You can also give names to a list or vector when you create one of these objects. Use the same syntax as with `data.frame`:
@@ -753,7 +749,7 @@ The names will be stored in the object's `names` attribute.
 
 If you look at the type of a data frame, you will see that it is a list. In fact, each data frame is a list with class `data.frame`. You can see what types of objects are grouped together by a list (or data frame) with the `str` function:
 
-``` {.r}
+``` r
 typeof(df)
 ## "list"
 
@@ -769,7 +765,7 @@ str(df)
 
 Notice that R saved your character strings as factors. I told you that R likes factors! It is not a very big deal here, but you can prevent this behavior by adding the argument `stringsAsFactors = FALSE` to `data.frame`:
 
-``` {.r}
+``` r
 df <- data.frame(face = c("ace", "two", "six"),  
   suit = c("clubs", "clubs", "clubs"), value = c(1, 2, 3),
   stringsAsFactors = FALSE)
@@ -777,7 +773,7 @@ df <- data.frame(face = c("ace", "two", "six"),
 
 A data frame is a great way to build an entire deck of cards. You can make each row in the data frame a playing card, and each column a type of value---each with its own appropriate data type. The data frame would look something like this:
 
-``` {.r}
+``` r
 ##   face     suit value
 ##   king   spades    13
 ##  queen   spades    12
@@ -801,7 +797,7 @@ A data frame is a great way to build an entire deck of cards. You can make each 
 
 You could create this data frame with `data.frame`, but look at the typing involved! You need to write three vectors, each with 52 elements:
 
-``` {.r}
+``` r
 deck <- data.frame(
   face = c("king", "queen", "jack", "ten", "nine", "eight", "seven", "six",
     "five", "four", "three", "two", "ace", "king", "queen", "jack", "ten", 
@@ -833,7 +829,7 @@ You can load the `deck` data frame from the file [*deck.csv*](http://bit.ly/deck
 
 *deck.csv* is a comma-separated values file, or CSV for short. CSVs are plain-text files, which means you can open them in a text editor (as well as many other programs). If you open *desk.csv*, you'll notice that it contains a table of data that looks like the following table. Each row of the table is saved on its own line, and a comma is used to separate the cells within each row. Every CSV file shares this basic format:
 
-``` {.default}
+``` default
 "face","suit,"value"
 "king","spades",13
 "queen","spades,12
@@ -857,7 +853,7 @@ You can also unclick the box "Strings as factors" in the wizard. I recommend doi
 
 Once everything looks right, click Import. RStudio will read in the data and save it to a data frame. RStudio will also open a data viewer, so you can see your new data in a spreadsheet format. This is a good way to check that everything came through as expected. If all worked well, your file should appear in a View tab of RStudio, like in @fig-view. You can examine the data frame in the console with `head(deck)`.
 
-::: {.callout-tip}
+::: callout-tip
 ## Online data
 
 You can load a plain-text file straight from the Internet by clicking the "From Web URL..." option under Import Dataset. The file will need to have its own URL, and you will need to be connected.
@@ -867,7 +863,7 @@ You can load a plain-text file straight from the Internet by clicking the "From 
 
 Now it is your turn. Download *deck.csv* and import it into RStudio. Be sure to save the output to an R object called `deck`: you'll use it in the next few chapters. If everything goes correctly, the first few lines of your data frame should look like this:
 
-``` {.r}
+``` r
 head(deck)
 ##  face   suit value
 ##  king spades    13
@@ -878,7 +874,7 @@ head(deck)
 ## eight spades     8
 ```
 
-::: {.callout-note}
+::: callout-note
 `head` and `tail` are two functions that provide an easy way to peek at large data sets. `head` will return just the first six rows of the data set, and `tail` will return just the last six rows. To see a different number of rows, give `head` or `tails` a second argument, the number of rows you would like to view, for example, `head(deck, 10)`.
 :::
 
@@ -888,7 +884,7 @@ R can open many types of files---not just CSVs. Visit [Loading and Saving Data i
 
 Before we go any further, let's save a copy of `deck` as a new *.csv* file. That way you can email it to a colleague, store it on a thumb drive, or open it in a different program. You can save any data frame in R to a *.csv* file with the command `write.csv`. To save `deck`, run:
 
-``` {.r}
+``` r
 write.csv(deck, file = "cards.csv", row.names = FALSE)
 ```
 
