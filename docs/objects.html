@@ -356,7 +356,7 @@
 <p>We’ll start with the very basics. The most simple type of object in R is an <em>atomic vector</em>. Atomic vectors are not nuclear powered, but they are very simple and they do show up everywhere. If you look closely enough, you’ll see that most structures in R are built from atomic vectors.</p>
 <section id="atomic-vectors" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="atomic-vectors"><span class="header-section-number">3.1</span> Atomic Vectors</h2>
-<p>An atomic vector is just a simple vector of data. In fact, you’ve already made an atomic vector, your <code>die</code> object from <span id="sec-project-1">Project 1: Weighted Dice</span>. You can make an atomic vector by grouping some values of data together with <code>c</code>:</p>
+<p>An atomic vector is just a simple vector of data. In fact, you’ve already made an atomic vector, your <code>die</code> object from <a href="dice.html">Project 1: Weighted Dice</a>. You can make an atomic vector by grouping some values of data together with <code>c</code>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>die <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>die</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 2 3 4 5 6</span></span>
@@ -417,7 +417,7 @@ length
 <p>But we’re getting ahead of ourselves! Get ready to say hello to the six types of atomic vectors in R.</p>
 <section id="doubles" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="doubles"><span class="header-section-number">3.1.1</span> Doubles</h3>
-<p>A double vector stores regular numbers. The numbers can be positive or negative, large or small, and have digits to the right of the decimal place or not. In general, R will save any number that you type in R as a double. So, for example, the die you made in [Project 1: Weighted Dice] was a double object:</p>
+<p>A double vector stores regular numbers. The numbers can be positive or negative, large or small, and have digits to the right of the decimal place or not. In general, R will save any number that you type in R as a double. So, for example, the die you made in <a href="dice.html">Project 1: Weighted Dice</a> was a double object:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>die <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>die</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 2 3 4 5 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -710,7 +710,7 @@ Exercise: Make a Matrix
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">5</span>)</span>
 <span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  "numeric"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You can also use <code>class</code> to set an object’s <code>class</code> attribute, but this is usually a bad idea. R will expect objects of a class to share certain traits, such as attributes, that your object may not possess. You’ll learn how to make and use your own classes in [Project 3: Slot Machine].</p>
+<p>You can also use <code>class</code> to set an object’s <code>class</code> attribute, but this is usually a bad idea. R will expect objects of a class to share certain traits, such as attributes, that your object may not possess. You’ll learn how to make and use your own classes in <a href="slots.html">Project 3: Slot Machine</a>.</p>
 <section id="dates-and-times" class="level3" data-number="3.5.1">
 <h3 data-number="3.5.1" class="anchored" data-anchor-id="dates-and-times"><span class="header-section-number">3.5.1</span> Dates and Times</h3>
 <p>The attribute system lets R represent more types of data than just doubles, integers, characters, logicals, complexes, and raws. The time looks like a character string when you display it, but its data type is actually <code>"double"</code>, and its class is <code>"POSIXct"</code> <code>"POSIXt"</code> (it has two classes):</p>
@@ -1052,7 +1052,7 @@ Note
 <p><code>head</code> and <code>tail</code> are two functions that provide an easy way to peek at large data sets. <code>head</code> will return just the first six rows of the data set, and <code>tail</code> will return just the last six rows. To see a different number of rows, give <code>head</code> or <code>tails</code> a second argument, the number of rows you would like to view, for example, <code>head(deck, 10)</code>.</p>
 </div>
 </div>
-<p>R can open many types of files—not just CSVs. Visit [Loading and Saving Data in R] to learn how to open other common types of files in R.</p>
+<p>R can open many types of files—not just CSVs. Visit <a href="a4-data.html">Loading and Saving Data in R</a> to learn how to open other common types of files in R.</p>
 </section>
 <section id="saving-data" class="level2" data-number="3.10">
 <h2 data-number="3.10" class="anchored" data-anchor-id="saving-data"><span class="header-section-number">3.10</span> Saving Data</h2>

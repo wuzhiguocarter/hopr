@@ -266,7 +266,7 @@ string
 ## "B 0 B\n$0"
 ```
 
-The last line of `slot_display` calls `cat` on the new string. `cat` is like `print`; it displays its input at the command line. However, `cat` does not surround its output with quotation marks. `cat` also replaces every `\n` with a new line or line break. The result is what we see. Notice that it looks just how I suggested that our `play` output should look in [Programs]:
+The last line of `slot_display` calls `cat` on the new string. `cat` is like `print`; it displays its input at the command line. However, `cat` does not surround its output with quotation marks. `cat` also replaces every `\n` with a new line or line break. The result is what we see. Notice that it looks just how I suggested that our `play` output should look in [Programs](#sec-programs):
 
 ``` r
 cat(string)

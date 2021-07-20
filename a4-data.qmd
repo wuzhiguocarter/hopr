@@ -172,19 +172,13 @@ options(stringsAsFactors = TRUE)
 
 R also comes with some prepackaged short cuts for `read.table`, shown in @tbl-shortcuts.
 
-+---------------+--------------------------------------+--------------------------------------------------+
 | Function      | Defaults                             | Use                                              |
-+===============+======================================+==================================================+
+|---------------|--------------------------------------|--------------------------------------------------|
 | `read.table`  | sep = " ", header = FALSE            | General-purpose read function                    |
-+---------------+--------------------------------------+--------------------------------------------------+
 | `read.csv`    | sep = ",", header = TRUE             | Comma-separated-variable (CSV) files             |
-+---------------+--------------------------------------+--------------------------------------------------+
 | `read.delim`  | sep = "\t", header = TRUE            | Tab-delimited files                              |
-+---------------+--------------------------------------+--------------------------------------------------+
 | `read.csv2`   | sep = ";", header = TRUE, dec = ","  | CSV files with European decimal format           |
-+---------------+--------------------------------------+--------------------------------------------------+
 | `read.delim2` | sep = "\t", header = TRUE, dec = "," | Tab-delimited files with European decimal format |
-+---------------+--------------------------------------+--------------------------------------------------+
 
 : R's read functions. You can overwrite any of the default arguments as necessary. {#tbl-shortcuts}
 
@@ -251,15 +245,11 @@ Note that websites that begin with \_<https://_> are secure websites, which mean
 
 Once your data is in R, you can save it to any file format that R supports. If you'd like to save it as a plain-text file, you can use the +write+ family of functions. The three basic write functions appear in @tbl-write. Use `write.csv` to save your data as a *.csv* file and `write.table` to save your data as a tab delimited document or a document with more exotic separators.
 
-+-------------------------------------------+-----------------------------------------------------------------------+
 | File format                               | Function and syntax                                                   |
-+===========================================+=======================================================================+
+|-------------------------------------------|-----------------------------------------------------------------------|
 | **.csv**                                  | `write.csv(r_object, file = filepath, row.names = FALSE)`             |
-+-------------------------------------------+-----------------------------------------------------------------------+
 | **.csv** (with European decimal notation) | `write.csv2(r_object, file = filepath, row.names = FALSE)`            |
-+-------------------------------------------+-----------------------------------------------------------------------+
 | tab delimited                             | `write.table(r_object, file = filepath, sep = "\t", row.names=FALSE)` |
-+-------------------------------------------+-----------------------------------------------------------------------+
 
 : R saves data sets to plain-text files with the write family of functions {#tbl-write}
 

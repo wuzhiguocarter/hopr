@@ -84,7 +84,7 @@ qplot(x, binwidth = 1)
 
 This plot shows that our vector contains one value in the interval `[1, 2)` by placing a bar of height 1 above that interval. Similarly, the plot shows that the vector contains three values in the interval `[2, 3)` by placing a bar of height 3 in that interval. It shows that the vector contains two values in the interval `[3, 4)` by placing a bar of height 2 in that interval. In these intervals, the hard bracket, `[`, means that the first number is included in the interval. The parenthesis, `)`, means that the last number is *not* included.
 
-Let's try another histogram. This code makes the right-hand plot in @fig-hist. Notice that there are five points with a value of 1 in `x2`. The histogram displays this by plotting a bar of height 5 above the interval x2 = [1, 2):
+Let's try another histogram. This code makes the right-hand plot in @fig-hist. Notice that there are five points with a value of 1 in `x2`. The histogram displays this by plotting a bar of height 5 above the interval x2 = \[1, 2):
 
 ``` r
 x2 <- c(1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 4)

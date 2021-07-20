@@ -481,7 +481,7 @@ You have now written your first program in R, and it is a program that you shoul
 
 Writing new programs in R will always be challenging because programming depends so much on your own creativity, problem-solving ability, and experience writing similar types of programs. However, you can use the suggestions in this chapter to make even the most complicated program manageable: divide tasks into simple steps and cases, work with concrete examples, and describe possible solutions in English.
 
-This project completes the education you began in [The Very Basics]. You can now use R to handle data, which has augmented your ability to analyze data. You can:
+This project completes the education you began in [The Very Basics](#sec-basics). You can now use R to handle data, which has augmented your ability to analyze data. You can:
 
 -   Load and store data in your computer---not on paper or in your mind
 -   Accurately recall and change individual values without relying on your memory

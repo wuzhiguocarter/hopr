@@ -21,7 +21,7 @@ We'll start with the very basics. The most simple type of object in R is an *ato
 
 ## Atomic Vectors
 
-An atomic vector is just a simple vector of data. In fact, you've already made an atomic vector, your `die` object from [Project 1: Weighted Dice]{#sec-project-1}. You can make an atomic vector by grouping some values of data together with `c`:
+An atomic vector is just a simple vector of data. In fact, you've already made an atomic vector, your `die` object from [Project 1: Weighted Dice](#sec-project-dice). You can make an atomic vector by grouping some values of data together with `c`:
 
 ``` r
 die <- c(1, 2, 3, 4, 5, 6)
@@ -90,7 +90,7 @@ But we're getting ahead of ourselves! Get ready to say hello to the six types of
 
 ### Doubles
 
-A double vector stores regular numbers. The numbers can be positive or negative, large or small, and have digits to the right of the decimal place or not. In general, R will save any number that you type in R as a double. So, for example, the die you made in [Project 1: Weighted Dice] was a double object:
+A double vector stores regular numbers. The numbers can be positive or negative, large or small, and have digits to the right of the decimal place or not. In general, R will save any number that you type in R as a double. So, for example, the die you made in [Project 1: Weighted Dice](#sec-project-dice) was a double object:
 
 ``` r
 die <- c(1, 2, 3, 4, 5, 6)
@@ -483,7 +483,7 @@ class(5)
 ##  "numeric"
 ```
 
-You can also use `class` to set an object's `class` attribute, but this is usually a bad idea. R will expect objects of a class to share certain traits, such as attributes, that your object may not possess. You'll learn how to make and use your own classes in [Project 3: Slot Machine].
+You can also use `class` to set an object's `class` attribute, but this is usually a bad idea. R will expect objects of a class to share certain traits, such as attributes, that your object may not possess. You'll learn how to make and use your own classes in [Project 3: Slot Machine](#sec-project-slots).
 
 ### Dates and Times
 
@@ -878,7 +878,7 @@ head(deck)
 `head` and `tail` are two functions that provide an easy way to peek at large data sets. `head` will return just the first six rows of the data set, and `tail` will return just the last six rows. To see a different number of rows, give `head` or `tails` a second argument, the number of rows you would like to view, for example, `head(deck, 10)`.
 :::
 
-R can open many types of files---not just CSVs. Visit [Loading and Saving Data in R] to learn how to open other common types of files in R.
+R can open many types of files---not just CSVs. Visit [Loading and Saving Data in R](#sec-appendix-dataio) to learn how to open other common types of files in R.
 
 ## Saving Data
 

@@ -14,7 +14,7 @@ play()
 
 The `play` function will need to do two things. First, it will need to randomly generate three symbols; and, second, it will need to calculate a prize based on those symbols.
 
-The first step is easy to simulate. You can randomly generate three symbols with the `sample` function---just like you randomly "rolled" two dice in [Project 1: Weighted Dice]. The following function generates three symbols from a group of common slot machine symbols: diamonds (`DD`), sevens (`7`), triple bars (`BBB`), double bars (`BB`), single bars (`B`), cherries (`C`), and zeroes (`0`). The symbols are selected randomly, and each symbol appears with a different probability:
+The first step is easy to simulate. You can randomly generate three symbols with the `sample` function---just like you randomly "rolled" two dice in [Project 1: Weighted Dice](#sec-project-dice). The following function generates three symbols from a group of common slot machine symbols: diamonds (`DD`), sevens (`7`), triple bars (`BBB`), double bars (`BB`), single bars (`B`), cherries (`C`), and zeroes (`0`). The symbols are selected randomly, and each symbol appears with a different probability:
 
 ``` r
 get_symbols <- function() {
@@ -412,7 +412,7 @@ Our first subtask asks us to "test whether the symbols are three of a kind." Thi
 ::: callout
 ## Exercise: Write a Test
 
-Turn the preceding statement into a logical test written in R. Use your knowledge of logical tests, Boolean operators, and subsetting from [R Notation]. The test should work with the vector `symbols` and return a `TRUE` *if and only if* each element in `symbols` is the same. Be sure to test your code on `symbols`.
+Turn the preceding statement into a logical test written in R. Use your knowledge of logical tests, Boolean operators, and subsetting from [R Notation](#sec-r-notation). The test should work with the vector `symbols` and return a `TRUE` *if and only if* each element in `symbols` is the same. Be sure to test your code on `symbols`.
 :::
 
 Here are a couple of ways to test that `symbols` contains three of the same symbol. The first method parallels the English suggestion above, but there are other ways to do the same test. There is no right or wrong answer, so long as your solution works, which is easy to check because you've created a vector named `symbols`:
@@ -783,7 +783,7 @@ diamonds <- sum(symbols == "DD")
 
 This is the second time we've created a lookup table to avoid writing an `if` tree. Why is this technique helpful and why does it keep appearing? Many `if` trees in R are essential. They provide a useful way to tell R to use different algorithms in different cases. However, `if` trees are not appropriate everywhere.
 
-`if` trees have a couple of drawbacks. First, they require R to run multiple tests as it works its way down the `if` tree, which can create unnecessary work. Second, as you'll see in [Speed], it can be difficult to use `if` trees in vectorized code, a style of code that takes advantage of R's programming strengths to create fast programs. Lookup tables do not suffer from either of these drawbacks.
+`if` trees have a couple of drawbacks. First, they require R to run multiple tests as it works its way down the `if` tree, which can create unnecessary work. Second, as you'll see in [Speed](#sec-speed), it can be difficult to use `if` trees in vectorized code, a style of code that takes advantage of R's programming strengths to create fast programs. Lookup tables do not suffer from either of these drawbacks.
 
 You won't be able to replace every `if` tree with a lookup table, nor should you. However, you can usually use lookup tables to avoid assigning variables with `if` trees. As a general rule, use an `if` tree if each branch of the tree runs different *code*. Use a lookup table if each branch of the tree only assigns a different *value*.
 
