@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
   <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
+  <meta name="generator" content="quarto-(Local Development)">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <meta name="description" content="This book will teach you how to program in R, with hands-on examples. I wrote it for non-programmers to provide a friendly introduction to the R language. You’ll learn how to load data, assemble and disassemble data objects, navigate R’s environment system, write your own functions, and use all of R’s programming tools. Throughout the book, you’ll use your newfound skills to solve practical data science problems.">
   <title>Hands-On Programming with R – 5&nbsp; Modifying Values</title>
@@ -93,7 +93,6 @@
   <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
   <script src="site_libs/quarto-html/clipboard.min.js"></script>
   <script src="site_libs/quarto-html/anchor.min.js"></script>
-  <script src="site_libs/quarto-html/quarto-html.js"></script>
   <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
   <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
   <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -105,7 +104,7 @@
 <header id="quarto-header" class="headroom fixed-top">
 <nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <div class="container-fluid d-flex justify-content-between">
-    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">5&nbsp; Modifying Values</h1>
+    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modifying Values</span></h1>
     <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
       <i class="bi bi-chevron-right"></i>
     </button>
@@ -119,9 +118,7 @@
     <nav class="ms-lg-auto py-2 floating  overflow-scroll">
   <div class="px-3 pt-lg-2 mt-1 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">
-      Hands-On Programming with R
-      </a>
+      <a href="./">Hands-On Programming with R</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
@@ -180,7 +177,7 @@
 </div>
     </div>
   <div class="sidebar-menu-container"> 
-  <ul class="list-unstyled mt-3 px-3">
+  <ul class="list-unstyled mt-1 px-3">
       <li class="sidebar-item">
   <a href="./index.html" class="">Welcome</a>
 </li>
@@ -202,10 +199,10 @@
       <div class="collapse  show" id="project1weighteddice-collapse">
         <ul class="list-unstyled sidebar-item-contents">
           <li class="sidebar-item">
-  <a href="./basics.html" class=""><span class="chapter-number">1</span>&nbsp; The Very Basics</a>
+  <a href="./basics.html" class=""><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Very Basics</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./packages.html" class=""><span class="chapter-number">2</span>&nbsp; Packages and Help Pages</a>
+  <a href="./packages.html" class=""><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Packages and Help Pages</span></a>
 </li>
         </ul>
       </div>
@@ -226,16 +223,16 @@
       <div class="collapse  show" id="project2playingcards-collapse">
         <ul class="list-unstyled sidebar-item-contents">
           <li class="sidebar-item">
-  <a href="./objects.html" class=""><span class="chapter-number">3</span>&nbsp; R Objects</a>
+  <a href="./objects.html" class=""><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R Objects</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./notation.html" class=""><span class="chapter-number">4</span>&nbsp; R Notation</a>
+  <a href="./notation.html" class=""><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R Notation</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./modifying.html" class="active"><span class="chapter-number">5</span>&nbsp; Modifying Values</a>
+  <a href="./modifying.html" class="active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modifying Values</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./environments.html" class=""><span class="chapter-number">6</span>&nbsp; Environments</a>
+  <a href="./environments.html" class=""><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Environments</span></a>
 </li>
         </ul>
       </div>
@@ -256,16 +253,16 @@
       <div class="collapse  show" id="project3slotmachine-collapse">
         <ul class="list-unstyled sidebar-item-contents">
           <li class="sidebar-item">
-  <a href="./programs.html" class=""><span class="chapter-number">7</span>&nbsp; Programs</a>
+  <a href="./programs.html" class=""><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Programs</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./s3.html" class=""><span class="chapter-number">8</span>&nbsp; S3</a>
+  <a href="./s3.html" class=""><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">S3</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./loops.html" class=""><span class="chapter-number">9</span>&nbsp; Loops</a>
+  <a href="./loops.html" class=""><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Loops</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./speed.html" class=""><span class="chapter-number">10</span>&nbsp; Speed</a>
+  <a href="./speed.html" class=""><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Speed</span></a>
 </li>
         </ul>
       </div>
@@ -282,19 +279,19 @@
       <div class="collapse  show" id="appendices-collapse">
         <ul class="list-unstyled sidebar-item-contents">
           <li class="sidebar-item">
-  <a href="./a1-starting.html" class=""><span class="chapter-number">A</span>&nbsp; Installing R and RStudio</a>
+  <a href="./a1-starting.html" class=""><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Installing R and RStudio</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./a2-packages.html" class=""><span class="chapter-number">B</span>&nbsp; R Packages</a>
+  <a href="./a2-packages.html" class=""><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">R Packages</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./a3-updating.html" class=""><span class="chapter-number">C</span>&nbsp; Updating R and Its Packages</a>
+  <a href="./a3-updating.html" class=""><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Updating R and Its Packages</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./a4-data.html" class=""><span class="chapter-number">D</span>&nbsp; Loading and Saving Data in R</a>
+  <a href="./a4-data.html" class=""><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Loading and Saving Data in R</span></a>
 </li>
           <li class="sidebar-item">
-  <a href="./a5-debug.html" class=""><span class="chapter-number">E</span>&nbsp; Debugging R Code</a>
+  <a href="./a5-debug.html" class=""><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Debugging R Code</span></a>
 </li>
         </ul>
       </div>
@@ -321,10 +318,10 @@
 <li><a href="#summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">5.4</span> Summary</a></li>
 </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/modifying.qmd">Edit this page</a></p></div></div></nav></div>
-  <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 px-lg-4">
+  <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 col-xl-7 px-lg-4 pe-xxl-4 ps-xxl-0">
 <main>
 <header id="title-block-header">
-<h1 class="title d-none d-lg-block display-7">5&nbsp; Modifying Values</h1>
+<h1 class="title display-7"><span id="sec-modifying-values" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modifying Values</span></span></h1>
 </header>
 
 <p>Are you ready to play some games with your virtual deck? Not so fast! The point system in your deck of cards doesn’t align well with many card games. For example, in war and poker, aces are usually scored higher than kings. They’d have a point value of 14, not 1.</p>
@@ -917,18 +914,88 @@ Exercise: Practice with Tests
 <p>You can modify values in place inside an R object when you combine R’s notation syntax with the assignment operator, <code>&lt;-</code>. This lets you update your data and clean your data sets</p>
 <p>When you work with large data sets, modifying and retrieving values creates a logistical problem of its own. How can you search through the data to find the values that you want to modify or retrieve? As an R user, you can do this with logical subsetting. Create a logical test with logical and Boolean operators and then use the test as an index in R’s bracket notation. R will return the values that you are looking for, even if you do not know where they are.</p>
 <p>Retrieving individual values will not be your only concern as an R programmer. You’ll also need to retrieve entire data sets themselves; for example, you may call one in a function. <a href="environments.html">Environments</a> will teach you how R looks up and saves data sets and other R objects in its environment system. You’ll then use this knowledge to fix the <code>deal</code> and <code>shuffle</code> functions.</p>
+
 <!-- -->
 </section>
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    window.tippy(el, {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    }); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      const id = new URL(ref.getAttribute('href')).hash.replace(/^#/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
 </main>
 <div class="page-navigation ">
   <div class="nav-page nav-page-previous">
       <a href="./notation.html">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; R Notation</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R Notation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./environments.html">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; Environments</span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Environments</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </div>

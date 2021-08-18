@@ -49,7 +49,5 @@ format:
     theme: cosmo
     cover-image: cover.png
     code-link: true
-  epub: default
-  docx: default
-  pdf: default
+
 
