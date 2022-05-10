@@ -1,130 +1,134 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
-  <meta charset="utf-8">
-  <meta name="generator" content="quarto-99.9.9">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="description" content="This book will teach you how to program in R, with hands-on examples. I wrote it for non-programmers to provide a friendly introduction to the R language. You’ll learn how to load data, assemble and disassemble data objects, navigate R’s environment system, write your own functions, and use all of R’s programming tools. Throughout the book, you’ll use your newfound skills to solve practical data science problems.">
-  <title>Hands-On Programming with R - 7&nbsp; Programs</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
-  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-  <script src="site_libs/quarto-nav/headroom.min.js"></script>
-  <script src="site_libs/clipboard/clipboard.min.js"></script>
-  <meta name="quarto:offset" content="./">
-  <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-  <script src="site_libs/quarto-search/fuse.min.js"></script>
-  <script src="site_libs/quarto-search/quarto-search.js"></script>
-  <link href="./s3.html" rel="next">
-  <link href="./slots.html" rel="prev">
-  <script src="site_libs/quarto-html/quarto.js"></script>
-  <script src="site_libs/quarto-html/popper.min.js"></script>
-  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-  <script src="site_libs/quarto-html/anchor.min.js"></script>
-  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-  <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
-  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
-  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-  <script id="quarto-search-options" type="application/json">{
-    "location": "sidebar",
-    "copy-button": false,
-    "collapse-after": 2,
-    "panel-placement": "start",
-    "type": "textbox",
-    "limit": 20,
-    "language": {
-      "search-no-results-text": "No results",
-      "search-matching-documents-text": "matching documents",
-      "search-copy-link-title": "Copy link to search",
-      "search-hide-matches-text": "Hide additional matches",
-      "search-more-match-text": "more match in this document",
-      "search-more-matches-text": "more matches in this document",
-      "search-clear-button-title": "Clear",
-      "search-detached-cancel-button-title": "Cancel",
-      "search-submit-button-title": "Submit"
-    }
-  }</script>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-99.9.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Hands-On Programming with R - 7&nbsp; Programs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<link href="./s3.html" rel="next">
+<link href="./slots.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
 </head>
-<body class="floating">
+
+<body class="nav-sidebar floating">
+
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Programs</span></h1>
-      <button type="button" class="quarto-btn-toggle btn">
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
     </div>
@@ -134,7 +138,7 @@
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-  <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hands-On Programming with R</a> 
         <div class="sidebar-tools-main">
@@ -162,156 +166,180 @@
     </ul>
 </div>
     </div>
-  </div>
-    <div class="px-3 mt-2 flex-shrink-0 align-items-center">
-      <div class="sidebar-search">
-      <div id="quarto-search" class="" title="Search"></div>
       </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./dice.html" class="sidebar-item-text sidebar-link">Project 1: Weighted Dice</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
     </div>
-  <div class="sidebar-menu-container"> 
-  <ul class="list-unstyled mt-1">
-      <li class="sidebar-item">
-  <a href="./index.html" class="">Welcome</a>
-</li>
-      <li class="sidebar-item">
-  <a href="./preface.html" class="">Preface</a>
-</li>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
-        <div class="me-auto">
-          <div class="d-inline-flex w-100 sidebar-section-item">
-            <div class="sidebar-section-link me-auto">
-            <a href="./dice.html" class="">Project 1: Weighted Dice</a>
-            </div>
-            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded="true">
-              <div><i class="bi bi-chevron-right ms-2"></i></div>
-            </a>
-            </div>
-        </div>
-      <div class="collapse  show" id="project1weighteddice-collapse">
-        <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
-  <a href="./basics.html" class=""><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Very Basics</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./packages.html" class=""><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Packages and Help Pages</span></a>
-</li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
-        <div class="me-auto">
-          <div class="d-inline-flex w-100 sidebar-section-item">
-            <div class="sidebar-section-link me-auto">
-            <a href="./cards.html" class="">Project 2: Playing Cards</a>
-            </div>
-            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded="true">
-              <div><i class="bi bi-chevron-right ms-2"></i></div>
-            </a>
-            </div>
-        </div>
-      <div class="collapse  show" id="project2playingcards-collapse">
-        <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
-  <a href="./objects.html" class=""><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R Objects</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./notation.html" class=""><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R Notation</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./modifying.html" class=""><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modifying Values</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./environments.html" class=""><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Environments</span></a>
-</li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
-        <div class="me-auto">
-          <div class="d-inline-flex w-100 sidebar-section-item">
-            <div class="sidebar-section-link me-auto">
-            <a href="./slots.html" class="">Project 3: Slot Machine</a>
-            </div>
-            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded="true">
-              <div><i class="bi bi-chevron-right ms-2"></i></div>
-            </a>
-            </div>
-        </div>
-      <div class="collapse  show" id="project3slotmachine-collapse">
-        <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
-  <a href="./programs.html" class="active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Programs</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./s3.html" class=""><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">S3</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./loops.html" class=""><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Loops</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./speed.html" class=""><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Speed</span></a>
-</li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
-        <div class="me-auto">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded="true">
-              <div class="me-auto sidebar-section-item">Appendices</div>
-            <div><i class="bi bi-chevron-right ms-2"></i></div>
-            </a>
-        </div>
-      <div class="collapse  show" id="appendices-collapse">
-        <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
-  <a href="./a1-starting.html" class=""><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Installing R and RStudio</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./a2-packages.html" class=""><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">R Packages</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./a3-updating.html" class=""><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Updating R and Its Packages</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./a4-data.html" class=""><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Loading and Saving Data in R</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./a5-debug.html" class=""><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Debugging R Code</span></a>
-</li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-  </ul>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Very Basics</span></a>
   </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./packages.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Packages and Help Pages</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./cards.html" class="sidebar-item-text sidebar-link">Project 2: Playing Cards</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./objects.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R Objects</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./notation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R Notation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modifying.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modifying Values</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./environments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Environments</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./slots.html" class="sidebar-item-text sidebar-link">Project 3: Slot Machine</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./programs.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Programs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">S3</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./loops.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Loops</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./speed.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Speed</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./a1-starting.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Installing R and RStudio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./a2-packages.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">R Packages</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./a3-updating.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Updating R and Its Packages</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./a4-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Loading and Saving Data in R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./a5-debug.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Debugging R Code</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+    </div>
 </nav>
-<!-- toc -->
-    <nav id="TOC" role="doc-toc" class="sidebar sidebar-toc">
-<h2 id="toc-title">On this page</h2>
-<ul>
-<li><a href="#strategy" class="nav-link active" data-scroll-target="#strategy"> <span class="header-section-number">7.1</span> Strategy</a>
-<ul class="collapse">
-<li><a href="#sequential-steps" class="nav-link" data-scroll-target="#sequential-steps"> <span class="header-section-number">7.1.1</span> Sequential Steps</a></li>
-<li><a href="#parallel-cases" class="nav-link" data-scroll-target="#parallel-cases"> <span class="header-section-number">7.1.2</span> Parallel Cases</a></li>
-</ul></li>
-<li><a href="#if-statements" class="nav-link" data-scroll-target="#if-statements"> <span class="header-section-number">7.2</span> if Statements</a></li>
-<li><a href="#else-statements" class="nav-link" data-scroll-target="#else-statements"> <span class="header-section-number">7.3</span> else Statements</a></li>
-<li><a href="#lookup-tables" class="nav-link" data-scroll-target="#lookup-tables"> <span class="header-section-number">7.4</span> Lookup Tables</a></li>
-<li><a href="#code-comments" class="nav-link" data-scroll-target="#code-comments"> <span class="header-section-number">7.5</span> Code Comments</a></li>
-<li><a href="#summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">7.6</span> Summary</a></li>
-</ul>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#strategy" id="toc-strategy" class="nav-link active" data-scroll-target="#strategy"> <span class="header-section-number">7.1</span> Strategy</a>
+  <ul class="collapse">
+  <li><a href="#sequential-steps" id="toc-sequential-steps" class="nav-link" data-scroll-target="#sequential-steps"> <span class="header-section-number">7.1.1</span> Sequential Steps</a></li>
+  <li><a href="#parallel-cases" id="toc-parallel-cases" class="nav-link" data-scroll-target="#parallel-cases"> <span class="header-section-number">7.1.2</span> Parallel Cases</a></li>
+  </ul></li>
+  <li><a href="#if-statements" id="toc-if-statements" class="nav-link" data-scroll-target="#if-statements"> <span class="header-section-number">7.2</span> if Statements</a></li>
+  <li><a href="#else-statements" id="toc-else-statements" class="nav-link" data-scroll-target="#else-statements"> <span class="header-section-number">7.3</span> else Statements</a></li>
+  <li><a href="#lookup-tables" id="toc-lookup-tables" class="nav-link" data-scroll-target="#lookup-tables"> <span class="header-section-number">7.4</span> Lookup Tables</a></li>
+  <li><a href="#code-comments" id="toc-code-comments" class="nav-link" data-scroll-target="#code-comments"> <span class="header-section-number">7.5</span> Code Comments</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">7.6</span> Summary</a></li>
+  </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/programs.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
 <!-- main -->
-<main class="content">
-<header id="title-block-header">
-<h1 class="title display-7"><span id="sec-programs" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Programs</span></span></h1>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-programs" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Programs</span></span></h1>
+</div>
+
+
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
 </header>
 
 <p>In this chapter, you will build a real, working slot machine that you can play by running an R function. When you’re finished, you’ll be able to play it like this:</p>
@@ -339,7 +367,7 @@
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">get_symbols</span>()</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="do">## "7" "0" "B"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>get_symbols</code> uses the probabilities observed in a group of video lottery terminals from Manitoba, Canada. These slot machines became briefly controversial in the 1990s, when a reporter decided to test their payout rate. The machines appeared to pay out only 40 cents on the dollar, even though the manufacturer claimed they would pay out 92 cents on the dollar. The original data collected on the machines and a description of the controversy is available online in <a href="http://bit.ly/jse_Braun">a journal article by W. John Braun</a>. The controversy died down when additional testing showed that the manufacturer was correct.</p>
-<p>The Manitoba slot machines use the complicated payout scheme shown in <a href="#tbl-prizes">tbl.&nbsp;<span>7.1</span></a>. A player will win a prize if he gets:</p>
+<p>The Manitoba slot machines use the complicated payout scheme shown in <a href="#tbl-prizes">Table&nbsp;<span>7.1</span></a>. A player will win a prize if he gets:</p>
 <ul>
 <li>Three of the same type of symbol (except for three zeroes)</li>
 <li>Three bars (of mixed variety)</li>
@@ -350,7 +378,7 @@
 <p>Diamonds are also special in another way. Every diamond that appears in a combination doubles the amount of the final prize. So <code>7</code> <code>7</code> <code>DD</code> would actually be scored <em>higher</em> than <code>7</code> <code>7</code> <code>7</code>. Three sevens would earn you $80, but two sevens and a diamond would earn you $160. One seven and two diamonds would be even better, resulting in a prize that has been doubled twice, or $320. A jackpot occurs when a player rolls <code>DD</code> <code>DD</code> <code>DD</code>. Then a player earns $100 doubled three times, which is $800.</p>
 <div id="tbl-prizes" class="anchored">
 <table class="table">
-<caption>Table 7.1: Each play of the slot machine costs $1. A player’s symbols determine how much they win. Diamonds (<code>DD</code>) are wild, and each diamond doubles the final prize. * = any symbol </caption>
+<caption>Table 7.1: Each play of the slot machine costs $1. A player’s symbols determine how much they win. Diamonds (<code>DD</code>) are wild, and each diamond doubles the final prize. * = any symbol</caption>
 <thead>
 <tr class="header">
 <th>Combination</th>
@@ -413,7 +441,7 @@
 </tbody>
 </table>
 </div>
-<p>To create your <code>play</code> function, you will need to write a program that can take the output of <code>get_symbols</code> and calculate the correct prize based on <a href="#tbl-prizes">tbl.&nbsp;<span>7.1</span></a>.</p>
+<p>To create your <code>play</code> function, you will need to write a program that can take the output of <code>get_symbols</code> and calculate the correct prize based on <a href="#tbl-prizes">Table&nbsp;<span>7.1</span></a>.</p>
 <p>In R, programs are saved either as R scripts or as functions. We’ll save your program as a function named <code>score</code>. When you are finished, you will be able to use <code>score</code> to calculate a prize like this:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">score</span>(<span class="fu">c</span>(<span class="st">"DD"</span>, <span class="st">"DD"</span>, <span class="st">"DD"</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 800</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -452,7 +480,7 @@ Note
 <p>R programs contain two types of subtasks: sequential steps and parallel cases.</p>
 <section id="sequential-steps" class="level3" data-number="7.1.1">
 <h3 data-number="7.1.1" class="anchored" data-anchor-id="sequential-steps"><span class="header-section-number">7.1.1</span> Sequential Steps</h3>
-<p>One way to subdivide a program is into a series of sequential steps. The <code>play</code> function takes the approach, shown in <a href="#fig-subdivide1">fig.&nbsp;<span>7.1</span></a>. First, it generates three symbols (step 1), then it displays them in the console window (step 2), and then it scores them (step 3):</p>
+<p>One way to subdivide a program is into a series of sequential steps. The <code>play</code> function takes the approach, shown in <a href="#fig-subdivide1">Figure&nbsp;<span>7.1</span></a>. First, it generates three symbols (step 1), then it displays them in the console window (step 2), and then it scores them (step 3):</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>play <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># step 1: generate symbols</span></span>
@@ -476,8 +504,8 @@ Note
 <h3 data-number="7.1.2" class="anchored" data-anchor-id="parallel-cases"><span class="header-section-number">7.1.2</span> Parallel Cases</h3>
 <p>Another way to divide a task is to spot groups of similar cases within the task. Some tasks require different algorithms for different groups of input. If you can identify those groups, you can work out their algorithms one at a time.</p>
 <p>For example, <code>score</code> will need to calculate the prize one way if <code>symbols</code> contains three of a kind (In that case, <code>score</code> will need to match the common symbol to a prize). <code>score</code> will need to calculate the prize a second way if the symbols are all bars (In that case, <code>score</code> can just assign a prize of $5). And, finally, <code>score</code> will need to calculate the prize in a third way if the symbols do not contain three of a kind or all bars (In that case, <code>score</code> must count the number of cherries present). <code>score</code> will never use all three of these algorithms at once; it will always choose just one algorithm to run based on the combination of symbols.</p>
-<p>Diamonds complicate all of this because diamonds can be treated as wild cards. Let’s ignore that for now and focus on the simpler case where diamonds double the prize but are not wilds. <code>score</code> can double the prize as necessary after it runs one of the following algorithms, as shown in <a href="#fig-subdivide2">fig.&nbsp;<span>7.2</span></a>.</p>
-<p>Adding the <code>score</code> cases to the <code>play</code> steps reveals a strategy for the complete slot machine program, as shown in <a href="#fig-subdivide3">fig.&nbsp;<span>7.3</span></a>.</p>
+<p>Diamonds complicate all of this because diamonds can be treated as wild cards. Let’s ignore that for now and focus on the simpler case where diamonds double the prize but are not wilds. <code>score</code> can double the prize as necessary after it runs one of the following algorithms, as shown in <a href="#fig-subdivide2">Figure&nbsp;<span>7.2</span></a>.</p>
+<p>Adding the <code>score</code> cases to the <code>play</code> steps reveals a strategy for the complete slot machine program, as shown in <a href="#fig-subdivide3">Figure&nbsp;<span>7.3</span></a>.</p>
 <p>We’ve already solved the first few steps in this strategy. Our program can get three slot machine symbols with the <code>get_symbols</code> function. Then it can display the symbols with the <code>print</code> function. Now let’s examine how the program can handle the parallel score cases.</p>
 <div id="fig-subdivide2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -540,7 +568,7 @@ Note
 <span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>num</span>
 <span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Try the following quizzes to develop your understanding of <code>if</code> statements.</p>
-<div class="callout callout callout-style-default no-icon callout-captioned">
+<div class="callout callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -559,7 +587,7 @@ Exercise: Quiz A
 </div>
 </div>
 <p>The code will return the number 2. <code>x</code> begins as 1, and then R encounters the <code>if</code> statement. Since the condition evaluates to <code>TRUE</code>, R will run <code>x &lt;- 2</code>, changing the value of <code>x</code>.</p>
-<div class="callout callout callout-style-default no-icon callout-captioned">
+<div class="callout callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -579,7 +607,7 @@ x</code></pre>
 </div>
 </div>
 <p>This code will also return the number 2. It works the same as the code in Quiz A, except the condition in this statement is already <code>TRUE</code>. R doesn’t even need to evaluate it. As a result, the code inside the <code>if</code> statement will be run, and <code>x</code> will be set to 2.</p>
-<div class="callout callout callout-style-default no-icon callout-captioned">
+<div class="callout callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -666,7 +694,7 @@ Note
 <span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="do">## "Tie."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>R will work through the <code>if</code> conditions until one evaluates to <code>TRUE</code>, then R will ignore any remaining <code>if</code> and <code>else</code> clauses in the tree. If no conditions evaluate to <code>TRUE</code>, R will run the final <code>else</code> statement.</p>
 <p>If two <code>if</code> statements describe mutually exclusive events, it is better to join the <code>if</code> statements with an <code>else if</code> than to list them separately. This lets R ignore the second <code>if</code> statement whenever the first returns a <code>TRUE</code>, which saves work.</p>
-<p>You can use <code>if</code> and <code>else</code> to link the subtasks in your slot-machine function. Open a fresh R script, and copy this code into it. The code will be the skeleton of our final <code>score</code> function. Compare it to the flow chart for <code>score</code> in <a href="#fig-subdivide2">fig.&nbsp;<span>7.2</span></a>:</p>
+<p>You can use <code>if</code> and <code>else</code> to link the subtasks in your slot-machine function. Open a fresh R script, and copy this code into it. The code will be the skeleton of our final <code>score</code> function. Compare it to the flow chart for <code>score</code> in <a href="#fig-subdivide2">Figure&nbsp;<span>7.2</span></a>:</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> ( <span class="co"># Case 1: all the same &lt;1&gt;) {</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  prize <span class="ot">&lt;-</span> <span class="co"># look up the prize &lt;3&gt;</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="er">}</span> <span class="cf">else</span> <span class="cf">if</span> ( <span class="co"># Case 2: all bars &lt;2&gt; ) {</span></span>
@@ -687,7 +715,7 @@ Note
 <strong>&lt;6&gt;</strong> - Count the number of diamonds.<br>
 <strong>&lt;7&gt;</strong> - Calculate a prize based on the number of cherries.<br>
 <strong>&lt;8&gt;</strong> - Adjust the prize for diamonds.</p>
-<p>If you like, you can reorganize your flow chart around these tasks, as in <a href="#fig-subdivide4">fig.&nbsp;<span>7.4</span></a>. The chart will describe the same strategy, but in a more precise way. I’ll use a diamond shape to symbolize an <code>if else</code> decision.</p>
+<p>If you like, you can reorganize your flow chart around these tasks, as in <a href="#fig-subdivide4">Figure&nbsp;<span>7.4</span></a>. The chart will describe the same strategy, but in a more precise way. I’ll use a diamond shape to symbolize an <code>if else</code> decision.</p>
 <div id="fig-subdivide4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/hopr_0704.png" class="img-fluid figure-img"></p>
@@ -713,7 +741,7 @@ Note
 <p>After you set up a concrete example, try to describe how you will do the subtask in English. The more precisely you can describe your solution, the easier it will be to write your R code.</p>
 <p>Our first subtask asks us to “test whether the symbols are three of a kind.” This phrase does not suggest any useful R code to me. However, I could describe a more precise test for three of a kind: three symbols will be the same if the first symbol is equal to the second and the second symbol is equal to the third. Or, even more precisely:</p>
 <p><em>A vector named <code>symbols</code> will contain three of the same symbol if the first element of <code>symbols</code> is equal to the second element of <code>symbols</code> and the second element of <code>symbols</code> is equal to the third element of <code>symbols</code></em>.</p>
-<div class="callout callout callout-style-default no-icon callout-captioned">
+<div class="callout callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -770,7 +798,7 @@ Note
 </div>
 <p>The second prize case occurs when all the symbols are a type of bar, for example, <code>B</code>, <code>BB</code>, and <code>BBB</code>. Let’s begin by creating a concrete example to work with:</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>symbols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"B"</span>, <span class="st">"BBB"</span>, <span class="st">"BB"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout callout-style-default no-icon callout-captioned">
+<div class="callout callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -903,7 +931,7 @@ Exercise: Test for All Bars
 <span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="co"># count diamonds</span></span>
 <span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a><span class="co"># double the prize if necessary</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now we can work on the last case. Here, you’ll need to know how many cherries are in <code>symbols</code> before you can calculate a prize.</p>
-<div class="callout callout callout-style-default no-icon callout-captioned">
+<div class="callout callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -1030,7 +1058,7 @@ Lookup Tables Versus if Trees
 <p>And if three diamonds are present, it will be:</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>prize <span class="sc">*</span> <span class="dv">8</span>      <span class="co"># 8 = 2 ^ 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Can you think of an easy way to handle this? How about something similar to these examples?</p>
-<div class="callout callout callout-style-default no-icon callout-captioned">
+<div class="callout callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -1136,7 +1164,9 @@ Exercise: Adjust for Diamonds
 
 
 </section>
-<script type="application/javascript">
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";
   const anchorJS = new window.AnchorJS();
@@ -1157,7 +1187,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.blur();
     // flash "checked"
     button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
     setTimeout(function() {
+      button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
     // clear code selection
@@ -1212,20 +1245,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</main> <!-- /main -->
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./slots.html">
+      <a href="./slots.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Project 3: Slot Machine</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./s3.html">
+      <a href="./s3.html" class="pagination-link">
         <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">S3</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 </body></html>

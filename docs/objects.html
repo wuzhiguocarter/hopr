@@ -1,131 +1,135 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
-  <meta charset="utf-8">
-  <meta name="generator" content="quarto-99.9.9">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="description" content="This book will teach you how to program in R, with hands-on examples. I wrote it for non-programmers to provide a friendly introduction to the R language. You’ll learn how to load data, assemble and disassemble data objects, navigate R’s environment system, write your own functions, and use all of R’s programming tools. Throughout the book, you’ll use your newfound skills to solve practical data science problems.">
-  <title>Hands-On Programming with R - 3&nbsp; R Objects</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-99.9.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Hands-On Programming with R - 3&nbsp; R Objects</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<link href="./notation.html" rel="next">
+<link href="./cards.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
-  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-  <script src="site_libs/quarto-nav/headroom.min.js"></script>
-  <script src="site_libs/clipboard/clipboard.min.js"></script>
-  <meta name="quarto:offset" content="./">
-  <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-  <script src="site_libs/quarto-search/fuse.min.js"></script>
-  <script src="site_libs/quarto-search/quarto-search.js"></script>
-  <link href="./notation.html" rel="next">
-  <link href="./cards.html" rel="prev">
-  <script src="site_libs/quarto-html/quarto.js"></script>
-  <script src="site_libs/quarto-html/popper.min.js"></script>
-  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-  <script src="site_libs/quarto-html/anchor.min.js"></script>
-  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-  <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
-  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
-  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-  <script id="quarto-search-options" type="application/json">{
-    "location": "sidebar",
-    "copy-button": false,
-    "collapse-after": 2,
-    "panel-placement": "start",
-    "type": "textbox",
-    "limit": 20,
-    "language": {
-      "search-no-results-text": "No results",
-      "search-matching-documents-text": "matching documents",
-      "search-copy-link-title": "Copy link to search",
-      "search-hide-matches-text": "Hide additional matches",
-      "search-more-match-text": "more match in this document",
-      "search-more-matches-text": "more matches in this document",
-      "search-clear-button-title": "Clear",
-      "search-detached-cancel-button-title": "Cancel",
-      "search-submit-button-title": "Submit"
-    }
-  }</script>
+
 </head>
-<body class="floating">
+
+<body class="nav-sidebar floating">
+
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R Objects</span></h1>
-      <button type="button" class="quarto-btn-toggle btn">
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
     </div>
@@ -135,7 +139,7 @@
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-  <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Hands-On Programming with R</a> 
         <div class="sidebar-tools-main">
@@ -163,172 +167,196 @@
     </ul>
 </div>
     </div>
-  </div>
-    <div class="px-3 mt-2 flex-shrink-0 align-items-center">
-      <div class="sidebar-search">
-      <div id="quarto-search" class="" title="Search"></div>
       </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./dice.html" class="sidebar-item-text sidebar-link">Project 1: Weighted Dice</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
     </div>
-  <div class="sidebar-menu-container"> 
-  <ul class="list-unstyled mt-1">
-      <li class="sidebar-item">
-  <a href="./index.html" class="">Welcome</a>
-</li>
-      <li class="sidebar-item">
-  <a href="./preface.html" class="">Preface</a>
-</li>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
-        <div class="me-auto">
-          <div class="d-inline-flex w-100 sidebar-section-item">
-            <div class="sidebar-section-link me-auto">
-            <a href="./dice.html" class="">Project 1: Weighted Dice</a>
-            </div>
-            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project1weighteddice-collapse" aria-expanded="true">
-              <div><i class="bi bi-chevron-right ms-2"></i></div>
-            </a>
-            </div>
-        </div>
-      <div class="collapse  show" id="project1weighteddice-collapse">
-        <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
-  <a href="./basics.html" class=""><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Very Basics</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./packages.html" class=""><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Packages and Help Pages</span></a>
-</li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
-        <div class="me-auto">
-          <div class="d-inline-flex w-100 sidebar-section-item">
-            <div class="sidebar-section-link me-auto">
-            <a href="./cards.html" class="">Project 2: Playing Cards</a>
-            </div>
-            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project2playingcards-collapse" aria-expanded="true">
-              <div><i class="bi bi-chevron-right ms-2"></i></div>
-            </a>
-            </div>
-        </div>
-      <div class="collapse  show" id="project2playingcards-collapse">
-        <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
-  <a href="./objects.html" class="active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R Objects</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./notation.html" class=""><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R Notation</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./modifying.html" class=""><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modifying Values</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./environments.html" class=""><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Environments</span></a>
-</li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
-        <div class="me-auto">
-          <div class="d-inline-flex w-100 sidebar-section-item">
-            <div class="sidebar-section-link me-auto">
-            <a href="./slots.html" class="">Project 3: Slot Machine</a>
-            </div>
-            <a class="text-start  " data-bs-toggle="collapse" data-bs-target="#project3slotmachine-collapse" aria-expanded="true">
-              <div><i class="bi bi-chevron-right ms-2"></i></div>
-            </a>
-            </div>
-        </div>
-      <div class="collapse  show" id="project3slotmachine-collapse">
-        <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
-  <a href="./programs.html" class=""><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Programs</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./s3.html" class=""><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">S3</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./loops.html" class=""><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Loops</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./speed.html" class=""><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Speed</span></a>
-</li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
-        <div class="me-auto">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#appendices-collapse" aria-expanded="true">
-              <div class="me-auto sidebar-section-item">Appendices</div>
-            <div><i class="bi bi-chevron-right ms-2"></i></div>
-            </a>
-        </div>
-      <div class="collapse  show" id="appendices-collapse">
-        <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
-  <a href="./a1-starting.html" class=""><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Installing R and RStudio</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./a2-packages.html" class=""><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">R Packages</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./a3-updating.html" class=""><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Updating R and Its Packages</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./a4-data.html" class=""><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Loading and Saving Data in R</span></a>
-</li>
-          <li class="sidebar-item">
-  <a href="./a5-debug.html" class=""><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Debugging R Code</span></a>
-</li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-  </ul>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Very Basics</span></a>
   </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./packages.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Packages and Help Pages</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./cards.html" class="sidebar-item-text sidebar-link">Project 2: Playing Cards</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./objects.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R Objects</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./notation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R Notation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modifying.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modifying Values</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./environments.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Environments</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./slots.html" class="sidebar-item-text sidebar-link">Project 3: Slot Machine</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./programs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Programs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./s3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">S3</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./loops.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Loops</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./speed.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Speed</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./a1-starting.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Installing R and RStudio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./a2-packages.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">R Packages</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./a3-updating.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Updating R and Its Packages</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./a4-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Loading and Saving Data in R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./a5-debug.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Debugging R Code</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+    </div>
 </nav>
-<!-- toc -->
-    <nav id="TOC" role="doc-toc" class="sidebar sidebar-toc">
-<h2 id="toc-title">On this page</h2>
-<ul>
-<li><a href="#atomic-vectors" class="nav-link active" data-scroll-target="#atomic-vectors"> <span class="header-section-number">3.1</span> Atomic Vectors</a>
-<ul class="collapse">
-<li><a href="#doubles" class="nav-link" data-scroll-target="#doubles"> <span class="header-section-number">3.1.1</span> Doubles</a></li>
-<li><a href="#integers" class="nav-link" data-scroll-target="#integers"> <span class="header-section-number">3.1.2</span> Integers</a></li>
-<li><a href="#characters" class="nav-link" data-scroll-target="#characters"> <span class="header-section-number">3.1.3</span> Characters</a></li>
-<li><a href="#sec-logicals" class="nav-link" data-scroll-target="#sec-logicals"> <span class="header-section-number">3.1.4</span> Logicals</a></li>
-<li><a href="#complex-and-raw" class="nav-link" data-scroll-target="#complex-and-raw"> <span class="header-section-number">3.1.5</span> Complex and Raw</a></li>
-</ul></li>
-<li><a href="#sec-attributes" class="nav-link" data-scroll-target="#sec-attributes"> <span class="header-section-number">3.2</span> Attributes</a>
-<ul class="collapse">
-<li><a href="#sec-names" class="nav-link" data-scroll-target="#sec-names"> <span class="header-section-number">3.2.1</span> Names</a></li>
-<li><a href="#dim" class="nav-link" data-scroll-target="#dim"> <span class="header-section-number">3.2.2</span> Dim</a></li>
-</ul></li>
-<li><a href="#matrices" class="nav-link" data-scroll-target="#matrices"> <span class="header-section-number">3.3</span> Matrices</a></li>
-<li><a href="#arrays" class="nav-link" data-scroll-target="#arrays"> <span class="header-section-number">3.4</span> Arrays</a></li>
-<li><a href="#class" class="nav-link" data-scroll-target="#class"> <span class="header-section-number">3.5</span> Class</a>
-<ul class="collapse">
-<li><a href="#dates-and-times" class="nav-link" data-scroll-target="#dates-and-times"> <span class="header-section-number">3.5.1</span> Dates and Times</a></li>
-<li><a href="#factors" class="nav-link" data-scroll-target="#factors"> <span class="header-section-number">3.5.2</span> Factors</a></li>
-</ul></li>
-<li><a href="#coercion" class="nav-link" data-scroll-target="#coercion"> <span class="header-section-number">3.6</span> Coercion</a></li>
-<li><a href="#lists" class="nav-link" data-scroll-target="#lists"> <span class="header-section-number">3.7</span> Lists</a></li>
-<li><a href="#data-frames" class="nav-link" data-scroll-target="#data-frames"> <span class="header-section-number">3.8</span> Data Frames</a></li>
-<li><a href="#sec-loading-data" class="nav-link" data-scroll-target="#sec-loading-data"> <span class="header-section-number">3.9</span> Loading Data</a></li>
-<li><a href="#saving-data" class="nav-link" data-scroll-target="#saving-data"> <span class="header-section-number">3.10</span> Saving Data</a></li>
-<li><a href="#summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">3.11</span> Summary</a></li>
-</ul>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#atomic-vectors" id="toc-atomic-vectors" class="nav-link active" data-scroll-target="#atomic-vectors"> <span class="header-section-number">3.1</span> Atomic Vectors</a>
+  <ul class="collapse">
+  <li><a href="#doubles" id="toc-doubles" class="nav-link" data-scroll-target="#doubles"> <span class="header-section-number">3.1.1</span> Doubles</a></li>
+  <li><a href="#integers" id="toc-integers" class="nav-link" data-scroll-target="#integers"> <span class="header-section-number">3.1.2</span> Integers</a></li>
+  <li><a href="#characters" id="toc-characters" class="nav-link" data-scroll-target="#characters"> <span class="header-section-number">3.1.3</span> Characters</a></li>
+  <li><a href="#sec-logicals" id="toc-sec-logicals" class="nav-link" data-scroll-target="#sec-logicals"> <span class="header-section-number">3.1.4</span> Logicals</a></li>
+  <li><a href="#complex-and-raw" id="toc-complex-and-raw" class="nav-link" data-scroll-target="#complex-and-raw"> <span class="header-section-number">3.1.5</span> Complex and Raw</a></li>
+  </ul></li>
+  <li><a href="#sec-attributes" id="toc-sec-attributes" class="nav-link" data-scroll-target="#sec-attributes"> <span class="header-section-number">3.2</span> Attributes</a>
+  <ul class="collapse">
+  <li><a href="#sec-names" id="toc-sec-names" class="nav-link" data-scroll-target="#sec-names"> <span class="header-section-number">3.2.1</span> Names</a></li>
+  <li><a href="#dim" id="toc-dim" class="nav-link" data-scroll-target="#dim"> <span class="header-section-number">3.2.2</span> Dim</a></li>
+  </ul></li>
+  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices"> <span class="header-section-number">3.3</span> Matrices</a></li>
+  <li><a href="#arrays" id="toc-arrays" class="nav-link" data-scroll-target="#arrays"> <span class="header-section-number">3.4</span> Arrays</a></li>
+  <li><a href="#class" id="toc-class" class="nav-link" data-scroll-target="#class"> <span class="header-section-number">3.5</span> Class</a>
+  <ul class="collapse">
+  <li><a href="#dates-and-times" id="toc-dates-and-times" class="nav-link" data-scroll-target="#dates-and-times"> <span class="header-section-number">3.5.1</span> Dates and Times</a></li>
+  <li><a href="#factors" id="toc-factors" class="nav-link" data-scroll-target="#factors"> <span class="header-section-number">3.5.2</span> Factors</a></li>
+  </ul></li>
+  <li><a href="#coercion" id="toc-coercion" class="nav-link" data-scroll-target="#coercion"> <span class="header-section-number">3.6</span> Coercion</a></li>
+  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists"> <span class="header-section-number">3.7</span> Lists</a></li>
+  <li><a href="#data-frames" id="toc-data-frames" class="nav-link" data-scroll-target="#data-frames"> <span class="header-section-number">3.8</span> Data Frames</a></li>
+  <li><a href="#sec-loading-data" id="toc-sec-loading-data" class="nav-link" data-scroll-target="#sec-loading-data"> <span class="header-section-number">3.9</span> Loading Data</a></li>
+  <li><a href="#saving-data" id="toc-saving-data" class="nav-link" data-scroll-target="#saving-data"> <span class="header-section-number">3.10</span> Saving Data</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">3.11</span> Summary</a></li>
+  </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/master/objects.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
 <!-- main -->
-<main class="content">
-<header id="title-block-header">
-<h1 class="title display-7"><span id="sec-r-objects" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R Objects</span></span></h1>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-r-objects" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R Objects</span></span></h1>
+</div>
+
+
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
 </header>
 
 <p>In this chapter, you’ll use R to assemble a deck of 52 playing cards.</p>
@@ -447,7 +475,7 @@ length
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="st">"Hello"</span>)</span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="do">## "character"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The individual elements of a character vector are known as <em>strings</em>. Note that a string can contain more than just letters. You can assemble a character string from numbers or symbols as well.</p>
-<div class="callout callout callout-style-default no-icon callout-captioned">
+<div class="callout callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -497,7 +525,7 @@ Exercise: Character or Number?
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="fu">raw</span>(<span class="dv">3</span>))</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="do">## "raw"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout callout-style-default no-icon callout-captioned">
+<div class="callout callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -646,7 +674,7 @@ Exercise: Vector of Cards
 <span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a><span class="do">##      [,1] [,2]</span></span>
 <span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,]   31   33</span></span>
 <span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,]   32   34</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout callout-style-default no-icon callout-captioned">
+<div class="callout callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -758,7 +786,7 @@ Exercise: Make a Matrix
 <div class="sourceCode" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(gender)</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="do">## "male"   "female" "female" "male"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now that you understand the possibilities provided by R’s atomic vectors, let’s make a more complicated type of playing card.</p>
-<div class="callout callout callout-style-default no-icon callout-captioned">
+<div class="callout callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -798,7 +826,7 @@ Data types in vectors
 <section id="coercion" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="coercion"><span class="header-section-number">3.6</span> Coercion</h2>
 <p>R’s coercion behavior may seem inconvenient, but it is not arbitrary. R always follows the same rules when it coerces data types. Once you are familiar with these rules, you can use R’s coercion behavior to do surprisingly useful things.</p>
-<p>So how does R coerce data types? If a character string is present in an atomic vector, R will convert everything else in the vector to character strings. If a vector only contains logicals and numbers, R will convert the logicals to numbers; every <code>TRUE</code> becomes a 1, and every <code>FALSE</code> becomes a 0, as shown in <a href="#fig-coercion">fig.&nbsp;<span>3.1</span></a>.</p>
+<p>So how does R coerce data types? If a character string is present in an atomic vector, R will convert everything else in the vector to character strings. If a vector only contains logicals and numbers, R will convert the logicals to numbers; every <code>TRUE</code> becomes a 1, and every <code>FALSE</code> becomes a 0, as shown in <a href="#fig-coercion">Figure&nbsp;<span>3.1</span></a>.</p>
 <div id="fig-coercion" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/hopr_0301.png" class="img-fluid figure-img"></p>
@@ -851,7 +879,7 @@ Data types in vectors
 <p>Lists are a basic type of object in R, on par with atomic vectors. Like atomic vectors, they are used as building blocks to create many more spohisticated types of R objects.</p>
 <p>As you can imagine, the structure of lists can become quite complicated, but this flexibility makes lists a useful all-purpose storage tool in R: you can group together anything with a list.</p>
 <p>However, not every list needs to be complicated. You can store a playing card in a very simple list.</p>
-<div class="callout callout callout-style-default no-icon callout-captioned">
+<div class="callout callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -880,7 +908,7 @@ Exercise: Use a List to Make a Card
 <section id="data-frames" class="level2" data-number="3.8">
 <h2 data-number="3.8" class="anchored" data-anchor-id="data-frames"><span class="header-section-number">3.8</span> Data Frames</h2>
 <p>Data frames are the two-dimensional version of a list. They are far and away the most useful storage structure for data analysis, and they provide an ideal way to store an entire deck of cards. You can think of a data frame as R’s equivalent to the Excel spreadsheet because it stores data in a similar format.</p>
-<p>Data frames group vectors together into a two-dimensional table. Each vector becomes a column in the table. As a result, each column of a data frame can contain a different type of data; but within a column, every cell must be the same type of data, as in <a href="#fig-data-frame">fig.&nbsp;<span>3.2</span></a>.</p>
+<p>Data frames group vectors together into a two-dimensional table. Each vector becomes a column in the table. As a result, each column of a data frame can contain a different type of data; but within a column, every cell must be the same type of data, as in <a href="#fig-data-frame">Figure&nbsp;<span>3.2</span></a>.</p>
 <div id="fig-data-frame" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/hopr_0302.png" class="img-fluid figure-img"></p>
@@ -895,7 +923,7 @@ Exercise: Use a List to Make a Card
 <span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  ace clubs     1</span></span>
 <span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  two clubs     2</span></span>
 <span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  six clubs     3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You’ll need to make sure that each vector is the same length (or can be made so with R’s recycling rules; see <a href="basics.html#fig-recycle">fig.&nbsp;<span>1.4</span></a>, as data frames cannot combine columns of different lengths.</p>
+<p>You’ll need to make sure that each vector is the same length (or can be made so with R’s recycling rules; see <a href="basics.html#fig-recycle">Figure&nbsp;<span>1.4</span></a>, as data frames cannot combine columns of different lengths.</p>
 <p>In the previous code, I named the arguments in <code>data.frame</code> <code>face</code>, <code>suit</code>, and <code>value</code>, but you can name the arguments whatever you like. <code>data.frame</code> will use your argument names to label the columns of the data frame.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -984,14 +1012,14 @@ Names
 <span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>"nine","spades,9</span>
 <span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>... and so on.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Most data-science applications can open plain-text files and export data as plain-text files. This makes plain-text files a sort of lingua franca for data science.</p>
-<p>To load a plain-text file into R, click the Import Dataset icon in RStudio, shown in <a href="#fig-import">fig.&nbsp;<span>3.3</span></a>. Then select “From text file.”</p>
+<p>To load a plain-text file into R, click the Import Dataset icon in RStudio, shown in <a href="#fig-import">Figure&nbsp;<span>3.3</span></a>. Then select “From text file.”</p>
 <div id="fig-import" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/hopr_0303.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.3: You can import data from plain-text files with RStudio’s Import Dataset.</figcaption><p></p>
 </figure>
 </div>
-<p>RStudio will ask you to select the file you want to import, then it will open a wizard to help you import the data, as in <a href="#fig-wizard">fig.&nbsp;<span>3.4</span></a>. Use the wizard to tell RStudio what name to give the data set. You can also use the wizard to tell RStudio which character the data set uses as a separator, which character it uses to represent decimals (usually a period in the United States and a comma in Europe), and whether or not the data set comes with a row of column names (known as a <em>header</em>). To help you out, the wizard shows you what the raw file looks like, as well as what your loaded data will look like based on the input settings.</p>
+<p>RStudio will ask you to select the file you want to import, then it will open a wizard to help you import the data, as in <a href="#fig-wizard">Figure&nbsp;<span>3.4</span></a>. Use the wizard to tell RStudio what name to give the data set. You can also use the wizard to tell RStudio which character the data set uses as a separator, which character it uses to represent decimals (usually a period in the United States and a comma in Europe), and whether or not the data set comes with a row of column names (known as a <em>header</em>). To help you out, the wizard shows you what the raw file looks like, as well as what your loaded data will look like based on the input settings.</p>
 <p>You can also unclick the box “Strings as factors” in the wizard. I recommend doing this. If you do, R will load all of your character strings as character strings. If you do not, R will convert them to factors.</p>
 <div id="fig-wizard" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -999,7 +1027,7 @@ Names
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3.4: RStudio’s import wizard.</figcaption><p></p>
 </figure>
 </div>
-<p>Once everything looks right, click Import. RStudio will read in the data and save it to a data frame. RStudio will also open a data viewer, so you can see your new data in a spreadsheet format. This is a good way to check that everything came through as expected. If all worked well, your file should appear in a View tab of RStudio, like in <a href="#fig-view">fig.&nbsp;<span>3.5</span></a>. You can examine the data frame in the console with <code>head(deck)</code>.</p>
+<p>Once everything looks right, click Import. RStudio will read in the data and save it to a data frame. RStudio will also open a data viewer, so you can see your new data in a spreadsheet format. This is a good way to check that everything came through as expected. If all worked well, your file should appear in a View tab of RStudio, like in <a href="#fig-view">Figure&nbsp;<span>3.5</span></a>. You can examine the data frame in the console with <code>head(deck)</code>.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1056,7 +1084,7 @@ Note
 </section>
 <section id="summary" class="level2" data-number="3.11">
 <h2 data-number="3.11" class="anchored" data-anchor-id="summary"><span class="header-section-number">3.11</span> Summary</h2>
-<p>You can save data in R with five different objects, which let you store different types of values in different types of relationships, as in <a href="#fig-structures">fig.&nbsp;<span>3.6</span></a>. Of these objects, data frames are by far the most useful for data science. Data frames store one of the most common forms of data used in data science, tabular data.</p>
+<p>You can save data in R with five different objects, which let you store different types of values in different types of relationships, as in <a href="#fig-structures">Figure&nbsp;<span>3.6</span></a>. Of these objects, data frames are by far the most useful for data science. Data frames store one of the most common forms of data used in data science, tabular data.</p>
 <div id="fig-structures" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/hopr_0306.png" class="img-fluid figure-img"></p>
@@ -1069,7 +1097,9 @@ Note
 
 
 </section>
-<script type="application/javascript">
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";
   const anchorJS = new window.AnchorJS();
@@ -1090,7 +1120,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.blur();
     // flash "checked"
     button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
     setTimeout(function() {
+      button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
     // clear code selection
@@ -1145,20 +1178,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</main> <!-- /main -->
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./cards.html">
+      <a href="./cards.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Project 2: Playing Cards</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./notation.html">
+      <a href="./notation.html" class="pagination-link">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R Notation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 </body></html>
