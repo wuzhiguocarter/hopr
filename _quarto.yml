@@ -42,5 +42,37 @@ format:
     theme: cosmo
     cover-image: cover.png
     code-link: true
+  pdf:
+    documentclass: scrbook
+    papersize: letter
+    classoption: [DIV=11, numbers=noendperiod]
+    include-in-header: 
+      text: |
+        \usepackage{tikz}
+        \usepackage{graphicx}
+        \newcommand{\circled}[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+    top-level-division: chapter
+    include-before-body:
+      text: |
+        \frontmatter
+        \begin{titlepage}
+        \thispagestyle{empty}
+        \begin{center}
+        \vspace*{2cm}
+        {\Huge\bfseries Hands-On Programming with R\par}
+        \vspace{2cm}
+        {\Large\itshape Garrett Grolemund\par}
+        \vfill
+        \includegraphics[width=0.8\textwidth]{images/cover.png}
+        \vfill
+        \end{center}
+        \end{titlepage}
+        \cleardoublepage
+        \mainmatter
+    keep-tex: true
+    block-headings: true
+    toc: true
+    number-sections: true
+    colorlinks: true
 
 
